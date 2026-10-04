@@ -111,7 +111,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@param	CTenantId	The SchemaDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteSchemaDefByCTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argCTenantId );
+		MCFDbKeyHash256 argCTenantId );
 
 	/**
 	 *	Delete the SchemaDef instances identified by the key CTenantIdx.
@@ -130,7 +130,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@param	MinorVersionId	The SchemaDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteSchemaDefByMinorVersionIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argMinorVersionId );
+		MCFDbKeyHash256 argMinorVersionId );
 
 	/**
 	 *	Delete the SchemaDef instances identified by the key MinorVersionIdx.
@@ -151,7 +151,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@param	Name	The SchemaDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteSchemaDefByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argMinorVersionId,
+		MCFDbKeyHash256 argMinorVersionId,
 		String argName );
 
 	/**
@@ -173,7 +173,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@param	AuthorEMail	The SchemaDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteSchemaDefByAuthEMailIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argCTenantId,
+		MCFDbKeyHash256 argCTenantId,
 		String argAuthorEMail );
 
 	/**
@@ -195,7 +195,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@param	ProjectURL	The SchemaDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteSchemaDefByProjectURLIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argCTenantId,
+		MCFDbKeyHash256 argCTenantId,
 		String argProjectURL );
 
 	/**
@@ -217,7 +217,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@param	PublishURI	The SchemaDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteSchemaDefByPubURIIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argCTenantId,
+		MCFDbKeyHash256 argCTenantId,
 		String argPublishURI );
 
 	/**
@@ -237,7 +237,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteSchemaDefByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the SchemaDef instances identified by the key TenantIdx.
 	 *
@@ -246,7 +246,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@param	TenantId	The SchemaDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteSchemaDefByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		MCFDbKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the SchemaDef instances identified by the key TenantIdx.
@@ -270,7 +270,7 @@ public interface ICFBamPubSchemaDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubSchemaDef pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SchemaDef record instance by primary key.
@@ -283,7 +283,7 @@ public interface ICFBamPubSchemaDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubSchemaDef publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all SchemaDef instances.
@@ -305,7 +305,7 @@ public interface ICFBamPubSchemaDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubSchemaDef pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived SchemaDef record instances identified by the duplicate key TenantIdx.
@@ -317,7 +317,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubSchemaDef[] pubreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived SchemaDef record instances identified by the duplicate key CTenantIdx.
@@ -329,7 +329,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubSchemaDef[] pubreadDerivedByCTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 CTenantId );
+		MCFDbKeyHash256 CTenantId );
 
 	/**
 	 *	Read an array of the derived SchemaDef record instances identified by the duplicate key MinorVersionIdx.
@@ -341,7 +341,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubSchemaDef[] pubreadDerivedByMinorVersionIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 MinorVersionId );
+		MCFDbKeyHash256 MinorVersionId );
 
 	/**
 	 *	Read the derived SchemaDef record instance identified by the unique key UNameIdx.
@@ -356,7 +356,7 @@ public interface ICFBamPubSchemaDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubSchemaDef pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 MinorVersionId,
+		MCFDbKeyHash256 MinorVersionId,
 		String Name );
 
 	/**
@@ -371,7 +371,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubSchemaDef[] pubreadDerivedByAuthEMailIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 CTenantId,
+		MCFDbKeyHash256 CTenantId,
 		String AuthorEMail );
 
 	/**
@@ -386,7 +386,7 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubSchemaDef[] pubreadDerivedByProjectURLIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 CTenantId,
+		MCFDbKeyHash256 CTenantId,
 		String ProjectURL );
 
 	/**
@@ -402,7 +402,7 @@ public interface ICFBamPubSchemaDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubSchemaDef pubreadDerivedByPubURIIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 CTenantId,
+		MCFDbKeyHash256 CTenantId,
 		String PublishURI );
 
 	/**
@@ -415,10 +415,10 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SchemaDef record instance identified by the primary key.
@@ -430,10 +430,10 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SchemaDef record instances.
@@ -454,10 +454,10 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific SchemaDef record instances identified by the duplicate key TenantIdx.
@@ -468,10 +468,10 @@ public interface ICFBamPubSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef[] pubreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific SchemaDef record instances identified by the duplicate key CTenantIdx.
@@ -482,10 +482,10 @@ public interface ICFBamPubSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef[] pubreadRecByCTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 CTenantId );
+		MCFDbKeyHash256 CTenantId );
 
 	/**
 	 *	Read an array of the specific SchemaDef record instances identified by the duplicate key MinorVersionIdx.
@@ -496,10 +496,10 @@ public interface ICFBamPubSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef[] pubreadRecByMinorVersionIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 MinorVersionId );
+		MCFDbKeyHash256 MinorVersionId );
 
 	/**
 	 *	Read the specific SchemaDef record instance identified by the unique key UNameIdx.
@@ -513,10 +513,10 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 MinorVersionId,
+		MCFDbKeyHash256 MinorVersionId,
 		String Name );
 
 	/**
@@ -530,10 +530,10 @@ public interface ICFBamPubSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef[] pubreadRecByAuthEMailIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 CTenantId,
+		MCFDbKeyHash256 CTenantId,
 		String AuthorEMail );
 
 	/**
@@ -547,10 +547,10 @@ public interface ICFBamPubSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef[] pubreadRecByProjectURLIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 CTenantId,
+		MCFDbKeyHash256 CTenantId,
 		String ProjectURL );
 
 	/**
@@ -565,9 +565,9 @@ public interface ICFBamPubSchemaDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDef pubreadRecByPubURIIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 CTenantId,
+		MCFDbKeyHash256 CTenantId,
 		String PublishURI );
 }

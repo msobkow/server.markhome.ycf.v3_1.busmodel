@@ -119,7 +119,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	The TZDateType-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubTZDateTypeObj readTZDateType( ICFLibKeyHash256 pkey );
+	ICFBamPubTZDateTypeObj readTZDateType( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a TZDateType-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	The TZDateType-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubTZDateTypeObj readTZDateType( ICFLibKeyHash256 pkey,
+	ICFBamPubTZDateTypeObj readTZDateType( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubTZDateTypeObj readCachedTZDateType( ICFLibKeyHash256 pkey );
+	ICFBamPubTZDateTypeObj readCachedTZDateType( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeTZDateType( ICFBamPubTZDateTypeObj obj );
 
-	void deepDisposeTZDateType( ICFLibKeyHash256 pkey );
+	void deepDisposeTZDateType( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubTZDateTypeObj lockTZDateType( ICFLibKeyHash256 pkey );
+	ICFBamPubTZDateTypeObj lockTZDateType( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the TZDateType-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	CFBamPubValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTZDateTypeObj readTZDateTypeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubTZDateTypeObj readTZDateTypeByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubValueObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTZDateTypeObj readTZDateTypeByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubTZDateTypeObj readTZDateTypeByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	CFBamPubValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTZDateTypeObj readTZDateTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTZDateTypeObj readTZDateTypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTZDateTypeObj readTZDateTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTZDateTypeObj readTZDateTypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -217,7 +217,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamPubTZDateTypeObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -227,7 +227,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByScopeIdx( MCFDbKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -238,7 +238,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubTZDateTypeObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -259,7 +259,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubTZDateTypeObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -269,7 +269,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -280,7 +280,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubTZDateTypeObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -290,7 +290,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -303,8 +303,8 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubTZDateTypeObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -316,8 +316,8 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -330,8 +330,8 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubTZDateTypeObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -343,8 +343,8 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -355,7 +355,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId );
 
 	/**
 	 *	Get the map of CFBamPubTZDateTypeObj instances sorted by their primary keys for the duplicate SchemaIdx key.
@@ -365,50 +365,50 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *	@return	List of CFBamPubTZDateTypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTZDateTypeObj> readTZDateTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId,
+	List<ICFBamPubTZDateTypeObj> readTZDateTypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId,
 		boolean forceRead );
 
-	ICFBamPubTZDateTypeObj readCachedTZDateTypeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubTZDateTypeObj readCachedTZDateTypeByIdIdx( MCFDbKeyHash256 Id );
 
-	ICFBamPubTZDateTypeObj readCachedTZDateTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTZDateTypeObj readCachedTZDateTypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	List<ICFBamPubTZDateTypeObj> readCachedTZDateTypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId );
 
-	void deepDisposeTZDateTypeByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeTZDateTypeByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeTZDateTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeTZDateTypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeTZDateTypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeTZDateTypeByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	void deepDisposeTZDateTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeTZDateTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeTZDateTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeTZDateTypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeTZDateTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeTZDateTypeByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeTZDateTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeTZDateTypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeTZDateTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeTZDateTypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeTZDateTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	void deepDisposeTZDateTypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId );
 
 	/**
 	 *	Internal use only.
@@ -425,7 +425,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *
 	 *	@param	Id	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteTZDateTypeByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -434,7 +434,7 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *
 	 *	@param	Name	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteTZDateTypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -442,28 +442,28 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *
 	 *	@param	ScopeId	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteTZDateTypeByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteTZDateTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteTZDateTypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteTZDateTypeByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -472,8 +472,8 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *
 	 *	@param	PrevId	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteTZDateTypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -482,15 +482,15 @@ public interface ICFBamPubTZDateTypeTableObj
 	 *
 	 *	@param	NextId	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteTZDateTypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaDefId	The TZDateType key attribute of the instance generating the id.
 	 */
-	void deleteTZDateTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	void deleteTZDateTypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the CFBamPubTZDateTypeObj instance up in the chain.  The instance is always refreshed.

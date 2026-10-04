@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -73,11 +73,11 @@ public class CFBamProtBuffServerListFunc
 	extends CFBamProtBuffServerMethod
 	implements ICFBamServerListFunc
 {
-	protected ICFLibKeyHash256 optionalRetTableId;
+	protected IMCFKeyHash256 optionalRetTableId;
 
 	public CFBamProtBuffServerListFunc() {
 		super();
-		optionalRetTableId = CFLibDbKeyHash256.nullGet();
+		optionalRetTableId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
@@ -86,27 +86,27 @@ public class CFBamProtBuffServerListFunc
 	}
 
 	@Override
-	public ICFBamProtTable getOptionalLookupRetTable(ICFLibKeyHash256 argRetTableId) {
+	public ICFBamProtTable getOptionalLookupRetTable(IMCFKeyHash256 argRetTableId) {
 		ICFBamProtSchema targetBackingCFBam = ICFBamProtSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamProtSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamProtSchema.getBackingCFBam()");
 		}
 		ICFBamProtTableTable targetTable = targetBackingCFBam.getTableTable();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamProtSchema.getBackingCFBam().getTableTable()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamProtSchema.getBackingCFBam().getTableTable()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalRetTableId()));
 	}
 
 	@Override
-	public void setOptionalLookupRetTable(ICFLibKeyHash256 argRetTableId) {
+	public void setOptionalLookupRetTable(IMCFKeyHash256 argRetTableId) {
 		ICFBamProtSchema targetBackingCFBam = ICFBamProtSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable-args", 0, "ICFBamProtSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupRetTable-args", 0, "ICFBamProtSchema.getBackingCFBam()");
 		}
 		ICFBamProtTableTable targetTable = targetBackingCFBam.getTableTable();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamProtTable found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argRetTableId);
 		if (found == null || (found != null && ((found instanceof ICFBamProtTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)))) {
@@ -114,7 +114,7 @@ public class CFBamProtBuffServerListFunc
 		optionalRetTableId = argRetTableId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupRetTable-args", "found", found, "ICFBamProtTableICFBamProtTableICFBamPubTable");
+			throw new MCFUnsupportedClassException(getClass(), "setOptionalLookupRetTable-args", "found", found, "ICFBamProtTableICFBamProtTableICFBamPubTable");
 		}
 	}
 
@@ -141,11 +141,11 @@ public class CFBamProtBuffServerListFunc
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalRetTableId() {
+	public IMCFKeyHash256 getOptionalRetTableId() {
 		return(optionalRetTableId);
 	}
 
-	public void setOptionalRetTableId( ICFLibKeyHash256 value ) {
+	public void setOptionalRetTableId( IMCFKeyHash256 value ) {
 		optionalRetTableId = value;
 	}
 
@@ -566,7 +566,7 @@ public class CFBamProtBuffServerListFunc
 			setJustProtServerListFunc( (CFBamProtBuffServerListFunc)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -587,7 +587,7 @@ public class CFBamProtBuffServerListFunc
 			setServerListFunc( (ICFBamPubServerListFuncH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -608,7 +608,7 @@ public class CFBamProtBuffServerListFunc
 			setJustProtServerListFunc( (CFBamPubProtBuffServerListFunc)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -629,7 +629,7 @@ public class CFBamProtBuffServerListFunc
 			setServerListFunc( (ICFBamPubServerListFuncH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

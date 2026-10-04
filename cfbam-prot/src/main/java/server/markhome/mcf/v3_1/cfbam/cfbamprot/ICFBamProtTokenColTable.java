@@ -138,7 +138,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	TableId	The TokenCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteTokenColByTableIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTableId );
+		IMCFKeyHash256 argTableId );
 
 	/**
 	 *	Delete the TokenCol instances identified by the key TableIdx.
@@ -166,7 +166,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteTokenColByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the TokenCol instances identified by the key UNameIdx.
 	 *
@@ -177,7 +177,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	Name	The TokenCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteTokenColByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -206,7 +206,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	ScopeId	The TokenCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteTokenColByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the TokenCol instances identified by the key ScopeIdx.
@@ -234,7 +234,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	DefSchemaId	The TokenCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteTokenColByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the TokenCol instances identified by the key DefSchemaIdx.
@@ -262,7 +262,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	PrevId	The TokenCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteTokenColByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TokenCol instances identified by the key PrevIdx.
@@ -290,7 +290,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	NextId	The TokenCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteTokenColByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TokenCol instances identified by the key NextIdx.
@@ -320,8 +320,8 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	PrevId	The TokenCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteTokenColByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TokenCol instances identified by the key ContPrevIdx.
@@ -351,8 +351,8 @@ extends ICFBamProtTokenDefTable,
 	 *	@param	NextId	The TokenCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteTokenColByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TokenCol instances identified by the key ContNextIdx.
@@ -395,7 +395,7 @@ extends ICFBamProtTokenDefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTokenCol protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived TokenCol record instance by protected primary key.
@@ -408,7 +408,7 @@ extends ICFBamProtTokenDefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTokenCol protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all TokenCol instances.
@@ -430,7 +430,7 @@ extends ICFBamProtTokenDefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTokenCol protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived TokenCol record instance identified by the unique key UNameIdx.
@@ -445,7 +445,7 @@ extends ICFBamProtTokenDefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTokenCol protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -458,7 +458,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTokenCol[] protreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived TokenCol record instances identified by the duplicate key DefSchemaIdx.
@@ -470,7 +470,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTokenCol[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived TokenCol record instances identified by the duplicate key PrevIdx.
@@ -482,7 +482,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTokenCol[] protreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TokenCol record instances identified by the duplicate key NextIdx.
@@ -494,7 +494,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTokenCol[] protreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TokenCol record instances identified by the duplicate key ContPrevIdx.
@@ -508,8 +508,8 @@ extends ICFBamProtTokenDefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTokenCol[] protreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TokenCol record instances identified by the duplicate key ContNextIdx.
@@ -523,8 +523,8 @@ extends ICFBamProtTokenDefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTokenCol[] protreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TokenCol record instances identified by the duplicate key TableIdx.
@@ -536,7 +536,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTokenCol[] protreadDerivedByTableIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read the specific TokenCol record instance identified by the primary key.
@@ -548,10 +548,10 @@ extends ICFBamProtTokenDefTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific TokenCol record instance identified by the primary key.
@@ -563,10 +563,10 @@ extends ICFBamProtTokenDefTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific TokenCol record instances.
@@ -587,10 +587,10 @@ extends ICFBamProtTokenDefTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific TokenCol record instance identified by the unique key UNameIdx.
@@ -604,10 +604,10 @@ extends ICFBamProtTokenDefTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -619,10 +619,10 @@ extends ICFBamProtTokenDefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol[] protreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific TokenCol record instances identified by the duplicate key DefSchemaIdx.
@@ -633,10 +633,10 @@ extends ICFBamProtTokenDefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific TokenCol record instances identified by the duplicate key PrevIdx.
@@ -647,10 +647,10 @@ extends ICFBamProtTokenDefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol[] protreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TokenCol record instances identified by the duplicate key NextIdx.
@@ -661,10 +661,10 @@ extends ICFBamProtTokenDefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol[] protreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TokenCol record instances identified by the duplicate key ContPrevIdx.
@@ -677,11 +677,11 @@ extends ICFBamProtTokenDefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol[] protreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TokenCol record instances identified by the duplicate key ContNextIdx.
@@ -694,11 +694,11 @@ extends ICFBamProtTokenDefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol[] protreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TokenCol record instances identified by the duplicate key TableIdx.
@@ -709,10 +709,10 @@ extends ICFBamProtTokenDefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenCol[] protreadRecByTableIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -720,7 +720,7 @@ extends ICFBamProtTokenDefTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtTokenCol protmoveRecUp( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -729,6 +729,6 @@ extends ICFBamProtTokenDefTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtTokenCol protmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

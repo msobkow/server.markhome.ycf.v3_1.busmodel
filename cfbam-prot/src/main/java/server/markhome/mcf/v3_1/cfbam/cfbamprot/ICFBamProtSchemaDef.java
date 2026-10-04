@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -70,9 +70,9 @@ public interface ICFBamProtSchemaDef
 	extends ICFBamProtScope
 {
 	public static final String S_CTENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 CTENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CTENANTID_INIT_VALUE );
+	public static final MCFDbKeyHash256 CTENANTID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_CTENANTID_INIT_VALUE );
 	public static final String S_MINORVERSIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 MINORVERSIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_MINORVERSIONID_INIT_VALUE );
+	public static final MCFDbKeyHash256 MINORVERSIONID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_MINORVERSIONID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final String COPYRIGHTPERIOD_INIT_VALUE = new String( "2020" );
 	public static final String COPYRIGHTHOLDER_INIT_VALUE = new String( "YourNameHere" );
@@ -84,13 +84,13 @@ public interface ICFBamProtSchemaDef
 
 	public ICFIntProtMinorVersion getRequiredContainerMinorVersion();
 
-	public void setRequiredContainerMinorVersion(ICFLibKeyHash256 argMinorVersionId);
+	public void setRequiredContainerMinorVersion(IMCFKeyHash256 argMinorVersionId);
 
 	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj);
 
 	public ICFSecProtTenant getRequiredOwnerCTenant();
 
-	public void setRequiredOwnerCTenant(ICFLibKeyHash256 argCTenantId);
+	public void setRequiredOwnerCTenant(IMCFKeyHash256 argCTenantId);
 
 	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj);
 
@@ -104,10 +104,10 @@ public interface ICFBamProtSchemaDef
 
 	public List<ICFBamProtSchemaRole> getOptionalComponentsRoles();
 
-	public ICFLibKeyHash256 getRequiredCTenantId();
-	public void setRequiredCTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredMinorVersionId();
-	public void setRequiredMinorVersionId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredCTenantId();
+	public void setRequiredCTenantId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getRequiredMinorVersionId();
+	public void setRequiredMinorVersionId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDbName();

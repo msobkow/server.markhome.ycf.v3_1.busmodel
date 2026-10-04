@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -65,13 +65,13 @@ public interface ICFBamTableTweak
 	extends ICFBamTweak
 {
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
+	public static final MCFDbKeyHash256 TABLEID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa809;
 	public final static String S_CLASS_CODE = "a809";
 
 	public ICFBamTable getRequiredContainerTableDef();
 
-	public void setRequiredContainerTableDef(ICFLibKeyHash256 argTableId);
+	public void setRequiredContainerTableDef(IMCFKeyHash256 argTableId);
 
 	public void setRequiredContainerTableDef(ICFBamTable argObj);
 
@@ -79,8 +79,8 @@ public interface ICFBamTableTweak
 
 	public void setRequiredContainerTableDef(ICFBamPubTable argObj);
 
-	public ICFLibKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( IMCFKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

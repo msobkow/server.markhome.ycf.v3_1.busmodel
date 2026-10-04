@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -89,23 +89,23 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 	protected CFBamJpaValue requiredParentDataType;
 
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 requiredTableId;
 	@Column( name="DbName", nullable=true, length=32 )
 	protected String optionalDbName;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="DataId", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="DataId", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalDataId;
+	protected IMCFKeyHash256 optionalDataId;
 	@Column( name="xml_elt_name", nullable=true, length=192 )
 	protected String optionalXmlElementName;
 
 	public CFBamJpaTableCol() {
 		super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTableCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubTableCol.TABLEID_INIT_VALUE.toString() );
 		optionalDbName = null;
-		optionalDataId = CFLibDbKeyHash256.nullGet();
+		optionalDataId = MCFDbKeyHash256.nullGet();
 		optionalXmlElementName = null;
 	}
 
@@ -122,7 +122,7 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
 		else if (argObj instanceof CFBamJpaTable) {
 			requiredContainerTable = (CFBamJpaTable)argObj;
@@ -133,7 +133,7 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "CFBamJpaTable");
+			throw new MCFUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "CFBamJpaTable");
 		}
 	}
 
@@ -148,14 +148,14 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFLibKeyHash256 argTableId) {
+	public void setRequiredContainerTable(IMCFKeyHash256 argTableId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamTableTable targetTable = targetBackingSchema.getTableTable();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTableId);
 		setRequiredContainerTable(targetRec);
@@ -169,7 +169,7 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 	@Override
 	public void setRequiredParentDataType(ICFBamValue argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
 		}
 		else if (argObj instanceof CFBamJpaValue) {
 			requiredParentDataType = (CFBamJpaValue)argObj;
@@ -181,7 +181,7 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setParentDataType", "argObj", argObj, "CFBamJpaValue");
+			throw new MCFUnsupportedClassException(getClass(), "setParentDataType", "argObj", argObj, "CFBamJpaValue");
 		}
 	}
 
@@ -196,27 +196,27 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 	}
 
 	@Override
-	public void setRequiredParentDataType(ICFLibKeyHash256 argDataId) {
+	public void setRequiredParentDataType(IMCFKeyHash256 argDataId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamValueTable targetTable = targetBackingSchema.getTableValue();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
 		}
 		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDataId);
 		setRequiredParentDataType(targetRec);
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -231,7 +231,7 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDbName",
 				1,
 				"value.length()",
@@ -242,11 +242,11 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDataId() {
+	public IMCFKeyHash256 getOptionalDataId() {
 		return(optionalDataId);
 	}
 
-	public void setOptionalDataId( ICFLibKeyHash256 value ) {
+	public void setOptionalDataId( IMCFKeyHash256 value ) {
 		optionalDataId = value;
 	}
 
@@ -257,7 +257,7 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 
 	public void setOptionalXmlElementName( String value ) {
 		if( value != null && value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalXmlElementName",
 				1,
 				"value.length()",
@@ -664,7 +664,7 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 			setTableCol( (ICFBamTableCol)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -689,7 +689,7 @@ public class CFBamJpaTableCol extends CFBamJpaValue
 			setTableCol( (ICFBamTableColH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

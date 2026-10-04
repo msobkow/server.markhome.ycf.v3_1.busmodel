@@ -495,7 +495,7 @@ public class CFBamSecSessionTableObj
 			locked = (ICFSecSecSessionObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockSecSession", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockSecSession", pkey );
 		}
 		return( locked );
 	}
@@ -530,7 +530,7 @@ public class CFBamSecSessionTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -538,7 +538,7 @@ public class CFBamSecSessionTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -590,7 +590,7 @@ public class CFBamSecSessionTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -598,7 +598,7 @@ public class CFBamSecSessionTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -641,7 +641,7 @@ public class CFBamSecSessionTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSessionObj> pageAllSecSession(ICFLibKeyHash256 priorSecSessionId )
+	public List<ICFSecSecSessionObj> pageAllSecSession(IMCFKeyHash256 priorSecSessionId )
 	{
 		final String S_ProcName = "pageAllSecSession";
 		Map<$implCommaIJavaOptAtomType$, ICFSecSecSessionObj> map = new HashMap<$implCommaIJavaOptAtomType$,ICFSecSecSessionObj>();
@@ -663,28 +663,28 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public ICFSecSecSessionObj readSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId )
+	public ICFSecSecSessionObj readSecSessionByIdIdx( IMCFKeyHash256 SecSessionId )
 	{
 		return( readSecSessionByIdIdx( SecSessionId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecSessionObj readSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId, boolean forceRead )
+	public ICFSecSecSessionObj readSecSessionByIdIdx( IMCFKeyHash256 SecSessionId, boolean forceRead )
 	{
 		ICFSecSecSessionObj obj = readSecSession( SecSessionId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId )
+	public List<ICFSecSecSessionObj> readSecSessionBySecUserIdx( IMCFKeyHash256 SecUserId )
 	{
 		return( readSecSessionBySecUserIdx( SecUserId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId,
+	public List<ICFSecSecSessionObj> readSecSessionBySecUserIdx( IMCFKeyHash256 SecUserId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSessionBySecUserIdx";
@@ -722,7 +722,7 @@ public class CFBamSecSessionTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -730,7 +730,7 @@ public class CFBamSecSessionTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -770,7 +770,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public ICFSecSecSessionObj readSecSessionByStartIdx( ICFLibKeyHash256 SecUserId,
+	public ICFSecSecSessionObj readSecSessionByStartIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Start )
 	{
 		return( readSecSessionByStartIdx( SecUserId,
@@ -779,7 +779,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public ICFSecSecSessionObj readSecSessionByStartIdx( ICFLibKeyHash256 SecUserId,
+	public ICFSecSecSessionObj readSecSessionByStartIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Start, boolean forceRead )
 	{
 		if( indexByStartIdx == null ) {
@@ -808,7 +808,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
+	public List<ICFSecSecSessionObj> readSecSessionByFinishIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Finish )
 	{
 		return( readSecSessionByFinishIdx( SecUserId,
@@ -817,7 +817,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
+	public List<ICFSecSecSessionObj> readSecSessionByFinishIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Finish,
 		boolean forceRead )
 	{
@@ -858,7 +858,7 @@ public class CFBamSecSessionTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -866,7 +866,7 @@ public class CFBamSecSessionTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -906,14 +906,14 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId )
+	public List<ICFSecSecSessionObj> readSecSessionBySecProxyIdx( IMCFKeyHash256 SecProxyId )
 	{
 		return( readSecSessionBySecProxyIdx( SecProxyId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId,
+	public List<ICFSecSecSessionObj> readSecSessionBySecProxyIdx( IMCFKeyHash256 SecProxyId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSessionBySecProxyIdx";
@@ -951,7 +951,7 @@ public class CFBamSecSessionTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -959,7 +959,7 @@ public class CFBamSecSessionTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -999,7 +999,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public ICFSecSecSessionObj readCachedSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId )
+	public ICFSecSecSessionObj readCachedSecSessionByIdIdx( IMCFKeyHash256 SecSessionId )
 	{
 		ICFSecSecSessionObj obj = null;
 		obj = readCachedSecSession( SecSessionId );
@@ -1007,7 +1007,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readCachedSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId )
+	public List<ICFSecSecSessionObj> readCachedSecSessionBySecUserIdx( IMCFKeyHash256 SecUserId )
 	{
 		final String S_ProcName = "readCachedSecSessionBySecUserIdx";
 		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
@@ -1025,7 +1025,7 @@ public class CFBamSecSessionTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1033,7 +1033,7 @@ public class CFBamSecSessionTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1084,7 +1084,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public ICFSecSecSessionObj readCachedSecSessionByStartIdx( ICFLibKeyHash256 SecUserId,
+	public ICFSecSecSessionObj readCachedSecSessionByStartIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Start )
 	{
 		ICFSecSecSessionObj obj = null;
@@ -1122,7 +1122,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readCachedSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
+	public List<ICFSecSecSessionObj> readCachedSecSessionByFinishIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Finish )
 	{
 		final String S_ProcName = "readCachedSecSessionByFinishIdx";
@@ -1142,7 +1142,7 @@ public class CFBamSecSessionTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1150,7 +1150,7 @@ public class CFBamSecSessionTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1201,7 +1201,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSessionObj> readCachedSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId )
+	public List<ICFSecSecSessionObj> readCachedSecSessionBySecProxyIdx( IMCFKeyHash256 SecProxyId )
 	{
 		final String S_ProcName = "readCachedSecSessionBySecProxyIdx";
 		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
@@ -1219,7 +1219,7 @@ public class CFBamSecSessionTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1227,7 +1227,7 @@ public class CFBamSecSessionTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1278,7 +1278,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId )
+	public void deepDisposeSecSessionByIdIdx( IMCFKeyHash256 SecSessionId )
 	{
 		ICFSecSecSessionObj obj = readCachedSecSessionByIdIdx( SecSessionId );
 		if( obj != null ) {
@@ -1287,7 +1287,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId )
+	public void deepDisposeSecSessionBySecUserIdx( IMCFKeyHash256 SecUserId )
 	{
 		final String S_ProcName = "deepDisposeSecSessionBySecUserIdx";
 		ICFSecSecSessionObj obj;
@@ -1304,7 +1304,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSessionByStartIdx( ICFLibKeyHash256 SecUserId,
+	public void deepDisposeSecSessionByStartIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Start )
 	{
 		ICFSecSecSessionObj obj = readCachedSecSessionByStartIdx( SecUserId,
@@ -1315,7 +1315,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
+	public void deepDisposeSecSessionByFinishIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Finish )
 	{
 		final String S_ProcName = "deepDisposeSecSessionByFinishIdx";
@@ -1334,7 +1334,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId )
+	public void deepDisposeSecSessionBySecProxyIdx( IMCFKeyHash256 SecProxyId )
 	{
 		final String S_ProcName = "deepDisposeSecSessionBySecProxyIdx";
 		ICFSecSecSessionObj obj;
@@ -1360,8 +1360,8 @@ public class CFBamSecSessionTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSessionObj> pageSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId,
-		ICFLibKeyHash256 priorSecSessionId )
+	public List<ICFSecSecSessionObj> pageSecSessionBySecUserIdx( IMCFKeyHash256 SecUserId,
+		IMCFKeyHash256 priorSecSessionId )
 	{
 		final String S_ProcName = "pageSecSessionBySecUserIdx";
 		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
@@ -1395,9 +1395,9 @@ public class CFBamSecSessionTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSessionObj> pageSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
+	public List<ICFSecSecSessionObj> pageSecSessionByFinishIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Finish,
-		ICFLibKeyHash256 priorSecSessionId )
+		IMCFKeyHash256 priorSecSessionId )
 	{
 		final String S_ProcName = "pageSecSessionByFinishIdx";
 		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
@@ -1431,8 +1431,8 @@ public class CFBamSecSessionTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSessionObj> pageSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId,
-		ICFLibKeyHash256 priorSecSessionId )
+	public List<ICFSecSecSessionObj> pageSecSessionBySecProxyIdx( IMCFKeyHash256 SecProxyId,
+		IMCFKeyHash256 priorSecSessionId )
 	{
 		final String S_ProcName = "pageSecSessionBySecProxyIdx";
 		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
@@ -1473,7 +1473,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deleteSecSessionByIdIdx( ICFLibKeyHash256 SecSessionId )
+	public void deleteSecSessionByIdIdx( IMCFKeyHash256 SecSessionId )
 	{
 		ICFSecSecSessionObj obj = readSecSession(SecSessionId);
 		if( obj != null ) {
@@ -1503,7 +1503,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deleteSecSessionBySecUserIdx( ICFLibKeyHash256 SecUserId )
+	public void deleteSecSessionBySecUserIdx( IMCFKeyHash256 SecUserId )
 	{
 		ICFSecSecSessionBySecUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecUserIdxKey();
 		key.setRequiredSecUserId( SecUserId );
@@ -1537,7 +1537,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deleteSecSessionByStartIdx( ICFLibKeyHash256 SecUserId,
+	public void deleteSecSessionByStartIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Start )
 	{
 		if( indexByStartIdx == null ) {
@@ -1565,7 +1565,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deleteSecSessionByFinishIdx( ICFLibKeyHash256 SecUserId,
+	public void deleteSecSessionByFinishIdx( IMCFKeyHash256 SecUserId,
 		LocalDateTime Finish )
 	{
 		ICFSecSecSessionByFinishIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newByFinishIdxKey();
@@ -1604,7 +1604,7 @@ public class CFBamSecSessionTableObj
 	}
 
 	@Override
-	public void deleteSecSessionBySecProxyIdx( ICFLibKeyHash256 SecProxyId )
+	public void deleteSecSessionBySecProxyIdx( IMCFKeyHash256 SecProxyId )
 	{
 		ICFSecSecSessionBySecProxyIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newBySecProxyIdxKey();
 		key.setOptionalSecProxyId( SecProxyId );

@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -85,7 +85,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	 *		@return The retrieved entity, usually from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaScope r where r.requiredId = :id")
-	CFBamJpaClearSubDep3 get(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaClearSubDep3 get(@Param("id") IMCFKeyHash256 requiredId);
 
 	// CFBamJpaScope specified index readers
 
@@ -97,7 +97,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	 *		@return List&lt;CFBamJpaClearSubDep3&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	List<CFBamJpaClearSubDep3> findByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	List<CFBamJpaClearSubDep3> findByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey entity list reader convenience method for object-based access.
@@ -120,7 +120,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	 *		@return List&lt;CFBamJpaClearSubDep3&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaClearDep r where r.requiredLookupRelation.requiredId = :relationId")
-	List<CFBamJpaClearSubDep3> findByClearDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	List<CFBamJpaClearSubDep3> findByClearDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamClearDepByClearDepIdxKey entity list reader convenience method for object-based access.
@@ -141,7 +141,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	 *		@return List&lt;CFBamJpaClearSubDep3&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaClearDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaClearSubDep3> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaClearSubDep3> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamClearDepByDefSchemaIdxKey entity list reader convenience method for object-based access.
@@ -164,7 +164,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	 *		@return List&lt;CFBamJpaClearSubDep3&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaClearSubDep3 r where r.requiredContainerClearSubDep2.requiredId = :clearSubDep2Id")
-	List<CFBamJpaClearSubDep3> findByClearSubDep2Idx(@Param("clearSubDep2Id") ICFLibKeyHash256 requiredClearSubDep2Id);
+	List<CFBamJpaClearSubDep3> findByClearSubDep2Idx(@Param("clearSubDep2Id") IMCFKeyHash256 requiredClearSubDep2Id);
 
 	/**
 	 *	CFBamClearSubDep3ByClearSubDep2IdxKey entity list reader convenience method for object-based access.
@@ -186,7 +186,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaClearSubDep3 r where r.requiredContainerClearSubDep2.requiredId = :clearSubDep2Id and r.requiredName = :name")
-	CFBamJpaClearSubDep3 findByUNameIdx(@Param("clearSubDep2Id") ICFLibKeyHash256 requiredClearSubDep2Id,
+	CFBamJpaClearSubDep3 findByUNameIdx(@Param("clearSubDep2Id") IMCFKeyHash256 requiredClearSubDep2Id,
 		@Param("name") String requiredName);
 
 	/**
@@ -212,7 +212,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaScope r where r.requiredId = :id")
-	CFBamJpaClearSubDep3 lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaClearSubDep3 lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based lock database instance for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity locks, which may or may not imply an actual database lock during the transaction.
@@ -224,7 +224,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	List<CFBamJpaClearSubDep3> lockByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	List<CFBamJpaClearSubDep3> lockByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey based lock method for object-based access.
@@ -249,7 +249,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaClearDep r where r.requiredLookupRelation.requiredId = :relationId")
-	List<CFBamJpaClearSubDep3> lockByClearDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	List<CFBamJpaClearSubDep3> lockByClearDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamClearDepByClearDepIdxKey based lock method for object-based access.
@@ -272,7 +272,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaClearDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaClearSubDep3> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaClearSubDep3> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamClearDepByDefSchemaIdxKey based lock method for object-based access.
@@ -297,7 +297,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaClearSubDep3 r where r.requiredContainerClearSubDep2.requiredId = :clearSubDep2Id")
-	List<CFBamJpaClearSubDep3> lockByClearSubDep2Idx(@Param("clearSubDep2Id") ICFLibKeyHash256 requiredClearSubDep2Id);
+	List<CFBamJpaClearSubDep3> lockByClearSubDep2Idx(@Param("clearSubDep2Id") IMCFKeyHash256 requiredClearSubDep2Id);
 
 	/**
 	 *	CFBamClearSubDep3ByClearSubDep2IdxKey based lock method for object-based access.
@@ -321,7 +321,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaClearSubDep3 r where r.requiredContainerClearSubDep2.requiredId = :clearSubDep2Id and r.requiredName = :name")
-	CFBamJpaClearSubDep3 lockByUNameIdx(@Param("clearSubDep2Id") ICFLibKeyHash256 requiredClearSubDep2Id,
+	CFBamJpaClearSubDep3 lockByUNameIdx(@Param("clearSubDep2Id") IMCFKeyHash256 requiredClearSubDep2Id,
 		@Param("name") String requiredName);
 
 	/**
@@ -345,7 +345,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaScope r where r.requiredId = :id")
-	void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based delete entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity lock, which may or may not imply an actual database lock during the transaction.
@@ -355,7 +355,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	void deleteByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	void deleteByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey based lock method for object-based access.
@@ -376,7 +376,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaClearDep r where r.requiredLookupRelation.requiredId = :relationId")
-	void deleteByClearDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	void deleteByClearDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamClearDepByClearDepIdxKey based lock method for object-based access.
@@ -395,7 +395,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaClearDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamClearDepByDefSchemaIdxKey based lock method for object-based access.
@@ -416,7 +416,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaClearSubDep3 r where r.requiredContainerClearSubDep2.requiredId = :clearSubDep2Id")
-	void deleteByClearSubDep2Idx(@Param("clearSubDep2Id") ICFLibKeyHash256 requiredClearSubDep2Id);
+	void deleteByClearSubDep2Idx(@Param("clearSubDep2Id") IMCFKeyHash256 requiredClearSubDep2Id);
 
 	/**
 	 *	CFBamClearSubDep3ByClearSubDep2IdxKey based lock method for object-based access.
@@ -436,7 +436,7 @@ public interface CFBamJpaClearSubDep3Repository extends JpaRepository<CFBamJpaCl
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaClearSubDep3 r where r.requiredContainerClearSubDep2.requiredId = :clearSubDep2Id and r.requiredName = :name")
-	void deleteByUNameIdx(@Param("clearSubDep2Id") ICFLibKeyHash256 requiredClearSubDep2Id,
+	void deleteByUNameIdx(@Param("clearSubDep2Id") IMCFKeyHash256 requiredClearSubDep2Id,
 		@Param("name") String requiredName);
 
 	/**

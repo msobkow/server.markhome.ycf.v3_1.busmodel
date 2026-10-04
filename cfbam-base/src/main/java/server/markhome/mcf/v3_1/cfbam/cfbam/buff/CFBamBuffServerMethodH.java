@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,8 +74,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffServerMethodH extends CFBamBuffScopeH
     implements ICFBamServerMethodH
 {
-	protected ICFLibKeyHash256 requiredTableId;
-	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
 	protected String requiredName;
 	protected String optionalShortName;
 	protected String optionalLabel;
@@ -91,8 +91,8 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
     public CFBamBuffServerMethodH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubServerMethod.TABLEID_INIT_VALUE.toString() );
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubServerMethod.TABLEID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
 		requiredName = ICFBamPubServerMethod.NAME_INIT_VALUE;
 		optionalShortName = null;
 		optionalLabel = null;
@@ -113,13 +113,13 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -128,11 +128,11 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
@@ -143,13 +143,13 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -166,7 +166,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortName",
 				1,
 				"value.length()",
@@ -183,7 +183,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalLabel",
 				1,
 				"value.length()",
@@ -200,7 +200,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortDescription",
 				1,
 				"value.length()",
@@ -217,7 +217,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDescription",
 				1,
 				"value.length()",
@@ -234,7 +234,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setOptionalSuffix( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalSuffix",
 				1,
 				"value.length()",
@@ -269,7 +269,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredCodeVis",
 				1,
 				"value" );
@@ -284,13 +284,13 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setRequiredJMethodBody( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredJMethodBody",
 				1,
 				"value" );
 		}
 		else if( value.length() > 2000000 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredJMethodBody",
 				1,
 				"value.length()",
@@ -307,13 +307,13 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setRequiredCppMethodBody( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredCppMethodBody",
 				1,
 				"value" );
 		}
 		else if( value.length() > 2000000 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredCppMethodBody",
 				1,
 				"value.length()",
@@ -330,13 +330,13 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 
 	public void setRequiredCsMethodBody( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredCsMethodBody",
 				1,
 				"value" );
 		}
 		else if( value.length() > 2000000 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredCsMethodBody",
 				1,
 				"value.length()",
@@ -1478,7 +1478,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 			setServerMethod( (CFBamBuffServerMethod)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -1511,7 +1511,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 			setServerMethod( (ICFBamServerMethodH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

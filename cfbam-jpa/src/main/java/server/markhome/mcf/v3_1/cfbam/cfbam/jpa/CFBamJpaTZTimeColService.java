@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,10 +94,10 @@ public class CFBamJpaTZTimeColService {
 		if (data == null) {
 			return( null );
 		}
-		ICFLibKeyHash256 originalRequiredId = data.getRequiredId();
+		IMCFKeyHash256 originalRequiredId = data.getRequiredId();
 		boolean generatedRequiredId = false;
 		if (data.getRequiredContainerScope() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -108,19 +108,19 @@ public class CFBamJpaTZTimeColService {
 				null);
 		}
 		if(data.getRequiredScopeId() == null || data.getRequiredScopeId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredScopeId");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		if (data.getRequiredContainerTable() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -131,7 +131,7 @@ public class CFBamJpaTZTimeColService {
 				null);
 		}
 		if(data.getRequiredTableId() == null || data.getRequiredTableId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTableId");
@@ -144,7 +144,7 @@ public class CFBamJpaTZTimeColService {
 				data.setRequiredRevision(1);
 			}
 			if (data.getRequiredId() == null || data.getRequiredId().isNull()) {
-				data.setRequiredId(new CFLibDbKeyHash256(0));
+				data.setRequiredId(new MCFDbKeyHash256(0));
 				generatedRequiredId = true;
 			}
 			LocalDateTime now = LocalDateTime.now();
@@ -156,7 +156,7 @@ public class CFBamJpaTZTimeColService {
 				if(generatedRequiredId) {
 					data.setRequiredId(originalRequiredId);
 				}
-			throw new CFLibDbException(getClass(),
+			throw new MCFDbException(getClass(),
 				S_ProcName,
 				ex);
 		}
@@ -176,13 +176,13 @@ public class CFBamJpaTZTimeColService {
 			return( null );
 		}
 		if (data.getPKey() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.getPKey()");
 		}
 		if (data.getRequiredContainerScope() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -193,19 +193,19 @@ public class CFBamJpaTZTimeColService {
 				null);
 		}
 		if(data.getRequiredScopeId() == null || data.getRequiredScopeId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredScopeId");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		if (data.getRequiredContainerTable() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -216,16 +216,16 @@ public class CFBamJpaTZTimeColService {
 				null);
 		}
 		if(data.getRequiredTableId() == null || data.getRequiredTableId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTableId");
 		}
 		// Ensure the entity exists and that the revision matches
 		CFBamJpaTZTimeCol existing = cfbam31TZTimeColRepository.findById(($implCommaIJavaOptAtomType$)(data.getPKey()))
-			.orElseThrow(() -> new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
+			.orElseThrow(() -> new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
 		if (existing.getRequiredRevision() != data.getRequiredRevision()) {
-			throw new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
+			throw new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
 		}
 		// Apply superior data relationships of CFBamValue to existing object
 		existing.setRequiredContainerScope(data.getRequiredContainerScope());
@@ -270,7 +270,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return The retrieved entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTZTimeCol find(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaTZTimeCol find(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31TZTimeColRepository.get(requiredId));
 	}
 
@@ -295,7 +295,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return The found entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTZTimeCol findByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	public CFBamJpaTZTimeCol findByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName) {
 		return( cfbam31TZTimeColRepository.findByUNameIdx(requiredScopeId,
 			requiredName));
@@ -321,7 +321,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return List&lt;CFBamJpaTZTimeCol&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> findByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId) {
+	public List<CFBamJpaTZTimeCol> findByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId) {
 		return( cfbam31TZTimeColRepository.findByScopeIdx(requiredScopeId));
 	}
 
@@ -345,7 +345,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return List&lt;CFBamJpaTZTimeCol&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaTZTimeCol> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31TZTimeColRepository.findByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -369,7 +369,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return List&lt;CFBamJpaTZTimeCol&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> findByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public List<CFBamJpaTZTimeCol> findByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		return( cfbam31TZTimeColRepository.findByPrevIdx(optionalPrevId));
 	}
 
@@ -393,7 +393,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return List&lt;CFBamJpaTZTimeCol&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> findByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public List<CFBamJpaTZTimeCol> findByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		return( cfbam31TZTimeColRepository.findByNextIdx(optionalNextId));
 	}
 
@@ -418,8 +418,8 @@ public class CFBamJpaTZTimeColService {
 	 *		@return List&lt;CFBamJpaTZTimeCol&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> findByContPrevIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public List<CFBamJpaTZTimeCol> findByContPrevIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		return( cfbam31TZTimeColRepository.findByContPrevIdx(requiredScopeId,
 			optionalPrevId));
 	}
@@ -445,8 +445,8 @@ public class CFBamJpaTZTimeColService {
 	 *		@return List&lt;CFBamJpaTZTimeCol&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> findByContNextIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public List<CFBamJpaTZTimeCol> findByContNextIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		return( cfbam31TZTimeColRepository.findByContNextIdx(requiredScopeId,
 			optionalNextId));
 	}
@@ -477,7 +477,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return List&lt;CFBamJpaTZTimeCol&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> findByTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId) {
+	public List<CFBamJpaTZTimeCol> findByTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId) {
 		return( cfbam31TZTimeColRepository.findByTableIdx(requiredTableId));
 	}
 
@@ -503,7 +503,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTZTimeCol lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaTZTimeCol lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31TZTimeColRepository.lockByIdIdx(requiredId));
 	}
 
@@ -516,7 +516,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTZTimeCol lockByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	public CFBamJpaTZTimeCol lockByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName) {
 		return( cfbam31TZTimeColRepository.lockByUNameIdx(requiredScopeId,
 			requiredName));
@@ -542,7 +542,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> lockByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId) {
+	public List<CFBamJpaTZTimeCol> lockByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId) {
 		return( cfbam31TZTimeColRepository.lockByScopeIdx(requiredScopeId));
 	}
 
@@ -566,7 +566,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaTZTimeCol> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31TZTimeColRepository.lockByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -590,7 +590,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> lockByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public List<CFBamJpaTZTimeCol> lockByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		return( cfbam31TZTimeColRepository.lockByPrevIdx(optionalPrevId));
 	}
 
@@ -614,7 +614,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> lockByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public List<CFBamJpaTZTimeCol> lockByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		return( cfbam31TZTimeColRepository.lockByNextIdx(optionalNextId));
 	}
 
@@ -639,8 +639,8 @@ public class CFBamJpaTZTimeColService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> lockByContPrevIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public List<CFBamJpaTZTimeCol> lockByContPrevIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		return( cfbam31TZTimeColRepository.lockByContPrevIdx(requiredScopeId,
 			optionalPrevId));
 	}
@@ -666,8 +666,8 @@ public class CFBamJpaTZTimeColService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> lockByContNextIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public List<CFBamJpaTZTimeCol> lockByContNextIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		return( cfbam31TZTimeColRepository.lockByContNextIdx(requiredScopeId,
 			optionalNextId));
 	}
@@ -698,7 +698,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTZTimeCol> lockByTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId) {
+	public List<CFBamJpaTZTimeCol> lockByTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId) {
 		return( cfbam31TZTimeColRepository.lockByTableIdx(requiredTableId));
 	}
 
@@ -722,7 +722,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@param requiredId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		cfbam31TZTimeColRepository.deleteByIdIdx(requiredId);
 	}
 
@@ -733,7 +733,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@param requiredName
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	public void deleteByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName) {
 		cfbam31TZTimeColRepository.deleteByUNameIdx(requiredScopeId,
 			requiredName);
@@ -755,7 +755,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@param requiredScopeId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId) {
+	public void deleteByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId) {
 		cfbam31TZTimeColRepository.deleteByScopeIdx(requiredScopeId);
 	}
 
@@ -775,7 +775,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@param optionalDefSchemaId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		cfbam31TZTimeColRepository.deleteByDefSchemaIdx(optionalDefSchemaId);
 	}
 
@@ -795,7 +795,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@param optionalPrevId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public void deleteByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		cfbam31TZTimeColRepository.deleteByPrevIdx(optionalPrevId);
 	}
 
@@ -815,7 +815,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@param optionalNextId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public void deleteByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		cfbam31TZTimeColRepository.deleteByNextIdx(optionalNextId);
 	}
 
@@ -836,8 +836,8 @@ public class CFBamJpaTZTimeColService {
 	 *		@param optionalPrevId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByContPrevIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public void deleteByContPrevIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		cfbam31TZTimeColRepository.deleteByContPrevIdx(requiredScopeId,
 			optionalPrevId);
 	}
@@ -859,8 +859,8 @@ public class CFBamJpaTZTimeColService {
 	 *		@param optionalNextId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByContNextIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public void deleteByContNextIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		cfbam31TZTimeColRepository.deleteByContNextIdx(requiredScopeId,
 			optionalNextId);
 	}
@@ -887,7 +887,7 @@ public class CFBamJpaTZTimeColService {
 	 *		@param requiredTableId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId) {
+	public void deleteByTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId) {
 		cfbam31TZTimeColRepository.deleteByTableIdx(requiredTableId);
 	}
 

@@ -95,10 +95,10 @@ public interface ICFBamPubIndexTweakEditObj
 	void setRequiredContainerIndexDef( ICFBamPubIndexObj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute IndexId.
+	 *	Get the required MCFDbKeyHash256 attribute IndexId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute IndexId.
+	 *	@return	The required MCFDbKeyHash256 attribute IndexId.
 	 */
-	CFLibDbKeyHash256 getRequiredIndexId();
+	MCFDbKeyHash256 getRequiredIndexId();
 
 }

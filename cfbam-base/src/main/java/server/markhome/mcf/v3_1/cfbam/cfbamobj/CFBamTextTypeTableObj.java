@@ -158,7 +158,7 @@ public class CFBamTextTypeTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamTextTypeTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamTextTypeTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -630,7 +630,7 @@ public class CFBamTextTypeTableObj
 			locked = (ICFBamTextTypeObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockTextType", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockTextType", pkey );
 		}
 		return( locked );
 	}
@@ -665,7 +665,7 @@ public class CFBamTextTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -673,7 +673,7 @@ public class CFBamTextTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -725,7 +725,7 @@ public class CFBamTextTypeTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -733,7 +733,7 @@ public class CFBamTextTypeTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -770,21 +770,21 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public ICFBamTextTypeObj readTextTypeByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamTextTypeObj readTextTypeByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readTextTypeByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamTextTypeObj readTextTypeByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamTextTypeObj readTextTypeByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamTextTypeObj obj = readTextType( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamTextTypeObj readTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTextTypeObj readTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readTextTypeByUNameIdx( ScopeId,
@@ -793,7 +793,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public ICFBamTextTypeObj readTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTextTypeObj readTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -822,14 +822,14 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamTextTypeObj> readTextTypeByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readTextTypeByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamTextTypeObj> readTextTypeByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTextTypeByScopeIdx";
@@ -867,7 +867,7 @@ public class CFBamTextTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -875,7 +875,7 @@ public class CFBamTextTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -915,14 +915,14 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamTextTypeObj> readTextTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readTextTypeByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamTextTypeObj> readTextTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTextTypeByDefSchemaIdx";
@@ -960,7 +960,7 @@ public class CFBamTextTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -968,7 +968,7 @@ public class CFBamTextTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1008,14 +1008,14 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamTextTypeObj> readTextTypeByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readTextTypeByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamTextTypeObj> readTextTypeByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTextTypeByPrevIdx";
@@ -1053,7 +1053,7 @@ public class CFBamTextTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1061,7 +1061,7 @@ public class CFBamTextTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1101,14 +1101,14 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamTextTypeObj> readTextTypeByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readTextTypeByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamTextTypeObj> readTextTypeByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTextTypeByNextIdx";
@@ -1146,7 +1146,7 @@ public class CFBamTextTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1154,7 +1154,7 @@ public class CFBamTextTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1194,8 +1194,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamTextTypeObj> readTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readTextTypeByContPrevIdx( ScopeId,
 			PrevId,
@@ -1203,8 +1203,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamTextTypeObj> readTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTextTypeByContPrevIdx";
@@ -1244,7 +1244,7 @@ public class CFBamTextTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1252,7 +1252,7 @@ public class CFBamTextTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1292,8 +1292,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamTextTypeObj> readTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readTextTypeByContNextIdx( ScopeId,
 			NextId,
@@ -1301,8 +1301,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamTextTypeObj> readTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTextTypeByContNextIdx";
@@ -1342,7 +1342,7 @@ public class CFBamTextTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1350,7 +1350,7 @@ public class CFBamTextTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1390,14 +1390,14 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public List<ICFBamTextTypeObj> readTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		return( readTextTypeBySchemaIdx( SchemaDefId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
+	public List<ICFBamTextTypeObj> readTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTextTypeBySchemaIdx";
@@ -1435,7 +1435,7 @@ public class CFBamTextTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1443,7 +1443,7 @@ public class CFBamTextTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1483,7 +1483,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public ICFBamTextTypeObj readCachedTextTypeByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamTextTypeObj readCachedTextTypeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTextTypeObj obj = null;
 		obj = readCachedTextType( Id );
@@ -1491,7 +1491,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public ICFBamTextTypeObj readCachedTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTextTypeObj readCachedTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTextTypeObj obj = null;
@@ -1529,7 +1529,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readCachedTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamTextTypeObj> readCachedTextTypeByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedTextTypeByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1547,7 +1547,7 @@ public class CFBamTextTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1555,7 +1555,7 @@ public class CFBamTextTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1606,7 +1606,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readCachedTextTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamTextTypeObj> readCachedTextTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedTextTypeByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1624,7 +1624,7 @@ public class CFBamTextTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1632,7 +1632,7 @@ public class CFBamTextTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1683,7 +1683,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readCachedTextTypeByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamTextTypeObj> readCachedTextTypeByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTextTypeByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1701,7 +1701,7 @@ public class CFBamTextTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1709,7 +1709,7 @@ public class CFBamTextTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1760,7 +1760,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readCachedTextTypeByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamTextTypeObj> readCachedTextTypeByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTextTypeByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1778,7 +1778,7 @@ public class CFBamTextTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1786,7 +1786,7 @@ public class CFBamTextTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1837,8 +1837,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readCachedTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamTextTypeObj> readCachedTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTextTypeByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1857,7 +1857,7 @@ public class CFBamTextTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1865,7 +1865,7 @@ public class CFBamTextTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1916,8 +1916,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readCachedTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamTextTypeObj> readCachedTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTextTypeByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1936,7 +1936,7 @@ public class CFBamTextTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1944,7 +1944,7 @@ public class CFBamTextTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1995,7 +1995,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTextTypeObj> readCachedTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public List<ICFBamTextTypeObj> readCachedTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "readCachedTextTypeBySchemaIdx";
 		ICFBamTextTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTextType().newBySchemaIdxKey();
@@ -2013,7 +2013,7 @@ public class CFBamTextTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2021,7 +2021,7 @@ public class CFBamTextTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2072,7 +2072,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeTextTypeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTextTypeObj obj = readCachedTextTypeByIdIdx( Id );
 		if( obj != null ) {
@@ -2081,7 +2081,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTextTypeObj obj = readCachedTextTypeByUNameIdx( ScopeId,
@@ -2092,7 +2092,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeTextTypeByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeTextTypeByScopeIdx";
 		ICFBamTextTypeObj obj;
@@ -2109,7 +2109,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeTextTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeTextTypeByDefSchemaIdx";
 		ICFBamTextTypeObj obj;
@@ -2126,7 +2126,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeTextTypeByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTextTypeByPrevIdx";
 		ICFBamTextTypeObj obj;
@@ -2143,7 +2143,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeTextTypeByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTextTypeByNextIdx";
 		ICFBamTextTypeObj obj;
@@ -2160,8 +2160,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTextTypeByContPrevIdx";
 		ICFBamTextTypeObj obj;
@@ -2179,8 +2179,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTextTypeByContNextIdx";
 		ICFBamTextTypeObj obj;
@@ -2198,7 +2198,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public void deepDisposeTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "deepDisposeTextTypeBySchemaIdx";
 		ICFBamTextTypeObj obj;
@@ -2243,7 +2243,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteTextTypeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTextTypeObj obj = readTextType(Id);
 		if( obj != null ) {
@@ -2273,7 +2273,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2301,7 +2301,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteTextTypeByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2335,7 +2335,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteTextTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2369,7 +2369,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteTextTypeByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2403,7 +2403,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteTextTypeByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2437,8 +2437,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2476,8 +2476,8 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2515,7 +2515,7 @@ public class CFBamTextTypeTableObj
 	}
 
 	@Override
-	public void deleteTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public void deleteTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		ICFBamTextTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTextType().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
@@ -2557,7 +2557,7 @@ public class CFBamTextTypeTableObj
 	public ICFBamTextTypeObj moveUpTextType( ICFBamTextTypeObj Obj ) {
 		ICFBamTextTypeObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpTextType" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpTextType" );
 		}
 		ICFBamTextType rec = schema.getCFBamBackingStore().getTableTextType().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2585,7 +2585,7 @@ public class CFBamTextTypeTableObj
 	public ICFBamTextTypeObj moveDownTextType( ICFBamTextTypeObj Obj ) {
 		ICFBamTextTypeObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownTextType" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownTextType" );
 		}
 		ICFBamTextType rec = schema.getCFBamBackingStore().getTableTextType().moveRecDown( null,
 			Obj.getRequiredId(),

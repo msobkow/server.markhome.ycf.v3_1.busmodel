@@ -119,7 +119,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	The Param-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubParamObj readParam( ICFLibKeyHash256 pkey );
+	ICFBamPubParamObj readParam( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a Param-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubParamTableObj
 	 *	@return	The Param-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubParamObj readParam( ICFLibKeyHash256 pkey,
+	ICFBamPubParamObj readParam( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubParamObj readCachedParam( ICFLibKeyHash256 pkey );
+	ICFBamPubParamObj readCachedParam( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeParam( ICFBamPubParamObj obj );
 
-	void deepDisposeParam( ICFLibKeyHash256 pkey );
+	void deepDisposeParam( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubParamObj lockParam( ICFLibKeyHash256 pkey );
+	ICFBamPubParamObj lockParam( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Param-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	CFBamPubParamObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubParamObj readParamByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubParamObj readParamByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubParamObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	CFBamPubParamObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubParamObj readParamByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubParamObj readParamByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	CFBamPubParamObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubParamObj readParamByUNameIdx(CFLibDbKeyHash256 ServerMethodId,
+	ICFBamPubParamObj readParamByUNameIdx(MCFDbKeyHash256 ServerMethodId,
 		String Name );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	CFBamPubParamObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubParamObj readParamByUNameIdx(CFLibDbKeyHash256 ServerMethodId,
+	ICFBamPubParamObj readParamByUNameIdx(MCFDbKeyHash256 ServerMethodId,
 		String Name,
 		boolean forceRead );
 
@@ -217,7 +217,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate ServerMethodIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByServerMethodIdx( CFLibDbKeyHash256 ServerMethodId );
+	List<ICFBamPubParamObj> readParamByServerMethodIdx( MCFDbKeyHash256 ServerMethodId );
 
 	/**
 	 *	Get the map of CFBamPubParamObj instances sorted by their primary keys for the duplicate ServerMethodIdx key.
@@ -227,7 +227,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate ServerMethodIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByServerMethodIdx( CFLibDbKeyHash256 ServerMethodId,
+	List<ICFBamPubParamObj> readParamByServerMethodIdx( MCFDbKeyHash256 ServerMethodId,
 		boolean forceRead );
 
 	/**
@@ -238,7 +238,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubParamObj> readParamByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubParamObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubParamObj> readParamByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -259,7 +259,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate ServerTypeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByServerTypeIdx( CFLibDbKeyHash256 TypeId );
+	List<ICFBamPubParamObj> readParamByServerTypeIdx( MCFDbKeyHash256 TypeId );
 
 	/**
 	 *	Get the map of CFBamPubParamObj instances sorted by their primary keys for the duplicate ServerTypeIdx key.
@@ -269,7 +269,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate ServerTypeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByServerTypeIdx( CFLibDbKeyHash256 TypeId,
+	List<ICFBamPubParamObj> readParamByServerTypeIdx( MCFDbKeyHash256 TypeId,
 		boolean forceRead );
 
 	/**
@@ -280,7 +280,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubParamObj> readParamByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubParamObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -290,7 +290,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubParamObj> readParamByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -301,7 +301,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubParamObj> readParamByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubParamObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -311,7 +311,7 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamPubParamObj> readParamByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -324,8 +324,8 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByContPrevIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubParamObj> readParamByContPrevIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubParamObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -337,8 +337,8 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByContPrevIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubParamObj> readParamByContPrevIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -351,8 +351,8 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByContNextIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubParamObj> readParamByContNextIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubParamObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -364,51 +364,51 @@ public interface ICFBamPubParamTableObj
 	 *	@return	List of CFBamPubParamObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubParamObj> readParamByContNextIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamPubParamObj> readParamByContNextIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamPubParamObj readCachedParamByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubParamObj readCachedParamByIdIdx( MCFDbKeyHash256 Id );
 
-	ICFBamPubParamObj readCachedParamByUNameIdx( CFLibDbKeyHash256 ServerMethodId,
+	ICFBamPubParamObj readCachedParamByUNameIdx( MCFDbKeyHash256 ServerMethodId,
 		String Name );
 
-	List<ICFBamPubParamObj> readCachedParamByServerMethodIdx( CFLibDbKeyHash256 ServerMethodId );
+	List<ICFBamPubParamObj> readCachedParamByServerMethodIdx( MCFDbKeyHash256 ServerMethodId );
 
-	List<ICFBamPubParamObj> readCachedParamByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubParamObj> readCachedParamByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubParamObj> readCachedParamByServerTypeIdx( CFLibDbKeyHash256 TypeId );
+	List<ICFBamPubParamObj> readCachedParamByServerTypeIdx( MCFDbKeyHash256 TypeId );
 
-	List<ICFBamPubParamObj> readCachedParamByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubParamObj> readCachedParamByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubParamObj> readCachedParamByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubParamObj> readCachedParamByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubParamObj> readCachedParamByContPrevIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubParamObj> readCachedParamByContPrevIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubParamObj> readCachedParamByContNextIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubParamObj> readCachedParamByContNextIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeParamByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeParamByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeParamByUNameIdx( CFLibDbKeyHash256 ServerMethodId,
+	void deepDisposeParamByUNameIdx( MCFDbKeyHash256 ServerMethodId,
 		String Name );
 
-	void deepDisposeParamByServerMethodIdx( CFLibDbKeyHash256 ServerMethodId );
+	void deepDisposeParamByServerMethodIdx( MCFDbKeyHash256 ServerMethodId );
 
-	void deepDisposeParamByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeParamByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeParamByServerTypeIdx( CFLibDbKeyHash256 TypeId );
+	void deepDisposeParamByServerTypeIdx( MCFDbKeyHash256 TypeId );
 
-	void deepDisposeParamByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeParamByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeParamByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeParamByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeParamByContPrevIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeParamByContPrevIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeParamByContNextIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeParamByContNextIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -425,7 +425,7 @@ public interface ICFBamPubParamTableObj
 	 *
 	 *	@param	Id	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteParamByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -434,7 +434,7 @@ public interface ICFBamPubParamTableObj
 	 *
 	 *	@param	Name	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByUNameIdx(CFLibDbKeyHash256 ServerMethodId,
+	void deleteParamByUNameIdx(MCFDbKeyHash256 ServerMethodId,
 		String Name );
 
 	/**
@@ -442,35 +442,35 @@ public interface ICFBamPubParamTableObj
 	 *
 	 *	@param	ServerMethodId	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByServerMethodIdx( CFLibDbKeyHash256 ServerMethodId );
+	void deleteParamByServerMethodIdx( MCFDbKeyHash256 ServerMethodId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteParamByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TypeId	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByServerTypeIdx( CFLibDbKeyHash256 TypeId );
+	void deleteParamByServerTypeIdx( MCFDbKeyHash256 TypeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteParamByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteParamByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -479,8 +479,8 @@ public interface ICFBamPubParamTableObj
 	 *
 	 *	@param	PrevId	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByContPrevIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteParamByContPrevIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -489,8 +489,8 @@ public interface ICFBamPubParamTableObj
 	 *
 	 *	@param	NextId	The Param key attribute of the instance generating the id.
 	 */
-	void deleteParamByContNextIdx( CFLibDbKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 NextId );
+	void deleteParamByContNextIdx( MCFDbKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the CFBamPubParamObj instance up in the chain.  The instance is always refreshed.

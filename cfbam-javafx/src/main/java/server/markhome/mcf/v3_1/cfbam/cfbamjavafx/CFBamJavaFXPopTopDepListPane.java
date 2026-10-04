@@ -96,7 +96,7 @@ implements ICFBamJavaFXPopTopDepPaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamPopTopDepObj> dataTable = null;
-	protected TableColumn<ICFBamPopTopDepObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamPopTopDepObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamPopTopDepObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamPopTopDepObj, ICFBamRelationObj> tableColumnLookupRelation = null;
 	protected TableColumn<ICFBamPopTopDepObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
@@ -188,24 +188,24 @@ implements ICFBamJavaFXPopTopDepPaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamPopTopDepObj>();
-		tableColumnId = new TableColumn<ICFBamPopTopDepObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamPopTopDepObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamPopTopDepObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamPopTopDepObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamPopTopDepObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamPopTopDepObj, IMCFKeyHash256> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamPopTopDepObj,ICFLibKeyHash256>,TableCell<ICFBamPopTopDepObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamPopTopDepObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamPopTopDepObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamPopTopDepObj,IMCFKeyHash256>,TableCell<ICFBamPopTopDepObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamPopTopDepObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamPopTopDepObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamPopTopDepObj>();
 			}

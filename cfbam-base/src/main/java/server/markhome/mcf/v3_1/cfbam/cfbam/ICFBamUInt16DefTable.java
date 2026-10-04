@@ -119,7 +119,7 @@ public interface ICFBamUInt16DefTable
 	 *	@param	Name	The UInt16Def key attribute of the instance generating the id.
 	 */
 	void deleteUInt16DefByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -139,7 +139,7 @@ public interface ICFBamUInt16DefTable
 	 *	@param	ScopeId	The UInt16Def key attribute of the instance generating the id.
 	 */
 	void deleteUInt16DefByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the UInt16Def instances identified by the key ScopeIdx.
@@ -158,7 +158,7 @@ public interface ICFBamUInt16DefTable
 	 *	@param	DefSchemaId	The UInt16Def key attribute of the instance generating the id.
 	 */
 	void deleteUInt16DefByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the UInt16Def instances identified by the key DefSchemaIdx.
@@ -177,7 +177,7 @@ public interface ICFBamUInt16DefTable
 	 *	@param	PrevId	The UInt16Def key attribute of the instance generating the id.
 	 */
 	void deleteUInt16DefByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the UInt16Def instances identified by the key PrevIdx.
@@ -196,7 +196,7 @@ public interface ICFBamUInt16DefTable
 	 *	@param	NextId	The UInt16Def key attribute of the instance generating the id.
 	 */
 	void deleteUInt16DefByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the UInt16Def instances identified by the key NextIdx.
@@ -217,8 +217,8 @@ public interface ICFBamUInt16DefTable
 	 *	@param	PrevId	The UInt16Def key attribute of the instance generating the id.
 	 */
 	void deleteUInt16DefByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the UInt16Def instances identified by the key ContPrevIdx.
@@ -239,8 +239,8 @@ public interface ICFBamUInt16DefTable
 	 *	@param	NextId	The UInt16Def key attribute of the instance generating the id.
 	 */
 	void deleteUInt16DefByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the UInt16Def instances identified by the key ContNextIdx.
@@ -299,7 +299,7 @@ public interface ICFBamUInt16DefTable
 	 *		no such existing key value.
 	 */
 	ICFBamUInt16Def readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived UInt16Def record instance identified by the unique key UNameIdx.
@@ -314,7 +314,7 @@ public interface ICFBamUInt16DefTable
 	 *		no such existing key value.
 	 */
 	ICFBamUInt16Def readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -327,7 +327,7 @@ public interface ICFBamUInt16DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt16Def[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived UInt16Def record instances identified by the duplicate key DefSchemaIdx.
@@ -339,7 +339,7 @@ public interface ICFBamUInt16DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt16Def[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived UInt16Def record instances identified by the duplicate key PrevIdx.
@@ -351,7 +351,7 @@ public interface ICFBamUInt16DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt16Def[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived UInt16Def record instances identified by the duplicate key NextIdx.
@@ -363,7 +363,7 @@ public interface ICFBamUInt16DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt16Def[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived UInt16Def record instances identified by the duplicate key ContPrevIdx.
@@ -377,8 +377,8 @@ public interface ICFBamUInt16DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt16Def[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived UInt16Def record instances identified by the duplicate key ContNextIdx.
@@ -392,8 +392,8 @@ public interface ICFBamUInt16DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt16Def[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read the specific UInt16Def record instance identified by the primary key.
@@ -405,7 +405,7 @@ public interface ICFBamUInt16DefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -420,7 +420,7 @@ public interface ICFBamUInt16DefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -444,10 +444,10 @@ public interface ICFBamUInt16DefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific UInt16Def record instance identified by the unique key UNameIdx.
@@ -461,10 +461,10 @@ public interface ICFBamUInt16DefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -476,10 +476,10 @@ public interface ICFBamUInt16DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific UInt16Def record instances identified by the duplicate key DefSchemaIdx.
@@ -490,10 +490,10 @@ public interface ICFBamUInt16DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific UInt16Def record instances identified by the duplicate key PrevIdx.
@@ -504,10 +504,10 @@ public interface ICFBamUInt16DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific UInt16Def record instances identified by the duplicate key NextIdx.
@@ -518,10 +518,10 @@ public interface ICFBamUInt16DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific UInt16Def record instances identified by the duplicate key ContPrevIdx.
@@ -534,11 +534,11 @@ public interface ICFBamUInt16DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific UInt16Def record instances identified by the duplicate key ContNextIdx.
@@ -551,11 +551,11 @@ public interface ICFBamUInt16DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt16Def[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -563,7 +563,7 @@ public interface ICFBamUInt16DefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamUInt16Def moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -572,6 +572,6 @@ public interface ICFBamUInt16DefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamUInt16Def moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

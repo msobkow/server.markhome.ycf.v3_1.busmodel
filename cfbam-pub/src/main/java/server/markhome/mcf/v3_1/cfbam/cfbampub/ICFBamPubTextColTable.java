@@ -111,7 +111,7 @@ public interface ICFBamPubTextColTable
 	 *	@param	TableId	The TextCol key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTextColByTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId );
+		MCFDbKeyHash256 argTableId );
 
 	/**
 	 *	Delete the TextCol instances identified by the key TableIdx.
@@ -130,7 +130,7 @@ public interface ICFBamPubTextColTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteTextColByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the TextCol instances identified by the key UNameIdx.
 	 *
@@ -141,7 +141,7 @@ public interface ICFBamPubTextColTable
 	 *	@param	Name	The TextCol key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTextColByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -161,7 +161,7 @@ public interface ICFBamPubTextColTable
 	 *	@param	ScopeId	The TextCol key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTextColByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		MCFDbKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the TextCol instances identified by the key ScopeIdx.
@@ -180,7 +180,7 @@ public interface ICFBamPubTextColTable
 	 *	@param	DefSchemaId	The TextCol key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTextColByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the TextCol instances identified by the key DefSchemaIdx.
@@ -199,7 +199,7 @@ public interface ICFBamPubTextColTable
 	 *	@param	PrevId	The TextCol key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTextColByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TextCol instances identified by the key PrevIdx.
@@ -218,7 +218,7 @@ public interface ICFBamPubTextColTable
 	 *	@param	NextId	The TextCol key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTextColByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TextCol instances identified by the key NextIdx.
@@ -239,8 +239,8 @@ public interface ICFBamPubTextColTable
 	 *	@param	PrevId	The TextCol key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTextColByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TextCol instances identified by the key ContPrevIdx.
@@ -261,8 +261,8 @@ public interface ICFBamPubTextColTable
 	 *	@param	NextId	The TextCol key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTextColByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TextCol instances identified by the key ContNextIdx.
@@ -286,7 +286,7 @@ public interface ICFBamPubTextColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTextCol pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived TextCol record instance by primary key.
@@ -299,7 +299,7 @@ public interface ICFBamPubTextColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTextCol publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all TextCol instances.
@@ -321,7 +321,7 @@ public interface ICFBamPubTextColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTextCol pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read the derived TextCol record instance identified by the unique key UNameIdx.
@@ -336,7 +336,7 @@ public interface ICFBamPubTextColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTextCol pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -349,7 +349,7 @@ public interface ICFBamPubTextColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTextCol[] pubreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived TextCol record instances identified by the duplicate key DefSchemaIdx.
@@ -361,7 +361,7 @@ public interface ICFBamPubTextColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTextCol[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived TextCol record instances identified by the duplicate key PrevIdx.
@@ -373,7 +373,7 @@ public interface ICFBamPubTextColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTextCol[] pubreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TextCol record instances identified by the duplicate key NextIdx.
@@ -385,7 +385,7 @@ public interface ICFBamPubTextColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTextCol[] pubreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TextCol record instances identified by the duplicate key ContPrevIdx.
@@ -399,8 +399,8 @@ public interface ICFBamPubTextColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTextCol[] pubreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TextCol record instances identified by the duplicate key ContNextIdx.
@@ -414,8 +414,8 @@ public interface ICFBamPubTextColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTextCol[] pubreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TextCol record instances identified by the duplicate key TableIdx.
@@ -427,7 +427,7 @@ public interface ICFBamPubTextColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTextCol[] pubreadDerivedByTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Read the specific TextCol record instance identified by the primary key.
@@ -439,10 +439,10 @@ public interface ICFBamPubTextColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific TextCol record instance identified by the primary key.
@@ -454,10 +454,10 @@ public interface ICFBamPubTextColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific TextCol record instances.
@@ -478,10 +478,10 @@ public interface ICFBamPubTextColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read the specific TextCol record instance identified by the unique key UNameIdx.
@@ -495,10 +495,10 @@ public interface ICFBamPubTextColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -510,10 +510,10 @@ public interface ICFBamPubTextColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol[] pubreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific TextCol record instances identified by the duplicate key DefSchemaIdx.
@@ -524,10 +524,10 @@ public interface ICFBamPubTextColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific TextCol record instances identified by the duplicate key PrevIdx.
@@ -538,10 +538,10 @@ public interface ICFBamPubTextColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol[] pubreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TextCol record instances identified by the duplicate key NextIdx.
@@ -552,10 +552,10 @@ public interface ICFBamPubTextColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol[] pubreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TextCol record instances identified by the duplicate key ContPrevIdx.
@@ -568,11 +568,11 @@ public interface ICFBamPubTextColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol[] pubreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TextCol record instances identified by the duplicate key ContNextIdx.
@@ -585,11 +585,11 @@ public interface ICFBamPubTextColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol[] pubreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TextCol record instances identified by the duplicate key TableIdx.
@@ -600,10 +600,10 @@ public interface ICFBamPubTextColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextCol[] pubreadRecByTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -611,7 +611,7 @@ public interface ICFBamPubTextColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamPubTextCol pubmoveRecUp( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		MCFDbKeyHash256 Id,
 		int revision );
 
 	/**
@@ -620,6 +620,6 @@ public interface ICFBamPubTextColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamPubTextCol pubmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

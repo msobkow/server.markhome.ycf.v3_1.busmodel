@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -63,14 +63,14 @@ import server.markhome.mcf.v3_1.cfint.cfintpub.*;
  */
 public interface ICFBamPubTweakByUDefIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredScopeId();
-	public void setRequiredScopeId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalDefSchemaTenantId();
-	public void setOptionalDefSchemaTenantId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredScopeId();
+	public void setRequiredScopeId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalDefSchemaTenantId();
+	public void setOptionalDefSchemaTenantId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( MCFDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

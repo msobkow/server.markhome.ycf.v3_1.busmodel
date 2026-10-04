@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -85,7 +85,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	 *		@return The retrieved entity, usually from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaScope r where r.requiredId = :id")
-	CFBamJpaDelSubDep1 get(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaDelSubDep1 get(@Param("id") IMCFKeyHash256 requiredId);
 
 	// CFBamJpaScope specified index readers
 
@@ -97,7 +97,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	 *		@return List&lt;CFBamJpaDelSubDep1&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	List<CFBamJpaDelSubDep1> findByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	List<CFBamJpaDelSubDep1> findByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey entity list reader convenience method for object-based access.
@@ -120,7 +120,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	 *		@return List&lt;CFBamJpaDelSubDep1&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaDelDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaDelSubDep1> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaDelSubDep1> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamDelDepByDefSchemaIdxKey entity list reader convenience method for object-based access.
@@ -141,7 +141,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	 *		@return List&lt;CFBamJpaDelSubDep1&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaDelDep r where r.requiredLookupRelation.requiredId = :relationId")
-	List<CFBamJpaDelSubDep1> findByDelDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	List<CFBamJpaDelSubDep1> findByDelDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamDelDepByDelDepIdxKey entity list reader convenience method for object-based access.
@@ -164,7 +164,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	 *		@return List&lt;CFBamJpaDelSubDep1&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaDelSubDep1 r where r.requiredContainerDelTopDep.requiredId = :delTopDepId")
-	List<CFBamJpaDelSubDep1> findByDelTopDepIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId);
+	List<CFBamJpaDelSubDep1> findByDelTopDepIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId);
 
 	/**
 	 *	CFBamDelSubDep1ByDelTopDepIdxKey entity list reader convenience method for object-based access.
@@ -186,7 +186,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaDelSubDep1 r where r.requiredContainerDelTopDep.requiredId = :delTopDepId and r.requiredName = :name")
-	CFBamJpaDelSubDep1 findByUNameIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId,
+	CFBamJpaDelSubDep1 findByUNameIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId,
 		@Param("name") String requiredName);
 
 	/**
@@ -212,7 +212,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaScope r where r.requiredId = :id")
-	CFBamJpaDelSubDep1 lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaDelSubDep1 lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based lock database instance for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity locks, which may or may not imply an actual database lock during the transaction.
@@ -224,7 +224,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	List<CFBamJpaDelSubDep1> lockByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	List<CFBamJpaDelSubDep1> lockByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey based lock method for object-based access.
@@ -249,7 +249,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaDelDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaDelSubDep1> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaDelSubDep1> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamDelDepByDefSchemaIdxKey based lock method for object-based access.
@@ -272,7 +272,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaDelDep r where r.requiredLookupRelation.requiredId = :relationId")
-	List<CFBamJpaDelSubDep1> lockByDelDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	List<CFBamJpaDelSubDep1> lockByDelDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamDelDepByDelDepIdxKey based lock method for object-based access.
@@ -297,7 +297,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaDelSubDep1 r where r.requiredContainerDelTopDep.requiredId = :delTopDepId")
-	List<CFBamJpaDelSubDep1> lockByDelTopDepIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId);
+	List<CFBamJpaDelSubDep1> lockByDelTopDepIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId);
 
 	/**
 	 *	CFBamDelSubDep1ByDelTopDepIdxKey based lock method for object-based access.
@@ -321,7 +321,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaDelSubDep1 r where r.requiredContainerDelTopDep.requiredId = :delTopDepId and r.requiredName = :name")
-	CFBamJpaDelSubDep1 lockByUNameIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId,
+	CFBamJpaDelSubDep1 lockByUNameIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId,
 		@Param("name") String requiredName);
 
 	/**
@@ -345,7 +345,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaScope r where r.requiredId = :id")
-	void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based delete entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity lock, which may or may not imply an actual database lock during the transaction.
@@ -355,7 +355,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	void deleteByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	void deleteByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey based lock method for object-based access.
@@ -376,7 +376,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaDelDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamDelDepByDefSchemaIdxKey based lock method for object-based access.
@@ -395,7 +395,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaDelDep r where r.requiredLookupRelation.requiredId = :relationId")
-	void deleteByDelDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	void deleteByDelDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamDelDepByDelDepIdxKey based lock method for object-based access.
@@ -416,7 +416,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaDelSubDep1 r where r.requiredContainerDelTopDep.requiredId = :delTopDepId")
-	void deleteByDelTopDepIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId);
+	void deleteByDelTopDepIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId);
 
 	/**
 	 *	CFBamDelSubDep1ByDelTopDepIdxKey based lock method for object-based access.
@@ -436,7 +436,7 @@ public interface CFBamJpaDelSubDep1Repository extends JpaRepository<CFBamJpaDelS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaDelSubDep1 r where r.requiredContainerDelTopDep.requiredId = :delTopDepId and r.requiredName = :name")
-	void deleteByUNameIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId,
+	void deleteByUNameIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId,
 		@Param("name") String requiredName);
 
 	/**

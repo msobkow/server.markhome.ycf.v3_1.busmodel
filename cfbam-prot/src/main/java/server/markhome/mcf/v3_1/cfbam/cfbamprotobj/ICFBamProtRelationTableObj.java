@@ -121,7 +121,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	The Relation-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtRelationObj readRelation( CFLibDbKeyHash256 pkey );
+	ICFBamProtRelationObj readRelation( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Read a Relation-derived instance by it's primary key.
@@ -131,19 +131,19 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	The Relation-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtRelationObj readRelation( CFLibDbKeyHash256 pkey,
+	ICFBamProtRelationObj readRelation( MCFDbKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamProtRelationObj readCachedRelation( CFLibDbKeyHash256 pkey );
+	ICFBamProtRelationObj readCachedRelation( MCFDbKeyHash256 pkey );
 
 	public void reallyDeepDisposeRelation( ICFBamProtRelationObj obj );
 
-	void deepDisposeRelation( CFLibDbKeyHash256 pkey );
+	void deepDisposeRelation( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamProtRelationObj lockRelation( CFLibDbKeyHash256 pkey );
+	ICFBamProtRelationObj lockRelation( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Relation-derived instances in the database.
@@ -171,7 +171,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	ICFBamProtScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtRelationObj readRelationByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtRelationObj readRelationByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the ICFBamProtScopeObj instance for the primary key attributes.
@@ -181,7 +181,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	ICFBamProtScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtRelationObj readRelationByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamProtRelationObj readRelationByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of ICFBamProtRelationObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByTenantIdx( ICFLibKeyHash256 TenantId );
+	List<ICFBamProtRelationObj> readRelationByTenantIdx( IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of ICFBamProtRelationObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -202,7 +202,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of ICFBamProtRelationObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByTenantIdx( ICFLibKeyHash256 TenantId,
+	List<ICFBamProtRelationObj> readRelationByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	ICFBamProtRelationObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtRelationObj readRelationByUNameIdx(ICFLibKeyHash256 TableId,
+	ICFBamProtRelationObj readRelationByUNameIdx(IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -228,7 +228,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	ICFBamProtRelationObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtRelationObj readRelationByUNameIdx(ICFLibKeyHash256 TableId,
+	ICFBamProtRelationObj readRelationByUNameIdx(IMCFKeyHash256 TableId,
 		String Name,
 		boolean forceRead );
 
@@ -240,7 +240,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate RelTableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByRelTableIdx( ICFLibKeyHash256 TableId );
+	List<ICFBamProtRelationObj> readRelationByRelTableIdx( IMCFKeyHash256 TableId );
 
 	/**
 	 *	Get the map of List<ICFBamProtRelationObj> instances sorted by their primary keys for the duplicate RelTableIdx key.
@@ -250,7 +250,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate RelTableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByRelTableIdx( ICFLibKeyHash256 TableId,
+	List<ICFBamProtRelationObj> readRelationByRelTableIdx( IMCFKeyHash256 TableId,
 		boolean forceRead );
 
 	/**
@@ -284,7 +284,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate RelTableCodeVisX key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+	List<ICFBamProtRelationObj> readRelationByRelTableCodeVisX( IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -297,7 +297,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate RelTableCodeVisX key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+	List<ICFBamProtRelationObj> readRelationByRelTableCodeVisX( IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead );
 
@@ -309,7 +309,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamProtRelationObj> readRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of List<ICFBamProtRelationObj> instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -319,7 +319,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamProtRelationObj> readRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -330,7 +330,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate FromKeyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId );
+	List<ICFBamProtRelationObj> readRelationByFromKeyIdx( IMCFKeyHash256 FromIndexId );
 
 	/**
 	 *	Get the map of List<ICFBamProtRelationObj> instances sorted by their primary keys for the duplicate FromKeyIdx key.
@@ -340,7 +340,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate FromKeyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId,
+	List<ICFBamProtRelationObj> readRelationByFromKeyIdx( IMCFKeyHash256 FromIndexId,
 		boolean forceRead );
 
 	/**
@@ -351,7 +351,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate ToTblIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByToTblIdx( ICFLibKeyHash256 ToTableId );
+	List<ICFBamProtRelationObj> readRelationByToTblIdx( IMCFKeyHash256 ToTableId );
 
 	/**
 	 *	Get the map of List<ICFBamProtRelationObj> instances sorted by their primary keys for the duplicate ToTblIdx key.
@@ -361,7 +361,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate ToTblIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByToTblIdx( ICFLibKeyHash256 ToTableId,
+	List<ICFBamProtRelationObj> readRelationByToTblIdx( IMCFKeyHash256 ToTableId,
 		boolean forceRead );
 
 	/**
@@ -372,7 +372,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate ToKeyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId );
+	List<ICFBamProtRelationObj> readRelationByToKeyIdx( IMCFKeyHash256 ToIndexId );
 
 	/**
 	 *	Get the map of List<ICFBamProtRelationObj> instances sorted by their primary keys for the duplicate ToKeyIdx key.
@@ -382,7 +382,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate ToKeyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId,
+	List<ICFBamProtRelationObj> readRelationByToKeyIdx( IMCFKeyHash256 ToIndexId,
 		boolean forceRead );
 
 	/**
@@ -393,7 +393,7 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate NarrowedIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId );
+	List<ICFBamProtRelationObj> readRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId );
 
 	/**
 	 *	Get the map of List<ICFBamProtRelationObj> instances sorted by their primary keys for the duplicate NarrowedIdx key.
@@ -403,56 +403,56 @@ public interface ICFBamProtRelationTableObj
 	 *	@return	List of List<ICFBamProtRelationObj> cached instances sorted by their primary keys for the duplicate NarrowedIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtRelationObj> readRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId,
+	List<ICFBamProtRelationObj> readRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId,
 		boolean forceRead );
 
-	ICFBamProtScopeObj readCachedRelationByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtScopeObj readCachedRelationByIdIdx( IMCFKeyHash256 Id );
 
-	List<List<ICFBamProtScopeObj>> readCachedRelationByTenantIdx( ICFLibKeyHash256 TenantId );
+	List<List<ICFBamProtScopeObj>> readCachedRelationByTenantIdx( IMCFKeyHash256 TenantId );
 
-	ICFBamProtRelationObj readCachedRelationByUNameIdx( ICFLibKeyHash256 TableId,
+	ICFBamProtRelationObj readCachedRelationByUNameIdx( IMCFKeyHash256 TableId,
 		String Name );
 
-	List<List<ICFBamProtRelationObj>> readCachedRelationByRelTableIdx( ICFLibKeyHash256 TableId );
+	List<List<ICFBamProtRelationObj>> readCachedRelationByRelTableIdx( IMCFKeyHash256 TableId );
 
 	List<List<ICFBamProtRelationObj>> readCachedRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	List<List<ICFBamProtRelationObj>> readCachedRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+	List<List<ICFBamProtRelationObj>> readCachedRelationByRelTableCodeVisX( IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	List<List<ICFBamProtRelationObj>> readCachedRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<List<ICFBamProtRelationObj>> readCachedRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<List<ICFBamProtRelationObj>> readCachedRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId );
+	List<List<ICFBamProtRelationObj>> readCachedRelationByFromKeyIdx( IMCFKeyHash256 FromIndexId );
 
-	List<List<ICFBamProtRelationObj>> readCachedRelationByToTblIdx( ICFLibKeyHash256 ToTableId );
+	List<List<ICFBamProtRelationObj>> readCachedRelationByToTblIdx( IMCFKeyHash256 ToTableId );
 
-	List<List<ICFBamProtRelationObj>> readCachedRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId );
+	List<List<ICFBamProtRelationObj>> readCachedRelationByToKeyIdx( IMCFKeyHash256 ToIndexId );
 
-	List<List<ICFBamProtRelationObj>> readCachedRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId );
+	List<List<ICFBamProtRelationObj>> readCachedRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId );
 
-	void deepDisposeRelationByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeRelationByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeRelationByTenantIdx( ICFLibKeyHash256 TenantId );
+	void deepDisposeRelationByTenantIdx( IMCFKeyHash256 TenantId );
 
-	void deepDisposeRelationByUNameIdx( ICFLibKeyHash256 TableId,
+	void deepDisposeRelationByUNameIdx( IMCFKeyHash256 TableId,
 		String Name );
 
-	void deepDisposeRelationByRelTableIdx( ICFLibKeyHash256 TableId );
+	void deepDisposeRelationByRelTableIdx( IMCFKeyHash256 TableId );
 
 	void deepDisposeRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	void deepDisposeRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+	void deepDisposeRelationByRelTableCodeVisX( IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	void deepDisposeRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId );
+	void deepDisposeRelationByFromKeyIdx( IMCFKeyHash256 FromIndexId );
 
-	void deepDisposeRelationByToTblIdx( ICFLibKeyHash256 ToTableId );
+	void deepDisposeRelationByToTblIdx( IMCFKeyHash256 ToTableId );
 
-	void deepDisposeRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId );
+	void deepDisposeRelationByToKeyIdx( IMCFKeyHash256 ToIndexId );
 
-	void deepDisposeRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId );
+	void deepDisposeRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId );
 
 	/**
 	 *	Internal use only.
@@ -469,14 +469,14 @@ public interface ICFBamProtRelationTableObj
 	 *
 	 *	@param	Id	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByIdIdx( ICFLibKeyHash256 Id );
+	void deleteRelationByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByTenantIdx( ICFLibKeyHash256 TenantId );
+	void deleteRelationByTenantIdx( IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
@@ -485,7 +485,7 @@ public interface ICFBamProtRelationTableObj
 	 *
 	 *	@param	Name	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByUNameIdx(ICFLibKeyHash256 TableId,
+	void deleteRelationByUNameIdx(IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -493,7 +493,7 @@ public interface ICFBamProtRelationTableObj
 	 *
 	 *	@param	TableId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByRelTableIdx( ICFLibKeyHash256 TableId );
+	void deleteRelationByRelTableIdx( IMCFKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -509,7 +509,7 @@ public interface ICFBamProtRelationTableObj
 	 *
 	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+	void deleteRelationByRelTableCodeVisX( IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -517,33 +517,33 @@ public interface ICFBamProtRelationTableObj
 	 *
 	 *	@param	DefSchemaId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	FromIndexId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId );
+	void deleteRelationByFromKeyIdx( IMCFKeyHash256 FromIndexId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ToTableId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByToTblIdx( ICFLibKeyHash256 ToTableId );
+	void deleteRelationByToTblIdx( IMCFKeyHash256 ToTableId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ToIndexId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId );
+	void deleteRelationByToKeyIdx( IMCFKeyHash256 ToIndexId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NarrowedId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId );
+	void deleteRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId );
 }

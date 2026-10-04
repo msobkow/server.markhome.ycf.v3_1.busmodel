@@ -111,7 +111,7 @@ public interface ICFBamTableInfoObj
 	/**
 	 *	End this edition of this TableInfo instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 

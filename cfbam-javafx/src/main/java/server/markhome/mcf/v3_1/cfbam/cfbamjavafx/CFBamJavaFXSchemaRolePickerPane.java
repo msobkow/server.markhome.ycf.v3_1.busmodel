@@ -91,7 +91,7 @@ implements ICFBamJavaFXSchemaRolePaneList
 	protected ICFBamJavaFXSchema javafxSchema = null;
 	protected Collection<ICFBamSchemaRoleObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamSchemaRoleObj> observableListOfSchemaRole = null;
-	protected TableColumn<ICFBamSchemaRoleObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamSchemaRoleObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnEnables = null;
 	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnIncludes = null;
@@ -143,24 +143,24 @@ implements ICFBamJavaFXSchemaRolePaneList
 		javafxContainer = argContainer;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamSchemaRoleObj>();
-		tableColumnId = new TableColumn<ICFBamSchemaRoleObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamSchemaRoleObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamSchemaRoleObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamSchemaRoleObj, IMCFKeyHash256> p ) {
 				ICFBamRoleDefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,ICFLibKeyHash256>,TableCell<ICFBamSchemaRoleObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamSchemaRoleObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamSchemaRoleObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,IMCFKeyHash256>,TableCell<ICFBamSchemaRoleObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamSchemaRoleObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamSchemaRoleObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamSchemaRoleObj>();
 			}

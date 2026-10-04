@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,19 +74,19 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffClearSubDep1ByClearTopDepIdxKey
 	implements ICFBamClearSubDep1ByClearTopDepIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredClearTopDepId;
+	protected IMCFKeyHash256 requiredClearTopDepId;
 	public CFBamBuffClearSubDep1ByClearTopDepIdxKey() {
-		requiredClearTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubClearSubDep1.CLEARTOPDEPID_INIT_VALUE.toString() );
+		requiredClearTopDepId = MCFDbKeyHash256.fromHex( ICFBamPubClearSubDep1.CLEARTOPDEPID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredClearTopDepId() {
+	public IMCFKeyHash256 getRequiredClearTopDepId() {
 		return(requiredClearTopDepId);
 	}
 
-	public void setRequiredClearTopDepId( ICFLibKeyHash256 value ) {
+	public void setRequiredClearTopDepId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredClearTopDepId",
 				1,
 				"value" );
@@ -192,7 +192,7 @@ public class CFBamBuffClearSubDep1ByClearTopDepIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

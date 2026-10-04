@@ -91,7 +91,7 @@ implements ICFBamJavaFXPopSubDep1PaneList
 	protected ICFBamJavaFXSchema javafxSchema = null;
 	protected Collection<ICFBamPopSubDep1Obj> javafxDataCollection = null;
 	protected ObservableList<ICFBamPopSubDep1Obj> observableListOfPopSubDep1 = null;
-	protected TableColumn<ICFBamPopSubDep1Obj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamPopSubDep1Obj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamPopSubDep1Obj, String> tableColumnName = null;
 	protected TableColumn<ICFBamPopSubDep1Obj, ICFBamRelationObj> tableColumnLookupRelation = null;
 	protected TableColumn<ICFBamPopSubDep1Obj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
@@ -141,24 +141,24 @@ implements ICFBamJavaFXPopSubDep1PaneList
 		javafxContainer = argContainer;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamPopSubDep1Obj>();
-		tableColumnId = new TableColumn<ICFBamPopSubDep1Obj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamPopSubDep1Obj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamPopSubDep1Obj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamPopSubDep1Obj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamPopSubDep1Obj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamPopSubDep1Obj, IMCFKeyHash256> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamPopSubDep1Obj,ICFLibKeyHash256>,TableCell<ICFBamPopSubDep1Obj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamPopSubDep1Obj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamPopSubDep1Obj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamPopSubDep1Obj,IMCFKeyHash256>,TableCell<ICFBamPopSubDep1Obj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamPopSubDep1Obj,IMCFKeyHash256> call(
+				TableColumn<ICFBamPopSubDep1Obj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamPopSubDep1Obj>();
 			}

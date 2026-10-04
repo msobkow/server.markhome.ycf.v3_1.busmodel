@@ -173,7 +173,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	CFBamValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDbKeyHash224GenObj readDbKeyHash224GenByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamDbKeyHash224GenObj readDbKeyHash224GenByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamValueObj instance for the primary key attributes.
@@ -183,7 +183,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	CFBamValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDbKeyHash224GenObj readDbKeyHash224GenByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamDbKeyHash224GenObj readDbKeyHash224GenByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -196,7 +196,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	CFBamValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDbKeyHash224GenObj readDbKeyHash224GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamDbKeyHash224GenObj readDbKeyHash224GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -209,7 +209,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	CFBamValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDbKeyHash224GenObj readDbKeyHash224GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamDbKeyHash224GenObj readDbKeyHash224GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -221,7 +221,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash224GenObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -231,7 +231,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByScopeIdx( ICFLibKeyHash256 ScopeId,
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -242,7 +242,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash224GenObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -252,7 +252,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -263,7 +263,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash224GenObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -273,7 +273,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByPrevIdx( ICFLibKeyHash256 PrevId,
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -284,7 +284,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash224GenObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -294,7 +294,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByNextIdx( ICFLibKeyHash256 NextId,
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -307,8 +307,8 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash224GenObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -320,8 +320,8 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -334,8 +334,8 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash224GenObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -347,8 +347,8 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -359,7 +359,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash224GenObj instances sorted by their primary keys for the duplicate SchemaIdx key.
@@ -369,50 +369,50 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *	@return	List of CFBamDbKeyHash224GenObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
+	List<ICFBamDbKeyHash224GenObj> readDbKeyHash224GenBySchemaIdx( IMCFKeyHash256 SchemaDefId,
 		boolean forceRead );
 
-	ICFBamDbKeyHash224GenObj readCachedDbKeyHash224GenByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamDbKeyHash224GenObj readCachedDbKeyHash224GenByIdIdx( IMCFKeyHash256 Id );
 
-	ICFBamDbKeyHash224GenObj readCachedDbKeyHash224GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamDbKeyHash224GenObj readCachedDbKeyHash224GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByPrevIdx( IMCFKeyHash256 PrevId );
 
-	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByNextIdx( IMCFKeyHash256 NextId );
 
-	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
-	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
-	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	List<ICFBamDbKeyHash224GenObj> readCachedDbKeyHash224GenBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
-	void deepDisposeDbKeyHash224GenByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeDbKeyHash224GenByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeDbKeyHash224GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deepDisposeDbKeyHash224GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeDbKeyHash224GenByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deepDisposeDbKeyHash224GenByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	void deepDisposeDbKeyHash224GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deepDisposeDbKeyHash224GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	void deepDisposeDbKeyHash224GenByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deepDisposeDbKeyHash224GenByPrevIdx( IMCFKeyHash256 PrevId );
 
-	void deepDisposeDbKeyHash224GenByNextIdx( ICFLibKeyHash256 NextId );
+	void deepDisposeDbKeyHash224GenByNextIdx( IMCFKeyHash256 NextId );
 
-	void deepDisposeDbKeyHash224GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	void deepDisposeDbKeyHash224GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
-	void deepDisposeDbKeyHash224GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	void deepDisposeDbKeyHash224GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
-	void deepDisposeDbKeyHash224GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	void deepDisposeDbKeyHash224GenBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Internal use only.
@@ -429,7 +429,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *
 	 *	@param	Id	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenByIdIdx( ICFLibKeyHash256 Id );
+	void deleteDbKeyHash224GenByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -438,7 +438,7 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *
 	 *	@param	Name	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deleteDbKeyHash224GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -446,28 +446,28 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *
 	 *	@param	ScopeId	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deleteDbKeyHash224GenByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deleteDbKeyHash224GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deleteDbKeyHash224GenByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenByNextIdx( ICFLibKeyHash256 NextId );
+	void deleteDbKeyHash224GenByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -476,8 +476,8 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *
 	 *	@param	PrevId	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	void deleteDbKeyHash224GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -486,15 +486,15 @@ public interface ICFBamDbKeyHash224GenTableObj
 	 *
 	 *	@param	NextId	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	void deleteDbKeyHash224GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaDefId	The DbKeyHash224Gen key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash224GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	void deleteDbKeyHash224GenBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the CFBamDbKeyHash224GenObj instance up in the chain.  The instance is always refreshed.

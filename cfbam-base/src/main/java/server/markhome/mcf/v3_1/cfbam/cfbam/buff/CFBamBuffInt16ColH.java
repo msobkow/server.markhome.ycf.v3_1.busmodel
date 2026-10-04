@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,11 +74,11 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffInt16ColH extends CFBamBuffInt16DefH
     implements ICFBamInt16ColH
 {
-	protected ICFLibKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 requiredTableId;
 
     public CFBamBuffInt16ColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubInt16Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubInt16Col.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override
@@ -87,13 +87,13 @@ public class CFBamBuffInt16ColH extends CFBamBuffInt16DefH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -268,7 +268,7 @@ public class CFBamBuffInt16ColH extends CFBamBuffInt16DefH
 			setInt16Col( (CFBamBuffInt16Col)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -288,7 +288,7 @@ public class CFBamBuffInt16ColH extends CFBamBuffInt16DefH
 			setInt16Col( (ICFBamInt16ColH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

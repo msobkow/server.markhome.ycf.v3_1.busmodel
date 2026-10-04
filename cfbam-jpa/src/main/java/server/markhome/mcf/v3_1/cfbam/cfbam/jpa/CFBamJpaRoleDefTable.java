@@ -89,32 +89,32 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 
 	public CFBamJpaRoleDefTable(ICFBamSchema schema) {
 		if( schema == null ) {
-			throw new CFLibNullArgumentException(getClass(), "constructor", 1, "schema" );
+			throw new MCFNullArgumentException(getClass(), "constructor", 1, "schema" );
 		}
 		if (schema instanceof CFBamJpaSchema) {
 			this.schema = (CFBamJpaSchema)schema;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
+			throw new MCFUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
 		}
 	}
 
 	protected boolean canCreateRoleDef(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "createroledef");
@@ -124,20 +124,20 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 
 	protected boolean canReadRoleDef(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "readroledef");
@@ -147,20 +147,20 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 
 	protected boolean canUpdateRoleDef(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "updateroledef");
@@ -170,20 +170,20 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 
 	protected boolean canDeleteRoleDef(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "deleteroledef");
@@ -206,11 +206,11 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "createRoleDef";
 		boolean permissionGranted = canCreateRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "createroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "createroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "createRoleDef", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "createRoleDef", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaRoleDef) {
 			CFBamJpaRoleDef jparec = (CFBamJpaRoleDef)rec;
@@ -222,7 +222,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "createRoleDef", "rec", rec, "CFBamJpaRoleDef");
+			throw new MCFUnsupportedClassException(getClass(), "createRoleDef", "rec", rec, "CFBamJpaRoleDef");
 		}
 	}
 
@@ -241,11 +241,11 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "updateRoleDef";
 		boolean permissionGranted = canUpdateRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "updateRoleDef", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "updateRoleDef", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaRoleDef) {
 			CFBamJpaRoleDef jparec = (CFBamJpaRoleDef)rec;
@@ -255,7 +255,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "updateRoleDef", "rec", rec, "CFBamJpaRoleDef");
+			throw new MCFUnsupportedClassException(getClass(), "updateRoleDef", "rec", rec, "CFBamJpaRoleDef");
 		}
 	}
 
@@ -273,7 +273,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "deleteRoleDef";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
@@ -284,10 +284,10 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			schema.getJpaHooksSchema().getRoleDefService().deleteByIdIdx(jparec.getPKey());
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "deleteRoleDef", "rec", rec, "CFBamJpaRoleDef");
+			throw new MCFUnsupportedClassException(getClass(), "deleteRoleDef", "rec", rec, "CFBamJpaRoleDef");
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "deleteRoleDef");
+		throw new MCFNotImplementedYetException(getClass(), "deleteRoleDef");
 	}
 
 	/**
@@ -304,7 +304,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "deleteRoleDefByIdIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByIdIdx(argKey);
@@ -321,13 +321,13 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public void deleteRoleDefByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "deleteRoleDefByUNameIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByUNameIdx(argScopeId,
@@ -349,7 +349,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "deleteRoleDefByUNameIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByUNameIdx(argKey.getRequiredScopeId(),
@@ -365,12 +365,12 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public void deleteRoleDefByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "deleteRoleDefByScopeIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByScopeIdx(argScopeId);
@@ -391,7 +391,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "deleteRoleDefByScopeIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByScopeIdx(argKey.getRequiredScopeId());
@@ -406,12 +406,12 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public void deleteRoleDefByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "deleteRoleDefByDefSchemaIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByDefSchemaIdx(argDefSchemaId);
@@ -432,7 +432,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "deleteRoleDefByDefSchemaIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByDefSchemaIdx(argKey.getOptionalDefSchemaId());
@@ -451,14 +451,14 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public void deleteRoleDefByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		final String S_ProcName = "deleteRoleDefByUDefIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByUDefIdx(argScopeId,
@@ -481,7 +481,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "deleteRoleDefByUDefIdx";
 		boolean permissionGranted = canDeleteRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getRoleDefService().deleteByUDefIdx(argKey.getRequiredScopeId(),
@@ -507,7 +507,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "readDerived";
 		boolean permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamRoleDef retval = schema.getJpaHooksSchema().getRoleDefService().find(PKey);
@@ -531,7 +531,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "lockDerived";
 		boolean permissionGranted = canUpdateRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamRoleDef retval = schema.getJpaHooksSchema().getRoleDefService().lockByIdIdx(PKey);
@@ -550,7 +550,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "readAllDerived";
 		boolean permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		List<CFBamJpaRoleDef> retlist = schema.getJpaHooksSchema().getRoleDefService().findAll();
@@ -574,7 +574,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public ICFBamRoleDef readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readDerivedByIdIdx";
 		boolean permissionGranted = false;
@@ -582,14 +582,14 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamRoleDef retval = schema.getJpaHooksSchema().getRoleDefService().find(argId);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerScopeDef().getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readroledef")) {
 				retval = null;
 			}
@@ -611,7 +611,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public ICFBamRoleDef readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUNameIdx";
@@ -620,15 +620,15 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamRoleDef retval = schema.getJpaHooksSchema().getRoleDefService().findByUNameIdx(argScopeId,
 		argName);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerScopeDef().getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readroledef")) {
 				retval = null;
 			}
@@ -647,7 +647,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public ICFBamRoleDef[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "readDerivedByScopeIdx";
 		boolean permissionGranted = false;
@@ -655,7 +655,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaRoleDef> retlist = schema.getJpaHooksSchema().getRoleDefService().findByScopeIdx(argScopeId);
 		ICFBamRoleDef[] retset = new ICFBamRoleDef[retlist.size()];
@@ -677,7 +677,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public ICFBamRoleDef[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readDerivedByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -685,7 +685,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaRoleDef> retlist = schema.getJpaHooksSchema().getRoleDefService().findByDefSchemaIdx(argDefSchemaId);
 		ICFBamRoleDef[] retset = new ICFBamRoleDef[retlist.size()];
@@ -712,8 +712,8 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 */
 	@Override
 	public ICFBamRoleDef readDerivedByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUDefIdx";
@@ -722,7 +722,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamRoleDef retval = schema.getJpaHooksSchema().getRoleDefService().findByUDefIdx(argScopeId,
 		argDefSchemaId,
@@ -730,8 +730,8 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerScopeDef().getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readroledef")) {
 				retval = null;
 			}
@@ -749,7 +749,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamRoleDef readRec( ICFSecAuthorization Authorization,
@@ -758,10 +758,10 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "readRec";
 		boolean permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readRec");
+		throw new MCFNotImplementedYetException(getClass(), "readRec");
 	}
 
 	/**
@@ -774,7 +774,7 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamRoleDef lockRec( ICFSecAuthorization Authorization,
@@ -783,10 +783,10 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "lockRec";
 		boolean permissionGranted = canUpdateRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "lockRec");
+		throw new MCFNotImplementedYetException(getClass(), "lockRec");
 	}
 
 	/**
@@ -801,10 +801,10 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 		final String S_ProcName = "readAllRec";
 		boolean permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readAllRec");
+		throw new MCFNotImplementedYetException(getClass(), "readAllRec");
 	}
 
 
@@ -818,11 +818,11 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamRoleDef readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readRecByIdIdx";
 		boolean permissionGranted = false;
@@ -830,9 +830,9 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdIdx");
 	}
 
 	/**
@@ -847,11 +847,11 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamRoleDef readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUNameIdx";
@@ -860,9 +860,9 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUNameIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUNameIdx");
 	}
 
 	/**
@@ -874,11 +874,11 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamRoleDef[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "readRecByScopeIdx";
 		boolean permissionGranted = false;
@@ -886,9 +886,9 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByScopeIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByScopeIdx");
 	}
 
 	/**
@@ -900,11 +900,11 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamRoleDef[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readRecByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -912,9 +912,9 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
 	}
 
 	/**
@@ -931,12 +931,12 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamRoleDef readRecByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUDefIdx";
@@ -945,8 +945,8 @@ public class CFBamJpaRoleDefTable implements ICFBamRoleDefTable
 			permissionGranted = canReadRoleDef(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readroledef", ICFBamSchema.SCHEMA_NAME, ICFBamRoleDefTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUDefIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUDefIdx");
 	}
 }

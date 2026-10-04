@@ -172,60 +172,60 @@ public interface ICFBamPubTweakEditObj
 	void setOptionalLookupDefSchema( ICFBamPubSchemaDefObj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Get the required MCFDbKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
+	 *	@return	The required MCFDbKeyHash256 attribute TenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredTenantId();
+	MCFDbKeyHash256 getRequiredTenantId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Set the required MCFDbKeyHash256 attribute TenantId.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute TenantId value to be applied.
+	 *	@param value The required MCFDbKeyHash256 attribute TenantId value to be applied.
 	 */
-	void setRequiredTenantId(CFLibDbKeyHash256 value);
+	void setRequiredTenantId(MCFDbKeyHash256 value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ScopeId.
+	 *	Get the required MCFDbKeyHash256 attribute ScopeId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ScopeId.
+	 *	@return	The required MCFDbKeyHash256 attribute ScopeId.
 	 */
-	CFLibDbKeyHash256 getRequiredScopeId();
+	MCFDbKeyHash256 getRequiredScopeId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute Id.
+	 *	Set the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute Id value to be applied.
+	 *	@param value The required MCFDbKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(CFLibDbKeyHash256 value);
+	void setRequiredId(MCFDbKeyHash256 value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaTenantId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaTenantId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaTenantId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaTenantId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaTenantId();
+	MCFDbKeyHash256 getOptionalDefSchemaTenantId();
 
 	/**
-	 *	Set the optional CFLibDbKeyHash256 attribute DefSchemaTenantId.
+	 *	Set the optional MCFDbKeyHash256 attribute DefSchemaTenantId.
 	 *
-	 *	@param value The optional CFLibDbKeyHash256 attribute DefSchemaTenantId value to be applied.
+	 *	@param value The optional MCFDbKeyHash256 attribute DefSchemaTenantId value to be applied.
 	 */
-	void setOptionalDefSchemaTenantId(CFLibDbKeyHash256 value);
+	void setOptionalDefSchemaTenantId(MCFDbKeyHash256 value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.

@@ -158,7 +158,7 @@ public class CFBamEnumTypeTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamEnumTypeTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamEnumTypeTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -631,7 +631,7 @@ public class CFBamEnumTypeTableObj
 			locked = (ICFBamEnumTypeObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockEnumType", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockEnumType", pkey );
 		}
 		return( locked );
 	}
@@ -666,7 +666,7 @@ public class CFBamEnumTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -674,7 +674,7 @@ public class CFBamEnumTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -726,7 +726,7 @@ public class CFBamEnumTypeTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -734,7 +734,7 @@ public class CFBamEnumTypeTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -771,21 +771,21 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumTypeByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamEnumTypeObj readEnumTypeByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readEnumTypeByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumTypeByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamEnumTypeObj readEnumTypeByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamEnumTypeObj obj = readEnumType( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamEnumTypeObj readEnumTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readEnumTypeByUNameIdx( ScopeId,
@@ -794,7 +794,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamEnumTypeObj readEnumTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -823,14 +823,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readEnumTypeByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByScopeIdx";
@@ -868,7 +868,7 @@ public class CFBamEnumTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -876,7 +876,7 @@ public class CFBamEnumTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -916,14 +916,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readEnumTypeByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByDefSchemaIdx";
@@ -961,7 +961,7 @@ public class CFBamEnumTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -969,7 +969,7 @@ public class CFBamEnumTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1009,14 +1009,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readEnumTypeByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByPrevIdx";
@@ -1054,7 +1054,7 @@ public class CFBamEnumTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1062,7 +1062,7 @@ public class CFBamEnumTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1102,14 +1102,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readEnumTypeByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByNextIdx";
@@ -1147,7 +1147,7 @@ public class CFBamEnumTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1155,7 +1155,7 @@ public class CFBamEnumTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1195,8 +1195,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readEnumTypeByContPrevIdx( ScopeId,
 			PrevId,
@@ -1204,8 +1204,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByContPrevIdx";
@@ -1245,7 +1245,7 @@ public class CFBamEnumTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1253,7 +1253,7 @@ public class CFBamEnumTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1293,8 +1293,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readEnumTypeByContNextIdx( ScopeId,
 			NextId,
@@ -1302,8 +1302,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByContNextIdx";
@@ -1343,7 +1343,7 @@ public class CFBamEnumTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1351,7 +1351,7 @@ public class CFBamEnumTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1391,14 +1391,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public List<ICFBamEnumTypeObj> readEnumTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		return( readEnumTypeBySchemaIdx( SchemaDefId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
+	public List<ICFBamEnumTypeObj> readEnumTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeBySchemaIdx";
@@ -1436,7 +1436,7 @@ public class CFBamEnumTypeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1444,7 +1444,7 @@ public class CFBamEnumTypeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1484,7 +1484,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readCachedEnumTypeByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamEnumTypeObj readCachedEnumTypeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamEnumTypeObj obj = null;
 		obj = readCachedEnumType( Id );
@@ -1492,7 +1492,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readCachedEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamEnumTypeObj readCachedEnumTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamEnumTypeObj obj = null;
@@ -1530,7 +1530,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1548,7 +1548,7 @@ public class CFBamEnumTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1556,7 +1556,7 @@ public class CFBamEnumTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1607,7 +1607,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1625,7 +1625,7 @@ public class CFBamEnumTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1633,7 +1633,7 @@ public class CFBamEnumTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1684,7 +1684,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1702,7 +1702,7 @@ public class CFBamEnumTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1710,7 +1710,7 @@ public class CFBamEnumTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1761,7 +1761,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1779,7 +1779,7 @@ public class CFBamEnumTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1787,7 +1787,7 @@ public class CFBamEnumTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1838,8 +1838,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1858,7 +1858,7 @@ public class CFBamEnumTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1866,7 +1866,7 @@ public class CFBamEnumTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1917,8 +1917,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1937,7 +1937,7 @@ public class CFBamEnumTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1945,7 +1945,7 @@ public class CFBamEnumTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1996,7 +1996,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "readCachedEnumTypeBySchemaIdx";
 		ICFBamEnumTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newBySchemaIdxKey();
@@ -2014,7 +2014,7 @@ public class CFBamEnumTypeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2022,7 +2022,7 @@ public class CFBamEnumTypeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2073,7 +2073,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeEnumTypeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamEnumTypeObj obj = readCachedEnumTypeByIdIdx( Id );
 		if( obj != null ) {
@@ -2082,7 +2082,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeEnumTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamEnumTypeObj obj = readCachedEnumTypeByUNameIdx( ScopeId,
@@ -2093,7 +2093,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeEnumTypeByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByScopeIdx";
 		ICFBamEnumTypeObj obj;
@@ -2110,7 +2110,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeEnumTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByDefSchemaIdx";
 		ICFBamEnumTypeObj obj;
@@ -2127,7 +2127,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeEnumTypeByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByPrevIdx";
 		ICFBamEnumTypeObj obj;
@@ -2144,7 +2144,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeEnumTypeByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByNextIdx";
 		ICFBamEnumTypeObj obj;
@@ -2161,8 +2161,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeEnumTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByContPrevIdx";
 		ICFBamEnumTypeObj obj;
@@ -2180,8 +2180,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeEnumTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByContNextIdx";
 		ICFBamEnumTypeObj obj;
@@ -2199,7 +2199,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public void deepDisposeEnumTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeBySchemaIdx";
 		ICFBamEnumTypeObj obj;
@@ -2244,7 +2244,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteEnumTypeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamEnumTypeObj obj = readEnumType(Id);
 		if( obj != null ) {
@@ -2274,7 +2274,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteEnumTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2302,7 +2302,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteEnumTypeByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2336,7 +2336,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteEnumTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2370,7 +2370,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteEnumTypeByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2404,7 +2404,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteEnumTypeByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2438,8 +2438,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteEnumTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2477,8 +2477,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteEnumTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2516,7 +2516,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public void deleteEnumTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		ICFBamEnumTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
@@ -2558,7 +2558,7 @@ public class CFBamEnumTypeTableObj
 	public ICFBamEnumTypeObj moveUpEnumType( ICFBamEnumTypeObj Obj ) {
 		ICFBamEnumTypeObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpEnumType" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpEnumType" );
 		}
 		ICFBamEnumType rec = schema.getCFBamBackingStore().getTableEnumType().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2586,7 +2586,7 @@ public class CFBamEnumTypeTableObj
 	public ICFBamEnumTypeObj moveDownEnumType( ICFBamEnumTypeObj Obj ) {
 		ICFBamEnumTypeObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownEnumType" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownEnumType" );
 		}
 		ICFBamEnumType rec = schema.getCFBamBackingStore().getTableEnumType().moveRecDown( null,
 			Obj.getRequiredId(),

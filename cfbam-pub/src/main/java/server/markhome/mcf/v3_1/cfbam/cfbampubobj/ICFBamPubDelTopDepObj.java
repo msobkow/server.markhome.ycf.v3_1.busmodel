@@ -159,11 +159,11 @@ public interface ICFBamPubDelTopDepObj
 	ICFBamPubDelTopDepObj getOptionalLookupNext( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -173,24 +173,24 @@ public interface ICFBamPubDelTopDepObj
 	String getRequiredName();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TableId.
+	 *	Get the required MCFDbKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TableId.
+	 *	@return	The required MCFDbKeyHash256 attribute TableId.
 	 */
-	CFLibDbKeyHash256 getRequiredTableId();
+	MCFDbKeyHash256 getRequiredTableId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrevId.
+	 *	Get the optional MCFDbKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrevId.
+	 *	@return	The optional MCFDbKeyHash256 attribute PrevId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrevId();
+	MCFDbKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NextId.
+	 *	Get the optional MCFDbKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NextId.
+	 *	@return	The optional MCFDbKeyHash256 attribute NextId.
 	 */
-	CFLibDbKeyHash256 getOptionalNextId();
+	MCFDbKeyHash256 getOptionalNextId();
 
 }

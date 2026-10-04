@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
@@ -147,7 +147,7 @@ public class CFBamClusterEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjScope() {
+	public IMCFAnyObj getObjScope() {
 		return( null );
 	}
 
@@ -159,8 +159,8 @@ public class CFBamClusterEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -190,21 +190,21 @@ public class CFBamClusterEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( Class qualifyingClass, String objName ) {
-		ICFLibAnyObj topContainer = getObjQualifier( qualifyingClass );
+	public IMCFAnyObj getNamedObject( Class qualifyingClass, String objName ) {
+		IMCFAnyObj topContainer = getObjQualifier( qualifyingClass );
 		if( topContainer == null ) {
 			return( null );
 		}
-		ICFLibAnyObj namedObject = topContainer.getNamedObject( objName );
+		IMCFAnyObj namedObject = topContainer.getNamedObject( objName );
 		return( namedObject );
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -217,7 +217,7 @@ public class CFBamClusterEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
+					throw new MCFNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
 				}
 				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
@@ -242,7 +242,7 @@ public class CFBamClusterEditObj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -263,7 +263,7 @@ public class CFBamClusterEditObj
 	@Override
 	public String getObjFullName() {
 		String fullName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -297,7 +297,7 @@ public class CFBamClusterEditObj
 	public ICFSecClusterObj read() {
 		ICFSecClusterObj retval = getOrigAsCluster().read();
 		if( retval != orig ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),	"read" );
+			throw new MCFStaleCacheDetectedException( getClass(),	"read" );
 		}
 		copyOrigToRec();
 		return( retval );
@@ -307,7 +307,7 @@ public class CFBamClusterEditObj
 	public ICFSecClusterObj read( boolean forceRead ) {
 		ICFSecClusterObj retval = getOrigAsCluster().read( forceRead );
 		if( retval != orig ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),	"read" );
+			throw new MCFStaleCacheDetectedException( getClass(),	"read" );
 		}
 		copyOrigToRec();
 		return( retval );
@@ -332,7 +332,7 @@ public class CFBamClusterEditObj
 	@Override
 	public CFSecClusterEditObj deleteInstance() {
 		if( getIsNew() ) {
-			throw new CFLibCannotDeleteNewInstanceException( getClass(), "delete" );
+			throw new MCFCannotDeleteNewInstanceException( getClass(), "delete" );
 		}
 		getSchema().getClusterTableObj().deleteCluster( getOrigAsCluster() );
 		return( null );
@@ -355,7 +355,7 @@ public class CFBamClusterEditObj
 
 	@Override
 	public ICFSecClusterEditObj beginEdit() {
-		throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
+		throw new MCFEditAlreadyOpenException( getClass(), "beginEdit" );
 	}
 
 	@Override
@@ -426,12 +426,12 @@ public class CFBamClusterEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(ICFLibKeyHash256 value) {
+	public void setRequiredId(IMCFKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsTenant = null;

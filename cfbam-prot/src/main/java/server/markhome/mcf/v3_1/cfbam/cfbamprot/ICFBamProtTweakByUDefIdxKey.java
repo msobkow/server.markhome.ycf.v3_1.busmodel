@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -68,14 +68,14 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamProtTweakByUDefIdxKey
 {
-	public ICFLibKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredScopeId();
-	public void setRequiredScopeId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaTenantId();
-	public void setOptionalDefSchemaTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getRequiredScopeId();
+	public void setRequiredScopeId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaTenantId();
+	public void setOptionalDefSchemaTenantId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

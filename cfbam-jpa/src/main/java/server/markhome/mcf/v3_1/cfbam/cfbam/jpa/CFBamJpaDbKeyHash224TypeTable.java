@@ -89,32 +89,32 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 
 	public CFBamJpaDbKeyHash224TypeTable(ICFBamSchema schema) {
 		if( schema == null ) {
-			throw new CFLibNullArgumentException(getClass(), "constructor", 1, "schema" );
+			throw new MCFNullArgumentException(getClass(), "constructor", 1, "schema" );
 		}
 		if (schema instanceof CFBamJpaSchema) {
 			this.schema = (CFBamJpaSchema)schema;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
+			throw new MCFUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
 		}
 	}
 
 	protected boolean canCreateDbKeyHash224Type(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "createdbkeyhash224type");
@@ -124,20 +124,20 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 
 	protected boolean canReadDbKeyHash224Type(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "readdbkeyhash224type");
@@ -147,20 +147,20 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 
 	protected boolean canUpdateDbKeyHash224Type(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "updatedbkeyhash224type");
@@ -170,20 +170,20 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 
 	protected boolean canDeleteDbKeyHash224Type(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "deletedbkeyhash224type");
@@ -206,11 +206,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "createDbKeyHash224Type";
 		boolean permissionGranted = canCreateDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "createdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "createdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "createDbKeyHash224Type", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "createDbKeyHash224Type", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaDbKeyHash224Type) {
 			CFBamJpaDbKeyHash224Type jparec = (CFBamJpaDbKeyHash224Type)rec;
@@ -222,7 +222,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "createDbKeyHash224Type", "rec", rec, "CFBamJpaDbKeyHash224Type");
+			throw new MCFUnsupportedClassException(getClass(), "createDbKeyHash224Type", "rec", rec, "CFBamJpaDbKeyHash224Type");
 		}
 	}
 
@@ -241,11 +241,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "updateDbKeyHash224Type";
 		boolean permissionGranted = canUpdateDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "updateDbKeyHash224Type", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "updateDbKeyHash224Type", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaDbKeyHash224Type) {
 			CFBamJpaDbKeyHash224Type jparec = (CFBamJpaDbKeyHash224Type)rec;
@@ -255,7 +255,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "updateDbKeyHash224Type", "rec", rec, "CFBamJpaDbKeyHash224Type");
+			throw new MCFUnsupportedClassException(getClass(), "updateDbKeyHash224Type", "rec", rec, "CFBamJpaDbKeyHash224Type");
 		}
 	}
 
@@ -273,7 +273,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224Type";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
@@ -284,10 +284,10 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByIdIdx(jparec.getPKey());
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "deleteDbKeyHash224Type", "rec", rec, "CFBamJpaDbKeyHash224Type");
+			throw new MCFUnsupportedClassException(getClass(), "deleteDbKeyHash224Type", "rec", rec, "CFBamJpaDbKeyHash224Type");
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "deleteDbKeyHash224Type");
+		throw new MCFNotImplementedYetException(getClass(), "deleteDbKeyHash224Type");
 	}
 
 	/**
@@ -299,12 +299,12 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public void deleteDbKeyHash224TypeBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId )
+		IMCFKeyHash256 argSchemaDefId )
 	{
 		final String S_ProcName = "deleteDbKeyHash224TypeBySchemaIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteBySchemaIdx(argSchemaDefId);
@@ -325,7 +325,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeBySchemaIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteBySchemaIdx(argKey.getRequiredSchemaDefId());
@@ -345,7 +345,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeByIdIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByIdIdx(argKey);
@@ -362,13 +362,13 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public void deleteDbKeyHash224TypeByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "deleteDbKeyHash224TypeByUNameIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByUNameIdx(argScopeId,
@@ -390,7 +390,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeByUNameIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByUNameIdx(argKey.getRequiredScopeId(),
@@ -406,12 +406,12 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public void deleteDbKeyHash224TypeByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "deleteDbKeyHash224TypeByScopeIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByScopeIdx(argScopeId);
@@ -432,7 +432,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeByScopeIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByScopeIdx(argKey.getRequiredScopeId());
@@ -447,12 +447,12 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public void deleteDbKeyHash224TypeByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "deleteDbKeyHash224TypeByDefSchemaIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByDefSchemaIdx(argDefSchemaId);
@@ -473,7 +473,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeByDefSchemaIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByDefSchemaIdx(argKey.getOptionalDefSchemaId());
@@ -488,12 +488,12 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public void deleteDbKeyHash224TypeByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "deleteDbKeyHash224TypeByPrevIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByPrevIdx(argPrevId);
@@ -514,7 +514,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeByPrevIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByPrevIdx(argKey.getOptionalPrevId());
@@ -529,12 +529,12 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public void deleteDbKeyHash224TypeByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "deleteDbKeyHash224TypeByNextIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByNextIdx(argNextId);
@@ -555,7 +555,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeByNextIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByNextIdx(argKey.getOptionalNextId());
@@ -572,13 +572,13 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public void deleteDbKeyHash224TypeByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "deleteDbKeyHash224TypeByContPrevIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByContPrevIdx(argScopeId,
@@ -600,7 +600,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeByContPrevIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByContPrevIdx(argKey.getRequiredScopeId(),
@@ -618,13 +618,13 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public void deleteDbKeyHash224TypeByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "deleteDbKeyHash224TypeByContNextIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByContNextIdx(argScopeId,
@@ -646,7 +646,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "deleteDbKeyHash224TypeByContNextIdx";
 		boolean permissionGranted = canDeleteDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash224TypeService().deleteByContNextIdx(argKey.getRequiredScopeId(),
@@ -671,7 +671,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "readDerived";
 		boolean permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamDbKeyHash224Type retval = schema.getJpaHooksSchema().getDbKeyHash224TypeService().find(PKey);
@@ -695,7 +695,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "lockDerived";
 		boolean permissionGranted = canUpdateDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamDbKeyHash224Type retval = schema.getJpaHooksSchema().getDbKeyHash224TypeService().lockByIdIdx(PKey);
@@ -714,7 +714,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "readAllDerived";
 		boolean permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		List<CFBamJpaDbKeyHash224Type> retlist = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findAll();
@@ -738,7 +738,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readDerivedByIdIdx";
 		boolean permissionGranted = false;
@@ -746,14 +746,14 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamDbKeyHash224Type retval = schema.getJpaHooksSchema().getDbKeyHash224TypeService().find(argId);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerSchemaDef().getRequiredOwnerCTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readdbkeyhash224type")) {
 				retval = null;
 			}
@@ -775,7 +775,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUNameIdx";
@@ -784,15 +784,15 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamDbKeyHash224Type retval = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findByUNameIdx(argScopeId,
 		argName);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerSchemaDef().getRequiredOwnerCTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readdbkeyhash224type")) {
 				retval = null;
 			}
@@ -811,7 +811,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "readDerivedByScopeIdx";
 		boolean permissionGranted = false;
@@ -819,7 +819,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash224Type> retlist = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findByScopeIdx(argScopeId);
 		ICFBamDbKeyHash224Type[] retset = new ICFBamDbKeyHash224Type[retlist.size()];
@@ -841,7 +841,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readDerivedByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -849,7 +849,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash224Type> retlist = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findByDefSchemaIdx(argDefSchemaId);
 		ICFBamDbKeyHash224Type[] retset = new ICFBamDbKeyHash224Type[retlist.size()];
@@ -871,7 +871,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readDerivedByPrevIdx";
 		boolean permissionGranted = false;
@@ -879,7 +879,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash224Type> retlist = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findByPrevIdx(argPrevId);
 		ICFBamDbKeyHash224Type[] retset = new ICFBamDbKeyHash224Type[retlist.size()];
@@ -901,7 +901,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readDerivedByNextIdx";
 		boolean permissionGranted = false;
@@ -909,7 +909,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash224Type> retlist = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findByNextIdx(argNextId);
 		ICFBamDbKeyHash224Type[] retset = new ICFBamDbKeyHash224Type[retlist.size()];
@@ -933,8 +933,8 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readDerivedByContPrevIdx";
 		boolean permissionGranted = false;
@@ -942,7 +942,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash224Type> retlist = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findByContPrevIdx(argScopeId,
 		argPrevId);
@@ -967,8 +967,8 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readDerivedByContNextIdx";
 		boolean permissionGranted = false;
@@ -976,7 +976,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash224Type> retlist = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findByContNextIdx(argScopeId,
 		argNextId);
@@ -999,7 +999,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readDerivedBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId )
+		IMCFKeyHash256 argSchemaDefId )
 	{
 		final String S_ProcName = "readDerivedBySchemaIdx";
 		boolean permissionGranted = false;
@@ -1007,7 +1007,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash224Type> retlist = schema.getJpaHooksSchema().getDbKeyHash224TypeService().findBySchemaIdx(argSchemaDefId);
 		ICFBamDbKeyHash224Type[] retset = new ICFBamDbKeyHash224Type[retlist.size()];
@@ -1028,7 +1028,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type readRec( ICFSecAuthorization Authorization,
@@ -1037,10 +1037,10 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "readRec";
 		boolean permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readRec");
+		throw new MCFNotImplementedYetException(getClass(), "readRec");
 	}
 
 	/**
@@ -1053,7 +1053,7 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type lockRec( ICFSecAuthorization Authorization,
@@ -1062,10 +1062,10 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "lockRec";
 		boolean permissionGranted = canUpdateDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "lockRec");
+		throw new MCFNotImplementedYetException(getClass(), "lockRec");
 	}
 
 	/**
@@ -1080,10 +1080,10 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 		final String S_ProcName = "readAllRec";
 		boolean permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readAllRec");
+		throw new MCFNotImplementedYetException(getClass(), "readAllRec");
 	}
 
 
@@ -1097,11 +1097,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readRecByIdIdx";
 		boolean permissionGranted = false;
@@ -1109,9 +1109,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdIdx");
 	}
 
 	/**
@@ -1126,11 +1126,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUNameIdx";
@@ -1139,9 +1139,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUNameIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUNameIdx");
 	}
 
 	/**
@@ -1153,11 +1153,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "readRecByScopeIdx";
 		boolean permissionGranted = false;
@@ -1165,9 +1165,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByScopeIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByScopeIdx");
 	}
 
 	/**
@@ -1179,11 +1179,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readRecByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -1191,9 +1191,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
 	}
 
 	/**
@@ -1205,11 +1205,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readRecByPrevIdx";
 		boolean permissionGranted = false;
@@ -1217,9 +1217,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByPrevIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByPrevIdx");
 	}
 
 	/**
@@ -1231,11 +1231,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readRecByNextIdx";
 		boolean permissionGranted = false;
@@ -1243,9 +1243,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByNextIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByNextIdx");
 	}
 
 	/**
@@ -1259,12 +1259,12 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readRecByContPrevIdx";
 		boolean permissionGranted = false;
@@ -1272,9 +1272,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByContPrevIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByContPrevIdx");
 	}
 
 	/**
@@ -1288,12 +1288,12 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readRecByContNextIdx";
 		boolean permissionGranted = false;
@@ -1301,9 +1301,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByContNextIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByContNextIdx");
 	}
 
 	/**
@@ -1315,11 +1315,11 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId )
+		IMCFKeyHash256 argSchemaDefId )
 	{
 		final String S_ProcName = "readRecBySchemaIdx";
 		boolean permissionGranted = false;
@@ -1327,9 +1327,9 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 			permissionGranted = canReadDbKeyHash224Type(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecBySchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecBySchemaIdx");
 	}
 
 	/**
@@ -1339,16 +1339,16 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId,
+		IMCFKeyHash256 argId,
 		int revision )
 	{
 		final String S_ProcName = "moveRecUp";
 		boolean permissionGranted = canUpdateDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "moveRecUp");
+		throw new MCFNotImplementedYetException(getClass(), "moveRecUp");
 	}
 
 	/**
@@ -1358,15 +1358,15 @@ public class CFBamJpaDbKeyHash224TypeTable implements ICFBamDbKeyHash224TypeTabl
 	 */
 	@Override
 	public ICFBamDbKeyHash224Type moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId,
+		IMCFKeyHash256 argId,
 		int revision )
 	{
 		final String S_ProcName = "moveRecDown";
 		boolean permissionGranted = canUpdateDbKeyHash224Type(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash224type", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash224TypeTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "moveRecDown");
+		throw new MCFNotImplementedYetException(getClass(), "moveRecDown");
 	}
 }

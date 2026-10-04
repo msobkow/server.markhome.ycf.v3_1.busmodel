@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -75,36 +75,36 @@ public class CFBamBuffChainH
     implements ICFBamChainH, Comparable<Object>, Serializable
 {
     protected CFBamBuffChainHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected MCFDbKeyHash256 createdByUserId = MCFDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
+	protected MCFDbKeyHash256 createdBySessionId = MCFDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected MCFDbKeyHash256 updatedByUserId = MCFDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
+	protected MCFDbKeyHash256 updatedBySessionId = MCFDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
 	protected String requiredName;
 	protected String optionalShortName;
 	protected String optionalLabel;
 	protected String optionalShortDescription;
 	protected String optionalDescription;
-	protected ICFLibKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 requiredTableId;
 	protected String optionalSuffix;
-	protected ICFLibKeyHash256 requiredPrevRelationId;
-	protected ICFLibKeyHash256 requiredNextRelationId;
+	protected IMCFKeyHash256 requiredPrevRelationId;
+	protected IMCFKeyHash256 requiredNextRelationId;
 
     public CFBamBuffChainH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFBamBuffChainHPKey();
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
 		requiredName = ICFBamPubChain.NAME_INIT_VALUE;
 		optionalShortName = null;
 		optionalLabel = null;
 		optionalShortDescription = null;
 		optionalDescription = null;
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubChain.TABLEID_INIT_VALUE.toString() );
 		optionalSuffix = null;
-		requiredPrevRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.PREVRELATIONID_INIT_VALUE.toString() );
-		requiredNextRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.NEXTRELATIONID_INIT_VALUE.toString() );
+		requiredPrevRelationId = MCFDbKeyHash256.fromHex( ICFBamPubChain.PREVRELATIONID_INIT_VALUE.toString() );
+		requiredNextRelationId = MCFDbKeyHash256.fromHex( ICFBamPubChain.NEXTRELATIONID_INIT_VALUE.toString() );
     }
 
     @Override
@@ -113,14 +113,14 @@ public class CFBamBuffChainH
     }
 
     @Override
-    public CFLibDbKeyHash256 getCreatedByUserId() {
+    public MCFDbKeyHash256 getCreatedByUserId() {
         return( createdByUserId );
     }
 
     @Override
-    public void setCreatedByUserId( CFLibDbKeyHash256 value ) {
+    public void setCreatedByUserId( MCFDbKeyHash256 value ) {
         if (value == null || value.isNull()) {
-            throw new CFLibNullArgumentException(getClass(), "setCreatedByUserId", 1, "value");
+            throw new MCFNullArgumentException(getClass(), "setCreatedByUserId", 1, "value");
         }
         createdByUserId = value;
     }
@@ -133,20 +133,20 @@ public class CFBamBuffChainH
     @Override
     public void setCreatedAt( LocalDateTime value ) {
         if (value == null) {
-            throw new CFLibNullArgumentException(getClass(), "setCreatedAt", 1, "value");
+            throw new MCFNullArgumentException(getClass(), "setCreatedAt", 1, "value");
         }
         createdAt = value;
     }
 
     @Override
-    public CFLibDbKeyHash256 getUpdatedByUserId() {
+    public MCFDbKeyHash256 getUpdatedByUserId() {
         return( updatedByUserId );
     }
 
     @Override
-    public void setUpdatedByUserId( CFLibDbKeyHash256 value ) {
+    public void setUpdatedByUserId( MCFDbKeyHash256 value ) {
         if (value == null || value.isNull()) {
-            throw new CFLibNullArgumentException(getClass(), "setUpdatedByUserId", 1, "value");
+            throw new MCFNullArgumentException(getClass(), "setUpdatedByUserId", 1, "value");
         }
         updatedByUserId = value;
     }
@@ -159,7 +159,7 @@ public class CFBamBuffChainH
     @Override
     public void setUpdatedAt( LocalDateTime value ) {
         if (value == null) {
-            throw new CFLibNullArgumentException(getClass(), "setUpdatedAt", 1, "value");
+            throw new MCFNullArgumentException(getClass(), "setUpdatedAt", 1, "value");
         }
         updatedAt = value;
     }
@@ -176,18 +176,18 @@ public class CFBamBuffChainH
                 this.pkey = (CFBamBuffChainHPKey)pkey;
             }
             else {
-                throw new CFLibUnsupportedClassException(getClass(), "setPKey", "pkey", pkey, "CFBamBuffChainHPKey");
+                throw new MCFUnsupportedClassException(getClass(), "setPKey", "pkey", pkey, "CFBamBuffChainHPKey");
             }
         }
     }
 
     @Override
-    public CFLibDbKeyHash256 getAuditClusterId() {
+    public MCFDbKeyHash256 getAuditClusterId() {
         return pkey.getAuditClusterId();
     }
 
     @Override
-    public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId) {
+    public void setAuditClusterId(MCFDbKeyHash256 auditClusterId) {
         pkey.setAuditClusterId(auditClusterId);
     }
 
@@ -222,23 +222,23 @@ public class CFBamBuffChainH
     }
 
     @Override
-    public CFLibDbKeyHash256 getAuditSessionId() {
+    public MCFDbKeyHash256 getAuditSessionId() {
         return pkey.getAuditSessionId();
     }
 
     @Override
-    public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId) {
+    public void setAuditSessionId(MCFDbKeyHash256 auditSessionId) {
         pkey.setAuditSessionId(auditSessionId);
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return(getPKey().getRequiredId());
 	}
 
-	public void setRequiredId( ICFLibKeyHash256 value ) {
+	public void setRequiredId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredId",
 				1,
 				"value" );
@@ -247,11 +247,11 @@ public class CFBamBuffChainH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
@@ -262,13 +262,13 @@ public class CFBamBuffChainH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -285,7 +285,7 @@ public class CFBamBuffChainH
 
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortName",
 				1,
 				"value.length()",
@@ -302,7 +302,7 @@ public class CFBamBuffChainH
 
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalLabel",
 				1,
 				"value.length()",
@@ -319,7 +319,7 @@ public class CFBamBuffChainH
 
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortDescription",
 				1,
 				"value.length()",
@@ -336,7 +336,7 @@ public class CFBamBuffChainH
 
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDescription",
 				1,
 				"value.length()",
@@ -347,13 +347,13 @@ public class CFBamBuffChainH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -368,7 +368,7 @@ public class CFBamBuffChainH
 
 	public void setOptionalSuffix( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalSuffix",
 				1,
 				"value.length()",
@@ -379,13 +379,13 @@ public class CFBamBuffChainH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredPrevRelationId() {
+	public IMCFKeyHash256 getRequiredPrevRelationId() {
 		return(requiredPrevRelationId);
 	}
 
-	public void setRequiredPrevRelationId( ICFLibKeyHash256 value ) {
+	public void setRequiredPrevRelationId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredPrevRelationId",
 				1,
 				"value" );
@@ -394,13 +394,13 @@ public class CFBamBuffChainH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredNextRelationId() {
+	public IMCFKeyHash256 getRequiredNextRelationId() {
 		return(requiredNextRelationId);
 	}
 
-	public void setRequiredNextRelationId( ICFLibKeyHash256 value ) {
+	public void setRequiredNextRelationId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredNextRelationId",
 				1,
 				"value" );
@@ -1378,7 +1378,7 @@ public class CFBamBuffChainH
             return( 0 );
         }
         else {
-            throw new CFLibUnsupportedClassException( getClass(),
+            throw new MCFUnsupportedClassException( getClass(),
                 "compareTo",
                 "obj",
                 obj,

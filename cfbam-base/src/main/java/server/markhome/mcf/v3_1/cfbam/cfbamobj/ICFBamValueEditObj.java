@@ -231,32 +231,32 @@ public interface ICFBamValueEditObj
 	void setOptionalLookupNext( ICFBamValueObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ScopeId.
+	 *	Get the required IMCFKeyHash256 attribute ScopeId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ScopeId.
+	 *	@return	The required IMCFKeyHash256 attribute ScopeId.
 	 */
-	ICFLibKeyHash256 getRequiredScopeId();
+	IMCFKeyHash256 getRequiredScopeId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required IMCFKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId(IMCFKeyHash256 value);
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -385,18 +385,18 @@ public interface ICFBamValueEditObj
 	void setRequiredImplementsPolymorph(boolean value);
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute PrevId.
+	 *	Get the optional IMCFKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute PrevId.
+	 *	@return	The optional IMCFKeyHash256 attribute PrevId.
 	 */
-	ICFLibKeyHash256 getOptionalPrevId();
+	IMCFKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute NextId.
+	 *	Get the optional IMCFKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute NextId.
+	 *	@return	The optional IMCFKeyHash256 attribute NextId.
 	 */
-	ICFLibKeyHash256 getOptionalNextId();
+	IMCFKeyHash256 getOptionalNextId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

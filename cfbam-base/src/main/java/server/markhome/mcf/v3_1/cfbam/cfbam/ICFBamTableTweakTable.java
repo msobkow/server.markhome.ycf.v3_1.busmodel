@@ -108,7 +108,7 @@ public interface ICFBamTableTweakTable
 	 *	@param	TableId	The TableTweak key attribute of the instance generating the id.
 	 */
 	void deleteTableTweakByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId );
+		IMCFKeyHash256 argTableId );
 
 	/**
 	 *	Delete the TableTweak instances identified by the key TableIdx.
@@ -138,7 +138,7 @@ public interface ICFBamTableTweakTable
 	 *	@param	Name	The TableTweak key attribute of the instance generating the id.
 	 */
 	void deleteTableTweakByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -158,7 +158,7 @@ public interface ICFBamTableTweakTable
 	 *	@param	TenantId	The TableTweak key attribute of the instance generating the id.
 	 */
 	void deleteTableTweakByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the TableTweak instances identified by the key ValTentIdx.
@@ -177,7 +177,7 @@ public interface ICFBamTableTweakTable
 	 *	@param	ScopeId	The TableTweak key attribute of the instance generating the id.
 	 */
 	void deleteTableTweakByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the TableTweak instances identified by the key ScopeIdx.
@@ -196,7 +196,7 @@ public interface ICFBamTableTweakTable
 	 *	@param	DefSchemaId	The TableTweak key attribute of the instance generating the id.
 	 */
 	void deleteTableTweakByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the TableTweak instances identified by the key DefSchemaIdx.
@@ -223,10 +223,10 @@ public interface ICFBamTableTweakTable
 	 *	@param	Name	The TableTweak key attribute of the instance generating the id.
 	 */
 	void deleteTableTweakByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaTenantId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argTenantId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaTenantId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName );
 
 	/**
@@ -286,7 +286,7 @@ public interface ICFBamTableTweakTable
 	 *		no such existing key value.
 	 */
 	ICFBamTableTweak readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived TableTweak record instance identified by the unique key UNameIdx.
@@ -301,7 +301,7 @@ public interface ICFBamTableTweakTable
 	 *		no such existing key value.
 	 */
 	ICFBamTableTweak readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -314,7 +314,7 @@ public interface ICFBamTableTweakTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableTweak[] readDerivedByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived TableTweak record instances identified by the duplicate key ScopeIdx.
@@ -326,7 +326,7 @@ public interface ICFBamTableTweakTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableTweak[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived TableTweak record instances identified by the duplicate key DefSchemaIdx.
@@ -338,7 +338,7 @@ public interface ICFBamTableTweakTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableTweak[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived TableTweak record instance identified by the unique key UDefIdx.
@@ -359,10 +359,10 @@ public interface ICFBamTableTweakTable
 	 *		no such existing key value.
 	 */
 	ICFBamTableTweak readDerivedByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -375,7 +375,7 @@ public interface ICFBamTableTweakTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableTweak[] readDerivedByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read the specific TableTweak record instance identified by the primary key.
@@ -387,7 +387,7 @@ public interface ICFBamTableTweakTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -402,7 +402,7 @@ public interface ICFBamTableTweakTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -426,10 +426,10 @@ public interface ICFBamTableTweakTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific TableTweak record instance identified by the unique key UNameIdx.
@@ -443,10 +443,10 @@ public interface ICFBamTableTweakTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -458,10 +458,10 @@ public interface ICFBamTableTweakTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak[] readRecByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific TableTweak record instances identified by the duplicate key ScopeIdx.
@@ -472,10 +472,10 @@ public interface ICFBamTableTweakTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific TableTweak record instances identified by the duplicate key DefSchemaIdx.
@@ -486,10 +486,10 @@ public interface ICFBamTableTweakTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific TableTweak record instance identified by the unique key UDefIdx.
@@ -509,13 +509,13 @@ public interface ICFBamTableTweakTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak readRecByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -527,8 +527,8 @@ public interface ICFBamTableTweakTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableTweak[] readRecByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 }

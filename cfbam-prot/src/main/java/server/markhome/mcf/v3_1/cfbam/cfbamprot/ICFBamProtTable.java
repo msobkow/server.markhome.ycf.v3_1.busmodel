@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -76,20 +76,20 @@ public interface ICFBamProtTable
 	public static final ICFBamPubSchema.SecScopeEnum SECSCOPE_MAX_VALUE = ICFBamPubSchema.SecScopeEnum.TenantGroup;
 	public static final ICFBamPubSchema.CodeVisibilityEnum CODEVIS_MAX_VALUE = ICFBamPubSchema.CodeVisibilityEnum.Private;
 	public static final String S_SCHEMADEFID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 SCHEMADEFID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMADEFID_INIT_VALUE );
+	public static final MCFDbKeyHash256 SCHEMADEFID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_SCHEMADEFID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DEFSCHEMAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static boolean PAGEDATA_INIT_VALUE = false;
 	public static final String S_PRIMARYINDEXID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 PRIMARYINDEXID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PRIMARYINDEXID_INIT_VALUE );
+	public static final MCFDbKeyHash256 PRIMARYINDEXID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_PRIMARYINDEXID_INIT_VALUE );
 	public static final String TABLECLASSCODE_INIT_VALUE = new String( "" );
 	public static final String S_LOOKUPINDEXID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 LOOKUPINDEXID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_LOOKUPINDEXID_INIT_VALUE );
+	public static final MCFDbKeyHash256 LOOKUPINDEXID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_LOOKUPINDEXID_INIT_VALUE );
 	public static final String S_ALTINDEXID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ALTINDEXID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ALTINDEXID_INIT_VALUE );
+	public static final MCFDbKeyHash256 ALTINDEXID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_ALTINDEXID_INIT_VALUE );
 	public static final String S_QUALIFYINGTABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 QUALIFYINGTABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_QUALIFYINGTABLEID_INIT_VALUE );
+	public static final MCFDbKeyHash256 QUALIFYINGTABLEID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_QUALIFYINGTABLEID_INIT_VALUE );
 	public final static boolean ISINSTANTIABLE_INIT_VALUE = true;
 	public final static boolean HASHISTORY_INIT_VALUE = false;
 	public final static boolean HASAUDITCOLUMNS_INIT_VALUE = false;
@@ -103,7 +103,7 @@ public interface ICFBamProtTable
 
 	public ICFBamProtSchemaDef getRequiredContainerSchemaDef();
 
-	public void setRequiredContainerSchemaDef(ICFLibKeyHash256 argSchemaDefId);
+	public void setRequiredContainerSchemaDef(IMCFKeyHash256 argSchemaDefId);
 
 
 	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj);
@@ -112,7 +112,7 @@ public interface ICFBamProtTable
 
 	public ICFBamProtSchemaDef getOptionalLookupDefSchema();
 
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId);
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId);
 
 
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
@@ -121,7 +121,7 @@ public interface ICFBamProtTable
 
 	public ICFBamProtIndex getOptionalLookupLookupIndex();
 
-	public void setOptionalLookupLookupIndex(ICFLibKeyHash256 argLookupIndexId);
+	public void setOptionalLookupLookupIndex(IMCFKeyHash256 argLookupIndexId);
 
 
 	public void setOptionalLookupLookupIndex(ICFBamProtIndex argObj);
@@ -130,7 +130,7 @@ public interface ICFBamProtTable
 
 	public ICFBamProtIndex getOptionalLookupAltIndex();
 
-	public void setOptionalLookupAltIndex(ICFLibKeyHash256 argAltIndexId);
+	public void setOptionalLookupAltIndex(IMCFKeyHash256 argAltIndexId);
 
 
 	public void setOptionalLookupAltIndex(ICFBamProtIndex argObj);
@@ -139,7 +139,7 @@ public interface ICFBamProtTable
 
 	public ICFBamProtTable getOptionalLookupQualTable();
 
-	public void setOptionalLookupQualTable(ICFLibKeyHash256 argQualifyingTableId);
+	public void setOptionalLookupQualTable(IMCFKeyHash256 argQualifyingTableId);
 
 
 	public void setOptionalLookupQualTable(ICFBamProtTable argObj);
@@ -148,7 +148,7 @@ public interface ICFBamProtTable
 
 	public ICFBamProtIndex getOptionalLookupPrimaryIndex();
 
-	public void setOptionalLookupPrimaryIndex(ICFLibKeyHash256 argPrimaryIndexId);
+	public void setOptionalLookupPrimaryIndex(IMCFKeyHash256 argPrimaryIndexId);
 
 
 	public void setOptionalLookupPrimaryIndex(ICFBamProtIndex argObj);
@@ -173,10 +173,10 @@ public interface ICFBamProtTable
 
 	public List<ICFBamProtTweak> getOptionalComponentsTweaks();
 
-	public ICFLibKeyHash256 getRequiredSchemaDefId();
-	public void setRequiredSchemaDefId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredSchemaDefId();
+	public void setRequiredSchemaDefId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDbName();
@@ -191,16 +191,16 @@ public interface ICFBamProtTable
 	public void setOptionalDescription( String value );
 	public boolean getRequiredPageData();
 	public void setRequiredPageData( boolean value );
-	public ICFLibKeyHash256 getOptionalPrimaryIndexId();
-	public void setOptionalPrimaryIndexId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalPrimaryIndexId();
+	public void setOptionalPrimaryIndexId( IMCFKeyHash256 value );
 	public String getRequiredTableClassCode();
 	public void setRequiredTableClassCode( String value );
-	public ICFLibKeyHash256 getOptionalLookupIndexId();
-	public void setOptionalLookupIndexId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalAltIndexId();
-	public void setOptionalAltIndexId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalQualifyingTableId();
-	public void setOptionalQualifyingTableId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalLookupIndexId();
+	public void setOptionalLookupIndexId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalAltIndexId();
+	public void setOptionalAltIndexId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalQualifyingTableId();
+	public void setOptionalQualifyingTableId( IMCFKeyHash256 value );
 	public boolean getRequiredIsInstantiable();
 	public void setRequiredIsInstantiable( boolean value );
 	public boolean getRequiredHasHistory();

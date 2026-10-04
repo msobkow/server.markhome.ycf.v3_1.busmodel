@@ -117,7 +117,7 @@ public interface ICFBamChainTable
 	 *	@param	TableId	The Chain key attribute of the instance generating the id.
 	 */
 	void deleteChainByChainTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId );
+		IMCFKeyHash256 argTableId );
 
 	/**
 	 *	Delete the Chain instances identified by the key ChainTableIdx.
@@ -136,7 +136,7 @@ public interface ICFBamChainTable
 	 *	@param	DefSchemaId	The Chain key attribute of the instance generating the id.
 	 */
 	void deleteChainByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Chain instances identified by the key DefSchemaIdx.
@@ -157,7 +157,7 @@ public interface ICFBamChainTable
 	 *	@param	Name	The Chain key attribute of the instance generating the id.
 	 */
 	void deleteChainByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName );
 
 	/**
@@ -177,7 +177,7 @@ public interface ICFBamChainTable
 	 *	@param	PrevRelationId	The Chain key attribute of the instance generating the id.
 	 */
 	void deleteChainByPrevRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevRelationId );
+		IMCFKeyHash256 argPrevRelationId );
 
 	/**
 	 *	Delete the Chain instances identified by the key PrevRelIdx.
@@ -196,7 +196,7 @@ public interface ICFBamChainTable
 	 *	@param	NextRelationId	The Chain key attribute of the instance generating the id.
 	 */
 	void deleteChainByNextRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextRelationId );
+		IMCFKeyHash256 argNextRelationId );
 
 	/**
 	 *	Delete the Chain instances identified by the key NextRelIdx.
@@ -255,7 +255,7 @@ public interface ICFBamChainTable
 	 *		no such existing key value.
 	 */
 	ICFBamChain readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Chain record instances identified by the duplicate key ChainTableIdx.
@@ -267,7 +267,7 @@ public interface ICFBamChainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamChain[] readDerivedByChainTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the derived Chain record instances identified by the duplicate key DefSchemaIdx.
@@ -279,7 +279,7 @@ public interface ICFBamChainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamChain[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived Chain record instance identified by the unique key UNameIdx.
@@ -294,7 +294,7 @@ public interface ICFBamChainTable
 	 *		no such existing key value.
 	 */
 	ICFBamChain readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -307,7 +307,7 @@ public interface ICFBamChainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamChain[] readDerivedByPrevRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevRelationId );
+		IMCFKeyHash256 PrevRelationId );
 
 	/**
 	 *	Read an array of the derived Chain record instances identified by the duplicate key NextRelIdx.
@@ -319,7 +319,7 @@ public interface ICFBamChainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamChain[] readDerivedByNextRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextRelationId );
+		IMCFKeyHash256 NextRelationId );
 
 	/**
 	 *	Read the specific Chain record instance identified by the primary key.
@@ -331,7 +331,7 @@ public interface ICFBamChainTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamChain readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -346,7 +346,7 @@ public interface ICFBamChainTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamChain lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -370,10 +370,10 @@ public interface ICFBamChainTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamChain readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Chain record instances identified by the duplicate key ChainTableIdx.
@@ -384,10 +384,10 @@ public interface ICFBamChainTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamChain[] readRecByChainTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the specific Chain record instances identified by the duplicate key DefSchemaIdx.
@@ -398,10 +398,10 @@ public interface ICFBamChainTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamChain[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific Chain record instance identified by the unique key UNameIdx.
@@ -415,10 +415,10 @@ public interface ICFBamChainTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamChain readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -430,10 +430,10 @@ public interface ICFBamChainTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamChain[] readRecByPrevRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevRelationId );
+		IMCFKeyHash256 PrevRelationId );
 
 	/**
 	 *	Read an array of the specific Chain record instances identified by the duplicate key NextRelIdx.
@@ -444,8 +444,8 @@ public interface ICFBamChainTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamChain[] readRecByNextRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextRelationId );
+		IMCFKeyHash256 NextRelationId );
 }

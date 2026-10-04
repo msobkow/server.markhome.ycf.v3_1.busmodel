@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
@@ -98,7 +98,7 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjScope() {
+	public IMCFAnyObj getObjScope() {
 		ICFSecSecUserObj scope = getRequiredContainerUser();
 		return( scope );
 	}
@@ -106,7 +106,7 @@ public class CFBamSecUserEMConfObj
 	@Override
 	public String getObjName() {
 		String objName;
-		ICFLibUuid6 val = rec.getRequiredEMConfirmationUuid6();
+		IMCFUuid6 val = rec.getRequiredEMConfirmationUuid6();
 		if (val != null) {
 			objName = val.toString();
 		}
@@ -117,8 +117,8 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -148,21 +148,21 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( Class qualifyingClass, String objName ) {
-		ICFLibAnyObj topContainer = getObjQualifier( qualifyingClass );
+	public IMCFAnyObj getNamedObject( Class qualifyingClass, String objName ) {
+		IMCFAnyObj topContainer = getObjQualifier( qualifyingClass );
 		if( topContainer == null ) {
 			return( null );
 		}
-		ICFLibAnyObj namedObject = topContainer.getNamedObject( objName );
+		IMCFAnyObj namedObject = topContainer.getNamedObject( objName );
 		return( namedObject );
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -187,7 +187,7 @@ public class CFBamSecUserEMConfObj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -208,7 +208,7 @@ public class CFBamSecUserEMConfObj
 	@Override
 	public String getObjFullName() {
 		String fullName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -286,7 +286,7 @@ public class CFBamSecUserEMConfObj
 	@Override
 	public void setRec( ICFSecSecUserEMConf value ) {
 		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecUserEMConf ) ) ) {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
@@ -328,7 +328,7 @@ public class CFBamSecUserEMConfObj
 	@Override
 	public ICFSecSecUserEMConfEditObj beginEdit() {
 		if( edit != null ) {
-			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
+			throw new MCFEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
 		ICFSecSecUserEMConfObj lockobj;
 		if( getIsNew() ) {
@@ -385,7 +385,7 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public IMCFKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -416,7 +416,7 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public ICFLibUuid6 getRequiredEMConfirmationUuid6() {
+	public IMCFUuid6 getRequiredEMConfirmationUuid6() {
 		return( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() );
 	}
 

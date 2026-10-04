@@ -236,32 +236,32 @@ public interface ICFBamProtParamEditObj
 	void setRequiredLookupType( ICFBamProtValueObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ServerMethodId.
+	 *	Get the required IMCFKeyHash256 attribute ServerMethodId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ServerMethodId.
+	 *	@return	The required IMCFKeyHash256 attribute ServerMethodId.
 	 */
-	ICFLibKeyHash256 getRequiredServerMethodId();
+	IMCFKeyHash256 getRequiredServerMethodId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required IMCFKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId(IMCFKeyHash256 value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -320,25 +320,25 @@ public interface ICFBamProtParamEditObj
 	void setRequiredIsNullable(boolean value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute TypeId.
+	 *	Get the optional MCFDbKeyHash256 attribute TypeId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute TypeId.
+	 *	@return	The optional MCFDbKeyHash256 attribute TypeId.
 	 */
-	CFLibDbKeyHash256 getOptionalTypeId();
+	MCFDbKeyHash256 getOptionalTypeId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrevId.
+	 *	Get the optional MCFDbKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrevId.
+	 *	@return	The optional MCFDbKeyHash256 attribute PrevId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrevId();
+	MCFDbKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NextId.
+	 *	Get the optional MCFDbKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NextId.
+	 *	@return	The optional MCFDbKeyHash256 attribute NextId.
 	 */
-	CFLibDbKeyHash256 getOptionalNextId();
+	MCFDbKeyHash256 getOptionalNextId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

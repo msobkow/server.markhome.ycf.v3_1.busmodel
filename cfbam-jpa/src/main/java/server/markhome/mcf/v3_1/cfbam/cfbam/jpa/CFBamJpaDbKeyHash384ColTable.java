@@ -89,32 +89,32 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 
 	public CFBamJpaDbKeyHash384ColTable(ICFBamSchema schema) {
 		if( schema == null ) {
-			throw new CFLibNullArgumentException(getClass(), "constructor", 1, "schema" );
+			throw new MCFNullArgumentException(getClass(), "constructor", 1, "schema" );
 		}
 		if (schema instanceof CFBamJpaSchema) {
 			this.schema = (CFBamJpaSchema)schema;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
+			throw new MCFUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
 		}
 	}
 
 	protected boolean canCreateDbKeyHash384Col(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "createdbkeyhash384col");
@@ -124,20 +124,20 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 
 	protected boolean canReadDbKeyHash384Col(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "readdbkeyhash384col");
@@ -147,20 +147,20 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 
 	protected boolean canUpdateDbKeyHash384Col(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "updatedbkeyhash384col");
@@ -170,20 +170,20 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 
 	protected boolean canDeleteDbKeyHash384Col(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "deletedbkeyhash384col");
@@ -206,11 +206,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "createDbKeyHash384Col";
 		boolean permissionGranted = canCreateDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "createdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "createdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "createDbKeyHash384Col", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "createDbKeyHash384Col", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaDbKeyHash384Col) {
 			CFBamJpaDbKeyHash384Col jparec = (CFBamJpaDbKeyHash384Col)rec;
@@ -222,7 +222,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "createDbKeyHash384Col", "rec", rec, "CFBamJpaDbKeyHash384Col");
+			throw new MCFUnsupportedClassException(getClass(), "createDbKeyHash384Col", "rec", rec, "CFBamJpaDbKeyHash384Col");
 		}
 	}
 
@@ -241,11 +241,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "updateDbKeyHash384Col";
 		boolean permissionGranted = canUpdateDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "updateDbKeyHash384Col", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "updateDbKeyHash384Col", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaDbKeyHash384Col) {
 			CFBamJpaDbKeyHash384Col jparec = (CFBamJpaDbKeyHash384Col)rec;
@@ -255,7 +255,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "updateDbKeyHash384Col", "rec", rec, "CFBamJpaDbKeyHash384Col");
+			throw new MCFUnsupportedClassException(getClass(), "updateDbKeyHash384Col", "rec", rec, "CFBamJpaDbKeyHash384Col");
 		}
 	}
 
@@ -273,7 +273,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384Col";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
@@ -284,10 +284,10 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByIdIdx(jparec.getPKey());
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "deleteDbKeyHash384Col", "rec", rec, "CFBamJpaDbKeyHash384Col");
+			throw new MCFUnsupportedClassException(getClass(), "deleteDbKeyHash384Col", "rec", rec, "CFBamJpaDbKeyHash384Col");
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "deleteDbKeyHash384Col");
+		throw new MCFNotImplementedYetException(getClass(), "deleteDbKeyHash384Col");
 	}
 
 	/**
@@ -299,12 +299,12 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public void deleteDbKeyHash384ColByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "deleteDbKeyHash384ColByTableIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByTableIdx(argTableId);
@@ -325,7 +325,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByTableIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByTableIdx(argKey.getRequiredTableId());
@@ -345,7 +345,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByIdIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByIdIdx(argKey);
@@ -362,13 +362,13 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public void deleteDbKeyHash384ColByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "deleteDbKeyHash384ColByUNameIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByUNameIdx(argScopeId,
@@ -390,7 +390,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByUNameIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByUNameIdx(argKey.getRequiredScopeId(),
@@ -406,12 +406,12 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public void deleteDbKeyHash384ColByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "deleteDbKeyHash384ColByScopeIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByScopeIdx(argScopeId);
@@ -432,7 +432,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByScopeIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByScopeIdx(argKey.getRequiredScopeId());
@@ -447,12 +447,12 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public void deleteDbKeyHash384ColByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "deleteDbKeyHash384ColByDefSchemaIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByDefSchemaIdx(argDefSchemaId);
@@ -473,7 +473,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByDefSchemaIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByDefSchemaIdx(argKey.getOptionalDefSchemaId());
@@ -488,12 +488,12 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public void deleteDbKeyHash384ColByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "deleteDbKeyHash384ColByPrevIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByPrevIdx(argPrevId);
@@ -514,7 +514,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByPrevIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByPrevIdx(argKey.getOptionalPrevId());
@@ -529,12 +529,12 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public void deleteDbKeyHash384ColByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "deleteDbKeyHash384ColByNextIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByNextIdx(argNextId);
@@ -555,7 +555,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByNextIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByNextIdx(argKey.getOptionalNextId());
@@ -572,13 +572,13 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public void deleteDbKeyHash384ColByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "deleteDbKeyHash384ColByContPrevIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByContPrevIdx(argScopeId,
@@ -600,7 +600,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByContPrevIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByContPrevIdx(argKey.getRequiredScopeId(),
@@ -618,13 +618,13 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public void deleteDbKeyHash384ColByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "deleteDbKeyHash384ColByContNextIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByContNextIdx(argScopeId,
@@ -646,7 +646,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "deleteDbKeyHash384ColByContNextIdx";
 		boolean permissionGranted = canDeleteDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDbKeyHash384ColService().deleteByContNextIdx(argKey.getRequiredScopeId(),
@@ -671,7 +671,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "readDerived";
 		boolean permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamDbKeyHash384Col retval = schema.getJpaHooksSchema().getDbKeyHash384ColService().find(PKey);
@@ -695,7 +695,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "lockDerived";
 		boolean permissionGranted = canUpdateDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamDbKeyHash384Col retval = schema.getJpaHooksSchema().getDbKeyHash384ColService().lockByIdIdx(PKey);
@@ -714,7 +714,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "readAllDerived";
 		boolean permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		List<CFBamJpaDbKeyHash384Col> retlist = schema.getJpaHooksSchema().getDbKeyHash384ColService().findAll();
@@ -738,7 +738,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readDerivedByIdIdx";
 		boolean permissionGranted = false;
@@ -746,14 +746,14 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamDbKeyHash384Col retval = schema.getJpaHooksSchema().getDbKeyHash384ColService().find(argId);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerTable().getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readdbkeyhash384col")) {
 				retval = null;
 			}
@@ -775,7 +775,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUNameIdx";
@@ -784,15 +784,15 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamDbKeyHash384Col retval = schema.getJpaHooksSchema().getDbKeyHash384ColService().findByUNameIdx(argScopeId,
 		argName);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerTable().getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readdbkeyhash384col")) {
 				retval = null;
 			}
@@ -811,7 +811,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "readDerivedByScopeIdx";
 		boolean permissionGranted = false;
@@ -819,7 +819,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash384Col> retlist = schema.getJpaHooksSchema().getDbKeyHash384ColService().findByScopeIdx(argScopeId);
 		ICFBamDbKeyHash384Col[] retset = new ICFBamDbKeyHash384Col[retlist.size()];
@@ -841,7 +841,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readDerivedByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -849,7 +849,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash384Col> retlist = schema.getJpaHooksSchema().getDbKeyHash384ColService().findByDefSchemaIdx(argDefSchemaId);
 		ICFBamDbKeyHash384Col[] retset = new ICFBamDbKeyHash384Col[retlist.size()];
@@ -871,7 +871,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readDerivedByPrevIdx";
 		boolean permissionGranted = false;
@@ -879,7 +879,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash384Col> retlist = schema.getJpaHooksSchema().getDbKeyHash384ColService().findByPrevIdx(argPrevId);
 		ICFBamDbKeyHash384Col[] retset = new ICFBamDbKeyHash384Col[retlist.size()];
@@ -901,7 +901,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readDerivedByNextIdx";
 		boolean permissionGranted = false;
@@ -909,7 +909,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash384Col> retlist = schema.getJpaHooksSchema().getDbKeyHash384ColService().findByNextIdx(argNextId);
 		ICFBamDbKeyHash384Col[] retset = new ICFBamDbKeyHash384Col[retlist.size()];
@@ -933,8 +933,8 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readDerivedByContPrevIdx";
 		boolean permissionGranted = false;
@@ -942,7 +942,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash384Col> retlist = schema.getJpaHooksSchema().getDbKeyHash384ColService().findByContPrevIdx(argScopeId,
 		argPrevId);
@@ -967,8 +967,8 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readDerivedByContNextIdx";
 		boolean permissionGranted = false;
@@ -976,7 +976,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash384Col> retlist = schema.getJpaHooksSchema().getDbKeyHash384ColService().findByContNextIdx(argScopeId,
 		argNextId);
@@ -999,7 +999,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readDerivedByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "readDerivedByTableIdx";
 		boolean permissionGranted = false;
@@ -1007,7 +1007,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDbKeyHash384Col> retlist = schema.getJpaHooksSchema().getDbKeyHash384ColService().findByTableIdx(argTableId);
 		ICFBamDbKeyHash384Col[] retset = new ICFBamDbKeyHash384Col[retlist.size()];
@@ -1028,7 +1028,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col readRec( ICFSecAuthorization Authorization,
@@ -1037,10 +1037,10 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "readRec";
 		boolean permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readRec");
+		throw new MCFNotImplementedYetException(getClass(), "readRec");
 	}
 
 	/**
@@ -1053,7 +1053,7 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col lockRec( ICFSecAuthorization Authorization,
@@ -1062,10 +1062,10 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "lockRec";
 		boolean permissionGranted = canUpdateDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "lockRec");
+		throw new MCFNotImplementedYetException(getClass(), "lockRec");
 	}
 
 	/**
@@ -1080,10 +1080,10 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 		final String S_ProcName = "readAllRec";
 		boolean permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readAllRec");
+		throw new MCFNotImplementedYetException(getClass(), "readAllRec");
 	}
 
 
@@ -1097,11 +1097,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readRecByIdIdx";
 		boolean permissionGranted = false;
@@ -1109,9 +1109,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdIdx");
 	}
 
 	/**
@@ -1126,11 +1126,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUNameIdx";
@@ -1139,9 +1139,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUNameIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUNameIdx");
 	}
 
 	/**
@@ -1153,11 +1153,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "readRecByScopeIdx";
 		boolean permissionGranted = false;
@@ -1165,9 +1165,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByScopeIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByScopeIdx");
 	}
 
 	/**
@@ -1179,11 +1179,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readRecByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -1191,9 +1191,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
 	}
 
 	/**
@@ -1205,11 +1205,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readRecByPrevIdx";
 		boolean permissionGranted = false;
@@ -1217,9 +1217,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByPrevIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByPrevIdx");
 	}
 
 	/**
@@ -1231,11 +1231,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readRecByNextIdx";
 		boolean permissionGranted = false;
@@ -1243,9 +1243,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByNextIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByNextIdx");
 	}
 
 	/**
@@ -1259,12 +1259,12 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readRecByContPrevIdx";
 		boolean permissionGranted = false;
@@ -1272,9 +1272,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByContPrevIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByContPrevIdx");
 	}
 
 	/**
@@ -1288,12 +1288,12 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readRecByContNextIdx";
 		boolean permissionGranted = false;
@@ -1301,9 +1301,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByContNextIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByContNextIdx");
 	}
 
 	/**
@@ -1315,11 +1315,11 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col[] readRecByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "readRecByTableIdx";
 		boolean permissionGranted = false;
@@ -1327,9 +1327,9 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 			permissionGranted = canReadDbKeyHash384Col(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByTableIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByTableIdx");
 	}
 
 	/**
@@ -1339,16 +1339,16 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId,
+		IMCFKeyHash256 argId,
 		int revision )
 	{
 		final String S_ProcName = "moveRecUp";
 		boolean permissionGranted = canUpdateDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "moveRecUp");
+		throw new MCFNotImplementedYetException(getClass(), "moveRecUp");
 	}
 
 	/**
@@ -1358,15 +1358,15 @@ public class CFBamJpaDbKeyHash384ColTable implements ICFBamDbKeyHash384ColTable
 	 */
 	@Override
 	public ICFBamDbKeyHash384Col moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId,
+		IMCFKeyHash256 argId,
 		int revision )
 	{
 		final String S_ProcName = "moveRecDown";
 		boolean permissionGranted = canUpdateDbKeyHash384Col(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedbkeyhash384col", ICFBamSchema.SCHEMA_NAME, ICFBamDbKeyHash384ColTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "moveRecDown");
+		throw new MCFNotImplementedYetException(getClass(), "moveRecDown");
 	}
 }

@@ -91,7 +91,7 @@ implements ICFBamJavaFXClearTopDepPaneList
 	protected ICFBamJavaFXSchema javafxSchema = null;
 	protected Collection<ICFBamClearTopDepObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamClearTopDepObj> observableListOfClearTopDep = null;
-	protected TableColumn<ICFBamClearTopDepObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamClearTopDepObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamClearTopDepObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamClearTopDepObj, ICFBamRelationObj> tableColumnLookupRelation = null;
 	protected TableColumn<ICFBamClearTopDepObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
@@ -141,24 +141,24 @@ implements ICFBamJavaFXClearTopDepPaneList
 		javafxContainer = argContainer;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamClearTopDepObj>();
-		tableColumnId = new TableColumn<ICFBamClearTopDepObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamClearTopDepObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamClearTopDepObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamClearTopDepObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamClearTopDepObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamClearTopDepObj, IMCFKeyHash256> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamClearTopDepObj,ICFLibKeyHash256>,TableCell<ICFBamClearTopDepObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamClearTopDepObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamClearTopDepObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamClearTopDepObj,IMCFKeyHash256>,TableCell<ICFBamClearTopDepObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamClearTopDepObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamClearTopDepObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamClearTopDepObj>();
 			}

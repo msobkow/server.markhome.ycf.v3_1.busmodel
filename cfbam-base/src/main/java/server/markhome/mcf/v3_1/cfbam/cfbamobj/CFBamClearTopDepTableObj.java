@@ -154,7 +154,7 @@ public class CFBamClearTopDepTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamClearTopDepTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamClearTopDepTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -626,7 +626,7 @@ public class CFBamClearTopDepTableObj
 			locked = (ICFBamClearTopDepObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockClearTopDep", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockClearTopDep", pkey );
 		}
 		return( locked );
 	}
@@ -661,7 +661,7 @@ public class CFBamClearTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -669,7 +669,7 @@ public class CFBamClearTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -721,7 +721,7 @@ public class CFBamClearTopDepTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -729,7 +729,7 @@ public class CFBamClearTopDepTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -766,28 +766,28 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public ICFBamClearTopDepObj readClearTopDepByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamClearTopDepObj readClearTopDepByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readClearTopDepByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamClearTopDepObj readClearTopDepByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamClearTopDepObj readClearTopDepByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamClearTopDepObj obj = readClearTopDep( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamClearTopDepObj> readClearTopDepByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readClearTopDepByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFBamClearTopDepObj> readClearTopDepByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearTopDepByTenantIdx";
@@ -825,7 +825,7 @@ public class CFBamClearTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -833,7 +833,7 @@ public class CFBamClearTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -873,14 +873,14 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByClearDepIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamClearTopDepObj> readClearTopDepByClearDepIdx( IMCFKeyHash256 RelationId )
 	{
 		return( readClearTopDepByClearDepIdx( RelationId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByClearDepIdx( ICFLibKeyHash256 RelationId,
+	public List<ICFBamClearTopDepObj> readClearTopDepByClearDepIdx( IMCFKeyHash256 RelationId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearTopDepByClearDepIdx";
@@ -918,7 +918,7 @@ public class CFBamClearTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -926,7 +926,7 @@ public class CFBamClearTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -966,14 +966,14 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamClearTopDepObj> readClearTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readClearTopDepByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamClearTopDepObj> readClearTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearTopDepByDefSchemaIdx";
@@ -1011,7 +1011,7 @@ public class CFBamClearTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1019,7 +1019,7 @@ public class CFBamClearTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1059,14 +1059,14 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByClrTopDepTblIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamClearTopDepObj> readClearTopDepByClrTopDepTblIdx( IMCFKeyHash256 TableId )
 	{
 		return( readClearTopDepByClrTopDepTblIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByClrTopDepTblIdx( ICFLibKeyHash256 TableId,
+	public List<ICFBamClearTopDepObj> readClearTopDepByClrTopDepTblIdx( IMCFKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearTopDepByClrTopDepTblIdx";
@@ -1104,7 +1104,7 @@ public class CFBamClearTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1112,7 +1112,7 @@ public class CFBamClearTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1152,7 +1152,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public ICFBamClearTopDepObj readClearTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public ICFBamClearTopDepObj readClearTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name )
 	{
 		return( readClearTopDepByUNameIdx( TableId,
@@ -1161,7 +1161,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public ICFBamClearTopDepObj readClearTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public ICFBamClearTopDepObj readClearTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1190,14 +1190,14 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamClearTopDepObj> readClearTopDepByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readClearTopDepByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamClearTopDepObj> readClearTopDepByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearTopDepByPrevIdx";
@@ -1235,7 +1235,7 @@ public class CFBamClearTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1243,7 +1243,7 @@ public class CFBamClearTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1283,14 +1283,14 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamClearTopDepObj> readClearTopDepByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readClearTopDepByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readClearTopDepByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamClearTopDepObj> readClearTopDepByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearTopDepByNextIdx";
@@ -1328,7 +1328,7 @@ public class CFBamClearTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1336,7 +1336,7 @@ public class CFBamClearTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1376,7 +1376,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public ICFBamClearTopDepObj readCachedClearTopDepByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamClearTopDepObj readCachedClearTopDepByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamClearTopDepObj obj = null;
 		obj = readCachedClearTopDep( Id );
@@ -1384,7 +1384,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readCachedClearTopDepByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamClearTopDepObj> readCachedClearTopDepByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedClearTopDepByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
@@ -1402,7 +1402,7 @@ public class CFBamClearTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1410,7 +1410,7 @@ public class CFBamClearTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1461,7 +1461,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readCachedClearTopDepByClearDepIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamClearTopDepObj> readCachedClearTopDepByClearDepIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedClearTopDepByClearDepIdx";
 		ICFBamClearDepByClearDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
@@ -1479,7 +1479,7 @@ public class CFBamClearTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1487,7 +1487,7 @@ public class CFBamClearTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1538,7 +1538,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readCachedClearTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamClearTopDepObj> readCachedClearTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedClearTopDepByDefSchemaIdx";
 		ICFBamClearDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
@@ -1556,7 +1556,7 @@ public class CFBamClearTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1564,7 +1564,7 @@ public class CFBamClearTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1615,7 +1615,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readCachedClearTopDepByClrTopDepTblIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamClearTopDepObj> readCachedClearTopDepByClrTopDepTblIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedClearTopDepByClrTopDepTblIdx";
 		ICFBamClearTopDepByClrTopDepTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearTopDep().newByClrTopDepTblIdxKey();
@@ -1633,7 +1633,7 @@ public class CFBamClearTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1641,7 +1641,7 @@ public class CFBamClearTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1692,7 +1692,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public ICFBamClearTopDepObj readCachedClearTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public ICFBamClearTopDepObj readCachedClearTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name )
 	{
 		ICFBamClearTopDepObj obj = null;
@@ -1730,7 +1730,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readCachedClearTopDepByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamClearTopDepObj> readCachedClearTopDepByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedClearTopDepByPrevIdx";
 		ICFBamClearTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearTopDep().newByPrevIdxKey();
@@ -1748,7 +1748,7 @@ public class CFBamClearTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1756,7 +1756,7 @@ public class CFBamClearTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1807,7 +1807,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamClearTopDepObj> readCachedClearTopDepByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamClearTopDepObj> readCachedClearTopDepByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedClearTopDepByNextIdx";
 		ICFBamClearTopDepByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearTopDep().newByNextIdxKey();
@@ -1825,7 +1825,7 @@ public class CFBamClearTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1833,7 +1833,7 @@ public class CFBamClearTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1884,7 +1884,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeClearTopDepByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeClearTopDepByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamClearTopDepObj obj = readCachedClearTopDepByIdIdx( Id );
 		if( obj != null ) {
@@ -1893,7 +1893,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeClearTopDepByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeClearTopDepByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeClearTopDepByTenantIdx";
 		ICFBamClearTopDepObj obj;
@@ -1910,7 +1910,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeClearTopDepByClearDepIdx( ICFLibKeyHash256 RelationId )
+	public void deepDisposeClearTopDepByClearDepIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "deepDisposeClearTopDepByClearDepIdx";
 		ICFBamClearTopDepObj obj;
@@ -1927,7 +1927,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeClearTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeClearTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeClearTopDepByDefSchemaIdx";
 		ICFBamClearTopDepObj obj;
@@ -1944,7 +1944,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeClearTopDepByClrTopDepTblIdx( ICFLibKeyHash256 TableId )
+	public void deepDisposeClearTopDepByClrTopDepTblIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeClearTopDepByClrTopDepTblIdx";
 		ICFBamClearTopDepObj obj;
@@ -1961,7 +1961,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeClearTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public void deepDisposeClearTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name )
 	{
 		ICFBamClearTopDepObj obj = readCachedClearTopDepByUNameIdx( TableId,
@@ -1972,7 +1972,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeClearTopDepByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeClearTopDepByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeClearTopDepByPrevIdx";
 		ICFBamClearTopDepObj obj;
@@ -1989,7 +1989,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeClearTopDepByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeClearTopDepByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeClearTopDepByNextIdx";
 		ICFBamClearTopDepObj obj;
@@ -2034,7 +2034,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deleteClearTopDepByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteClearTopDepByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamClearTopDepObj obj = readClearTopDep(Id);
 		if( obj != null ) {
@@ -2064,7 +2064,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deleteClearTopDepByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteClearTopDepByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -2098,7 +2098,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deleteClearTopDepByClearDepIdx( ICFLibKeyHash256 RelationId )
+	public void deleteClearTopDepByClearDepIdx( IMCFKeyHash256 RelationId )
 	{
 		ICFBamClearDepByClearDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
 		key.setRequiredRelationId( RelationId );
@@ -2132,7 +2132,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deleteClearTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteClearTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamClearDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2166,7 +2166,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deleteClearTopDepByClrTopDepTblIdx( ICFLibKeyHash256 TableId )
+	public void deleteClearTopDepByClrTopDepTblIdx( IMCFKeyHash256 TableId )
 	{
 		ICFBamClearTopDepByClrTopDepTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearTopDep().newByClrTopDepTblIdxKey();
 		key.setRequiredTableId( TableId );
@@ -2200,7 +2200,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deleteClearTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public void deleteClearTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2228,7 +2228,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deleteClearTopDepByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteClearTopDepByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamClearTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearTopDep().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2262,7 +2262,7 @@ public class CFBamClearTopDepTableObj
 	}
 
 	@Override
-	public void deleteClearTopDepByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteClearTopDepByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamClearTopDepByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearTopDep().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2304,7 +2304,7 @@ public class CFBamClearTopDepTableObj
 	public ICFBamClearTopDepObj moveUpClearTopDep( ICFBamClearTopDepObj Obj ) {
 		ICFBamClearTopDepObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpClearTopDep" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpClearTopDep" );
 		}
 		ICFBamClearTopDep rec = schema.getCFBamBackingStore().getTableClearTopDep().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2332,7 +2332,7 @@ public class CFBamClearTopDepTableObj
 	public ICFBamClearTopDepObj moveDownClearTopDep( ICFBamClearTopDepObj Obj ) {
 		ICFBamClearTopDepObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownClearTopDep" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownClearTopDep" );
 		}
 		ICFBamClearTopDep rec = schema.getCFBamBackingStore().getTableClearTopDep().moveRecDown( null,
 			Obj.getRequiredId(),

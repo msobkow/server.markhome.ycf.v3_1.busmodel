@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -109,7 +109,7 @@ public class CFBamBuffBoolDef
 
 	public void setOptionalFalseString( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalFalseString",
 				1,
 				"value.length()",
@@ -126,7 +126,7 @@ public class CFBamBuffBoolDef
 
 	public void setOptionalTrueString( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalTrueString",
 				1,
 				"value.length()",
@@ -143,7 +143,7 @@ public class CFBamBuffBoolDef
 
 	public void setOptionalNullString( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalNullString",
 				1,
 				"value.length()",
@@ -1274,7 +1274,7 @@ public class CFBamBuffBoolDef
 			setBoolDef( (CFBamBuffBoolDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -1297,7 +1297,7 @@ public class CFBamBuffBoolDef
 			setBoolDef( (ICFBamBoolDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -1320,7 +1320,7 @@ public class CFBamBuffBoolDef
 			setBoolDef( (CFBamProtBuffBoolDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -1343,7 +1343,7 @@ public class CFBamBuffBoolDef
 			setBoolDef( (ICFBamProtBoolDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -1366,7 +1366,7 @@ public class CFBamBuffBoolDef
 			setBoolDef( (CFBamPubBuffBoolDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -1389,7 +1389,7 @@ public class CFBamBuffBoolDef
 			setBoolDef( (ICFBamPubBoolDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

@@ -95,11 +95,11 @@ public interface ICFBamPubDelSubDep3EditObj
 	void setRequiredContainerDelSubDep2( ICFBamPubDelSubDep2Obj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute DelSubDep2Id.
+	 *	Get the required MCFDbKeyHash256 attribute DelSubDep2Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute DelSubDep2Id.
+	 *	@return	The required MCFDbKeyHash256 attribute DelSubDep2Id.
 	 */
-	CFLibDbKeyHash256 getRequiredDelSubDep2Id();
+	MCFDbKeyHash256 getRequiredDelSubDep2Id();
 
 	/**
 	 *	Get the required String attribute Name.

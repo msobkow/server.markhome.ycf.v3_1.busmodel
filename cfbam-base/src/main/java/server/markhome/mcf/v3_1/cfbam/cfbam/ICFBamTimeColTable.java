@@ -108,7 +108,7 @@ public interface ICFBamTimeColTable
 	 *	@param	TableId	The TimeCol key attribute of the instance generating the id.
 	 */
 	void deleteTimeColByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId );
+		IMCFKeyHash256 argTableId );
 
 	/**
 	 *	Delete the TimeCol instances identified by the key TableIdx.
@@ -138,7 +138,7 @@ public interface ICFBamTimeColTable
 	 *	@param	Name	The TimeCol key attribute of the instance generating the id.
 	 */
 	void deleteTimeColByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -158,7 +158,7 @@ public interface ICFBamTimeColTable
 	 *	@param	ScopeId	The TimeCol key attribute of the instance generating the id.
 	 */
 	void deleteTimeColByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the TimeCol instances identified by the key ScopeIdx.
@@ -177,7 +177,7 @@ public interface ICFBamTimeColTable
 	 *	@param	DefSchemaId	The TimeCol key attribute of the instance generating the id.
 	 */
 	void deleteTimeColByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the TimeCol instances identified by the key DefSchemaIdx.
@@ -196,7 +196,7 @@ public interface ICFBamTimeColTable
 	 *	@param	PrevId	The TimeCol key attribute of the instance generating the id.
 	 */
 	void deleteTimeColByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TimeCol instances identified by the key PrevIdx.
@@ -215,7 +215,7 @@ public interface ICFBamTimeColTable
 	 *	@param	NextId	The TimeCol key attribute of the instance generating the id.
 	 */
 	void deleteTimeColByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TimeCol instances identified by the key NextIdx.
@@ -236,8 +236,8 @@ public interface ICFBamTimeColTable
 	 *	@param	PrevId	The TimeCol key attribute of the instance generating the id.
 	 */
 	void deleteTimeColByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TimeCol instances identified by the key ContPrevIdx.
@@ -258,8 +258,8 @@ public interface ICFBamTimeColTable
 	 *	@param	NextId	The TimeCol key attribute of the instance generating the id.
 	 */
 	void deleteTimeColByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TimeCol instances identified by the key ContNextIdx.
@@ -318,7 +318,7 @@ public interface ICFBamTimeColTable
 	 *		no such existing key value.
 	 */
 	ICFBamTimeCol readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived TimeCol record instance identified by the unique key UNameIdx.
@@ -333,7 +333,7 @@ public interface ICFBamTimeColTable
 	 *		no such existing key value.
 	 */
 	ICFBamTimeCol readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -346,7 +346,7 @@ public interface ICFBamTimeColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTimeCol[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived TimeCol record instances identified by the duplicate key DefSchemaIdx.
@@ -358,7 +358,7 @@ public interface ICFBamTimeColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTimeCol[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived TimeCol record instances identified by the duplicate key PrevIdx.
@@ -370,7 +370,7 @@ public interface ICFBamTimeColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTimeCol[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TimeCol record instances identified by the duplicate key NextIdx.
@@ -382,7 +382,7 @@ public interface ICFBamTimeColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTimeCol[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TimeCol record instances identified by the duplicate key ContPrevIdx.
@@ -396,8 +396,8 @@ public interface ICFBamTimeColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTimeCol[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TimeCol record instances identified by the duplicate key ContNextIdx.
@@ -411,8 +411,8 @@ public interface ICFBamTimeColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTimeCol[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TimeCol record instances identified by the duplicate key TableIdx.
@@ -424,7 +424,7 @@ public interface ICFBamTimeColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTimeCol[] readDerivedByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read the specific TimeCol record instance identified by the primary key.
@@ -436,7 +436,7 @@ public interface ICFBamTimeColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -451,7 +451,7 @@ public interface ICFBamTimeColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -475,10 +475,10 @@ public interface ICFBamTimeColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific TimeCol record instance identified by the unique key UNameIdx.
@@ -492,10 +492,10 @@ public interface ICFBamTimeColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -507,10 +507,10 @@ public interface ICFBamTimeColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific TimeCol record instances identified by the duplicate key DefSchemaIdx.
@@ -521,10 +521,10 @@ public interface ICFBamTimeColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific TimeCol record instances identified by the duplicate key PrevIdx.
@@ -535,10 +535,10 @@ public interface ICFBamTimeColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TimeCol record instances identified by the duplicate key NextIdx.
@@ -549,10 +549,10 @@ public interface ICFBamTimeColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TimeCol record instances identified by the duplicate key ContPrevIdx.
@@ -565,11 +565,11 @@ public interface ICFBamTimeColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TimeCol record instances identified by the duplicate key ContNextIdx.
@@ -582,11 +582,11 @@ public interface ICFBamTimeColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TimeCol record instances identified by the duplicate key TableIdx.
@@ -597,10 +597,10 @@ public interface ICFBamTimeColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTimeCol[] readRecByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -608,7 +608,7 @@ public interface ICFBamTimeColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamTimeCol moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -617,6 +617,6 @@ public interface ICFBamTimeColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamTimeCol moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

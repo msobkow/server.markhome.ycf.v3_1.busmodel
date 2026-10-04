@@ -142,7 +142,7 @@ public class CFBamRamSchemaRefTable
 				Buff.setOptionalLookupPrev(tail.getRequiredId());
 			}
 			else {
-				Buff.setOptionalLookupPrev((ICFLibKeyHash256)null);
+				Buff.setOptionalLookupPrev((IMCFKeyHash256)null);
 			}
 		}
 		$implCommaIJavaOptAtomType$ pkey;
@@ -166,11 +166,11 @@ public class CFBamRamSchemaRefTable
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		if( dictByUNameIdx.containsKey( keyUNameIdx ) ) {
-			throw new CFLibUniqueIndexViolationException( getClass(),
+			throw new MCFUniqueIndexViolationException( getClass(),
 				S_ProcName,
 				"SchemaRefUNameIdx",
 				"SchemaRefUNameIdx",
@@ -186,7 +186,7 @@ public class CFBamRamSchemaRefTable
 				if( null == schema.getTableScope().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Superclass",
 						"Superclass",
@@ -206,7 +206,7 @@ public class CFBamRamSchemaRefTable
 				if( null == schema.getTableSchemaDef().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredSchemaId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Container",
 						"Container",
@@ -274,7 +274,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, tailEdit );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-table-chain-link-tail-", (Integer)tailClassCode, "Classcode not recognized: " + Integer.toString(tailClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-table-chain-link-tail-", (Integer)tailClassCode, "Classcode not recognized: " + Integer.toString(tailClassCode));
 			}
 		}
 		if (Buff == null) {
@@ -288,7 +288,7 @@ public class CFBamRamSchemaRefTable
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -340,7 +340,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByTenantIdx";
 		ICFBamScope buffList[] = schema.getTableScope().readDerivedByTenantIdx( Authorization,
@@ -363,7 +363,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readDerivedBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaId )
+		IMCFKeyHash256 SchemaId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readDerivedBySchemaIdx";
 		CFBamBuffSchemaRefBySchemaIdxKey key = (CFBamBuffSchemaRefBySchemaIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newBySchemaIdxKey();
@@ -391,7 +391,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaId,
+		IMCFKeyHash256 SchemaId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readDerivedByUNameIdx";
@@ -411,7 +411,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readDerivedByRefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RefSchemaId )
+		IMCFKeyHash256 RefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readDerivedByRefSchemaIdx";
 		CFBamBuffSchemaRefByRefSchemaIdxKey key = (CFBamBuffSchemaRefByRefSchemaIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newByRefSchemaIdxKey();
@@ -439,7 +439,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId )
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readDerivedByPrevIdx";
 		CFBamBuffSchemaRefByPrevIdxKey key = (CFBamBuffSchemaRefByPrevIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newByPrevIdxKey();
@@ -467,7 +467,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId )
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readDerivedByNextIdx";
 		CFBamBuffSchemaRefByNextIdxKey key = (CFBamBuffSchemaRefByNextIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newByNextIdxKey();
@@ -495,7 +495,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByIdIdx() ";
 		ICFBamSchemaRef buff;
@@ -550,7 +550,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByIdIdx() ";
 		ICFBamSchemaRef buff = readDerivedByIdIdx( Authorization,
@@ -565,7 +565,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByTenantIdx() ";
 		ICFBamSchemaRef buff;
@@ -583,7 +583,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaId )
+		IMCFKeyHash256 SchemaId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readRecBySchemaIdx() ";
 		ICFBamSchemaRef buff;
@@ -601,7 +601,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaId,
+		IMCFKeyHash256 SchemaId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readRecByUNameIdx() ";
@@ -618,7 +618,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readRecByRefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RefSchemaId )
+		IMCFKeyHash256 RefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readRecByRefSchemaIdx() ";
 		ICFBamSchemaRef buff;
@@ -636,7 +636,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId )
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readRecByPrevIdx() ";
 		ICFBamSchemaRef buff;
@@ -654,7 +654,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public ICFBamSchemaRef[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId )
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRef.readRecByNextIdx() ";
 		ICFBamSchemaRef buff;
@@ -677,7 +677,7 @@ public class CFBamRamSchemaRefTable
 	 */
 	@Override
 	public ICFBamSchemaRef moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision )
 	{
 		final String S_ProcName = "moveRecUp";
@@ -689,7 +689,7 @@ public class CFBamRamSchemaRefTable
 
 		cur = schema.getTableSchemaRef().readDerivedByIdIdx(Authorization, Id);
 		if( cur == null ) {
-			throw new CFLibCollisionDetectedException( getClass(), S_ProcName, "Could not locate object" );
+			throw new MCFCollisionDetectedException( getClass(), S_ProcName, "Could not locate object" );
 		}
 
 		if( ( cur.getOptionalPrevId() == null ) )
@@ -699,14 +699,14 @@ public class CFBamRamSchemaRefTable
 
 		prev = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx(Authorization, cur.getOptionalPrevId() ));
 		if( prev == null ) {
-			throw new CFLibCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.prev" );
+			throw new MCFCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.prev" );
 		}
 
 		if( ( prev.getOptionalPrevId() != null ) )
 		{
 			grandprev = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx(Authorization, prev.getOptionalPrevId() ));
 			if( grandprev == null ) {
-				throw new CFLibCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.prev.prev" );
+				throw new MCFCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.prev.prev" );
 			}
 		}
 
@@ -714,7 +714,7 @@ public class CFBamRamSchemaRefTable
 		{
 			next = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx(Authorization, cur.getOptionalNextId() ));
 			if( next == null ) {
-				throw new CFLibCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.next" );
+				throw new MCFCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.next" );
 			}
 		}
 
@@ -724,7 +724,7 @@ public class CFBamRamSchemaRefTable
 				newInstance = schema.getCFBamBuffFactory().getFactorySchemaRef().newRec();
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		CFBamBuffSchemaRef editPrev = (CFBamBuffSchemaRef)newInstance;
 		editPrev.set( prev );
@@ -734,7 +734,7 @@ public class CFBamRamSchemaRefTable
 				newInstance = schema.getCFBamBuffFactory().getFactorySchemaRef().newRec();
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		CFBamBuffSchemaRef editCur = (CFBamBuffSchemaRef)newInstance;
 		editCur.set( cur );
@@ -746,7 +746,7 @@ public class CFBamRamSchemaRefTable
 				newInstance = schema.getCFBamBuffFactory().getFactorySchemaRef().newRec();
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 			editGrandprev = (CFBamBuffSchemaRef)newInstance;
 			editGrandprev.set( grandprev );
@@ -759,7 +759,7 @@ public class CFBamRamSchemaRefTable
 				newInstance = schema.getCFBamBuffFactory().getFactorySchemaRef().newRec();
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 			editNext = (CFBamBuffSchemaRef)newInstance;
 			editNext.set( next );
@@ -770,7 +770,7 @@ public class CFBamRamSchemaRefTable
 			editCur.setOptionalLookupPrev(grandprev.getRequiredId());
 		}
 		else {
-			editCur.setOptionalLookupPrev((ICFLibKeyHash256)null);
+			editCur.setOptionalLookupPrev((IMCFKeyHash256)null);
 		}
 
 			editPrev.setOptionalLookupPrev(cur.getRequiredId());
@@ -782,7 +782,7 @@ public class CFBamRamSchemaRefTable
 			editNext.setOptionalLookupPrev(prev.getRequiredId());
 		}
 		else {
-			editPrev.setOptionalLookupNext((ICFLibKeyHash256)null);
+			editPrev.setOptionalLookupNext((IMCFKeyHash256)null);
 		}
 
 		if( editGrandprev != null ) {
@@ -791,7 +791,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editGrandprev );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-update-grand-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-update-grand-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 
@@ -800,7 +800,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editPrev );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-update-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-update-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 
 		classCode = editCur.getClassCode();
@@ -808,7 +808,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editCur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-update-cur-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-update-cur-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 
 		if( editNext != null ) {
@@ -817,7 +817,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editNext );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-update-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-update-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 
@@ -831,7 +831,7 @@ public class CFBamRamSchemaRefTable
 	 */
 	@Override
 	public ICFBamSchemaRef moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision )
 	{
 		final String S_ProcName = "moveRecDown";
@@ -843,7 +843,7 @@ public class CFBamRamSchemaRefTable
 
 		cur = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx(Authorization, Id));
 		if( cur == null ) {
-			throw new CFLibCollisionDetectedException( getClass(), S_ProcName, "Could not locate object" );
+			throw new MCFCollisionDetectedException( getClass(), S_ProcName, "Could not locate object" );
 		}
 
 		if( ( cur.getOptionalNextId() == null ) )
@@ -853,14 +853,14 @@ public class CFBamRamSchemaRefTable
 
 		next = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx(Authorization, cur.getOptionalNextId() ));
 		if( next == null ) {
-			throw new CFLibCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.next" );
+			throw new MCFCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.next" );
 		}
 
 		if( ( next.getOptionalNextId() != null ) )
 		{
 			grandnext = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx(Authorization, next.getOptionalNextId() ));
 			if( grandnext == null ) {
-				throw new CFLibCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.next.next" );
+				throw new MCFCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.next.next" );
 			}
 		}
 
@@ -868,7 +868,7 @@ public class CFBamRamSchemaRefTable
 		{
 			prev = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx(Authorization, cur.getOptionalPrevId() ));
 			if( prev == null ) {
-				throw new CFLibCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.prev" );
+				throw new MCFCollisionDetectedException( getClass(), S_ProcName, "Could not locate object.prev" );
 			}
 		}
 
@@ -878,7 +878,7 @@ public class CFBamRamSchemaRefTable
 				newInstance = schema.getCFBamBuffFactory().getFactorySchemaRef().newRec();
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		CFBamBuffSchemaRef editCur = (CFBamBuffSchemaRef)newInstance;
 		editCur.set( cur );
@@ -888,7 +888,7 @@ public class CFBamRamSchemaRefTable
 				newInstance = schema.getCFBamBuffFactory().getFactorySchemaRef().newRec();
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		CFBamBuffSchemaRef editNext = (CFBamBuffSchemaRef)newInstance;
 		editNext.set( next );
@@ -900,7 +900,7 @@ public class CFBamRamSchemaRefTable
 				newInstance = schema.getCFBamBuffFactory().getFactorySchemaRef().newRec();
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 			editGrandnext = (CFBamBuffSchemaRef)newInstance;
 			editGrandnext.set( grandnext );
@@ -913,7 +913,7 @@ public class CFBamRamSchemaRefTable
 				newInstance = schema.getCFBamBuffFactory().getFactorySchemaRef().newRec();
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-instantiate-buff-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 			editPrev = (CFBamBuffSchemaRef)newInstance;
 			editPrev.set( prev );
@@ -924,7 +924,7 @@ public class CFBamRamSchemaRefTable
 			editNext.setOptionalLookupPrev(prev.getRequiredId());
 		}
 		else {
-			editNext.setOptionalLookupPrev((ICFLibKeyHash256)null);
+			editNext.setOptionalLookupPrev((IMCFKeyHash256)null);
 		}
 
 			editCur.setOptionalLookupPrev(next.getRequiredId());
@@ -936,7 +936,7 @@ public class CFBamRamSchemaRefTable
 			editGrandnext.setOptionalLookupPrev(cur.getRequiredId());
 		}
 		else {
-			editCur.setOptionalLookupNext((ICFLibKeyHash256)null);
+			editCur.setOptionalLookupNext((IMCFKeyHash256)null);
 		}
 
 		if( editPrev != null ) {
@@ -945,7 +945,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editPrev );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-update-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-update-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 
@@ -954,7 +954,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editCur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-update-cur-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-update-cur-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 
 		classCode = editNext.getClassCode();
@@ -962,7 +962,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editNext );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-update-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-update-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 
 		if( editGrandnext != null ) {
@@ -971,7 +971,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editGrandnext );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-update-grand-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-update-grand-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 
@@ -985,7 +985,7 @@ public class CFBamRamSchemaRefTable
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffSchemaRef existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updateSchemaRef",
 				"Existing record not found",
 				"Existing record not found",
@@ -1029,7 +1029,7 @@ public class CFBamRamSchemaRefTable
 
 		if( ! existingKeyUNameIdx.equals( newKeyUNameIdx ) ) {
 			if( dictByUNameIdx.containsKey( newKeyUNameIdx ) ) {
-				throw new CFLibUniqueIndexViolationException( getClass(),
+				throw new MCFUniqueIndexViolationException( getClass(),
 					"updateSchemaRef",
 					"SchemaRefUNameIdx",
 					"SchemaRefUNameIdx",
@@ -1046,7 +1046,7 @@ public class CFBamRamSchemaRefTable
 				if( null == schema.getTableScope().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateSchemaRef",
 						"Superclass",
 						"Superclass",
@@ -1066,7 +1066,7 @@ public class CFBamRamSchemaRefTable
 				if( null == schema.getTableSchemaDef().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredSchemaId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateSchemaRef",
 						"Container",
 						"Container",
@@ -1158,22 +1158,22 @@ public class CFBamRamSchemaRefTable
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deleteSchemaRef",
 				pkey );
 		}
-		ICFLibKeyHash256 varSchemaId = existing.getRequiredSchemaId();
+		IMCFKeyHash256 varSchemaId = existing.getRequiredSchemaId();
 		CFBamBuffSchemaDef container = (CFBamBuffSchemaDef)(schema.getTableSchemaDef().readDerivedByIdIdx( Authorization,
 			varSchemaId ));
 		if( container == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				S_ProcName,
 				0,
 				"container" );
 		}
 
-		ICFLibKeyHash256 prevId = existing.getOptionalPrevId();
-		ICFLibKeyHash256 nextId = existing.getOptionalNextId();
+		IMCFKeyHash256 prevId = existing.getOptionalPrevId();
+		IMCFKeyHash256 nextId = existing.getOptionalNextId();
 
 		CFBamBuffSchemaRef prev = null;
 		if( ( prevId != null ) )
@@ -1181,7 +1181,7 @@ public class CFBamRamSchemaRefTable
 			prev = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx( Authorization,
 				prevId ));
 			if( prev == null ) {
-				throw new CFLibNullArgumentException( getClass(),
+				throw new MCFNullArgumentException( getClass(),
 					S_ProcName,
 					0,
 					"prev" );
@@ -1192,7 +1192,7 @@ public class CFBamRamSchemaRefTable
 				editPrev = (CFBamBuffSchemaRef)(schema.getCFBamBuffFactory().getFactorySchemaRef().newRec());
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-update-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-update-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 			editPrev.set( prev );
 			editPrev.setOptionalLookupNext(nextId);
@@ -1200,7 +1200,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editPrev );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-edit-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-edit-prev-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 
@@ -1210,7 +1210,7 @@ public class CFBamRamSchemaRefTable
 			next = (CFBamBuffSchemaRef)(schema.getTableSchemaRef().readDerivedByIdIdx( Authorization,
 				nextId ));
 			if( next == null ) {
-				throw new CFLibNullArgumentException( getClass(),
+				throw new MCFNullArgumentException( getClass(),
 					S_ProcName,
 					0,
 					"next" );
@@ -1221,7 +1221,7 @@ public class CFBamRamSchemaRefTable
 				editNext = (CFBamBuffSchemaRef)(schema.getCFBamBuffFactory().getFactorySchemaRef().newRec());
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-update-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-update-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 			editNext.set( next );
 			editNext.setOptionalLookupPrev(prevId);
@@ -1229,7 +1229,7 @@ public class CFBamRamSchemaRefTable
 				schema.getTableSchemaRef().updateSchemaRef( Authorization, editNext );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-edit-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-edit-next-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 
@@ -1275,7 +1275,7 @@ public class CFBamRamSchemaRefTable
 	}
 	@Override
 	public void deleteSchemaRefBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaId )
+		IMCFKeyHash256 argSchemaId )
 	{
 		CFBamBuffSchemaRefBySchemaIdxKey key = (CFBamBuffSchemaRefBySchemaIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newBySchemaIdxKey();
 		key.setRequiredSchemaId( argSchemaId );
@@ -1311,7 +1311,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public void deleteSchemaRefByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaId,
+		IMCFKeyHash256 argSchemaId,
 		String argName )
 	{
 		CFBamBuffSchemaRefByUNameIdxKey key = (CFBamBuffSchemaRefByUNameIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newByUNameIdxKey();
@@ -1350,7 +1350,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public void deleteSchemaRefByRefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRefSchemaId )
+		IMCFKeyHash256 argRefSchemaId )
 	{
 		CFBamBuffSchemaRefByRefSchemaIdxKey key = (CFBamBuffSchemaRefByRefSchemaIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newByRefSchemaIdxKey();
 		key.setOptionalRefSchemaId( argRefSchemaId );
@@ -1388,7 +1388,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public void deleteSchemaRefByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		CFBamBuffSchemaRefByPrevIdxKey key = (CFBamBuffSchemaRefByPrevIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newByPrevIdxKey();
 		key.setOptionalPrevId( argPrevId );
@@ -1426,7 +1426,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public void deleteSchemaRefByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		CFBamBuffSchemaRefByNextIdxKey key = (CFBamBuffSchemaRefByNextIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRef().newByNextIdxKey();
 		key.setOptionalNextId( argNextId );
@@ -1491,7 +1491,7 @@ public class CFBamRamSchemaRefTable
 
 	@Override
 	public void deleteSchemaRefByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		CFBamBuffScopeByTenantIdxKey key = (CFBamBuffScopeByTenantIdxKey)schema.getCFBamBuffFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( argTenantId );

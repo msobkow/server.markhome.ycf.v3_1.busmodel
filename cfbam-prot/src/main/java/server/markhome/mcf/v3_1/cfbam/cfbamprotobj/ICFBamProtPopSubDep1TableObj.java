@@ -121,7 +121,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	The PopSubDep1-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtPopSubDep1Obj readPopSubDep1( CFLibDbKeyHash256 pkey );
+	ICFBamProtPopSubDep1Obj readPopSubDep1( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Read a PopSubDep1-derived instance by it's primary key.
@@ -131,19 +131,19 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	The PopSubDep1-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtPopSubDep1Obj readPopSubDep1( CFLibDbKeyHash256 pkey,
+	ICFBamProtPopSubDep1Obj readPopSubDep1( MCFDbKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamProtPopSubDep1Obj readCachedPopSubDep1( CFLibDbKeyHash256 pkey );
+	ICFBamProtPopSubDep1Obj readCachedPopSubDep1( MCFDbKeyHash256 pkey );
 
 	public void reallyDeepDisposePopSubDep1( ICFBamProtPopSubDep1Obj obj );
 
-	void deepDisposePopSubDep1( CFLibDbKeyHash256 pkey );
+	void deepDisposePopSubDep1( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamProtPopSubDep1Obj lockPopSubDep1( CFLibDbKeyHash256 pkey );
+	ICFBamProtPopSubDep1Obj lockPopSubDep1( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the PopSubDep1-derived instances in the database.
@@ -171,7 +171,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	ICFBamProtScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtPopSubDep1Obj readPopSubDep1ByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtPopSubDep1Obj readPopSubDep1ByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the ICFBamProtScopeObj instance for the primary key attributes.
@@ -181,7 +181,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	ICFBamProtScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtPopSubDep1Obj readPopSubDep1ByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamProtPopSubDep1Obj readPopSubDep1ByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	List of ICFBamProtPopSubDep1Obj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByTenantIdx( ICFLibKeyHash256 TenantId );
+	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByTenantIdx( IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of ICFBamProtPopSubDep1Obj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -202,7 +202,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	List of ICFBamProtPopSubDep1Obj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByTenantIdx( ICFLibKeyHash256 TenantId,
+	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -213,7 +213,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	List of ICFBamProtPopSubDep1Obj cached instances sorted by their primary keys for the duplicate RelationIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByRelationIdx( ICFLibKeyHash256 RelationId );
+	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByRelationIdx( IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Get the map of ICFBamProtPopSubDep1Obj instances sorted by their primary keys for the duplicate RelationIdx key.
@@ -223,7 +223,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	List of ICFBamProtPopSubDep1Obj cached instances sorted by their primary keys for the duplicate RelationIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByRelationIdx( ICFLibKeyHash256 RelationId,
+	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByRelationIdx( IMCFKeyHash256 RelationId,
 		boolean forceRead );
 
 	/**
@@ -234,7 +234,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	List of ICFBamProtPopSubDep1Obj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of ICFBamProtPopSubDep1Obj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -244,7 +244,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	List of ICFBamProtPopSubDep1Obj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -255,7 +255,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	List of List<ICFBamProtPopSubDep1Obj> cached instances sorted by their primary keys for the duplicate PopTopDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByPopTopDepIdx( ICFLibKeyHash256 PopTopDepId );
+	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByPopTopDepIdx( IMCFKeyHash256 PopTopDepId );
 
 	/**
 	 *	Get the map of List<ICFBamProtPopSubDep1Obj> instances sorted by their primary keys for the duplicate PopTopDepIdx key.
@@ -265,7 +265,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	List of List<ICFBamProtPopSubDep1Obj> cached instances sorted by their primary keys for the duplicate PopTopDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByPopTopDepIdx( ICFLibKeyHash256 PopTopDepId,
+	List<ICFBamProtPopSubDep1Obj> readPopSubDep1ByPopTopDepIdx( IMCFKeyHash256 PopTopDepId,
 		boolean forceRead );
 
 	/**
@@ -278,7 +278,7 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	ICFBamProtPopSubDep1Obj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtPopSubDep1Obj readPopSubDep1ByUNameIdx(ICFLibKeyHash256 PopTopDepId,
+	ICFBamProtPopSubDep1Obj readPopSubDep1ByUNameIdx(IMCFKeyHash256 PopTopDepId,
 		String Name );
 
 	/**
@@ -291,34 +291,34 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *	@return	ICFBamProtPopSubDep1Obj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtPopSubDep1Obj readPopSubDep1ByUNameIdx(ICFLibKeyHash256 PopTopDepId,
+	ICFBamProtPopSubDep1Obj readPopSubDep1ByUNameIdx(IMCFKeyHash256 PopTopDepId,
 		String Name,
 		boolean forceRead );
 
-	ICFBamProtScopeObj readCachedPopSubDep1ByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtScopeObj readCachedPopSubDep1ByIdIdx( IMCFKeyHash256 Id );
 
-	List<List<ICFBamProtScopeObj>> readCachedPopSubDep1ByTenantIdx( ICFLibKeyHash256 TenantId );
+	List<List<ICFBamProtScopeObj>> readCachedPopSubDep1ByTenantIdx( IMCFKeyHash256 TenantId );
 
-	List<List<ICFBamProtPopDepObj>> readCachedPopSubDep1ByRelationIdx( ICFLibKeyHash256 RelationId );
+	List<List<ICFBamProtPopDepObj>> readCachedPopSubDep1ByRelationIdx( IMCFKeyHash256 RelationId );
 
-	List<List<ICFBamProtPopDepObj>> readCachedPopSubDep1ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<List<ICFBamProtPopDepObj>> readCachedPopSubDep1ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<List<ICFBamProtPopSubDep1Obj>> readCachedPopSubDep1ByPopTopDepIdx( ICFLibKeyHash256 PopTopDepId );
+	List<List<ICFBamProtPopSubDep1Obj>> readCachedPopSubDep1ByPopTopDepIdx( IMCFKeyHash256 PopTopDepId );
 
-	ICFBamProtPopSubDep1Obj readCachedPopSubDep1ByUNameIdx( ICFLibKeyHash256 PopTopDepId,
+	ICFBamProtPopSubDep1Obj readCachedPopSubDep1ByUNameIdx( IMCFKeyHash256 PopTopDepId,
 		String Name );
 
-	void deepDisposePopSubDep1ByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposePopSubDep1ByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposePopSubDep1ByTenantIdx( ICFLibKeyHash256 TenantId );
+	void deepDisposePopSubDep1ByTenantIdx( IMCFKeyHash256 TenantId );
 
-	void deepDisposePopSubDep1ByRelationIdx( ICFLibKeyHash256 RelationId );
+	void deepDisposePopSubDep1ByRelationIdx( IMCFKeyHash256 RelationId );
 
-	void deepDisposePopSubDep1ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposePopSubDep1ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposePopSubDep1ByPopTopDepIdx( ICFLibKeyHash256 PopTopDepId );
+	void deepDisposePopSubDep1ByPopTopDepIdx( IMCFKeyHash256 PopTopDepId );
 
-	void deepDisposePopSubDep1ByUNameIdx( ICFLibKeyHash256 PopTopDepId,
+	void deepDisposePopSubDep1ByUNameIdx( IMCFKeyHash256 PopTopDepId,
 		String Name );
 
 	/**
@@ -336,35 +336,35 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *
 	 *	@param	Id	The PopSubDep1 key attribute of the instance generating the id.
 	 */
-	void deletePopSubDep1ByIdIdx( ICFLibKeyHash256 Id );
+	void deletePopSubDep1ByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The PopSubDep1 key attribute of the instance generating the id.
 	 */
-	void deletePopSubDep1ByTenantIdx( ICFLibKeyHash256 TenantId );
+	void deletePopSubDep1ByTenantIdx( IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	RelationId	The PopSubDep1 key attribute of the instance generating the id.
 	 */
-	void deletePopSubDep1ByRelationIdx( ICFLibKeyHash256 RelationId );
+	void deletePopSubDep1ByRelationIdx( IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The PopSubDep1 key attribute of the instance generating the id.
 	 */
-	void deletePopSubDep1ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deletePopSubDep1ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PopTopDepId	The PopSubDep1 key attribute of the instance generating the id.
 	 */
-	void deletePopSubDep1ByPopTopDepIdx( ICFLibKeyHash256 PopTopDepId );
+	void deletePopSubDep1ByPopTopDepIdx( IMCFKeyHash256 PopTopDepId );
 
 	/**
 	 *	Internal use only.
@@ -373,6 +373,6 @@ public interface ICFBamProtPopSubDep1TableObj
 	 *
 	 *	@param	Name	The PopSubDep1 key attribute of the instance generating the id.
 	 */
-	void deletePopSubDep1ByUNameIdx(ICFLibKeyHash256 PopTopDepId,
+	void deletePopSubDep1ByUNameIdx(IMCFKeyHash256 PopTopDepId,
 		String Name );
 }

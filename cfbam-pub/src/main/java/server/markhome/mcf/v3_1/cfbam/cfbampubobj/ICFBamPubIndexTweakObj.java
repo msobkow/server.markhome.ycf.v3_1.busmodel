@@ -103,17 +103,17 @@ public interface ICFBamPubIndexTweakObj
 	ICFBamPubIndexObj getRequiredContainerIndexDef( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute IndexId.
+	 *	Get the required MCFDbKeyHash256 attribute IndexId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute IndexId.
+	 *	@return	The required MCFDbKeyHash256 attribute IndexId.
 	 */
-	CFLibDbKeyHash256 getRequiredIndexId();
+	MCFDbKeyHash256 getRequiredIndexId();
 
 }

@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -85,7 +85,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return The retrieved entity, usually from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaValue r where r.requiredId = :id")
-	CFBamJpaNumberType get(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaNumberType get(@Param("id") IMCFKeyHash256 requiredId);
 
 	// CFBamJpaValue specified index readers
 
@@ -98,7 +98,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.requiredName = :name")
-	CFBamJpaNumberType findByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	CFBamJpaNumberType findByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName);
 
 	/**
@@ -120,7 +120,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return List&lt;CFBamJpaNumberType&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId")
-	List<CFBamJpaNumberType> findByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId);
+	List<CFBamJpaNumberType> findByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId);
 
 	/**
 	 *	CFBamValueByScopeIdxKey entity list reader convenience method for object-based access.
@@ -141,7 +141,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return List&lt;CFBamJpaNumberType&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaValue r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaNumberType> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaNumberType> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamValueByDefSchemaIdxKey entity list reader convenience method for object-based access.
@@ -162,7 +162,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return List&lt;CFBamJpaNumberType&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaValue r where r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaNumberType> findByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaNumberType> findByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamValueByPrevIdxKey entity list reader convenience method for object-based access.
@@ -183,7 +183,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return List&lt;CFBamJpaNumberType&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaValue r where r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaNumberType> findByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaNumberType> findByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamValueByNextIdxKey entity list reader convenience method for object-based access.
@@ -205,8 +205,8 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return List&lt;CFBamJpaNumberType&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaNumberType> findByContPrevIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaNumberType> findByContPrevIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamValueByContPrevIdxKey entity list reader convenience method for object-based access.
@@ -228,8 +228,8 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return List&lt;CFBamJpaNumberType&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaNumberType> findByContNextIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaNumberType> findByContNextIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamValueByContNextIdxKey entity list reader convenience method for object-based access.
@@ -256,7 +256,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	 *		@return List&lt;CFBamJpaNumberType&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaNumberType r where r.requiredContainerSchemaDef.requiredId = :schemaDefId")
-	List<CFBamJpaNumberType> findBySchemaIdx(@Param("schemaDefId") ICFLibKeyHash256 requiredSchemaDefId);
+	List<CFBamJpaNumberType> findBySchemaIdx(@Param("schemaDefId") IMCFKeyHash256 requiredSchemaDefId);
 
 	/**
 	 *	CFBamNumberTypeBySchemaIdxKey entity list reader convenience method for object-based access.
@@ -281,7 +281,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaValue r where r.requiredId = :id")
-	CFBamJpaNumberType lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaNumberType lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based lock database entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity locks, which may or may not imply an actual database lock during the transaction.
@@ -294,7 +294,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.requiredName = :name")
-	CFBamJpaNumberType lockByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	CFBamJpaNumberType lockByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName);
 
 	/**
@@ -318,7 +318,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId")
-	List<CFBamJpaNumberType> lockByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId);
+	List<CFBamJpaNumberType> lockByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId);
 
 	/**
 	 *	CFBamValueByScopeIdxKey based lock method for object-based access.
@@ -341,7 +341,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaValue r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaNumberType> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaNumberType> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamValueByDefSchemaIdxKey based lock method for object-based access.
@@ -364,7 +364,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaValue r where r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaNumberType> lockByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaNumberType> lockByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamValueByPrevIdxKey based lock method for object-based access.
@@ -387,7 +387,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaValue r where r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaNumberType> lockByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaNumberType> lockByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamValueByNextIdxKey based lock method for object-based access.
@@ -411,8 +411,8 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaNumberType> lockByContPrevIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaNumberType> lockByContPrevIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamValueByContPrevIdxKey based lock method for object-based access.
@@ -436,8 +436,8 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaNumberType> lockByContNextIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaNumberType> lockByContNextIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamValueByContNextIdxKey based lock method for object-based access.
@@ -466,7 +466,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaNumberType r where r.requiredContainerSchemaDef.requiredId = :schemaDefId")
-	List<CFBamJpaNumberType> lockBySchemaIdx(@Param("schemaDefId") ICFLibKeyHash256 requiredSchemaDefId);
+	List<CFBamJpaNumberType> lockBySchemaIdx(@Param("schemaDefId") IMCFKeyHash256 requiredSchemaDefId);
 
 	/**
 	 *	CFBamNumberTypeBySchemaIdxKey based lock method for object-based access.
@@ -489,7 +489,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaValue r where r.requiredId = :id")
-	void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based delete entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity lock, which may or may not imply an actual database lock during the transaction.
@@ -500,7 +500,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.requiredName = :name")
-	void deleteByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	void deleteByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName);
 
 	/**
@@ -520,7 +520,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId")
-	void deleteByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId);
+	void deleteByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId);
 
 	/**
 	 *	CFBamValueByScopeIdxKey based lock method for object-based access.
@@ -539,7 +539,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaValue r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamValueByDefSchemaIdxKey based lock method for object-based access.
@@ -558,7 +558,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaValue r where r.optionalLookupPrev.requiredId = :prevId")
-	void deleteByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	void deleteByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamValueByPrevIdxKey based lock method for object-based access.
@@ -577,7 +577,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaValue r where r.optionalLookupNext.requiredId = :nextId")
-	void deleteByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	void deleteByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamValueByNextIdxKey based lock method for object-based access.
@@ -597,8 +597,8 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.optionalLookupPrev.requiredId = :prevId")
-	void deleteByContPrevIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	void deleteByContPrevIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamValueByContPrevIdxKey based lock method for object-based access.
@@ -618,8 +618,8 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaValue r where r.requiredContainerScope.requiredId = :scopeId and r.optionalLookupNext.requiredId = :nextId")
-	void deleteByContNextIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	void deleteByContNextIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamValueByContNextIdxKey based lock method for object-based access.
@@ -644,7 +644,7 @@ public interface CFBamJpaNumberTypeRepository extends JpaRepository<CFBamJpaNumb
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaNumberType r where r.requiredContainerSchemaDef.requiredId = :schemaDefId")
-	void deleteBySchemaIdx(@Param("schemaDefId") ICFLibKeyHash256 requiredSchemaDefId);
+	void deleteBySchemaIdx(@Param("schemaDefId") IMCFKeyHash256 requiredSchemaDefId);
 
 	/**
 	 *	CFBamNumberTypeBySchemaIdxKey based lock method for object-based access.

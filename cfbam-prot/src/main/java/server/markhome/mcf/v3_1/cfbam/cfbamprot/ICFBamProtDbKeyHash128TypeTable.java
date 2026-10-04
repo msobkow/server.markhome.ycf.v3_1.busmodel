@@ -138,7 +138,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	SchemaDefId	The DbKeyHash128Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteDbKeyHash128TypeBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId );
+		IMCFKeyHash256 argSchemaDefId );
 
 	/**
 	 *	Delete the DbKeyHash128Type instances identified by the key SchemaIdx.
@@ -166,7 +166,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteDbKeyHash128TypeByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the DbKeyHash128Type instances identified by the key UNameIdx.
 	 *
@@ -177,7 +177,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	Name	The DbKeyHash128Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteDbKeyHash128TypeByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -206,7 +206,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	ScopeId	The DbKeyHash128Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteDbKeyHash128TypeByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the DbKeyHash128Type instances identified by the key ScopeIdx.
@@ -234,7 +234,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	DefSchemaId	The DbKeyHash128Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteDbKeyHash128TypeByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the DbKeyHash128Type instances identified by the key DefSchemaIdx.
@@ -262,7 +262,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	PrevId	The DbKeyHash128Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteDbKeyHash128TypeByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the DbKeyHash128Type instances identified by the key PrevIdx.
@@ -290,7 +290,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	NextId	The DbKeyHash128Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteDbKeyHash128TypeByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the DbKeyHash128Type instances identified by the key NextIdx.
@@ -320,8 +320,8 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	PrevId	The DbKeyHash128Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteDbKeyHash128TypeByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the DbKeyHash128Type instances identified by the key ContPrevIdx.
@@ -351,8 +351,8 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@param	NextId	The DbKeyHash128Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteDbKeyHash128TypeByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the DbKeyHash128Type instances identified by the key ContNextIdx.
@@ -395,7 +395,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtDbKeyHash128Type protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived DbKeyHash128Type record instance by protected primary key.
@@ -408,7 +408,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtDbKeyHash128Type protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all DbKeyHash128Type instances.
@@ -430,7 +430,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtDbKeyHash128Type protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived DbKeyHash128Type record instance identified by the unique key UNameIdx.
@@ -445,7 +445,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtDbKeyHash128Type protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -458,7 +458,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash128Type record instances identified by the duplicate key DefSchemaIdx.
@@ -470,7 +470,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash128Type record instances identified by the duplicate key PrevIdx.
@@ -482,7 +482,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash128Type record instances identified by the duplicate key NextIdx.
@@ -494,7 +494,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash128Type record instances identified by the duplicate key ContPrevIdx.
@@ -508,8 +508,8 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash128Type record instances identified by the duplicate key ContNextIdx.
@@ -523,8 +523,8 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash128Type record instances identified by the duplicate key SchemaIdx.
@@ -536,7 +536,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadDerivedBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read the specific DbKeyHash128Type record instance identified by the primary key.
@@ -548,10 +548,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific DbKeyHash128Type record instance identified by the primary key.
@@ -563,10 +563,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific DbKeyHash128Type record instances.
@@ -587,10 +587,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific DbKeyHash128Type record instance identified by the unique key UNameIdx.
@@ -604,10 +604,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -619,10 +619,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash128Type record instances identified by the duplicate key DefSchemaIdx.
@@ -633,10 +633,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash128Type record instances identified by the duplicate key PrevIdx.
@@ -647,10 +647,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash128Type record instances identified by the duplicate key NextIdx.
@@ -661,10 +661,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash128Type record instances identified by the duplicate key ContPrevIdx.
@@ -677,11 +677,11 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash128Type record instances identified by the duplicate key ContNextIdx.
@@ -694,11 +694,11 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash128Type record instances identified by the duplicate key SchemaIdx.
@@ -709,10 +709,10 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128Type[] protreadRecBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -720,7 +720,7 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtDbKeyHash128Type protmoveRecUp( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -729,6 +729,6 @@ extends ICFBamProtDbKeyHash128DefTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtDbKeyHash128Type protmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

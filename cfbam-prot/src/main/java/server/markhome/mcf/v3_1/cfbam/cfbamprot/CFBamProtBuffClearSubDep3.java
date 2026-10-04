@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -73,12 +73,12 @@ public class CFBamProtBuffClearSubDep3
 	extends CFBamProtBuffClearDep
 	implements ICFBamClearSubDep3
 {
-	protected ICFLibKeyHash256 requiredClearSubDep2Id;
+	protected IMCFKeyHash256 requiredClearSubDep2Id;
 	protected String requiredName;
 
 	public CFBamProtBuffClearSubDep3() {
 		super();
-		requiredClearSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPubClearSubDep3.CLEARSUBDEP2ID_INIT_VALUE.toString() );
+		requiredClearSubDep2Id = MCFDbKeyHash256.fromHex( ICFBamPubClearSubDep3.CLEARSUBDEP2ID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubClearSubDep3.NAME_INIT_VALUE;
 	}
 
@@ -88,38 +88,38 @@ public class CFBamProtBuffClearSubDep3
 	}
 
 	@Override
-	public ICFBamProtClearSubDep2 getRequiredContainerClearSubDep2(ICFLibKeyHash256 argClearSubDep2Id) {
+	public ICFBamProtClearSubDep2 getRequiredContainerClearSubDep2(IMCFKeyHash256 argClearSubDep2Id) {
 		ICFBamProtSchema targetBackingCFBam = ICFBamProtSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerClearSubDep2", 0, "ICFBamProtSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredContainerClearSubDep2", 0, "ICFBamProtSchema.getBackingCFBam()");
 		}
 		ICFBamProtClearSubDep2Table targetTable = targetBackingCFBam.getTableClearSubDep2();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerClearSubDep2", 0, "ICFBamProtSchema.getBackingCFBam().getTableClearSubDep2()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredContainerClearSubDep2", 0, "ICFBamProtSchema.getBackingCFBam().getTableClearSubDep2()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClearSubDep2Id()));
 	}
 
 	@Override
-	public void setRequiredContainerClearSubDep2(ICFLibKeyHash256 argClearSubDep2Id) {
+	public void setRequiredContainerClearSubDep2(IMCFKeyHash256 argClearSubDep2Id) {
 		ICFBamProtSchema targetBackingCFBam = ICFBamProtSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep2-args", 0, "ICFBamProtSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerClearSubDep2-args", 0, "ICFBamProtSchema.getBackingCFBam()");
 		}
 		ICFBamProtClearSubDep2Table targetTable = targetBackingCFBam.getTableClearSubDep2();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep2", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep2()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerClearSubDep2", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep2()");
 		}
 		ICFBamProtClearSubDep2 found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClearSubDep2Id);
 		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep2-args", 0, "found");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerClearSubDep2-args", 0, "found");
 		}
 		else if (found instanceof ICFBamProtClearSubDep2) || (found instanceof ICFBamProtClearSubDep2) || (found instanceof ICFBamPubClearSubDep2)) {
 			super.setRequiredContainerClearSubDep2(argClearSubDep2Id);
 		requiredClearSubDep2Id = argClearSubDep2Id;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerClearSubDep2-args", "found", found, "ICFBamProtClearSubDep2ICFBamProtClearSubDep2ICFBamPubClearSubDep2");
+			throw new MCFUnsupportedClassException(getClass(), "setRequiredContainerClearSubDep2-args", "found", found, "ICFBamProtClearSubDep2ICFBamProtClearSubDep2ICFBamPubClearSubDep2");
 		}
 	}
 
@@ -127,7 +127,7 @@ public class CFBamProtBuffClearSubDep3
 	public void setRequiredContainerClearSubDep2(ICFBamProtClearSubDep2 argObj) {
 
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
 		}
 		else {
 			setJustProtRequiredClearSubDep2Id(argObj.getRequiredId());
@@ -138,7 +138,7 @@ public class CFBamProtBuffClearSubDep3
 	public void setRequiredContainerClearSubDep2(ICFBamPubClearSubDep2 argObj) {
 
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
 		}
 		else {
 			setJustProtRequiredClearSubDep2Id(argObj.getRequiredId());
@@ -146,13 +146,13 @@ public class CFBamProtBuffClearSubDep3
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredClearSubDep2Id() {
+	public IMCFKeyHash256 getRequiredClearSubDep2Id() {
 		return(requiredClearSubDep2Id);
 	}
 
-	public void setRequiredClearSubDep2Id( ICFLibKeyHash256 value ) {
+	public void setRequiredClearSubDep2Id( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredClearSubDep2Id",
 				1,
 				"value" );
@@ -167,13 +167,13 @@ public class CFBamProtBuffClearSubDep3
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -831,7 +831,7 @@ public class CFBamProtBuffClearSubDep3
 			setJustProtClearSubDep3( (CFBamProtBuffClearSubDep3)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -853,7 +853,7 @@ public class CFBamProtBuffClearSubDep3
 			setClearSubDep3( (ICFBamPubClearSubDep3H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -875,7 +875,7 @@ public class CFBamProtBuffClearSubDep3
 			setJustProtClearSubDep3( (CFBamPubProtBuffClearSubDep3)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -897,7 +897,7 @@ public class CFBamProtBuffClearSubDep3
 			setClearSubDep3( (ICFBamPubClearSubDep3H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

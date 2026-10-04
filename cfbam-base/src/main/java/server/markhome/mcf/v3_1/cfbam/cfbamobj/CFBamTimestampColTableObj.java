@@ -158,7 +158,7 @@ public class CFBamTimestampColTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamTimestampColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamTimestampColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -630,7 +630,7 @@ public class CFBamTimestampColTableObj
 			locked = (ICFBamTimestampColObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockTimestampCol", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockTimestampCol", pkey );
 		}
 		return( locked );
 	}
@@ -665,7 +665,7 @@ public class CFBamTimestampColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -673,7 +673,7 @@ public class CFBamTimestampColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -725,7 +725,7 @@ public class CFBamTimestampColTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -733,7 +733,7 @@ public class CFBamTimestampColTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -770,21 +770,21 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public ICFBamTimestampColObj readTimestampColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamTimestampColObj readTimestampColByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readTimestampColByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamTimestampColObj readTimestampColByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamTimestampColObj readTimestampColByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamTimestampColObj obj = readTimestampCol( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamTimestampColObj readTimestampColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTimestampColObj readTimestampColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readTimestampColByUNameIdx( ScopeId,
@@ -793,7 +793,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public ICFBamTimestampColObj readTimestampColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTimestampColObj readTimestampColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -822,14 +822,14 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamTimestampColObj> readTimestampColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readTimestampColByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamTimestampColObj> readTimestampColByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimestampColByScopeIdx";
@@ -867,7 +867,7 @@ public class CFBamTimestampColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -875,7 +875,7 @@ public class CFBamTimestampColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -915,14 +915,14 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamTimestampColObj> readTimestampColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readTimestampColByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamTimestampColObj> readTimestampColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimestampColByDefSchemaIdx";
@@ -960,7 +960,7 @@ public class CFBamTimestampColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -968,7 +968,7 @@ public class CFBamTimestampColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1008,14 +1008,14 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamTimestampColObj> readTimestampColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readTimestampColByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamTimestampColObj> readTimestampColByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimestampColByPrevIdx";
@@ -1053,7 +1053,7 @@ public class CFBamTimestampColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1061,7 +1061,7 @@ public class CFBamTimestampColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1101,14 +1101,14 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamTimestampColObj> readTimestampColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readTimestampColByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamTimestampColObj> readTimestampColByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimestampColByNextIdx";
@@ -1146,7 +1146,7 @@ public class CFBamTimestampColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1154,7 +1154,7 @@ public class CFBamTimestampColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1194,8 +1194,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamTimestampColObj> readTimestampColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readTimestampColByContPrevIdx( ScopeId,
 			PrevId,
@@ -1203,8 +1203,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamTimestampColObj> readTimestampColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimestampColByContPrevIdx";
@@ -1244,7 +1244,7 @@ public class CFBamTimestampColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1252,7 +1252,7 @@ public class CFBamTimestampColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1292,8 +1292,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamTimestampColObj> readTimestampColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readTimestampColByContNextIdx( ScopeId,
 			NextId,
@@ -1301,8 +1301,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamTimestampColObj> readTimestampColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimestampColByContNextIdx";
@@ -1342,7 +1342,7 @@ public class CFBamTimestampColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1350,7 +1350,7 @@ public class CFBamTimestampColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1390,14 +1390,14 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamTimestampColObj> readTimestampColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		return( readTimestampColByTableIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readTimestampColByTableIdx( ICFLibKeyHash256 TableId,
+	public List<ICFBamTimestampColObj> readTimestampColByTableIdx( IMCFKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimestampColByTableIdx";
@@ -1435,7 +1435,7 @@ public class CFBamTimestampColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1443,7 +1443,7 @@ public class CFBamTimestampColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1483,7 +1483,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public ICFBamTimestampColObj readCachedTimestampColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamTimestampColObj readCachedTimestampColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTimestampColObj obj = null;
 		obj = readCachedTimestampCol( Id );
@@ -1491,7 +1491,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public ICFBamTimestampColObj readCachedTimestampColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTimestampColObj readCachedTimestampColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTimestampColObj obj = null;
@@ -1529,7 +1529,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readCachedTimestampColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamTimestampColObj> readCachedTimestampColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedTimestampColByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1547,7 +1547,7 @@ public class CFBamTimestampColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1555,7 +1555,7 @@ public class CFBamTimestampColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1606,7 +1606,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readCachedTimestampColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamTimestampColObj> readCachedTimestampColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedTimestampColByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1624,7 +1624,7 @@ public class CFBamTimestampColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1632,7 +1632,7 @@ public class CFBamTimestampColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1683,7 +1683,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readCachedTimestampColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamTimestampColObj> readCachedTimestampColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTimestampColByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1701,7 +1701,7 @@ public class CFBamTimestampColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1709,7 +1709,7 @@ public class CFBamTimestampColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1760,7 +1760,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readCachedTimestampColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamTimestampColObj> readCachedTimestampColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTimestampColByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1778,7 +1778,7 @@ public class CFBamTimestampColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1786,7 +1786,7 @@ public class CFBamTimestampColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1837,8 +1837,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readCachedTimestampColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamTimestampColObj> readCachedTimestampColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTimestampColByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1857,7 +1857,7 @@ public class CFBamTimestampColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1865,7 +1865,7 @@ public class CFBamTimestampColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1916,8 +1916,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readCachedTimestampColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamTimestampColObj> readCachedTimestampColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTimestampColByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1936,7 +1936,7 @@ public class CFBamTimestampColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1944,7 +1944,7 @@ public class CFBamTimestampColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1995,7 +1995,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public List<ICFBamTimestampColObj> readCachedTimestampColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamTimestampColObj> readCachedTimestampColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedTimestampColByTableIdx";
 		ICFBamTimestampColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTimestampCol().newByTableIdxKey();
@@ -2013,7 +2013,7 @@ public class CFBamTimestampColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2021,7 +2021,7 @@ public class CFBamTimestampColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2072,7 +2072,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeTimestampColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTimestampColObj obj = readCachedTimestampColByIdIdx( Id );
 		if( obj != null ) {
@@ -2081,7 +2081,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeTimestampColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTimestampColObj obj = readCachedTimestampColByUNameIdx( ScopeId,
@@ -2092,7 +2092,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeTimestampColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeTimestampColByScopeIdx";
 		ICFBamTimestampColObj obj;
@@ -2109,7 +2109,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeTimestampColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeTimestampColByDefSchemaIdx";
 		ICFBamTimestampColObj obj;
@@ -2126,7 +2126,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeTimestampColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTimestampColByPrevIdx";
 		ICFBamTimestampColObj obj;
@@ -2143,7 +2143,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeTimestampColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTimestampColByNextIdx";
 		ICFBamTimestampColObj obj;
@@ -2160,8 +2160,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeTimestampColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTimestampColByContPrevIdx";
 		ICFBamTimestampColObj obj;
@@ -2179,8 +2179,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeTimestampColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTimestampColByContNextIdx";
 		ICFBamTimestampColObj obj;
@@ -2198,7 +2198,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deepDisposeTimestampColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deepDisposeTimestampColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeTimestampColByTableIdx";
 		ICFBamTimestampColObj obj;
@@ -2243,7 +2243,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteTimestampColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTimestampColObj obj = readTimestampCol(Id);
 		if( obj != null ) {
@@ -2273,7 +2273,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteTimestampColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2301,7 +2301,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteTimestampColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2335,7 +2335,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteTimestampColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2369,7 +2369,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteTimestampColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2403,7 +2403,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteTimestampColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2437,8 +2437,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteTimestampColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2476,8 +2476,8 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteTimestampColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2515,7 +2515,7 @@ public class CFBamTimestampColTableObj
 	}
 
 	@Override
-	public void deleteTimestampColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deleteTimestampColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		ICFBamTimestampColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTimestampCol().newByTableIdxKey();
 		key.setRequiredTableId( TableId );
@@ -2557,7 +2557,7 @@ public class CFBamTimestampColTableObj
 	public ICFBamTimestampColObj moveUpTimestampCol( ICFBamTimestampColObj Obj ) {
 		ICFBamTimestampColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpTimestampCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpTimestampCol" );
 		}
 		ICFBamTimestampCol rec = schema.getCFBamBackingStore().getTableTimestampCol().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2585,7 +2585,7 @@ public class CFBamTimestampColTableObj
 	public ICFBamTimestampColObj moveDownTimestampCol( ICFBamTimestampColObj Obj ) {
 		ICFBamTimestampColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownTimestampCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownTimestampCol" );
 		}
 		ICFBamTimestampCol rec = schema.getCFBamBackingStore().getTableTimestampCol().moveRecDown( null,
 			Obj.getRequiredId(),

@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,10 +94,10 @@ public class CFBamJpaDelSubDep1Service {
 		if (data == null) {
 			return( null );
 		}
-		ICFLibKeyHash256 originalRequiredId = data.getRequiredId();
+		IMCFKeyHash256 originalRequiredId = data.getRequiredId();
 		boolean generatedRequiredId = false;
 		if (data.getRequiredOwnerTenant() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Owner",
 				"Owner",
@@ -108,13 +108,13 @@ public class CFBamJpaDelSubDep1Service {
 				null);
 		}
 		if(data.getRequiredTenantId() == null || data.getRequiredTenantId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTenantId");
 		}
 		if (data.getRequiredLookupRelation() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Lookup",
 				"Lookup",
@@ -125,13 +125,13 @@ public class CFBamJpaDelSubDep1Service {
 				null);
 		}
 		if(data.getRequiredRelationId() == null || data.getRequiredRelationId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredRelationId");
 		}
 		if (data.getRequiredContainerDelTopDep() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -142,13 +142,13 @@ public class CFBamJpaDelSubDep1Service {
 				null);
 		}
 		if(data.getRequiredDelTopDepId() == null || data.getRequiredDelTopDepId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredDelTopDepId");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
@@ -161,7 +161,7 @@ public class CFBamJpaDelSubDep1Service {
 				data.setRequiredRevision(1);
 			}
 			if (data.getRequiredId() == null || data.getRequiredId().isNull()) {
-				data.setRequiredId(new CFLibDbKeyHash256(0));
+				data.setRequiredId(new MCFDbKeyHash256(0));
 				generatedRequiredId = true;
 			}
 			LocalDateTime now = LocalDateTime.now();
@@ -173,7 +173,7 @@ public class CFBamJpaDelSubDep1Service {
 				if(generatedRequiredId) {
 					data.setRequiredId(originalRequiredId);
 				}
-			throw new CFLibDbException(getClass(),
+			throw new MCFDbException(getClass(),
 				S_ProcName,
 				ex);
 		}
@@ -193,13 +193,13 @@ public class CFBamJpaDelSubDep1Service {
 			return( null );
 		}
 		if (data.getPKey() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.getPKey()");
 		}
 		if (data.getRequiredOwnerTenant() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Owner",
 				"Owner",
@@ -210,13 +210,13 @@ public class CFBamJpaDelSubDep1Service {
 				null);
 		}
 		if(data.getRequiredTenantId() == null || data.getRequiredTenantId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTenantId");
 		}
 		if (data.getRequiredLookupRelation() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Lookup",
 				"Lookup",
@@ -227,13 +227,13 @@ public class CFBamJpaDelSubDep1Service {
 				null);
 		}
 		if(data.getRequiredRelationId() == null || data.getRequiredRelationId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredRelationId");
 		}
 		if (data.getRequiredContainerDelTopDep() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -244,22 +244,22 @@ public class CFBamJpaDelSubDep1Service {
 				null);
 		}
 		if(data.getRequiredDelTopDepId() == null || data.getRequiredDelTopDepId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredDelTopDepId");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		// Ensure the entity exists and that the revision matches
 		CFBamJpaDelSubDep1 existing = cfbam31DelSubDep1Repository.findById(($implCommaIJavaOptAtomType$)(data.getPKey()))
-			.orElseThrow(() -> new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
+			.orElseThrow(() -> new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
 		if (existing.getRequiredRevision() != data.getRequiredRevision()) {
-			throw new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
+			throw new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
 		}
 		// Apply superior data relationships of CFBamScope to existing object
 		existing.setRequiredOwnerTenant(data.getRequiredTenantId());
@@ -290,7 +290,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return The retrieved entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaDelSubDep1 find(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaDelSubDep1 find(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31DelSubDep1Repository.get(requiredId));
 	}
 
@@ -314,7 +314,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return List&lt;CFBamJpaDelSubDep1&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaDelSubDep1> findByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public List<CFBamJpaDelSubDep1> findByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		return( cfbam31DelSubDep1Repository.findByTenantIdx(requiredTenantId));
 	}
 
@@ -340,7 +340,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return List&lt;CFBamJpaDelSubDep1&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaDelSubDep1> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaDelSubDep1> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31DelSubDep1Repository.findByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -364,7 +364,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return List&lt;CFBamJpaDelSubDep1&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaDelSubDep1> findByDelDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId) {
+	public List<CFBamJpaDelSubDep1> findByDelDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId) {
 		return( cfbam31DelSubDep1Repository.findByDelDepIdx(requiredRelationId));
 	}
 
@@ -390,7 +390,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return List&lt;CFBamJpaDelSubDep1&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaDelSubDep1> findByDelTopDepIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId) {
+	public List<CFBamJpaDelSubDep1> findByDelTopDepIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId) {
 		return( cfbam31DelSubDep1Repository.findByDelTopDepIdx(requiredDelTopDepId));
 	}
 
@@ -415,7 +415,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return The found entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaDelSubDep1 findByUNameIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId,
+	public CFBamJpaDelSubDep1 findByUNameIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId,
 		@Param("name") String requiredName) {
 		return( cfbam31DelSubDep1Repository.findByUNameIdx(requiredDelTopDepId,
 			requiredName));
@@ -443,7 +443,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaDelSubDep1 lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaDelSubDep1 lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31DelSubDep1Repository.lockByIdIdx(requiredId));
 	}
 
@@ -455,7 +455,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaDelSubDep1> lockByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public List<CFBamJpaDelSubDep1> lockByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		return( cfbam31DelSubDep1Repository.lockByTenantIdx(requiredTenantId));
 	}
 
@@ -481,7 +481,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaDelSubDep1> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaDelSubDep1> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31DelSubDep1Repository.lockByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -505,7 +505,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaDelSubDep1> lockByDelDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId) {
+	public List<CFBamJpaDelSubDep1> lockByDelDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId) {
 		return( cfbam31DelSubDep1Repository.lockByDelDepIdx(requiredRelationId));
 	}
 
@@ -531,7 +531,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaDelSubDep1> lockByDelTopDepIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId) {
+	public List<CFBamJpaDelSubDep1> lockByDelTopDepIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId) {
 		return( cfbam31DelSubDep1Repository.lockByDelTopDepIdx(requiredDelTopDepId));
 	}
 
@@ -556,7 +556,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaDelSubDep1 lockByUNameIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId,
+	public CFBamJpaDelSubDep1 lockByUNameIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId,
 		@Param("name") String requiredName) {
 		return( cfbam31DelSubDep1Repository.lockByUNameIdx(requiredDelTopDepId,
 			requiredName));
@@ -582,7 +582,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@param requiredId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		cfbam31DelSubDep1Repository.deleteByIdIdx(requiredId);
 	}
 
@@ -592,7 +592,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@param requiredTenantId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public void deleteByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		cfbam31DelSubDep1Repository.deleteByTenantIdx(requiredTenantId);
 	}
 
@@ -614,7 +614,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@param optionalDefSchemaId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		cfbam31DelSubDep1Repository.deleteByDefSchemaIdx(optionalDefSchemaId);
 	}
 
@@ -634,7 +634,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@param requiredRelationId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByDelDepIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId) {
+	public void deleteByDelDepIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId) {
 		cfbam31DelSubDep1Repository.deleteByDelDepIdx(requiredRelationId);
 	}
 
@@ -656,7 +656,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@param requiredDelTopDepId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByDelTopDepIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId) {
+	public void deleteByDelTopDepIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId) {
 		cfbam31DelSubDep1Repository.deleteByDelTopDepIdx(requiredDelTopDepId);
 	}
 
@@ -677,7 +677,7 @@ public class CFBamJpaDelSubDep1Service {
 	 *		@param requiredName
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByUNameIdx(@Param("delTopDepId") ICFLibKeyHash256 requiredDelTopDepId,
+	public void deleteByUNameIdx(@Param("delTopDepId") IMCFKeyHash256 requiredDelTopDepId,
 		@Param("name") String requiredName) {
 		cfbam31DelSubDep1Repository.deleteByUNameIdx(requiredDelTopDepId,
 			requiredName);

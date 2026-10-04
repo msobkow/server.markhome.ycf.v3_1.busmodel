@@ -108,7 +108,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@param	SchemaDefId	The DbKeyHash256Gen key attribute of the instance generating the id.
 	 */
 	void deleteDbKeyHash256GenBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId );
+		IMCFKeyHash256 argSchemaDefId );
 
 	/**
 	 *	Delete the DbKeyHash256Gen instances identified by the key SchemaIdx.
@@ -138,7 +138,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@param	Name	The DbKeyHash256Gen key attribute of the instance generating the id.
 	 */
 	void deleteDbKeyHash256GenByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -158,7 +158,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@param	ScopeId	The DbKeyHash256Gen key attribute of the instance generating the id.
 	 */
 	void deleteDbKeyHash256GenByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the DbKeyHash256Gen instances identified by the key ScopeIdx.
@@ -177,7 +177,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@param	DefSchemaId	The DbKeyHash256Gen key attribute of the instance generating the id.
 	 */
 	void deleteDbKeyHash256GenByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the DbKeyHash256Gen instances identified by the key DefSchemaIdx.
@@ -196,7 +196,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@param	PrevId	The DbKeyHash256Gen key attribute of the instance generating the id.
 	 */
 	void deleteDbKeyHash256GenByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the DbKeyHash256Gen instances identified by the key PrevIdx.
@@ -215,7 +215,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@param	NextId	The DbKeyHash256Gen key attribute of the instance generating the id.
 	 */
 	void deleteDbKeyHash256GenByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the DbKeyHash256Gen instances identified by the key NextIdx.
@@ -236,8 +236,8 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@param	PrevId	The DbKeyHash256Gen key attribute of the instance generating the id.
 	 */
 	void deleteDbKeyHash256GenByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the DbKeyHash256Gen instances identified by the key ContPrevIdx.
@@ -258,8 +258,8 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@param	NextId	The DbKeyHash256Gen key attribute of the instance generating the id.
 	 */
 	void deleteDbKeyHash256GenByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the DbKeyHash256Gen instances identified by the key ContNextIdx.
@@ -318,7 +318,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *		no such existing key value.
 	 */
 	ICFBamDbKeyHash256Gen readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived DbKeyHash256Gen record instance identified by the unique key UNameIdx.
@@ -333,7 +333,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *		no such existing key value.
 	 */
 	ICFBamDbKeyHash256Gen readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -346,7 +346,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamDbKeyHash256Gen[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash256Gen record instances identified by the duplicate key DefSchemaIdx.
@@ -358,7 +358,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamDbKeyHash256Gen[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash256Gen record instances identified by the duplicate key PrevIdx.
@@ -370,7 +370,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamDbKeyHash256Gen[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash256Gen record instances identified by the duplicate key NextIdx.
@@ -382,7 +382,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamDbKeyHash256Gen[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash256Gen record instances identified by the duplicate key ContPrevIdx.
@@ -396,8 +396,8 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamDbKeyHash256Gen[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash256Gen record instances identified by the duplicate key ContNextIdx.
@@ -411,8 +411,8 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamDbKeyHash256Gen[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash256Gen record instances identified by the duplicate key SchemaIdx.
@@ -424,7 +424,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamDbKeyHash256Gen[] readDerivedBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read the specific DbKeyHash256Gen record instance identified by the primary key.
@@ -436,7 +436,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -451,7 +451,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -475,10 +475,10 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific DbKeyHash256Gen record instance identified by the unique key UNameIdx.
@@ -492,10 +492,10 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -507,10 +507,10 @@ public interface ICFBamDbKeyHash256GenTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash256Gen record instances identified by the duplicate key DefSchemaIdx.
@@ -521,10 +521,10 @@ public interface ICFBamDbKeyHash256GenTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash256Gen record instances identified by the duplicate key PrevIdx.
@@ -535,10 +535,10 @@ public interface ICFBamDbKeyHash256GenTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash256Gen record instances identified by the duplicate key NextIdx.
@@ -549,10 +549,10 @@ public interface ICFBamDbKeyHash256GenTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash256Gen record instances identified by the duplicate key ContPrevIdx.
@@ -565,11 +565,11 @@ public interface ICFBamDbKeyHash256GenTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash256Gen record instances identified by the duplicate key ContNextIdx.
@@ -582,11 +582,11 @@ public interface ICFBamDbKeyHash256GenTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash256Gen record instances identified by the duplicate key SchemaIdx.
@@ -597,10 +597,10 @@ public interface ICFBamDbKeyHash256GenTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamDbKeyHash256Gen[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -608,7 +608,7 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamDbKeyHash256Gen moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -617,6 +617,6 @@ public interface ICFBamDbKeyHash256GenTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamDbKeyHash256Gen moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

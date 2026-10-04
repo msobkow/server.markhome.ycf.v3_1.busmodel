@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
@@ -93,7 +93,7 @@ public class CFBamSecUserPWHistoryObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjScope() {
+	public IMCFAnyObj getObjScope() {
 		return( null );
 	}
 
@@ -102,7 +102,7 @@ public class CFBamSecUserPWHistoryObj
 		String objName;
 		LocalDateTime val = rec.getRequiredPWSetStamp();
 		if (val != null) {
-			objName = CFLibXmlUtil.formatTimestamp(val);
+			objName = MCFXmlUtil.formatTimestamp(val);
 		}
 		else {
 			objName = "";
@@ -111,8 +111,8 @@ public class CFBamSecUserPWHistoryObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -142,21 +142,21 @@ public class CFBamSecUserPWHistoryObj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( Class qualifyingClass, String objName ) {
-		ICFLibAnyObj topContainer = getObjQualifier( qualifyingClass );
+	public IMCFAnyObj getNamedObject( Class qualifyingClass, String objName ) {
+		IMCFAnyObj topContainer = getObjQualifier( qualifyingClass );
 		if( topContainer == null ) {
 			return( null );
 		}
-		ICFLibAnyObj namedObject = topContainer.getNamedObject( objName );
+		IMCFAnyObj namedObject = topContainer.getNamedObject( objName );
 		return( namedObject );
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -181,7 +181,7 @@ public class CFBamSecUserPWHistoryObj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -202,7 +202,7 @@ public class CFBamSecUserPWHistoryObj
 	@Override
 	public String getObjFullName() {
 		String fullName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -283,7 +283,7 @@ public class CFBamSecUserPWHistoryObj
 	@Override
 	public void setRec( ICFSecSecUserPWHistory value ) {
 		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecUserPWHistory ) ) ) {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
@@ -327,7 +327,7 @@ public class CFBamSecUserPWHistoryObj
 	@Override
 	public ICFSecSecUserPWHistoryEditObj beginEdit() {
 		if( edit != null ) {
-			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
+			throw new MCFEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
 		ICFSecSecUserPWHistoryObj lockobj;
 		if( getIsNew() ) {
@@ -356,7 +356,7 @@ public class CFBamSecUserPWHistoryObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecUserId() {
+	public IMCFKeyHash256 getRequiredSecUserId() {
 		return( getPKey().getRequiredSecUserId() );
 	}
 

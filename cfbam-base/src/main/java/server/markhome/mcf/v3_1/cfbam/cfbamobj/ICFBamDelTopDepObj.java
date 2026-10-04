@@ -163,11 +163,11 @@ public interface ICFBamDelTopDepObj
 	ICFBamDelTopDepObj getOptionalLookupNext( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -177,24 +177,24 @@ public interface ICFBamDelTopDepObj
 	String getRequiredName();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TableId.
+	 *	Get the required IMCFKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TableId.
+	 *	@return	The required IMCFKeyHash256 attribute TableId.
 	 */
-	ICFLibKeyHash256 getRequiredTableId();
+	IMCFKeyHash256 getRequiredTableId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute PrevId.
+	 *	Get the optional IMCFKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute PrevId.
+	 *	@return	The optional IMCFKeyHash256 attribute PrevId.
 	 */
-	ICFLibKeyHash256 getOptionalPrevId();
+	IMCFKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute NextId.
+	 *	Get the optional IMCFKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute NextId.
+	 *	@return	The optional IMCFKeyHash256 attribute NextId.
 	 */
-	ICFLibKeyHash256 getOptionalNextId();
+	IMCFKeyHash256 getOptionalNextId();
 
 }

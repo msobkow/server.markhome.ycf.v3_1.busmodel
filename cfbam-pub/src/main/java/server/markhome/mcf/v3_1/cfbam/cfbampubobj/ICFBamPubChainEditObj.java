@@ -214,25 +214,25 @@ public interface ICFBamPubChainEditObj
 	void setRequiredLookupNextRel( ICFBamPubRelationObj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute Id.
+	 *	Set the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute Id value to be applied.
+	 *	@param value The required MCFDbKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(CFLibDbKeyHash256 value);
+	void setRequiredId(MCFDbKeyHash256 value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -305,11 +305,11 @@ public interface ICFBamPubChainEditObj
 	void setOptionalDescription(String value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TableId.
+	 *	Get the required MCFDbKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TableId.
+	 *	@return	The required MCFDbKeyHash256 attribute TableId.
 	 */
-	CFLibDbKeyHash256 getRequiredTableId();
+	MCFDbKeyHash256 getRequiredTableId();
 
 	/**
 	 *	Get the optional String attribute Suffix.
@@ -326,18 +326,18 @@ public interface ICFBamPubChainEditObj
 	void setOptionalSuffix(String value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute PrevRelationId.
+	 *	Get the required MCFDbKeyHash256 attribute PrevRelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute PrevRelationId.
+	 *	@return	The required MCFDbKeyHash256 attribute PrevRelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredPrevRelationId();
+	MCFDbKeyHash256 getRequiredPrevRelationId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute NextRelationId.
+	 *	Get the required MCFDbKeyHash256 attribute NextRelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute NextRelationId.
+	 *	@return	The required MCFDbKeyHash256 attribute NextRelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredNextRelationId();
+	MCFDbKeyHash256 getRequiredNextRelationId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

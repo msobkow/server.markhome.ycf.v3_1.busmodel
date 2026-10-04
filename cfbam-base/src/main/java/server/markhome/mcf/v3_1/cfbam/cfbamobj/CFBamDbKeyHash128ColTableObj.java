@@ -158,7 +158,7 @@ public class CFBamDbKeyHash128ColTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamDbKeyHash128ColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamDbKeyHash128ColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -630,7 +630,7 @@ public class CFBamDbKeyHash128ColTableObj
 			locked = (ICFBamDbKeyHash128ColObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockDbKeyHash128Col", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockDbKeyHash128Col", pkey );
 		}
 		return( locked );
 	}
@@ -665,7 +665,7 @@ public class CFBamDbKeyHash128ColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -673,7 +673,7 @@ public class CFBamDbKeyHash128ColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -725,7 +725,7 @@ public class CFBamDbKeyHash128ColTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -733,7 +733,7 @@ public class CFBamDbKeyHash128ColTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -770,21 +770,21 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public ICFBamDbKeyHash128ColObj readDbKeyHash128ColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDbKeyHash128ColObj readDbKeyHash128ColByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readDbKeyHash128ColByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamDbKeyHash128ColObj readDbKeyHash128ColByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamDbKeyHash128ColObj readDbKeyHash128ColByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamDbKeyHash128ColObj obj = readDbKeyHash128Col( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamDbKeyHash128ColObj readDbKeyHash128ColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDbKeyHash128ColObj readDbKeyHash128ColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readDbKeyHash128ColByUNameIdx( ScopeId,
@@ -793,7 +793,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public ICFBamDbKeyHash128ColObj readDbKeyHash128ColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDbKeyHash128ColObj readDbKeyHash128ColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -822,14 +822,14 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readDbKeyHash128ColByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash128ColByScopeIdx";
@@ -867,7 +867,7 @@ public class CFBamDbKeyHash128ColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -875,7 +875,7 @@ public class CFBamDbKeyHash128ColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -915,14 +915,14 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readDbKeyHash128ColByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash128ColByDefSchemaIdx";
@@ -960,7 +960,7 @@ public class CFBamDbKeyHash128ColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -968,7 +968,7 @@ public class CFBamDbKeyHash128ColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1008,14 +1008,14 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readDbKeyHash128ColByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash128ColByPrevIdx";
@@ -1053,7 +1053,7 @@ public class CFBamDbKeyHash128ColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1061,7 +1061,7 @@ public class CFBamDbKeyHash128ColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1101,14 +1101,14 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readDbKeyHash128ColByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash128ColByNextIdx";
@@ -1146,7 +1146,7 @@ public class CFBamDbKeyHash128ColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1154,7 +1154,7 @@ public class CFBamDbKeyHash128ColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1194,8 +1194,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readDbKeyHash128ColByContPrevIdx( ScopeId,
 			PrevId,
@@ -1203,8 +1203,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash128ColByContPrevIdx";
@@ -1244,7 +1244,7 @@ public class CFBamDbKeyHash128ColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1252,7 +1252,7 @@ public class CFBamDbKeyHash128ColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1292,8 +1292,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readDbKeyHash128ColByContNextIdx( ScopeId,
 			NextId,
@@ -1301,8 +1301,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash128ColByContNextIdx";
@@ -1342,7 +1342,7 @@ public class CFBamDbKeyHash128ColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1350,7 +1350,7 @@ public class CFBamDbKeyHash128ColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1390,14 +1390,14 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		return( readDbKeyHash128ColByTableIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByTableIdx( ICFLibKeyHash256 TableId,
+	public List<ICFBamDbKeyHash128ColObj> readDbKeyHash128ColByTableIdx( IMCFKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash128ColByTableIdx";
@@ -1435,7 +1435,7 @@ public class CFBamDbKeyHash128ColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1443,7 +1443,7 @@ public class CFBamDbKeyHash128ColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1483,7 +1483,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public ICFBamDbKeyHash128ColObj readCachedDbKeyHash128ColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDbKeyHash128ColObj readCachedDbKeyHash128ColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDbKeyHash128ColObj obj = null;
 		obj = readCachedDbKeyHash128Col( Id );
@@ -1491,7 +1491,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public ICFBamDbKeyHash128ColObj readCachedDbKeyHash128ColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDbKeyHash128ColObj readCachedDbKeyHash128ColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamDbKeyHash128ColObj obj = null;
@@ -1529,7 +1529,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash128ColByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1547,7 +1547,7 @@ public class CFBamDbKeyHash128ColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1555,7 +1555,7 @@ public class CFBamDbKeyHash128ColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1606,7 +1606,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash128ColByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1624,7 +1624,7 @@ public class CFBamDbKeyHash128ColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1632,7 +1632,7 @@ public class CFBamDbKeyHash128ColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1683,7 +1683,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash128ColByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1701,7 +1701,7 @@ public class CFBamDbKeyHash128ColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1709,7 +1709,7 @@ public class CFBamDbKeyHash128ColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1760,7 +1760,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash128ColByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1778,7 +1778,7 @@ public class CFBamDbKeyHash128ColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1786,7 +1786,7 @@ public class CFBamDbKeyHash128ColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1837,8 +1837,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash128ColByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1857,7 +1857,7 @@ public class CFBamDbKeyHash128ColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1865,7 +1865,7 @@ public class CFBamDbKeyHash128ColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1916,8 +1916,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash128ColByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1936,7 +1936,7 @@ public class CFBamDbKeyHash128ColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1944,7 +1944,7 @@ public class CFBamDbKeyHash128ColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1995,7 +1995,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamDbKeyHash128ColObj> readCachedDbKeyHash128ColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash128ColByTableIdx";
 		ICFBamDbKeyHash128ColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash128Col().newByTableIdxKey();
@@ -2013,7 +2013,7 @@ public class CFBamDbKeyHash128ColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2021,7 +2021,7 @@ public class CFBamDbKeyHash128ColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2072,7 +2072,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeDbKeyHash128ColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDbKeyHash128ColObj obj = readCachedDbKeyHash128ColByIdIdx( Id );
 		if( obj != null ) {
@@ -2081,7 +2081,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeDbKeyHash128ColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamDbKeyHash128ColObj obj = readCachedDbKeyHash128ColByUNameIdx( ScopeId,
@@ -2092,7 +2092,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeDbKeyHash128ColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash128ColByScopeIdx";
 		ICFBamDbKeyHash128ColObj obj;
@@ -2109,7 +2109,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeDbKeyHash128ColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash128ColByDefSchemaIdx";
 		ICFBamDbKeyHash128ColObj obj;
@@ -2126,7 +2126,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeDbKeyHash128ColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash128ColByPrevIdx";
 		ICFBamDbKeyHash128ColObj obj;
@@ -2143,7 +2143,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeDbKeyHash128ColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash128ColByNextIdx";
 		ICFBamDbKeyHash128ColObj obj;
@@ -2160,8 +2160,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeDbKeyHash128ColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash128ColByContPrevIdx";
 		ICFBamDbKeyHash128ColObj obj;
@@ -2179,8 +2179,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeDbKeyHash128ColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash128ColByContNextIdx";
 		ICFBamDbKeyHash128ColObj obj;
@@ -2198,7 +2198,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash128ColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deepDisposeDbKeyHash128ColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash128ColByTableIdx";
 		ICFBamDbKeyHash128ColObj obj;
@@ -2243,7 +2243,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteDbKeyHash128ColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDbKeyHash128ColObj obj = readDbKeyHash128Col(Id);
 		if( obj != null ) {
@@ -2273,7 +2273,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteDbKeyHash128ColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2301,7 +2301,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteDbKeyHash128ColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2335,7 +2335,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteDbKeyHash128ColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2369,7 +2369,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteDbKeyHash128ColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2403,7 +2403,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteDbKeyHash128ColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2437,8 +2437,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteDbKeyHash128ColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2476,8 +2476,8 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteDbKeyHash128ColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2515,7 +2515,7 @@ public class CFBamDbKeyHash128ColTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash128ColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deleteDbKeyHash128ColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		ICFBamDbKeyHash128ColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash128Col().newByTableIdxKey();
 		key.setRequiredTableId( TableId );
@@ -2557,7 +2557,7 @@ public class CFBamDbKeyHash128ColTableObj
 	public ICFBamDbKeyHash128ColObj moveUpDbKeyHash128Col( ICFBamDbKeyHash128ColObj Obj ) {
 		ICFBamDbKeyHash128ColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpDbKeyHash128Col" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpDbKeyHash128Col" );
 		}
 		ICFBamDbKeyHash128Col rec = schema.getCFBamBackingStore().getTableDbKeyHash128Col().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2585,7 +2585,7 @@ public class CFBamDbKeyHash128ColTableObj
 	public ICFBamDbKeyHash128ColObj moveDownDbKeyHash128Col( ICFBamDbKeyHash128ColObj Obj ) {
 		ICFBamDbKeyHash128ColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownDbKeyHash128Col" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownDbKeyHash128Col" );
 		}
 		ICFBamDbKeyHash128Col rec = schema.getCFBamBackingStore().getTableDbKeyHash128Col().moveRecDown( null,
 			Obj.getRequiredId(),

@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -85,7 +85,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	 *		@return The retrieved entity, usually from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaRoleDef r where r.requiredId = :id")
-	CFBamJpaRoleDef get(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaRoleDef get(@Param("id") IMCFKeyHash256 requiredId);
 
 	// CFBamJpaRoleDef specified index readers
 
@@ -98,7 +98,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId and r.requiredName = :name")
-	CFBamJpaRoleDef findByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	CFBamJpaRoleDef findByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName);
 
 	/**
@@ -120,7 +120,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	 *		@return List&lt;CFBamJpaRoleDef&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId")
-	List<CFBamJpaRoleDef> findByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId);
+	List<CFBamJpaRoleDef> findByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId);
 
 	/**
 	 *	CFBamRoleDefByScopeIdxKey entity list reader convenience method for object-based access.
@@ -141,7 +141,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	 *		@return List&lt;CFBamJpaRoleDef&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaRoleDef r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaRoleDef> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaRoleDef> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamRoleDefByDefSchemaIdxKey entity list reader convenience method for object-based access.
@@ -164,8 +164,8 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId and r.optionalLookupDefSchema.requiredId = :defSchemaId and r.requiredName = :name")
-	CFBamJpaRoleDef findByUDefIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId,
+	CFBamJpaRoleDef findByUDefIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId,
 		@Param("name") String requiredName);
 
 	/**
@@ -191,7 +191,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaRoleDef r where r.requiredId = :id")
-	CFBamJpaRoleDef lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaRoleDef lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based lock database entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity locks, which may or may not imply an actual database lock during the transaction.
@@ -204,7 +204,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId and r.requiredName = :name")
-	CFBamJpaRoleDef lockByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	CFBamJpaRoleDef lockByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName);
 
 	/**
@@ -228,7 +228,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId")
-	List<CFBamJpaRoleDef> lockByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId);
+	List<CFBamJpaRoleDef> lockByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId);
 
 	/**
 	 *	CFBamRoleDefByScopeIdxKey based lock method for object-based access.
@@ -251,7 +251,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaRoleDef r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaRoleDef> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaRoleDef> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamRoleDefByDefSchemaIdxKey based lock method for object-based access.
@@ -276,8 +276,8 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId and r.optionalLookupDefSchema.requiredId = :defSchemaId and r.requiredName = :name")
-	CFBamJpaRoleDef lockByUDefIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId,
+	CFBamJpaRoleDef lockByUDefIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId,
 		@Param("name") String requiredName);
 
 	/**
@@ -301,7 +301,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaRoleDef r where r.requiredId = :id")
-	void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based delete entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity lock, which may or may not imply an actual database lock during the transaction.
@@ -312,7 +312,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId and r.requiredName = :name")
-	void deleteByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	void deleteByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName);
 
 	/**
@@ -332,7 +332,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId")
-	void deleteByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId);
+	void deleteByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId);
 
 	/**
 	 *	CFBamRoleDefByScopeIdxKey based lock method for object-based access.
@@ -351,7 +351,7 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaRoleDef r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamRoleDefByDefSchemaIdxKey based lock method for object-based access.
@@ -372,8 +372,8 @@ public interface CFBamJpaRoleDefRepository extends JpaRepository<CFBamJpaRoleDef
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaRoleDef r where r.requiredContainerScopeDef.requiredId = :scopeId and r.optionalLookupDefSchema.requiredId = :defSchemaId and r.requiredName = :name")
-	void deleteByUDefIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId,
+	void deleteByUDefIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId,
 		@Param("name") String requiredName);
 
 	/**

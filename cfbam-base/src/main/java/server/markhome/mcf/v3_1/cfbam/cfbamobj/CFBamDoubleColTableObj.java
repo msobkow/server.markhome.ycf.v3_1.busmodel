@@ -158,7 +158,7 @@ public class CFBamDoubleColTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamDoubleColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamDoubleColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -630,7 +630,7 @@ public class CFBamDoubleColTableObj
 			locked = (ICFBamDoubleColObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockDoubleCol", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockDoubleCol", pkey );
 		}
 		return( locked );
 	}
@@ -665,7 +665,7 @@ public class CFBamDoubleColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -673,7 +673,7 @@ public class CFBamDoubleColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -725,7 +725,7 @@ public class CFBamDoubleColTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -733,7 +733,7 @@ public class CFBamDoubleColTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -770,21 +770,21 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public ICFBamDoubleColObj readDoubleColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDoubleColObj readDoubleColByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readDoubleColByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamDoubleColObj readDoubleColByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamDoubleColObj readDoubleColByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamDoubleColObj obj = readDoubleCol( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamDoubleColObj readDoubleColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDoubleColObj readDoubleColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readDoubleColByUNameIdx( ScopeId,
@@ -793,7 +793,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public ICFBamDoubleColObj readDoubleColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDoubleColObj readDoubleColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -822,14 +822,14 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamDoubleColObj> readDoubleColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readDoubleColByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamDoubleColObj> readDoubleColByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDoubleColByScopeIdx";
@@ -867,7 +867,7 @@ public class CFBamDoubleColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -875,7 +875,7 @@ public class CFBamDoubleColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -915,14 +915,14 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDoubleColObj> readDoubleColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readDoubleColByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamDoubleColObj> readDoubleColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDoubleColByDefSchemaIdx";
@@ -960,7 +960,7 @@ public class CFBamDoubleColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -968,7 +968,7 @@ public class CFBamDoubleColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1008,14 +1008,14 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDoubleColObj> readDoubleColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readDoubleColByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamDoubleColObj> readDoubleColByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDoubleColByPrevIdx";
@@ -1053,7 +1053,7 @@ public class CFBamDoubleColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1061,7 +1061,7 @@ public class CFBamDoubleColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1101,14 +1101,14 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDoubleColObj> readDoubleColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readDoubleColByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamDoubleColObj> readDoubleColByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDoubleColByNextIdx";
@@ -1146,7 +1146,7 @@ public class CFBamDoubleColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1154,7 +1154,7 @@ public class CFBamDoubleColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1194,8 +1194,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamDoubleColObj> readDoubleColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readDoubleColByContPrevIdx( ScopeId,
 			PrevId,
@@ -1203,8 +1203,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamDoubleColObj> readDoubleColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDoubleColByContPrevIdx";
@@ -1244,7 +1244,7 @@ public class CFBamDoubleColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1252,7 +1252,7 @@ public class CFBamDoubleColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1292,8 +1292,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamDoubleColObj> readDoubleColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readDoubleColByContNextIdx( ScopeId,
 			NextId,
@@ -1301,8 +1301,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamDoubleColObj> readDoubleColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDoubleColByContNextIdx";
@@ -1342,7 +1342,7 @@ public class CFBamDoubleColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1350,7 +1350,7 @@ public class CFBamDoubleColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1390,14 +1390,14 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamDoubleColObj> readDoubleColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		return( readDoubleColByTableIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readDoubleColByTableIdx( ICFLibKeyHash256 TableId,
+	public List<ICFBamDoubleColObj> readDoubleColByTableIdx( IMCFKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDoubleColByTableIdx";
@@ -1435,7 +1435,7 @@ public class CFBamDoubleColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1443,7 +1443,7 @@ public class CFBamDoubleColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1483,7 +1483,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public ICFBamDoubleColObj readCachedDoubleColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDoubleColObj readCachedDoubleColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDoubleColObj obj = null;
 		obj = readCachedDoubleCol( Id );
@@ -1491,7 +1491,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public ICFBamDoubleColObj readCachedDoubleColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDoubleColObj readCachedDoubleColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamDoubleColObj obj = null;
@@ -1529,7 +1529,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readCachedDoubleColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamDoubleColObj> readCachedDoubleColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedDoubleColByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1547,7 +1547,7 @@ public class CFBamDoubleColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1555,7 +1555,7 @@ public class CFBamDoubleColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1606,7 +1606,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readCachedDoubleColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDoubleColObj> readCachedDoubleColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedDoubleColByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1624,7 +1624,7 @@ public class CFBamDoubleColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1632,7 +1632,7 @@ public class CFBamDoubleColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1683,7 +1683,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readCachedDoubleColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDoubleColObj> readCachedDoubleColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDoubleColByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1701,7 +1701,7 @@ public class CFBamDoubleColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1709,7 +1709,7 @@ public class CFBamDoubleColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1760,7 +1760,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readCachedDoubleColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDoubleColObj> readCachedDoubleColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDoubleColByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1778,7 +1778,7 @@ public class CFBamDoubleColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1786,7 +1786,7 @@ public class CFBamDoubleColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1837,8 +1837,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readCachedDoubleColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamDoubleColObj> readCachedDoubleColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDoubleColByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1857,7 +1857,7 @@ public class CFBamDoubleColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1865,7 +1865,7 @@ public class CFBamDoubleColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1916,8 +1916,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readCachedDoubleColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamDoubleColObj> readCachedDoubleColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDoubleColByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1936,7 +1936,7 @@ public class CFBamDoubleColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1944,7 +1944,7 @@ public class CFBamDoubleColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1995,7 +1995,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public List<ICFBamDoubleColObj> readCachedDoubleColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamDoubleColObj> readCachedDoubleColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedDoubleColByTableIdx";
 		ICFBamDoubleColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDoubleCol().newByTableIdxKey();
@@ -2013,7 +2013,7 @@ public class CFBamDoubleColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2021,7 +2021,7 @@ public class CFBamDoubleColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2072,7 +2072,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeDoubleColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDoubleColObj obj = readCachedDoubleColByIdIdx( Id );
 		if( obj != null ) {
@@ -2081,7 +2081,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeDoubleColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamDoubleColObj obj = readCachedDoubleColByUNameIdx( ScopeId,
@@ -2092,7 +2092,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeDoubleColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeDoubleColByScopeIdx";
 		ICFBamDoubleColObj obj;
@@ -2109,7 +2109,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeDoubleColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeDoubleColByDefSchemaIdx";
 		ICFBamDoubleColObj obj;
@@ -2126,7 +2126,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeDoubleColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDoubleColByPrevIdx";
 		ICFBamDoubleColObj obj;
@@ -2143,7 +2143,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeDoubleColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDoubleColByNextIdx";
 		ICFBamDoubleColObj obj;
@@ -2160,8 +2160,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeDoubleColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDoubleColByContPrevIdx";
 		ICFBamDoubleColObj obj;
@@ -2179,8 +2179,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeDoubleColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDoubleColByContNextIdx";
 		ICFBamDoubleColObj obj;
@@ -2198,7 +2198,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deepDisposeDoubleColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deepDisposeDoubleColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeDoubleColByTableIdx";
 		ICFBamDoubleColObj obj;
@@ -2243,7 +2243,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteDoubleColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDoubleColObj obj = readDoubleCol(Id);
 		if( obj != null ) {
@@ -2273,7 +2273,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteDoubleColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2301,7 +2301,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteDoubleColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2335,7 +2335,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteDoubleColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2369,7 +2369,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteDoubleColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2403,7 +2403,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteDoubleColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2437,8 +2437,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteDoubleColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2476,8 +2476,8 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteDoubleColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2515,7 +2515,7 @@ public class CFBamDoubleColTableObj
 	}
 
 	@Override
-	public void deleteDoubleColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deleteDoubleColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		ICFBamDoubleColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDoubleCol().newByTableIdxKey();
 		key.setRequiredTableId( TableId );
@@ -2557,7 +2557,7 @@ public class CFBamDoubleColTableObj
 	public ICFBamDoubleColObj moveUpDoubleCol( ICFBamDoubleColObj Obj ) {
 		ICFBamDoubleColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpDoubleCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpDoubleCol" );
 		}
 		ICFBamDoubleCol rec = schema.getCFBamBackingStore().getTableDoubleCol().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2585,7 +2585,7 @@ public class CFBamDoubleColTableObj
 	public ICFBamDoubleColObj moveDownDoubleCol( ICFBamDoubleColObj Obj ) {
 		ICFBamDoubleColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownDoubleCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownDoubleCol" );
 		}
 		ICFBamDoubleCol rec = schema.getCFBamBackingStore().getTableDoubleCol().moveRecDown( null,
 			Obj.getRequiredId(),

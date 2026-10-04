@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -96,13 +96,13 @@ public class CFBamJpaIndex extends CFBamJpaScope
 	protected Set<CFBamJpaIndexTweak> optionalComponentsTweaks;
 
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 requiredTableId;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="defschid", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="defschid", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
 	@Column( name="safe_name", nullable=false, length=192 )
 	protected String requiredName;
 	@Column( name="short_name", nullable=true, length=16 )
@@ -126,8 +126,8 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public CFBamJpaIndex() {
 		super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubIndex.TABLEID_INIT_VALUE.toString() );
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubIndex.TABLEID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
 		requiredName = ICFBamPubIndex.NAME_INIT_VALUE;
 		optionalShortName = null;
 		optionalLabel = null;
@@ -153,7 +153,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
 		else if (argObj instanceof CFBamJpaTable) {
 			requiredContainerTable = (CFBamJpaTable)argObj;
@@ -164,7 +164,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "CFBamJpaTable");
+			throw new MCFUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "CFBamJpaTable");
 		}
 	}
 
@@ -179,14 +179,14 @@ public class CFBamJpaIndex extends CFBamJpaScope
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFLibKeyHash256 argTableId) {
+	public void setRequiredContainerTable(IMCFKeyHash256 argTableId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamTableTable targetTable = targetBackingSchema.getTableTable();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTableId);
 		setRequiredContainerTable(targetRec);
@@ -212,7 +212,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setLookupDefSchema", "argObj", argObj, "CFBamJpaSchemaDef");
+			throw new MCFUnsupportedClassException(getClass(), "setLookupDefSchema", "argObj", argObj, "CFBamJpaSchemaDef");
 		}
 	}
 
@@ -227,14 +227,14 @@ public class CFBamJpaIndex extends CFBamJpaScope
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId) {
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamSchemaDefTable targetTable = targetBackingSchema.getTableSchemaDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
 		setOptionalLookupDefSchema(targetRec);
@@ -253,13 +253,13 @@ public class CFBamJpaIndex extends CFBamJpaScope
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -268,11 +268,11 @@ public class CFBamJpaIndex extends CFBamJpaScope
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
@@ -283,13 +283,13 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -306,7 +306,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortName",
 				1,
 				"value.length()",
@@ -323,7 +323,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalLabel",
 				1,
 				"value.length()",
@@ -340,7 +340,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortDescription",
 				1,
 				"value.length()",
@@ -357,7 +357,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDescription",
 				1,
 				"value.length()",
@@ -374,7 +374,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDbName",
 				1,
 				"value.length()",
@@ -391,7 +391,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public void setOptionalSuffix( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalSuffix",
 				1,
 				"value.length()",
@@ -426,7 +426,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredCodeVis",
 				1,
 				"value" );
@@ -1444,7 +1444,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 			setIndex( (ICFBamIndex)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -1477,7 +1477,7 @@ public class CFBamJpaIndex extends CFBamJpaScope
 			setIndex( (ICFBamIndexH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

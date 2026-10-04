@@ -138,7 +138,7 @@ extends ICFBamProtTweakTable,
 	 *	@param	SchemaDefId	The SchemaTweak key attribute of the instance generating the id.
 	 */
 	public void protdeleteSchemaTweakBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId );
+		IMCFKeyHash256 argSchemaDefId );
 
 	/**
 	 *	Delete the SchemaTweak instances identified by the key SchemaIdx.
@@ -166,7 +166,7 @@ extends ICFBamProtTweakTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteSchemaTweakByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the SchemaTweak instances identified by the key UNameIdx.
 	 *
@@ -177,7 +177,7 @@ extends ICFBamProtTweakTable,
 	 *	@param	Name	The SchemaTweak key attribute of the instance generating the id.
 	 */
 	public void protdeleteSchemaTweakByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -206,7 +206,7 @@ extends ICFBamProtTweakTable,
 	 *	@param	TenantId	The SchemaTweak key attribute of the instance generating the id.
 	 */
 	public void protdeleteSchemaTweakByValTentIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the SchemaTweak instances identified by the key ValTentIdx.
@@ -234,7 +234,7 @@ extends ICFBamProtTweakTable,
 	 *	@param	ScopeId	The SchemaTweak key attribute of the instance generating the id.
 	 */
 	public void protdeleteSchemaTweakByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the SchemaTweak instances identified by the key ScopeIdx.
@@ -262,7 +262,7 @@ extends ICFBamProtTweakTable,
 	 *	@param	DefSchemaId	The SchemaTweak key attribute of the instance generating the id.
 	 */
 	public void protdeleteSchemaTweakByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the SchemaTweak instances identified by the key DefSchemaIdx.
@@ -298,10 +298,10 @@ extends ICFBamProtTweakTable,
 	 *	@param	Name	The SchemaTweak key attribute of the instance generating the id.
 	 */
 	public void protdeleteSchemaTweakByUDefIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argDefSchemaTenantId,
-		CFLibDbKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argTenantId,
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argDefSchemaTenantId,
+		MCFDbKeyHash256 argDefSchemaId,
 		String argName );
 
 	/**
@@ -345,7 +345,7 @@ extends ICFBamProtTweakTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtSchemaTweak protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived SchemaTweak record instance by protected primary key.
@@ -358,7 +358,7 @@ extends ICFBamProtTweakTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtSchemaTweak protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all SchemaTweak instances.
@@ -380,7 +380,7 @@ extends ICFBamProtTweakTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtSchemaTweak protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived SchemaTweak record instance identified by the unique key UNameIdx.
@@ -395,7 +395,7 @@ extends ICFBamProtTweakTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtSchemaTweak protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -408,7 +408,7 @@ extends ICFBamProtTweakTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtSchemaTweak[] protreadDerivedByValTentIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived SchemaTweak record instances identified by the duplicate key ScopeIdx.
@@ -420,7 +420,7 @@ extends ICFBamProtTweakTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtSchemaTweak[] protreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived SchemaTweak record instances identified by the duplicate key DefSchemaIdx.
@@ -432,7 +432,7 @@ extends ICFBamProtTweakTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtSchemaTweak[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived SchemaTweak record instance identified by the unique key UDefIdx.
@@ -453,10 +453,10 @@ extends ICFBamProtTweakTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtSchemaTweak protreadDerivedByUDefIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+		IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 DefSchemaTenantId,
+		MCFDbKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -469,7 +469,7 @@ extends ICFBamProtTweakTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtSchemaTweak[] protreadDerivedBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read the specific SchemaTweak record instance identified by the primary key.
@@ -481,10 +481,10 @@ extends ICFBamProtTweakTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific SchemaTweak record instance identified by the primary key.
@@ -496,10 +496,10 @@ extends ICFBamProtTweakTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific SchemaTweak record instances.
@@ -520,10 +520,10 @@ extends ICFBamProtTweakTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific SchemaTweak record instance identified by the unique key UNameIdx.
@@ -537,10 +537,10 @@ extends ICFBamProtTweakTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -552,10 +552,10 @@ extends ICFBamProtTweakTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak[] protreadRecByValTentIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific SchemaTweak record instances identified by the duplicate key ScopeIdx.
@@ -566,10 +566,10 @@ extends ICFBamProtTweakTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak[] protreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific SchemaTweak record instances identified by the duplicate key DefSchemaIdx.
@@ -580,10 +580,10 @@ extends ICFBamProtTweakTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific SchemaTweak record instance identified by the unique key UDefIdx.
@@ -603,13 +603,13 @@ extends ICFBamProtTweakTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak protreadRecByUDefIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+		IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 DefSchemaTenantId,
+		MCFDbKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -621,8 +621,8 @@ extends ICFBamProtTweakTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweak[] protreadRecBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 }

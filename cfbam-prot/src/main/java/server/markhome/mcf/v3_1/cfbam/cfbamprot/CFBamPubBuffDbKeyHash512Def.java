@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -92,7 +92,7 @@ public class CFBamPubBuffDbKeyHash512Def
 
 	public void setOptionalInitValue( String value ) {
 		if( value != null && value.length() > 128 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value.length()",
@@ -447,7 +447,7 @@ public class CFBamPubBuffDbKeyHash512Def
 			setJustPubDbKeyHash512Def( (CFBamPubBuffDbKeyHash512Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -467,7 +467,7 @@ public class CFBamPubBuffDbKeyHash512Def
 			setDbKeyHash512Def( (ICFBamPubDbKeyHash512DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -487,7 +487,7 @@ public class CFBamPubBuffDbKeyHash512Def
 			setJustPubDbKeyHash512Def( (CFBamPubPubBuffDbKeyHash512Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -507,7 +507,7 @@ public class CFBamPubBuffDbKeyHash512Def
 			setDbKeyHash512Def( (ICFBamPubDbKeyHash512DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

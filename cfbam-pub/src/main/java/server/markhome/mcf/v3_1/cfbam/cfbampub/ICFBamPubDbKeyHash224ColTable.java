@@ -111,7 +111,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	TableId	The DbKeyHash224Col key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash224ColByTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId );
+		MCFDbKeyHash256 argTableId );
 
 	/**
 	 *	Delete the DbKeyHash224Col instances identified by the key TableIdx.
@@ -130,7 +130,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteDbKeyHash224ColByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the DbKeyHash224Col instances identified by the key UNameIdx.
 	 *
@@ -141,7 +141,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	Name	The DbKeyHash224Col key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash224ColByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -161,7 +161,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	ScopeId	The DbKeyHash224Col key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash224ColByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		MCFDbKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the DbKeyHash224Col instances identified by the key ScopeIdx.
@@ -180,7 +180,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	DefSchemaId	The DbKeyHash224Col key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash224ColByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the DbKeyHash224Col instances identified by the key DefSchemaIdx.
@@ -199,7 +199,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	PrevId	The DbKeyHash224Col key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash224ColByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the DbKeyHash224Col instances identified by the key PrevIdx.
@@ -218,7 +218,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	NextId	The DbKeyHash224Col key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash224ColByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the DbKeyHash224Col instances identified by the key NextIdx.
@@ -239,8 +239,8 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	PrevId	The DbKeyHash224Col key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash224ColByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the DbKeyHash224Col instances identified by the key ContPrevIdx.
@@ -261,8 +261,8 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@param	NextId	The DbKeyHash224Col key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash224ColByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the DbKeyHash224Col instances identified by the key ContNextIdx.
@@ -286,7 +286,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDbKeyHash224Col pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived DbKeyHash224Col record instance by primary key.
@@ -299,7 +299,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDbKeyHash224Col publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all DbKeyHash224Col instances.
@@ -321,7 +321,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDbKeyHash224Col pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read the derived DbKeyHash224Col record instance identified by the unique key UNameIdx.
@@ -336,7 +336,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDbKeyHash224Col pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -349,7 +349,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash224Col record instances identified by the duplicate key DefSchemaIdx.
@@ -361,7 +361,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash224Col record instances identified by the duplicate key PrevIdx.
@@ -373,7 +373,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash224Col record instances identified by the duplicate key NextIdx.
@@ -385,7 +385,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash224Col record instances identified by the duplicate key ContPrevIdx.
@@ -399,8 +399,8 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash224Col record instances identified by the duplicate key ContNextIdx.
@@ -414,8 +414,8 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash224Col record instances identified by the duplicate key TableIdx.
@@ -427,7 +427,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadDerivedByTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Read the specific DbKeyHash224Col record instance identified by the primary key.
@@ -439,10 +439,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific DbKeyHash224Col record instance identified by the primary key.
@@ -454,10 +454,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific DbKeyHash224Col record instances.
@@ -478,10 +478,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read the specific DbKeyHash224Col record instance identified by the unique key UNameIdx.
@@ -495,10 +495,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -510,10 +510,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash224Col record instances identified by the duplicate key DefSchemaIdx.
@@ -524,10 +524,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash224Col record instances identified by the duplicate key PrevIdx.
@@ -538,10 +538,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash224Col record instances identified by the duplicate key NextIdx.
@@ -552,10 +552,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash224Col record instances identified by the duplicate key ContPrevIdx.
@@ -568,11 +568,11 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash224Col record instances identified by the duplicate key ContNextIdx.
@@ -585,11 +585,11 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash224Col record instances identified by the duplicate key TableIdx.
@@ -600,10 +600,10 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224Col[] pubreadRecByTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -611,7 +611,7 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamPubDbKeyHash224Col pubmoveRecUp( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		MCFDbKeyHash256 Id,
 		int revision );
 
 	/**
@@ -620,6 +620,6 @@ public interface ICFBamPubDbKeyHash224ColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamPubDbKeyHash224Col pubmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

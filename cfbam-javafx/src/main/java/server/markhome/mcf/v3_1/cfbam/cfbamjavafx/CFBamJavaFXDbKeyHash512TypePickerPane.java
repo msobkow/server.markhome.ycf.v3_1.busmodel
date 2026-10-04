@@ -92,7 +92,7 @@ implements ICFBamJavaFXDbKeyHash512TypePaneList
 	protected Collection<ICFBamDbKeyHash512TypeObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamDbKeyHash512TypeObj> observableListOfDbKeyHash512Type = null;
 	protected TableColumn<ICFBamDbKeyHash512TypeObj,String> tableColumnObjKind = null;
-	protected TableColumn<ICFBamDbKeyHash512TypeObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamDbKeyHash512TypeObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamDbKeyHash512TypeObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamDbKeyHash512TypeObj, String> tableColumnShortName = null;
 	protected TableColumn<ICFBamDbKeyHash512TypeObj, String> tableColumnLabel = null;
@@ -174,24 +174,24 @@ implements ICFBamJavaFXDbKeyHash512TypePaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnObjKind );
-		tableColumnId = new TableColumn<ICFBamDbKeyHash512TypeObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash512TypeObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamDbKeyHash512TypeObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamDbKeyHash512TypeObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash512TypeObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamDbKeyHash512TypeObj, IMCFKeyHash256> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash512TypeObj,ICFLibKeyHash256>,TableCell<ICFBamDbKeyHash512TypeObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamDbKeyHash512TypeObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamDbKeyHash512TypeObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash512TypeObj,IMCFKeyHash256>,TableCell<ICFBamDbKeyHash512TypeObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamDbKeyHash512TypeObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamDbKeyHash512TypeObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamDbKeyHash512TypeObj>();
 			}

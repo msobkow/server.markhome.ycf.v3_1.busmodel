@@ -162,7 +162,7 @@ public class CFBamRelationColTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamRelationColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamRelationColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -772,7 +772,7 @@ public class CFBamRelationColTableObj
 			locked = (ICFBamRelationColObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockRelationCol", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockRelationCol", pkey );
 		}
 		return( locked );
 	}
@@ -807,7 +807,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -815,7 +815,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -867,7 +867,7 @@ public class CFBamRelationColTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -875,7 +875,7 @@ public class CFBamRelationColTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -912,21 +912,21 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public ICFBamRelationColObj readRelationColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamRelationColObj readRelationColByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readRelationColByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamRelationColObj readRelationColByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamRelationColObj readRelationColByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamRelationColObj obj = readRelationCol( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamRelationColObj readRelationColByUNameIdx( ICFLibKeyHash256 RelationId,
+	public ICFBamRelationColObj readRelationColByUNameIdx( IMCFKeyHash256 RelationId,
 		String Name )
 	{
 		return( readRelationColByUNameIdx( RelationId,
@@ -935,7 +935,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public ICFBamRelationColObj readRelationColByUNameIdx( ICFLibKeyHash256 RelationId,
+	public ICFBamRelationColObj readRelationColByUNameIdx( IMCFKeyHash256 RelationId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -964,14 +964,14 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByRelationIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamRelationColObj> readRelationColByRelationIdx( IMCFKeyHash256 RelationId )
 	{
 		return( readRelationColByRelationIdx( RelationId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByRelationIdx( ICFLibKeyHash256 RelationId,
+	public List<ICFBamRelationColObj> readRelationColByRelationIdx( IMCFKeyHash256 RelationId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByRelationIdx";
@@ -1009,7 +1009,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1017,7 +1017,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1057,14 +1057,14 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamRelationColObj> readRelationColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readRelationColByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamRelationColObj> readRelationColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByDefSchemaIdx";
@@ -1102,7 +1102,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1110,7 +1110,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1150,14 +1150,14 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByFromColIdx( ICFLibKeyHash256 FromColId )
+	public List<ICFBamRelationColObj> readRelationColByFromColIdx( IMCFKeyHash256 FromColId )
 	{
 		return( readRelationColByFromColIdx( FromColId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByFromColIdx( ICFLibKeyHash256 FromColId,
+	public List<ICFBamRelationColObj> readRelationColByFromColIdx( IMCFKeyHash256 FromColId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByFromColIdx";
@@ -1195,7 +1195,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1203,7 +1203,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1243,14 +1243,14 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByToColIdx( ICFLibKeyHash256 ToColId )
+	public List<ICFBamRelationColObj> readRelationColByToColIdx( IMCFKeyHash256 ToColId )
 	{
 		return( readRelationColByToColIdx( ToColId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByToColIdx( ICFLibKeyHash256 ToColId,
+	public List<ICFBamRelationColObj> readRelationColByToColIdx( IMCFKeyHash256 ToColId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByToColIdx";
@@ -1288,7 +1288,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1296,7 +1296,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1336,14 +1336,14 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamRelationColObj> readRelationColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readRelationColByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamRelationColObj> readRelationColByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByPrevIdx";
@@ -1381,7 +1381,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1389,7 +1389,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1429,14 +1429,14 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamRelationColObj> readRelationColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readRelationColByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamRelationColObj> readRelationColByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByNextIdx";
@@ -1474,7 +1474,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1482,7 +1482,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1522,8 +1522,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByRelPrevIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamRelationColObj> readRelationColByRelPrevIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readRelationColByRelPrevIdx( RelationId,
 			PrevId,
@@ -1531,8 +1531,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByRelPrevIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamRelationColObj> readRelationColByRelPrevIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByRelPrevIdx";
@@ -1572,7 +1572,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1580,7 +1580,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1620,8 +1620,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByRelNextIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamRelationColObj> readRelationColByRelNextIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readRelationColByRelNextIdx( RelationId,
 			NextId,
@@ -1629,8 +1629,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readRelationColByRelNextIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamRelationColObj> readRelationColByRelNextIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByRelNextIdx";
@@ -1670,7 +1670,7 @@ public class CFBamRelationColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1678,7 +1678,7 @@ public class CFBamRelationColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1718,7 +1718,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public ICFBamRelationColObj readCachedRelationColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamRelationColObj readCachedRelationColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamRelationColObj obj = null;
 		obj = readCachedRelationCol( Id );
@@ -1726,7 +1726,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public ICFBamRelationColObj readCachedRelationColByUNameIdx( ICFLibKeyHash256 RelationId,
+	public ICFBamRelationColObj readCachedRelationColByUNameIdx( IMCFKeyHash256 RelationId,
 		String Name )
 	{
 		ICFBamRelationColObj obj = null;
@@ -1764,7 +1764,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readCachedRelationColByRelationIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamRelationColObj> readCachedRelationColByRelationIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedRelationColByRelationIdx";
 		ICFBamRelationColByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
@@ -1782,7 +1782,7 @@ public class CFBamRelationColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1790,7 +1790,7 @@ public class CFBamRelationColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1841,7 +1841,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readCachedRelationColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamRelationColObj> readCachedRelationColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedRelationColByDefSchemaIdx";
 		ICFBamRelationColByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
@@ -1859,7 +1859,7 @@ public class CFBamRelationColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1867,7 +1867,7 @@ public class CFBamRelationColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1918,7 +1918,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readCachedRelationColByFromColIdx( ICFLibKeyHash256 FromColId )
+	public List<ICFBamRelationColObj> readCachedRelationColByFromColIdx( IMCFKeyHash256 FromColId )
 	{
 		final String S_ProcName = "readCachedRelationColByFromColIdx";
 		ICFBamRelationColByFromColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
@@ -1936,7 +1936,7 @@ public class CFBamRelationColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1944,7 +1944,7 @@ public class CFBamRelationColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1995,7 +1995,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readCachedRelationColByToColIdx( ICFLibKeyHash256 ToColId )
+	public List<ICFBamRelationColObj> readCachedRelationColByToColIdx( IMCFKeyHash256 ToColId )
 	{
 		final String S_ProcName = "readCachedRelationColByToColIdx";
 		ICFBamRelationColByToColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
@@ -2013,7 +2013,7 @@ public class CFBamRelationColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2021,7 +2021,7 @@ public class CFBamRelationColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2072,7 +2072,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readCachedRelationColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamRelationColObj> readCachedRelationColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedRelationColByPrevIdx";
 		ICFBamRelationColByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
@@ -2090,7 +2090,7 @@ public class CFBamRelationColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2098,7 +2098,7 @@ public class CFBamRelationColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2149,7 +2149,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readCachedRelationColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamRelationColObj> readCachedRelationColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedRelationColByNextIdx";
 		ICFBamRelationColByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
@@ -2167,7 +2167,7 @@ public class CFBamRelationColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2175,7 +2175,7 @@ public class CFBamRelationColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2226,8 +2226,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readCachedRelationColByRelPrevIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamRelationColObj> readCachedRelationColByRelPrevIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedRelationColByRelPrevIdx";
 		ICFBamRelationColByRelPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
@@ -2246,7 +2246,7 @@ public class CFBamRelationColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2254,7 +2254,7 @@ public class CFBamRelationColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2305,8 +2305,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationColObj> readCachedRelationColByRelNextIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamRelationColObj> readCachedRelationColByRelNextIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedRelationColByRelNextIdx";
 		ICFBamRelationColByRelNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
@@ -2325,7 +2325,7 @@ public class CFBamRelationColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2333,7 +2333,7 @@ public class CFBamRelationColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2384,7 +2384,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeRelationColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamRelationColObj obj = readCachedRelationColByIdIdx( Id );
 		if( obj != null ) {
@@ -2393,7 +2393,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByUNameIdx( ICFLibKeyHash256 RelationId,
+	public void deepDisposeRelationColByUNameIdx( IMCFKeyHash256 RelationId,
 		String Name )
 	{
 		ICFBamRelationColObj obj = readCachedRelationColByUNameIdx( RelationId,
@@ -2404,7 +2404,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByRelationIdx( ICFLibKeyHash256 RelationId )
+	public void deepDisposeRelationColByRelationIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "deepDisposeRelationColByRelationIdx";
 		ICFBamRelationColObj obj;
@@ -2421,7 +2421,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeRelationColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeRelationColByDefSchemaIdx";
 		ICFBamRelationColObj obj;
@@ -2438,7 +2438,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByFromColIdx( ICFLibKeyHash256 FromColId )
+	public void deepDisposeRelationColByFromColIdx( IMCFKeyHash256 FromColId )
 	{
 		final String S_ProcName = "deepDisposeRelationColByFromColIdx";
 		ICFBamRelationColObj obj;
@@ -2455,7 +2455,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByToColIdx( ICFLibKeyHash256 ToColId )
+	public void deepDisposeRelationColByToColIdx( IMCFKeyHash256 ToColId )
 	{
 		final String S_ProcName = "deepDisposeRelationColByToColIdx";
 		ICFBamRelationColObj obj;
@@ -2472,7 +2472,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeRelationColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeRelationColByPrevIdx";
 		ICFBamRelationColObj obj;
@@ -2489,7 +2489,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeRelationColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeRelationColByNextIdx";
 		ICFBamRelationColObj obj;
@@ -2506,8 +2506,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByRelPrevIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeRelationColByRelPrevIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeRelationColByRelPrevIdx";
 		ICFBamRelationColObj obj;
@@ -2525,8 +2525,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationColByRelNextIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeRelationColByRelNextIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeRelationColByRelNextIdx";
 		ICFBamRelationColObj obj;
@@ -2570,7 +2570,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteRelationColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamRelationColObj obj = readRelationCol(Id);
 		if( obj != null ) {
@@ -2600,7 +2600,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByUNameIdx( ICFLibKeyHash256 RelationId,
+	public void deleteRelationColByUNameIdx( IMCFKeyHash256 RelationId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2628,7 +2628,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByRelationIdx( ICFLibKeyHash256 RelationId )
+	public void deleteRelationColByRelationIdx( IMCFKeyHash256 RelationId )
 	{
 		ICFBamRelationColByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
 		key.setRequiredRelationId( RelationId );
@@ -2662,7 +2662,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteRelationColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamRelationColByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2696,7 +2696,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByFromColIdx( ICFLibKeyHash256 FromColId )
+	public void deleteRelationColByFromColIdx( IMCFKeyHash256 FromColId )
 	{
 		ICFBamRelationColByFromColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
 		key.setRequiredFromColId( FromColId );
@@ -2730,7 +2730,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByToColIdx( ICFLibKeyHash256 ToColId )
+	public void deleteRelationColByToColIdx( IMCFKeyHash256 ToColId )
 	{
 		ICFBamRelationColByToColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
 		key.setRequiredToColId( ToColId );
@@ -2764,7 +2764,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteRelationColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamRelationColByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2798,7 +2798,7 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteRelationColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamRelationColByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2832,8 +2832,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByRelPrevIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteRelationColByRelPrevIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamRelationColByRelPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
 		key.setRequiredRelationId( RelationId );
@@ -2871,8 +2871,8 @@ public class CFBamRelationColTableObj
 	}
 
 	@Override
-	public void deleteRelationColByRelNextIdx( ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 NextId )
+	public void deleteRelationColByRelNextIdx( IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamRelationColByRelNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
 		key.setRequiredRelationId( RelationId );
@@ -2918,7 +2918,7 @@ public class CFBamRelationColTableObj
 	public ICFBamRelationColObj moveUpRelationCol( ICFBamRelationColObj Obj ) {
 		ICFBamRelationColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpRelationCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpRelationCol" );
 		}
 		ICFBamRelationCol rec = schema.getCFBamBackingStore().getTableRelationCol().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2946,7 +2946,7 @@ public class CFBamRelationColTableObj
 	public ICFBamRelationColObj moveDownRelationCol( ICFBamRelationColObj Obj ) {
 		ICFBamRelationColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownRelationCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownRelationCol" );
 		}
 		ICFBamRelationCol rec = schema.getCFBamBackingStore().getTableRelationCol().moveRecDown( null,
 			Obj.getRequiredId(),

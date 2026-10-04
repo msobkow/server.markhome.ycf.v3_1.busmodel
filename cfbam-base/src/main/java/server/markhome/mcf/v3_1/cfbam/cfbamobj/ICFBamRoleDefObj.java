@@ -66,7 +66,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 public interface ICFBamRoleDefObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamRoleDef.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -140,7 +140,7 @@ public interface ICFBamRoleDefObj
 	/**
 	 *	End this edition of this RoleDef instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -268,25 +268,25 @@ public interface ICFBamRoleDefObj
 	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ScopeId.
+	 *	Get the required IMCFKeyHash256 attribute ScopeId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ScopeId.
+	 *	@return	The required IMCFKeyHash256 attribute ScopeId.
 	 */
-	ICFLibKeyHash256 getRequiredScopeId();
+	IMCFKeyHash256 getRequiredScopeId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.

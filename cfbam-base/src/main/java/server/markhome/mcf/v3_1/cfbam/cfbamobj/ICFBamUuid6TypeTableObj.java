@@ -173,7 +173,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	CFBamValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamUuid6TypeObj readUuid6TypeByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamUuid6TypeObj readUuid6TypeByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamValueObj instance for the primary key attributes.
@@ -183,7 +183,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	CFBamValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamUuid6TypeObj readUuid6TypeByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamUuid6TypeObj readUuid6TypeByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -196,7 +196,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	CFBamValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamUuid6TypeObj readUuid6TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamUuid6TypeObj readUuid6TypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -209,7 +209,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	CFBamValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamUuid6TypeObj readUuid6TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamUuid6TypeObj readUuid6TypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -221,7 +221,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamUuid6TypeObj> readUuid6TypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamUuid6TypeObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -231,7 +231,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByScopeIdx( ICFLibKeyHash256 ScopeId,
+	List<ICFBamUuid6TypeObj> readUuid6TypeByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -242,7 +242,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamUuid6TypeObj> readUuid6TypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamUuid6TypeObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -252,7 +252,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	List<ICFBamUuid6TypeObj> readUuid6TypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -263,7 +263,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamUuid6TypeObj> readUuid6TypeByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamUuid6TypeObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -273,7 +273,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByPrevIdx( ICFLibKeyHash256 PrevId,
+	List<ICFBamUuid6TypeObj> readUuid6TypeByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -284,7 +284,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamUuid6TypeObj> readUuid6TypeByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamUuid6TypeObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -294,7 +294,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByNextIdx( ICFLibKeyHash256 NextId,
+	List<ICFBamUuid6TypeObj> readUuid6TypeByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -307,8 +307,8 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	List<ICFBamUuid6TypeObj> readUuid6TypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamUuid6TypeObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -320,8 +320,8 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	List<ICFBamUuid6TypeObj> readUuid6TypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -334,8 +334,8 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	List<ICFBamUuid6TypeObj> readUuid6TypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamUuid6TypeObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -347,8 +347,8 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	List<ICFBamUuid6TypeObj> readUuid6TypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -359,7 +359,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	List<ICFBamUuid6TypeObj> readUuid6TypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Get the map of CFBamUuid6TypeObj instances sorted by their primary keys for the duplicate SchemaIdx key.
@@ -369,50 +369,50 @@ public interface ICFBamUuid6TypeTableObj
 	 *	@return	List of CFBamUuid6TypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamUuid6TypeObj> readUuid6TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
+	List<ICFBamUuid6TypeObj> readUuid6TypeBySchemaIdx( IMCFKeyHash256 SchemaDefId,
 		boolean forceRead );
 
-	ICFBamUuid6TypeObj readCachedUuid6TypeByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamUuid6TypeObj readCachedUuid6TypeByIdIdx( IMCFKeyHash256 Id );
 
-	ICFBamUuid6TypeObj readCachedUuid6TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamUuid6TypeObj readCachedUuid6TypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByPrevIdx( IMCFKeyHash256 PrevId );
 
-	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByNextIdx( IMCFKeyHash256 NextId );
 
-	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
-	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	List<ICFBamUuid6TypeObj> readCachedUuid6TypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
-	List<ICFBamUuid6TypeObj> readCachedUuid6TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	List<ICFBamUuid6TypeObj> readCachedUuid6TypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
-	void deepDisposeUuid6TypeByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeUuid6TypeByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeUuid6TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deepDisposeUuid6TypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeUuid6TypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deepDisposeUuid6TypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	void deepDisposeUuid6TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deepDisposeUuid6TypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	void deepDisposeUuid6TypeByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deepDisposeUuid6TypeByPrevIdx( IMCFKeyHash256 PrevId );
 
-	void deepDisposeUuid6TypeByNextIdx( ICFLibKeyHash256 NextId );
+	void deepDisposeUuid6TypeByNextIdx( IMCFKeyHash256 NextId );
 
-	void deepDisposeUuid6TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	void deepDisposeUuid6TypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
-	void deepDisposeUuid6TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	void deepDisposeUuid6TypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
-	void deepDisposeUuid6TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	void deepDisposeUuid6TypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Internal use only.
@@ -429,7 +429,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *
 	 *	@param	Id	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeByIdIdx( ICFLibKeyHash256 Id );
+	void deleteUuid6TypeByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -438,7 +438,7 @@ public interface ICFBamUuid6TypeTableObj
 	 *
 	 *	@param	Name	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deleteUuid6TypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -446,28 +446,28 @@ public interface ICFBamUuid6TypeTableObj
 	 *
 	 *	@param	ScopeId	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deleteUuid6TypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deleteUuid6TypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deleteUuid6TypeByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeByNextIdx( ICFLibKeyHash256 NextId );
+	void deleteUuid6TypeByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -476,8 +476,8 @@ public interface ICFBamUuid6TypeTableObj
 	 *
 	 *	@param	PrevId	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	void deleteUuid6TypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -486,15 +486,15 @@ public interface ICFBamUuid6TypeTableObj
 	 *
 	 *	@param	NextId	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	void deleteUuid6TypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaDefId	The Uuid6Type key attribute of the instance generating the id.
 	 */
-	void deleteUuid6TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	void deleteUuid6TypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the CFBamUuid6TypeObj instance up in the chain.  The instance is always refreshed.

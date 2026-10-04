@@ -138,7 +138,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	SchemaDefId	The UInt64Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteUInt64TypeBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId );
+		IMCFKeyHash256 argSchemaDefId );
 
 	/**
 	 *	Delete the UInt64Type instances identified by the key SchemaIdx.
@@ -166,7 +166,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteUInt64TypeByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the UInt64Type instances identified by the key UNameIdx.
 	 *
@@ -177,7 +177,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	Name	The UInt64Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteUInt64TypeByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -206,7 +206,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	ScopeId	The UInt64Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteUInt64TypeByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the UInt64Type instances identified by the key ScopeIdx.
@@ -234,7 +234,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	DefSchemaId	The UInt64Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteUInt64TypeByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the UInt64Type instances identified by the key DefSchemaIdx.
@@ -262,7 +262,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	PrevId	The UInt64Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteUInt64TypeByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the UInt64Type instances identified by the key PrevIdx.
@@ -290,7 +290,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	NextId	The UInt64Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteUInt64TypeByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the UInt64Type instances identified by the key NextIdx.
@@ -320,8 +320,8 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	PrevId	The UInt64Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteUInt64TypeByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the UInt64Type instances identified by the key ContPrevIdx.
@@ -351,8 +351,8 @@ extends ICFBamProtUInt64DefTable,
 	 *	@param	NextId	The UInt64Type key attribute of the instance generating the id.
 	 */
 	public void protdeleteUInt64TypeByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the UInt64Type instances identified by the key ContNextIdx.
@@ -395,7 +395,7 @@ extends ICFBamProtUInt64DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtUInt64Type protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived UInt64Type record instance by protected primary key.
@@ -408,7 +408,7 @@ extends ICFBamProtUInt64DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtUInt64Type protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all UInt64Type instances.
@@ -430,7 +430,7 @@ extends ICFBamProtUInt64DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtUInt64Type protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived UInt64Type record instance identified by the unique key UNameIdx.
@@ -445,7 +445,7 @@ extends ICFBamProtUInt64DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtUInt64Type protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -458,7 +458,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtUInt64Type[] protreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived UInt64Type record instances identified by the duplicate key DefSchemaIdx.
@@ -470,7 +470,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtUInt64Type[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived UInt64Type record instances identified by the duplicate key PrevIdx.
@@ -482,7 +482,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtUInt64Type[] protreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived UInt64Type record instances identified by the duplicate key NextIdx.
@@ -494,7 +494,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtUInt64Type[] protreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived UInt64Type record instances identified by the duplicate key ContPrevIdx.
@@ -508,8 +508,8 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtUInt64Type[] protreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived UInt64Type record instances identified by the duplicate key ContNextIdx.
@@ -523,8 +523,8 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtUInt64Type[] protreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived UInt64Type record instances identified by the duplicate key SchemaIdx.
@@ -536,7 +536,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtUInt64Type[] protreadDerivedBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read the specific UInt64Type record instance identified by the primary key.
@@ -548,10 +548,10 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific UInt64Type record instance identified by the primary key.
@@ -563,10 +563,10 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific UInt64Type record instances.
@@ -587,10 +587,10 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific UInt64Type record instance identified by the unique key UNameIdx.
@@ -604,10 +604,10 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -619,10 +619,10 @@ extends ICFBamProtUInt64DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type[] protreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific UInt64Type record instances identified by the duplicate key DefSchemaIdx.
@@ -633,10 +633,10 @@ extends ICFBamProtUInt64DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific UInt64Type record instances identified by the duplicate key PrevIdx.
@@ -647,10 +647,10 @@ extends ICFBamProtUInt64DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type[] protreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific UInt64Type record instances identified by the duplicate key NextIdx.
@@ -661,10 +661,10 @@ extends ICFBamProtUInt64DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type[] protreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific UInt64Type record instances identified by the duplicate key ContPrevIdx.
@@ -677,11 +677,11 @@ extends ICFBamProtUInt64DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type[] protreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific UInt64Type record instances identified by the duplicate key ContNextIdx.
@@ -694,11 +694,11 @@ extends ICFBamProtUInt64DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type[] protreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific UInt64Type record instances identified by the duplicate key SchemaIdx.
@@ -709,10 +709,10 @@ extends ICFBamProtUInt64DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64Type[] protreadRecBySchemaIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -720,7 +720,7 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtUInt64Type protmoveRecUp( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -729,6 +729,6 @@ extends ICFBamProtUInt64DefTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtUInt64Type protmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

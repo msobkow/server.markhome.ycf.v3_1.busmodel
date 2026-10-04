@@ -154,7 +154,7 @@ public class CFBamBlobDefTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamBlobDefTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamBlobDefTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -580,7 +580,7 @@ public class CFBamBlobDefTableObj
 			locked = (ICFBamBlobDefObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockBlobDef", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockBlobDef", pkey );
 		}
 		return( locked );
 	}
@@ -615,7 +615,7 @@ public class CFBamBlobDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -623,7 +623,7 @@ public class CFBamBlobDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -675,7 +675,7 @@ public class CFBamBlobDefTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -683,7 +683,7 @@ public class CFBamBlobDefTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -720,21 +720,21 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public ICFBamBlobDefObj readBlobDefByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamBlobDefObj readBlobDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readBlobDefByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamBlobDefObj readBlobDefByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamBlobDefObj readBlobDefByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamBlobDefObj obj = readBlobDef( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamBlobDefObj readBlobDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamBlobDefObj readBlobDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readBlobDefByUNameIdx( ScopeId,
@@ -743,7 +743,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public ICFBamBlobDefObj readBlobDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamBlobDefObj readBlobDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -772,14 +772,14 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamBlobDefObj> readBlobDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readBlobDefByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamBlobDefObj> readBlobDefByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readBlobDefByScopeIdx";
@@ -817,7 +817,7 @@ public class CFBamBlobDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -825,7 +825,7 @@ public class CFBamBlobDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -865,14 +865,14 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamBlobDefObj> readBlobDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readBlobDefByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamBlobDefObj> readBlobDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readBlobDefByDefSchemaIdx";
@@ -910,7 +910,7 @@ public class CFBamBlobDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -918,7 +918,7 @@ public class CFBamBlobDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -958,14 +958,14 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamBlobDefObj> readBlobDefByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readBlobDefByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamBlobDefObj> readBlobDefByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readBlobDefByPrevIdx";
@@ -1003,7 +1003,7 @@ public class CFBamBlobDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1011,7 +1011,7 @@ public class CFBamBlobDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1051,14 +1051,14 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamBlobDefObj> readBlobDefByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readBlobDefByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamBlobDefObj> readBlobDefByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readBlobDefByNextIdx";
@@ -1096,7 +1096,7 @@ public class CFBamBlobDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1104,7 +1104,7 @@ public class CFBamBlobDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1144,8 +1144,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamBlobDefObj> readBlobDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readBlobDefByContPrevIdx( ScopeId,
 			PrevId,
@@ -1153,8 +1153,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamBlobDefObj> readBlobDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readBlobDefByContPrevIdx";
@@ -1194,7 +1194,7 @@ public class CFBamBlobDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1202,7 +1202,7 @@ public class CFBamBlobDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1242,8 +1242,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamBlobDefObj> readBlobDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readBlobDefByContNextIdx( ScopeId,
 			NextId,
@@ -1251,8 +1251,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readBlobDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamBlobDefObj> readBlobDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readBlobDefByContNextIdx";
@@ -1292,7 +1292,7 @@ public class CFBamBlobDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1300,7 +1300,7 @@ public class CFBamBlobDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1340,7 +1340,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public ICFBamBlobDefObj readCachedBlobDefByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamBlobDefObj readCachedBlobDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamBlobDefObj obj = null;
 		obj = readCachedBlobDef( Id );
@@ -1348,7 +1348,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public ICFBamBlobDefObj readCachedBlobDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamBlobDefObj readCachedBlobDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamBlobDefObj obj = null;
@@ -1386,7 +1386,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readCachedBlobDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamBlobDefObj> readCachedBlobDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedBlobDefByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1404,7 +1404,7 @@ public class CFBamBlobDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1412,7 +1412,7 @@ public class CFBamBlobDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1463,7 +1463,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readCachedBlobDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamBlobDefObj> readCachedBlobDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedBlobDefByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1481,7 +1481,7 @@ public class CFBamBlobDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1489,7 +1489,7 @@ public class CFBamBlobDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1540,7 +1540,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readCachedBlobDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamBlobDefObj> readCachedBlobDefByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedBlobDefByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1558,7 +1558,7 @@ public class CFBamBlobDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1566,7 +1566,7 @@ public class CFBamBlobDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1617,7 +1617,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readCachedBlobDefByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamBlobDefObj> readCachedBlobDefByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedBlobDefByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1635,7 +1635,7 @@ public class CFBamBlobDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1643,7 +1643,7 @@ public class CFBamBlobDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1694,8 +1694,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readCachedBlobDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamBlobDefObj> readCachedBlobDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedBlobDefByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1714,7 +1714,7 @@ public class CFBamBlobDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1722,7 +1722,7 @@ public class CFBamBlobDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1773,8 +1773,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public List<ICFBamBlobDefObj> readCachedBlobDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamBlobDefObj> readCachedBlobDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedBlobDefByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1793,7 +1793,7 @@ public class CFBamBlobDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1801,7 +1801,7 @@ public class CFBamBlobDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1852,7 +1852,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deepDisposeBlobDefByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeBlobDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamBlobDefObj obj = readCachedBlobDefByIdIdx( Id );
 		if( obj != null ) {
@@ -1861,7 +1861,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deepDisposeBlobDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeBlobDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamBlobDefObj obj = readCachedBlobDefByUNameIdx( ScopeId,
@@ -1872,7 +1872,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deepDisposeBlobDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeBlobDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeBlobDefByScopeIdx";
 		ICFBamBlobDefObj obj;
@@ -1889,7 +1889,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deepDisposeBlobDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeBlobDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeBlobDefByDefSchemaIdx";
 		ICFBamBlobDefObj obj;
@@ -1906,7 +1906,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deepDisposeBlobDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeBlobDefByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeBlobDefByPrevIdx";
 		ICFBamBlobDefObj obj;
@@ -1923,7 +1923,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deepDisposeBlobDefByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeBlobDefByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeBlobDefByNextIdx";
 		ICFBamBlobDefObj obj;
@@ -1940,8 +1940,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deepDisposeBlobDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeBlobDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeBlobDefByContPrevIdx";
 		ICFBamBlobDefObj obj;
@@ -1959,8 +1959,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deepDisposeBlobDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeBlobDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeBlobDefByContNextIdx";
 		ICFBamBlobDefObj obj;
@@ -2006,7 +2006,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deleteBlobDefByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteBlobDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamBlobDefObj obj = readBlobDef(Id);
 		if( obj != null ) {
@@ -2036,7 +2036,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deleteBlobDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteBlobDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2064,7 +2064,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deleteBlobDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteBlobDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2098,7 +2098,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deleteBlobDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteBlobDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2132,7 +2132,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deleteBlobDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteBlobDefByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2166,7 +2166,7 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deleteBlobDefByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteBlobDefByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2200,8 +2200,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deleteBlobDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteBlobDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2239,8 +2239,8 @@ public class CFBamBlobDefTableObj
 	}
 
 	@Override
-	public void deleteBlobDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteBlobDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2286,7 +2286,7 @@ public class CFBamBlobDefTableObj
 	public ICFBamBlobDefObj moveUpBlobDef( ICFBamBlobDefObj Obj ) {
 		ICFBamBlobDefObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpBlobDef" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpBlobDef" );
 		}
 		ICFBamBlobDef rec = schema.getCFBamBackingStore().getTableBlobDef().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2314,7 +2314,7 @@ public class CFBamBlobDefTableObj
 	public ICFBamBlobDefObj moveDownBlobDef( ICFBamBlobDefObj Obj ) {
 		ICFBamBlobDefObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownBlobDef" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownBlobDef" );
 		}
 		ICFBamBlobDef rec = schema.getCFBamBackingStore().getTableBlobDef().moveRecDown( null,
 			Obj.getRequiredId(),

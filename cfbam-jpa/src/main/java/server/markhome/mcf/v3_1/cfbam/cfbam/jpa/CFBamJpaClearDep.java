@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -89,18 +89,18 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 	protected CFBamJpaSchemaDef optionalLookupDefSchema;
 
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="RelationId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="RelationId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredRelationId;
+	protected IMCFKeyHash256 requiredRelationId;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="defschid", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="defschid", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
 
 	public CFBamJpaClearDep() {
 		super();
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubClearDep.RELATIONID_INIT_VALUE.toString() );
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
+		requiredRelationId = MCFDbKeyHash256.fromHex( ICFBamPubClearDep.RELATIONID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
@@ -116,7 +116,7 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 	@Override
 	public void setRequiredLookupRelation(ICFBamRelation argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
 		}
 		else if (argObj instanceof CFBamJpaRelation) {
 			requiredLookupRelation = (CFBamJpaRelation)argObj;
@@ -127,7 +127,7 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setLookupRelation", "argObj", argObj, "CFBamJpaRelation");
+			throw new MCFUnsupportedClassException(getClass(), "setLookupRelation", "argObj", argObj, "CFBamJpaRelation");
 		}
 	}
 
@@ -142,14 +142,14 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 	}
 
 	@Override
-	public void setRequiredLookupRelation(ICFLibKeyHash256 argRelationId) {
+	public void setRequiredLookupRelation(IMCFKeyHash256 argRelationId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupRelation", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredLookupRelation", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamRelationTable targetTable = targetBackingSchema.getTableRelation();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupRelation", 0, "ICFBamSchema.getBackingCFBam().getTableRelation()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredLookupRelation", 0, "ICFBamSchema.getBackingCFBam().getTableRelation()");
 		}
 		ICFBamRelation targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argRelationId);
 		setRequiredLookupRelation(targetRec);
@@ -175,7 +175,7 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setLookupDefSchema", "argObj", argObj, "CFBamJpaSchemaDef");
+			throw new MCFUnsupportedClassException(getClass(), "setLookupDefSchema", "argObj", argObj, "CFBamJpaSchemaDef");
 		}
 	}
 
@@ -190,27 +190,27 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId) {
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamSchemaDefTable targetTable = targetBackingSchema.getTableSchemaDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
 		setOptionalLookupDefSchema(targetRec);
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredRelationId() {
+	public IMCFKeyHash256 getRequiredRelationId() {
 		return(requiredRelationId);
 	}
 
-	public void setRequiredRelationId( ICFLibKeyHash256 value ) {
+	public void setRequiredRelationId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredRelationId",
 				1,
 				"value" );
@@ -219,11 +219,11 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
@@ -494,7 +494,7 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 			setClearDep( (ICFBamClearDep)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -517,7 +517,7 @@ public class CFBamJpaClearDep extends CFBamJpaScope
 			setClearDep( (ICFBamClearDepH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

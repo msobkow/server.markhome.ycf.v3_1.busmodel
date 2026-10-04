@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,12 +74,12 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
     implements ICFBamDelSubDep1H
 {
-	protected ICFLibKeyHash256 requiredDelTopDepId;
+	protected IMCFKeyHash256 requiredDelTopDepId;
 	protected String requiredName;
 
     public CFBamBuffDelSubDep1H() {
             super();
-		requiredDelTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubDelSubDep1.DELTOPDEPID_INIT_VALUE.toString() );
+		requiredDelTopDepId = MCFDbKeyHash256.fromHex( ICFBamPubDelSubDep1.DELTOPDEPID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubDelSubDep1.NAME_INIT_VALUE;
     }
 
@@ -89,13 +89,13 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredDelTopDepId() {
+	public IMCFKeyHash256 getRequiredDelTopDepId() {
 		return(requiredDelTopDepId);
 	}
 
-	public void setRequiredDelTopDepId( ICFLibKeyHash256 value ) {
+	public void setRequiredDelTopDepId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredDelTopDepId",
 				1,
 				"value" );
@@ -110,13 +110,13 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -420,7 +420,7 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
 			setDelSubDep1( (CFBamBuffDelSubDep1)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -441,7 +441,7 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
 			setDelSubDep1( (ICFBamDelSubDep1H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

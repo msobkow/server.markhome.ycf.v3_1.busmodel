@@ -138,7 +138,7 @@ public interface ICFBamSecSysGrpObj
 	/**
 	 *	End this edition of this SecSysGrp instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -348,11 +348,11 @@ public interface ICFBamSecSysGrpObj
 	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenRoleByEnableName( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	Get the required IMCFKeyHash256 attribute SecSysGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	@return	The required IMCFKeyHash256 attribute SecSysGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysGrpId();
+	IMCFKeyHash256 getRequiredSecSysGrpId();
 
 	/**
 	 *	Get the required String attribute Name.

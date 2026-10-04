@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -83,13 +83,13 @@ public class CFBamJpaIndexTweakH extends CFBamJpaTweakH
     implements ICFBamIndexTweakH
 {
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="IndexId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="IndexId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredIndexId;
+	protected IMCFKeyHash256 requiredIndexId;
 
     public CFBamJpaIndexTweakH() {
             super();
-		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexTweak.INDEXID_INIT_VALUE.toString() );
+		requiredIndexId = MCFDbKeyHash256.fromHex( ICFBamPubIndexTweak.INDEXID_INIT_VALUE.toString() );
     }
 
     @Override
@@ -98,13 +98,13 @@ public class CFBamJpaIndexTweakH extends CFBamJpaTweakH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredIndexId() {
+	public IMCFKeyHash256 getRequiredIndexId() {
 		return(requiredIndexId);
 	}
 
-	public void setRequiredIndexId( ICFLibKeyHash256 value ) {
+	public void setRequiredIndexId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredIndexId",
 				1,
 				"value" );
@@ -279,7 +279,7 @@ public class CFBamJpaIndexTweakH extends CFBamJpaTweakH
 			setIndexTweak( (ICFBamIndexTweak)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -299,7 +299,7 @@ public class CFBamJpaIndexTweakH extends CFBamJpaTweakH
 			setIndexTweak( (ICFBamIndexTweakH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

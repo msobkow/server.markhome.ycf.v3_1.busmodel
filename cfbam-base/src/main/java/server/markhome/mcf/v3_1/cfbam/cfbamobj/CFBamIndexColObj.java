@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -115,7 +115,7 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjScope() {
+	public IMCFAnyObj getObjScope() {
 		ICFBamIndexObj scope = getRequiredContainerIndex();
 		return( scope );
 	}
@@ -128,8 +128,8 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -159,21 +159,21 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( Class qualifyingClass, String objName ) {
-		ICFLibAnyObj topContainer = getObjQualifier( qualifyingClass );
+	public IMCFAnyObj getNamedObject( Class qualifyingClass, String objName ) {
+		IMCFAnyObj topContainer = getObjQualifier( qualifyingClass );
 		if( topContainer == null ) {
 			return( null );
 		}
-		ICFLibAnyObj namedObject = topContainer.getNamedObject( objName );
+		IMCFAnyObj namedObject = topContainer.getNamedObject( objName );
 		return( namedObject );
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -198,7 +198,7 @@ public class CFBamIndexColObj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -222,7 +222,7 @@ public class CFBamIndexColObj
 	@Override
 	public String getObjFullName() {
 		String fullName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -312,7 +312,7 @@ public class CFBamIndexColObj
 	@Override
 	public void setRec( ICFBamIndexCol value ) {
 		if( ! ( ( value == null ) || ! ( value instanceof ICFBamIndexCol ) ) ) {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
@@ -358,7 +358,7 @@ public class CFBamIndexColObj
 	@Override
 	public ICFBamIndexColEditObj beginEdit() {
 		if( edit != null ) {
-			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
+			throw new MCFEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
 		ICFBamIndexColObj lockobj;
 		if( getIsNew() ) {
@@ -415,7 +415,7 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -541,12 +541,12 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredIndexId() {
+	public IMCFKeyHash256 getRequiredIndexId() {
 		return( getIndexColRec().getRequiredIndexId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return( getIndexColRec().getOptionalDefSchemaId() );
 	}
 
@@ -576,7 +576,7 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredColumnId() {
+	public IMCFKeyHash256 getRequiredColumnId() {
 		return( getIndexColRec().getRequiredColumnId() );
 	}
 
@@ -586,12 +586,12 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalPrevId() {
+	public IMCFKeyHash256 getOptionalPrevId() {
 		return( getIndexColRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNextId() {
+	public IMCFKeyHash256 getOptionalNextId() {
 		return( getIndexColRec().getOptionalNextId() );
 	}
 

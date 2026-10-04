@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,12 +74,12 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
     implements ICFBamClearSubDep1H
 {
-	protected ICFLibKeyHash256 requiredClearTopDepId;
+	protected IMCFKeyHash256 requiredClearTopDepId;
 	protected String requiredName;
 
     public CFBamBuffClearSubDep1H() {
             super();
-		requiredClearTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubClearSubDep1.CLEARTOPDEPID_INIT_VALUE.toString() );
+		requiredClearTopDepId = MCFDbKeyHash256.fromHex( ICFBamPubClearSubDep1.CLEARTOPDEPID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubClearSubDep1.NAME_INIT_VALUE;
     }
 
@@ -89,13 +89,13 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredClearTopDepId() {
+	public IMCFKeyHash256 getRequiredClearTopDepId() {
 		return(requiredClearTopDepId);
 	}
 
-	public void setRequiredClearTopDepId( ICFLibKeyHash256 value ) {
+	public void setRequiredClearTopDepId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredClearTopDepId",
 				1,
 				"value" );
@@ -110,13 +110,13 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -420,7 +420,7 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
 			setClearSubDep1( (CFBamBuffClearSubDep1)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -441,7 +441,7 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
 			setClearSubDep1( (ICFBamClearSubDep1H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

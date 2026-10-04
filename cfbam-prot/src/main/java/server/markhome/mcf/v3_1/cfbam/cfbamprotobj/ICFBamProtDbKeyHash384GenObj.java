@@ -92,11 +92,11 @@ public interface ICFBamProtDbKeyHash384GenObj
 	ICFBamProtDbKeyHash384Gen getDbKeyHash384GenRec();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
 	 *	Get the required short attribute Slice.

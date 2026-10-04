@@ -121,7 +121,7 @@ implements ICFBamJavaFXScopePaneList
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamScopeObj> dataTable = null;
 	protected TableColumn<ICFBamScopeObj,String> tableColumnObjKind = null;
-	protected TableColumn<ICFBamScopeObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamScopeObj, IMCFKeyHash256> tableColumnId = null;
 
 	public final String S_ColumnNames[] = { "Name" };
 	protected ICFFormManager cfFormManager = null;
@@ -233,24 +233,24 @@ implements ICFBamJavaFXScopePaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnObjKind );
-		tableColumnId = new TableColumn<ICFBamScopeObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamScopeObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamScopeObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamScopeObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamScopeObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamScopeObj, IMCFKeyHash256> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamScopeObj,ICFLibKeyHash256>,TableCell<ICFBamScopeObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamScopeObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamScopeObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamScopeObj,IMCFKeyHash256>,TableCell<ICFBamScopeObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamScopeObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamScopeObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamScopeObj>();
 			}

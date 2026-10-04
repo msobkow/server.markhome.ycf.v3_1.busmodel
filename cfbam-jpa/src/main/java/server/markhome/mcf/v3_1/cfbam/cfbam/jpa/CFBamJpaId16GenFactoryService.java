@@ -96,7 +96,7 @@ public class CFBamJpaId16GenFactoryService
 					mapped.set(rec);
 					return( mapped ); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamId16Gen",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamId16Gen");
 			}
@@ -124,7 +124,7 @@ public class CFBamJpaId16GenFactoryService
 					mapped.set(hrec);
 					return( mapped ); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamId16Gen",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamId16Gen");
 			}

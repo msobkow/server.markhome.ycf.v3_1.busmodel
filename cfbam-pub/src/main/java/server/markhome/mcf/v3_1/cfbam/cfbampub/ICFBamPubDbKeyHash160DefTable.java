@@ -111,7 +111,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteDbKeyHash160DefByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the DbKeyHash160Def instances identified by the key UNameIdx.
 	 *
@@ -122,7 +122,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@param	Name	The DbKeyHash160Def key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash160DefByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -142,7 +142,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@param	ScopeId	The DbKeyHash160Def key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash160DefByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		MCFDbKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the DbKeyHash160Def instances identified by the key ScopeIdx.
@@ -161,7 +161,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@param	DefSchemaId	The DbKeyHash160Def key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash160DefByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the DbKeyHash160Def instances identified by the key DefSchemaIdx.
@@ -180,7 +180,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@param	PrevId	The DbKeyHash160Def key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash160DefByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the DbKeyHash160Def instances identified by the key PrevIdx.
@@ -199,7 +199,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@param	NextId	The DbKeyHash160Def key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash160DefByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the DbKeyHash160Def instances identified by the key NextIdx.
@@ -220,8 +220,8 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@param	PrevId	The DbKeyHash160Def key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash160DefByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the DbKeyHash160Def instances identified by the key ContPrevIdx.
@@ -242,8 +242,8 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@param	NextId	The DbKeyHash160Def key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDbKeyHash160DefByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the DbKeyHash160Def instances identified by the key ContNextIdx.
@@ -267,7 +267,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDbKeyHash160Def pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived DbKeyHash160Def record instance by primary key.
@@ -280,7 +280,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDbKeyHash160Def publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all DbKeyHash160Def instances.
@@ -302,7 +302,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDbKeyHash160Def pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read the derived DbKeyHash160Def record instance identified by the unique key UNameIdx.
@@ -317,7 +317,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDbKeyHash160Def pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -330,7 +330,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash160Def record instances identified by the duplicate key DefSchemaIdx.
@@ -342,7 +342,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash160Def record instances identified by the duplicate key PrevIdx.
@@ -354,7 +354,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash160Def record instances identified by the duplicate key NextIdx.
@@ -366,7 +366,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash160Def record instances identified by the duplicate key ContPrevIdx.
@@ -380,8 +380,8 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived DbKeyHash160Def record instances identified by the duplicate key ContNextIdx.
@@ -395,8 +395,8 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read the specific DbKeyHash160Def record instance identified by the primary key.
@@ -408,10 +408,10 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific DbKeyHash160Def record instance identified by the primary key.
@@ -423,10 +423,10 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific DbKeyHash160Def record instances.
@@ -447,10 +447,10 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read the specific DbKeyHash160Def record instance identified by the unique key UNameIdx.
@@ -464,10 +464,10 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -479,10 +479,10 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash160Def record instances identified by the duplicate key DefSchemaIdx.
@@ -493,10 +493,10 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash160Def record instances identified by the duplicate key PrevIdx.
@@ -507,10 +507,10 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash160Def record instances identified by the duplicate key NextIdx.
@@ -521,10 +521,10 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash160Def record instances identified by the duplicate key ContPrevIdx.
@@ -537,11 +537,11 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific DbKeyHash160Def record instances identified by the duplicate key ContNextIdx.
@@ -554,11 +554,11 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160Def[] pubreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -566,7 +566,7 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamPubDbKeyHash160Def pubmoveRecUp( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		MCFDbKeyHash256 Id,
 		int revision );
 
 	/**
@@ -575,6 +575,6 @@ public interface ICFBamPubDbKeyHash160DefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamPubDbKeyHash160Def pubmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

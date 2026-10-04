@@ -122,11 +122,11 @@ public class CFBamRamDelSubDep2Table
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		if( dictByUNameIdx.containsKey( keyUNameIdx ) ) {
-			throw new CFLibUniqueIndexViolationException( getClass(),
+			throw new MCFUniqueIndexViolationException( getClass(),
 				S_ProcName,
 				"DelSubDep2UNameIdx",
 				"DelSubDep2UNameIdx",
@@ -142,7 +142,7 @@ public class CFBamRamDelSubDep2Table
 				if( null == schema.getTableDelDep().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Superclass",
 						"Superclass",
@@ -162,7 +162,7 @@ public class CFBamRamDelSubDep2Table
 				if( null == schema.getTableDelSubDep1().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredDelSubDep1Id() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Container",
 						"Container",
@@ -202,7 +202,7 @@ public class CFBamRamDelSubDep2Table
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -254,7 +254,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByTenantIdx";
 		ICFBamScope buffList[] = schema.getTableScope().readDerivedByTenantIdx( Authorization,
@@ -277,7 +277,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamDelDep.readDerivedByDefSchemaIdx";
 		ICFBamDelDep buffList[] = schema.getTableDelDep().readDerivedByDefSchemaIdx( Authorization,
@@ -300,7 +300,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2[] readDerivedByDelDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId )
+		IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "CFBamRamDelDep.readDerivedByDelDepIdx";
 		ICFBamDelDep buffList[] = schema.getTableDelDep().readDerivedByDelDepIdx( Authorization,
@@ -323,7 +323,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2[] readDerivedByContDelDep1Idx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DelSubDep1Id )
+		IMCFKeyHash256 DelSubDep1Id )
 	{
 		final String S_ProcName = "CFBamRamDelSubDep2.readDerivedByContDelDep1Idx";
 		CFBamBuffDelSubDep2ByContDelDep1IdxKey key = (CFBamBuffDelSubDep2ByContDelDep1IdxKey)schema.getCFBamBuffFactory().getFactoryDelSubDep2().newByContDelDep1IdxKey();
@@ -351,7 +351,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2 readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DelSubDep1Id,
+		IMCFKeyHash256 DelSubDep1Id,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamDelSubDep2.readDerivedByUNameIdx";
@@ -371,7 +371,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2 readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByIdIdx() ";
 		ICFBamDelSubDep2 buff;
@@ -426,7 +426,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2 readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByIdIdx() ";
 		ICFBamDelSubDep2 buff = readDerivedByIdIdx( Authorization,
@@ -441,7 +441,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByTenantIdx() ";
 		ICFBamDelSubDep2 buff;
@@ -459,7 +459,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamDelDep.readRecByDefSchemaIdx() ";
 		ICFBamDelSubDep2 buff;
@@ -477,7 +477,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2[] readRecByDelDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId )
+		IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "CFBamRamDelDep.readRecByDelDepIdx() ";
 		ICFBamDelSubDep2 buff;
@@ -495,7 +495,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2[] readRecByContDelDep1Idx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DelSubDep1Id )
+		IMCFKeyHash256 DelSubDep1Id )
 	{
 		final String S_ProcName = "CFBamRamDelSubDep2.readRecByContDelDep1Idx() ";
 		ICFBamDelSubDep2 buff;
@@ -513,7 +513,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public ICFBamDelSubDep2 readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DelSubDep1Id,
+		IMCFKeyHash256 DelSubDep1Id,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamDelSubDep2.readRecByUNameIdx() ";
@@ -535,7 +535,7 @@ public class CFBamRamDelSubDep2Table
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffDelSubDep2 existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updateDelSubDep2",
 				"Existing record not found",
 				"Existing record not found",
@@ -561,7 +561,7 @@ public class CFBamRamDelSubDep2Table
 
 		if( ! existingKeyUNameIdx.equals( newKeyUNameIdx ) ) {
 			if( dictByUNameIdx.containsKey( newKeyUNameIdx ) ) {
-				throw new CFLibUniqueIndexViolationException( getClass(),
+				throw new MCFUniqueIndexViolationException( getClass(),
 					"updateDelSubDep2",
 					"DelSubDep2UNameIdx",
 					"DelSubDep2UNameIdx",
@@ -578,7 +578,7 @@ public class CFBamRamDelSubDep2Table
 				if( null == schema.getTableDelDep().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateDelSubDep2",
 						"Superclass",
 						"Superclass",
@@ -598,7 +598,7 @@ public class CFBamRamDelSubDep2Table
 				if( null == schema.getTableDelSubDep1().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredDelSubDep1Id() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateDelSubDep2",
 						"Container",
 						"Container",
@@ -651,7 +651,7 @@ public class CFBamRamDelSubDep2Table
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deleteDelSubDep2",
 				pkey );
 		}
@@ -686,7 +686,7 @@ public class CFBamRamDelSubDep2Table
 	}
 	@Override
 	public void deleteDelSubDep2ByContDelDep1Idx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDelSubDep1Id )
+		IMCFKeyHash256 argDelSubDep1Id )
 	{
 		CFBamBuffDelSubDep2ByContDelDep1IdxKey key = (CFBamBuffDelSubDep2ByContDelDep1IdxKey)schema.getCFBamBuffFactory().getFactoryDelSubDep2().newByContDelDep1IdxKey();
 		key.setRequiredDelSubDep1Id( argDelSubDep1Id );
@@ -722,7 +722,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public void deleteDelSubDep2ByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDelSubDep1Id,
+		IMCFKeyHash256 argDelSubDep1Id,
 		String argName )
 	{
 		CFBamBuffDelSubDep2ByUNameIdxKey key = (CFBamBuffDelSubDep2ByUNameIdxKey)schema.getCFBamBuffFactory().getFactoryDelSubDep2().newByUNameIdxKey();
@@ -761,7 +761,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public void deleteDelSubDep2ByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		CFBamBuffDelDepByDefSchemaIdxKey key = (CFBamBuffDelDepByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( argDefSchemaId );
@@ -799,7 +799,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public void deleteDelSubDep2ByDelDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId )
+		IMCFKeyHash256 argRelationId )
 	{
 		CFBamBuffDelDepByDelDepIdxKey key = (CFBamBuffDelDepByDelDepIdxKey)schema.getCFBamBuffFactory().getFactoryDelDep().newByDelDepIdxKey();
 		key.setRequiredRelationId( argRelationId );
@@ -862,7 +862,7 @@ public class CFBamRamDelSubDep2Table
 
 	@Override
 	public void deleteDelSubDep2ByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		CFBamBuffScopeByTenantIdxKey key = (CFBamBuffScopeByTenantIdxKey)schema.getCFBamBuffFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( argTenantId );

@@ -138,7 +138,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteEnumDefByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the EnumDef instances identified by the key UNameIdx.
 	 *
@@ -149,7 +149,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@param	Name	The EnumDef key attribute of the instance generating the id.
 	 */
 	public void protdeleteEnumDefByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -178,7 +178,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@param	ScopeId	The EnumDef key attribute of the instance generating the id.
 	 */
 	public void protdeleteEnumDefByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the EnumDef instances identified by the key ScopeIdx.
@@ -206,7 +206,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@param	DefSchemaId	The EnumDef key attribute of the instance generating the id.
 	 */
 	public void protdeleteEnumDefByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the EnumDef instances identified by the key DefSchemaIdx.
@@ -234,7 +234,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@param	PrevId	The EnumDef key attribute of the instance generating the id.
 	 */
 	public void protdeleteEnumDefByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the EnumDef instances identified by the key PrevIdx.
@@ -262,7 +262,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@param	NextId	The EnumDef key attribute of the instance generating the id.
 	 */
 	public void protdeleteEnumDefByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the EnumDef instances identified by the key NextIdx.
@@ -292,8 +292,8 @@ extends ICFBamProtInt16DefTable,
 	 *	@param	PrevId	The EnumDef key attribute of the instance generating the id.
 	 */
 	public void protdeleteEnumDefByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the EnumDef instances identified by the key ContPrevIdx.
@@ -323,8 +323,8 @@ extends ICFBamProtInt16DefTable,
 	 *	@param	NextId	The EnumDef key attribute of the instance generating the id.
 	 */
 	public void protdeleteEnumDefByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the EnumDef instances identified by the key ContNextIdx.
@@ -367,7 +367,7 @@ extends ICFBamProtInt16DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtEnumDef protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived EnumDef record instance by protected primary key.
@@ -380,7 +380,7 @@ extends ICFBamProtInt16DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtEnumDef protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all EnumDef instances.
@@ -402,7 +402,7 @@ extends ICFBamProtInt16DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtEnumDef protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived EnumDef record instance identified by the unique key UNameIdx.
@@ -417,7 +417,7 @@ extends ICFBamProtInt16DefTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtEnumDef protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -430,7 +430,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtEnumDef[] protreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived EnumDef record instances identified by the duplicate key DefSchemaIdx.
@@ -442,7 +442,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtEnumDef[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived EnumDef record instances identified by the duplicate key PrevIdx.
@@ -454,7 +454,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtEnumDef[] protreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived EnumDef record instances identified by the duplicate key NextIdx.
@@ -466,7 +466,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtEnumDef[] protreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived EnumDef record instances identified by the duplicate key ContPrevIdx.
@@ -480,8 +480,8 @@ extends ICFBamProtInt16DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtEnumDef[] protreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived EnumDef record instances identified by the duplicate key ContNextIdx.
@@ -495,8 +495,8 @@ extends ICFBamProtInt16DefTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtEnumDef[] protreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read the specific EnumDef record instance identified by the primary key.
@@ -508,10 +508,10 @@ extends ICFBamProtInt16DefTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific EnumDef record instance identified by the primary key.
@@ -523,10 +523,10 @@ extends ICFBamProtInt16DefTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific EnumDef record instances.
@@ -547,10 +547,10 @@ extends ICFBamProtInt16DefTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific EnumDef record instance identified by the unique key UNameIdx.
@@ -564,10 +564,10 @@ extends ICFBamProtInt16DefTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -579,10 +579,10 @@ extends ICFBamProtInt16DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef[] protreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific EnumDef record instances identified by the duplicate key DefSchemaIdx.
@@ -593,10 +593,10 @@ extends ICFBamProtInt16DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific EnumDef record instances identified by the duplicate key PrevIdx.
@@ -607,10 +607,10 @@ extends ICFBamProtInt16DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef[] protreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific EnumDef record instances identified by the duplicate key NextIdx.
@@ -621,10 +621,10 @@ extends ICFBamProtInt16DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef[] protreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific EnumDef record instances identified by the duplicate key ContPrevIdx.
@@ -637,11 +637,11 @@ extends ICFBamProtInt16DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef[] protreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific EnumDef record instances identified by the duplicate key ContNextIdx.
@@ -654,11 +654,11 @@ extends ICFBamProtInt16DefTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDef[] protreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -666,7 +666,7 @@ extends ICFBamProtInt16DefTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtEnumDef protmoveRecUp( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -675,6 +675,6 @@ extends ICFBamProtInt16DefTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtEnumDef protmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

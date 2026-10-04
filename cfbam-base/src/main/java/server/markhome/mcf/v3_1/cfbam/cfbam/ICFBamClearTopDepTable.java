@@ -108,7 +108,7 @@ public interface ICFBamClearTopDepTable
 	 *	@param	TableId	The ClearTopDep key attribute of the instance generating the id.
 	 */
 	void deleteClearTopDepByClrTopDepTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId );
+		IMCFKeyHash256 argTableId );
 
 	/**
 	 *	Delete the ClearTopDep instances identified by the key ClrTopDepTblIdx.
@@ -129,7 +129,7 @@ public interface ICFBamClearTopDepTable
 	 *	@param	Name	The ClearTopDep key attribute of the instance generating the id.
 	 */
 	void deleteClearTopDepByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName );
 
 	/**
@@ -149,7 +149,7 @@ public interface ICFBamClearTopDepTable
 	 *	@param	PrevId	The ClearTopDep key attribute of the instance generating the id.
 	 */
 	void deleteClearTopDepByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the ClearTopDep instances identified by the key PrevIdx.
@@ -168,7 +168,7 @@ public interface ICFBamClearTopDepTable
 	 *	@param	NextId	The ClearTopDep key attribute of the instance generating the id.
 	 */
 	void deleteClearTopDepByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the ClearTopDep instances identified by the key NextIdx.
@@ -187,7 +187,7 @@ public interface ICFBamClearTopDepTable
 	 *	@param	RelationId	The ClearTopDep key attribute of the instance generating the id.
 	 */
 	void deleteClearTopDepByClearDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId );
+		IMCFKeyHash256 argRelationId );
 
 	/**
 	 *	Delete the ClearTopDep instances identified by the key ClearDepIdx.
@@ -206,7 +206,7 @@ public interface ICFBamClearTopDepTable
 	 *	@param	DefSchemaId	The ClearTopDep key attribute of the instance generating the id.
 	 */
 	void deleteClearTopDepByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the ClearTopDep instances identified by the key DefSchemaIdx.
@@ -234,7 +234,7 @@ public interface ICFBamClearTopDepTable
 	 *	@param	TenantId	The ClearTopDep key attribute of the instance generating the id.
 	 */
 	void deleteClearTopDepByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the ClearTopDep instances identified by the key TenantIdx.
@@ -293,7 +293,7 @@ public interface ICFBamClearTopDepTable
 	 *		no such existing key value.
 	 */
 	ICFBamClearTopDep readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived ClearTopDep record instances identified by the duplicate key TenantIdx.
@@ -305,7 +305,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearTopDep[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived ClearTopDep record instances identified by the duplicate key ClearDepIdx.
@@ -317,7 +317,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearTopDep[] readDerivedByClearDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the derived ClearTopDep record instances identified by the duplicate key DefSchemaIdx.
@@ -329,7 +329,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearTopDep[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived ClearTopDep record instances identified by the duplicate key ClrTopDepTblIdx.
@@ -341,7 +341,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearTopDep[] readDerivedByClrTopDepTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read the derived ClearTopDep record instance identified by the unique key UNameIdx.
@@ -356,7 +356,7 @@ public interface ICFBamClearTopDepTable
 	 *		no such existing key value.
 	 */
 	ICFBamClearTopDep readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -369,7 +369,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearTopDep[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived ClearTopDep record instances identified by the duplicate key NextIdx.
@@ -381,7 +381,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearTopDep[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read the specific ClearTopDep record instance identified by the primary key.
@@ -393,7 +393,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -408,7 +408,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -432,10 +432,10 @@ public interface ICFBamClearTopDepTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific ClearTopDep record instances identified by the duplicate key TenantIdx.
@@ -446,10 +446,10 @@ public interface ICFBamClearTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific ClearTopDep record instances identified by the duplicate key ClearDepIdx.
@@ -460,10 +460,10 @@ public interface ICFBamClearTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep[] readRecByClearDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the specific ClearTopDep record instances identified by the duplicate key DefSchemaIdx.
@@ -474,10 +474,10 @@ public interface ICFBamClearTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific ClearTopDep record instances identified by the duplicate key ClrTopDepTblIdx.
@@ -488,10 +488,10 @@ public interface ICFBamClearTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep[] readRecByClrTopDepTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read the specific ClearTopDep record instance identified by the unique key UNameIdx.
@@ -505,10 +505,10 @@ public interface ICFBamClearTopDepTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -520,10 +520,10 @@ public interface ICFBamClearTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific ClearTopDep record instances identified by the duplicate key NextIdx.
@@ -534,10 +534,10 @@ public interface ICFBamClearTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearTopDep[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -545,7 +545,7 @@ public interface ICFBamClearTopDepTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamClearTopDep moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -554,6 +554,6 @@ public interface ICFBamClearTopDepTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamClearTopDep moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

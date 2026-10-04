@@ -108,7 +108,7 @@ public interface ICFBamPopDepTable
 	 *	@param	RelationId	The PopDep key attribute of the instance generating the id.
 	 */
 	void deletePopDepByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId );
+		IMCFKeyHash256 argRelationId );
 
 	/**
 	 *	Delete the PopDep instances identified by the key RelationIdx.
@@ -127,7 +127,7 @@ public interface ICFBamPopDepTable
 	 *	@param	DefSchemaId	The PopDep key attribute of the instance generating the id.
 	 */
 	void deletePopDepByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the PopDep instances identified by the key DefSchemaIdx.
@@ -155,7 +155,7 @@ public interface ICFBamPopDepTable
 	 *	@param	TenantId	The PopDep key attribute of the instance generating the id.
 	 */
 	void deletePopDepByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the PopDep instances identified by the key TenantIdx.
@@ -214,7 +214,7 @@ public interface ICFBamPopDepTable
 	 *		no such existing key value.
 	 */
 	ICFBamPopDep readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived PopDep record instances identified by the duplicate key TenantIdx.
@@ -226,7 +226,7 @@ public interface ICFBamPopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamPopDep[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived PopDep record instances identified by the duplicate key RelationIdx.
@@ -238,7 +238,7 @@ public interface ICFBamPopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamPopDep[] readDerivedByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the derived PopDep record instances identified by the duplicate key DefSchemaIdx.
@@ -250,7 +250,7 @@ public interface ICFBamPopDepTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamPopDep[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific PopDep record instance identified by the primary key.
@@ -262,7 +262,7 @@ public interface ICFBamPopDepTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamPopDep readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -277,7 +277,7 @@ public interface ICFBamPopDepTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamPopDep lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -301,10 +301,10 @@ public interface ICFBamPopDepTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamPopDep readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific PopDep record instances identified by the duplicate key TenantIdx.
@@ -315,10 +315,10 @@ public interface ICFBamPopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamPopDep[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific PopDep record instances identified by the duplicate key RelationIdx.
@@ -329,10 +329,10 @@ public interface ICFBamPopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamPopDep[] readRecByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the specific PopDep record instances identified by the duplicate key DefSchemaIdx.
@@ -343,8 +343,8 @@ public interface ICFBamPopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamPopDep[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 }

@@ -441,7 +441,7 @@ public class CFBamLicenseTableObj
 			locked = (ICFIntLicenseObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockLicense", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockLicense", pkey );
 		}
 		return( locked );
 	}
@@ -476,7 +476,7 @@ public class CFBamLicenseTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -484,7 +484,7 @@ public class CFBamLicenseTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -536,7 +536,7 @@ public class CFBamLicenseTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -544,7 +544,7 @@ public class CFBamLicenseTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -581,28 +581,28 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicenseByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntLicenseObj readLicenseByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readLicenseByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicenseByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFIntLicenseObj readLicenseByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFIntLicenseObj obj = readLicense( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readLicenseByLicnTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFIntLicenseObj> readLicenseByLicnTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readLicenseByLicnTenantIdx";
@@ -640,7 +640,7 @@ public class CFBamLicenseTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -648,7 +648,7 @@ public class CFBamLicenseTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -688,14 +688,14 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public List<ICFIntLicenseObj> readLicenseByDomainIdx( IMCFKeyHash256 TopDomainId )
 	{
 		return( readLicenseByDomainIdx( TopDomainId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId,
+	public List<ICFIntLicenseObj> readLicenseByDomainIdx( IMCFKeyHash256 TopDomainId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readLicenseByDomainIdx";
@@ -733,7 +733,7 @@ public class CFBamLicenseTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -741,7 +741,7 @@ public class CFBamLicenseTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -781,7 +781,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
+	public ICFIntLicenseObj readLicenseByUNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name )
 	{
 		return( readLicenseByUNameIdx( TopDomainId,
@@ -790,7 +790,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
+	public ICFIntLicenseObj readLicenseByUNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -819,7 +819,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readCachedLicenseByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntLicenseObj readCachedLicenseByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntLicenseObj obj = null;
 		obj = readCachedLicense( Id );
@@ -827,7 +827,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntLicenseObj> readCachedLicenseByLicnTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedLicenseByLicnTenantIdx";
 		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
@@ -845,7 +845,7 @@ public class CFBamLicenseTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -853,7 +853,7 @@ public class CFBamLicenseTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -904,7 +904,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public List<ICFIntLicenseObj> readCachedLicenseByDomainIdx( IMCFKeyHash256 TopDomainId )
 	{
 		final String S_ProcName = "readCachedLicenseByDomainIdx";
 		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
@@ -922,7 +922,7 @@ public class CFBamLicenseTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -930,7 +930,7 @@ public class CFBamLicenseTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -981,7 +981,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public ICFIntLicenseObj readCachedLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
+	public ICFIntLicenseObj readCachedLicenseByUNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name )
 	{
 		ICFIntLicenseObj obj = null;
@@ -1019,7 +1019,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public void deepDisposeLicenseByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeLicenseByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntLicenseObj obj = readCachedLicenseByIdIdx( Id );
 		if( obj != null ) {
@@ -1028,7 +1028,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public void deepDisposeLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeLicenseByLicnTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeLicenseByLicnTenantIdx";
 		ICFIntLicenseObj obj;
@@ -1045,7 +1045,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public void deepDisposeLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public void deepDisposeLicenseByDomainIdx( IMCFKeyHash256 TopDomainId )
 	{
 		final String S_ProcName = "deepDisposeLicenseByDomainIdx";
 		ICFIntLicenseObj obj;
@@ -1062,7 +1062,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public void deepDisposeLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
+	public void deepDisposeLicenseByUNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name )
 	{
 		ICFIntLicenseObj obj = readCachedLicenseByUNameIdx( TopDomainId,
@@ -1091,7 +1091,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public void deleteLicenseByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteLicenseByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntLicenseObj obj = readLicense(Id);
 		if( obj != null ) {
@@ -1121,7 +1121,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public void deleteLicenseByLicnTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteLicenseByLicnTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFIntLicenseByLicnTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByLicnTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -1155,7 +1155,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public void deleteLicenseByDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public void deleteLicenseByDomainIdx( IMCFKeyHash256 TopDomainId )
 	{
 		ICFIntLicenseByDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newByDomainIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
@@ -1189,7 +1189,7 @@ public class CFBamLicenseTableObj
 	}
 
 	@Override
-	public void deleteLicenseByUNameIdx( ICFLibKeyHash256 TopDomainId,
+	public void deleteLicenseByUNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {

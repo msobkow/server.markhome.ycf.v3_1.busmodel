@@ -95,10 +95,10 @@ public interface ICFBamPubUuidColEditObj
 	void setRequiredContainerTable( ICFBamPubTableObj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TableId.
+	 *	Get the required MCFDbKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TableId.
+	 *	@return	The required MCFDbKeyHash256 attribute TableId.
 	 */
-	CFLibDbKeyHash256 getRequiredTableId();
+	MCFDbKeyHash256 getRequiredTableId();
 
 }

@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -85,7 +85,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	 *		@return The retrieved entity, usually from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaScope r where r.requiredId = :id")
-	CFBamJpaPopSubDep1 get(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaPopSubDep1 get(@Param("id") IMCFKeyHash256 requiredId);
 
 	// CFBamJpaScope specified index readers
 
@@ -97,7 +97,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	 *		@return List&lt;CFBamJpaPopSubDep1&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	List<CFBamJpaPopSubDep1> findByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	List<CFBamJpaPopSubDep1> findByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey entity list reader convenience method for object-based access.
@@ -120,7 +120,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	 *		@return List&lt;CFBamJpaPopSubDep1&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaPopDep r where r.requiredLookupRelation.requiredId = :relationId")
-	List<CFBamJpaPopSubDep1> findByRelationIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	List<CFBamJpaPopSubDep1> findByRelationIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamPopDepByRelationIdxKey entity list reader convenience method for object-based access.
@@ -141,7 +141,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	 *		@return List&lt;CFBamJpaPopSubDep1&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaPopDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaPopSubDep1> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaPopSubDep1> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamPopDepByDefSchemaIdxKey entity list reader convenience method for object-based access.
@@ -164,7 +164,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	 *		@return List&lt;CFBamJpaPopSubDep1&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaPopSubDep1 r where r.requiredContainerContPopTopDep.requiredId = :popTopDepId")
-	List<CFBamJpaPopSubDep1> findByPopTopDepIdx(@Param("popTopDepId") ICFLibKeyHash256 requiredPopTopDepId);
+	List<CFBamJpaPopSubDep1> findByPopTopDepIdx(@Param("popTopDepId") IMCFKeyHash256 requiredPopTopDepId);
 
 	/**
 	 *	CFBamPopSubDep1ByPopTopDepIdxKey entity list reader convenience method for object-based access.
@@ -186,7 +186,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaPopSubDep1 r where r.requiredContainerContPopTopDep.requiredId = :popTopDepId and r.requiredName = :name")
-	CFBamJpaPopSubDep1 findByUNameIdx(@Param("popTopDepId") ICFLibKeyHash256 requiredPopTopDepId,
+	CFBamJpaPopSubDep1 findByUNameIdx(@Param("popTopDepId") IMCFKeyHash256 requiredPopTopDepId,
 		@Param("name") String requiredName);
 
 	/**
@@ -212,7 +212,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaScope r where r.requiredId = :id")
-	CFBamJpaPopSubDep1 lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaPopSubDep1 lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based lock database instance for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity locks, which may or may not imply an actual database lock during the transaction.
@@ -224,7 +224,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	List<CFBamJpaPopSubDep1> lockByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	List<CFBamJpaPopSubDep1> lockByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey based lock method for object-based access.
@@ -249,7 +249,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaPopDep r where r.requiredLookupRelation.requiredId = :relationId")
-	List<CFBamJpaPopSubDep1> lockByRelationIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	List<CFBamJpaPopSubDep1> lockByRelationIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamPopDepByRelationIdxKey based lock method for object-based access.
@@ -272,7 +272,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaPopDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaPopSubDep1> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaPopSubDep1> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamPopDepByDefSchemaIdxKey based lock method for object-based access.
@@ -297,7 +297,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaPopSubDep1 r where r.requiredContainerContPopTopDep.requiredId = :popTopDepId")
-	List<CFBamJpaPopSubDep1> lockByPopTopDepIdx(@Param("popTopDepId") ICFLibKeyHash256 requiredPopTopDepId);
+	List<CFBamJpaPopSubDep1> lockByPopTopDepIdx(@Param("popTopDepId") IMCFKeyHash256 requiredPopTopDepId);
 
 	/**
 	 *	CFBamPopSubDep1ByPopTopDepIdxKey based lock method for object-based access.
@@ -321,7 +321,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaPopSubDep1 r where r.requiredContainerContPopTopDep.requiredId = :popTopDepId and r.requiredName = :name")
-	CFBamJpaPopSubDep1 lockByUNameIdx(@Param("popTopDepId") ICFLibKeyHash256 requiredPopTopDepId,
+	CFBamJpaPopSubDep1 lockByUNameIdx(@Param("popTopDepId") IMCFKeyHash256 requiredPopTopDepId,
 		@Param("name") String requiredName);
 
 	/**
@@ -345,7 +345,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaScope r where r.requiredId = :id")
-	void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based delete entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity lock, which may or may not imply an actual database lock during the transaction.
@@ -355,7 +355,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	void deleteByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	void deleteByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey based lock method for object-based access.
@@ -376,7 +376,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaPopDep r where r.requiredLookupRelation.requiredId = :relationId")
-	void deleteByRelationIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId);
+	void deleteByRelationIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId);
 
 	/**
 	 *	CFBamPopDepByRelationIdxKey based lock method for object-based access.
@@ -395,7 +395,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaPopDep r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamPopDepByDefSchemaIdxKey based lock method for object-based access.
@@ -416,7 +416,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaPopSubDep1 r where r.requiredContainerContPopTopDep.requiredId = :popTopDepId")
-	void deleteByPopTopDepIdx(@Param("popTopDepId") ICFLibKeyHash256 requiredPopTopDepId);
+	void deleteByPopTopDepIdx(@Param("popTopDepId") IMCFKeyHash256 requiredPopTopDepId);
 
 	/**
 	 *	CFBamPopSubDep1ByPopTopDepIdxKey based lock method for object-based access.
@@ -436,7 +436,7 @@ public interface CFBamJpaPopSubDep1Repository extends JpaRepository<CFBamJpaPopS
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaPopSubDep1 r where r.requiredContainerContPopTopDep.requiredId = :popTopDepId and r.requiredName = :name")
-	void deleteByUNameIdx(@Param("popTopDepId") ICFLibKeyHash256 requiredPopTopDepId,
+	void deleteByUNameIdx(@Param("popTopDepId") IMCFKeyHash256 requiredPopTopDepId,
 		@Param("name") String requiredName);
 
 	/**

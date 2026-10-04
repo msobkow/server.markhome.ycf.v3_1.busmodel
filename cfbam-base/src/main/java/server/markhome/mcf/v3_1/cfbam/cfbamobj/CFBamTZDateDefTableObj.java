@@ -154,7 +154,7 @@ public class CFBamTZDateDefTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamTZDateDefTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamTZDateDefTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -580,7 +580,7 @@ public class CFBamTZDateDefTableObj
 			locked = (ICFBamTZDateDefObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockTZDateDef", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockTZDateDef", pkey );
 		}
 		return( locked );
 	}
@@ -615,7 +615,7 @@ public class CFBamTZDateDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -623,7 +623,7 @@ public class CFBamTZDateDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -675,7 +675,7 @@ public class CFBamTZDateDefTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -683,7 +683,7 @@ public class CFBamTZDateDefTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -720,21 +720,21 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public ICFBamTZDateDefObj readTZDateDefByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamTZDateDefObj readTZDateDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readTZDateDefByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamTZDateDefObj readTZDateDefByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamTZDateDefObj readTZDateDefByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamTZDateDefObj obj = readTZDateDef( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamTZDateDefObj readTZDateDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTZDateDefObj readTZDateDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readTZDateDefByUNameIdx( ScopeId,
@@ -743,7 +743,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public ICFBamTZDateDefObj readTZDateDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTZDateDefObj readTZDateDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -772,14 +772,14 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamTZDateDefObj> readTZDateDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readTZDateDefByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamTZDateDefObj> readTZDateDefByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZDateDefByScopeIdx";
@@ -817,7 +817,7 @@ public class CFBamTZDateDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -825,7 +825,7 @@ public class CFBamTZDateDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -865,14 +865,14 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamTZDateDefObj> readTZDateDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readTZDateDefByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamTZDateDefObj> readTZDateDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZDateDefByDefSchemaIdx";
@@ -910,7 +910,7 @@ public class CFBamTZDateDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -918,7 +918,7 @@ public class CFBamTZDateDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -958,14 +958,14 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamTZDateDefObj> readTZDateDefByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readTZDateDefByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamTZDateDefObj> readTZDateDefByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZDateDefByPrevIdx";
@@ -1003,7 +1003,7 @@ public class CFBamTZDateDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1011,7 +1011,7 @@ public class CFBamTZDateDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1051,14 +1051,14 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamTZDateDefObj> readTZDateDefByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readTZDateDefByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamTZDateDefObj> readTZDateDefByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZDateDefByNextIdx";
@@ -1096,7 +1096,7 @@ public class CFBamTZDateDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1104,7 +1104,7 @@ public class CFBamTZDateDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1144,8 +1144,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamTZDateDefObj> readTZDateDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readTZDateDefByContPrevIdx( ScopeId,
 			PrevId,
@@ -1153,8 +1153,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamTZDateDefObj> readTZDateDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZDateDefByContPrevIdx";
@@ -1194,7 +1194,7 @@ public class CFBamTZDateDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1202,7 +1202,7 @@ public class CFBamTZDateDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1242,8 +1242,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamTZDateDefObj> readTZDateDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readTZDateDefByContNextIdx( ScopeId,
 			NextId,
@@ -1251,8 +1251,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readTZDateDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamTZDateDefObj> readTZDateDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZDateDefByContNextIdx";
@@ -1292,7 +1292,7 @@ public class CFBamTZDateDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1300,7 +1300,7 @@ public class CFBamTZDateDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1340,7 +1340,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public ICFBamTZDateDefObj readCachedTZDateDefByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamTZDateDefObj readCachedTZDateDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTZDateDefObj obj = null;
 		obj = readCachedTZDateDef( Id );
@@ -1348,7 +1348,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public ICFBamTZDateDefObj readCachedTZDateDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTZDateDefObj readCachedTZDateDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTZDateDefObj obj = null;
@@ -1386,7 +1386,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readCachedTZDateDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamTZDateDefObj> readCachedTZDateDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedTZDateDefByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1404,7 +1404,7 @@ public class CFBamTZDateDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1412,7 +1412,7 @@ public class CFBamTZDateDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1463,7 +1463,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readCachedTZDateDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamTZDateDefObj> readCachedTZDateDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedTZDateDefByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1481,7 +1481,7 @@ public class CFBamTZDateDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1489,7 +1489,7 @@ public class CFBamTZDateDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1540,7 +1540,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readCachedTZDateDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamTZDateDefObj> readCachedTZDateDefByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTZDateDefByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1558,7 +1558,7 @@ public class CFBamTZDateDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1566,7 +1566,7 @@ public class CFBamTZDateDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1617,7 +1617,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readCachedTZDateDefByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamTZDateDefObj> readCachedTZDateDefByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTZDateDefByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1635,7 +1635,7 @@ public class CFBamTZDateDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1643,7 +1643,7 @@ public class CFBamTZDateDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1694,8 +1694,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readCachedTZDateDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamTZDateDefObj> readCachedTZDateDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTZDateDefByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1714,7 +1714,7 @@ public class CFBamTZDateDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1722,7 +1722,7 @@ public class CFBamTZDateDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1773,8 +1773,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public List<ICFBamTZDateDefObj> readCachedTZDateDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamTZDateDefObj> readCachedTZDateDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTZDateDefByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1793,7 +1793,7 @@ public class CFBamTZDateDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1801,7 +1801,7 @@ public class CFBamTZDateDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1852,7 +1852,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deepDisposeTZDateDefByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeTZDateDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTZDateDefObj obj = readCachedTZDateDefByIdIdx( Id );
 		if( obj != null ) {
@@ -1861,7 +1861,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deepDisposeTZDateDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeTZDateDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTZDateDefObj obj = readCachedTZDateDefByUNameIdx( ScopeId,
@@ -1872,7 +1872,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deepDisposeTZDateDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeTZDateDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeTZDateDefByScopeIdx";
 		ICFBamTZDateDefObj obj;
@@ -1889,7 +1889,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deepDisposeTZDateDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeTZDateDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeTZDateDefByDefSchemaIdx";
 		ICFBamTZDateDefObj obj;
@@ -1906,7 +1906,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deepDisposeTZDateDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeTZDateDefByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTZDateDefByPrevIdx";
 		ICFBamTZDateDefObj obj;
@@ -1923,7 +1923,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deepDisposeTZDateDefByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeTZDateDefByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTZDateDefByNextIdx";
 		ICFBamTZDateDefObj obj;
@@ -1940,8 +1940,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deepDisposeTZDateDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeTZDateDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTZDateDefByContPrevIdx";
 		ICFBamTZDateDefObj obj;
@@ -1959,8 +1959,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deepDisposeTZDateDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeTZDateDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTZDateDefByContNextIdx";
 		ICFBamTZDateDefObj obj;
@@ -2006,7 +2006,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deleteTZDateDefByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteTZDateDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTZDateDefObj obj = readTZDateDef(Id);
 		if( obj != null ) {
@@ -2036,7 +2036,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deleteTZDateDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteTZDateDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2064,7 +2064,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deleteTZDateDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteTZDateDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2098,7 +2098,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deleteTZDateDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteTZDateDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2132,7 +2132,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deleteTZDateDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteTZDateDefByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2166,7 +2166,7 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deleteTZDateDefByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteTZDateDefByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2200,8 +2200,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deleteTZDateDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteTZDateDefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2239,8 +2239,8 @@ public class CFBamTZDateDefTableObj
 	}
 
 	@Override
-	public void deleteTZDateDefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteTZDateDefByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2286,7 +2286,7 @@ public class CFBamTZDateDefTableObj
 	public ICFBamTZDateDefObj moveUpTZDateDef( ICFBamTZDateDefObj Obj ) {
 		ICFBamTZDateDefObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpTZDateDef" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpTZDateDef" );
 		}
 		ICFBamTZDateDef rec = schema.getCFBamBackingStore().getTableTZDateDef().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2314,7 +2314,7 @@ public class CFBamTZDateDefTableObj
 	public ICFBamTZDateDefObj moveDownTZDateDef( ICFBamTZDateDefObj Obj ) {
 		ICFBamTZDateDefObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownTZDateDef" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownTZDateDef" );
 		}
 		ICFBamTZDateDef rec = schema.getCFBamBackingStore().getTableTZDateDef().moveRecDown( null,
 			Obj.getRequiredId(),

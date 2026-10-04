@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -83,13 +83,13 @@ public class CFBamJpaServerObjFuncH extends CFBamJpaServerMethodH
     implements ICFBamServerObjFuncH
 {
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="rettblid", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="rettblid", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalRetTableId;
+	protected IMCFKeyHash256 optionalRetTableId;
 
     public CFBamJpaServerObjFuncH() {
             super();
-		optionalRetTableId = CFLibDbKeyHash256.nullGet();
+		optionalRetTableId = MCFDbKeyHash256.nullGet();
     }
 
     @Override
@@ -98,11 +98,11 @@ public class CFBamJpaServerObjFuncH extends CFBamJpaServerMethodH
     }
 
 	@Override
-	public ICFLibKeyHash256 getOptionalRetTableId() {
+	public IMCFKeyHash256 getOptionalRetTableId() {
 		return(optionalRetTableId);
 	}
 
-	public void setOptionalRetTableId( ICFLibKeyHash256 value ) {
+	public void setOptionalRetTableId( IMCFKeyHash256 value ) {
 		optionalRetTableId = value;
 	}
 
@@ -281,7 +281,7 @@ public class CFBamJpaServerObjFuncH extends CFBamJpaServerMethodH
 			setServerObjFunc( (ICFBamServerObjFunc)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -301,7 +301,7 @@ public class CFBamJpaServerObjFuncH extends CFBamJpaServerMethodH
 			setServerObjFunc( (ICFBamServerObjFuncH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

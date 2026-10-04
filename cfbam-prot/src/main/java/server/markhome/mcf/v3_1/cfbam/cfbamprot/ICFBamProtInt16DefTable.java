@@ -138,7 +138,7 @@ extends ICFBamProtAtomTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteInt16DefByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the Int16Def instances identified by the key UNameIdx.
 	 *
@@ -149,7 +149,7 @@ extends ICFBamProtAtomTable,
 	 *	@param	Name	The Int16Def key attribute of the instance generating the id.
 	 */
 	public void protdeleteInt16DefByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -178,7 +178,7 @@ extends ICFBamProtAtomTable,
 	 *	@param	ScopeId	The Int16Def key attribute of the instance generating the id.
 	 */
 	public void protdeleteInt16DefByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the Int16Def instances identified by the key ScopeIdx.
@@ -206,7 +206,7 @@ extends ICFBamProtAtomTable,
 	 *	@param	DefSchemaId	The Int16Def key attribute of the instance generating the id.
 	 */
 	public void protdeleteInt16DefByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Int16Def instances identified by the key DefSchemaIdx.
@@ -234,7 +234,7 @@ extends ICFBamProtAtomTable,
 	 *	@param	PrevId	The Int16Def key attribute of the instance generating the id.
 	 */
 	public void protdeleteInt16DefByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the Int16Def instances identified by the key PrevIdx.
@@ -262,7 +262,7 @@ extends ICFBamProtAtomTable,
 	 *	@param	NextId	The Int16Def key attribute of the instance generating the id.
 	 */
 	public void protdeleteInt16DefByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the Int16Def instances identified by the key NextIdx.
@@ -292,8 +292,8 @@ extends ICFBamProtAtomTable,
 	 *	@param	PrevId	The Int16Def key attribute of the instance generating the id.
 	 */
 	public void protdeleteInt16DefByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the Int16Def instances identified by the key ContPrevIdx.
@@ -323,8 +323,8 @@ extends ICFBamProtAtomTable,
 	 *	@param	NextId	The Int16Def key attribute of the instance generating the id.
 	 */
 	public void protdeleteInt16DefByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the Int16Def instances identified by the key ContNextIdx.
@@ -367,7 +367,7 @@ extends ICFBamProtAtomTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtInt16Def protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Int16Def record instance by protected primary key.
@@ -380,7 +380,7 @@ extends ICFBamProtAtomTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtInt16Def protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all Int16Def instances.
@@ -402,7 +402,7 @@ extends ICFBamProtAtomTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtInt16Def protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived Int16Def record instance identified by the unique key UNameIdx.
@@ -417,7 +417,7 @@ extends ICFBamProtAtomTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtInt16Def protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -430,7 +430,7 @@ extends ICFBamProtAtomTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtInt16Def[] protreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived Int16Def record instances identified by the duplicate key DefSchemaIdx.
@@ -442,7 +442,7 @@ extends ICFBamProtAtomTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtInt16Def[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived Int16Def record instances identified by the duplicate key PrevIdx.
@@ -454,7 +454,7 @@ extends ICFBamProtAtomTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtInt16Def[] protreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived Int16Def record instances identified by the duplicate key NextIdx.
@@ -466,7 +466,7 @@ extends ICFBamProtAtomTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtInt16Def[] protreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived Int16Def record instances identified by the duplicate key ContPrevIdx.
@@ -480,8 +480,8 @@ extends ICFBamProtAtomTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtInt16Def[] protreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived Int16Def record instances identified by the duplicate key ContNextIdx.
@@ -495,8 +495,8 @@ extends ICFBamProtAtomTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtInt16Def[] protreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read the specific Int16Def record instance identified by the primary key.
@@ -508,10 +508,10 @@ extends ICFBamProtAtomTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Int16Def record instance identified by the primary key.
@@ -523,10 +523,10 @@ extends ICFBamProtAtomTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Int16Def record instances.
@@ -547,10 +547,10 @@ extends ICFBamProtAtomTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific Int16Def record instance identified by the unique key UNameIdx.
@@ -564,10 +564,10 @@ extends ICFBamProtAtomTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -579,10 +579,10 @@ extends ICFBamProtAtomTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def[] protreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific Int16Def record instances identified by the duplicate key DefSchemaIdx.
@@ -593,10 +593,10 @@ extends ICFBamProtAtomTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific Int16Def record instances identified by the duplicate key PrevIdx.
@@ -607,10 +607,10 @@ extends ICFBamProtAtomTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def[] protreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific Int16Def record instances identified by the duplicate key NextIdx.
@@ -621,10 +621,10 @@ extends ICFBamProtAtomTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def[] protreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific Int16Def record instances identified by the duplicate key ContPrevIdx.
@@ -637,11 +637,11 @@ extends ICFBamProtAtomTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def[] protreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific Int16Def record instances identified by the duplicate key ContNextIdx.
@@ -654,11 +654,11 @@ extends ICFBamProtAtomTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16Def[] protreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -666,7 +666,7 @@ extends ICFBamProtAtomTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtInt16Def protmoveRecUp( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -675,6 +675,6 @@ extends ICFBamProtAtomTable,
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtInt16Def protmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

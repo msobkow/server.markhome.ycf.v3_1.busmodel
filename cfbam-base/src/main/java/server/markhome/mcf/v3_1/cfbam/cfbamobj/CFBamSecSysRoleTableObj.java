@@ -339,7 +339,7 @@ public class CFBamSecSysRoleTableObj
 			locked = (ICFSecSecSysRoleObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockSecSysRole", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockSecSysRole", pkey );
 		}
 		return( locked );
 	}
@@ -374,7 +374,7 @@ public class CFBamSecSysRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -382,7 +382,7 @@ public class CFBamSecSysRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -434,7 +434,7 @@ public class CFBamSecSysRoleTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -442,7 +442,7 @@ public class CFBamSecSysRoleTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -479,14 +479,14 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId )
+	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( IMCFKeyHash256 SecSysRoleId )
 	{
 		return( readSecSysRoleByIdIdx( SecSysRoleId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId, boolean forceRead )
+	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( IMCFKeyHash256 SecSysRoleId, boolean forceRead )
 	{
 		ICFSecSecSysRoleObj obj = readSecSysRole( SecSysRoleId, forceRead );
 		return( obj );
@@ -526,7 +526,7 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId )
+	public ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( IMCFKeyHash256 SecSysRoleId )
 	{
 		ICFSecSecSysRoleObj obj = null;
 		obj = readCachedSecSysRole( SecSysRoleId );
@@ -570,7 +570,7 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId )
+	public void deepDisposeSecSysRoleByIdIdx( IMCFKeyHash256 SecSysRoleId )
 	{
 		ICFSecSecSysRoleObj obj = readCachedSecSysRoleByIdIdx( SecSysRoleId );
 		if( obj != null ) {
@@ -606,7 +606,7 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public void deleteSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId )
+	public void deleteSecSysRoleByIdIdx( IMCFKeyHash256 SecSysRoleId )
 	{
 		ICFSecSecSysRoleObj obj = readSecSysRole(SecSysRoleId);
 		if( obj != null ) {

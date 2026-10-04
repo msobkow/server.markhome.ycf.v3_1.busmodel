@@ -140,7 +140,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	Name	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName );
 
 	/**
@@ -169,7 +169,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	TableId	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByRelTableIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTableId );
+		IMCFKeyHash256 argTableId );
 
 	/**
 	 *	Delete the Relation instances identified by the key RelTableIdx.
@@ -227,7 +227,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByRelTableCodeVisX( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
@@ -256,7 +256,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	DefSchemaId	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Relation instances identified by the key DefSchemaIdx.
@@ -284,7 +284,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	FromIndexId	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByFromKeyIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argFromIndexId );
+		IMCFKeyHash256 argFromIndexId );
 
 	/**
 	 *	Delete the Relation instances identified by the key FromKeyIdx.
@@ -312,7 +312,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	ToTableId	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByToTblIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argToTableId );
+		IMCFKeyHash256 argToTableId );
 
 	/**
 	 *	Delete the Relation instances identified by the key ToTblIdx.
@@ -340,7 +340,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	ToIndexId	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByToKeyIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argToIndexId );
+		IMCFKeyHash256 argToIndexId );
 
 	/**
 	 *	Delete the Relation instances identified by the key ToKeyIdx.
@@ -368,7 +368,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	NarrowedId	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByNarrowedIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNarrowedId );
+		MCFDbKeyHash256 argNarrowedId );
 
 	/**
 	 *	Delete the Relation instances identified by the key NarrowedIdx.
@@ -396,7 +396,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteRelationByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the Relation instances identified by the key TenantIdx.
 	 *
@@ -405,7 +405,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	TenantId	The Relation key attribute of the instance generating the id.
 	 */
 	public void protdeleteRelationByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the Relation instances identified by the key TenantIdx.
@@ -448,7 +448,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtRelation protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Relation record instance by protected primary key.
@@ -461,7 +461,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtRelation protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all Relation instances.
@@ -483,7 +483,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtRelation protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key TenantIdx.
@@ -495,7 +495,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtRelation[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read the derived Relation record instance identified by the unique key UNameIdx.
@@ -510,7 +510,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtRelation protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -523,7 +523,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtRelation[] protreadDerivedByRelTableIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key RelCodeVisIdx.
@@ -549,7 +549,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtRelation[] protreadDerivedByRelTableCodeVisX( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -562,7 +562,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtRelation[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key FromKeyIdx.
@@ -574,7 +574,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtRelation[] protreadDerivedByFromKeyIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 FromIndexId );
+		IMCFKeyHash256 FromIndexId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key ToTblIdx.
@@ -586,7 +586,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtRelation[] protreadDerivedByToTblIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ToTableId );
+		IMCFKeyHash256 ToTableId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key ToKeyIdx.
@@ -598,7 +598,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtRelation[] protreadDerivedByToKeyIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ToIndexId );
+		IMCFKeyHash256 ToIndexId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key NarrowedIdx.
@@ -610,7 +610,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtRelation[] protreadDerivedByNarrowedIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NarrowedId );
+		MCFDbKeyHash256 NarrowedId );
 
 	/**
 	 *	Read the specific Relation record instance identified by the primary key.
@@ -622,10 +622,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Relation record instance identified by the primary key.
@@ -637,10 +637,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Relation record instances.
@@ -661,10 +661,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key TenantIdx.
@@ -675,10 +675,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read the specific Relation record instance identified by the unique key UNameIdx.
@@ -692,10 +692,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -707,10 +707,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByRelTableIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key RelCodeVisIdx.
@@ -721,7 +721,7 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByRelCodeVisIdx( ICFSecPubAuthorization Authorization,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
@@ -737,10 +737,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByRelTableCodeVisX( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -752,10 +752,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key FromKeyIdx.
@@ -766,10 +766,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByFromKeyIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 FromIndexId );
+		IMCFKeyHash256 FromIndexId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key ToTblIdx.
@@ -780,10 +780,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByToTblIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ToTableId );
+		IMCFKeyHash256 ToTableId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key ToKeyIdx.
@@ -794,10 +794,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByToKeyIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ToIndexId );
+		IMCFKeyHash256 ToIndexId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key NarrowedIdx.
@@ -808,8 +808,8 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelation[] protreadRecByNarrowedIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NarrowedId );
+		MCFDbKeyHash256 NarrowedId );
 }

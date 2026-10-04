@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,10 +94,10 @@ public class CFBamJpaEnumTagService {
 		if (data == null) {
 			return( null );
 		}
-		ICFLibKeyHash256 originalRequiredId = data.getRequiredId();
+		IMCFKeyHash256 originalRequiredId = data.getRequiredId();
 		boolean generatedRequiredId = false;
 		if (data.getRequiredContainerEnumDef() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -108,13 +108,13 @@ public class CFBamJpaEnumTagService {
 				null);
 		}
 		if(data.getRequiredEnumId() == null || data.getRequiredEnumId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredEnumId");
 		}
 		if( data.getOptionalEnumCode() != null && data.getOptionalEnumCode().compareTo(ICFBamEnumTag.ENUMCODE_MIN_VALUE) < 0) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"getOptionalEnumCode()",
@@ -122,7 +122,7 @@ public class CFBamJpaEnumTagService {
 				ICFBamEnumTag.ENUMCODE_MIN_VALUE );
 		}
 		if( data.getOptionalEnumCode() != null && data.getOptionalEnumCode().compareTo(ICFBamEnumTag.ENUMCODE_MAX_VALUE) > 0) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				S_ProcName,
 				0,
 				"getOptionalEnumCode()",
@@ -130,7 +130,7 @@ public class CFBamJpaEnumTagService {
 				ICFBamEnumTag.ENUMCODE_MAX_VALUE );
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
@@ -143,7 +143,7 @@ public class CFBamJpaEnumTagService {
 				data.setRequiredRevision(1);
 			}
 			if (data.getRequiredId() == null || data.getRequiredId().isNull()) {
-				data.setRequiredId(new CFLibDbKeyHash256(0));
+				data.setRequiredId(new MCFDbKeyHash256(0));
 				generatedRequiredId = true;
 			}
 			LocalDateTime now = LocalDateTime.now();
@@ -155,7 +155,7 @@ public class CFBamJpaEnumTagService {
 				if(generatedRequiredId) {
 					data.setRequiredId(originalRequiredId);
 				}
-			throw new CFLibDbException(getClass(),
+			throw new MCFDbException(getClass(),
 				S_ProcName,
 				ex);
 		}
@@ -175,13 +175,13 @@ public class CFBamJpaEnumTagService {
 			return( null );
 		}
 		if (data.getPKey() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.getPKey()");
 		}
 		if (data.getRequiredContainerEnumDef() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -192,13 +192,13 @@ public class CFBamJpaEnumTagService {
 				null);
 		}
 		if(data.getRequiredEnumId() == null || data.getRequiredEnumId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredEnumId");
 		}
 		if( data.getOptionalEnumCode() != null && data.getOptionalEnumCode().compareTo(ICFBamEnumTag.ENUMCODE_MIN_VALUE) < 0) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"getOptionalEnumCode()",
@@ -206,7 +206,7 @@ public class CFBamJpaEnumTagService {
 				ICFBamEnumTag.ENUMCODE_MIN_VALUE );
 		}
 		if( data.getOptionalEnumCode() != null && data.getOptionalEnumCode().compareTo(ICFBamEnumTag.ENUMCODE_MAX_VALUE) > 0) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				S_ProcName,
 				0,
 				"getOptionalEnumCode()",
@@ -214,16 +214,16 @@ public class CFBamJpaEnumTagService {
 				ICFBamEnumTag.ENUMCODE_MAX_VALUE );
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		// Ensure the entity exists and that the revision matches
 		CFBamJpaEnumTag existing = cfbam31EnumTagRepository.findById(($implCommaIJavaOptAtomType$)(data.getPKey()))
-			.orElseThrow(() -> new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
+			.orElseThrow(() -> new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
 		if (existing.getRequiredRevision() != data.getRequiredRevision()) {
-			throw new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
+			throw new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
 		}
 		// Apply superior data relationships of CFBamEnumTag to existing object
 		existing.setRequiredContainerEnumDef(data.getRequiredContainerEnumDef());
@@ -251,7 +251,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return The retrieved entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaEnumTag find(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaEnumTag find(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31EnumTagRepository.get(requiredId));
 	}
 
@@ -275,7 +275,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return List&lt;CFBamJpaEnumTag&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaEnumTag> findByEnumIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId) {
+	public List<CFBamJpaEnumTag> findByEnumIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId) {
 		return( cfbam31EnumTagRepository.findByEnumIdx(requiredEnumId));
 	}
 
@@ -299,7 +299,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return List&lt;CFBamJpaEnumTag&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaEnumTag> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaEnumTag> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31EnumTagRepository.findByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -324,7 +324,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return The found entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaEnumTag findByEnumNameIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId,
+	public CFBamJpaEnumTag findByEnumNameIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId,
 		@Param("name") String requiredName) {
 		return( cfbam31EnumTagRepository.findByEnumNameIdx(requiredEnumId,
 			requiredName));
@@ -350,7 +350,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return List&lt;CFBamJpaEnumTag&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaEnumTag> findByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public List<CFBamJpaEnumTag> findByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		return( cfbam31EnumTagRepository.findByPrevIdx(optionalPrevId));
 	}
 
@@ -374,7 +374,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return List&lt;CFBamJpaEnumTag&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaEnumTag> findByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public List<CFBamJpaEnumTag> findByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		return( cfbam31EnumTagRepository.findByNextIdx(optionalNextId));
 	}
 
@@ -400,7 +400,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaEnumTag lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaEnumTag lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31EnumTagRepository.lockByIdIdx(requiredId));
 	}
 
@@ -412,7 +412,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaEnumTag> lockByEnumIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId) {
+	public List<CFBamJpaEnumTag> lockByEnumIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId) {
 		return( cfbam31EnumTagRepository.lockByEnumIdx(requiredEnumId));
 	}
 
@@ -436,7 +436,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaEnumTag> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaEnumTag> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31EnumTagRepository.lockByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -461,7 +461,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaEnumTag lockByEnumNameIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId,
+	public CFBamJpaEnumTag lockByEnumNameIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId,
 		@Param("name") String requiredName) {
 		return( cfbam31EnumTagRepository.lockByEnumNameIdx(requiredEnumId,
 			requiredName));
@@ -487,7 +487,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaEnumTag> lockByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public List<CFBamJpaEnumTag> lockByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		return( cfbam31EnumTagRepository.lockByPrevIdx(optionalPrevId));
 	}
 
@@ -511,7 +511,7 @@ public class CFBamJpaEnumTagService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaEnumTag> lockByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public List<CFBamJpaEnumTag> lockByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		return( cfbam31EnumTagRepository.lockByNextIdx(optionalNextId));
 	}
 
@@ -535,7 +535,7 @@ public class CFBamJpaEnumTagService {
 	 *		@param requiredId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		cfbam31EnumTagRepository.deleteByIdIdx(requiredId);
 	}
 
@@ -545,7 +545,7 @@ public class CFBamJpaEnumTagService {
 	 *		@param requiredEnumId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByEnumIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId) {
+	public void deleteByEnumIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId) {
 		cfbam31EnumTagRepository.deleteByEnumIdx(requiredEnumId);
 	}
 
@@ -565,7 +565,7 @@ public class CFBamJpaEnumTagService {
 	 *		@param optionalDefSchemaId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		cfbam31EnumTagRepository.deleteByDefSchemaIdx(optionalDefSchemaId);
 	}
 
@@ -586,7 +586,7 @@ public class CFBamJpaEnumTagService {
 	 *		@param requiredName
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByEnumNameIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId,
+	public void deleteByEnumNameIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId,
 		@Param("name") String requiredName) {
 		cfbam31EnumTagRepository.deleteByEnumNameIdx(requiredEnumId,
 			requiredName);
@@ -608,7 +608,7 @@ public class CFBamJpaEnumTagService {
 	 *		@param optionalPrevId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId) {
+	public void deleteByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId) {
 		cfbam31EnumTagRepository.deleteByPrevIdx(optionalPrevId);
 	}
 
@@ -628,7 +628,7 @@ public class CFBamJpaEnumTagService {
 	 *		@param optionalNextId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId) {
+	public void deleteByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId) {
 		cfbam31EnumTagRepository.deleteByNextIdx(optionalNextId);
 	}
 

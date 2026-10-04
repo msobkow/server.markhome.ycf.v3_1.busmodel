@@ -113,7 +113,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	Name	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId,
+		MCFDbKeyHash256 argTableId,
 		String argName );
 
 	/**
@@ -133,7 +133,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	TableId	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByRelTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId );
+		MCFDbKeyHash256 argTableId );
 
 	/**
 	 *	Delete the Relation instances identified by the key RelTableIdx.
@@ -173,7 +173,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByRelTableCodeVisX( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId,
+		MCFDbKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	DefSchemaId	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Relation instances identified by the key DefSchemaIdx.
@@ -212,7 +212,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	FromIndexId	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByFromKeyIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argFromIndexId );
+		MCFDbKeyHash256 argFromIndexId );
 
 	/**
 	 *	Delete the Relation instances identified by the key FromKeyIdx.
@@ -231,7 +231,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	ToTableId	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByToTblIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argToTableId );
+		MCFDbKeyHash256 argToTableId );
 
 	/**
 	 *	Delete the Relation instances identified by the key ToTblIdx.
@@ -250,7 +250,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	ToIndexId	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByToKeyIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argToIndexId );
+		MCFDbKeyHash256 argToIndexId );
 
 	/**
 	 *	Delete the Relation instances identified by the key ToKeyIdx.
@@ -269,7 +269,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	NarrowedId	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByNarrowedIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNarrowedId );
+		MCFDbKeyHash256 argNarrowedId );
 
 	/**
 	 *	Delete the Relation instances identified by the key NarrowedIdx.
@@ -288,7 +288,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteRelationByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the Relation instances identified by the key TenantIdx.
 	 *
@@ -297,7 +297,7 @@ public interface ICFBamPubRelationTable
 	 *	@param	TenantId	The Relation key attribute of the instance generating the id.
 	 */
 	public void pubdeleteRelationByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		MCFDbKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the Relation instances identified by the key TenantIdx.
@@ -321,7 +321,7 @@ public interface ICFBamPubRelationTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubRelation pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Relation record instance by primary key.
@@ -334,7 +334,7 @@ public interface ICFBamPubRelationTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubRelation publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all Relation instances.
@@ -356,7 +356,7 @@ public interface ICFBamPubRelationTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubRelation pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key TenantIdx.
@@ -368,7 +368,7 @@ public interface ICFBamPubRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubRelation[] pubreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read the derived Relation record instance identified by the unique key UNameIdx.
@@ -383,7 +383,7 @@ public interface ICFBamPubRelationTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubRelation pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -396,7 +396,7 @@ public interface ICFBamPubRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubRelation[] pubreadDerivedByRelTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key RelCodeVisIdx.
@@ -422,7 +422,7 @@ public interface ICFBamPubRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubRelation[] pubreadDerivedByRelTableCodeVisX( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -435,7 +435,7 @@ public interface ICFBamPubRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubRelation[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key FromKeyIdx.
@@ -447,7 +447,7 @@ public interface ICFBamPubRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubRelation[] pubreadDerivedByFromKeyIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 FromIndexId );
+		MCFDbKeyHash256 FromIndexId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key ToTblIdx.
@@ -459,7 +459,7 @@ public interface ICFBamPubRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubRelation[] pubreadDerivedByToTblIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ToTableId );
+		MCFDbKeyHash256 ToTableId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key ToKeyIdx.
@@ -471,7 +471,7 @@ public interface ICFBamPubRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubRelation[] pubreadDerivedByToKeyIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ToIndexId );
+		MCFDbKeyHash256 ToIndexId );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key NarrowedIdx.
@@ -483,7 +483,7 @@ public interface ICFBamPubRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubRelation[] pubreadDerivedByNarrowedIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NarrowedId );
+		MCFDbKeyHash256 NarrowedId );
 
 	/**
 	 *	Read the specific Relation record instance identified by the primary key.
@@ -495,10 +495,10 @@ public interface ICFBamPubRelationTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Relation record instance identified by the primary key.
@@ -510,10 +510,10 @@ public interface ICFBamPubRelationTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Relation record instances.
@@ -534,10 +534,10 @@ public interface ICFBamPubRelationTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key TenantIdx.
@@ -548,10 +548,10 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read the specific Relation record instance identified by the unique key UNameIdx.
@@ -565,10 +565,10 @@ public interface ICFBamPubRelationTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -580,10 +580,10 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByRelTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key RelCodeVisIdx.
@@ -594,7 +594,7 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByRelCodeVisIdx( ICFSecPubAuthorization Authorization,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
@@ -610,10 +610,10 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByRelTableCodeVisX( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -625,10 +625,10 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key FromKeyIdx.
@@ -639,10 +639,10 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByFromKeyIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 FromIndexId );
+		MCFDbKeyHash256 FromIndexId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key ToTblIdx.
@@ -653,10 +653,10 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByToTblIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ToTableId );
+		MCFDbKeyHash256 ToTableId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key ToKeyIdx.
@@ -667,10 +667,10 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByToKeyIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ToIndexId );
+		MCFDbKeyHash256 ToIndexId );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key NarrowedIdx.
@@ -681,8 +681,8 @@ public interface ICFBamPubRelationTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelation[] pubreadRecByNarrowedIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NarrowedId );
+		MCFDbKeyHash256 NarrowedId );
 }

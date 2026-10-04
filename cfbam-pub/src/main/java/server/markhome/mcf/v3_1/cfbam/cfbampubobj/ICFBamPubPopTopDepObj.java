@@ -117,18 +117,18 @@ public interface ICFBamPubPopTopDepObj
 	List<ICFBamPubPopSubDep1Obj> getOptionalComponentsPopDep( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ContRelationId.
+	 *	Get the required MCFDbKeyHash256 attribute ContRelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ContRelationId.
+	 *	@return	The required MCFDbKeyHash256 attribute ContRelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredContRelationId();
+	MCFDbKeyHash256 getRequiredContRelationId();
 
 	/**
 	 *	Get the required String attribute Name.

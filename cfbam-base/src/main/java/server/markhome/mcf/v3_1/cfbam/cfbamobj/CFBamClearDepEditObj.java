@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -93,7 +93,7 @@ public class CFBamClearDepEditObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibDbKeyHash256 val = rec.getRequiredId();
+		MCFDbKeyHash256 val = rec.getRequiredId();
 		if (val != null) {
 			objName = val.toString();
 		}
@@ -104,8 +104,8 @@ public class CFBamClearDepEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -135,11 +135,11 @@ public class CFBamClearDepEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -164,7 +164,7 @@ public class CFBamClearDepEditObj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -216,7 +216,7 @@ public class CFBamClearDepEditObj
 	@Override
 	public CFBamScopeEditObj deleteInstance() {
 		if( getIsNew() ) {
-			throw new CFLibCannotDeleteNewInstanceException( getClass(), "delete" );
+			throw new MCFCannotDeleteNewInstanceException( getClass(), "delete" );
 		}
 		getSchema().getClearDepTableObj().deleteClearDep( getOrigAsClearDep() );
 		return( null );
@@ -261,24 +261,24 @@ public class CFBamClearDepEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(ICFLibKeyHash256 value) {
+	public void setRequiredId(IMCFKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredRelationId() {
+	public IMCFKeyHash256 getRequiredRelationId() {
 		return( getClearDepRec().getRequiredRelationId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return( getClearDepRec().getOptionalDefSchemaId() );
 	}
 

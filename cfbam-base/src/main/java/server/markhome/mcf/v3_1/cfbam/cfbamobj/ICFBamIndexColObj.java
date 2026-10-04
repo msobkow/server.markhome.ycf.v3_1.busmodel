@@ -66,7 +66,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 public interface ICFBamIndexColObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamIndexCol.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -154,7 +154,7 @@ public interface ICFBamIndexColObj
 	/**
 	 *	End this edition of this IndexCol instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -352,25 +352,25 @@ public interface ICFBamIndexColObj
 	ICFBamValueObj getRequiredLookupColumn( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute IndexId.
+	 *	Get the required IMCFKeyHash256 attribute IndexId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute IndexId.
+	 *	@return	The required IMCFKeyHash256 attribute IndexId.
 	 */
-	ICFLibKeyHash256 getRequiredIndexId();
+	IMCFKeyHash256 getRequiredIndexId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -408,11 +408,11 @@ public interface ICFBamIndexColObj
 	String getOptionalDescription();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ColumnId.
+	 *	Get the required IMCFKeyHash256 attribute ColumnId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ColumnId.
+	 *	@return	The required IMCFKeyHash256 attribute ColumnId.
 	 */
-	ICFLibKeyHash256 getRequiredColumnId();
+	IMCFKeyHash256 getRequiredColumnId();
 
 	/**
 	 *	Get the required boolean attribute IsAscending.
@@ -422,18 +422,18 @@ public interface ICFBamIndexColObj
 	boolean getRequiredIsAscending();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute PrevId.
+	 *	Get the optional IMCFKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute PrevId.
+	 *	@return	The optional IMCFKeyHash256 attribute PrevId.
 	 */
-	ICFLibKeyHash256 getOptionalPrevId();
+	IMCFKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute NextId.
+	 *	Get the optional IMCFKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute NextId.
+	 *	@return	The optional IMCFKeyHash256 attribute NextId.
 	 */
-	ICFLibKeyHash256 getOptionalNextId();
+	IMCFKeyHash256 getOptionalNextId();
 
 	/**
 	 *	Internal use only.

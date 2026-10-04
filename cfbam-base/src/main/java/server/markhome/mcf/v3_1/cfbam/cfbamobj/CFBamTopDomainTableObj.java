@@ -442,7 +442,7 @@ public class CFBamTopDomainTableObj
 			locked = (ICFIntTopDomainObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockTopDomain", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockTopDomain", pkey );
 		}
 		return( locked );
 	}
@@ -477,7 +477,7 @@ public class CFBamTopDomainTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -485,7 +485,7 @@ public class CFBamTopDomainTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -537,7 +537,7 @@ public class CFBamTopDomainTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -545,7 +545,7 @@ public class CFBamTopDomainTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -582,28 +582,28 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public ICFIntTopDomainObj readTopDomainByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntTopDomainObj readTopDomainByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readTopDomainByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntTopDomainObj readTopDomainByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFIntTopDomainObj readTopDomainByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFIntTopDomainObj obj = readTopDomain( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntTopDomainObj> readTopDomainByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntTopDomainObj> readTopDomainByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readTopDomainByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntTopDomainObj> readTopDomainByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFIntTopDomainObj> readTopDomainByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTopDomainByTenantIdx";
@@ -641,7 +641,7 @@ public class CFBamTopDomainTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -649,7 +649,7 @@ public class CFBamTopDomainTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -689,14 +689,14 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public List<ICFIntTopDomainObj> readTopDomainByTldIdx( ICFLibKeyHash256 TldId )
+	public List<ICFIntTopDomainObj> readTopDomainByTldIdx( IMCFKeyHash256 TldId )
 	{
 		return( readTopDomainByTldIdx( TldId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntTopDomainObj> readTopDomainByTldIdx( ICFLibKeyHash256 TldId,
+	public List<ICFIntTopDomainObj> readTopDomainByTldIdx( IMCFKeyHash256 TldId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTopDomainByTldIdx";
@@ -734,7 +734,7 @@ public class CFBamTopDomainTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -742,7 +742,7 @@ public class CFBamTopDomainTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -782,7 +782,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public ICFIntTopDomainObj readTopDomainByNameIdx( ICFLibKeyHash256 TldId,
+	public ICFIntTopDomainObj readTopDomainByNameIdx( IMCFKeyHash256 TldId,
 		String Name )
 	{
 		return( readTopDomainByNameIdx( TldId,
@@ -791,7 +791,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public ICFIntTopDomainObj readTopDomainByNameIdx( ICFLibKeyHash256 TldId,
+	public ICFIntTopDomainObj readTopDomainByNameIdx( IMCFKeyHash256 TldId,
 		String Name, boolean forceRead )
 	{
 		if( indexByNameIdx == null ) {
@@ -820,7 +820,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public ICFIntTopDomainObj readCachedTopDomainByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntTopDomainObj readCachedTopDomainByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTopDomainObj obj = null;
 		obj = readCachedTopDomain( Id );
@@ -828,7 +828,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public List<ICFIntTopDomainObj> readCachedTopDomainByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntTopDomainObj> readCachedTopDomainByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedTopDomainByTenantIdx";
 		ICFIntTopDomainByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
@@ -846,7 +846,7 @@ public class CFBamTopDomainTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -854,7 +854,7 @@ public class CFBamTopDomainTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -905,7 +905,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public List<ICFIntTopDomainObj> readCachedTopDomainByTldIdx( ICFLibKeyHash256 TldId )
+	public List<ICFIntTopDomainObj> readCachedTopDomainByTldIdx( IMCFKeyHash256 TldId )
 	{
 		final String S_ProcName = "readCachedTopDomainByTldIdx";
 		ICFIntTopDomainByTldIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
@@ -923,7 +923,7 @@ public class CFBamTopDomainTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -931,7 +931,7 @@ public class CFBamTopDomainTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -982,7 +982,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public ICFIntTopDomainObj readCachedTopDomainByNameIdx( ICFLibKeyHash256 TldId,
+	public ICFIntTopDomainObj readCachedTopDomainByNameIdx( IMCFKeyHash256 TldId,
 		String Name )
 	{
 		ICFIntTopDomainObj obj = null;
@@ -1020,7 +1020,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public void deepDisposeTopDomainByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeTopDomainByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTopDomainObj obj = readCachedTopDomainByIdIdx( Id );
 		if( obj != null ) {
@@ -1029,7 +1029,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public void deepDisposeTopDomainByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeTopDomainByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeTopDomainByTenantIdx";
 		ICFIntTopDomainObj obj;
@@ -1046,7 +1046,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public void deepDisposeTopDomainByTldIdx( ICFLibKeyHash256 TldId )
+	public void deepDisposeTopDomainByTldIdx( IMCFKeyHash256 TldId )
 	{
 		final String S_ProcName = "deepDisposeTopDomainByTldIdx";
 		ICFIntTopDomainObj obj;
@@ -1063,7 +1063,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public void deepDisposeTopDomainByNameIdx( ICFLibKeyHash256 TldId,
+	public void deepDisposeTopDomainByNameIdx( IMCFKeyHash256 TldId,
 		String Name )
 	{
 		ICFIntTopDomainObj obj = readCachedTopDomainByNameIdx( TldId,
@@ -1092,7 +1092,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public void deleteTopDomainByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteTopDomainByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTopDomainObj obj = readTopDomain(Id);
 		if( obj != null ) {
@@ -1122,7 +1122,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public void deleteTopDomainByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteTopDomainByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFIntTopDomainByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -1156,7 +1156,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public void deleteTopDomainByTldIdx( ICFLibKeyHash256 TldId )
+	public void deleteTopDomainByTldIdx( IMCFKeyHash256 TldId )
 	{
 		ICFIntTopDomainByTldIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
 		key.setRequiredTldId( TldId );
@@ -1190,7 +1190,7 @@ public class CFBamTopDomainTableObj
 	}
 
 	@Override
-	public void deleteTopDomainByNameIdx( ICFLibKeyHash256 TldId,
+	public void deleteTopDomainByNameIdx( IMCFKeyHash256 TldId,
 		String Name )
 	{
 		if( indexByNameIdx == null ) {

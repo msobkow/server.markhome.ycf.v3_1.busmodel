@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -85,7 +85,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return The retrieved entity, usually from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.requiredId = :id")
-	CFBamJpaIndexCol get(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaIndexCol get(@Param("id") IMCFKeyHash256 requiredId);
 
 	// CFBamJpaIndexCol specified index readers
 
@@ -98,7 +98,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.requiredName = :name")
-	CFBamJpaIndexCol findByUNameIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
+	CFBamJpaIndexCol findByUNameIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
 		@Param("name") String requiredName);
 
 	/**
@@ -120,7 +120,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return List&lt;CFBamJpaIndexCol&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId")
-	List<CFBamJpaIndexCol> findByIndexIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId);
+	List<CFBamJpaIndexCol> findByIndexIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId);
 
 	/**
 	 *	CFBamIndexColByIndexIdxKey entity list reader convenience method for object-based access.
@@ -141,7 +141,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return List&lt;CFBamJpaIndexCol&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaIndexCol> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaIndexCol> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamIndexColByDefSchemaIdxKey entity list reader convenience method for object-based access.
@@ -162,7 +162,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return List&lt;CFBamJpaIndexCol&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.requiredLookupColumn.requiredId = :columnId")
-	List<CFBamJpaIndexCol> findByColIdx(@Param("columnId") ICFLibKeyHash256 requiredColumnId);
+	List<CFBamJpaIndexCol> findByColIdx(@Param("columnId") IMCFKeyHash256 requiredColumnId);
 
 	/**
 	 *	CFBamIndexColByColIdxKey entity list reader convenience method for object-based access.
@@ -183,7 +183,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return List&lt;CFBamJpaIndexCol&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaIndexCol> findByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaIndexCol> findByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamIndexColByPrevIdxKey entity list reader convenience method for object-based access.
@@ -204,7 +204,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return List&lt;CFBamJpaIndexCol&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaIndexCol> findByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaIndexCol> findByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamIndexColByNextIdxKey entity list reader convenience method for object-based access.
@@ -226,8 +226,8 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return List&lt;CFBamJpaIndexCol&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaIndexCol> findByIdxPrevIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaIndexCol> findByIdxPrevIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamIndexColByIdxPrevIdxKey entity list reader convenience method for object-based access.
@@ -249,8 +249,8 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	 *		@return List&lt;CFBamJpaIndexCol&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaIndexCol> findByIdxNextIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaIndexCol> findByIdxNextIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamIndexColByIdxNextIdxKey entity list reader convenience method for object-based access.
@@ -275,7 +275,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.requiredId = :id")
-	CFBamJpaIndexCol lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaIndexCol lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based lock database entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity locks, which may or may not imply an actual database lock during the transaction.
@@ -288,7 +288,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.requiredName = :name")
-	CFBamJpaIndexCol lockByUNameIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
+	CFBamJpaIndexCol lockByUNameIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
 		@Param("name") String requiredName);
 
 	/**
@@ -312,7 +312,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId")
-	List<CFBamJpaIndexCol> lockByIndexIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId);
+	List<CFBamJpaIndexCol> lockByIndexIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId);
 
 	/**
 	 *	CFBamIndexColByIndexIdxKey based lock method for object-based access.
@@ -335,7 +335,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaIndexCol> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaIndexCol> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamIndexColByDefSchemaIdxKey based lock method for object-based access.
@@ -358,7 +358,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.requiredLookupColumn.requiredId = :columnId")
-	List<CFBamJpaIndexCol> lockByColIdx(@Param("columnId") ICFLibKeyHash256 requiredColumnId);
+	List<CFBamJpaIndexCol> lockByColIdx(@Param("columnId") IMCFKeyHash256 requiredColumnId);
 
 	/**
 	 *	CFBamIndexColByColIdxKey based lock method for object-based access.
@@ -381,7 +381,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaIndexCol> lockByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaIndexCol> lockByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamIndexColByPrevIdxKey based lock method for object-based access.
@@ -404,7 +404,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaIndexCol> lockByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaIndexCol> lockByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamIndexColByNextIdxKey based lock method for object-based access.
@@ -428,8 +428,8 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaIndexCol> lockByIdxPrevIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaIndexCol> lockByIdxPrevIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamIndexColByIdxPrevIdxKey based lock method for object-based access.
@@ -453,8 +453,8 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaIndexCol> lockByIdxNextIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaIndexCol> lockByIdxNextIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamIndexColByIdxNextIdxKey based lock method for object-based access.
@@ -477,7 +477,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.requiredId = :id")
-	void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based delete entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity lock, which may or may not imply an actual database lock during the transaction.
@@ -488,7 +488,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.requiredName = :name")
-	void deleteByUNameIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
+	void deleteByUNameIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
 		@Param("name") String requiredName);
 
 	/**
@@ -508,7 +508,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId")
-	void deleteByIndexIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId);
+	void deleteByIndexIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId);
 
 	/**
 	 *	CFBamIndexColByIndexIdxKey based lock method for object-based access.
@@ -527,7 +527,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamIndexColByDefSchemaIdxKey based lock method for object-based access.
@@ -546,7 +546,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.requiredLookupColumn.requiredId = :columnId")
-	void deleteByColIdx(@Param("columnId") ICFLibKeyHash256 requiredColumnId);
+	void deleteByColIdx(@Param("columnId") IMCFKeyHash256 requiredColumnId);
 
 	/**
 	 *	CFBamIndexColByColIdxKey based lock method for object-based access.
@@ -565,7 +565,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.optionalLookupPrev.requiredId = :prevId")
-	void deleteByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	void deleteByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamIndexColByPrevIdxKey based lock method for object-based access.
@@ -584,7 +584,7 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.optionalLookupNext.requiredId = :nextId")
-	void deleteByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	void deleteByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamIndexColByNextIdxKey based lock method for object-based access.
@@ -604,8 +604,8 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.optionalLookupPrev.requiredId = :prevId")
-	void deleteByIdxPrevIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
-		@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	void deleteByIdxPrevIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
+		@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamIndexColByIdxPrevIdxKey based lock method for object-based access.
@@ -625,8 +625,8 @@ public interface CFBamJpaIndexColRepository extends JpaRepository<CFBamJpaIndexC
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndexCol r where r.requiredContainerIndex.requiredId = :indexId and r.optionalLookupNext.requiredId = :nextId")
-	void deleteByIdxNextIdx(@Param("indexId") ICFLibKeyHash256 requiredIndexId,
-		@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	void deleteByIdxNextIdx(@Param("indexId") IMCFKeyHash256 requiredIndexId,
+		@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamIndexColByIdxNextIdxKey based lock method for object-based access.

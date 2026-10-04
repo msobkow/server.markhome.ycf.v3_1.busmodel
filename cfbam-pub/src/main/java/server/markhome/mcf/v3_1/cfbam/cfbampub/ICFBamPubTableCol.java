@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -65,9 +65,9 @@ public interface ICFBamPubTableCol
 	extends ICFBamPubValue
 {
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
+	public static final MCFDbKeyHash256 TABLEID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public static final String S_DATAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DATAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DATAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DATAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DATAID_INIT_VALUE );
 	public static final String XMLELEMENTNAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa85c;
 	public final static String S_CLASS_CODE = "a85c";
@@ -75,19 +75,19 @@ public interface ICFBamPubTableCol
 	public ICFBamPubTable getRequiredContainerTable();
 
 	public void setRequiredContainerTable(ICFBamPubTable argObj);
-	public void setRequiredContainerTable(ICFLibKeyHash256 argTableId);
+	public void setRequiredContainerTable(IMCFKeyHash256 argTableId);
 
 	public ICFBamPubValue getRequiredParentDataType();
 
 	public void setRequiredParentDataType(ICFBamPubValue argObj);
-	public void setRequiredParentDataType(ICFLibKeyHash256 argDataId);
+	public void setRequiredParentDataType(IMCFKeyHash256 argDataId);
 
-	public CFLibDbKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( MCFDbKeyHash256 value );
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );
-	public CFLibDbKeyHash256 getOptionalDataId();
-	public void setOptionalDataId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalDataId();
+	public void setOptionalDataId( MCFDbKeyHash256 value );
 	public String getOptionalXmlElementName();
 	public void setOptionalXmlElementName( String value );
 	public boolean equals( Object obj );

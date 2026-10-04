@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,21 +74,21 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffParamByContPrevIdxKey
 	implements ICFBamParamByContPrevIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredServerMethodId;
-	protected ICFLibKeyHash256 optionalPrevId;
+	protected IMCFKeyHash256 requiredServerMethodId;
+	protected IMCFKeyHash256 optionalPrevId;
 	public CFBamBuffParamByContPrevIdxKey() {
-		requiredServerMethodId = CFLibDbKeyHash256.fromHex( ICFBamPubParam.SERVERMETHODID_INIT_VALUE.toString() );
-		optionalPrevId = CFLibDbKeyHash256.nullGet();
+		requiredServerMethodId = MCFDbKeyHash256.fromHex( ICFBamPubParam.SERVERMETHODID_INIT_VALUE.toString() );
+		optionalPrevId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredServerMethodId() {
+	public IMCFKeyHash256 getRequiredServerMethodId() {
 		return(requiredServerMethodId);
 	}
 
-	public void setRequiredServerMethodId( ICFLibKeyHash256 value ) {
+	public void setRequiredServerMethodId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredServerMethodId",
 				1,
 				"value" );
@@ -97,11 +97,11 @@ public class CFBamBuffParamByContPrevIdxKey
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalPrevId() {
+	public IMCFKeyHash256 getOptionalPrevId() {
 		return(optionalPrevId);
 	}
 
-	public void setOptionalPrevId( ICFLibKeyHash256 value ) {
+	public void setOptionalPrevId( IMCFKeyHash256 value ) {
 		optionalPrevId = value;
 	}
 
@@ -268,7 +268,7 @@ public class CFBamBuffParamByContPrevIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

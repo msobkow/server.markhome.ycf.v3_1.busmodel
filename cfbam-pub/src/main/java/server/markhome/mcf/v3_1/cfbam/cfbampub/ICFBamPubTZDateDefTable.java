@@ -111,7 +111,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteTZDateDefByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the TZDateDef instances identified by the key UNameIdx.
 	 *
@@ -122,7 +122,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@param	Name	The TZDateDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTZDateDefByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -142,7 +142,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@param	ScopeId	The TZDateDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTZDateDefByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		MCFDbKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the TZDateDef instances identified by the key ScopeIdx.
@@ -161,7 +161,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@param	DefSchemaId	The TZDateDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTZDateDefByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the TZDateDef instances identified by the key DefSchemaIdx.
@@ -180,7 +180,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@param	PrevId	The TZDateDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTZDateDefByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TZDateDef instances identified by the key PrevIdx.
@@ -199,7 +199,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@param	NextId	The TZDateDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTZDateDefByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TZDateDef instances identified by the key NextIdx.
@@ -220,8 +220,8 @@ public interface ICFBamPubTZDateDefTable
 	 *	@param	PrevId	The TZDateDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTZDateDefByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TZDateDef instances identified by the key ContPrevIdx.
@@ -242,8 +242,8 @@ public interface ICFBamPubTZDateDefTable
 	 *	@param	NextId	The TZDateDef key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTZDateDefByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argScopeId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TZDateDef instances identified by the key ContNextIdx.
@@ -267,7 +267,7 @@ public interface ICFBamPubTZDateDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTZDateDef pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived TZDateDef record instance by primary key.
@@ -280,7 +280,7 @@ public interface ICFBamPubTZDateDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTZDateDef publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all TZDateDef instances.
@@ -302,7 +302,7 @@ public interface ICFBamPubTZDateDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTZDateDef pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read the derived TZDateDef record instance identified by the unique key UNameIdx.
@@ -317,7 +317,7 @@ public interface ICFBamPubTZDateDefTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTZDateDef pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -330,7 +330,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTZDateDef[] pubreadDerivedByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived TZDateDef record instances identified by the duplicate key DefSchemaIdx.
@@ -342,7 +342,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTZDateDef[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived TZDateDef record instances identified by the duplicate key PrevIdx.
@@ -354,7 +354,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTZDateDef[] pubreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TZDateDef record instances identified by the duplicate key NextIdx.
@@ -366,7 +366,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTZDateDef[] pubreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TZDateDef record instances identified by the duplicate key ContPrevIdx.
@@ -380,8 +380,8 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTZDateDef[] pubreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TZDateDef record instances identified by the duplicate key ContNextIdx.
@@ -395,8 +395,8 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTZDateDef[] pubreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read the specific TZDateDef record instance identified by the primary key.
@@ -408,10 +408,10 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific TZDateDef record instance identified by the primary key.
@@ -423,10 +423,10 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific TZDateDef record instances.
@@ -447,10 +447,10 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read the specific TZDateDef record instance identified by the unique key UNameIdx.
@@ -464,10 +464,10 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -479,10 +479,10 @@ public interface ICFBamPubTZDateDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef[] pubreadRecByScopeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific TZDateDef record instances identified by the duplicate key DefSchemaIdx.
@@ -493,10 +493,10 @@ public interface ICFBamPubTZDateDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific TZDateDef record instances identified by the duplicate key PrevIdx.
@@ -507,10 +507,10 @@ public interface ICFBamPubTZDateDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef[] pubreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TZDateDef record instances identified by the duplicate key NextIdx.
@@ -521,10 +521,10 @@ public interface ICFBamPubTZDateDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef[] pubreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TZDateDef record instances identified by the duplicate key ContPrevIdx.
@@ -537,11 +537,11 @@ public interface ICFBamPubTZDateDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef[] pubreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TZDateDef record instances identified by the duplicate key ContNextIdx.
@@ -554,11 +554,11 @@ public interface ICFBamPubTZDateDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDef[] pubreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -566,7 +566,7 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamPubTZDateDef pubmoveRecUp( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		MCFDbKeyHash256 Id,
 		int revision );
 
 	/**
@@ -575,6 +575,6 @@ public interface ICFBamPubTZDateDefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamPubTZDateDef pubmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

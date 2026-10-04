@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -65,16 +65,16 @@ public interface ICFBamTableCol
 	extends ICFBamValue
 {
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
+	public static final MCFDbKeyHash256 TABLEID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public static final String S_DATAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DATAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DATAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DATAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DATAID_INIT_VALUE );
 	public static final String XMLELEMENTNAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa85c;
 	public final static String S_CLASS_CODE = "a85c";
 
 	public ICFBamTable getRequiredContainerTable();
 
-	public void setRequiredContainerTable(ICFLibKeyHash256 argTableId);
+	public void setRequiredContainerTable(IMCFKeyHash256 argTableId);
 
 	public void setRequiredContainerTable(ICFBamTable argObj);
 
@@ -84,7 +84,7 @@ public interface ICFBamTableCol
 
 	public ICFBamValue getRequiredParentDataType();
 
-	public void setRequiredParentDataType(ICFLibKeyHash256 argDataId);
+	public void setRequiredParentDataType(IMCFKeyHash256 argDataId);
 
 	public void setRequiredParentDataType(ICFBamValue argObj);
 
@@ -92,12 +92,12 @@ public interface ICFBamTableCol
 
 	public void setRequiredParentDataType(ICFBamPubValue argObj);
 
-	public ICFLibKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( IMCFKeyHash256 value );
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );
-	public ICFLibKeyHash256 getOptionalDataId();
-	public void setOptionalDataId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDataId();
+	public void setOptionalDataId( IMCFKeyHash256 value );
 	public String getOptionalXmlElementName();
 	public void setOptionalXmlElementName( String value );
 	public boolean equals( Object obj );

@@ -154,7 +154,7 @@ public class CFBamSchemaRoleTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamSchemaRoleTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamSchemaRoleTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -614,7 +614,7 @@ public class CFBamSchemaRoleTableObj
 			locked = (ICFBamSchemaRoleObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockSchemaRole", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockSchemaRole", pkey );
 		}
 		return( locked );
 	}
@@ -649,7 +649,7 @@ public class CFBamSchemaRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -657,7 +657,7 @@ public class CFBamSchemaRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -709,7 +709,7 @@ public class CFBamSchemaRoleTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -717,7 +717,7 @@ public class CFBamSchemaRoleTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -754,21 +754,21 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readSchemaRoleByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamSchemaRoleObj readSchemaRoleByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readSchemaRoleByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readSchemaRoleByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamSchemaRoleObj readSchemaRoleByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamSchemaRoleObj obj = readSchemaRole( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readSchemaRoleByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamSchemaRoleObj readSchemaRoleByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readSchemaRoleByUNameIdx( ScopeId,
@@ -777,7 +777,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readSchemaRoleByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamSchemaRoleObj readSchemaRoleByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -806,14 +806,14 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamSchemaRoleObj> readSchemaRoleByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readSchemaRoleByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamSchemaRoleObj> readSchemaRoleByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaRoleByScopeIdx";
@@ -851,7 +851,7 @@ public class CFBamSchemaRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -859,7 +859,7 @@ public class CFBamSchemaRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -899,14 +899,14 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamSchemaRoleObj> readSchemaRoleByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readSchemaRoleByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamSchemaRoleObj> readSchemaRoleByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaRoleByDefSchemaIdx";
@@ -944,7 +944,7 @@ public class CFBamSchemaRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -952,7 +952,7 @@ public class CFBamSchemaRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -992,8 +992,8 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readSchemaRoleByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamSchemaRoleObj readSchemaRoleByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		return( readSchemaRoleByUDefIdx( ScopeId,
@@ -1003,8 +1003,8 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readSchemaRoleByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamSchemaRoleObj readSchemaRoleByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUDefIdx == null ) {
@@ -1035,14 +1035,14 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		return( readSchemaRoleBySchemaIdx( SchemaDefId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
+	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchemaIdx( IMCFKeyHash256 SchemaDefId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaRoleBySchemaIdx";
@@ -1080,7 +1080,7 @@ public class CFBamSchemaRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1088,7 +1088,7 @@ public class CFBamSchemaRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1173,7 +1173,7 @@ public class CFBamSchemaRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1181,7 +1181,7 @@ public class CFBamSchemaRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1221,7 +1221,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchRoleScpIdx( ICFLibKeyHash256 SchemaDefId,
+	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchRoleScpIdx( IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		return( readSchemaRoleBySchRoleScpIdx( SchemaDefId,
@@ -1230,7 +1230,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchRoleScpIdx( ICFLibKeyHash256 SchemaDefId,
+	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchRoleScpIdx( IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope,
 		boolean forceRead )
 	{
@@ -1271,7 +1271,7 @@ public class CFBamSchemaRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1279,7 +1279,7 @@ public class CFBamSchemaRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1319,7 +1319,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readCachedSchemaRoleByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamSchemaRoleObj readCachedSchemaRoleByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamSchemaRoleObj obj = null;
 		obj = readCachedSchemaRole( Id );
@@ -1327,7 +1327,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readCachedSchemaRoleByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamSchemaRoleObj readCachedSchemaRoleByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamSchemaRoleObj obj = null;
@@ -1365,7 +1365,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedSchemaRoleByScopeIdx";
 		ICFBamRoleDefByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
@@ -1383,7 +1383,7 @@ public class CFBamSchemaRoleTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1391,7 +1391,7 @@ public class CFBamSchemaRoleTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1442,7 +1442,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedSchemaRoleByDefSchemaIdx";
 		ICFBamRoleDefByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
@@ -1460,7 +1460,7 @@ public class CFBamSchemaRoleTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1468,7 +1468,7 @@ public class CFBamSchemaRoleTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1519,8 +1519,8 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public ICFBamSchemaRoleObj readCachedSchemaRoleByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamSchemaRoleObj readCachedSchemaRoleByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamSchemaRoleObj obj = null;
@@ -1559,7 +1559,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "readCachedSchemaRoleBySchemaIdx";
 		ICFBamSchemaRoleBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaRole().newBySchemaIdxKey();
@@ -1577,7 +1577,7 @@ public class CFBamSchemaRoleTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1585,7 +1585,7 @@ public class CFBamSchemaRoleTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1654,7 +1654,7 @@ public class CFBamSchemaRoleTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1662,7 +1662,7 @@ public class CFBamSchemaRoleTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1713,7 +1713,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleBySchRoleScpIdx( ICFLibKeyHash256 SchemaDefId,
+	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleBySchRoleScpIdx( IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		final String S_ProcName = "readCachedSchemaRoleBySchRoleScpIdx";
@@ -1733,7 +1733,7 @@ public class CFBamSchemaRoleTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1741,7 +1741,7 @@ public class CFBamSchemaRoleTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1792,7 +1792,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaRoleByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeSchemaRoleByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamSchemaRoleObj obj = readCachedSchemaRoleByIdIdx( Id );
 		if( obj != null ) {
@@ -1801,7 +1801,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaRoleByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeSchemaRoleByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamSchemaRoleObj obj = readCachedSchemaRoleByUNameIdx( ScopeId,
@@ -1812,7 +1812,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaRoleByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeSchemaRoleByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeSchemaRoleByScopeIdx";
 		ICFBamSchemaRoleObj obj;
@@ -1829,7 +1829,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaRoleByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeSchemaRoleByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeSchemaRoleByDefSchemaIdx";
 		ICFBamSchemaRoleObj obj;
@@ -1846,8 +1846,8 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaRoleByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public void deepDisposeSchemaRoleByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamSchemaRoleObj obj = readCachedSchemaRoleByUDefIdx( ScopeId,
@@ -1859,7 +1859,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaRoleBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public void deepDisposeSchemaRoleBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "deepDisposeSchemaRoleBySchemaIdx";
 		ICFBamSchemaRoleObj obj;
@@ -1893,7 +1893,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaRoleBySchRoleScpIdx( ICFLibKeyHash256 SchemaDefId,
+	public void deepDisposeSchemaRoleBySchRoleScpIdx( IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		final String S_ProcName = "deepDisposeSchemaRoleBySchRoleScpIdx";
@@ -1932,7 +1932,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deleteSchemaRoleByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteSchemaRoleByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamSchemaRoleObj obj = readSchemaRole(Id);
 		if( obj != null ) {
@@ -1962,7 +1962,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deleteSchemaRoleByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteSchemaRoleByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1990,7 +1990,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deleteSchemaRoleByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteSchemaRoleByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamRoleDefByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2024,7 +2024,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deleteSchemaRoleByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteSchemaRoleByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamRoleDefByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2058,8 +2058,8 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deleteSchemaRoleByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public void deleteSchemaRoleByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		if( indexByUDefIdx == null ) {
@@ -2091,7 +2091,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deleteSchemaRoleBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public void deleteSchemaRoleBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		ICFBamSchemaRoleBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaRole().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
@@ -2159,7 +2159,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deleteSchemaRoleBySchRoleScpIdx( ICFLibKeyHash256 SchemaDefId,
+	public void deleteSchemaRoleBySchRoleScpIdx( IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		ICFBamSchemaRoleBySchRoleScpIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaRole().newBySchRoleScpIdxKey();

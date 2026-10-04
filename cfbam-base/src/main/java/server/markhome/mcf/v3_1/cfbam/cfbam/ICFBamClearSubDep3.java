@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -65,14 +65,14 @@ public interface ICFBamClearSubDep3
 	extends ICFBamClearDep
 {
 	public static final String S_CLEARSUBDEP2ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 CLEARSUBDEP2ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLEARSUBDEP2ID_INIT_VALUE );
+	public static final MCFDbKeyHash256 CLEARSUBDEP2ID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_CLEARSUBDEP2ID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa817;
 	public final static String S_CLASS_CODE = "a817";
 
 	public ICFBamClearSubDep2 getRequiredContainerClearSubDep2();
 
-	public void setRequiredContainerClearSubDep2(ICFLibKeyHash256 argClearSubDep2Id);
+	public void setRequiredContainerClearSubDep2(IMCFKeyHash256 argClearSubDep2Id);
 
 	public void setRequiredContainerClearSubDep2(ICFBamClearSubDep2 argObj);
 
@@ -80,8 +80,8 @@ public interface ICFBamClearSubDep3
 
 	public void setRequiredContainerClearSubDep2(ICFBamPubClearSubDep2 argObj);
 
-	public ICFLibKeyHash256 getRequiredClearSubDep2Id();
-	public void setRequiredClearSubDep2Id( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredClearSubDep2Id();
+	public void setRequiredClearSubDep2Id( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

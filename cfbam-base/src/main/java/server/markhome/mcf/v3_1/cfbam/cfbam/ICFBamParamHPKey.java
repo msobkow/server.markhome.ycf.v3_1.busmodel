@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -70,8 +70,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 public interface ICFBamParamHPKey
 {
 
-	public CFLibDbKeyHash256 getAuditClusterId();
-	public void setAuditClusterId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp( LocalDateTime value );
@@ -82,11 +82,11 @@ public interface ICFBamParamHPKey
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public CFLibDbKeyHash256 getAuditSessionId();
-	public void setAuditSessionId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getAuditSessionId();
+	public void setAuditSessionId( MCFDbKeyHash256 value );
 
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredId();
+	public void setRequiredId( IMCFKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

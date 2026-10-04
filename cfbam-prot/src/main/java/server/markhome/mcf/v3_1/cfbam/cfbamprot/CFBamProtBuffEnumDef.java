@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -84,14 +84,14 @@ public class CFBamProtBuffEnumDef
 	}
 
 	@Override
-	public List<ICFBamProtEnumTag> getRequiredComponentsTag(ICFLibKeyHash256 argId) {
+	public List<ICFBamProtEnumTag> getRequiredComponentsTag(IMCFKeyHash256 argId) {
 		ICFBamProtSchema targetBackingCFBam = ICFBamProtSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamProtSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamProtSchema.getBackingCFBam()");
 		}
 		ICFBamProtEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamProtSchema.getBackingCFBam().getTableEnumTag()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamProtSchema.getBackingCFBam().getTableEnumTag()");
 		}
 		ICFBamProtEnumTag[] targetArr = targetTable.readDerivedByEnumIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
@@ -325,7 +325,7 @@ public class CFBamProtBuffEnumDef
 			setJustProtEnumDef( (CFBamProtBuffEnumDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -344,7 +344,7 @@ public class CFBamProtBuffEnumDef
 			setEnumDef( (ICFBamPubEnumDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -363,7 +363,7 @@ public class CFBamProtBuffEnumDef
 			setJustProtEnumDef( (CFBamPubProtBuffEnumDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -382,7 +382,7 @@ public class CFBamProtBuffEnumDef
 			setEnumDef( (ICFBamPubEnumDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

@@ -142,7 +142,7 @@ public class CFBamRoleDefTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamRoleDefTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamRoleDefTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -515,7 +515,7 @@ public class CFBamRoleDefTableObj
 			locked = (ICFBamRoleDefObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockRoleDef", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockRoleDef", pkey );
 		}
 		return( locked );
 	}
@@ -550,7 +550,7 @@ public class CFBamRoleDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -558,7 +558,7 @@ public class CFBamRoleDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -610,7 +610,7 @@ public class CFBamRoleDefTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -618,7 +618,7 @@ public class CFBamRoleDefTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -655,21 +655,21 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamRoleDefObj readRoleDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readRoleDefByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamRoleDefObj readRoleDefByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamRoleDefObj obj = readRoleDef( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamRoleDefObj readRoleDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readRoleDefByUNameIdx( ScopeId,
@@ -678,7 +678,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamRoleDefObj readRoleDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -707,14 +707,14 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamRoleDefObj> readRoleDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readRoleDefByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamRoleDefObj> readRoleDefByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRoleDefByScopeIdx";
@@ -752,7 +752,7 @@ public class CFBamRoleDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -760,7 +760,7 @@ public class CFBamRoleDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -800,14 +800,14 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamRoleDefObj> readRoleDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readRoleDefByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamRoleDefObj> readRoleDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRoleDefByDefSchemaIdx";
@@ -845,7 +845,7 @@ public class CFBamRoleDefTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -853,7 +853,7 @@ public class CFBamRoleDefTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -893,8 +893,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamRoleDefObj readRoleDefByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		return( readRoleDefByUDefIdx( ScopeId,
@@ -904,8 +904,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamRoleDefObj readRoleDefByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUDefIdx == null ) {
@@ -936,7 +936,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readCachedRoleDefByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamRoleDefObj readCachedRoleDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamRoleDefObj obj = null;
 		obj = readCachedRoleDef( Id );
@@ -944,7 +944,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readCachedRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamRoleDefObj readCachedRoleDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamRoleDefObj obj = null;
@@ -982,7 +982,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readCachedRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamRoleDefObj> readCachedRoleDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedRoleDefByScopeIdx";
 		ICFBamRoleDefByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
@@ -1000,7 +1000,7 @@ public class CFBamRoleDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1008,7 +1008,7 @@ public class CFBamRoleDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1059,7 +1059,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readCachedRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamRoleDefObj> readCachedRoleDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedRoleDefByDefSchemaIdx";
 		ICFBamRoleDefByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
@@ -1077,7 +1077,7 @@ public class CFBamRoleDefTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1085,7 +1085,7 @@ public class CFBamRoleDefTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1136,8 +1136,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readCachedRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamRoleDefObj readCachedRoleDefByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamRoleDefObj obj = null;
@@ -1176,7 +1176,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeRoleDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamRoleDefObj obj = readCachedRoleDefByIdIdx( Id );
 		if( obj != null ) {
@@ -1185,7 +1185,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeRoleDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamRoleDefObj obj = readCachedRoleDefByUNameIdx( ScopeId,
@@ -1196,7 +1196,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeRoleDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeRoleDefByScopeIdx";
 		ICFBamRoleDefObj obj;
@@ -1213,7 +1213,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeRoleDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeRoleDefByDefSchemaIdx";
 		ICFBamRoleDefObj obj;
@@ -1230,8 +1230,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public void deepDisposeRoleDefByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamRoleDefObj obj = readCachedRoleDefByUDefIdx( ScopeId,
@@ -1263,7 +1263,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteRoleDefByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamRoleDefObj obj = readRoleDef(Id);
 		if( obj != null ) {
@@ -1293,7 +1293,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteRoleDefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1321,7 +1321,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteRoleDefByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamRoleDefByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -1355,7 +1355,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteRoleDefByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamRoleDefByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -1389,8 +1389,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+	public void deleteRoleDefByUDefIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		if( indexByUDefIdx == null ) {

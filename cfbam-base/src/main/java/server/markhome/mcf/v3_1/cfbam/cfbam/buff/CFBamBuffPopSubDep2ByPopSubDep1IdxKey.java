@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,19 +74,19 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffPopSubDep2ByPopSubDep1IdxKey
 	implements ICFBamPopSubDep2ByPopSubDep1IdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredPopSubDep1Id;
+	protected IMCFKeyHash256 requiredPopSubDep1Id;
 	public CFBamBuffPopSubDep2ByPopSubDep1IdxKey() {
-		requiredPopSubDep1Id = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep2.POPSUBDEP1ID_INIT_VALUE.toString() );
+		requiredPopSubDep1Id = MCFDbKeyHash256.fromHex( ICFBamPubPopSubDep2.POPSUBDEP1ID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredPopSubDep1Id() {
+	public IMCFKeyHash256 getRequiredPopSubDep1Id() {
 		return(requiredPopSubDep1Id);
 	}
 
-	public void setRequiredPopSubDep1Id( ICFLibKeyHash256 value ) {
+	public void setRequiredPopSubDep1Id( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredPopSubDep1Id",
 				1,
 				"value" );
@@ -192,7 +192,7 @@ public class CFBamBuffPopSubDep2ByPopSubDep1IdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

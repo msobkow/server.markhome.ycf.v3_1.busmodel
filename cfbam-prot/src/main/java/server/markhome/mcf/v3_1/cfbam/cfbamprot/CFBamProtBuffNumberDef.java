@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -101,7 +101,7 @@ public class CFBamProtBuffNumberDef
 	@Override
 	public void setRequiredDigits( short value ) {
 		if( value < ICFBamPubNumberDef.DIGITS_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setRequiredDigits",
 				1,
 				"value",
@@ -109,7 +109,7 @@ public class CFBamProtBuffNumberDef
 				ICFBamPubNumberDef.DIGITS_MIN_VALUE );
 		}
 		if( value > ICFBamPubNumberDef.DIGITS_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredDigits",
 				1,
 				"value",
@@ -127,7 +127,7 @@ public class CFBamProtBuffNumberDef
 	@Override
 	public void setRequiredPrecis( short value ) {
 		if( value < ICFBamPubNumberDef.PRECIS_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setRequiredPrecis",
 				1,
 				"value",
@@ -135,7 +135,7 @@ public class CFBamProtBuffNumberDef
 				ICFBamPubNumberDef.PRECIS_MIN_VALUE );
 		}
 		if( value > ICFBamPubNumberDef.PRECIS_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredPrecis",
 				1,
 				"value",
@@ -151,7 +151,7 @@ public class CFBamProtBuffNumberDef
 	}
 
 	public void setOptionalInitValue( BigDecimal value ) {
-		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".InitValue", 31, 5, value );
+		value = MCFBigDecimalUtil.coerce( getClass().getName() + ".InitValue", 31, 5, value );
 		optionalInitValue = value;
 	}
 
@@ -161,7 +161,7 @@ public class CFBamProtBuffNumberDef
 	}
 
 	public void setOptionalMinValue( BigDecimal value ) {
-		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MinValue", 31, 5, value );
+		value = MCFBigDecimalUtil.coerce( getClass().getName() + ".MinValue", 31, 5, value );
 		optionalMinValue = value;
 	}
 
@@ -171,7 +171,7 @@ public class CFBamProtBuffNumberDef
 	}
 
 	public void setOptionalMaxValue( BigDecimal value ) {
-		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MaxValue", 31, 5, value );
+		value = MCFBigDecimalUtil.coerce( getClass().getName() + ".MaxValue", 31, 5, value );
 		optionalMaxValue = value;
 	}
 
@@ -848,7 +848,7 @@ public class CFBamProtBuffNumberDef
 			setJustProtNumberDef( (CFBamProtBuffNumberDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -872,7 +872,7 @@ public class CFBamProtBuffNumberDef
 			setNumberDef( (ICFBamPubNumberDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -896,7 +896,7 @@ public class CFBamProtBuffNumberDef
 			setJustProtNumberDef( (CFBamPubProtBuffNumberDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -920,7 +920,7 @@ public class CFBamProtBuffNumberDef
 			setNumberDef( (ICFBamPubNumberDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

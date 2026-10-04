@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -94,7 +94,7 @@ public class CFBamDelSubDep2Obj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjScope() {
+	public IMCFAnyObj getObjScope() {
 		ICFBamDelSubDep1Obj scope = getRequiredContainerDelSubDep1();
 		return( scope );
 	}
@@ -107,8 +107,8 @@ public class CFBamDelSubDep2Obj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -138,11 +138,11 @@ public class CFBamDelSubDep2Obj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -167,7 +167,7 @@ public class CFBamDelSubDep2Obj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -238,7 +238,7 @@ public class CFBamDelSubDep2Obj
 	@Override
 	public void setRec( ICFBamScope value ) {
 		if( ! ( ( value == null ) || ! ( value instanceof ICFBamDelSubDep2 ) ) ) {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
@@ -260,7 +260,7 @@ public class CFBamDelSubDep2Obj
 	@Override
 	public ICFBamScopeEditObj beginEdit() {
 		if( edit != null ) {
-			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
+			throw new MCFEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
 		ICFBamDelSubDep2Obj lockobj;
 		if( getIsNew() ) {
@@ -307,7 +307,7 @@ public class CFBamDelSubDep2Obj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -344,7 +344,7 @@ public class CFBamDelSubDep2Obj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredDelSubDep1Id() {
+	public IMCFKeyHash256 getRequiredDelSubDep1Id() {
 		return( getDelSubDep2Rec().getRequiredDelSubDep1Id() );
 	}
 

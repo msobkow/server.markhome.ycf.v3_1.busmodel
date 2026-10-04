@@ -102,11 +102,11 @@ public interface ICFBamPubClearSubDep2EditObj
 	List<ICFBamPubClearSubDep3Obj> getOptionalComponentsClearDep();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ClearSubDep1Id.
+	 *	Get the required MCFDbKeyHash256 attribute ClearSubDep1Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ClearSubDep1Id.
+	 *	@return	The required MCFDbKeyHash256 attribute ClearSubDep1Id.
 	 */
-	CFLibDbKeyHash256 getRequiredClearSubDep1Id();
+	MCFDbKeyHash256 getRequiredClearSubDep1Id();
 
 	/**
 	 *	Get the required String attribute Name.

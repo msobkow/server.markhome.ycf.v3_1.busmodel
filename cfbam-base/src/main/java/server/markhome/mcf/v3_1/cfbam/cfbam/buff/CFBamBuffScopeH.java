@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -75,18 +75,18 @@ public class CFBamBuffScopeH
     implements ICFBamScopeH, Comparable<Object>, Serializable
 {
     protected CFBamBuffScopeHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected MCFDbKeyHash256 createdByUserId = MCFDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
+	protected MCFDbKeyHash256 createdBySessionId = MCFDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected MCFDbKeyHash256 updatedByUserId = MCFDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
+	protected MCFDbKeyHash256 updatedBySessionId = MCFDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected ICFLibKeyHash256 requiredTenantId;
+	protected IMCFKeyHash256 requiredTenantId;
 
     public CFBamBuffScopeH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFBamBuffScopeHPKey();
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubScope.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = MCFDbKeyHash256.fromHex( ICFBamPubScope.TENANTID_INIT_VALUE.toString() );
     }
 
     @Override
@@ -95,14 +95,14 @@ public class CFBamBuffScopeH
     }
 
     @Override
-    public CFLibDbKeyHash256 getCreatedByUserId() {
+    public MCFDbKeyHash256 getCreatedByUserId() {
         return( createdByUserId );
     }
 
     @Override
-    public void setCreatedByUserId( CFLibDbKeyHash256 value ) {
+    public void setCreatedByUserId( MCFDbKeyHash256 value ) {
         if (value == null || value.isNull()) {
-            throw new CFLibNullArgumentException(getClass(), "setCreatedByUserId", 1, "value");
+            throw new MCFNullArgumentException(getClass(), "setCreatedByUserId", 1, "value");
         }
         createdByUserId = value;
     }
@@ -115,20 +115,20 @@ public class CFBamBuffScopeH
     @Override
     public void setCreatedAt( LocalDateTime value ) {
         if (value == null) {
-            throw new CFLibNullArgumentException(getClass(), "setCreatedAt", 1, "value");
+            throw new MCFNullArgumentException(getClass(), "setCreatedAt", 1, "value");
         }
         createdAt = value;
     }
 
     @Override
-    public CFLibDbKeyHash256 getUpdatedByUserId() {
+    public MCFDbKeyHash256 getUpdatedByUserId() {
         return( updatedByUserId );
     }
 
     @Override
-    public void setUpdatedByUserId( CFLibDbKeyHash256 value ) {
+    public void setUpdatedByUserId( MCFDbKeyHash256 value ) {
         if (value == null || value.isNull()) {
-            throw new CFLibNullArgumentException(getClass(), "setUpdatedByUserId", 1, "value");
+            throw new MCFNullArgumentException(getClass(), "setUpdatedByUserId", 1, "value");
         }
         updatedByUserId = value;
     }
@@ -141,7 +141,7 @@ public class CFBamBuffScopeH
     @Override
     public void setUpdatedAt( LocalDateTime value ) {
         if (value == null) {
-            throw new CFLibNullArgumentException(getClass(), "setUpdatedAt", 1, "value");
+            throw new MCFNullArgumentException(getClass(), "setUpdatedAt", 1, "value");
         }
         updatedAt = value;
     }
@@ -158,18 +158,18 @@ public class CFBamBuffScopeH
                 this.pkey = (CFBamBuffScopeHPKey)pkey;
             }
             else {
-                throw new CFLibUnsupportedClassException(getClass(), "setPKey", "pkey", pkey, "CFBamBuffScopeHPKey");
+                throw new MCFUnsupportedClassException(getClass(), "setPKey", "pkey", pkey, "CFBamBuffScopeHPKey");
             }
         }
     }
 
     @Override
-    public CFLibDbKeyHash256 getAuditClusterId() {
+    public MCFDbKeyHash256 getAuditClusterId() {
         return pkey.getAuditClusterId();
     }
 
     @Override
-    public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId) {
+    public void setAuditClusterId(MCFDbKeyHash256 auditClusterId) {
         pkey.setAuditClusterId(auditClusterId);
     }
 
@@ -204,23 +204,23 @@ public class CFBamBuffScopeH
     }
 
     @Override
-    public CFLibDbKeyHash256 getAuditSessionId() {
+    public MCFDbKeyHash256 getAuditSessionId() {
         return pkey.getAuditSessionId();
     }
 
     @Override
-    public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId) {
+    public void setAuditSessionId(MCFDbKeyHash256 auditSessionId) {
         pkey.setAuditSessionId(auditSessionId);
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return(getPKey().getRequiredId());
 	}
 
-	public void setRequiredId( ICFLibKeyHash256 value ) {
+	public void setRequiredId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredId",
 				1,
 				"value" );
@@ -229,13 +229,13 @@ public class CFBamBuffScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTenantId() {
+	public IMCFKeyHash256 getRequiredTenantId() {
 		return(requiredTenantId);
 	}
 
-	public void setRequiredTenantId( ICFLibKeyHash256 value ) {
+	public void setRequiredTenantId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTenantId",
 				1,
 				"value" );
@@ -465,7 +465,7 @@ public class CFBamBuffScopeH
             return( 0 );
         }
         else {
-            throw new CFLibUnsupportedClassException( getClass(),
+            throw new MCFUnsupportedClassException( getClass(),
                 "compareTo",
                 "obj",
                 obj,

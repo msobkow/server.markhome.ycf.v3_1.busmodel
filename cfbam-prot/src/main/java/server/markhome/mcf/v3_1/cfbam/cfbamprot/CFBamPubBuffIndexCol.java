@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -72,61 +72,61 @@ import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 public class CFBamPubBuffIndexCol
 	implements ICFBamPubIndexCol, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredId;
+	protected IMCFKeyHash256 requiredId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected MCFDbKeyHash256 createdByUserId = MCFDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
+	protected MCFDbKeyHash256 createdBySessionId = MCFDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected MCFDbKeyHash256 updatedByUserId = MCFDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
+	protected MCFDbKeyHash256 updatedBySessionId = MCFDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected ICFLibKeyHash256 requiredIndexId;
-	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 requiredIndexId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
 	protected String requiredName;
 	protected String optionalShortName;
 	protected String optionalLabel;
 	protected String optionalShortDescription;
 	protected String optionalDescription;
-	protected ICFLibKeyHash256 requiredColumnId;
+	protected IMCFKeyHash256 requiredColumnId;
 	protected boolean requiredIsAscending;
-	protected ICFLibKeyHash256 optionalPrevId;
-	protected ICFLibKeyHash256 optionalNextId;
+	protected IMCFKeyHash256 optionalPrevId;
+	protected IMCFKeyHash256 optionalNextId;
 
 	public CFBamPubBuffIndexCol() {
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.ID_INIT_VALUE.toString() );
-		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.INDEXID_INIT_VALUE.toString() );
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
+		requiredId = MCFDbKeyHash256.fromHex( ICFBamPubIndexCol.ID_INIT_VALUE.toString() );
+		requiredIndexId = MCFDbKeyHash256.fromHex( ICFBamPubIndexCol.INDEXID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
 		requiredName = ICFBamPubIndexCol.NAME_INIT_VALUE;
 		optionalShortName = null;
 		optionalLabel = null;
 		optionalShortDescription = null;
 		optionalDescription = null;
-		requiredColumnId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.COLUMNID_INIT_VALUE.toString() );
+		requiredColumnId = MCFDbKeyHash256.fromHex( ICFBamPubIndexCol.COLUMNID_INIT_VALUE.toString() );
 		requiredIsAscending = ICFBamPubIndexCol.ISASCENDING_INIT_VALUE;
-		optionalPrevId = CFLibDbKeyHash256.nullGet();
-		optionalNextId = CFLibDbKeyHash256.nullGet();
+		optionalPrevId = MCFDbKeyHash256.nullGet();
+		optionalNextId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public IMCFKeyHash256 getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey(ICFLibKeyHash256 requiredId) {
+	public void setPKey(IMCFKeyHash256 requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return(requiredId);
 	}
 
-	public void setRequiredId( ICFLibKeyHash256 value ) {
+	public void setRequiredId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredId",
 				1,
 				"value" );
@@ -135,14 +135,14 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public List<ICFBamPubRelationCol> getOptionalChildrenRefRelFromCol(ICFLibKeyHash256 argId) {
+	public List<ICFBamPubRelationCol> getOptionalChildrenRefRelFromCol(IMCFKeyHash256 argId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRefRelFromCol", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalChildrenRefRelFromCol", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubRelationColTable targetTable = targetBackingCFBam.getTableRelationCol();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRefRelFromCol", 0, "ICFBamPubSchema.getBackingCFBam().getTableRelationCol()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalChildrenRefRelFromCol", 0, "ICFBamPubSchema.getBackingCFBam().getTableRelationCol()");
 		}
 		ICFBamPubRelationCol[] targetArr = targetTable.readDerivedByFromColIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
@@ -159,14 +159,14 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public List<ICFBamPubRelationCol> getOptionalChildrenRefRelToCol(ICFLibKeyHash256 argId) {
+	public List<ICFBamPubRelationCol> getOptionalChildrenRefRelToCol(IMCFKeyHash256 argId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRefRelToCol", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalChildrenRefRelToCol", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubRelationColTable targetTable = targetBackingCFBam.getTableRelationCol();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRefRelToCol", 0, "ICFBamPubSchema.getBackingCFBam().getTableRelationCol()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalChildrenRefRelToCol", 0, "ICFBamPubSchema.getBackingCFBam().getTableRelationCol()");
 		}
 		ICFBamPubRelationCol[] targetArr = targetTable.readDerivedByToColIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
@@ -183,12 +183,12 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getCreatedByUserId() {
+	public MCFDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
 
 	@Override
-	public void setJustPubCreatedByUserId( CFLibDbKeyHash256 value ) {
+	public void setJustPubCreatedByUserId( MCFDbKeyHash256 value ) {
 		createdByUserId = value;
 	}
 
@@ -203,12 +203,12 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getUpdatedByUserId() {
+	public MCFDbKeyHash256 getUpdatedByUserId() {
 		return( updatedByUserId );
 	}
 
 	@Override
-	public void setJustPubUpdatedByUserId( CFLibDbKeyHash256 value ) {
+	public void setJustPubUpdatedByUserId( MCFDbKeyHash256 value ) {
 		updatedByUserId = value;
 	}
 
@@ -238,38 +238,38 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFBamPubIndex getRequiredContainerIndex(ICFLibKeyHash256 argIndexId) {
+	public ICFBamPubIndex getRequiredContainerIndex(IMCFKeyHash256 argIndexId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerIndex", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredContainerIndex", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubIndexTable targetTable = targetBackingCFBam.getTableIndex();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerIndex", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndex()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredContainerIndex", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndex()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredIndexId()));
 	}
 
 	@Override
-	public void setRequiredContainerIndex(ICFLibKeyHash256 argIndexId) {
+	public void setRequiredContainerIndex(IMCFKeyHash256 argIndexId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerIndex-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubIndexTable targetTable = targetBackingCFBam.getTableIndex();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex", 0, "ICFBamSchema.getBackingCFBam().getTableIndex()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerIndex", 0, "ICFBamSchema.getBackingCFBam().getTableIndex()");
 		}
 		ICFBamPubIndex found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argIndexId);
 		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex-args", 0, "found");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerIndex-args", 0, "found");
 		}
 		else if (found instanceof ICFBamPubIndex) || (found instanceof ICFBamPubIndex)) {
 			super.setRequiredContainerIndex(argIndexId);
 		requiredIndexId = argIndexId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerIndex-args", "found", found, "ICFBamPubIndexICFBamPubIndex");
+			throw new MCFUnsupportedClassException(getClass(), "setRequiredContainerIndex-args", "found", found, "ICFBamPubIndexICFBamPubIndex");
 		}
 	}
 
@@ -277,7 +277,7 @@ public class CFBamPubBuffIndexCol
 	public void setRequiredContainerIndex(ICFBamPubIndex argObj) {
 
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerIndex", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerIndex", 1, "argObj");
 		}
 		else {
 			setRequiredIndexId(argObj.getRequiredId());
@@ -285,27 +285,27 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFBamPubSchemaDef getOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId) {
+	public ICFBamPubSchemaDef getOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam().getTableSchemaDef()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId()));
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId) {
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupDefSchema-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamPubSchemaDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
 		if (found == null || (found != null && ((found instanceof ICFBamPubSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
@@ -313,7 +313,7 @@ public class CFBamPubBuffIndexCol
 		optionalDefSchemaId = argDefSchemaId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamPubSchemaDefICFBamPubSchemaDef");
+			throw new MCFUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamPubSchemaDefICFBamPubSchemaDef");
 		}
 	}
 
@@ -329,27 +329,27 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFBamPubIndexCol getOptionalLookupPrev(ICFLibKeyHash256 argPrevId) {
+	public ICFBamPubIndexCol getOptionalLookupPrev(IMCFKeyHash256 argPrevId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndexCol()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndexCol()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId()));
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFLibKeyHash256 argPrevId) {
+	public void setOptionalLookupPrev(IMCFKeyHash256 argPrevId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupPrev-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev", 0, "ICFBamSchema.getBackingCFBam().getTableIndexCol()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupPrev", 0, "ICFBamSchema.getBackingCFBam().getTableIndexCol()");
 		}
 		ICFBamPubIndexCol found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPrevId);
 		if (found == null || (found != null && ((found instanceof ICFBamPubIndexCol) || (found instanceof ICFBamPubIndexCol)))) {
@@ -357,7 +357,7 @@ public class CFBamPubBuffIndexCol
 		optionalPrevId = argPrevId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamPubIndexColICFBamPubIndexCol");
+			throw new MCFUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamPubIndexColICFBamPubIndexCol");
 		}
 	}
 
@@ -373,27 +373,27 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFBamPubIndexCol getOptionalLookupNext(ICFLibKeyHash256 argNextId) {
+	public ICFBamPubIndexCol getOptionalLookupNext(IMCFKeyHash256 argNextId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndexCol()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndexCol()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId()));
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFLibKeyHash256 argNextId) {
+	public void setOptionalLookupNext(IMCFKeyHash256 argNextId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupNext-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext", 0, "ICFBamSchema.getBackingCFBam().getTableIndexCol()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupNext", 0, "ICFBamSchema.getBackingCFBam().getTableIndexCol()");
 		}
 		ICFBamPubIndexCol found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argNextId);
 		if (found == null || (found != null && ((found instanceof ICFBamPubIndexCol) || (found instanceof ICFBamPubIndexCol)))) {
@@ -401,7 +401,7 @@ public class CFBamPubBuffIndexCol
 		optionalNextId = argNextId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamPubIndexColICFBamPubIndexCol");
+			throw new MCFUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamPubIndexColICFBamPubIndexCol");
 		}
 	}
 
@@ -417,38 +417,38 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFBamPubValue getRequiredLookupColumn(ICFLibKeyHash256 argColumnId) {
+	public ICFBamPubValue getRequiredLookupColumn(IMCFKeyHash256 argColumnId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredLookupColumn", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredLookupColumn", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubValueTable targetTable = targetBackingCFBam.getTableValue();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredLookupColumn", 0, "ICFBamPubSchema.getBackingCFBam().getTableValue()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredLookupColumn", 0, "ICFBamPubSchema.getBackingCFBam().getTableValue()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredColumnId()));
 	}
 
 	@Override
-	public void setRequiredLookupColumn(ICFLibKeyHash256 argColumnId) {
+	public void setRequiredLookupColumn(IMCFKeyHash256 argColumnId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredLookupColumn-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubValueTable targetTable = targetBackingCFBam.getTableValue();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredLookupColumn", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
 		}
 		ICFBamPubValue found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argColumnId);
 		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn-args", 0, "found");
+			throw new MCFNullArgumentException(getClass(), "setRequiredLookupColumn-args", 0, "found");
 		}
 		else if (found instanceof ICFBamPubValue) || (found instanceof ICFBamPubValue)) {
 			super.setRequiredLookupColumn(argColumnId);
 		requiredColumnId = argColumnId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupColumn-args", "found", found, "ICFBamPubValueICFBamPubValue");
+			throw new MCFUnsupportedClassException(getClass(), "setRequiredLookupColumn-args", "found", found, "ICFBamPubValueICFBamPubValue");
 		}
 	}
 
@@ -456,7 +456,7 @@ public class CFBamPubBuffIndexCol
 	public void setRequiredLookupColumn(ICFBamPubValue argObj) {
 
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setLookupColumn", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setLookupColumn", 1, "argObj");
 		}
 		else {
 			setRequiredColumnId(argObj.getRequiredId());
@@ -464,13 +464,13 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredIndexId() {
+	public IMCFKeyHash256 getRequiredIndexId() {
 		return(requiredIndexId);
 	}
 
-	public void setRequiredIndexId( ICFLibKeyHash256 value ) {
+	public void setRequiredIndexId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredIndexId",
 				1,
 				"value" );
@@ -479,11 +479,11 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
@@ -494,13 +494,13 @@ public class CFBamPubBuffIndexCol
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -517,7 +517,7 @@ public class CFBamPubBuffIndexCol
 
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortName",
 				1,
 				"value.length()",
@@ -534,7 +534,7 @@ public class CFBamPubBuffIndexCol
 
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalLabel",
 				1,
 				"value.length()",
@@ -551,7 +551,7 @@ public class CFBamPubBuffIndexCol
 
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortDescription",
 				1,
 				"value.length()",
@@ -568,7 +568,7 @@ public class CFBamPubBuffIndexCol
 
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDescription",
 				1,
 				"value.length()",
@@ -579,13 +579,13 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredColumnId() {
+	public IMCFKeyHash256 getRequiredColumnId() {
 		return(requiredColumnId);
 	}
 
-	public void setRequiredColumnId( ICFLibKeyHash256 value ) {
+	public void setRequiredColumnId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredColumnId",
 				1,
 				"value" );
@@ -603,20 +603,20 @@ public class CFBamPubBuffIndexCol
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalPrevId() {
+	public IMCFKeyHash256 getOptionalPrevId() {
 		return(optionalPrevId);
 	}
 
-	public void setOptionalPrevId( ICFLibKeyHash256 value ) {
+	public void setOptionalPrevId( IMCFKeyHash256 value ) {
 		optionalPrevId = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNextId() {
+	public IMCFKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( ICFLibKeyHash256 value ) {
+	public void setOptionalNextId( IMCFKeyHash256 value ) {
 		optionalNextId = value;
 	}
 
@@ -2980,7 +2980,7 @@ public class CFBamPubBuffIndexCol
 			}			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -64,86 +64,86 @@ import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 public interface ICFBamPubRelationCol
 {
 	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final MCFDbKeyHash256 INIT_CREATED_BY = MCFDbKeyHash256.fromHex(S_INIT_CREATED_BY);
 	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final MCFDbKeyHash256 INIT_UPDATED_BY = MCFDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_RELATIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 RELATIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_RELATIONID_INIT_VALUE );
+	public static final MCFDbKeyHash256 RELATIONID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_RELATIONID_INIT_VALUE );
 	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
+	public static final MCFDbKeyHash256 ID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_ID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DEFSCHEMAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final String S_FROMCOLID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 FROMCOLID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_FROMCOLID_INIT_VALUE );
+	public static final MCFDbKeyHash256 FROMCOLID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_FROMCOLID_INIT_VALUE );
 	public static final String S_TOCOLID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TOCOLID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TOCOLID_INIT_VALUE );
+	public static final MCFDbKeyHash256 TOCOLID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_TOCOLID_INIT_VALUE );
 	public static final String S_PREVID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 PREVID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
+	public static final MCFDbKeyHash256 PREVID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
 	public static final String S_NEXTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 NEXTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
+	public static final MCFDbKeyHash256 NEXTID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa83a;
 	public final static String S_CLASS_CODE = "a83a";
 
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getCreatedByUserId();
+	public MCFDbKeyHash256 getCreatedByUserId();
 
-	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+	public void setCreatedByUserId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getCreatedAt();
 
 	public void setCreatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getUpdatedByUserId();
+	public MCFDbKeyHash256 getUpdatedByUserId();
 
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+	public void setUpdatedByUserId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getUpdatedAt();
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public ICFLibKeyHash256 getPKey();
-	public void setPKey(ICFLibKeyHash256 requiredId);
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
+	public IMCFKeyHash256 getPKey();
+	public void setPKey(IMCFKeyHash256 requiredId);
+	public MCFDbKeyHash256 getRequiredId();
+	public void setRequiredId( MCFDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamPubRelation getRequiredContainerRelation();
 
 	public void setRequiredContainerRelation(ICFBamPubRelation argObj);
-	public void setRequiredContainerRelation(ICFLibKeyHash256 argRelationId);
+	public void setRequiredContainerRelation(IMCFKeyHash256 argRelationId);
 
 	public ICFBamPubSchemaDef getOptionalLookupDefSchema();
 
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId);
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId);
 
 	public ICFBamPubRelationCol getOptionalLookupPrev();
 
 	public void setOptionalLookupPrev(ICFBamPubRelationCol argObj);
-	public void setOptionalLookupPrev(ICFLibKeyHash256 argPrevId);
+	public void setOptionalLookupPrev(IMCFKeyHash256 argPrevId);
 
 	public ICFBamPubRelationCol getOptionalLookupNext();
 
 	public void setOptionalLookupNext(ICFBamPubRelationCol argObj);
-	public void setOptionalLookupNext(ICFLibKeyHash256 argNextId);
+	public void setOptionalLookupNext(IMCFKeyHash256 argNextId);
 
 	public ICFBamPubIndexCol getRequiredLookupFromCol();
 
 	public void setRequiredLookupFromCol(ICFBamPubIndexCol argObj);
-	public void setRequiredLookupFromCol(ICFLibKeyHash256 argFromColId);
+	public void setRequiredLookupFromCol(IMCFKeyHash256 argFromColId);
 
 	public ICFBamPubIndexCol getRequiredLookupToCol();
 
 	public void setRequiredLookupToCol(ICFBamPubIndexCol argObj);
-	public void setRequiredLookupToCol(ICFLibKeyHash256 argToColId);
+	public void setRequiredLookupToCol(IMCFKeyHash256 argToColId);
 
-	public CFLibDbKeyHash256 getRequiredRelationId();
-	public void setRequiredRelationId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredRelationId();
+	public void setRequiredRelationId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( MCFDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -154,14 +154,14 @@ public interface ICFBamPubRelationCol
 	public void setOptionalShortDescription( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	public CFLibDbKeyHash256 getRequiredFromColId();
-	public void setRequiredFromColId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredToColId();
-	public void setRequiredToColId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredFromColId();
+	public void setRequiredFromColId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredToColId();
+	public void setRequiredToColId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( MCFDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

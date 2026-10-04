@@ -98,10 +98,10 @@ public interface ICFBamServerListFuncEditObj
 	void setOptionalLookupRetTable( ICFBamTableObj value );
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute RetTableId.
+	 *	Get the optional IMCFKeyHash256 attribute RetTableId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute RetTableId.
+	 *	@return	The optional IMCFKeyHash256 attribute RetTableId.
 	 */
-	ICFLibKeyHash256 getOptionalRetTableId();
+	IMCFKeyHash256 getOptionalRetTableId();
 
 }

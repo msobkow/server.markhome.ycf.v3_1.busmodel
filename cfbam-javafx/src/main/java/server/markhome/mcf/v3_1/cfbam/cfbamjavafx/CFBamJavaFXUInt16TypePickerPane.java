@@ -91,7 +91,7 @@ implements ICFBamJavaFXUInt16TypePaneList
 	protected ICFBamJavaFXSchema javafxSchema = null;
 	protected Collection<ICFBamUInt16TypeObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamUInt16TypeObj> observableListOfUInt16Type = null;
-	protected TableColumn<ICFBamUInt16TypeObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamUInt16TypeObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamUInt16TypeObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamUInt16TypeObj, String> tableColumnShortName = null;
 	protected TableColumn<ICFBamUInt16TypeObj, String> tableColumnLabel = null;
@@ -152,24 +152,24 @@ implements ICFBamJavaFXUInt16TypePaneList
 		javafxContainer = argContainer;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamUInt16TypeObj>();
-		tableColumnId = new TableColumn<ICFBamUInt16TypeObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamUInt16TypeObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamUInt16TypeObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamUInt16TypeObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamUInt16TypeObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamUInt16TypeObj, IMCFKeyHash256> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamUInt16TypeObj,ICFLibKeyHash256>,TableCell<ICFBamUInt16TypeObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamUInt16TypeObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamUInt16TypeObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamUInt16TypeObj,IMCFKeyHash256>,TableCell<ICFBamUInt16TypeObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamUInt16TypeObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamUInt16TypeObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamUInt16TypeObj>();
 			}

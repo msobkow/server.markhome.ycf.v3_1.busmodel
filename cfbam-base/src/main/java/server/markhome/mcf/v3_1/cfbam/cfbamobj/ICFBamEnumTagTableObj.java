@@ -173,7 +173,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	CFBamEnumTagObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamEnumTagObj readEnumTagByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamEnumTagObj readEnumTagByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamEnumTagObj instance for the primary key attributes.
@@ -183,7 +183,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	CFBamEnumTagObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamEnumTagObj readEnumTagByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamEnumTagObj readEnumTagByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -194,7 +194,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	List of CFBamEnumTagObj cached instances sorted by their primary keys for the duplicate EnumIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamEnumTagObj> readEnumTagByEnumIdx( ICFLibKeyHash256 EnumId );
+	List<ICFBamEnumTagObj> readEnumTagByEnumIdx( IMCFKeyHash256 EnumId );
 
 	/**
 	 *	Get the map of CFBamEnumTagObj instances sorted by their primary keys for the duplicate EnumIdx key.
@@ -204,7 +204,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	List of CFBamEnumTagObj cached instances sorted by their primary keys for the duplicate EnumIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamEnumTagObj> readEnumTagByEnumIdx( ICFLibKeyHash256 EnumId,
+	List<ICFBamEnumTagObj> readEnumTagByEnumIdx( IMCFKeyHash256 EnumId,
 		boolean forceRead );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	List of CFBamEnumTagObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamEnumTagObj> readEnumTagByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamEnumTagObj> readEnumTagByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamEnumTagObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -225,7 +225,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	List of CFBamEnumTagObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamEnumTagObj> readEnumTagByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	List<ICFBamEnumTagObj> readEnumTagByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -238,7 +238,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	CFBamEnumTagObj cached instance for the unique EnumNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamEnumTagObj readEnumTagByEnumNameIdx(ICFLibKeyHash256 EnumId,
+	ICFBamEnumTagObj readEnumTagByEnumNameIdx(IMCFKeyHash256 EnumId,
 		String Name );
 
 	/**
@@ -251,7 +251,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	CFBamEnumTagObj refreshed instance for the unique EnumNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamEnumTagObj readEnumTagByEnumNameIdx(ICFLibKeyHash256 EnumId,
+	ICFBamEnumTagObj readEnumTagByEnumNameIdx(IMCFKeyHash256 EnumId,
 		String Name,
 		boolean forceRead );
 
@@ -263,7 +263,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	List of CFBamEnumTagObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamEnumTagObj> readEnumTagByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamEnumTagObj> readEnumTagByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamEnumTagObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -273,7 +273,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	List of CFBamEnumTagObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamEnumTagObj> readEnumTagByPrevIdx( ICFLibKeyHash256 PrevId,
+	List<ICFBamEnumTagObj> readEnumTagByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -284,7 +284,7 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	List of CFBamEnumTagObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamEnumTagObj> readEnumTagByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamEnumTagObj> readEnumTagByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamEnumTagObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -294,34 +294,34 @@ public interface ICFBamEnumTagTableObj
 	 *	@return	List of CFBamEnumTagObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamEnumTagObj> readEnumTagByNextIdx( ICFLibKeyHash256 NextId,
+	List<ICFBamEnumTagObj> readEnumTagByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamEnumTagObj readCachedEnumTagByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamEnumTagObj readCachedEnumTagByIdIdx( IMCFKeyHash256 Id );
 
-	List<ICFBamEnumTagObj> readCachedEnumTagByEnumIdx( ICFLibKeyHash256 EnumId );
+	List<ICFBamEnumTagObj> readCachedEnumTagByEnumIdx( IMCFKeyHash256 EnumId );
 
-	List<ICFBamEnumTagObj> readCachedEnumTagByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamEnumTagObj> readCachedEnumTagByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	ICFBamEnumTagObj readCachedEnumTagByEnumNameIdx( ICFLibKeyHash256 EnumId,
+	ICFBamEnumTagObj readCachedEnumTagByEnumNameIdx( IMCFKeyHash256 EnumId,
 		String Name );
 
-	List<ICFBamEnumTagObj> readCachedEnumTagByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamEnumTagObj> readCachedEnumTagByPrevIdx( IMCFKeyHash256 PrevId );
 
-	List<ICFBamEnumTagObj> readCachedEnumTagByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamEnumTagObj> readCachedEnumTagByNextIdx( IMCFKeyHash256 NextId );
 
-	void deepDisposeEnumTagByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeEnumTagByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeEnumTagByEnumIdx( ICFLibKeyHash256 EnumId );
+	void deepDisposeEnumTagByEnumIdx( IMCFKeyHash256 EnumId );
 
-	void deepDisposeEnumTagByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deepDisposeEnumTagByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	void deepDisposeEnumTagByEnumNameIdx( ICFLibKeyHash256 EnumId,
+	void deepDisposeEnumTagByEnumNameIdx( IMCFKeyHash256 EnumId,
 		String Name );
 
-	void deepDisposeEnumTagByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deepDisposeEnumTagByPrevIdx( IMCFKeyHash256 PrevId );
 
-	void deepDisposeEnumTagByNextIdx( ICFLibKeyHash256 NextId );
+	void deepDisposeEnumTagByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -338,21 +338,21 @@ public interface ICFBamEnumTagTableObj
 	 *
 	 *	@param	Id	The EnumTag key attribute of the instance generating the id.
 	 */
-	void deleteEnumTagByIdIdx( ICFLibKeyHash256 Id );
+	void deleteEnumTagByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	EnumId	The EnumTag key attribute of the instance generating the id.
 	 */
-	void deleteEnumTagByEnumIdx( ICFLibKeyHash256 EnumId );
+	void deleteEnumTagByEnumIdx( IMCFKeyHash256 EnumId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The EnumTag key attribute of the instance generating the id.
 	 */
-	void deleteEnumTagByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deleteEnumTagByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
@@ -361,7 +361,7 @@ public interface ICFBamEnumTagTableObj
 	 *
 	 *	@param	Name	The EnumTag key attribute of the instance generating the id.
 	 */
-	void deleteEnumTagByEnumNameIdx(ICFLibKeyHash256 EnumId,
+	void deleteEnumTagByEnumNameIdx(IMCFKeyHash256 EnumId,
 		String Name );
 
 	/**
@@ -369,14 +369,14 @@ public interface ICFBamEnumTagTableObj
 	 *
 	 *	@param	PrevId	The EnumTag key attribute of the instance generating the id.
 	 */
-	void deleteEnumTagByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deleteEnumTagByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The EnumTag key attribute of the instance generating the id.
 	 */
-	void deleteEnumTagByNextIdx( ICFLibKeyHash256 NextId );
+	void deleteEnumTagByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Move the CFBamEnumTagObj instance up in the chain.  The instance is always refreshed.

@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,13 +74,13 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffClearDepH extends CFBamBuffScopeH
     implements ICFBamClearDepH
 {
-	protected ICFLibKeyHash256 requiredRelationId;
-	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 requiredRelationId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
 
     public CFBamBuffClearDepH() {
             super();
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubClearDep.RELATIONID_INIT_VALUE.toString() );
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
+		requiredRelationId = MCFDbKeyHash256.fromHex( ICFBamPubClearDep.RELATIONID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
     }
 
     @Override
@@ -89,13 +89,13 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredRelationId() {
+	public IMCFKeyHash256 getRequiredRelationId() {
 		return(requiredRelationId);
 	}
 
-	public void setRequiredRelationId( ICFLibKeyHash256 value ) {
+	public void setRequiredRelationId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredRelationId",
 				1,
 				"value" );
@@ -104,11 +104,11 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
@@ -383,7 +383,7 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
 			setClearDep( (CFBamBuffClearDep)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -404,7 +404,7 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
 			setClearDep( (ICFBamClearDepH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

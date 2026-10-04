@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -65,7 +65,7 @@ public interface ICFBamPubPopTopDep
 	extends ICFBamPubPopDep
 {
 	public static final String S_CONTRELATIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 CONTRELATIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CONTRELATIONID_INIT_VALUE );
+	public static final MCFDbKeyHash256 CONTRELATIONID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_CONTRELATIONID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa838;
 	public final static String S_CLASS_CODE = "a838";
@@ -73,12 +73,12 @@ public interface ICFBamPubPopTopDep
 	public ICFBamPubRelation getRequiredContainerContRelation();
 
 	public void setRequiredContainerContRelation(ICFBamPubRelation argObj);
-	public void setRequiredContainerContRelation(ICFLibKeyHash256 argContRelationId);
+	public void setRequiredContainerContRelation(IMCFKeyHash256 argContRelationId);
 
 	public List<ICFBamPubPopSubDep1> getOptionalComponentsPopDep();
 
-	public CFLibDbKeyHash256 getRequiredContRelationId();
-	public void setRequiredContRelationId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredContRelationId();
+	public void setRequiredContRelationId( MCFDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

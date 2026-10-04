@@ -104,7 +104,7 @@ public class CFBamJpaTextDefFactoryService
 					mapped.set((ICFBamTextCol)rec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamTextDef",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamTextDef");
 			}
@@ -140,7 +140,7 @@ public class CFBamJpaTextDefFactoryService
 					mapped.set((ICFBamTextColH)hrec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamTextDef",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamTextDef");
 			}

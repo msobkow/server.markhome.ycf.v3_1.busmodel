@@ -119,7 +119,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	The ClearSubDep3-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubClearSubDep3Obj readClearSubDep3( ICFLibKeyHash256 pkey );
+	ICFBamPubClearSubDep3Obj readClearSubDep3( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a ClearSubDep3-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	The ClearSubDep3-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubClearSubDep3Obj readClearSubDep3( ICFLibKeyHash256 pkey,
+	ICFBamPubClearSubDep3Obj readClearSubDep3( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubClearSubDep3Obj readCachedClearSubDep3( ICFLibKeyHash256 pkey );
+	ICFBamPubClearSubDep3Obj readCachedClearSubDep3( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeClearSubDep3( ICFBamPubClearSubDep3Obj obj );
 
-	void deepDisposeClearSubDep3( ICFLibKeyHash256 pkey );
+	void deepDisposeClearSubDep3( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubClearSubDep3Obj lockClearSubDep3( ICFLibKeyHash256 pkey );
+	ICFBamPubClearSubDep3Obj lockClearSubDep3( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the ClearSubDep3-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	CFBamPubScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubClearSubDep3Obj readClearSubDep3ByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubClearSubDep3Obj readClearSubDep3ByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubScopeObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	CFBamPubScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubClearSubDep3Obj readClearSubDep3ByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubClearSubDep3Obj readClearSubDep3ByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -190,7 +190,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	List of CFBamPubClearSubDep3Obj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByTenantIdx( MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamPubClearSubDep3Obj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -200,7 +200,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	List of CFBamPubClearSubDep3Obj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByTenantIdx( MCFDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -211,7 +211,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	List of CFBamPubClearSubDep3Obj cached instances sorted by their primary keys for the duplicate ClearDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByClearDepIdx( CFLibDbKeyHash256 RelationId );
+	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByClearDepIdx( MCFDbKeyHash256 RelationId );
 
 	/**
 	 *	Get the map of CFBamPubClearSubDep3Obj instances sorted by their primary keys for the duplicate ClearDepIdx key.
@@ -221,7 +221,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	List of CFBamPubClearSubDep3Obj cached instances sorted by their primary keys for the duplicate ClearDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByClearDepIdx( CFLibDbKeyHash256 RelationId,
+	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByClearDepIdx( MCFDbKeyHash256 RelationId,
 		boolean forceRead );
 
 	/**
@@ -232,7 +232,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	List of CFBamPubClearSubDep3Obj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubClearSubDep3Obj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -242,7 +242,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	List of CFBamPubClearSubDep3Obj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -253,7 +253,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	List of CFBamPubClearSubDep3Obj cached instances sorted by their primary keys for the duplicate ClearSubDep2Idx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByClearSubDep2Idx( CFLibDbKeyHash256 ClearSubDep2Id );
+	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByClearSubDep2Idx( MCFDbKeyHash256 ClearSubDep2Id );
 
 	/**
 	 *	Get the map of CFBamPubClearSubDep3Obj instances sorted by their primary keys for the duplicate ClearSubDep2Idx key.
@@ -263,7 +263,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	List of CFBamPubClearSubDep3Obj cached instances sorted by their primary keys for the duplicate ClearSubDep2Idx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByClearSubDep2Idx( CFLibDbKeyHash256 ClearSubDep2Id,
+	List<ICFBamPubClearSubDep3Obj> readClearSubDep3ByClearSubDep2Idx( MCFDbKeyHash256 ClearSubDep2Id,
 		boolean forceRead );
 
 	/**
@@ -276,7 +276,7 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	CFBamPubClearSubDep3Obj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubClearSubDep3Obj readClearSubDep3ByUNameIdx(CFLibDbKeyHash256 ClearSubDep2Id,
+	ICFBamPubClearSubDep3Obj readClearSubDep3ByUNameIdx(MCFDbKeyHash256 ClearSubDep2Id,
 		String Name );
 
 	/**
@@ -289,34 +289,34 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *	@return	CFBamPubClearSubDep3Obj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubClearSubDep3Obj readClearSubDep3ByUNameIdx(CFLibDbKeyHash256 ClearSubDep2Id,
+	ICFBamPubClearSubDep3Obj readClearSubDep3ByUNameIdx(MCFDbKeyHash256 ClearSubDep2Id,
 		String Name,
 		boolean forceRead );
 
-	ICFBamPubClearSubDep3Obj readCachedClearSubDep3ByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubClearSubDep3Obj readCachedClearSubDep3ByIdIdx( MCFDbKeyHash256 Id );
 
-	List<ICFBamPubClearSubDep3Obj> readCachedClearSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamPubClearSubDep3Obj> readCachedClearSubDep3ByTenantIdx( MCFDbKeyHash256 TenantId );
 
-	List<ICFBamPubClearSubDep3Obj> readCachedClearSubDep3ByClearDepIdx( CFLibDbKeyHash256 RelationId );
+	List<ICFBamPubClearSubDep3Obj> readCachedClearSubDep3ByClearDepIdx( MCFDbKeyHash256 RelationId );
 
-	List<ICFBamPubClearSubDep3Obj> readCachedClearSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubClearSubDep3Obj> readCachedClearSubDep3ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubClearSubDep3Obj> readCachedClearSubDep3ByClearSubDep2Idx( CFLibDbKeyHash256 ClearSubDep2Id );
+	List<ICFBamPubClearSubDep3Obj> readCachedClearSubDep3ByClearSubDep2Idx( MCFDbKeyHash256 ClearSubDep2Id );
 
-	ICFBamPubClearSubDep3Obj readCachedClearSubDep3ByUNameIdx( CFLibDbKeyHash256 ClearSubDep2Id,
+	ICFBamPubClearSubDep3Obj readCachedClearSubDep3ByUNameIdx( MCFDbKeyHash256 ClearSubDep2Id,
 		String Name );
 
-	void deepDisposeClearSubDep3ByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeClearSubDep3ByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeClearSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeClearSubDep3ByTenantIdx( MCFDbKeyHash256 TenantId );
 
-	void deepDisposeClearSubDep3ByClearDepIdx( CFLibDbKeyHash256 RelationId );
+	void deepDisposeClearSubDep3ByClearDepIdx( MCFDbKeyHash256 RelationId );
 
-	void deepDisposeClearSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeClearSubDep3ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeClearSubDep3ByClearSubDep2Idx( CFLibDbKeyHash256 ClearSubDep2Id );
+	void deepDisposeClearSubDep3ByClearSubDep2Idx( MCFDbKeyHash256 ClearSubDep2Id );
 
-	void deepDisposeClearSubDep3ByUNameIdx( CFLibDbKeyHash256 ClearSubDep2Id,
+	void deepDisposeClearSubDep3ByUNameIdx( MCFDbKeyHash256 ClearSubDep2Id,
 		String Name );
 
 	/**
@@ -334,35 +334,35 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *
 	 *	@param	Id	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteClearSubDep3ByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteClearSubDep3ByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteClearSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteClearSubDep3ByTenantIdx( MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	RelationId	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteClearSubDep3ByClearDepIdx( CFLibDbKeyHash256 RelationId );
+	void deleteClearSubDep3ByClearDepIdx( MCFDbKeyHash256 RelationId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteClearSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteClearSubDep3ByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ClearSubDep2Id	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteClearSubDep3ByClearSubDep2Idx( CFLibDbKeyHash256 ClearSubDep2Id );
+	void deleteClearSubDep3ByClearSubDep2Idx( MCFDbKeyHash256 ClearSubDep2Id );
 
 	/**
 	 *	Internal use only.
@@ -371,6 +371,6 @@ public interface ICFBamPubClearSubDep3TableObj
 	 *
 	 *	@param	Name	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteClearSubDep3ByUNameIdx(CFLibDbKeyHash256 ClearSubDep2Id,
+	void deleteClearSubDep3ByUNameIdx(MCFDbKeyHash256 ClearSubDep2Id,
 		String Name );
 }

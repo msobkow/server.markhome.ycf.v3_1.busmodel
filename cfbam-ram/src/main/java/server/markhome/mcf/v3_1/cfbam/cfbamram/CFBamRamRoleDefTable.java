@@ -135,11 +135,11 @@ public class CFBamRamRoleDefTable
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		if( dictByUNameIdx.containsKey( keyUNameIdx ) ) {
-			throw new CFLibUniqueIndexViolationException( getClass(),
+			throw new MCFUniqueIndexViolationException( getClass(),
 				S_ProcName,
 				"RoleDefUNameIdx",
 				"RoleDefUNameIdx",
@@ -147,7 +147,7 @@ public class CFBamRamRoleDefTable
 		}
 
 		if( dictByUDefIdx.containsKey( keyUDefIdx ) ) {
-			throw new CFLibUniqueIndexViolationException( getClass(),
+			throw new MCFUniqueIndexViolationException( getClass(),
 				S_ProcName,
 				"RoleDefUDefIdx",
 				"RoleDefUDefIdx",
@@ -163,7 +163,7 @@ public class CFBamRamRoleDefTable
 				if( null == schema.getTableScope().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredScopeId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Container",
 						"Container",
@@ -220,7 +220,7 @@ public class CFBamRamRoleDefTable
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -272,7 +272,7 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByUNameIdx";
@@ -292,7 +292,7 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId )
+		IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByScopeIdx";
 		CFBamBuffRoleDefByScopeIdxKey key = (CFBamBuffRoleDefByScopeIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByScopeIdxKey();
@@ -320,7 +320,7 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByDefSchemaIdx";
 		CFBamBuffRoleDefByDefSchemaIdxKey key = (CFBamBuffRoleDefByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
@@ -348,8 +348,8 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef readDerivedByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByUDefIdx";
@@ -370,7 +370,7 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByIdIdx() ";
 		ICFBamRoleDef buff;
@@ -425,7 +425,7 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByIdIdx() ";
 		ICFBamRoleDef buff = readDerivedByIdIdx( Authorization,
@@ -440,7 +440,7 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByUNameIdx() ";
@@ -457,7 +457,7 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId )
+		IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByScopeIdx() ";
 		ICFBamRoleDef buff;
@@ -475,7 +475,7 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByDefSchemaIdx() ";
 		ICFBamRoleDef buff;
@@ -493,8 +493,8 @@ public class CFBamRamRoleDefTable
 
 	@Override
 	public ICFBamRoleDef readRecByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByUDefIdx() ";
@@ -517,7 +517,7 @@ public class CFBamRamRoleDefTable
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffRoleDef existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updateRoleDef",
 				"Existing record not found",
 				"Existing record not found",
@@ -526,7 +526,7 @@ public class CFBamRamRoleDefTable
 				pkey );
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() ) {
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"updateRoleDef",
 				pkey );
 		}
@@ -565,7 +565,7 @@ public class CFBamRamRoleDefTable
 
 		if( ! existingKeyUNameIdx.equals( newKeyUNameIdx ) ) {
 			if( dictByUNameIdx.containsKey( newKeyUNameIdx ) ) {
-				throw new CFLibUniqueIndexViolationException( getClass(),
+				throw new MCFUniqueIndexViolationException( getClass(),
 					"updateRoleDef",
 					"RoleDefUNameIdx",
 					"RoleDefUNameIdx",
@@ -575,7 +575,7 @@ public class CFBamRamRoleDefTable
 
 		if( ! existingKeyUDefIdx.equals( newKeyUDefIdx ) ) {
 			if( dictByUDefIdx.containsKey( newKeyUDefIdx ) ) {
-				throw new CFLibUniqueIndexViolationException( getClass(),
+				throw new MCFUniqueIndexViolationException( getClass(),
 					"updateRoleDef",
 					"RoleDefUDefIdx",
 					"RoleDefUDefIdx",
@@ -592,7 +592,7 @@ public class CFBamRamRoleDefTable
 				if( null == schema.getTableScope().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredScopeId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateRoleDef",
 						"Container",
 						"Container",
@@ -661,7 +661,7 @@ public class CFBamRamRoleDefTable
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deleteRoleDef",
 				pkey );
 		}
@@ -685,7 +685,7 @@ public class CFBamRamRoleDefTable
 		if( schema.getTableSchemaRole().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteRoleDef",
 				"Superclass",
 				"Superclass",
@@ -744,14 +744,14 @@ public class CFBamRamRoleDefTable
 				schema.getTableSchemaRole().deleteSchemaRole( Authorization, (ICFBamSchemaRole)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}
 
 	@Override
 	public void deleteRoleDefByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		CFBamBuffRoleDefByUNameIdxKey key = (CFBamBuffRoleDefByUNameIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByUNameIdxKey();
@@ -793,14 +793,14 @@ public class CFBamRamRoleDefTable
 				schema.getTableSchemaRole().deleteSchemaRole( Authorization, (ICFBamSchemaRole)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}
 
 	@Override
 	public void deleteRoleDefByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		CFBamBuffRoleDefByScopeIdxKey key = (CFBamBuffRoleDefByScopeIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByScopeIdxKey();
 		key.setRequiredScopeId( argScopeId );
@@ -839,14 +839,14 @@ public class CFBamRamRoleDefTable
 				schema.getTableSchemaRole().deleteSchemaRole( Authorization, (ICFBamSchemaRole)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}
 
 	@Override
 	public void deleteRoleDefByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		CFBamBuffRoleDefByDefSchemaIdxKey key = (CFBamBuffRoleDefByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( argDefSchemaId );
@@ -887,15 +887,15 @@ public class CFBamRamRoleDefTable
 				schema.getTableSchemaRole().deleteSchemaRole( Authorization, (ICFBamSchemaRole)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}
 
 	@Override
 	public void deleteRoleDefByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		CFBamBuffRoleDefByUDefIdxKey key = (CFBamBuffRoleDefByUDefIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByUDefIdxKey();
@@ -941,7 +941,7 @@ public class CFBamRamRoleDefTable
 				schema.getTableSchemaRole().deleteSchemaRole( Authorization, (ICFBamSchemaRole)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}

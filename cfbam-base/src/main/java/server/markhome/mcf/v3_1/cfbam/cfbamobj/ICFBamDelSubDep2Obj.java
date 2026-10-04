@@ -121,18 +121,18 @@ public interface ICFBamDelSubDep2Obj
 	List<ICFBamDelSubDep3Obj> getOptionalComponentsDelDep( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute DelSubDep1Id.
+	 *	Get the required IMCFKeyHash256 attribute DelSubDep1Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute DelSubDep1Id.
+	 *	@return	The required IMCFKeyHash256 attribute DelSubDep1Id.
 	 */
-	ICFLibKeyHash256 getRequiredDelSubDep1Id();
+	IMCFKeyHash256 getRequiredDelSubDep1Id();
 
 	/**
 	 *	Get the required String attribute Name.

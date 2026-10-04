@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -91,13 +91,13 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
     implements ICFBamRelationH
 {
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 requiredTableId;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="defschid", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="defschid", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
 	@Column( name="safe_name", nullable=false, length=192 )
 	protected String requiredName;
 	@Column( name="short_name", nullable=true, length=16 )
@@ -115,17 +115,17 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 	@Column( name="Suffix", nullable=true, length=16 )
 	protected String optionalSuffix;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="FromIndexId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="FromIndexId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredFromIndexId;
+	protected IMCFKeyHash256 requiredFromIndexId;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="ToTableId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="ToTableId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredToTableId;
+	protected IMCFKeyHash256 requiredToTableId;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="ToIndexId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="ToIndexId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredToIndexId;
+	protected IMCFKeyHash256 requiredToIndexId;
 	@Column( name="IsRequired", nullable=false )
 	protected boolean requiredIsRequired;
 	@Column( name="IsXsdContainer", nullable=false )
@@ -135,16 +135,16 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 	@Column( name="AllowAddendum", nullable=false )
 	protected boolean requiredAllowAddendum;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="NarrowedId", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="NarrowedId", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalNarrowedId;
+	protected IMCFKeyHash256 optionalNarrowedId;
 	@Column( name="codevis", nullable=false )
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
     public CFBamJpaRelationH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubRelation.TABLEID_INIT_VALUE.toString() );
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubRelation.TABLEID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
 		requiredName = ICFBamPubRelation.NAME_INIT_VALUE;
 		optionalShortName = null;
 		optionalLabel = null;
@@ -153,14 +153,14 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 		requiredRelationType = ICFBamPubRelation.RELATIONTYPE_INIT_VALUE;
 		optionalDbName = null;
 		optionalSuffix = null;
-		requiredFromIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubRelation.FROMINDEXID_INIT_VALUE.toString() );
-		requiredToTableId = CFLibDbKeyHash256.fromHex( ICFBamPubRelation.TOTABLEID_INIT_VALUE.toString() );
-		requiredToIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubRelation.TOINDEXID_INIT_VALUE.toString() );
+		requiredFromIndexId = MCFDbKeyHash256.fromHex( ICFBamPubRelation.FROMINDEXID_INIT_VALUE.toString() );
+		requiredToTableId = MCFDbKeyHash256.fromHex( ICFBamPubRelation.TOTABLEID_INIT_VALUE.toString() );
+		requiredToIndexId = MCFDbKeyHash256.fromHex( ICFBamPubRelation.TOINDEXID_INIT_VALUE.toString() );
 		requiredIsRequired = ICFBamPubRelation.ISREQUIRED_INIT_VALUE;
 		requiredIsXsdContainer = ICFBamPubRelation.ISXSDCONTAINER_INIT_VALUE;
 		requiredIsLateResolver = ICFBamPubRelation.ISLATERESOLVER_INIT_VALUE;
 		requiredAllowAddendum = ICFBamPubRelation.ALLOWADDENDUM_INIT_VALUE;
-		optionalNarrowedId = CFLibDbKeyHash256.nullGet();
+		optionalNarrowedId = MCFDbKeyHash256.nullGet();
 		requiredCodeVis = ICFBamPubRelation.CODEVIS_INIT_VALUE;
     }
 
@@ -170,13 +170,13 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -185,11 +185,11 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
@@ -200,13 +200,13 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -223,7 +223,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortName",
 				1,
 				"value.length()",
@@ -240,7 +240,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalLabel",
 				1,
 				"value.length()",
@@ -257,7 +257,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortDescription",
 				1,
 				"value.length()",
@@ -274,7 +274,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDescription",
 				1,
 				"value.length()",
@@ -291,7 +291,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setRequiredRelationType( ICFBamPubSchema.RelationTypeEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredRelationType",
 				1,
 				"value" );
@@ -306,7 +306,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDbName",
 				1,
 				"value.length()",
@@ -323,7 +323,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setOptionalSuffix( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalSuffix",
 				1,
 				"value.length()",
@@ -334,13 +334,13 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredFromIndexId() {
+	public IMCFKeyHash256 getRequiredFromIndexId() {
 		return(requiredFromIndexId);
 	}
 
-	public void setRequiredFromIndexId( ICFLibKeyHash256 value ) {
+	public void setRequiredFromIndexId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredFromIndexId",
 				1,
 				"value" );
@@ -349,13 +349,13 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredToTableId() {
+	public IMCFKeyHash256 getRequiredToTableId() {
 		return(requiredToTableId);
 	}
 
-	public void setRequiredToTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredToTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredToTableId",
 				1,
 				"value" );
@@ -364,13 +364,13 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredToIndexId() {
+	public IMCFKeyHash256 getRequiredToIndexId() {
 		return(requiredToIndexId);
 	}
 
-	public void setRequiredToIndexId( ICFLibKeyHash256 value ) {
+	public void setRequiredToIndexId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredToIndexId",
 				1,
 				"value" );
@@ -415,11 +415,11 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNarrowedId() {
+	public IMCFKeyHash256 getOptionalNarrowedId() {
 		return(optionalNarrowedId);
 	}
 
-	public void setOptionalNarrowedId( ICFLibKeyHash256 value ) {
+	public void setOptionalNarrowedId( IMCFKeyHash256 value ) {
 		optionalNarrowedId = value;
 	}
 
@@ -430,7 +430,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredCodeVis",
 				1,
 				"value" );
@@ -1967,7 +1967,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 			setRelation( (ICFBamRelation)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -2005,7 +2005,7 @@ public class CFBamJpaRelationH extends CFBamJpaScopeH
 			setRelation( (ICFBamRelationH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -84,13 +84,13 @@ public class CFBamJpaTableTweak extends CFBamJpaTweak
 	protected CFBamJpaTable requiredContainerTableDef;
 
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 requiredTableId;
 
 	public CFBamJpaTableTweak() {
 		super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTableTweak.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubTableTweak.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override
@@ -106,7 +106,7 @@ public class CFBamJpaTableTweak extends CFBamJpaTweak
 	@Override
 	public void setRequiredContainerTableDef(ICFBamTable argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTableDef", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerTableDef", 1, "argObj");
 		}
 		else if (argObj instanceof CFBamJpaTable) {
 			requiredContainerTableDef = (CFBamJpaTable)argObj;
@@ -117,7 +117,7 @@ public class CFBamJpaTableTweak extends CFBamJpaTweak
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerTableDef", "argObj", argObj, "CFBamJpaTable");
+			throw new MCFUnsupportedClassException(getClass(), "setContainerTableDef", "argObj", argObj, "CFBamJpaTable");
 		}
 	}
 
@@ -132,27 +132,27 @@ public class CFBamJpaTableTweak extends CFBamJpaTweak
 	}
 
 	@Override
-	public void setRequiredContainerTableDef(ICFLibKeyHash256 argTableId) {
+	public void setRequiredContainerTableDef(IMCFKeyHash256 argTableId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTableDef", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerTableDef", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamTableTable targetTable = targetBackingSchema.getTableTable();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTableDef", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerTableDef", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTableId);
 		setRequiredContainerTableDef(targetRec);
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -323,7 +323,7 @@ public class CFBamJpaTableTweak extends CFBamJpaTweak
 			setTableTweak( (ICFBamTableTweak)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -344,7 +344,7 @@ public class CFBamJpaTableTweak extends CFBamJpaTweak
 			setTableTweak( (ICFBamTableTweakH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

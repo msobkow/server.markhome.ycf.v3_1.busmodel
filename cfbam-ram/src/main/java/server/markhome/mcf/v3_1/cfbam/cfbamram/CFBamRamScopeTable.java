@@ -109,7 +109,7 @@ public class CFBamRamScopeTable
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		// Validate foreign keys
@@ -121,7 +121,7 @@ public class CFBamRamScopeTable
 				if( null == schema.getTableTenant().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredTenantId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Owner",
 						"Owner",
@@ -279,7 +279,7 @@ public class CFBamRamScopeTable
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -331,7 +331,7 @@ public class CFBamRamScopeTable
 
 	@Override
 	public ICFBamScope[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByTenantIdx";
 		CFBamBuffScopeByTenantIdxKey key = (CFBamBuffScopeByTenantIdxKey)schema.getCFBamBuffFactory().getFactoryScope().newByTenantIdxKey();
@@ -359,7 +359,7 @@ public class CFBamRamScopeTable
 
 	@Override
 	public ICFBamScope readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByIdIdx() ";
 		ICFBamScope buff;
@@ -414,7 +414,7 @@ public class CFBamRamScopeTable
 
 	@Override
 	public ICFBamScope readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByIdIdx() ";
 		ICFBamScope buff = readDerivedByIdIdx( Authorization,
@@ -429,7 +429,7 @@ public class CFBamRamScopeTable
 
 	@Override
 	public ICFBamScope[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByTenantIdx() ";
 		ICFBamScope buff;
@@ -452,7 +452,7 @@ public class CFBamRamScopeTable
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffScope existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updateScope",
 				"Existing record not found",
 				"Existing record not found",
@@ -461,7 +461,7 @@ public class CFBamRamScopeTable
 				pkey );
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() ) {
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"updateScope",
 				pkey );
 		}
@@ -483,7 +483,7 @@ public class CFBamRamScopeTable
 				if( null == schema.getTableTenant().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredTenantId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateScope",
 						"Owner",
 						"Owner",
@@ -533,7 +533,7 @@ public class CFBamRamScopeTable
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deleteScope",
 				pkey );
 		}
@@ -545,7 +545,7 @@ public class CFBamRamScopeTable
 		if( schema.getTableSchemaDef().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -559,7 +559,7 @@ public class CFBamRamScopeTable
 		if( schema.getTableSchemaRef().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -573,7 +573,7 @@ public class CFBamRamScopeTable
 		if( schema.getTableServerMethod().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -587,7 +587,7 @@ public class CFBamRamScopeTable
 		if( schema.getTableTable().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -601,7 +601,7 @@ public class CFBamRamScopeTable
 		if( schema.getTableClearDep().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -615,7 +615,7 @@ public class CFBamRamScopeTable
 		if( schema.getTableDelDep().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -629,7 +629,7 @@ public class CFBamRamScopeTable
 		if( schema.getTableIndex().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -643,7 +643,7 @@ public class CFBamRamScopeTable
 		if( schema.getTablePopDep().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -657,7 +657,7 @@ public class CFBamRamScopeTable
 		if( schema.getTableRelation().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteScope",
 				"Superclass",
 				"Superclass",
@@ -778,14 +778,14 @@ public class CFBamRamScopeTable
 				schema.getTableRelation().deleteRelation( Authorization, (ICFBamRelation)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}
 
 	@Override
 	public void deleteScopeByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		CFBamBuffScopeByTenantIdxKey key = (CFBamBuffScopeByTenantIdxKey)schema.getCFBamBuffFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( argTenantId );
@@ -893,7 +893,7 @@ public class CFBamRamScopeTable
 				schema.getTableRelation().deleteRelation( Authorization, (ICFBamRelation)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}

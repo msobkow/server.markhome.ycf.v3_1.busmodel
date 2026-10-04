@@ -96,7 +96,7 @@ implements ICFBamJavaFXDbKeyHash512GenPaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamDbKeyHash512GenObj> dataTable = null;
-	protected TableColumn<ICFBamDbKeyHash512GenObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamDbKeyHash512GenObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamDbKeyHash512GenObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamDbKeyHash512GenObj, String> tableColumnShortName = null;
 	protected TableColumn<ICFBamDbKeyHash512GenObj, String> tableColumnLabel = null;
@@ -199,24 +199,24 @@ implements ICFBamJavaFXDbKeyHash512GenPaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamDbKeyHash512GenObj>();
-		tableColumnId = new TableColumn<ICFBamDbKeyHash512GenObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash512GenObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamDbKeyHash512GenObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamDbKeyHash512GenObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash512GenObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamDbKeyHash512GenObj, IMCFKeyHash256> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash512GenObj,ICFLibKeyHash256>,TableCell<ICFBamDbKeyHash512GenObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamDbKeyHash512GenObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamDbKeyHash512GenObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash512GenObj,IMCFKeyHash256>,TableCell<ICFBamDbKeyHash512GenObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamDbKeyHash512GenObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamDbKeyHash512GenObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamDbKeyHash512GenObj>();
 			}

@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -65,22 +65,22 @@ public interface ICFBamSchemaRef
 	extends ICFBamScope
 {
 	public static final String S_SCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 SCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 SCHEMAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_SCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final String REFMODELNAME_INIT_VALUE = new String( "" );
 	public static final String INCLUDEROOT_INIT_VALUE = new String( "" );
 	public static final String S_REFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 REFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_REFSCHEMAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 REFSCHEMAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_REFSCHEMAID_INIT_VALUE );
 	public static final String S_PREVID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 PREVID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
+	public static final MCFDbKeyHash256 PREVID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
 	public static final String S_NEXTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 NEXTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
+	public static final MCFDbKeyHash256 NEXTID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa803;
 	public final static String S_CLASS_CODE = "a803";
 
 	public ICFBamSchemaDef getRequiredContainerSchema();
 
-	public void setRequiredContainerSchema(ICFLibKeyHash256 argSchemaId);
+	public void setRequiredContainerSchema(IMCFKeyHash256 argSchemaId);
 
 	public void setRequiredContainerSchema(ICFBamSchemaDef argObj);
 
@@ -90,7 +90,7 @@ public interface ICFBamSchemaRef
 
 	public ICFBamSchemaDef getOptionalLookupRefSchema();
 
-	public void setOptionalLookupRefSchema(ICFLibKeyHash256 argRefSchemaId);
+	public void setOptionalLookupRefSchema(IMCFKeyHash256 argRefSchemaId);
 
 	public void setOptionalLookupRefSchema(ICFBamSchemaDef argObj);
 
@@ -100,7 +100,7 @@ public interface ICFBamSchemaRef
 
 	public ICFBamSchemaRef getOptionalLookupPrev();
 
-	public void setOptionalLookupPrev(ICFLibKeyHash256 argPrevId);
+	public void setOptionalLookupPrev(IMCFKeyHash256 argPrevId);
 
 	public void setOptionalLookupPrev(ICFBamSchemaRef argObj);
 
@@ -110,7 +110,7 @@ public interface ICFBamSchemaRef
 
 	public ICFBamSchemaRef getOptionalLookupNext();
 
-	public void setOptionalLookupNext(ICFLibKeyHash256 argNextId);
+	public void setOptionalLookupNext(IMCFKeyHash256 argNextId);
 
 	public void setOptionalLookupNext(ICFBamSchemaRef argObj);
 
@@ -118,20 +118,20 @@ public interface ICFBamSchemaRef
 
 	public void setOptionalLookupNext(ICFBamPubSchemaRef argObj);
 
-	public ICFLibKeyHash256 getRequiredSchemaId();
-	public void setRequiredSchemaId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredSchemaId();
+	public void setRequiredSchemaId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getRequiredRefModelName();
 	public void setRequiredRefModelName( String value );
 	public String getRequiredIncludeRoot();
 	public void setRequiredIncludeRoot( String value );
-	public ICFLibKeyHash256 getOptionalRefSchemaId();
-	public void setOptionalRefSchemaId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalRefSchemaId();
+	public void setOptionalRefSchemaId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( IMCFKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

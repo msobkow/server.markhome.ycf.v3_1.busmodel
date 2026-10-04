@@ -113,7 +113,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@param	Name	The ServerMethod key attribute of the instance generating the id.
 	 */
 	public void pubdeleteServerMethodByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId,
+		MCFDbKeyHash256 argTableId,
 		String argName );
 
 	/**
@@ -133,7 +133,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@param	TableId	The ServerMethod key attribute of the instance generating the id.
 	 */
 	public void pubdeleteServerMethodByMethTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId );
+		MCFDbKeyHash256 argTableId );
 
 	/**
 	 *	Delete the ServerMethod instances identified by the key MethTableIdx.
@@ -173,7 +173,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@param	CodeVis	The ServerMethod key attribute of the instance generating the id.
 	 */
 	public void pubdeleteServerMethodByMethTableVisIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId,
+		MCFDbKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@param	DefSchemaId	The ServerMethod key attribute of the instance generating the id.
 	 */
 	public void pubdeleteServerMethodByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the ServerMethod instances identified by the key DefSchemaIdx.
@@ -212,7 +212,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteServerMethodByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the ServerMethod instances identified by the key TenantIdx.
 	 *
@@ -221,7 +221,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@param	TenantId	The ServerMethod key attribute of the instance generating the id.
 	 */
 	public void pubdeleteServerMethodByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		MCFDbKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the ServerMethod instances identified by the key TenantIdx.
@@ -245,7 +245,7 @@ public interface ICFBamPubServerMethodTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubServerMethod pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived ServerMethod record instance by primary key.
@@ -258,7 +258,7 @@ public interface ICFBamPubServerMethodTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubServerMethod publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all ServerMethod instances.
@@ -280,7 +280,7 @@ public interface ICFBamPubServerMethodTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubServerMethod pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived ServerMethod record instances identified by the duplicate key TenantIdx.
@@ -292,7 +292,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubServerMethod[] pubreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read the derived ServerMethod record instance identified by the unique key UNameIdx.
@@ -307,7 +307,7 @@ public interface ICFBamPubServerMethodTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubServerMethod pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -320,7 +320,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubServerMethod[] pubreadDerivedByMethTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the derived ServerMethod record instances identified by the duplicate key MethCodeVisIdx.
@@ -346,7 +346,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubServerMethod[] pubreadDerivedByMethTableVisIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -359,7 +359,7 @@ public interface ICFBamPubServerMethodTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubServerMethod[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific ServerMethod record instance identified by the primary key.
@@ -371,10 +371,10 @@ public interface ICFBamPubServerMethodTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific ServerMethod record instance identified by the primary key.
@@ -386,10 +386,10 @@ public interface ICFBamPubServerMethodTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific ServerMethod record instances.
@@ -410,10 +410,10 @@ public interface ICFBamPubServerMethodTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific ServerMethod record instances identified by the duplicate key TenantIdx.
@@ -424,10 +424,10 @@ public interface ICFBamPubServerMethodTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod[] pubreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read the specific ServerMethod record instance identified by the unique key UNameIdx.
@@ -441,10 +441,10 @@ public interface ICFBamPubServerMethodTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -456,10 +456,10 @@ public interface ICFBamPubServerMethodTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod[] pubreadRecByMethTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the specific ServerMethod record instances identified by the duplicate key MethCodeVisIdx.
@@ -470,7 +470,7 @@ public interface ICFBamPubServerMethodTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod[] pubreadRecByMethCodeVisIdx( ICFSecPubAuthorization Authorization,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
@@ -486,10 +486,10 @@ public interface ICFBamPubServerMethodTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod[] pubreadRecByMethTableVisIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -501,8 +501,8 @@ public interface ICFBamPubServerMethodTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethod[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 }

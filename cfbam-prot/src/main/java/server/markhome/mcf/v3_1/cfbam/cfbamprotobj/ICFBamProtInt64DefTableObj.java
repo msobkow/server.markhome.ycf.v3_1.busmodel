@@ -121,7 +121,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	The Int64Def-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtInt64DefObj readInt64Def( CFLibDbKeyHash256 pkey );
+	ICFBamProtInt64DefObj readInt64Def( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Read a Int64Def-derived instance by it's primary key.
@@ -131,19 +131,19 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	The Int64Def-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtInt64DefObj readInt64Def( CFLibDbKeyHash256 pkey,
+	ICFBamProtInt64DefObj readInt64Def( MCFDbKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamProtInt64DefObj readCachedInt64Def( CFLibDbKeyHash256 pkey );
+	ICFBamProtInt64DefObj readCachedInt64Def( MCFDbKeyHash256 pkey );
 
 	public void reallyDeepDisposeInt64Def( ICFBamProtInt64DefObj obj );
 
-	void deepDisposeInt64Def( CFLibDbKeyHash256 pkey );
+	void deepDisposeInt64Def( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamProtInt64DefObj lockInt64Def( CFLibDbKeyHash256 pkey );
+	ICFBamProtInt64DefObj lockInt64Def( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Int64Def-derived instances in the database.
@@ -171,7 +171,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	ICFBamProtValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtInt64DefObj readInt64DefByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtInt64DefObj readInt64DefByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the ICFBamProtValueObj instance for the primary key attributes.
@@ -181,7 +181,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	ICFBamProtValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtInt64DefObj readInt64DefByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamProtInt64DefObj readInt64DefByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -194,7 +194,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	ICFBamProtValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtInt64DefObj readInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtInt64DefObj readInt64DefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -207,7 +207,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	ICFBamProtValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtInt64DefObj readInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtInt64DefObj readInt64DefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -219,7 +219,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamProtInt64DefObj> readInt64DefByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of ICFBamProtInt64DefObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -229,7 +229,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId,
+	List<ICFBamProtInt64DefObj> readInt64DefByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -240,7 +240,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamProtInt64DefObj> readInt64DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of ICFBamProtInt64DefObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -250,7 +250,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamProtInt64DefObj> readInt64DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -261,7 +261,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamProtInt64DefObj> readInt64DefByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of ICFBamProtInt64DefObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -271,7 +271,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamProtInt64DefObj> readInt64DefByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -282,7 +282,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamProtInt64DefObj> readInt64DefByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of ICFBamProtInt64DefObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -292,7 +292,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamProtInt64DefObj> readInt64DefByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -305,8 +305,8 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamProtInt64DefObj> readInt64DefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of ICFBamProtInt64DefObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -318,8 +318,8 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamProtInt64DefObj> readInt64DefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -332,8 +332,8 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamProtInt64DefObj> readInt64DefByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of ICFBamProtInt64DefObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -345,47 +345,47 @@ public interface ICFBamProtInt64DefTableObj
 	 *	@return	List of ICFBamProtInt64DefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtInt64DefObj> readInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamProtInt64DefObj> readInt64DefByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamProtValueObj readCachedInt64DefByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtValueObj readCachedInt64DefByIdIdx( IMCFKeyHash256 Id );
 
-	ICFBamProtValueObj readCachedInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtValueObj readCachedInt64DefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	List<List<ICFBamProtValueObj>> readCachedInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<List<ICFBamProtValueObj>> readCachedInt64DefByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	List<List<ICFBamProtValueObj>> readCachedInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<List<ICFBamProtValueObj>> readCachedInt64DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<List<ICFBamProtValueObj>> readCachedInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<List<ICFBamProtValueObj>> readCachedInt64DefByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<List<ICFBamProtValueObj>> readCachedInt64DefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<List<ICFBamProtValueObj>> readCachedInt64DefByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<List<ICFBamProtValueObj>> readCachedInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<List<ICFBamProtValueObj>> readCachedInt64DefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<List<ICFBamProtValueObj>> readCachedInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<List<ICFBamProtValueObj>> readCachedInt64DefByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeInt64DefByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeInt64DefByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deepDisposeInt64DefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deepDisposeInt64DefByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	void deepDisposeInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeInt64DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeInt64DefByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeInt64DefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeInt64DefByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeInt64DefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeInt64DefByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -402,7 +402,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *
 	 *	@param	Id	The Int64Def key attribute of the instance generating the id.
 	 */
-	void deleteInt64DefByIdIdx( ICFLibKeyHash256 Id );
+	void deleteInt64DefByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -411,7 +411,7 @@ public interface ICFBamProtInt64DefTableObj
 	 *
 	 *	@param	Name	The Int64Def key attribute of the instance generating the id.
 	 */
-	void deleteInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deleteInt64DefByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -419,28 +419,28 @@ public interface ICFBamProtInt64DefTableObj
 	 *
 	 *	@param	ScopeId	The Int64Def key attribute of the instance generating the id.
 	 */
-	void deleteInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deleteInt64DefByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The Int64Def key attribute of the instance generating the id.
 	 */
-	void deleteInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteInt64DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The Int64Def key attribute of the instance generating the id.
 	 */
-	void deleteInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteInt64DefByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The Int64Def key attribute of the instance generating the id.
 	 */
-	void deleteInt64DefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteInt64DefByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -449,8 +449,8 @@ public interface ICFBamProtInt64DefTableObj
 	 *
 	 *	@param	PrevId	The Int64Def key attribute of the instance generating the id.
 	 */
-	void deleteInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteInt64DefByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -459,8 +459,8 @@ public interface ICFBamProtInt64DefTableObj
 	 *
 	 *	@param	NextId	The Int64Def key attribute of the instance generating the id.
 	 */
-	void deleteInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteInt64DefByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the ICFBamProtInt64DefObj instance up in the chain.  The instance is always refreshed.

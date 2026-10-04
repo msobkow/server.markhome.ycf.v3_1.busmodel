@@ -96,11 +96,11 @@ public interface ICFBamProtPopSubDep3EditObj
 	void setRequiredContainerPopSubDep2( ICFBamProtPopSubDep2Obj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute PopSubDep2Id.
+	 *	Get the required IMCFKeyHash256 attribute PopSubDep2Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute PopSubDep2Id.
+	 *	@return	The required IMCFKeyHash256 attribute PopSubDep2Id.
 	 */
-	ICFLibKeyHash256 getRequiredPopSubDep2Id();
+	IMCFKeyHash256 getRequiredPopSubDep2Id();
 
 	/**
 	 *	Get the required String attribute Name.

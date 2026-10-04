@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -84,23 +84,23 @@ public class CFBamJpaTableColH extends CFBamJpaValueH
     implements ICFBamTableColH
 {
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="TableId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 requiredTableId;
 	@Column( name="DbName", nullable=true, length=32 )
 	protected String optionalDbName;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="DataId", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="DataId", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalDataId;
+	protected IMCFKeyHash256 optionalDataId;
 	@Column( name="xml_elt_name", nullable=true, length=192 )
 	protected String optionalXmlElementName;
 
     public CFBamJpaTableColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTableCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubTableCol.TABLEID_INIT_VALUE.toString() );
 		optionalDbName = null;
-		optionalDataId = CFLibDbKeyHash256.nullGet();
+		optionalDataId = MCFDbKeyHash256.nullGet();
 		optionalXmlElementName = null;
     }
 
@@ -110,13 +110,13 @@ public class CFBamJpaTableColH extends CFBamJpaValueH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -131,7 +131,7 @@ public class CFBamJpaTableColH extends CFBamJpaValueH
 
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDbName",
 				1,
 				"value.length()",
@@ -142,11 +142,11 @@ public class CFBamJpaTableColH extends CFBamJpaValueH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDataId() {
+	public IMCFKeyHash256 getOptionalDataId() {
 		return(optionalDataId);
 	}
 
-	public void setOptionalDataId( ICFLibKeyHash256 value ) {
+	public void setOptionalDataId( IMCFKeyHash256 value ) {
 		optionalDataId = value;
 	}
 
@@ -157,7 +157,7 @@ public class CFBamJpaTableColH extends CFBamJpaValueH
 
 	public void setOptionalXmlElementName( String value ) {
 		if( value != null && value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalXmlElementName",
 				1,
 				"value.length()",
@@ -568,7 +568,7 @@ public class CFBamJpaTableColH extends CFBamJpaValueH
 			setTableCol( (ICFBamTableCol)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -591,7 +591,7 @@ public class CFBamJpaTableColH extends CFBamJpaValueH
 			setTableCol( (ICFBamTableColH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

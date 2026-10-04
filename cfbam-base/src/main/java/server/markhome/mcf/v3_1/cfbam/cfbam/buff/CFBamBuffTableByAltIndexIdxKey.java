@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,17 +74,17 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableByAltIndexIdxKey
 	implements ICFBamTableByAltIndexIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 optionalAltIndexId;
+	protected IMCFKeyHash256 optionalAltIndexId;
 	public CFBamBuffTableByAltIndexIdxKey() {
-		optionalAltIndexId = CFLibDbKeyHash256.nullGet();
+		optionalAltIndexId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalAltIndexId() {
+	public IMCFKeyHash256 getOptionalAltIndexId() {
 		return(optionalAltIndexId);
 	}
 
-	public void setOptionalAltIndexId( ICFLibKeyHash256 value ) {
+	public void setOptionalAltIndexId( IMCFKeyHash256 value ) {
 		optionalAltIndexId = value;
 	}
 
@@ -192,7 +192,7 @@ public class CFBamBuffTableByAltIndexIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

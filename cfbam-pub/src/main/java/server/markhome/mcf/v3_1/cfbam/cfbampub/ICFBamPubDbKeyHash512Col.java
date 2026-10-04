@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -65,17 +65,17 @@ public interface ICFBamPubDbKeyHash512Col
 	extends ICFBamPubDbKeyHash512Def
 {
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
+	public static final MCFDbKeyHash256 TABLEID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa851;
 	public final static String S_CLASS_CODE = "a851";
 
 	public ICFBamPubTable getRequiredContainerTable();
 
 	public void setRequiredContainerTable(ICFBamPubTable argObj);
-	public void setRequiredContainerTable(ICFLibKeyHash256 argTableId);
+	public void setRequiredContainerTable(IMCFKeyHash256 argTableId);
 
-	public CFLibDbKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( MCFDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

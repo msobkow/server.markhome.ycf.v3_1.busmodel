@@ -119,7 +119,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	The TextCol-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubTextColObj readTextCol( ICFLibKeyHash256 pkey );
+	ICFBamPubTextColObj readTextCol( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a TextCol-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	The TextCol-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubTextColObj readTextCol( ICFLibKeyHash256 pkey,
+	ICFBamPubTextColObj readTextCol( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubTextColObj readCachedTextCol( ICFLibKeyHash256 pkey );
+	ICFBamPubTextColObj readCachedTextCol( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeTextCol( ICFBamPubTextColObj obj );
 
-	void deepDisposeTextCol( ICFLibKeyHash256 pkey );
+	void deepDisposeTextCol( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubTextColObj lockTextCol( ICFLibKeyHash256 pkey );
+	ICFBamPubTextColObj lockTextCol( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the TextCol-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	CFBamPubValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTextColObj readTextColByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubTextColObj readTextColByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubValueObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTextColObj readTextColByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubTextColObj readTextColByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	CFBamPubValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTextColObj readTextColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTextColObj readTextColByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTextColObj readTextColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTextColObj readTextColByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -217,7 +217,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubTextColObj> readTextColByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamPubTextColObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -227,7 +227,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamPubTextColObj> readTextColByScopeIdx( MCFDbKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -238,7 +238,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubTextColObj> readTextColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubTextColObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubTextColObj> readTextColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -259,7 +259,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTextColObj> readTextColByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubTextColObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -269,7 +269,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubTextColObj> readTextColByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -280,7 +280,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTextColObj> readTextColByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubTextColObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -290,7 +290,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamPubTextColObj> readTextColByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -303,8 +303,8 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTextColObj> readTextColByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubTextColObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -316,8 +316,8 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubTextColObj> readTextColByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -330,8 +330,8 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTextColObj> readTextColByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubTextColObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -343,8 +343,8 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamPubTextColObj> readTextColByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -355,7 +355,7 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate TableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamPubTextColObj> readTextColByTableIdx( MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Get the map of CFBamPubTextColObj instances sorted by their primary keys for the duplicate TableIdx key.
@@ -365,50 +365,50 @@ public interface ICFBamPubTextColTableObj
 	 *	@return	List of CFBamPubTextColObj cached instances sorted by their primary keys for the duplicate TableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTextColObj> readTextColByTableIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubTextColObj> readTextColByTableIdx( MCFDbKeyHash256 TableId,
 		boolean forceRead );
 
-	ICFBamPubTextColObj readCachedTextColByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubTextColObj readCachedTextColByIdIdx( MCFDbKeyHash256 Id );
 
-	ICFBamPubTextColObj readCachedTextColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTextColObj readCachedTextColByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamPubTextColObj> readCachedTextColByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubTextColObj> readCachedTextColByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	List<ICFBamPubTextColObj> readCachedTextColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubTextColObj> readCachedTextColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubTextColObj> readCachedTextColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTextColObj> readCachedTextColByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubTextColObj> readCachedTextColByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTextColObj> readCachedTextColByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubTextColObj> readCachedTextColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTextColObj> readCachedTextColByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubTextColObj> readCachedTextColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTextColObj> readCachedTextColByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubTextColObj> readCachedTextColByTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamPubTextColObj> readCachedTextColByTableIdx( MCFDbKeyHash256 TableId );
 
-	void deepDisposeTextColByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeTextColByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeTextColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeTextColByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeTextColByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeTextColByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	void deepDisposeTextColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeTextColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeTextColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeTextColByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeTextColByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeTextColByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeTextColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeTextColByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeTextColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeTextColByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeTextColByTableIdx( CFLibDbKeyHash256 TableId );
+	void deepDisposeTextColByTableIdx( MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -425,7 +425,7 @@ public interface ICFBamPubTextColTableObj
 	 *
 	 *	@param	Id	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteTextColByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -434,7 +434,7 @@ public interface ICFBamPubTextColTableObj
 	 *
 	 *	@param	Name	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteTextColByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -442,28 +442,28 @@ public interface ICFBamPubTextColTableObj
 	 *
 	 *	@param	ScopeId	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteTextColByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteTextColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteTextColByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteTextColByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -472,8 +472,8 @@ public interface ICFBamPubTextColTableObj
 	 *
 	 *	@param	PrevId	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteTextColByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -482,15 +482,15 @@ public interface ICFBamPubTextColTableObj
 	 *
 	 *	@param	NextId	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteTextColByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TableId	The TextCol key attribute of the instance generating the id.
 	 */
-	void deleteTextColByTableIdx( CFLibDbKeyHash256 TableId );
+	void deleteTextColByTableIdx( MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Move the CFBamPubTextColObj instance up in the chain.  The instance is always refreshed.

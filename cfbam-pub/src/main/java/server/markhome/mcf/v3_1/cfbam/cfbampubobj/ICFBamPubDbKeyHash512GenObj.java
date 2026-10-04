@@ -89,11 +89,11 @@ public interface ICFBamPubDbKeyHash512GenObj
 	ICFBamPubDbKeyHash512Gen getDbKeyHash512GenRec();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
 	 *	Get the required short attribute Slice.

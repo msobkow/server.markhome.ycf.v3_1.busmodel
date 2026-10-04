@@ -123,7 +123,7 @@ public class CFBamRamPopDepTable
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		// Validate foreign keys
@@ -135,7 +135,7 @@ public class CFBamRamPopDepTable
 				if( null == schema.getTableScope().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Superclass",
 						"Superclass",
@@ -155,7 +155,7 @@ public class CFBamRamPopDepTable
 				if( null == schema.getTableRelation().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredRelationId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Lookup",
 						"Lookup",
@@ -223,7 +223,7 @@ public class CFBamRamPopDepTable
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -275,7 +275,7 @@ public class CFBamRamPopDepTable
 
 	@Override
 	public ICFBamPopDep[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByTenantIdx";
 		ICFBamScope buffList[] = schema.getTableScope().readDerivedByTenantIdx( Authorization,
@@ -298,7 +298,7 @@ public class CFBamRamPopDepTable
 
 	@Override
 	public ICFBamPopDep[] readDerivedByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId )
+		IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readDerivedByRelationIdx";
 		CFBamBuffPopDepByRelationIdxKey key = (CFBamBuffPopDepByRelationIdxKey)schema.getCFBamBuffFactory().getFactoryPopDep().newByRelationIdxKey();
@@ -326,7 +326,7 @@ public class CFBamRamPopDepTable
 
 	@Override
 	public ICFBamPopDep[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readDerivedByDefSchemaIdx";
 		CFBamBuffPopDepByDefSchemaIdxKey key = (CFBamBuffPopDepByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryPopDep().newByDefSchemaIdxKey();
@@ -354,7 +354,7 @@ public class CFBamRamPopDepTable
 
 	@Override
 	public ICFBamPopDep readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByIdIdx() ";
 		ICFBamPopDep buff;
@@ -409,7 +409,7 @@ public class CFBamRamPopDepTable
 
 	@Override
 	public ICFBamPopDep readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByIdIdx() ";
 		ICFBamPopDep buff = readDerivedByIdIdx( Authorization,
@@ -424,7 +424,7 @@ public class CFBamRamPopDepTable
 
 	@Override
 	public ICFBamPopDep[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByTenantIdx() ";
 		ICFBamPopDep buff;
@@ -442,7 +442,7 @@ public class CFBamRamPopDepTable
 
 	@Override
 	public ICFBamPopDep[] readRecByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId )
+		IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readRecByRelationIdx() ";
 		ICFBamPopDep buff;
@@ -460,7 +460,7 @@ public class CFBamRamPopDepTable
 
 	@Override
 	public ICFBamPopDep[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readRecByDefSchemaIdx() ";
 		ICFBamPopDep buff;
@@ -483,7 +483,7 @@ public class CFBamRamPopDepTable
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffPopDep existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updatePopDep",
 				"Existing record not found",
 				"Existing record not found",
@@ -514,7 +514,7 @@ public class CFBamRamPopDepTable
 				if( null == schema.getTableScope().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updatePopDep",
 						"Superclass",
 						"Superclass",
@@ -534,7 +534,7 @@ public class CFBamRamPopDepTable
 				if( null == schema.getTableRelation().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredRelationId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updatePopDep",
 						"Lookup",
 						"Lookup",
@@ -597,7 +597,7 @@ public class CFBamRamPopDepTable
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deletePopDep",
 				pkey );
 		}
@@ -612,7 +612,7 @@ public class CFBamRamPopDepTable
 		if( schema.getTablePopSubDep1().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deletePopDep",
 				"Superclass",
 				"Superclass",
@@ -626,7 +626,7 @@ public class CFBamRamPopDepTable
 		if( schema.getTablePopSubDep2().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deletePopDep",
 				"Superclass",
 				"Superclass",
@@ -640,7 +640,7 @@ public class CFBamRamPopDepTable
 		if( schema.getTablePopSubDep3().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deletePopDep",
 				"Superclass",
 				"Superclass",
@@ -654,7 +654,7 @@ public class CFBamRamPopDepTable
 		if( schema.getTablePopTopDep().readDerivedByIdIdx( Authorization,
 					existing.getRequiredId() ) != null )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deletePopDep",
 				"Superclass",
 				"Superclass",
@@ -681,7 +681,7 @@ public class CFBamRamPopDepTable
 	}
 	@Override
 	public void deletePopDepByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId )
+		IMCFKeyHash256 argRelationId )
 	{
 		CFBamBuffPopDepByRelationIdxKey key = (CFBamBuffPopDepByRelationIdxKey)schema.getCFBamBuffFactory().getFactoryPopDep().newByRelationIdxKey();
 		key.setRequiredRelationId( argRelationId );
@@ -729,14 +729,14 @@ public class CFBamRamPopDepTable
 				schema.getTablePopTopDep().deletePopTopDep( Authorization, (ICFBamPopTopDep)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}
 
 	@Override
 	public void deletePopDepByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		CFBamBuffPopDepByDefSchemaIdxKey key = (CFBamBuffPopDepByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( argDefSchemaId );
@@ -786,7 +786,7 @@ public class CFBamRamPopDepTable
 				schema.getTablePopTopDep().deletePopTopDep( Authorization, (ICFBamPopTopDep)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}
@@ -832,14 +832,14 @@ public class CFBamRamPopDepTable
 				schema.getTablePopTopDep().deletePopTopDep( Authorization, (ICFBamPopTopDep)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}
 
 	@Override
 	public void deletePopDepByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		CFBamBuffScopeByTenantIdxKey key = (CFBamBuffScopeByTenantIdxKey)schema.getCFBamBuffFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( argTenantId );
@@ -887,7 +887,7 @@ public class CFBamRamPopDepTable
 				schema.getTablePopTopDep().deletePopTopDep( Authorization, (ICFBamPopTopDep)cur );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-delete-by-suffix-class-walker-", (Integer)subClassCode, "Classcode not recognized: " + Integer.toString(subClassCode));
 			}
 		}
 	}

@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -85,7 +85,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	 *		@return The retrieved entity, usually from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaScope r where r.requiredId = :id")
-	CFBamJpaIndex get(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaIndex get(@Param("id") IMCFKeyHash256 requiredId);
 
 	// CFBamJpaScope specified index readers
 
@@ -97,7 +97,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	 *		@return List&lt;CFBamJpaIndex&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	List<CFBamJpaIndex> findByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	List<CFBamJpaIndex> findByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey entity list reader convenience method for object-based access.
@@ -121,7 +121,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId and r.requiredName = :name")
-	CFBamJpaIndex findByUNameIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	CFBamJpaIndex findByUNameIdx(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("name") String requiredName);
 
 	/**
@@ -143,7 +143,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	 *		@return List&lt;CFBamJpaIndex&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId")
-	List<CFBamJpaIndex> findByIdxTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId);
+	List<CFBamJpaIndex> findByIdxTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId);
 
 	/**
 	 *	CFBamIndexByIdxTableIdxKey entity list reader convenience method for object-based access.
@@ -186,7 +186,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	 *		@return List&lt;CFBamJpaIndex&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId and r.requiredCodeVis = :codeVis")
-	List<CFBamJpaIndex> findByIdxTblCdVisX(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	List<CFBamJpaIndex> findByIdxTblCdVisX(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("codeVis") ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis);
 
 	/**
@@ -208,7 +208,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	 *		@return List&lt;CFBamJpaIndex&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaIndex r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaIndex> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaIndex> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamIndexByDefSchemaIdxKey entity list reader convenience method for object-based access.
@@ -233,7 +233,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaScope r where r.requiredId = :id")
-	CFBamJpaIndex lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaIndex lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based lock database instance for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity locks, which may or may not imply an actual database lock during the transaction.
@@ -245,7 +245,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	List<CFBamJpaIndex> lockByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	List<CFBamJpaIndex> lockByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey based lock method for object-based access.
@@ -271,7 +271,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId and r.requiredName = :name")
-	CFBamJpaIndex lockByUNameIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	CFBamJpaIndex lockByUNameIdx(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("name") String requiredName);
 
 	/**
@@ -295,7 +295,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId")
-	List<CFBamJpaIndex> lockByIdxTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId);
+	List<CFBamJpaIndex> lockByIdxTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId);
 
 	/**
 	 *	CFBamIndexByIdxTableIdxKey based lock method for object-based access.
@@ -342,7 +342,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId and r.requiredCodeVis = :codeVis")
-	List<CFBamJpaIndex> lockByIdxTblCdVisX(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	List<CFBamJpaIndex> lockByIdxTblCdVisX(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("codeVis") ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis);
 
 	/**
@@ -366,7 +366,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaIndex r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaIndex> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaIndex> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamIndexByDefSchemaIdxKey based lock method for object-based access.
@@ -389,7 +389,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaScope r where r.requiredId = :id")
-	void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based delete entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity lock, which may or may not imply an actual database lock during the transaction.
@@ -399,7 +399,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaScope r where r.requiredTenantId = :tenantId")
-	void deleteByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId);
+	void deleteByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId);
 
 	/**
 	 *	CFBamScopeByTenantIdxKey based lock method for object-based access.
@@ -421,7 +421,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId and r.requiredName = :name")
-	void deleteByUNameIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	void deleteByUNameIdx(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("name") String requiredName);
 
 	/**
@@ -441,7 +441,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId")
-	void deleteByIdxTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId);
+	void deleteByIdxTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId);
 
 	/**
 	 *	CFBamIndexByIdxTableIdxKey based lock method for object-based access.
@@ -480,7 +480,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndex r where r.requiredContainerTable.requiredId = :tableId and r.requiredCodeVis = :codeVis")
-	void deleteByIdxTblCdVisX(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	void deleteByIdxTblCdVisX(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("codeVis") ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis);
 
 	/**
@@ -500,7 +500,7 @@ public interface CFBamJpaIndexRepository extends JpaRepository<CFBamJpaIndex, $i
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaIndex r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamIndexByDefSchemaIdxKey based lock method for object-based access.

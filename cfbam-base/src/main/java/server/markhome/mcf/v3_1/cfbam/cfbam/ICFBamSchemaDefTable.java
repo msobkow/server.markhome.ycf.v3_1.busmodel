@@ -108,7 +108,7 @@ public interface ICFBamSchemaDefTable
 	 *	@param	CTenantId	The SchemaDef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaDefByCTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argCTenantId );
+		IMCFKeyHash256 argCTenantId );
 
 	/**
 	 *	Delete the SchemaDef instances identified by the key CTenantIdx.
@@ -127,7 +127,7 @@ public interface ICFBamSchemaDefTable
 	 *	@param	MinorVersionId	The SchemaDef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaDefByMinorVersionIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argMinorVersionId );
+		IMCFKeyHash256 argMinorVersionId );
 
 	/**
 	 *	Delete the SchemaDef instances identified by the key MinorVersionIdx.
@@ -148,7 +148,7 @@ public interface ICFBamSchemaDefTable
 	 *	@param	Name	The SchemaDef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaDefByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argMinorVersionId,
+		IMCFKeyHash256 argMinorVersionId,
 		String argName );
 
 	/**
@@ -170,7 +170,7 @@ public interface ICFBamSchemaDefTable
 	 *	@param	AuthorEMail	The SchemaDef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaDefByAuthEMailIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argCTenantId,
+		IMCFKeyHash256 argCTenantId,
 		String argAuthorEMail );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamSchemaDefTable
 	 *	@param	ProjectURL	The SchemaDef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaDefByProjectURLIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argCTenantId,
+		IMCFKeyHash256 argCTenantId,
 		String argProjectURL );
 
 	/**
@@ -214,7 +214,7 @@ public interface ICFBamSchemaDefTable
 	 *	@param	PublishURI	The SchemaDef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaDefByPubURIIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argCTenantId,
+		IMCFKeyHash256 argCTenantId,
 		String argPublishURI );
 
 	/**
@@ -243,7 +243,7 @@ public interface ICFBamSchemaDefTable
 	 *	@param	TenantId	The SchemaDef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaDefByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the SchemaDef instances identified by the key TenantIdx.
@@ -302,7 +302,7 @@ public interface ICFBamSchemaDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamSchemaDef readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived SchemaDef record instances identified by the duplicate key TenantIdx.
@@ -314,7 +314,7 @@ public interface ICFBamSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaDef[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived SchemaDef record instances identified by the duplicate key CTenantIdx.
@@ -326,7 +326,7 @@ public interface ICFBamSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaDef[] readDerivedByCTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 CTenantId );
+		IMCFKeyHash256 CTenantId );
 
 	/**
 	 *	Read an array of the derived SchemaDef record instances identified by the duplicate key MinorVersionIdx.
@@ -338,7 +338,7 @@ public interface ICFBamSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaDef[] readDerivedByMinorVersionIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 MinorVersionId );
+		IMCFKeyHash256 MinorVersionId );
 
 	/**
 	 *	Read the derived SchemaDef record instance identified by the unique key UNameIdx.
@@ -353,7 +353,7 @@ public interface ICFBamSchemaDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamSchemaDef readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 MinorVersionId,
+		IMCFKeyHash256 MinorVersionId,
 		String Name );
 
 	/**
@@ -368,7 +368,7 @@ public interface ICFBamSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaDef[] readDerivedByAuthEMailIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 CTenantId,
+		IMCFKeyHash256 CTenantId,
 		String AuthorEMail );
 
 	/**
@@ -383,7 +383,7 @@ public interface ICFBamSchemaDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaDef[] readDerivedByProjectURLIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 CTenantId,
+		IMCFKeyHash256 CTenantId,
 		String ProjectURL );
 
 	/**
@@ -399,7 +399,7 @@ public interface ICFBamSchemaDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamSchemaDef readDerivedByPubURIIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 CTenantId,
+		IMCFKeyHash256 CTenantId,
 		String PublishURI );
 
 	/**
@@ -412,7 +412,7 @@ public interface ICFBamSchemaDefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -427,7 +427,7 @@ public interface ICFBamSchemaDefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -451,10 +451,10 @@ public interface ICFBamSchemaDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific SchemaDef record instances identified by the duplicate key TenantIdx.
@@ -465,10 +465,10 @@ public interface ICFBamSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific SchemaDef record instances identified by the duplicate key CTenantIdx.
@@ -479,10 +479,10 @@ public interface ICFBamSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef[] readRecByCTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 CTenantId );
+		IMCFKeyHash256 CTenantId );
 
 	/**
 	 *	Read an array of the specific SchemaDef record instances identified by the duplicate key MinorVersionIdx.
@@ -493,10 +493,10 @@ public interface ICFBamSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef[] readRecByMinorVersionIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 MinorVersionId );
+		IMCFKeyHash256 MinorVersionId );
 
 	/**
 	 *	Read the specific SchemaDef record instance identified by the unique key UNameIdx.
@@ -510,10 +510,10 @@ public interface ICFBamSchemaDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 MinorVersionId,
+		IMCFKeyHash256 MinorVersionId,
 		String Name );
 
 	/**
@@ -527,10 +527,10 @@ public interface ICFBamSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef[] readRecByAuthEMailIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 CTenantId,
+		IMCFKeyHash256 CTenantId,
 		String AuthorEMail );
 
 	/**
@@ -544,10 +544,10 @@ public interface ICFBamSchemaDefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef[] readRecByProjectURLIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 CTenantId,
+		IMCFKeyHash256 CTenantId,
 		String ProjectURL );
 
 	/**
@@ -562,9 +562,9 @@ public interface ICFBamSchemaDefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaDef readRecByPubURIIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 CTenantId,
+		IMCFKeyHash256 CTenantId,
 		String PublishURI );
 }

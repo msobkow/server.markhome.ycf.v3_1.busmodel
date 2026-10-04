@@ -119,7 +119,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	The Relation-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubRelationObj readRelation( ICFLibKeyHash256 pkey );
+	ICFBamPubRelationObj readRelation( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a Relation-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	The Relation-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubRelationObj readRelation( ICFLibKeyHash256 pkey,
+	ICFBamPubRelationObj readRelation( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubRelationObj readCachedRelation( ICFLibKeyHash256 pkey );
+	ICFBamPubRelationObj readCachedRelation( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeRelation( ICFBamPubRelationObj obj );
 
-	void deepDisposeRelation( ICFLibKeyHash256 pkey );
+	void deepDisposeRelation( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubRelationObj lockRelation( ICFLibKeyHash256 pkey );
+	ICFBamPubRelationObj lockRelation( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Relation-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	CFBamPubScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubRelationObj readRelationByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubRelationObj readRelationByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubScopeObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	CFBamPubScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubRelationObj readRelationByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubRelationObj readRelationByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -190,7 +190,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamPubRelationObj> readRelationByTenantIdx( MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamPubRelationObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -200,7 +200,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFBamPubRelationObj> readRelationByTenantIdx( MCFDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -213,7 +213,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	CFBamPubRelationObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubRelationObj readRelationByUNameIdx(CFLibDbKeyHash256 TableId,
+	ICFBamPubRelationObj readRelationByUNameIdx(MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -226,7 +226,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	CFBamPubRelationObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubRelationObj readRelationByUNameIdx(CFLibDbKeyHash256 TableId,
+	ICFBamPubRelationObj readRelationByUNameIdx(MCFDbKeyHash256 TableId,
 		String Name,
 		boolean forceRead );
 
@@ -238,7 +238,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate RelTableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByRelTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamPubRelationObj> readRelationByRelTableIdx( MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Get the map of CFBamPubRelationObj instances sorted by their primary keys for the duplicate RelTableIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate RelTableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByRelTableIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubRelationObj> readRelationByRelTableIdx( MCFDbKeyHash256 TableId,
 		boolean forceRead );
 
 	/**
@@ -282,7 +282,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate RelTableCodeVisX key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubRelationObj> readRelationByRelTableCodeVisX( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -295,7 +295,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate RelTableCodeVisX key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubRelationObj> readRelationByRelTableCodeVisX( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead );
 
@@ -307,7 +307,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubRelationObj> readRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubRelationObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -317,7 +317,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubRelationObj> readRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -328,7 +328,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate FromKeyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByFromKeyIdx( CFLibDbKeyHash256 FromIndexId );
+	List<ICFBamPubRelationObj> readRelationByFromKeyIdx( MCFDbKeyHash256 FromIndexId );
 
 	/**
 	 *	Get the map of CFBamPubRelationObj instances sorted by their primary keys for the duplicate FromKeyIdx key.
@@ -338,7 +338,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate FromKeyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByFromKeyIdx( CFLibDbKeyHash256 FromIndexId,
+	List<ICFBamPubRelationObj> readRelationByFromKeyIdx( MCFDbKeyHash256 FromIndexId,
 		boolean forceRead );
 
 	/**
@@ -349,7 +349,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate ToTblIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByToTblIdx( CFLibDbKeyHash256 ToTableId );
+	List<ICFBamPubRelationObj> readRelationByToTblIdx( MCFDbKeyHash256 ToTableId );
 
 	/**
 	 *	Get the map of CFBamPubRelationObj instances sorted by their primary keys for the duplicate ToTblIdx key.
@@ -359,7 +359,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate ToTblIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByToTblIdx( CFLibDbKeyHash256 ToTableId,
+	List<ICFBamPubRelationObj> readRelationByToTblIdx( MCFDbKeyHash256 ToTableId,
 		boolean forceRead );
 
 	/**
@@ -370,7 +370,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate ToKeyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByToKeyIdx( CFLibDbKeyHash256 ToIndexId );
+	List<ICFBamPubRelationObj> readRelationByToKeyIdx( MCFDbKeyHash256 ToIndexId );
 
 	/**
 	 *	Get the map of CFBamPubRelationObj instances sorted by their primary keys for the duplicate ToKeyIdx key.
@@ -380,7 +380,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate ToKeyIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByToKeyIdx( CFLibDbKeyHash256 ToIndexId,
+	List<ICFBamPubRelationObj> readRelationByToKeyIdx( MCFDbKeyHash256 ToIndexId,
 		boolean forceRead );
 
 	/**
@@ -391,7 +391,7 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate NarrowedIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId );
+	List<ICFBamPubRelationObj> readRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId );
 
 	/**
 	 *	Get the map of CFBamPubRelationObj instances sorted by their primary keys for the duplicate NarrowedIdx key.
@@ -401,56 +401,56 @@ public interface ICFBamPubRelationTableObj
 	 *	@return	List of CFBamPubRelationObj cached instances sorted by their primary keys for the duplicate NarrowedIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubRelationObj> readRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId,
+	List<ICFBamPubRelationObj> readRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId,
 		boolean forceRead );
 
-	ICFBamPubRelationObj readCachedRelationByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubRelationObj readCachedRelationByIdIdx( MCFDbKeyHash256 Id );
 
-	List<ICFBamPubRelationObj> readCachedRelationByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamPubRelationObj> readCachedRelationByTenantIdx( MCFDbKeyHash256 TenantId );
 
-	ICFBamPubRelationObj readCachedRelationByUNameIdx( CFLibDbKeyHash256 TableId,
+	ICFBamPubRelationObj readCachedRelationByUNameIdx( MCFDbKeyHash256 TableId,
 		String Name );
 
-	List<ICFBamPubRelationObj> readCachedRelationByRelTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamPubRelationObj> readCachedRelationByRelTableIdx( MCFDbKeyHash256 TableId );
 
 	List<ICFBamPubRelationObj> readCachedRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	List<ICFBamPubRelationObj> readCachedRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubRelationObj> readCachedRelationByRelTableCodeVisX( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	List<ICFBamPubRelationObj> readCachedRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubRelationObj> readCachedRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubRelationObj> readCachedRelationByFromKeyIdx( CFLibDbKeyHash256 FromIndexId );
+	List<ICFBamPubRelationObj> readCachedRelationByFromKeyIdx( MCFDbKeyHash256 FromIndexId );
 
-	List<ICFBamPubRelationObj> readCachedRelationByToTblIdx( CFLibDbKeyHash256 ToTableId );
+	List<ICFBamPubRelationObj> readCachedRelationByToTblIdx( MCFDbKeyHash256 ToTableId );
 
-	List<ICFBamPubRelationObj> readCachedRelationByToKeyIdx( CFLibDbKeyHash256 ToIndexId );
+	List<ICFBamPubRelationObj> readCachedRelationByToKeyIdx( MCFDbKeyHash256 ToIndexId );
 
-	List<ICFBamPubRelationObj> readCachedRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId );
+	List<ICFBamPubRelationObj> readCachedRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId );
 
-	void deepDisposeRelationByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeRelationByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeRelationByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeRelationByTenantIdx( MCFDbKeyHash256 TenantId );
 
-	void deepDisposeRelationByUNameIdx( CFLibDbKeyHash256 TableId,
+	void deepDisposeRelationByUNameIdx( MCFDbKeyHash256 TableId,
 		String Name );
 
-	void deepDisposeRelationByRelTableIdx( CFLibDbKeyHash256 TableId );
+	void deepDisposeRelationByRelTableIdx( MCFDbKeyHash256 TableId );
 
 	void deepDisposeRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	void deepDisposeRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
+	void deepDisposeRelationByRelTableCodeVisX( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	void deepDisposeRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeRelationByFromKeyIdx( CFLibDbKeyHash256 FromIndexId );
+	void deepDisposeRelationByFromKeyIdx( MCFDbKeyHash256 FromIndexId );
 
-	void deepDisposeRelationByToTblIdx( CFLibDbKeyHash256 ToTableId );
+	void deepDisposeRelationByToTblIdx( MCFDbKeyHash256 ToTableId );
 
-	void deepDisposeRelationByToKeyIdx( CFLibDbKeyHash256 ToIndexId );
+	void deepDisposeRelationByToKeyIdx( MCFDbKeyHash256 ToIndexId );
 
-	void deepDisposeRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId );
+	void deepDisposeRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId );
 
 	/**
 	 *	Internal use only.
@@ -467,14 +467,14 @@ public interface ICFBamPubRelationTableObj
 	 *
 	 *	@param	Id	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteRelationByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteRelationByTenantIdx( MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
@@ -483,7 +483,7 @@ public interface ICFBamPubRelationTableObj
 	 *
 	 *	@param	Name	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByUNameIdx(CFLibDbKeyHash256 TableId,
+	void deleteRelationByUNameIdx(MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -491,7 +491,7 @@ public interface ICFBamPubRelationTableObj
 	 *
 	 *	@param	TableId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByRelTableIdx( CFLibDbKeyHash256 TableId );
+	void deleteRelationByRelTableIdx( MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -507,7 +507,7 @@ public interface ICFBamPubRelationTableObj
 	 *
 	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
+	void deleteRelationByRelTableCodeVisX( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -515,33 +515,33 @@ public interface ICFBamPubRelationTableObj
 	 *
 	 *	@param	DefSchemaId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteRelationByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	FromIndexId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByFromKeyIdx( CFLibDbKeyHash256 FromIndexId );
+	void deleteRelationByFromKeyIdx( MCFDbKeyHash256 FromIndexId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ToTableId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByToTblIdx( CFLibDbKeyHash256 ToTableId );
+	void deleteRelationByToTblIdx( MCFDbKeyHash256 ToTableId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ToIndexId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByToKeyIdx( CFLibDbKeyHash256 ToIndexId );
+	void deleteRelationByToKeyIdx( MCFDbKeyHash256 ToIndexId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NarrowedId	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByNarrowedIdx( CFLibDbKeyHash256 NarrowedId );
+	void deleteRelationByNarrowedIdx( MCFDbKeyHash256 NarrowedId );
 }

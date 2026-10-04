@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,17 +66,17 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaEnumTagByNextIdxKey
 	implements ICFBamEnumTagByNextIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 optionalNextId;
+	protected IMCFKeyHash256 optionalNextId;
 	public CFBamJpaEnumTagByNextIdxKey() {
-		optionalNextId = CFLibDbKeyHash256.nullGet();
+		optionalNextId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNextId() {
+	public IMCFKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( ICFLibKeyHash256 value ) {
+	public void setOptionalNextId( IMCFKeyHash256 value ) {
 		optionalNextId = value;
 	}
 
@@ -223,7 +223,7 @@ public class CFBamJpaEnumTagByNextIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

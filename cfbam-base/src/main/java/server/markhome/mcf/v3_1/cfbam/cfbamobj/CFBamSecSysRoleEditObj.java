@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
@@ -145,7 +145,7 @@ public class CFBamSecSysRoleEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjScope() {
+	public IMCFAnyObj getObjScope() {
 		return( null );
 	}
 
@@ -157,8 +157,8 @@ public class CFBamSecSysRoleEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -188,21 +188,21 @@ public class CFBamSecSysRoleEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( Class qualifyingClass, String objName ) {
-		ICFLibAnyObj topContainer = getObjQualifier( qualifyingClass );
+	public IMCFAnyObj getNamedObject( Class qualifyingClass, String objName ) {
+		IMCFAnyObj topContainer = getObjQualifier( qualifyingClass );
 		if( topContainer == null ) {
 			return( null );
 		}
-		ICFLibAnyObj namedObject = topContainer.getNamedObject( objName );
+		IMCFAnyObj namedObject = topContainer.getNamedObject( objName );
 		return( namedObject );
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -215,7 +215,7 @@ public class CFBamSecSysRoleEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEnableName");
+					throw new MCFNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEnableName");
 				}
 				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesByIdIdx( getRequiredSecSysRoleId(),
@@ -240,7 +240,7 @@ public class CFBamSecSysRoleEditObj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -261,7 +261,7 @@ public class CFBamSecSysRoleEditObj
 	@Override
 	public String getObjFullName() {
 		String fullName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -295,7 +295,7 @@ public class CFBamSecSysRoleEditObj
 	public ICFSecSecSysRoleObj read() {
 		ICFSecSecSysRoleObj retval = getOrigAsSecSysRole().read();
 		if( retval != orig ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),	"read" );
+			throw new MCFStaleCacheDetectedException( getClass(),	"read" );
 		}
 		copyOrigToRec();
 		return( retval );
@@ -305,7 +305,7 @@ public class CFBamSecSysRoleEditObj
 	public ICFSecSecSysRoleObj read( boolean forceRead ) {
 		ICFSecSecSysRoleObj retval = getOrigAsSecSysRole().read( forceRead );
 		if( retval != orig ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),	"read" );
+			throw new MCFStaleCacheDetectedException( getClass(),	"read" );
 		}
 		copyOrigToRec();
 		return( retval );
@@ -330,7 +330,7 @@ public class CFBamSecSysRoleEditObj
 	@Override
 	public CFSecSecSysRoleEditObj deleteInstance() {
 		if( getIsNew() ) {
-			throw new CFLibCannotDeleteNewInstanceException( getClass(), "delete" );
+			throw new MCFCannotDeleteNewInstanceException( getClass(), "delete" );
 		}
 		getSchema().getSecSysRoleTableObj().deleteSecSysRole( getOrigAsSecSysRole() );
 		return( null );
@@ -353,7 +353,7 @@ public class CFBamSecSysRoleEditObj
 
 	@Override
 	public ICFSecSecSysRoleEditObj beginEdit() {
-		throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
+		throw new MCFEditAlreadyOpenException( getClass(), "beginEdit" );
 	}
 
 	@Override
@@ -424,12 +424,12 @@ public class CFBamSecSysRoleEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSecSysRoleId() {
+	public IMCFKeyHash256 getRequiredSecSysRoleId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecSysRoleId(ICFLibKeyHash256 value) {
+	public void setRequiredSecSysRoleId(IMCFKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsEnabledByRole = null;

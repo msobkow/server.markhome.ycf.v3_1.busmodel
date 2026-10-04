@@ -119,7 +119,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	The UInt32Type-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubUInt32TypeObj readUInt32Type( ICFLibKeyHash256 pkey );
+	ICFBamPubUInt32TypeObj readUInt32Type( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a UInt32Type-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	The UInt32Type-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubUInt32TypeObj readUInt32Type( ICFLibKeyHash256 pkey,
+	ICFBamPubUInt32TypeObj readUInt32Type( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubUInt32TypeObj readCachedUInt32Type( ICFLibKeyHash256 pkey );
+	ICFBamPubUInt32TypeObj readCachedUInt32Type( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeUInt32Type( ICFBamPubUInt32TypeObj obj );
 
-	void deepDisposeUInt32Type( ICFLibKeyHash256 pkey );
+	void deepDisposeUInt32Type( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubUInt32TypeObj lockUInt32Type( ICFLibKeyHash256 pkey );
+	ICFBamPubUInt32TypeObj lockUInt32Type( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the UInt32Type-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	CFBamPubValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubUInt32TypeObj readUInt32TypeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubUInt32TypeObj readUInt32TypeByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubValueObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubUInt32TypeObj readUInt32TypeByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubUInt32TypeObj readUInt32TypeByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	CFBamPubValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubUInt32TypeObj readUInt32TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubUInt32TypeObj readUInt32TypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubUInt32TypeObj readUInt32TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubUInt32TypeObj readUInt32TypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -217,7 +217,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamPubUInt32TypeObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -227,7 +227,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByScopeIdx( MCFDbKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -238,7 +238,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubUInt32TypeObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -259,7 +259,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubUInt32TypeObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -269,7 +269,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -280,7 +280,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubUInt32TypeObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -290,7 +290,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -303,8 +303,8 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubUInt32TypeObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -316,8 +316,8 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -330,8 +330,8 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubUInt32TypeObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -343,8 +343,8 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -355,7 +355,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId );
 
 	/**
 	 *	Get the map of CFBamPubUInt32TypeObj instances sorted by their primary keys for the duplicate SchemaIdx key.
@@ -365,50 +365,50 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *	@return	List of CFBamPubUInt32TypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubUInt32TypeObj> readUInt32TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId,
+	List<ICFBamPubUInt32TypeObj> readUInt32TypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId,
 		boolean forceRead );
 
-	ICFBamPubUInt32TypeObj readCachedUInt32TypeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubUInt32TypeObj readCachedUInt32TypeByIdIdx( MCFDbKeyHash256 Id );
 
-	ICFBamPubUInt32TypeObj readCachedUInt32TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubUInt32TypeObj readCachedUInt32TypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	List<ICFBamPubUInt32TypeObj> readCachedUInt32TypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId );
 
-	void deepDisposeUInt32TypeByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeUInt32TypeByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeUInt32TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeUInt32TypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeUInt32TypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeUInt32TypeByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	void deepDisposeUInt32TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeUInt32TypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeUInt32TypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeUInt32TypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeUInt32TypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeUInt32TypeByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeUInt32TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeUInt32TypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeUInt32TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeUInt32TypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeUInt32TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	void deepDisposeUInt32TypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId );
 
 	/**
 	 *	Internal use only.
@@ -425,7 +425,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *
 	 *	@param	Id	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteUInt32TypeByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -434,7 +434,7 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *
 	 *	@param	Name	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteUInt32TypeByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -442,28 +442,28 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *
 	 *	@param	ScopeId	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteUInt32TypeByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteUInt32TypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteUInt32TypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteUInt32TypeByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -472,8 +472,8 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *
 	 *	@param	PrevId	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteUInt32TypeByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -482,15 +482,15 @@ public interface ICFBamPubUInt32TypeTableObj
 	 *
 	 *	@param	NextId	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteUInt32TypeByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaDefId	The UInt32Type key attribute of the instance generating the id.
 	 */
-	void deleteUInt32TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	void deleteUInt32TypeBySchemaIdx( MCFDbKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the CFBamPubUInt32TypeObj instance up in the chain.  The instance is always refreshed.

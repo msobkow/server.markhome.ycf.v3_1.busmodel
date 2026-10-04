@@ -158,7 +158,7 @@ public class CFBamTZTimeColTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamTZTimeColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamTZTimeColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -630,7 +630,7 @@ public class CFBamTZTimeColTableObj
 			locked = (ICFBamTZTimeColObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockTZTimeCol", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockTZTimeCol", pkey );
 		}
 		return( locked );
 	}
@@ -665,7 +665,7 @@ public class CFBamTZTimeColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -673,7 +673,7 @@ public class CFBamTZTimeColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -725,7 +725,7 @@ public class CFBamTZTimeColTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -733,7 +733,7 @@ public class CFBamTZTimeColTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -770,21 +770,21 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public ICFBamTZTimeColObj readTZTimeColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamTZTimeColObj readTZTimeColByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readTZTimeColByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamTZTimeColObj readTZTimeColByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamTZTimeColObj readTZTimeColByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamTZTimeColObj obj = readTZTimeCol( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamTZTimeColObj readTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTZTimeColObj readTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readTZTimeColByUNameIdx( ScopeId,
@@ -793,7 +793,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public ICFBamTZTimeColObj readTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTZTimeColObj readTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -822,14 +822,14 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamTZTimeColObj> readTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readTZTimeColByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamTZTimeColObj> readTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZTimeColByScopeIdx";
@@ -867,7 +867,7 @@ public class CFBamTZTimeColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -875,7 +875,7 @@ public class CFBamTZTimeColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -915,14 +915,14 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamTZTimeColObj> readTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readTZTimeColByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamTZTimeColObj> readTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZTimeColByDefSchemaIdx";
@@ -960,7 +960,7 @@ public class CFBamTZTimeColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -968,7 +968,7 @@ public class CFBamTZTimeColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1008,14 +1008,14 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamTZTimeColObj> readTZTimeColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readTZTimeColByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamTZTimeColObj> readTZTimeColByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZTimeColByPrevIdx";
@@ -1053,7 +1053,7 @@ public class CFBamTZTimeColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1061,7 +1061,7 @@ public class CFBamTZTimeColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1101,14 +1101,14 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamTZTimeColObj> readTZTimeColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readTZTimeColByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamTZTimeColObj> readTZTimeColByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZTimeColByNextIdx";
@@ -1146,7 +1146,7 @@ public class CFBamTZTimeColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1154,7 +1154,7 @@ public class CFBamTZTimeColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1194,8 +1194,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamTZTimeColObj> readTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readTZTimeColByContPrevIdx( ScopeId,
 			PrevId,
@@ -1203,8 +1203,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamTZTimeColObj> readTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZTimeColByContPrevIdx";
@@ -1244,7 +1244,7 @@ public class CFBamTZTimeColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1252,7 +1252,7 @@ public class CFBamTZTimeColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1292,8 +1292,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamTZTimeColObj> readTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readTZTimeColByContNextIdx( ScopeId,
 			NextId,
@@ -1301,8 +1301,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamTZTimeColObj> readTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZTimeColByContNextIdx";
@@ -1342,7 +1342,7 @@ public class CFBamTZTimeColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1350,7 +1350,7 @@ public class CFBamTZTimeColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1390,14 +1390,14 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamTZTimeColObj> readTZTimeColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		return( readTZTimeColByTableIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readTZTimeColByTableIdx( ICFLibKeyHash256 TableId,
+	public List<ICFBamTZTimeColObj> readTZTimeColByTableIdx( IMCFKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTZTimeColByTableIdx";
@@ -1435,7 +1435,7 @@ public class CFBamTZTimeColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1443,7 +1443,7 @@ public class CFBamTZTimeColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1483,7 +1483,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public ICFBamTZTimeColObj readCachedTZTimeColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamTZTimeColObj readCachedTZTimeColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTZTimeColObj obj = null;
 		obj = readCachedTZTimeCol( Id );
@@ -1491,7 +1491,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public ICFBamTZTimeColObj readCachedTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamTZTimeColObj readCachedTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTZTimeColObj obj = null;
@@ -1529,7 +1529,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readCachedTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamTZTimeColObj> readCachedTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedTZTimeColByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1547,7 +1547,7 @@ public class CFBamTZTimeColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1555,7 +1555,7 @@ public class CFBamTZTimeColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1606,7 +1606,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readCachedTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamTZTimeColObj> readCachedTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedTZTimeColByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1624,7 +1624,7 @@ public class CFBamTZTimeColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1632,7 +1632,7 @@ public class CFBamTZTimeColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1683,7 +1683,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readCachedTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamTZTimeColObj> readCachedTZTimeColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTZTimeColByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1701,7 +1701,7 @@ public class CFBamTZTimeColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1709,7 +1709,7 @@ public class CFBamTZTimeColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1760,7 +1760,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readCachedTZTimeColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamTZTimeColObj> readCachedTZTimeColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTZTimeColByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1778,7 +1778,7 @@ public class CFBamTZTimeColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1786,7 +1786,7 @@ public class CFBamTZTimeColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1837,8 +1837,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readCachedTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamTZTimeColObj> readCachedTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTZTimeColByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1857,7 +1857,7 @@ public class CFBamTZTimeColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1865,7 +1865,7 @@ public class CFBamTZTimeColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1916,8 +1916,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readCachedTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamTZTimeColObj> readCachedTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTZTimeColByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1936,7 +1936,7 @@ public class CFBamTZTimeColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1944,7 +1944,7 @@ public class CFBamTZTimeColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1995,7 +1995,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public List<ICFBamTZTimeColObj> readCachedTZTimeColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamTZTimeColObj> readCachedTZTimeColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedTZTimeColByTableIdx";
 		ICFBamTZTimeColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTZTimeCol().newByTableIdxKey();
@@ -2013,7 +2013,7 @@ public class CFBamTZTimeColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2021,7 +2021,7 @@ public class CFBamTZTimeColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2072,7 +2072,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeTZTimeColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTZTimeColObj obj = readCachedTZTimeColByIdIdx( Id );
 		if( obj != null ) {
@@ -2081,7 +2081,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTZTimeColObj obj = readCachedTZTimeColByUNameIdx( ScopeId,
@@ -2092,7 +2092,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeTZTimeColByScopeIdx";
 		ICFBamTZTimeColObj obj;
@@ -2109,7 +2109,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeTZTimeColByDefSchemaIdx";
 		ICFBamTZTimeColObj obj;
@@ -2126,7 +2126,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeTZTimeColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTZTimeColByPrevIdx";
 		ICFBamTZTimeColObj obj;
@@ -2143,7 +2143,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeTZTimeColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTZTimeColByNextIdx";
 		ICFBamTZTimeColObj obj;
@@ -2160,8 +2160,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTZTimeColByContPrevIdx";
 		ICFBamTZTimeColObj obj;
@@ -2179,8 +2179,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTZTimeColByContNextIdx";
 		ICFBamTZTimeColObj obj;
@@ -2198,7 +2198,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deepDisposeTZTimeColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deepDisposeTZTimeColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeTZTimeColByTableIdx";
 		ICFBamTZTimeColObj obj;
@@ -2243,7 +2243,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteTZTimeColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamTZTimeColObj obj = readTZTimeCol(Id);
 		if( obj != null ) {
@@ -2273,7 +2273,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2301,7 +2301,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2335,7 +2335,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2369,7 +2369,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteTZTimeColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2403,7 +2403,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteTZTimeColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2437,8 +2437,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2476,8 +2476,8 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2515,7 +2515,7 @@ public class CFBamTZTimeColTableObj
 	}
 
 	@Override
-	public void deleteTZTimeColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deleteTZTimeColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		ICFBamTZTimeColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTZTimeCol().newByTableIdxKey();
 		key.setRequiredTableId( TableId );
@@ -2557,7 +2557,7 @@ public class CFBamTZTimeColTableObj
 	public ICFBamTZTimeColObj moveUpTZTimeCol( ICFBamTZTimeColObj Obj ) {
 		ICFBamTZTimeColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpTZTimeCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpTZTimeCol" );
 		}
 		ICFBamTZTimeCol rec = schema.getCFBamBackingStore().getTableTZTimeCol().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2585,7 +2585,7 @@ public class CFBamTZTimeColTableObj
 	public ICFBamTZTimeColObj moveDownTZTimeCol( ICFBamTZTimeColObj Obj ) {
 		ICFBamTZTimeColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownTZTimeCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownTZTimeCol" );
 		}
 		ICFBamTZTimeCol rec = schema.getCFBamBackingStore().getTableTZTimeCol().moveRecDown( null,
 			Obj.getRequiredId(),

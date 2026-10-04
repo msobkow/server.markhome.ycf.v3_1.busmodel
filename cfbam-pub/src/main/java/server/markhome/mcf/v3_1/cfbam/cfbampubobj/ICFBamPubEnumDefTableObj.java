@@ -119,7 +119,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	The EnumDef-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubEnumDefObj readEnumDef( ICFLibKeyHash256 pkey );
+	ICFBamPubEnumDefObj readEnumDef( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a EnumDef-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	The EnumDef-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubEnumDefObj readEnumDef( ICFLibKeyHash256 pkey,
+	ICFBamPubEnumDefObj readEnumDef( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubEnumDefObj readCachedEnumDef( ICFLibKeyHash256 pkey );
+	ICFBamPubEnumDefObj readCachedEnumDef( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeEnumDef( ICFBamPubEnumDefObj obj );
 
-	void deepDisposeEnumDef( ICFLibKeyHash256 pkey );
+	void deepDisposeEnumDef( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubEnumDefObj lockEnumDef( ICFLibKeyHash256 pkey );
+	ICFBamPubEnumDefObj lockEnumDef( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the EnumDef-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	CFBamPubValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubEnumDefObj readEnumDefByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubEnumDefObj readEnumDefByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubValueObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubEnumDefObj readEnumDefByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubEnumDefObj readEnumDefByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	CFBamPubValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubEnumDefObj readEnumDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubEnumDefObj readEnumDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubEnumDefObj readEnumDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubEnumDefObj readEnumDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -217,7 +217,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubEnumDefObj> readEnumDefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamPubEnumDefObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -227,7 +227,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamPubEnumDefObj> readEnumDefByScopeIdx( MCFDbKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -238,7 +238,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubEnumDefObj> readEnumDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubEnumDefObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubEnumDefObj> readEnumDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -259,7 +259,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubEnumDefObj> readEnumDefByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubEnumDefObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -269,7 +269,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubEnumDefObj> readEnumDefByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -280,7 +280,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubEnumDefObj> readEnumDefByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubEnumDefObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -290,7 +290,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamPubEnumDefObj> readEnumDefByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -303,8 +303,8 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubEnumDefObj> readEnumDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubEnumDefObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -316,8 +316,8 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubEnumDefObj> readEnumDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -330,8 +330,8 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubEnumDefObj> readEnumDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubEnumDefObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -343,47 +343,47 @@ public interface ICFBamPubEnumDefTableObj
 	 *	@return	List of CFBamPubEnumDefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubEnumDefObj> readEnumDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamPubEnumDefObj> readEnumDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamPubEnumDefObj readCachedEnumDefByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubEnumDefObj readCachedEnumDefByIdIdx( MCFDbKeyHash256 Id );
 
-	ICFBamPubEnumDefObj readCachedEnumDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubEnumDefObj readCachedEnumDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamPubEnumDefObj> readCachedEnumDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubEnumDefObj> readCachedEnumDefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	List<ICFBamPubEnumDefObj> readCachedEnumDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubEnumDefObj> readCachedEnumDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubEnumDefObj> readCachedEnumDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubEnumDefObj> readCachedEnumDefByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubEnumDefObj> readCachedEnumDefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubEnumDefObj> readCachedEnumDefByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubEnumDefObj> readCachedEnumDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubEnumDefObj> readCachedEnumDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubEnumDefObj> readCachedEnumDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubEnumDefObj> readCachedEnumDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeEnumDefByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeEnumDefByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeEnumDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeEnumDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeEnumDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeEnumDefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	void deepDisposeEnumDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeEnumDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeEnumDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeEnumDefByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeEnumDefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeEnumDefByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeEnumDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeEnumDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeEnumDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeEnumDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -400,7 +400,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *
 	 *	@param	Id	The EnumDef key attribute of the instance generating the id.
 	 */
-	void deleteEnumDefByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteEnumDefByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -409,7 +409,7 @@ public interface ICFBamPubEnumDefTableObj
 	 *
 	 *	@param	Name	The EnumDef key attribute of the instance generating the id.
 	 */
-	void deleteEnumDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteEnumDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -417,28 +417,28 @@ public interface ICFBamPubEnumDefTableObj
 	 *
 	 *	@param	ScopeId	The EnumDef key attribute of the instance generating the id.
 	 */
-	void deleteEnumDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteEnumDefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The EnumDef key attribute of the instance generating the id.
 	 */
-	void deleteEnumDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteEnumDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The EnumDef key attribute of the instance generating the id.
 	 */
-	void deleteEnumDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteEnumDefByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The EnumDef key attribute of the instance generating the id.
 	 */
-	void deleteEnumDefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteEnumDefByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -447,8 +447,8 @@ public interface ICFBamPubEnumDefTableObj
 	 *
 	 *	@param	PrevId	The EnumDef key attribute of the instance generating the id.
 	 */
-	void deleteEnumDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteEnumDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -457,8 +457,8 @@ public interface ICFBamPubEnumDefTableObj
 	 *
 	 *	@param	NextId	The EnumDef key attribute of the instance generating the id.
 	 */
-	void deleteEnumDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteEnumDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the CFBamPubEnumDefObj instance up in the chain.  The instance is always refreshed.

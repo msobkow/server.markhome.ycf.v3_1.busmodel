@@ -98,10 +98,10 @@ public interface ICFBamUInt64ColEditObj
 	void setRequiredContainerTable( ICFBamTableObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TableId.
+	 *	Get the required IMCFKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TableId.
+	 *	@return	The required IMCFKeyHash256 attribute TableId.
 	 */
-	ICFLibKeyHash256 getRequiredTableId();
+	IMCFKeyHash256 getRequiredTableId();
 
 }

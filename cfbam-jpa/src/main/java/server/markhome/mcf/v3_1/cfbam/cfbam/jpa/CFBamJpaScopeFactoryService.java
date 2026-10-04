@@ -240,7 +240,7 @@ public class CFBamJpaScopeFactoryService
 					mapped.set((ICFBamRelation)rec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamScope",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamScope");
 			}
@@ -364,7 +364,7 @@ public class CFBamJpaScopeFactoryService
 					mapped.set((ICFBamRelationH)hrec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamScope",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamScope");
 			}

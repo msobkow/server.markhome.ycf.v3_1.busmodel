@@ -108,7 +108,7 @@ public class CFBamJpaUuid6DefFactoryService
 					mapped.set((ICFBamUuid6Col)rec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamUuid6Def",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamUuid6Def");
 			}
@@ -148,7 +148,7 @@ public class CFBamJpaUuid6DefFactoryService
 					mapped.set((ICFBamUuid6ColH)hrec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamUuid6Def",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamUuid6Def");
 			}

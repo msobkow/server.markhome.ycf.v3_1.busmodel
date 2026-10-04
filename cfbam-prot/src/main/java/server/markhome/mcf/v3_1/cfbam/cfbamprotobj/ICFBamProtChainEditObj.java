@@ -215,25 +215,25 @@ public interface ICFBamProtChainEditObj
 	void setRequiredLookupNextRel( ICFBamProtRelationObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required IMCFKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId(IMCFKeyHash256 value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -306,11 +306,11 @@ public interface ICFBamProtChainEditObj
 	void setOptionalDescription(String value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TableId.
+	 *	Get the required IMCFKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TableId.
+	 *	@return	The required IMCFKeyHash256 attribute TableId.
 	 */
-	ICFLibKeyHash256 getRequiredTableId();
+	IMCFKeyHash256 getRequiredTableId();
 
 	/**
 	 *	Get the optional String attribute Suffix.
@@ -327,18 +327,18 @@ public interface ICFBamProtChainEditObj
 	void setOptionalSuffix(String value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute PrevRelationId.
+	 *	Get the required IMCFKeyHash256 attribute PrevRelationId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute PrevRelationId.
+	 *	@return	The required IMCFKeyHash256 attribute PrevRelationId.
 	 */
-	ICFLibKeyHash256 getRequiredPrevRelationId();
+	IMCFKeyHash256 getRequiredPrevRelationId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute NextRelationId.
+	 *	Get the required IMCFKeyHash256 attribute NextRelationId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute NextRelationId.
+	 *	@return	The required IMCFKeyHash256 attribute NextRelationId.
 	 */
-	ICFLibKeyHash256 getRequiredNextRelationId();
+	IMCFKeyHash256 getRequiredNextRelationId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

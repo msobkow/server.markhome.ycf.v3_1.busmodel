@@ -123,18 +123,18 @@ public interface ICFBamPubServerMethodEditObj
 	List<ICFBamPubParamObj> getOptionalComponentsParams();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TableId.
+	 *	Get the required MCFDbKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TableId.
+	 *	@return	The required MCFDbKeyHash256 attribute TableId.
 	 */
-	CFLibDbKeyHash256 getRequiredTableId();
+	MCFDbKeyHash256 getRequiredTableId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.

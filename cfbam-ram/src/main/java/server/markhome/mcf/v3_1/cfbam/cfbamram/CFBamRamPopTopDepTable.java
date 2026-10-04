@@ -122,11 +122,11 @@ public class CFBamRamPopTopDepTable
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		if( dictByUNameIdx.containsKey( keyUNameIdx ) ) {
-			throw new CFLibUniqueIndexViolationException( getClass(),
+			throw new MCFUniqueIndexViolationException( getClass(),
 				S_ProcName,
 				"PopTopDepUNameIdx",
 				"PopTopDepUNameIdx",
@@ -142,7 +142,7 @@ public class CFBamRamPopTopDepTable
 				if( null == schema.getTablePopDep().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Superclass",
 						"Superclass",
@@ -162,7 +162,7 @@ public class CFBamRamPopTopDepTable
 				if( null == schema.getTableRelation().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredContRelationId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Container",
 						"Container",
@@ -202,7 +202,7 @@ public class CFBamRamPopTopDepTable
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -254,7 +254,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByTenantIdx";
 		ICFBamScope buffList[] = schema.getTableScope().readDerivedByTenantIdx( Authorization,
@@ -277,7 +277,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep[] readDerivedByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId )
+		IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readDerivedByRelationIdx";
 		ICFBamPopDep buffList[] = schema.getTablePopDep().readDerivedByRelationIdx( Authorization,
@@ -300,7 +300,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readDerivedByDefSchemaIdx";
 		ICFBamPopDep buffList[] = schema.getTablePopDep().readDerivedByDefSchemaIdx( Authorization,
@@ -323,7 +323,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep[] readDerivedByContRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ContRelationId )
+		IMCFKeyHash256 ContRelationId )
 	{
 		final String S_ProcName = "CFBamRamPopTopDep.readDerivedByContRelIdx";
 		CFBamBuffPopTopDepByContRelIdxKey key = (CFBamBuffPopTopDepByContRelIdxKey)schema.getCFBamBuffFactory().getFactoryPopTopDep().newByContRelIdxKey();
@@ -351,7 +351,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ContRelationId,
+		IMCFKeyHash256 ContRelationId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamPopTopDep.readDerivedByUNameIdx";
@@ -371,7 +371,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByIdIdx() ";
 		ICFBamPopTopDep buff;
@@ -426,7 +426,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByIdIdx() ";
 		ICFBamPopTopDep buff = readDerivedByIdIdx( Authorization,
@@ -441,7 +441,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByTenantIdx() ";
 		ICFBamPopTopDep buff;
@@ -459,7 +459,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep[] readRecByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId )
+		IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readRecByRelationIdx() ";
 		ICFBamPopTopDep buff;
@@ -477,7 +477,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readRecByDefSchemaIdx() ";
 		ICFBamPopTopDep buff;
@@ -495,7 +495,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep[] readRecByContRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ContRelationId )
+		IMCFKeyHash256 ContRelationId )
 	{
 		final String S_ProcName = "CFBamRamPopTopDep.readRecByContRelIdx() ";
 		ICFBamPopTopDep buff;
@@ -513,7 +513,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public ICFBamPopTopDep readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ContRelationId,
+		IMCFKeyHash256 ContRelationId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamPopTopDep.readRecByUNameIdx() ";
@@ -535,7 +535,7 @@ public class CFBamRamPopTopDepTable
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffPopTopDep existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updatePopTopDep",
 				"Existing record not found",
 				"Existing record not found",
@@ -561,7 +561,7 @@ public class CFBamRamPopTopDepTable
 
 		if( ! existingKeyUNameIdx.equals( newKeyUNameIdx ) ) {
 			if( dictByUNameIdx.containsKey( newKeyUNameIdx ) ) {
-				throw new CFLibUniqueIndexViolationException( getClass(),
+				throw new MCFUniqueIndexViolationException( getClass(),
 					"updatePopTopDep",
 					"PopTopDepUNameIdx",
 					"PopTopDepUNameIdx",
@@ -578,7 +578,7 @@ public class CFBamRamPopTopDepTable
 				if( null == schema.getTablePopDep().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updatePopTopDep",
 						"Superclass",
 						"Superclass",
@@ -598,7 +598,7 @@ public class CFBamRamPopTopDepTable
 				if( null == schema.getTableRelation().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredContRelationId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updatePopTopDep",
 						"Container",
 						"Container",
@@ -651,7 +651,7 @@ public class CFBamRamPopTopDepTable
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deletePopTopDep",
 				pkey );
 		}
@@ -686,7 +686,7 @@ public class CFBamRamPopTopDepTable
 	}
 	@Override
 	public void deletePopTopDepByContRelIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argContRelationId )
+		IMCFKeyHash256 argContRelationId )
 	{
 		CFBamBuffPopTopDepByContRelIdxKey key = (CFBamBuffPopTopDepByContRelIdxKey)schema.getCFBamBuffFactory().getFactoryPopTopDep().newByContRelIdxKey();
 		key.setRequiredContRelationId( argContRelationId );
@@ -722,7 +722,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public void deletePopTopDepByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argContRelationId,
+		IMCFKeyHash256 argContRelationId,
 		String argName )
 	{
 		CFBamBuffPopTopDepByUNameIdxKey key = (CFBamBuffPopTopDepByUNameIdxKey)schema.getCFBamBuffFactory().getFactoryPopTopDep().newByUNameIdxKey();
@@ -761,7 +761,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public void deletePopTopDepByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId )
+		IMCFKeyHash256 argRelationId )
 	{
 		CFBamBuffPopDepByRelationIdxKey key = (CFBamBuffPopDepByRelationIdxKey)schema.getCFBamBuffFactory().getFactoryPopDep().newByRelationIdxKey();
 		key.setRequiredRelationId( argRelationId );
@@ -797,7 +797,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public void deletePopTopDepByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		CFBamBuffPopDepByDefSchemaIdxKey key = (CFBamBuffPopDepByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( argDefSchemaId );
@@ -862,7 +862,7 @@ public class CFBamRamPopTopDepTable
 
 	@Override
 	public void deletePopTopDepByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		CFBamBuffScopeByTenantIdxKey key = (CFBamBuffScopeByTenantIdxKey)schema.getCFBamBuffFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( argTenantId );

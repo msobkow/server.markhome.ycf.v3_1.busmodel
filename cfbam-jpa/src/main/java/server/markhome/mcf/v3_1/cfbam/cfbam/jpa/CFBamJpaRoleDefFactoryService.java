@@ -217,7 +217,7 @@ public class CFBamJpaRoleDefFactoryService
 					mapped.set((ICFBamSchemaRole)rec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamRoleDef",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamRoleDef");
 			}
@@ -249,7 +249,7 @@ public class CFBamJpaRoleDefFactoryService
 					mapped.set((ICFBamSchemaRoleH)hrec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamRoleDef",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamRoleDef");
 			}

@@ -103,17 +103,17 @@ public interface ICFBamPubServerListFuncObj
 	ICFBamPubTableObj getOptionalLookupRetTable( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute RetTableId.
+	 *	Get the optional MCFDbKeyHash256 attribute RetTableId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute RetTableId.
+	 *	@return	The optional MCFDbKeyHash256 attribute RetTableId.
 	 */
-	CFLibDbKeyHash256 getOptionalRetTableId();
+	MCFDbKeyHash256 getOptionalRetTableId();
 
 }

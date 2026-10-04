@@ -65,7 +65,7 @@ import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 
 public interface ICFBamProtEnumTagObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamProtEnumTag.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -153,7 +153,7 @@ public interface ICFBamProtEnumTagObj
 	/**
 	 *	End this edition of this EnumTag instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -222,18 +222,18 @@ public interface ICFBamProtEnumTagObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	CFLibDbKeyHash256 primary key for this instance.
+	 *	@return	MCFDbKeyHash256 primary key for this instance.
 	 */
-	CFLibDbKeyHash256 getPKey();
+	MCFDbKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param CFLibDbKeyHash256 primary key value for this instance.
+	 *	@param MCFDbKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( CFLibDbKeyHash256 value );
+	void setPKey( MCFDbKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -309,25 +309,25 @@ public interface ICFBamProtEnumTagObj
 	ICFBamProtEnumTagObj getOptionalLookupNext( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute EnumId.
+	 *	Get the required IMCFKeyHash256 attribute EnumId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute EnumId.
+	 *	@return	The required IMCFKeyHash256 attribute EnumId.
 	 */
-	ICFLibKeyHash256 getRequiredEnumId();
+	IMCFKeyHash256 getRequiredEnumId();
 
 	/**
 	 *	Get the optional Short attribute EnumCode.
@@ -344,18 +344,18 @@ public interface ICFBamProtEnumTagObj
 	String getRequiredName();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrevId.
+	 *	Get the optional MCFDbKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrevId.
+	 *	@return	The optional MCFDbKeyHash256 attribute PrevId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrevId();
+	MCFDbKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NextId.
+	 *	Get the optional MCFDbKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NextId.
+	 *	@return	The optional MCFDbKeyHash256 attribute NextId.
 	 */
-	CFLibDbKeyHash256 getOptionalNextId();
+	MCFDbKeyHash256 getOptionalNextId();
 
 	/**
 	 *	Internal use only.

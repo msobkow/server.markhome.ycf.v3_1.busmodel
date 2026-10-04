@@ -96,10 +96,10 @@ public interface ICFBamProtNmTokensTypeEditObj
 	void setRequiredContainerSchemaDef( ICFBamProtSchemaDefObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SchemaDefId.
+	 *	Get the required IMCFKeyHash256 attribute SchemaDefId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SchemaDefId.
+	 *	@return	The required IMCFKeyHash256 attribute SchemaDefId.
 	 */
-	ICFLibKeyHash256 getRequiredSchemaDefId();
+	IMCFKeyHash256 getRequiredSchemaDefId();
 
 }

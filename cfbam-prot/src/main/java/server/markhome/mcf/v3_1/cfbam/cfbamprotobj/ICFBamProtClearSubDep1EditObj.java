@@ -103,11 +103,11 @@ public interface ICFBamProtClearSubDep1EditObj
 	List<ICFBamProtClearSubDep2Obj> getOptionalComponentsClearDep();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClearTopDepId.
+	 *	Get the required IMCFKeyHash256 attribute ClearTopDepId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClearTopDepId.
+	 *	@return	The required IMCFKeyHash256 attribute ClearTopDepId.
 	 */
-	ICFLibKeyHash256 getRequiredClearTopDepId();
+	IMCFKeyHash256 getRequiredClearTopDepId();
 
 	/**
 	 *	Get the required String attribute Name.

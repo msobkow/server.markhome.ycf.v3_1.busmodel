@@ -250,32 +250,32 @@ public interface ICFBamProtIndexColEditObj
 	void setRequiredLookupColumn( ICFBamProtValueObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute IndexId.
+	 *	Get the required IMCFKeyHash256 attribute IndexId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute IndexId.
+	 *	@return	The required IMCFKeyHash256 attribute IndexId.
 	 */
-	ICFLibKeyHash256 getRequiredIndexId();
+	IMCFKeyHash256 getRequiredIndexId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required IMCFKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId(IMCFKeyHash256 value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -348,11 +348,11 @@ public interface ICFBamProtIndexColEditObj
 	void setOptionalDescription(String value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ColumnId.
+	 *	Get the required IMCFKeyHash256 attribute ColumnId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ColumnId.
+	 *	@return	The required IMCFKeyHash256 attribute ColumnId.
 	 */
-	ICFLibKeyHash256 getRequiredColumnId();
+	IMCFKeyHash256 getRequiredColumnId();
 
 	/**
 	 *	Get the required boolean attribute IsAscending.
@@ -369,18 +369,18 @@ public interface ICFBamProtIndexColEditObj
 	void setRequiredIsAscending(boolean value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrevId.
+	 *	Get the optional MCFDbKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrevId.
+	 *	@return	The optional MCFDbKeyHash256 attribute PrevId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrevId();
+	MCFDbKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NextId.
+	 *	Get the optional MCFDbKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NextId.
+	 *	@return	The optional MCFDbKeyHash256 attribute NextId.
 	 */
-	CFLibDbKeyHash256 getOptionalNextId();
+	MCFDbKeyHash256 getOptionalNextId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

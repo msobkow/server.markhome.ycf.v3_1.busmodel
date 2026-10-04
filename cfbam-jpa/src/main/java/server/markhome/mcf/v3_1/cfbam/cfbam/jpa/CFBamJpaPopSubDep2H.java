@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -84,15 +84,15 @@ public class CFBamJpaPopSubDep2H extends CFBamJpaPopDepH
     implements ICFBamPopSubDep2H
 {
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="contpopdep1id", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="contpopdep1id", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredPopSubDep1Id;
+	protected IMCFKeyHash256 requiredPopSubDep1Id;
 	@Column( name="safe_name", nullable=false, length=192 )
 	protected String requiredName;
 
     public CFBamJpaPopSubDep2H() {
             super();
-		requiredPopSubDep1Id = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep2.POPSUBDEP1ID_INIT_VALUE.toString() );
+		requiredPopSubDep1Id = MCFDbKeyHash256.fromHex( ICFBamPubPopSubDep2.POPSUBDEP1ID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubPopSubDep2.NAME_INIT_VALUE;
     }
 
@@ -102,13 +102,13 @@ public class CFBamJpaPopSubDep2H extends CFBamJpaPopDepH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredPopSubDep1Id() {
+	public IMCFKeyHash256 getRequiredPopSubDep1Id() {
 		return(requiredPopSubDep1Id);
 	}
 
-	public void setRequiredPopSubDep1Id( ICFLibKeyHash256 value ) {
+	public void setRequiredPopSubDep1Id( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredPopSubDep1Id",
 				1,
 				"value" );
@@ -123,13 +123,13 @@ public class CFBamJpaPopSubDep2H extends CFBamJpaPopDepH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -433,7 +433,7 @@ public class CFBamJpaPopSubDep2H extends CFBamJpaPopDepH
 			setPopSubDep2( (ICFBamPopSubDep2)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -454,7 +454,7 @@ public class CFBamJpaPopSubDep2H extends CFBamJpaPopDepH
 			setPopSubDep2( (ICFBamPopSubDep2H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

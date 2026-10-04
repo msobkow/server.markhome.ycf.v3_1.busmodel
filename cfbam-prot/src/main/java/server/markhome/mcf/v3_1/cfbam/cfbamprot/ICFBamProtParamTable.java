@@ -137,7 +137,7 @@ extends ICFBamPubParamTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteParamByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the Param instances identified by the key UNameIdx.
 	 *
@@ -148,7 +148,7 @@ extends ICFBamPubParamTable
 	 *	@param	Name	The Param key attribute of the instance generating the id.
 	 */
 	public void protdeleteParamByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argServerMethodId,
+		IMCFKeyHash256 argServerMethodId,
 		String argName );
 
 	/**
@@ -177,7 +177,7 @@ extends ICFBamPubParamTable
 	 *	@param	ServerMethodId	The Param key attribute of the instance generating the id.
 	 */
 	public void protdeleteParamByServerMethodIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argServerMethodId );
+		IMCFKeyHash256 argServerMethodId );
 
 	/**
 	 *	Delete the Param instances identified by the key ServerMethodIdx.
@@ -205,7 +205,7 @@ extends ICFBamPubParamTable
 	 *	@param	DefSchemaId	The Param key attribute of the instance generating the id.
 	 */
 	public void protdeleteParamByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Param instances identified by the key DefSchemaIdx.
@@ -233,7 +233,7 @@ extends ICFBamPubParamTable
 	 *	@param	TypeId	The Param key attribute of the instance generating the id.
 	 */
 	public void protdeleteParamByServerTypeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTypeId );
+		MCFDbKeyHash256 argTypeId );
 
 	/**
 	 *	Delete the Param instances identified by the key ServerTypeIdx.
@@ -261,7 +261,7 @@ extends ICFBamPubParamTable
 	 *	@param	PrevId	The Param key attribute of the instance generating the id.
 	 */
 	public void protdeleteParamByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the Param instances identified by the key PrevIdx.
@@ -289,7 +289,7 @@ extends ICFBamPubParamTable
 	 *	@param	NextId	The Param key attribute of the instance generating the id.
 	 */
 	public void protdeleteParamByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the Param instances identified by the key NextIdx.
@@ -319,8 +319,8 @@ extends ICFBamPubParamTable
 	 *	@param	PrevId	The Param key attribute of the instance generating the id.
 	 */
 	public void protdeleteParamByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argServerMethodId,
-		CFLibDbKeyHash256 argPrevId );
+		IMCFKeyHash256 argServerMethodId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the Param instances identified by the key ContPrevIdx.
@@ -350,8 +350,8 @@ extends ICFBamPubParamTable
 	 *	@param	NextId	The Param key attribute of the instance generating the id.
 	 */
 	public void protdeleteParamByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argServerMethodId,
-		CFLibDbKeyHash256 argNextId );
+		IMCFKeyHash256 argServerMethodId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the Param instances identified by the key ContNextIdx.
@@ -394,7 +394,7 @@ extends ICFBamPubParamTable
 	 *		no such existing key value.
 	 */
 	public ICFBamProtParam protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Param record instance by protected primary key.
@@ -407,7 +407,7 @@ extends ICFBamPubParamTable
 	 *		no such existing key value.
 	 */
 	public ICFBamProtParam protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all Param instances.
@@ -429,7 +429,7 @@ extends ICFBamPubParamTable
 	 *		no such existing key value.
 	 */
 	public ICFBamProtParam protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived Param record instance identified by the unique key UNameIdx.
@@ -444,7 +444,7 @@ extends ICFBamPubParamTable
 	 *		no such existing key value.
 	 */
 	public ICFBamProtParam protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
+		IMCFKeyHash256 ServerMethodId,
 		String Name );
 
 	/**
@@ -457,7 +457,7 @@ extends ICFBamPubParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtParam[] protreadDerivedByServerMethodIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId );
+		IMCFKeyHash256 ServerMethodId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key DefSchemaIdx.
@@ -469,7 +469,7 @@ extends ICFBamPubParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtParam[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key ServerTypeIdx.
@@ -481,7 +481,7 @@ extends ICFBamPubParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtParam[] protreadDerivedByServerTypeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TypeId );
+		MCFDbKeyHash256 TypeId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key PrevIdx.
@@ -493,7 +493,7 @@ extends ICFBamPubParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtParam[] protreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key NextIdx.
@@ -505,7 +505,7 @@ extends ICFBamPubParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtParam[] protreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key ContPrevIdx.
@@ -519,8 +519,8 @@ extends ICFBamPubParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtParam[] protreadDerivedByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key ContNextIdx.
@@ -534,8 +534,8 @@ extends ICFBamPubParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtParam[] protreadDerivedByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read the specific Param record instance identified by the primary key.
@@ -547,10 +547,10 @@ extends ICFBamPubParamTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Param record instance identified by the primary key.
@@ -562,10 +562,10 @@ extends ICFBamPubParamTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Param record instances.
@@ -586,10 +586,10 @@ extends ICFBamPubParamTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific Param record instance identified by the unique key UNameIdx.
@@ -603,10 +603,10 @@ extends ICFBamPubParamTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
+		IMCFKeyHash256 ServerMethodId,
 		String Name );
 
 	/**
@@ -618,10 +618,10 @@ extends ICFBamPubParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam[] protreadRecByServerMethodIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId );
+		IMCFKeyHash256 ServerMethodId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key DefSchemaIdx.
@@ -632,10 +632,10 @@ extends ICFBamPubParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key ServerTypeIdx.
@@ -646,10 +646,10 @@ extends ICFBamPubParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam[] protreadRecByServerTypeIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TypeId );
+		MCFDbKeyHash256 TypeId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key PrevIdx.
@@ -660,10 +660,10 @@ extends ICFBamPubParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam[] protreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key NextIdx.
@@ -674,10 +674,10 @@ extends ICFBamPubParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam[] protreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key ContPrevIdx.
@@ -690,11 +690,11 @@ extends ICFBamPubParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam[] protreadRecByContPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key ContNextIdx.
@@ -707,11 +707,11 @@ extends ICFBamPubParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParam[] protreadRecByContNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 ServerMethodId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -719,7 +719,7 @@ extends ICFBamPubParamTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtParam protmoveRecUp( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -728,6 +728,6 @@ extends ICFBamPubParamTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtParam protmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

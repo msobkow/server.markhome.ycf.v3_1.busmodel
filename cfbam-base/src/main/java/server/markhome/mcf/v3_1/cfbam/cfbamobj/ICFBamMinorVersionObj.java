@@ -137,7 +137,7 @@ public interface ICFBamMinorVersionObj
 	/**
 	 *	End this edition of this MinorVersion instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -263,25 +263,25 @@ public interface ICFBamMinorVersionObj
 	List<ICFBamSchemaDefObj> getOptionalComponentsSchemaDef( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required IMCFKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required IMCFKeyHash256 attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	IMCFKeyHash256 getRequiredTenantId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute MajorVersionId.
+	 *	Get the required IMCFKeyHash256 attribute MajorVersionId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute MajorVersionId.
+	 *	@return	The required IMCFKeyHash256 attribute MajorVersionId.
 	 */
-	ICFLibKeyHash256 getRequiredMajorVersionId();
+	IMCFKeyHash256 getRequiredMajorVersionId();
 
 	/**
 	 *	Get the required String attribute Name.

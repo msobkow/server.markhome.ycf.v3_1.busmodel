@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,16 +74,16 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableColH extends CFBamBuffValueH
     implements ICFBamTableColH
 {
-	protected ICFLibKeyHash256 requiredTableId;
+	protected IMCFKeyHash256 requiredTableId;
 	protected String optionalDbName;
-	protected ICFLibKeyHash256 optionalDataId;
+	protected IMCFKeyHash256 optionalDataId;
 	protected String optionalXmlElementName;
 
     public CFBamBuffTableColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTableCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = MCFDbKeyHash256.fromHex( ICFBamPubTableCol.TABLEID_INIT_VALUE.toString() );
 		optionalDbName = null;
-		optionalDataId = CFLibDbKeyHash256.nullGet();
+		optionalDataId = MCFDbKeyHash256.nullGet();
 		optionalXmlElementName = null;
     }
 
@@ -93,13 +93,13 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredTableId() {
+	public IMCFKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( ICFLibKeyHash256 value ) {
+	public void setRequiredTableId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableId",
 				1,
 				"value" );
@@ -114,7 +114,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDbName",
 				1,
 				"value.length()",
@@ -125,11 +125,11 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDataId() {
+	public IMCFKeyHash256 getOptionalDataId() {
 		return(optionalDataId);
 	}
 
-	public void setOptionalDataId( ICFLibKeyHash256 value ) {
+	public void setOptionalDataId( IMCFKeyHash256 value ) {
 		optionalDataId = value;
 	}
 
@@ -140,7 +140,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 
 	public void setOptionalXmlElementName( String value ) {
 		if( value != null && value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalXmlElementName",
 				1,
 				"value.length()",
@@ -551,7 +551,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 			setTableCol( (CFBamBuffTableCol)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -574,7 +574,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 			setTableCol( (ICFBamTableColH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

@@ -54,7 +54,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -1089,7 +1089,7 @@ public class CFBamJpaHooksSchema {
 	public LocalContainerEntityManagerFactoryBean getEntityManagerFactoryBean() {
 		if ( cfbam31EntityManagerFactory == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getEntityManagerFactoryBean",
+			throw new MCFNotImplementedYetException( getClass(), "getEntityManagerFactoryBean",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1099,7 +1099,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaService getSchemaService() {
 		if ( schemaService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaService",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1109,7 +1109,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaFactoryService getFactoryService() {
 		if ( factoryService == null ) {
 			// Dynamically resolve the factory by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getFactoryService",
+			throw new MCFNotImplementedYetException( getClass(), "getFactoryService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1119,7 +1119,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaIdGenService getIdGenService() {
 		if ( idGenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getIdGenService",
+			throw new MCFNotImplementedYetException( getClass(), "getIdGenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1129,7 +1129,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaScopeRepository getScopeRepository() {
 		if ( scopeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getScopeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getScopeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1139,7 +1139,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaDefRepository getSchemaDefRepository() {
 		if ( schemaDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1149,7 +1149,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaRefRepository getSchemaRefRepository() {
 		if ( schemaRefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaRefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaRefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1159,7 +1159,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaServerMethodRepository getServerMethodRepository() {
 		if ( serverMethodRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getServerMethodRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getServerMethodRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1169,7 +1169,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaServerObjFuncRepository getServerObjFuncRepository() {
 		if ( serverObjFuncRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getServerObjFuncRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getServerObjFuncRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1179,7 +1179,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaServerProcRepository getServerProcRepository() {
 		if ( serverProcRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getServerProcRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getServerProcRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1189,7 +1189,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTableRepository getTableRepository() {
 		if ( tableRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTableRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTableRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1199,7 +1199,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTweakRepository getTweakRepository() {
 		if ( tweakRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTweakRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTweakRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1209,7 +1209,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTableTweakRepository getTableTweakRepository() {
 		if ( tableTweakRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTableTweakRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTableTweakRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1219,7 +1219,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaTweakRepository getSchemaTweakRepository() {
 		if ( schemaTweakRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaTweakRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaTweakRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1229,7 +1229,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaIndexTweakRepository getIndexTweakRepository() {
 		if ( indexTweakRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getIndexTweakRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getIndexTweakRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1239,7 +1239,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaValueRepository getValueRepository() {
 		if ( valueRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getValueRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getValueRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1249,7 +1249,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaAtomRepository getAtomRepository() {
 		if ( atomRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getAtomRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getAtomRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1259,7 +1259,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBlobDefRepository getBlobDefRepository() {
 		if ( blobDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getBlobDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getBlobDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1269,7 +1269,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBlobTypeRepository getBlobTypeRepository() {
 		if ( blobTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getBlobTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getBlobTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1279,7 +1279,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBoolDefRepository getBoolDefRepository() {
 		if ( boolDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getBoolDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getBoolDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1289,7 +1289,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBoolTypeRepository getBoolTypeRepository() {
 		if ( boolTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getBoolTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getBoolTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1299,7 +1299,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaChainRepository getChainRepository() {
 		if ( chainRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getChainRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getChainRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1309,7 +1309,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearDepRepository getClearDepRepository() {
 		if ( clearDepRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getClearDepRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getClearDepRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1319,7 +1319,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearSubDep1Repository getClearSubDep1Repository() {
 		if ( clearSubDep1Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getClearSubDep1Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getClearSubDep1Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1329,7 +1329,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearSubDep2Repository getClearSubDep2Repository() {
 		if ( clearSubDep2Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getClearSubDep2Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getClearSubDep2Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1339,7 +1339,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearSubDep3Repository getClearSubDep3Repository() {
 		if ( clearSubDep3Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getClearSubDep3Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getClearSubDep3Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1349,7 +1349,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearTopDepRepository getClearTopDepRepository() {
 		if ( clearTopDepRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getClearTopDepRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getClearTopDepRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1359,7 +1359,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDateDefRepository getDateDefRepository() {
 		if ( dateDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDateDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDateDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1369,7 +1369,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDateTypeRepository getDateTypeRepository() {
 		if ( dateTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDateTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDateTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1379,7 +1379,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelDepRepository getDelDepRepository() {
 		if ( delDepRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDelDepRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDelDepRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1389,7 +1389,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelSubDep1Repository getDelSubDep1Repository() {
 		if ( delSubDep1Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDelSubDep1Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getDelSubDep1Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1399,7 +1399,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelSubDep2Repository getDelSubDep2Repository() {
 		if ( delSubDep2Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDelSubDep2Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getDelSubDep2Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1409,7 +1409,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelSubDep3Repository getDelSubDep3Repository() {
 		if ( delSubDep3Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDelSubDep3Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getDelSubDep3Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1419,7 +1419,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelTopDepRepository getDelTopDepRepository() {
 		if ( delTopDepRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDelTopDepRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDelTopDepRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1429,7 +1429,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDoubleDefRepository getDoubleDefRepository() {
 		if ( doubleDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDoubleDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDoubleDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1439,7 +1439,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDoubleTypeRepository getDoubleTypeRepository() {
 		if ( doubleTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDoubleTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDoubleTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1449,7 +1449,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaEnumTagRepository getEnumTagRepository() {
 		if ( enumTagRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getEnumTagRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getEnumTagRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1459,7 +1459,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaFloatDefRepository getFloatDefRepository() {
 		if ( floatDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getFloatDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getFloatDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1469,7 +1469,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaFloatTypeRepository getFloatTypeRepository() {
 		if ( floatTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getFloatTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getFloatTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1479,7 +1479,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaIndexRepository getIndexRepository() {
 		if ( indexRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getIndexRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getIndexRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1489,7 +1489,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaIndexColRepository getIndexColRepository() {
 		if ( indexColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getIndexColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getIndexColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1499,7 +1499,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt16DefRepository getInt16DefRepository() {
 		if ( int16DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt16DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt16DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1509,7 +1509,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt16TypeRepository getInt16TypeRepository() {
 		if ( int16TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt16TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt16TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1519,7 +1519,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt32DefRepository getInt32DefRepository() {
 		if ( int32DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt32DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt32DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1529,7 +1529,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt32TypeRepository getInt32TypeRepository() {
 		if ( int32TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt32TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt32TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1539,7 +1539,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt64DefRepository getInt64DefRepository() {
 		if ( int64DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt64DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt64DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1549,7 +1549,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt64TypeRepository getInt64TypeRepository() {
 		if ( int64TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt64TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt64TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1559,7 +1559,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokenDefRepository getNmTokenDefRepository() {
 		if ( nmTokenDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokenDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokenDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1569,7 +1569,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokenTypeRepository getNmTokenTypeRepository() {
 		if ( nmTokenTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokenTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokenTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1579,7 +1579,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokensDefRepository getNmTokensDefRepository() {
 		if ( nmTokensDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokensDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokensDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1589,7 +1589,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokensTypeRepository getNmTokensTypeRepository() {
 		if ( nmTokensTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokensTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokensTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1599,7 +1599,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNumberDefRepository getNumberDefRepository() {
 		if ( numberDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNumberDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNumberDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1609,7 +1609,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNumberTypeRepository getNumberTypeRepository() {
 		if ( numberTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNumberTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNumberTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1619,7 +1619,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaParamRepository getParamRepository() {
 		if ( paramRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getParamRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getParamRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1629,7 +1629,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopDepRepository getPopDepRepository() {
 		if ( popDepRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getPopDepRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getPopDepRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1639,7 +1639,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopSubDep1Repository getPopSubDep1Repository() {
 		if ( popSubDep1Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getPopSubDep1Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getPopSubDep1Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1649,7 +1649,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopSubDep2Repository getPopSubDep2Repository() {
 		if ( popSubDep2Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getPopSubDep2Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getPopSubDep2Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1659,7 +1659,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopSubDep3Repository getPopSubDep3Repository() {
 		if ( popSubDep3Repository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getPopSubDep3Repository",
+			throw new MCFNotImplementedYetException( getClass(), "getPopSubDep3Repository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1669,7 +1669,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopTopDepRepository getPopTopDepRepository() {
 		if ( popTopDepRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getPopTopDepRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getPopTopDepRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1679,7 +1679,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaRelationRepository getRelationRepository() {
 		if ( relationRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getRelationRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getRelationRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1689,7 +1689,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaRelationColRepository getRelationColRepository() {
 		if ( relationColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getRelationColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getRelationColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1699,7 +1699,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaServerListFuncRepository getServerListFuncRepository() {
 		if ( serverListFuncRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getServerListFuncRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getServerListFuncRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1709,7 +1709,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash128DefRepository getDbKeyHash128DefRepository() {
 		if ( dbKeyHash128DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash128DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash128DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1719,7 +1719,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash128ColRepository getDbKeyHash128ColRepository() {
 		if ( dbKeyHash128ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash128ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash128ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1729,7 +1729,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash128TypeRepository getDbKeyHash128TypeRepository() {
 		if ( dbKeyHash128TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash128TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash128TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1739,7 +1739,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash128GenRepository getDbKeyHash128GenRepository() {
 		if ( dbKeyHash128GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash128GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash128GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1749,7 +1749,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash160DefRepository getDbKeyHash160DefRepository() {
 		if ( dbKeyHash160DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash160DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash160DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1759,7 +1759,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash160ColRepository getDbKeyHash160ColRepository() {
 		if ( dbKeyHash160ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash160ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash160ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1769,7 +1769,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash160TypeRepository getDbKeyHash160TypeRepository() {
 		if ( dbKeyHash160TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash160TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash160TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1779,7 +1779,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash160GenRepository getDbKeyHash160GenRepository() {
 		if ( dbKeyHash160GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash160GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash160GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1789,7 +1789,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash224DefRepository getDbKeyHash224DefRepository() {
 		if ( dbKeyHash224DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash224DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash224DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1799,7 +1799,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash224ColRepository getDbKeyHash224ColRepository() {
 		if ( dbKeyHash224ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash224ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash224ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1809,7 +1809,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash224TypeRepository getDbKeyHash224TypeRepository() {
 		if ( dbKeyHash224TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash224TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash224TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1819,7 +1819,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash224GenRepository getDbKeyHash224GenRepository() {
 		if ( dbKeyHash224GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash224GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash224GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1829,7 +1829,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash256DefRepository getDbKeyHash256DefRepository() {
 		if ( dbKeyHash256DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash256DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash256DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1839,7 +1839,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash256ColRepository getDbKeyHash256ColRepository() {
 		if ( dbKeyHash256ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash256ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash256ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1849,7 +1849,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash256TypeRepository getDbKeyHash256TypeRepository() {
 		if ( dbKeyHash256TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash256TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash256TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1859,7 +1859,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash256GenRepository getDbKeyHash256GenRepository() {
 		if ( dbKeyHash256GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash256GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash256GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1869,7 +1869,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash384DefRepository getDbKeyHash384DefRepository() {
 		if ( dbKeyHash384DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash384DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash384DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1879,7 +1879,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash384ColRepository getDbKeyHash384ColRepository() {
 		if ( dbKeyHash384ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash384ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash384ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1889,7 +1889,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash384TypeRepository getDbKeyHash384TypeRepository() {
 		if ( dbKeyHash384TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash384TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash384TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1899,7 +1899,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash384GenRepository getDbKeyHash384GenRepository() {
 		if ( dbKeyHash384GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash384GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash384GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1909,7 +1909,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash512DefRepository getDbKeyHash512DefRepository() {
 		if ( dbKeyHash512DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash512DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash512DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1919,7 +1919,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash512ColRepository getDbKeyHash512ColRepository() {
 		if ( dbKeyHash512ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash512ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash512ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1929,7 +1929,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash512TypeRepository getDbKeyHash512TypeRepository() {
 		if ( dbKeyHash512TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash512TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash512TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1939,7 +1939,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash512GenRepository getDbKeyHash512GenRepository() {
 		if ( dbKeyHash512GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash512GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash512GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1949,7 +1949,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaStringDefRepository getStringDefRepository() {
 		if ( stringDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getStringDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getStringDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1959,7 +1959,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaStringTypeRepository getStringTypeRepository() {
 		if ( stringTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getStringTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getStringTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1969,7 +1969,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZDateDefRepository getTZDateDefRepository() {
 		if ( tZDateDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZDateDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZDateDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1979,7 +1979,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZDateTypeRepository getTZDateTypeRepository() {
 		if ( tZDateTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZDateTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZDateTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1989,7 +1989,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimeDefRepository getTZTimeDefRepository() {
 		if ( tZTimeDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimeDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimeDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -1999,7 +1999,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimeTypeRepository getTZTimeTypeRepository() {
 		if ( tZTimeTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimeTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimeTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2009,7 +2009,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimestampDefRepository getTZTimestampDefRepository() {
 		if ( tZTimestampDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimestampDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimestampDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2019,7 +2019,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimestampTypeRepository getTZTimestampTypeRepository() {
 		if ( tZTimestampTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimestampTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimestampTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2029,7 +2029,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTableColRepository getTableColRepository() {
 		if ( tableColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTableColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTableColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2039,7 +2039,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTextDefRepository getTextDefRepository() {
 		if ( textDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTextDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTextDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2049,7 +2049,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTextTypeRepository getTextTypeRepository() {
 		if ( textTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTextTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTextTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2059,7 +2059,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimeDefRepository getTimeDefRepository() {
 		if ( timeDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTimeDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTimeDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2069,7 +2069,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimeTypeRepository getTimeTypeRepository() {
 		if ( timeTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTimeTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTimeTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2079,7 +2079,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimestampDefRepository getTimestampDefRepository() {
 		if ( timestampDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTimestampDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTimestampDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2089,7 +2089,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimestampTypeRepository getTimestampTypeRepository() {
 		if ( timestampTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTimestampTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTimestampTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2099,7 +2099,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTokenDefRepository getTokenDefRepository() {
 		if ( tokenDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTokenDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTokenDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2109,7 +2109,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTokenTypeRepository getTokenTypeRepository() {
 		if ( tokenTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTokenTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTokenTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2119,7 +2119,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt16DefRepository getUInt16DefRepository() {
 		if ( uInt16DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt16DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt16DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2129,7 +2129,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt16TypeRepository getUInt16TypeRepository() {
 		if ( uInt16TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt16TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt16TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2139,7 +2139,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt32DefRepository getUInt32DefRepository() {
 		if ( uInt32DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt32DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt32DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2149,7 +2149,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt32TypeRepository getUInt32TypeRepository() {
 		if ( uInt32TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt32TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt32TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2159,7 +2159,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt64DefRepository getUInt64DefRepository() {
 		if ( uInt64DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt64DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt64DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2169,7 +2169,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt64TypeRepository getUInt64TypeRepository() {
 		if ( uInt64TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt64TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt64TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2179,7 +2179,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuidDefRepository getUuidDefRepository() {
 		if ( uuidDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUuidDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUuidDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2189,7 +2189,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuid6DefRepository getUuid6DefRepository() {
 		if ( uuid6DefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUuid6DefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUuid6DefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2199,7 +2199,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuidTypeRepository getUuidTypeRepository() {
 		if ( uuidTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUuidTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUuidTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2209,7 +2209,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuid6TypeRepository getUuid6TypeRepository() {
 		if ( uuid6TypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUuid6TypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUuid6TypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2219,7 +2219,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBlobColRepository getBlobColRepository() {
 		if ( blobColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getBlobColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getBlobColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2229,7 +2229,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBoolColRepository getBoolColRepository() {
 		if ( boolColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getBoolColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getBoolColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2239,7 +2239,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDateColRepository getDateColRepository() {
 		if ( dateColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDateColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDateColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2249,7 +2249,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDoubleColRepository getDoubleColRepository() {
 		if ( doubleColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getDoubleColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getDoubleColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2259,7 +2259,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaEnumDefRepository getEnumDefRepository() {
 		if ( enumDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getEnumDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getEnumDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2269,7 +2269,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaEnumTypeRepository getEnumTypeRepository() {
 		if ( enumTypeRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getEnumTypeRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getEnumTypeRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2279,7 +2279,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaFloatColRepository getFloatColRepository() {
 		if ( floatColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getFloatColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getFloatColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2289,7 +2289,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaId16GenRepository getId16GenRepository() {
 		if ( id16GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getId16GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getId16GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2299,7 +2299,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaId32GenRepository getId32GenRepository() {
 		if ( id32GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getId32GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getId32GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2309,7 +2309,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaId64GenRepository getId64GenRepository() {
 		if ( id64GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getId64GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getId64GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2319,7 +2319,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt16ColRepository getInt16ColRepository() {
 		if ( int16ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt16ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt16ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2329,7 +2329,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt32ColRepository getInt32ColRepository() {
 		if ( int32ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt32ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt32ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2339,7 +2339,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt64ColRepository getInt64ColRepository() {
 		if ( int64ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getInt64ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getInt64ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2349,7 +2349,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokenColRepository getNmTokenColRepository() {
 		if ( nmTokenColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokenColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokenColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2359,7 +2359,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokensColRepository getNmTokensColRepository() {
 		if ( nmTokensColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokensColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokensColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2369,7 +2369,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNumberColRepository getNumberColRepository() {
 		if ( numberColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getNumberColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getNumberColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2379,7 +2379,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaStringColRepository getStringColRepository() {
 		if ( stringColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getStringColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getStringColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2389,7 +2389,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZDateColRepository getTZDateColRepository() {
 		if ( tZDateColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZDateColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZDateColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2399,7 +2399,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimeColRepository getTZTimeColRepository() {
 		if ( tZTimeColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimeColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimeColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2409,7 +2409,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimestampColRepository getTZTimestampColRepository() {
 		if ( tZTimestampColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimestampColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimestampColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2419,7 +2419,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTextColRepository getTextColRepository() {
 		if ( textColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTextColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTextColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2429,7 +2429,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimeColRepository getTimeColRepository() {
 		if ( timeColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTimeColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTimeColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2439,7 +2439,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimestampColRepository getTimestampColRepository() {
 		if ( timestampColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTimestampColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTimestampColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2449,7 +2449,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTokenColRepository getTokenColRepository() {
 		if ( tokenColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getTokenColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getTokenColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2459,7 +2459,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt16ColRepository getUInt16ColRepository() {
 		if ( uInt16ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt16ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt16ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2469,7 +2469,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt32ColRepository getUInt32ColRepository() {
 		if ( uInt32ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt32ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt32ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2479,7 +2479,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt64ColRepository getUInt64ColRepository() {
 		if ( uInt64ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt64ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt64ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2489,7 +2489,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuidColRepository getUuidColRepository() {
 		if ( uuidColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUuidColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUuidColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2499,7 +2499,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuid6ColRepository getUuid6ColRepository() {
 		if ( uuid6ColRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUuid6ColRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUuid6ColRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2509,7 +2509,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuidGenRepository getUuidGenRepository() {
 		if ( uuidGenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUuidGenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUuidGenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2519,7 +2519,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuid6GenRepository getUuid6GenRepository() {
 		if ( uuid6GenRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getUuid6GenRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getUuid6GenRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2529,7 +2529,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaRoleDefRepository getRoleDefRepository() {
 		if ( roleDefRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getRoleDefRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getRoleDefRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2539,7 +2539,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaRoleRepository getSchemaRoleRepository() {
 		if ( schemaRoleRepository == null ) {
 			// Dynamically resolve the repository by interface type
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaRoleRepository",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaRoleRepository",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2549,7 +2549,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaScopeService getScopeService() {
 		if ( scopeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getScopeService",
+			throw new MCFNotImplementedYetException( getClass(), "getScopeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2559,7 +2559,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaDefService getSchemaDefService() {
 		if ( schemaDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2569,7 +2569,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaRefService getSchemaRefService() {
 		if ( schemaRefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaRefService",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaRefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2579,7 +2579,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaServerMethodService getServerMethodService() {
 		if ( serverMethodService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getServerMethodService",
+			throw new MCFNotImplementedYetException( getClass(), "getServerMethodService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2589,7 +2589,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaServerObjFuncService getServerObjFuncService() {
 		if ( serverObjFuncService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getServerObjFuncService",
+			throw new MCFNotImplementedYetException( getClass(), "getServerObjFuncService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2599,7 +2599,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaServerProcService getServerProcService() {
 		if ( serverProcService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getServerProcService",
+			throw new MCFNotImplementedYetException( getClass(), "getServerProcService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2609,7 +2609,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTableService getTableService() {
 		if ( tableService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTableService",
+			throw new MCFNotImplementedYetException( getClass(), "getTableService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2619,7 +2619,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTweakService getTweakService() {
 		if ( tweakService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTweakService",
+			throw new MCFNotImplementedYetException( getClass(), "getTweakService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2629,7 +2629,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTableTweakService getTableTweakService() {
 		if ( tableTweakService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTableTweakService",
+			throw new MCFNotImplementedYetException( getClass(), "getTableTweakService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2639,7 +2639,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaTweakService getSchemaTweakService() {
 		if ( schemaTweakService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaTweakService",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaTweakService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2649,7 +2649,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaIndexTweakService getIndexTweakService() {
 		if ( indexTweakService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getIndexTweakService",
+			throw new MCFNotImplementedYetException( getClass(), "getIndexTweakService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2659,7 +2659,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaValueService getValueService() {
 		if ( valueService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getValueService",
+			throw new MCFNotImplementedYetException( getClass(), "getValueService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2669,7 +2669,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaAtomService getAtomService() {
 		if ( atomService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getAtomService",
+			throw new MCFNotImplementedYetException( getClass(), "getAtomService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2679,7 +2679,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBlobDefService getBlobDefService() {
 		if ( blobDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getBlobDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getBlobDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2689,7 +2689,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBlobTypeService getBlobTypeService() {
 		if ( blobTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getBlobTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getBlobTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2699,7 +2699,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBoolDefService getBoolDefService() {
 		if ( boolDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getBoolDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getBoolDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2709,7 +2709,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBoolTypeService getBoolTypeService() {
 		if ( boolTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getBoolTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getBoolTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2719,7 +2719,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaChainService getChainService() {
 		if ( chainService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getChainService",
+			throw new MCFNotImplementedYetException( getClass(), "getChainService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2729,7 +2729,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearDepService getClearDepService() {
 		if ( clearDepService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getClearDepService",
+			throw new MCFNotImplementedYetException( getClass(), "getClearDepService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2739,7 +2739,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearSubDep1Service getClearSubDep1Service() {
 		if ( clearSubDep1Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getClearSubDep1Service",
+			throw new MCFNotImplementedYetException( getClass(), "getClearSubDep1Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2749,7 +2749,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearSubDep2Service getClearSubDep2Service() {
 		if ( clearSubDep2Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getClearSubDep2Service",
+			throw new MCFNotImplementedYetException( getClass(), "getClearSubDep2Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2759,7 +2759,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearSubDep3Service getClearSubDep3Service() {
 		if ( clearSubDep3Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getClearSubDep3Service",
+			throw new MCFNotImplementedYetException( getClass(), "getClearSubDep3Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2769,7 +2769,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaClearTopDepService getClearTopDepService() {
 		if ( clearTopDepService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getClearTopDepService",
+			throw new MCFNotImplementedYetException( getClass(), "getClearTopDepService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2779,7 +2779,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDateDefService getDateDefService() {
 		if ( dateDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDateDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getDateDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2789,7 +2789,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDateTypeService getDateTypeService() {
 		if ( dateTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDateTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getDateTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2799,7 +2799,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelDepService getDelDepService() {
 		if ( delDepService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDelDepService",
+			throw new MCFNotImplementedYetException( getClass(), "getDelDepService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2809,7 +2809,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelSubDep1Service getDelSubDep1Service() {
 		if ( delSubDep1Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDelSubDep1Service",
+			throw new MCFNotImplementedYetException( getClass(), "getDelSubDep1Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2819,7 +2819,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelSubDep2Service getDelSubDep2Service() {
 		if ( delSubDep2Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDelSubDep2Service",
+			throw new MCFNotImplementedYetException( getClass(), "getDelSubDep2Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2829,7 +2829,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelSubDep3Service getDelSubDep3Service() {
 		if ( delSubDep3Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDelSubDep3Service",
+			throw new MCFNotImplementedYetException( getClass(), "getDelSubDep3Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2839,7 +2839,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDelTopDepService getDelTopDepService() {
 		if ( delTopDepService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDelTopDepService",
+			throw new MCFNotImplementedYetException( getClass(), "getDelTopDepService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2849,7 +2849,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDoubleDefService getDoubleDefService() {
 		if ( doubleDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDoubleDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getDoubleDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2859,7 +2859,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDoubleTypeService getDoubleTypeService() {
 		if ( doubleTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDoubleTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getDoubleTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2869,7 +2869,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaEnumTagService getEnumTagService() {
 		if ( enumTagService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getEnumTagService",
+			throw new MCFNotImplementedYetException( getClass(), "getEnumTagService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2879,7 +2879,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaFloatDefService getFloatDefService() {
 		if ( floatDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getFloatDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getFloatDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2889,7 +2889,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaFloatTypeService getFloatTypeService() {
 		if ( floatTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getFloatTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getFloatTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2899,7 +2899,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaIndexService getIndexService() {
 		if ( indexService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getIndexService",
+			throw new MCFNotImplementedYetException( getClass(), "getIndexService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2909,7 +2909,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaIndexColService getIndexColService() {
 		if ( indexColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getIndexColService",
+			throw new MCFNotImplementedYetException( getClass(), "getIndexColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2919,7 +2919,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt16DefService getInt16DefService() {
 		if ( int16DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt16DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt16DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2929,7 +2929,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt16TypeService getInt16TypeService() {
 		if ( int16TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt16TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt16TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2939,7 +2939,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt32DefService getInt32DefService() {
 		if ( int32DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt32DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt32DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2949,7 +2949,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt32TypeService getInt32TypeService() {
 		if ( int32TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt32TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt32TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2959,7 +2959,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt64DefService getInt64DefService() {
 		if ( int64DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt64DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt64DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2969,7 +2969,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt64TypeService getInt64TypeService() {
 		if ( int64TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt64TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt64TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2979,7 +2979,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokenDefService getNmTokenDefService() {
 		if ( nmTokenDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokenDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokenDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2989,7 +2989,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokenTypeService getNmTokenTypeService() {
 		if ( nmTokenTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokenTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokenTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -2999,7 +2999,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokensDefService getNmTokensDefService() {
 		if ( nmTokensDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokensDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokensDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3009,7 +3009,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokensTypeService getNmTokensTypeService() {
 		if ( nmTokensTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokensTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokensTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3019,7 +3019,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNumberDefService getNumberDefService() {
 		if ( numberDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNumberDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getNumberDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3029,7 +3029,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNumberTypeService getNumberTypeService() {
 		if ( numberTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNumberTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getNumberTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3039,7 +3039,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaParamService getParamService() {
 		if ( paramService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getParamService",
+			throw new MCFNotImplementedYetException( getClass(), "getParamService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3049,7 +3049,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopDepService getPopDepService() {
 		if ( popDepService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getPopDepService",
+			throw new MCFNotImplementedYetException( getClass(), "getPopDepService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3059,7 +3059,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopSubDep1Service getPopSubDep1Service() {
 		if ( popSubDep1Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getPopSubDep1Service",
+			throw new MCFNotImplementedYetException( getClass(), "getPopSubDep1Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3069,7 +3069,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopSubDep2Service getPopSubDep2Service() {
 		if ( popSubDep2Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getPopSubDep2Service",
+			throw new MCFNotImplementedYetException( getClass(), "getPopSubDep2Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3079,7 +3079,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopSubDep3Service getPopSubDep3Service() {
 		if ( popSubDep3Service == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getPopSubDep3Service",
+			throw new MCFNotImplementedYetException( getClass(), "getPopSubDep3Service",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3089,7 +3089,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaPopTopDepService getPopTopDepService() {
 		if ( popTopDepService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getPopTopDepService",
+			throw new MCFNotImplementedYetException( getClass(), "getPopTopDepService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3099,7 +3099,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaRelationService getRelationService() {
 		if ( relationService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getRelationService",
+			throw new MCFNotImplementedYetException( getClass(), "getRelationService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3109,7 +3109,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaRelationColService getRelationColService() {
 		if ( relationColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getRelationColService",
+			throw new MCFNotImplementedYetException( getClass(), "getRelationColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3119,7 +3119,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaServerListFuncService getServerListFuncService() {
 		if ( serverListFuncService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getServerListFuncService",
+			throw new MCFNotImplementedYetException( getClass(), "getServerListFuncService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3129,7 +3129,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash128DefService getDbKeyHash128DefService() {
 		if ( dbKeyHash128DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash128DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash128DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3139,7 +3139,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash128ColService getDbKeyHash128ColService() {
 		if ( dbKeyHash128ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash128ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash128ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3149,7 +3149,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash128TypeService getDbKeyHash128TypeService() {
 		if ( dbKeyHash128TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash128TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash128TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3159,7 +3159,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash128GenService getDbKeyHash128GenService() {
 		if ( dbKeyHash128GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash128GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash128GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3169,7 +3169,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash160DefService getDbKeyHash160DefService() {
 		if ( dbKeyHash160DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash160DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash160DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3179,7 +3179,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash160ColService getDbKeyHash160ColService() {
 		if ( dbKeyHash160ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash160ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash160ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3189,7 +3189,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash160TypeService getDbKeyHash160TypeService() {
 		if ( dbKeyHash160TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash160TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash160TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3199,7 +3199,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash160GenService getDbKeyHash160GenService() {
 		if ( dbKeyHash160GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash160GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash160GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3209,7 +3209,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash224DefService getDbKeyHash224DefService() {
 		if ( dbKeyHash224DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash224DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash224DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3219,7 +3219,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash224ColService getDbKeyHash224ColService() {
 		if ( dbKeyHash224ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash224ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash224ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3229,7 +3229,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash224TypeService getDbKeyHash224TypeService() {
 		if ( dbKeyHash224TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash224TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash224TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3239,7 +3239,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash224GenService getDbKeyHash224GenService() {
 		if ( dbKeyHash224GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash224GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash224GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3249,7 +3249,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash256DefService getDbKeyHash256DefService() {
 		if ( dbKeyHash256DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash256DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash256DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3259,7 +3259,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash256ColService getDbKeyHash256ColService() {
 		if ( dbKeyHash256ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash256ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash256ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3269,7 +3269,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash256TypeService getDbKeyHash256TypeService() {
 		if ( dbKeyHash256TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash256TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash256TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3279,7 +3279,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash256GenService getDbKeyHash256GenService() {
 		if ( dbKeyHash256GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash256GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash256GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3289,7 +3289,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash384DefService getDbKeyHash384DefService() {
 		if ( dbKeyHash384DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash384DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash384DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3299,7 +3299,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash384ColService getDbKeyHash384ColService() {
 		if ( dbKeyHash384ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash384ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash384ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3309,7 +3309,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash384TypeService getDbKeyHash384TypeService() {
 		if ( dbKeyHash384TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash384TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash384TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3319,7 +3319,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash384GenService getDbKeyHash384GenService() {
 		if ( dbKeyHash384GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash384GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash384GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3329,7 +3329,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash512DefService getDbKeyHash512DefService() {
 		if ( dbKeyHash512DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash512DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash512DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3339,7 +3339,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash512ColService getDbKeyHash512ColService() {
 		if ( dbKeyHash512ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash512ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash512ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3349,7 +3349,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash512TypeService getDbKeyHash512TypeService() {
 		if ( dbKeyHash512TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash512TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash512TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3359,7 +3359,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDbKeyHash512GenService getDbKeyHash512GenService() {
 		if ( dbKeyHash512GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDbKeyHash512GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getDbKeyHash512GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3369,7 +3369,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaStringDefService getStringDefService() {
 		if ( stringDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getStringDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getStringDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3379,7 +3379,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaStringTypeService getStringTypeService() {
 		if ( stringTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getStringTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getStringTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3389,7 +3389,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZDateDefService getTZDateDefService() {
 		if ( tZDateDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZDateDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZDateDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3399,7 +3399,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZDateTypeService getTZDateTypeService() {
 		if ( tZDateTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZDateTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZDateTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3409,7 +3409,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimeDefService getTZTimeDefService() {
 		if ( tZTimeDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimeDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimeDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3419,7 +3419,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimeTypeService getTZTimeTypeService() {
 		if ( tZTimeTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimeTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimeTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3429,7 +3429,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimestampDefService getTZTimestampDefService() {
 		if ( tZTimestampDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimestampDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimestampDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3439,7 +3439,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimestampTypeService getTZTimestampTypeService() {
 		if ( tZTimestampTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimestampTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimestampTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3449,7 +3449,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTableColService getTableColService() {
 		if ( tableColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTableColService",
+			throw new MCFNotImplementedYetException( getClass(), "getTableColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3459,7 +3459,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTextDefService getTextDefService() {
 		if ( textDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTextDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getTextDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3469,7 +3469,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTextTypeService getTextTypeService() {
 		if ( textTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTextTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getTextTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3479,7 +3479,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimeDefService getTimeDefService() {
 		if ( timeDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTimeDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getTimeDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3489,7 +3489,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimeTypeService getTimeTypeService() {
 		if ( timeTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTimeTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getTimeTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3499,7 +3499,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimestampDefService getTimestampDefService() {
 		if ( timestampDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTimestampDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getTimestampDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3509,7 +3509,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimestampTypeService getTimestampTypeService() {
 		if ( timestampTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTimestampTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getTimestampTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3519,7 +3519,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTokenDefService getTokenDefService() {
 		if ( tokenDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTokenDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getTokenDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3529,7 +3529,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTokenTypeService getTokenTypeService() {
 		if ( tokenTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTokenTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getTokenTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3539,7 +3539,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt16DefService getUInt16DefService() {
 		if ( uInt16DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt16DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt16DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3549,7 +3549,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt16TypeService getUInt16TypeService() {
 		if ( uInt16TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt16TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt16TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3559,7 +3559,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt32DefService getUInt32DefService() {
 		if ( uInt32DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt32DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt32DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3569,7 +3569,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt32TypeService getUInt32TypeService() {
 		if ( uInt32TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt32TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt32TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3579,7 +3579,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt64DefService getUInt64DefService() {
 		if ( uInt64DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt64DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt64DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3589,7 +3589,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt64TypeService getUInt64TypeService() {
 		if ( uInt64TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt64TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt64TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3599,7 +3599,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuidDefService getUuidDefService() {
 		if ( uuidDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUuidDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getUuidDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3609,7 +3609,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuid6DefService getUuid6DefService() {
 		if ( uuid6DefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUuid6DefService",
+			throw new MCFNotImplementedYetException( getClass(), "getUuid6DefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3619,7 +3619,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuidTypeService getUuidTypeService() {
 		if ( uuidTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUuidTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getUuidTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3629,7 +3629,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuid6TypeService getUuid6TypeService() {
 		if ( uuid6TypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUuid6TypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getUuid6TypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3639,7 +3639,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBlobColService getBlobColService() {
 		if ( blobColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getBlobColService",
+			throw new MCFNotImplementedYetException( getClass(), "getBlobColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3649,7 +3649,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaBoolColService getBoolColService() {
 		if ( boolColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getBoolColService",
+			throw new MCFNotImplementedYetException( getClass(), "getBoolColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3659,7 +3659,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDateColService getDateColService() {
 		if ( dateColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDateColService",
+			throw new MCFNotImplementedYetException( getClass(), "getDateColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3669,7 +3669,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaDoubleColService getDoubleColService() {
 		if ( doubleColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getDoubleColService",
+			throw new MCFNotImplementedYetException( getClass(), "getDoubleColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3679,7 +3679,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaEnumDefService getEnumDefService() {
 		if ( enumDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getEnumDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getEnumDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3689,7 +3689,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaEnumTypeService getEnumTypeService() {
 		if ( enumTypeService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getEnumTypeService",
+			throw new MCFNotImplementedYetException( getClass(), "getEnumTypeService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3699,7 +3699,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaFloatColService getFloatColService() {
 		if ( floatColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getFloatColService",
+			throw new MCFNotImplementedYetException( getClass(), "getFloatColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3709,7 +3709,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaId16GenService getId16GenService() {
 		if ( id16GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getId16GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getId16GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3719,7 +3719,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaId32GenService getId32GenService() {
 		if ( id32GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getId32GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getId32GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3729,7 +3729,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaId64GenService getId64GenService() {
 		if ( id64GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getId64GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getId64GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3739,7 +3739,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt16ColService getInt16ColService() {
 		if ( int16ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt16ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt16ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3749,7 +3749,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt32ColService getInt32ColService() {
 		if ( int32ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt32ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt32ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3759,7 +3759,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaInt64ColService getInt64ColService() {
 		if ( int64ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getInt64ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getInt64ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3769,7 +3769,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokenColService getNmTokenColService() {
 		if ( nmTokenColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokenColService",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokenColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3779,7 +3779,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNmTokensColService getNmTokensColService() {
 		if ( nmTokensColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNmTokensColService",
+			throw new MCFNotImplementedYetException( getClass(), "getNmTokensColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3789,7 +3789,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaNumberColService getNumberColService() {
 		if ( numberColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getNumberColService",
+			throw new MCFNotImplementedYetException( getClass(), "getNumberColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3799,7 +3799,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaStringColService getStringColService() {
 		if ( stringColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getStringColService",
+			throw new MCFNotImplementedYetException( getClass(), "getStringColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3809,7 +3809,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZDateColService getTZDateColService() {
 		if ( tZDateColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZDateColService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZDateColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3819,7 +3819,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimeColService getTZTimeColService() {
 		if ( tZTimeColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimeColService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimeColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3829,7 +3829,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTZTimestampColService getTZTimestampColService() {
 		if ( tZTimestampColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTZTimestampColService",
+			throw new MCFNotImplementedYetException( getClass(), "getTZTimestampColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3839,7 +3839,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTextColService getTextColService() {
 		if ( textColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTextColService",
+			throw new MCFNotImplementedYetException( getClass(), "getTextColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3849,7 +3849,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimeColService getTimeColService() {
 		if ( timeColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTimeColService",
+			throw new MCFNotImplementedYetException( getClass(), "getTimeColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3859,7 +3859,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTimestampColService getTimestampColService() {
 		if ( timestampColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTimestampColService",
+			throw new MCFNotImplementedYetException( getClass(), "getTimestampColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3869,7 +3869,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaTokenColService getTokenColService() {
 		if ( tokenColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getTokenColService",
+			throw new MCFNotImplementedYetException( getClass(), "getTokenColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3879,7 +3879,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt16ColService getUInt16ColService() {
 		if ( uInt16ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt16ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt16ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3889,7 +3889,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt32ColService getUInt32ColService() {
 		if ( uInt32ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt32ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt32ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3899,7 +3899,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUInt64ColService getUInt64ColService() {
 		if ( uInt64ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUInt64ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getUInt64ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3909,7 +3909,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuidColService getUuidColService() {
 		if ( uuidColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUuidColService",
+			throw new MCFNotImplementedYetException( getClass(), "getUuidColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3919,7 +3919,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuid6ColService getUuid6ColService() {
 		if ( uuid6ColService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUuid6ColService",
+			throw new MCFNotImplementedYetException( getClass(), "getUuid6ColService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3929,7 +3929,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuidGenService getUuidGenService() {
 		if ( uuidGenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUuidGenService",
+			throw new MCFNotImplementedYetException( getClass(), "getUuidGenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3939,7 +3939,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaUuid6GenService getUuid6GenService() {
 		if ( uuid6GenService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getUuid6GenService",
+			throw new MCFNotImplementedYetException( getClass(), "getUuid6GenService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3949,7 +3949,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaRoleDefService getRoleDefService() {
 		if ( roleDefService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getRoleDefService",
+			throw new MCFNotImplementedYetException( getClass(), "getRoleDefService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}
@@ -3959,7 +3959,7 @@ public class CFBamJpaHooksSchema {
 	public CFBamJpaSchemaRoleService getSchemaRoleService() {
 		if ( schemaRoleService == null ) {
 			// Dynamically resolve the repository by qualifier name
-			throw new CFLibNotImplementedYetException( getClass(), "getSchemaRoleService",
+			throw new MCFNotImplementedYetException( getClass(), "getSchemaRoleService",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either",
 				"ERROR - do not know how to dynamically resolve Spring beans from POJO code yet and AspectJ did not resolve it either" );
 		}

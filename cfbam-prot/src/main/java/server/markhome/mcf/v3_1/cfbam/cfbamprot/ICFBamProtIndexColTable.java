@@ -137,7 +137,7 @@ extends ICFBamPubIndexColTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteIndexColByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the IndexCol instances identified by the key UNameIdx.
 	 *
@@ -148,7 +148,7 @@ extends ICFBamPubIndexColTable
 	 *	@param	Name	The IndexCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteIndexColByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argIndexId,
+		IMCFKeyHash256 argIndexId,
 		String argName );
 
 	/**
@@ -177,7 +177,7 @@ extends ICFBamPubIndexColTable
 	 *	@param	IndexId	The IndexCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteIndexColByIndexIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argIndexId );
+		IMCFKeyHash256 argIndexId );
 
 	/**
 	 *	Delete the IndexCol instances identified by the key IndexIdx.
@@ -205,7 +205,7 @@ extends ICFBamPubIndexColTable
 	 *	@param	DefSchemaId	The IndexCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteIndexColByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the IndexCol instances identified by the key DefSchemaIdx.
@@ -233,7 +233,7 @@ extends ICFBamPubIndexColTable
 	 *	@param	ColumnId	The IndexCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteIndexColByColIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argColumnId );
+		IMCFKeyHash256 argColumnId );
 
 	/**
 	 *	Delete the IndexCol instances identified by the key ColIdx.
@@ -261,7 +261,7 @@ extends ICFBamPubIndexColTable
 	 *	@param	PrevId	The IndexCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteIndexColByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the IndexCol instances identified by the key PrevIdx.
@@ -289,7 +289,7 @@ extends ICFBamPubIndexColTable
 	 *	@param	NextId	The IndexCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteIndexColByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the IndexCol instances identified by the key NextIdx.
@@ -319,8 +319,8 @@ extends ICFBamPubIndexColTable
 	 *	@param	PrevId	The IndexCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteIndexColByIdxPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argIndexId,
-		CFLibDbKeyHash256 argPrevId );
+		IMCFKeyHash256 argIndexId,
+		MCFDbKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the IndexCol instances identified by the key IdxPrevIdx.
@@ -350,8 +350,8 @@ extends ICFBamPubIndexColTable
 	 *	@param	NextId	The IndexCol key attribute of the instance generating the id.
 	 */
 	public void protdeleteIndexColByIdxNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argIndexId,
-		CFLibDbKeyHash256 argNextId );
+		IMCFKeyHash256 argIndexId,
+		MCFDbKeyHash256 argNextId );
 
 	/**
 	 *	Delete the IndexCol instances identified by the key IdxNextIdx.
@@ -394,7 +394,7 @@ extends ICFBamPubIndexColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamProtIndexCol protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived IndexCol record instance by protected primary key.
@@ -407,7 +407,7 @@ extends ICFBamPubIndexColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamProtIndexCol protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all IndexCol instances.
@@ -429,7 +429,7 @@ extends ICFBamPubIndexColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamProtIndexCol protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived IndexCol record instance identified by the unique key UNameIdx.
@@ -444,7 +444,7 @@ extends ICFBamPubIndexColTable
 	 *		no such existing key value.
 	 */
 	public ICFBamProtIndexCol protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 IndexId,
+		IMCFKeyHash256 IndexId,
 		String Name );
 
 	/**
@@ -457,7 +457,7 @@ extends ICFBamPubIndexColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtIndexCol[] protreadDerivedByIndexIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 IndexId );
+		IMCFKeyHash256 IndexId );
 
 	/**
 	 *	Read an array of the derived IndexCol record instances identified by the duplicate key DefSchemaIdx.
@@ -469,7 +469,7 @@ extends ICFBamPubIndexColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtIndexCol[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived IndexCol record instances identified by the duplicate key ColIdx.
@@ -481,7 +481,7 @@ extends ICFBamPubIndexColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtIndexCol[] protreadDerivedByColIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ColumnId );
+		IMCFKeyHash256 ColumnId );
 
 	/**
 	 *	Read an array of the derived IndexCol record instances identified by the duplicate key PrevIdx.
@@ -493,7 +493,7 @@ extends ICFBamPubIndexColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtIndexCol[] protreadDerivedByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived IndexCol record instances identified by the duplicate key NextIdx.
@@ -505,7 +505,7 @@ extends ICFBamPubIndexColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtIndexCol[] protreadDerivedByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived IndexCol record instances identified by the duplicate key IdxPrevIdx.
@@ -519,8 +519,8 @@ extends ICFBamPubIndexColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtIndexCol[] protreadDerivedByIdxPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 IndexId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 IndexId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived IndexCol record instances identified by the duplicate key IdxNextIdx.
@@ -534,8 +534,8 @@ extends ICFBamPubIndexColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtIndexCol[] protreadDerivedByIdxNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 IndexId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 IndexId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read the specific IndexCol record instance identified by the primary key.
@@ -547,10 +547,10 @@ extends ICFBamPubIndexColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific IndexCol record instance identified by the primary key.
@@ -562,10 +562,10 @@ extends ICFBamPubIndexColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific IndexCol record instances.
@@ -586,10 +586,10 @@ extends ICFBamPubIndexColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific IndexCol record instance identified by the unique key UNameIdx.
@@ -603,10 +603,10 @@ extends ICFBamPubIndexColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 IndexId,
+		IMCFKeyHash256 IndexId,
 		String Name );
 
 	/**
@@ -618,10 +618,10 @@ extends ICFBamPubIndexColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol[] protreadRecByIndexIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 IndexId );
+		IMCFKeyHash256 IndexId );
 
 	/**
 	 *	Read an array of the specific IndexCol record instances identified by the duplicate key DefSchemaIdx.
@@ -632,10 +632,10 @@ extends ICFBamPubIndexColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific IndexCol record instances identified by the duplicate key ColIdx.
@@ -646,10 +646,10 @@ extends ICFBamPubIndexColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol[] protreadRecByColIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ColumnId );
+		IMCFKeyHash256 ColumnId );
 
 	/**
 	 *	Read an array of the specific IndexCol record instances identified by the duplicate key PrevIdx.
@@ -660,10 +660,10 @@ extends ICFBamPubIndexColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol[] protreadRecByPrevIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific IndexCol record instances identified by the duplicate key NextIdx.
@@ -674,10 +674,10 @@ extends ICFBamPubIndexColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol[] protreadRecByNextIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific IndexCol record instances identified by the duplicate key IdxPrevIdx.
@@ -690,11 +690,11 @@ extends ICFBamPubIndexColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol[] protreadRecByIdxPrevIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 IndexId,
-		CFLibDbKeyHash256 PrevId );
+		IMCFKeyHash256 IndexId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific IndexCol record instances identified by the duplicate key IdxNextIdx.
@@ -707,11 +707,11 @@ extends ICFBamPubIndexColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexCol[] protreadRecByIdxNextIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 IndexId,
-		CFLibDbKeyHash256 NextId );
+		IMCFKeyHash256 IndexId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -719,7 +719,7 @@ extends ICFBamPubIndexColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtIndexCol protmoveRecUp( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -728,6 +728,6 @@ extends ICFBamPubIndexColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	public ICFBamProtIndexCol protmoveRecDown( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

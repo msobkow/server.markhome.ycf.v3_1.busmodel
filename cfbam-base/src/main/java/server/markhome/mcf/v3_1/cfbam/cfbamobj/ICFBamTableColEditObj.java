@@ -119,11 +119,11 @@ public interface ICFBamTableColEditObj
 	void setRequiredParentDataType( ICFBamValueObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TableId.
+	 *	Get the required IMCFKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TableId.
+	 *	@return	The required IMCFKeyHash256 attribute TableId.
 	 */
-	ICFLibKeyHash256 getRequiredTableId();
+	IMCFKeyHash256 getRequiredTableId();
 
 	/**
 	 *	Get the optional String attribute DbName.
@@ -140,11 +140,11 @@ public interface ICFBamTableColEditObj
 	void setOptionalDbName(String value);
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DataId.
+	 *	Get the optional IMCFKeyHash256 attribute DataId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DataId.
+	 *	@return	The optional IMCFKeyHash256 attribute DataId.
 	 */
-	ICFLibKeyHash256 getOptionalDataId();
+	IMCFKeyHash256 getOptionalDataId();
 
 	/**
 	 *	Get the optional String attribute XmlElementName.

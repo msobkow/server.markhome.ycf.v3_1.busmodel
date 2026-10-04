@@ -108,7 +108,7 @@ public interface ICFBamSchemaRefTable
 	 *	@param	SchemaId	The SchemaRef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRefBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaId );
+		IMCFKeyHash256 argSchemaId );
 
 	/**
 	 *	Delete the SchemaRef instances identified by the key SchemaIdx.
@@ -129,7 +129,7 @@ public interface ICFBamSchemaRefTable
 	 *	@param	Name	The SchemaRef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRefByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaId,
+		IMCFKeyHash256 argSchemaId,
 		String argName );
 
 	/**
@@ -149,7 +149,7 @@ public interface ICFBamSchemaRefTable
 	 *	@param	RefSchemaId	The SchemaRef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRefByRefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRefSchemaId );
+		IMCFKeyHash256 argRefSchemaId );
 
 	/**
 	 *	Delete the SchemaRef instances identified by the key RefSchemaIdx.
@@ -168,7 +168,7 @@ public interface ICFBamSchemaRefTable
 	 *	@param	PrevId	The SchemaRef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRefByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the SchemaRef instances identified by the key PrevIdx.
@@ -187,7 +187,7 @@ public interface ICFBamSchemaRefTable
 	 *	@param	NextId	The SchemaRef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRefByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the SchemaRef instances identified by the key NextIdx.
@@ -215,7 +215,7 @@ public interface ICFBamSchemaRefTable
 	 *	@param	TenantId	The SchemaRef key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRefByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the SchemaRef instances identified by the key TenantIdx.
@@ -274,7 +274,7 @@ public interface ICFBamSchemaRefTable
 	 *		no such existing key value.
 	 */
 	ICFBamSchemaRef readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived SchemaRef record instances identified by the duplicate key TenantIdx.
@@ -286,7 +286,7 @@ public interface ICFBamSchemaRefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRef[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived SchemaRef record instances identified by the duplicate key SchemaIdx.
@@ -298,7 +298,7 @@ public interface ICFBamSchemaRefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRef[] readDerivedBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaId );
+		IMCFKeyHash256 SchemaId );
 
 	/**
 	 *	Read the derived SchemaRef record instance identified by the unique key UNameIdx.
@@ -313,7 +313,7 @@ public interface ICFBamSchemaRefTable
 	 *		no such existing key value.
 	 */
 	ICFBamSchemaRef readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaId,
+		IMCFKeyHash256 SchemaId,
 		String Name );
 
 	/**
@@ -326,7 +326,7 @@ public interface ICFBamSchemaRefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRef[] readDerivedByRefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RefSchemaId );
+		IMCFKeyHash256 RefSchemaId );
 
 	/**
 	 *	Read an array of the derived SchemaRef record instances identified by the duplicate key PrevIdx.
@@ -338,7 +338,7 @@ public interface ICFBamSchemaRefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRef[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived SchemaRef record instances identified by the duplicate key NextIdx.
@@ -350,7 +350,7 @@ public interface ICFBamSchemaRefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRef[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read the specific SchemaRef record instance identified by the primary key.
@@ -362,7 +362,7 @@ public interface ICFBamSchemaRefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -377,7 +377,7 @@ public interface ICFBamSchemaRefTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -401,10 +401,10 @@ public interface ICFBamSchemaRefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific SchemaRef record instances identified by the duplicate key TenantIdx.
@@ -415,10 +415,10 @@ public interface ICFBamSchemaRefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific SchemaRef record instances identified by the duplicate key SchemaIdx.
@@ -429,10 +429,10 @@ public interface ICFBamSchemaRefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaId );
+		IMCFKeyHash256 SchemaId );
 
 	/**
 	 *	Read the specific SchemaRef record instance identified by the unique key UNameIdx.
@@ -446,10 +446,10 @@ public interface ICFBamSchemaRefTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaId,
+		IMCFKeyHash256 SchemaId,
 		String Name );
 
 	/**
@@ -461,10 +461,10 @@ public interface ICFBamSchemaRefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef[] readRecByRefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RefSchemaId );
+		IMCFKeyHash256 RefSchemaId );
 
 	/**
 	 *	Read an array of the specific SchemaRef record instances identified by the duplicate key PrevIdx.
@@ -475,10 +475,10 @@ public interface ICFBamSchemaRefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific SchemaRef record instances identified by the duplicate key NextIdx.
@@ -489,10 +489,10 @@ public interface ICFBamSchemaRefTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRef[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -500,7 +500,7 @@ public interface ICFBamSchemaRefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamSchemaRef moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -509,6 +509,6 @@ public interface ICFBamSchemaRefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamSchemaRef moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

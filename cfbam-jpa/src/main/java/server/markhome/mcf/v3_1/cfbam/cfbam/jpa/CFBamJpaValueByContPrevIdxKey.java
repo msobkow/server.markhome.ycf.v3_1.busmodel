@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,21 +66,21 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaValueByContPrevIdxKey
 	implements ICFBamValueByContPrevIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredScopeId;
-	protected ICFLibKeyHash256 optionalPrevId;
+	protected IMCFKeyHash256 requiredScopeId;
+	protected IMCFKeyHash256 optionalPrevId;
 	public CFBamJpaValueByContPrevIdxKey() {
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.SCOPEID_INIT_VALUE.toString() );
-		optionalPrevId = CFLibDbKeyHash256.nullGet();
+		requiredScopeId = MCFDbKeyHash256.fromHex( ICFBamPubValue.SCOPEID_INIT_VALUE.toString() );
+		optionalPrevId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredScopeId() {
+	public IMCFKeyHash256 getRequiredScopeId() {
 		return(requiredScopeId);
 	}
 
-	public void setRequiredScopeId( ICFLibKeyHash256 value ) {
+	public void setRequiredScopeId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredScopeId",
 				1,
 				"value" );
@@ -89,11 +89,11 @@ public class CFBamJpaValueByContPrevIdxKey
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalPrevId() {
+	public IMCFKeyHash256 getOptionalPrevId() {
 		return(optionalPrevId);
 	}
 
-	public void setOptionalPrevId( ICFLibKeyHash256 value ) {
+	public void setOptionalPrevId( IMCFKeyHash256 value ) {
 		optionalPrevId = value;
 	}
 
@@ -328,7 +328,7 @@ public class CFBamJpaValueByContPrevIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

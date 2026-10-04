@@ -371,7 +371,7 @@ public class CFBamISOCcyTableObj
 			locked = (ICFSecISOCcyObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockISOCcy", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockISOCcy", pkey );
 		}
 		return( locked );
 	}
@@ -406,7 +406,7 @@ public class CFBamISOCcyTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -414,7 +414,7 @@ public class CFBamISOCcyTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -466,7 +466,7 @@ public class CFBamISOCcyTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -474,7 +474,7 @@ public class CFBamISOCcyTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",

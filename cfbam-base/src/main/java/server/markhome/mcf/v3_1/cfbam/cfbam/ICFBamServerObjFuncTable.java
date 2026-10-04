@@ -108,7 +108,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@param	RetTableId	The ServerObjFunc key attribute of the instance generating the id.
 	 */
 	void deleteServerObjFuncByRetTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRetTableId );
+		IMCFKeyHash256 argRetTableId );
 
 	/**
 	 *	Delete the ServerObjFunc instances identified by the key RetTblIdx.
@@ -129,7 +129,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@param	Name	The ServerObjFunc key attribute of the instance generating the id.
 	 */
 	void deleteServerObjFuncByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName );
 
 	/**
@@ -149,7 +149,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@param	TableId	The ServerObjFunc key attribute of the instance generating the id.
 	 */
 	void deleteServerObjFuncByMethTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId );
+		IMCFKeyHash256 argTableId );
 
 	/**
 	 *	Delete the ServerObjFunc instances identified by the key MethTableIdx.
@@ -189,7 +189,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@param	CodeVis	The ServerObjFunc key attribute of the instance generating the id.
 	 */
 	void deleteServerObjFuncByMethTableVisIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
@@ -209,7 +209,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@param	DefSchemaId	The ServerObjFunc key attribute of the instance generating the id.
 	 */
 	void deleteServerObjFuncByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the ServerObjFunc instances identified by the key DefSchemaIdx.
@@ -237,7 +237,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@param	TenantId	The ServerObjFunc key attribute of the instance generating the id.
 	 */
 	void deleteServerObjFuncByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the ServerObjFunc instances identified by the key TenantIdx.
@@ -296,7 +296,7 @@ public interface ICFBamServerObjFuncTable
 	 *		no such existing key value.
 	 */
 	ICFBamServerObjFunc readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived ServerObjFunc record instances identified by the duplicate key TenantIdx.
@@ -308,7 +308,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamServerObjFunc[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read the derived ServerObjFunc record instance identified by the unique key UNameIdx.
@@ -323,7 +323,7 @@ public interface ICFBamServerObjFuncTable
 	 *		no such existing key value.
 	 */
 	ICFBamServerObjFunc readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -336,7 +336,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamServerObjFunc[] readDerivedByMethTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the derived ServerObjFunc record instances identified by the duplicate key MethCodeVisIdx.
@@ -362,7 +362,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamServerObjFunc[] readDerivedByMethTableVisIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -375,7 +375,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamServerObjFunc[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived ServerObjFunc record instances identified by the duplicate key RetTblIdx.
@@ -387,7 +387,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamServerObjFunc[] readDerivedByRetTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RetTableId );
+		IMCFKeyHash256 RetTableId );
 
 	/**
 	 *	Read the specific ServerObjFunc record instance identified by the primary key.
@@ -399,7 +399,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -414,7 +414,7 @@ public interface ICFBamServerObjFuncTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -438,10 +438,10 @@ public interface ICFBamServerObjFuncTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific ServerObjFunc record instances identified by the duplicate key TenantIdx.
@@ -452,10 +452,10 @@ public interface ICFBamServerObjFuncTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read the specific ServerObjFunc record instance identified by the unique key UNameIdx.
@@ -469,10 +469,10 @@ public interface ICFBamServerObjFuncTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -484,10 +484,10 @@ public interface ICFBamServerObjFuncTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc[] readRecByMethTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the specific ServerObjFunc record instances identified by the duplicate key MethCodeVisIdx.
@@ -498,7 +498,7 @@ public interface ICFBamServerObjFuncTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc[] readRecByMethCodeVisIdx( ICFSecAuthorization Authorization,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
@@ -514,10 +514,10 @@ public interface ICFBamServerObjFuncTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc[] readRecByMethTableVisIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -529,10 +529,10 @@ public interface ICFBamServerObjFuncTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific ServerObjFunc record instances identified by the duplicate key RetTblIdx.
@@ -543,8 +543,8 @@ public interface ICFBamServerObjFuncTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerObjFunc[] readRecByRetTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RetTableId );
+		IMCFKeyHash256 RetTableId );
 }

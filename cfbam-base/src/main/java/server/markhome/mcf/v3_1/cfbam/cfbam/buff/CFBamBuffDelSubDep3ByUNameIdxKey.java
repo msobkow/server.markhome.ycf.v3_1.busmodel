@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,21 +74,21 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffDelSubDep3ByUNameIdxKey
 	implements ICFBamDelSubDep3ByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredDelSubDep2Id;
+	protected IMCFKeyHash256 requiredDelSubDep2Id;
 	protected String requiredName;
 	public CFBamBuffDelSubDep3ByUNameIdxKey() {
-		requiredDelSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPubDelSubDep3.DELSUBDEP2ID_INIT_VALUE.toString() );
+		requiredDelSubDep2Id = MCFDbKeyHash256.fromHex( ICFBamPubDelSubDep3.DELSUBDEP2ID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubDelSubDep3.NAME_INIT_VALUE;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredDelSubDep2Id() {
+	public IMCFKeyHash256 getRequiredDelSubDep2Id() {
 		return(requiredDelSubDep2Id);
 	}
 
-	public void setRequiredDelSubDep2Id( ICFLibKeyHash256 value ) {
+	public void setRequiredDelSubDep2Id( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredDelSubDep2Id",
 				1,
 				"value" );
@@ -103,13 +103,13 @@ public class CFBamBuffDelSubDep3ByUNameIdxKey
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -278,7 +278,7 @@ public class CFBamBuffDelSubDep3ByUNameIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

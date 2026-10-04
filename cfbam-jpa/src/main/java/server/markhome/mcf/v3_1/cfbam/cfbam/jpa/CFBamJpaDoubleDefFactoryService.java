@@ -104,7 +104,7 @@ public class CFBamJpaDoubleDefFactoryService
 					mapped.set((ICFBamDoubleCol)rec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDoubleDef",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDoubleDef");
 			}
@@ -140,7 +140,7 @@ public class CFBamJpaDoubleDefFactoryService
 					mapped.set((ICFBamDoubleColH)hrec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDoubleDef",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDoubleDef");
 			}

@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -99,7 +99,7 @@ public class CFBamBuffTextDef
 	@Override
 	public void setRequiredMaxLen( int value ) {
 		if( value < ICFBamPubTextDef.MAXLEN_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setRequiredMaxLen",
 				1,
 				"value",
@@ -107,7 +107,7 @@ public class CFBamBuffTextDef
 				ICFBamPubTextDef.MAXLEN_MIN_VALUE );
 		}
 		if( value > ICFBamPubTextDef.MAXLEN_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredMaxLen",
 				1,
 				"value",
@@ -124,7 +124,7 @@ public class CFBamBuffTextDef
 
 	public void setOptionalInitValue( String value ) {
 		if( value != null && value.length() > 65535 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value.length()",
@@ -141,7 +141,7 @@ public class CFBamBuffTextDef
 
 	public void setOptionalXmlElementName( String value ) {
 		if( value != null && value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalXmlElementName",
 				1,
 				"value.length()",
@@ -893,7 +893,7 @@ public class CFBamBuffTextDef
 			setTextDef( (CFBamBuffTextDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -915,7 +915,7 @@ public class CFBamBuffTextDef
 			setTextDef( (ICFBamTextDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -937,7 +937,7 @@ public class CFBamBuffTextDef
 			setTextDef( (CFBamProtBuffTextDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -959,7 +959,7 @@ public class CFBamBuffTextDef
 			setTextDef( (ICFBamProtTextDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -981,7 +981,7 @@ public class CFBamBuffTextDef
 			setTextDef( (CFBamPubBuffTextDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -1003,7 +1003,7 @@ public class CFBamBuffTextDef
 			setTextDef( (ICFBamPubTextDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

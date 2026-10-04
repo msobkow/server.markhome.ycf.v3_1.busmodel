@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,12 +74,12 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffPopSubDep3H extends CFBamBuffPopDepH
     implements ICFBamPopSubDep3H
 {
-	protected ICFLibKeyHash256 requiredPopSubDep2Id;
+	protected IMCFKeyHash256 requiredPopSubDep2Id;
 	protected String requiredName;
 
     public CFBamBuffPopSubDep3H() {
             super();
-		requiredPopSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep3.POPSUBDEP2ID_INIT_VALUE.toString() );
+		requiredPopSubDep2Id = MCFDbKeyHash256.fromHex( ICFBamPubPopSubDep3.POPSUBDEP2ID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubPopSubDep3.NAME_INIT_VALUE;
     }
 
@@ -89,13 +89,13 @@ public class CFBamBuffPopSubDep3H extends CFBamBuffPopDepH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredPopSubDep2Id() {
+	public IMCFKeyHash256 getRequiredPopSubDep2Id() {
 		return(requiredPopSubDep2Id);
 	}
 
-	public void setRequiredPopSubDep2Id( ICFLibKeyHash256 value ) {
+	public void setRequiredPopSubDep2Id( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredPopSubDep2Id",
 				1,
 				"value" );
@@ -110,13 +110,13 @@ public class CFBamBuffPopSubDep3H extends CFBamBuffPopDepH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -420,7 +420,7 @@ public class CFBamBuffPopSubDep3H extends CFBamBuffPopDepH
 			setPopSubDep3( (CFBamBuffPopSubDep3)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -441,7 +441,7 @@ public class CFBamBuffPopSubDep3H extends CFBamBuffPopDepH
 			setPopSubDep3( (ICFBamPopSubDep3H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

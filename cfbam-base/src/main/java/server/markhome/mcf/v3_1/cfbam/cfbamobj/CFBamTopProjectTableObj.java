@@ -442,7 +442,7 @@ public class CFBamTopProjectTableObj
 			locked = (ICFIntTopProjectObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockTopProject", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockTopProject", pkey );
 		}
 		return( locked );
 	}
@@ -477,7 +477,7 @@ public class CFBamTopProjectTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -485,7 +485,7 @@ public class CFBamTopProjectTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -537,7 +537,7 @@ public class CFBamTopProjectTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -545,7 +545,7 @@ public class CFBamTopProjectTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -582,28 +582,28 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public ICFIntTopProjectObj readTopProjectByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntTopProjectObj readTopProjectByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readTopProjectByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntTopProjectObj readTopProjectByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFIntTopProjectObj readTopProjectByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFIntTopProjectObj obj = readTopProject( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntTopProjectObj> readTopProjectByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntTopProjectObj> readTopProjectByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readTopProjectByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntTopProjectObj> readTopProjectByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFIntTopProjectObj> readTopProjectByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTopProjectByTenantIdx";
@@ -641,7 +641,7 @@ public class CFBamTopProjectTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -649,7 +649,7 @@ public class CFBamTopProjectTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -689,14 +689,14 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public List<ICFIntTopProjectObj> readTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public List<ICFIntTopProjectObj> readTopProjectByTopDomainIdx( IMCFKeyHash256 TopDomainId )
 	{
 		return( readTopProjectByTopDomainIdx( TopDomainId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntTopProjectObj> readTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId,
+	public List<ICFIntTopProjectObj> readTopProjectByTopDomainIdx( IMCFKeyHash256 TopDomainId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTopProjectByTopDomainIdx";
@@ -734,7 +734,7 @@ public class CFBamTopProjectTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -742,7 +742,7 @@ public class CFBamTopProjectTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -782,7 +782,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public ICFIntTopProjectObj readTopProjectByNameIdx( ICFLibKeyHash256 TopDomainId,
+	public ICFIntTopProjectObj readTopProjectByNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name )
 	{
 		return( readTopProjectByNameIdx( TopDomainId,
@@ -791,7 +791,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public ICFIntTopProjectObj readTopProjectByNameIdx( ICFLibKeyHash256 TopDomainId,
+	public ICFIntTopProjectObj readTopProjectByNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name, boolean forceRead )
 	{
 		if( indexByNameIdx == null ) {
@@ -820,7 +820,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public ICFIntTopProjectObj readCachedTopProjectByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntTopProjectObj readCachedTopProjectByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTopProjectObj obj = null;
 		obj = readCachedTopProject( Id );
@@ -828,7 +828,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public List<ICFIntTopProjectObj> readCachedTopProjectByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntTopProjectObj> readCachedTopProjectByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedTopProjectByTenantIdx";
 		ICFIntTopProjectByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopProject().newByTenantIdxKey();
@@ -846,7 +846,7 @@ public class CFBamTopProjectTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -854,7 +854,7 @@ public class CFBamTopProjectTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -905,7 +905,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public List<ICFIntTopProjectObj> readCachedTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public List<ICFIntTopProjectObj> readCachedTopProjectByTopDomainIdx( IMCFKeyHash256 TopDomainId )
 	{
 		final String S_ProcName = "readCachedTopProjectByTopDomainIdx";
 		ICFIntTopProjectByTopDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopProject().newByTopDomainIdxKey();
@@ -923,7 +923,7 @@ public class CFBamTopProjectTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -931,7 +931,7 @@ public class CFBamTopProjectTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -982,7 +982,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public ICFIntTopProjectObj readCachedTopProjectByNameIdx( ICFLibKeyHash256 TopDomainId,
+	public ICFIntTopProjectObj readCachedTopProjectByNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name )
 	{
 		ICFIntTopProjectObj obj = null;
@@ -1020,7 +1020,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public void deepDisposeTopProjectByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeTopProjectByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTopProjectObj obj = readCachedTopProjectByIdIdx( Id );
 		if( obj != null ) {
@@ -1029,7 +1029,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public void deepDisposeTopProjectByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeTopProjectByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeTopProjectByTenantIdx";
 		ICFIntTopProjectObj obj;
@@ -1046,7 +1046,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public void deepDisposeTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public void deepDisposeTopProjectByTopDomainIdx( IMCFKeyHash256 TopDomainId )
 	{
 		final String S_ProcName = "deepDisposeTopProjectByTopDomainIdx";
 		ICFIntTopProjectObj obj;
@@ -1063,7 +1063,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public void deepDisposeTopProjectByNameIdx( ICFLibKeyHash256 TopDomainId,
+	public void deepDisposeTopProjectByNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name )
 	{
 		ICFIntTopProjectObj obj = readCachedTopProjectByNameIdx( TopDomainId,
@@ -1092,7 +1092,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public void deleteTopProjectByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteTopProjectByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTopProjectObj obj = readTopProject(Id);
 		if( obj != null ) {
@@ -1122,7 +1122,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public void deleteTopProjectByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteTopProjectByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFIntTopProjectByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopProject().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -1156,7 +1156,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public void deleteTopProjectByTopDomainIdx( ICFLibKeyHash256 TopDomainId )
+	public void deleteTopProjectByTopDomainIdx( IMCFKeyHash256 TopDomainId )
 	{
 		ICFIntTopProjectByTopDomainIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopProject().newByTopDomainIdxKey();
 		key.setRequiredTopDomainId( TopDomainId );
@@ -1190,7 +1190,7 @@ public class CFBamTopProjectTableObj
 	}
 
 	@Override
-	public void deleteTopProjectByNameIdx( ICFLibKeyHash256 TopDomainId,
+	public void deleteTopProjectByNameIdx( IMCFKeyHash256 TopDomainId,
 		String Name )
 	{
 		if( indexByNameIdx == null ) {

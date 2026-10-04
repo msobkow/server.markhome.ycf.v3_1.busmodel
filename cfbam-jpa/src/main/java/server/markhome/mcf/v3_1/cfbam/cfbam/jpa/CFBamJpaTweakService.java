@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,10 +94,10 @@ public class CFBamJpaTweakService {
 		if (data == null) {
 			return( null );
 		}
-		ICFLibKeyHash256 originalRequiredId = data.getRequiredId();
+		IMCFKeyHash256 originalRequiredId = data.getRequiredId();
 		boolean generatedRequiredId = false;
 		if (data.getRequiredContainerScopeDef() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -108,25 +108,25 @@ public class CFBamJpaTweakService {
 				null);
 		}
 		if(data.getRequiredTenantId() == null || data.getRequiredTenantId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTenantId");
 		}
 		if(data.getRequiredScopeId() == null || data.getRequiredScopeId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredScopeId");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		if(data.getRequiredTweakGelText() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTweakGelText");
@@ -139,7 +139,7 @@ public class CFBamJpaTweakService {
 				data.setRequiredRevision(1);
 			}
 			if (data.getRequiredId() == null || data.getRequiredId().isNull()) {
-				data.setRequiredId(new CFLibDbKeyHash256(0));
+				data.setRequiredId(new MCFDbKeyHash256(0));
 				generatedRequiredId = true;
 			}
 			LocalDateTime now = LocalDateTime.now();
@@ -151,7 +151,7 @@ public class CFBamJpaTweakService {
 				if(generatedRequiredId) {
 					data.setRequiredId(originalRequiredId);
 				}
-			throw new CFLibDbException(getClass(),
+			throw new MCFDbException(getClass(),
 				S_ProcName,
 				ex);
 		}
@@ -171,13 +171,13 @@ public class CFBamJpaTweakService {
 			return( null );
 		}
 		if (data.getPKey() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.getPKey()");
 		}
 		if (data.getRequiredContainerScopeDef() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -188,34 +188,34 @@ public class CFBamJpaTweakService {
 				null);
 		}
 		if(data.getRequiredTenantId() == null || data.getRequiredTenantId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTenantId");
 		}
 		if(data.getRequiredScopeId() == null || data.getRequiredScopeId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredScopeId");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		if(data.getRequiredTweakGelText() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTweakGelText");
 		}
 		// Ensure the entity exists and that the revision matches
 		CFBamJpaTweak existing = cfbam31TweakRepository.findById(($implCommaIJavaOptAtomType$)(data.getPKey()))
-			.orElseThrow(() -> new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
+			.orElseThrow(() -> new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
 		if (existing.getRequiredRevision() != data.getRequiredRevision()) {
-			throw new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
+			throw new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
 		}
 		// Apply superior data relationships of CFBamTweak to existing object
 		existing.setRequiredContainerScopeDef(data.getRequiredContainerScopeDef());
@@ -242,7 +242,7 @@ public class CFBamJpaTweakService {
 	 *		@return The retrieved entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTweak find(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaTweak find(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31TweakRepository.get(requiredId));
 	}
 
@@ -267,7 +267,7 @@ public class CFBamJpaTweakService {
 	 *		@return The found entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTweak findByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	public CFBamJpaTweak findByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName) {
 		return( cfbam31TweakRepository.findByUNameIdx(requiredScopeId,
 			requiredName));
@@ -293,7 +293,7 @@ public class CFBamJpaTweakService {
 	 *		@return List&lt;CFBamJpaTweak&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTweak> findByValTentIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public List<CFBamJpaTweak> findByValTentIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		return( cfbam31TweakRepository.findByValTentIdx(requiredTenantId));
 	}
 
@@ -317,7 +317,7 @@ public class CFBamJpaTweakService {
 	 *		@return List&lt;CFBamJpaTweak&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTweak> findByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId) {
+	public List<CFBamJpaTweak> findByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId) {
 		return( cfbam31TweakRepository.findByScopeIdx(requiredScopeId));
 	}
 
@@ -341,7 +341,7 @@ public class CFBamJpaTweakService {
 	 *		@return List&lt;CFBamJpaTweak&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTweak> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaTweak> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31TweakRepository.findByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -369,10 +369,10 @@ public class CFBamJpaTweakService {
 	 *		@return The found entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTweak findByUDefIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId,
-		@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("defSchemaTenantId") ICFLibKeyHash256 optionalDefSchemaTenantId,
-		@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId,
+	public CFBamJpaTweak findByUDefIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId,
+		@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("defSchemaTenantId") IMCFKeyHash256 optionalDefSchemaTenantId,
+		@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId,
 		@Param("name") String requiredName) {
 		return( cfbam31TweakRepository.findByUDefIdx(requiredTenantId,
 			requiredScopeId,
@@ -403,7 +403,7 @@ public class CFBamJpaTweakService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTweak lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaTweak lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31TweakRepository.lockByIdIdx(requiredId));
 	}
 
@@ -416,7 +416,7 @@ public class CFBamJpaTweakService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTweak lockByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	public CFBamJpaTweak lockByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName) {
 		return( cfbam31TweakRepository.lockByUNameIdx(requiredScopeId,
 			requiredName));
@@ -442,7 +442,7 @@ public class CFBamJpaTweakService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTweak> lockByValTentIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public List<CFBamJpaTweak> lockByValTentIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		return( cfbam31TweakRepository.lockByValTentIdx(requiredTenantId));
 	}
 
@@ -466,7 +466,7 @@ public class CFBamJpaTweakService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTweak> lockByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId) {
+	public List<CFBamJpaTweak> lockByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId) {
 		return( cfbam31TweakRepository.lockByScopeIdx(requiredScopeId));
 	}
 
@@ -490,7 +490,7 @@ public class CFBamJpaTweakService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaTweak> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaTweak> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31TweakRepository.lockByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -518,10 +518,10 @@ public class CFBamJpaTweakService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaTweak lockByUDefIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId,
-		@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("defSchemaTenantId") ICFLibKeyHash256 optionalDefSchemaTenantId,
-		@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId,
+	public CFBamJpaTweak lockByUDefIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId,
+		@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("defSchemaTenantId") IMCFKeyHash256 optionalDefSchemaTenantId,
+		@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId,
 		@Param("name") String requiredName) {
 		return( cfbam31TweakRepository.lockByUDefIdx(requiredTenantId,
 			requiredScopeId,
@@ -550,7 +550,7 @@ public class CFBamJpaTweakService {
 	 *		@param requiredId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		cfbam31TweakRepository.deleteByIdIdx(requiredId);
 	}
 
@@ -561,7 +561,7 @@ public class CFBamJpaTweakService {
 	 *		@param requiredName
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByUNameIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
+	public void deleteByUNameIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId,
 		@Param("name") String requiredName) {
 		cfbam31TweakRepository.deleteByUNameIdx(requiredScopeId,
 			requiredName);
@@ -583,7 +583,7 @@ public class CFBamJpaTweakService {
 	 *		@param requiredTenantId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByValTentIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public void deleteByValTentIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		cfbam31TweakRepository.deleteByValTentIdx(requiredTenantId);
 	}
 
@@ -603,7 +603,7 @@ public class CFBamJpaTweakService {
 	 *		@param requiredScopeId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByScopeIdx(@Param("scopeId") ICFLibKeyHash256 requiredScopeId) {
+	public void deleteByScopeIdx(@Param("scopeId") IMCFKeyHash256 requiredScopeId) {
 		cfbam31TweakRepository.deleteByScopeIdx(requiredScopeId);
 	}
 
@@ -623,7 +623,7 @@ public class CFBamJpaTweakService {
 	 *		@param optionalDefSchemaId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		cfbam31TweakRepository.deleteByDefSchemaIdx(optionalDefSchemaId);
 	}
 
@@ -647,10 +647,10 @@ public class CFBamJpaTweakService {
 	 *		@param requiredName
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByUDefIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId,
-		@Param("scopeId") ICFLibKeyHash256 requiredScopeId,
-		@Param("defSchemaTenantId") ICFLibKeyHash256 optionalDefSchemaTenantId,
-		@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId,
+	public void deleteByUDefIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId,
+		@Param("scopeId") IMCFKeyHash256 requiredScopeId,
+		@Param("defSchemaTenantId") IMCFKeyHash256 optionalDefSchemaTenantId,
+		@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId,
 		@Param("name") String requiredName) {
 		cfbam31TweakRepository.deleteByUDefIdx(requiredTenantId,
 			requiredScopeId,

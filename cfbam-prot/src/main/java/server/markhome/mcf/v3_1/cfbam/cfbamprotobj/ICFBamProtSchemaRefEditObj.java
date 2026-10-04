@@ -159,11 +159,11 @@ public interface ICFBamProtSchemaRefEditObj
 	void setOptionalLookupNext( ICFBamProtSchemaRefObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SchemaId.
+	 *	Get the required IMCFKeyHash256 attribute SchemaId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SchemaId.
+	 *	@return	The required IMCFKeyHash256 attribute SchemaId.
 	 */
-	ICFLibKeyHash256 getRequiredSchemaId();
+	IMCFKeyHash256 getRequiredSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -208,24 +208,24 @@ public interface ICFBamProtSchemaRefEditObj
 	void setRequiredIncludeRoot(String value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute RefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute RefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute RefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute RefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalRefSchemaId();
+	MCFDbKeyHash256 getOptionalRefSchemaId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrevId.
+	 *	Get the optional MCFDbKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrevId.
+	 *	@return	The optional MCFDbKeyHash256 attribute PrevId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrevId();
+	MCFDbKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NextId.
+	 *	Get the optional MCFDbKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NextId.
+	 *	@return	The optional MCFDbKeyHash256 attribute NextId.
 	 */
-	CFLibDbKeyHash256 getOptionalNextId();
+	MCFDbKeyHash256 getOptionalNextId();
 
 }

@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,21 +66,21 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaIndexColByIdxNextIdxKey
 	implements ICFBamIndexColByIdxNextIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredIndexId;
-	protected ICFLibKeyHash256 optionalNextId;
+	protected IMCFKeyHash256 requiredIndexId;
+	protected IMCFKeyHash256 optionalNextId;
 	public CFBamJpaIndexColByIdxNextIdxKey() {
-		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.INDEXID_INIT_VALUE.toString() );
-		optionalNextId = CFLibDbKeyHash256.nullGet();
+		requiredIndexId = MCFDbKeyHash256.fromHex( ICFBamPubIndexCol.INDEXID_INIT_VALUE.toString() );
+		optionalNextId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredIndexId() {
+	public IMCFKeyHash256 getRequiredIndexId() {
 		return(requiredIndexId);
 	}
 
-	public void setRequiredIndexId( ICFLibKeyHash256 value ) {
+	public void setRequiredIndexId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredIndexId",
 				1,
 				"value" );
@@ -89,11 +89,11 @@ public class CFBamJpaIndexColByIdxNextIdxKey
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNextId() {
+	public IMCFKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( ICFLibKeyHash256 value ) {
+	public void setOptionalNextId( IMCFKeyHash256 value ) {
 		optionalNextId = value;
 	}
 
@@ -328,7 +328,7 @@ public class CFBamJpaIndexColByIdxNextIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

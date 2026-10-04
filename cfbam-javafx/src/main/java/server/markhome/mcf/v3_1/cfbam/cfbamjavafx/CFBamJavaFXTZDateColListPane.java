@@ -96,7 +96,7 @@ implements ICFBamJavaFXTZDateColPaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamTZDateColObj> dataTable = null;
-	protected TableColumn<ICFBamTZDateColObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamTZDateColObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamTZDateColObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamTZDateColObj, String> tableColumnShortName = null;
 	protected TableColumn<ICFBamTZDateColObj, String> tableColumnLabel = null;
@@ -197,24 +197,24 @@ implements ICFBamJavaFXTZDateColPaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamTZDateColObj>();
-		tableColumnId = new TableColumn<ICFBamTZDateColObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTZDateColObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTZDateColObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamTZDateColObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTZDateColObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamTZDateColObj, IMCFKeyHash256> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTZDateColObj,ICFLibKeyHash256>,TableCell<ICFBamTZDateColObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamTZDateColObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamTZDateColObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTZDateColObj,IMCFKeyHash256>,TableCell<ICFBamTZDateColObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamTZDateColObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamTZDateColObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTZDateColObj>();
 			}

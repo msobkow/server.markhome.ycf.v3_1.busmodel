@@ -150,7 +150,7 @@ public class CFBamIndexTweakTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamIndexTweakTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamIndexTweakTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -551,7 +551,7 @@ public class CFBamIndexTweakTableObj
 			locked = (ICFBamIndexTweakObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockIndexTweak", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockIndexTweak", pkey );
 		}
 		return( locked );
 	}
@@ -586,7 +586,7 @@ public class CFBamIndexTweakTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -594,7 +594,7 @@ public class CFBamIndexTweakTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -646,7 +646,7 @@ public class CFBamIndexTweakTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -654,7 +654,7 @@ public class CFBamIndexTweakTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -691,21 +691,21 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readIndexTweakByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamIndexTweakObj readIndexTweakByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readIndexTweakByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readIndexTweakByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamIndexTweakObj readIndexTweakByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamIndexTweakObj obj = readIndexTweak( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readIndexTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamIndexTweakObj readIndexTweakByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readIndexTweakByUNameIdx( ScopeId,
@@ -714,7 +714,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readIndexTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamIndexTweakObj readIndexTweakByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -743,14 +743,14 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readIndexTweakByValTentIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamIndexTweakObj> readIndexTweakByValTentIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readIndexTweakByValTentIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readIndexTweakByValTentIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFBamIndexTweakObj> readIndexTweakByValTentIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexTweakByValTentIdx";
@@ -788,7 +788,7 @@ public class CFBamIndexTweakTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -796,7 +796,7 @@ public class CFBamIndexTweakTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -836,14 +836,14 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readIndexTweakByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamIndexTweakObj> readIndexTweakByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readIndexTweakByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readIndexTweakByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamIndexTweakObj> readIndexTweakByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexTweakByScopeIdx";
@@ -881,7 +881,7 @@ public class CFBamIndexTweakTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -889,7 +889,7 @@ public class CFBamIndexTweakTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -929,14 +929,14 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readIndexTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamIndexTweakObj> readIndexTweakByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readIndexTweakByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readIndexTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamIndexTweakObj> readIndexTweakByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexTweakByDefSchemaIdx";
@@ -974,7 +974,7 @@ public class CFBamIndexTweakTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -982,7 +982,7 @@ public class CFBamIndexTweakTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1022,10 +1022,10 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readIndexTweakByUDefIdx( ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamIndexTweakObj readIndexTweakByUDefIdx( IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		return( readIndexTweakByUDefIdx( TenantId,
@@ -1037,10 +1037,10 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readIndexTweakByUDefIdx( ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamIndexTweakObj readIndexTweakByUDefIdx( IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUDefIdx == null ) {
@@ -1075,14 +1075,14 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readIndexTweakByIndexIdx( ICFLibKeyHash256 IndexId )
+	public List<ICFBamIndexTweakObj> readIndexTweakByIndexIdx( IMCFKeyHash256 IndexId )
 	{
 		return( readIndexTweakByIndexIdx( IndexId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readIndexTweakByIndexIdx( ICFLibKeyHash256 IndexId,
+	public List<ICFBamIndexTweakObj> readIndexTweakByIndexIdx( IMCFKeyHash256 IndexId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexTweakByIndexIdx";
@@ -1120,7 +1120,7 @@ public class CFBamIndexTweakTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1128,7 +1128,7 @@ public class CFBamIndexTweakTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1168,7 +1168,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readCachedIndexTweakByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamIndexTweakObj readCachedIndexTweakByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamIndexTweakObj obj = null;
 		obj = readCachedIndexTweak( Id );
@@ -1176,7 +1176,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readCachedIndexTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamIndexTweakObj readCachedIndexTweakByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamIndexTweakObj obj = null;
@@ -1214,7 +1214,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readCachedIndexTweakByValTentIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamIndexTweakObj> readCachedIndexTweakByValTentIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedIndexTweakByValTentIdx";
 		ICFBamTweakByValTentIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByValTentIdxKey();
@@ -1232,7 +1232,7 @@ public class CFBamIndexTweakTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1240,7 +1240,7 @@ public class CFBamIndexTweakTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1291,7 +1291,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readCachedIndexTweakByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamIndexTweakObj> readCachedIndexTweakByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedIndexTweakByScopeIdx";
 		ICFBamTweakByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByScopeIdxKey();
@@ -1309,7 +1309,7 @@ public class CFBamIndexTweakTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1317,7 +1317,7 @@ public class CFBamIndexTweakTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1368,7 +1368,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readCachedIndexTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamIndexTweakObj> readCachedIndexTweakByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedIndexTweakByDefSchemaIdx";
 		ICFBamTweakByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByDefSchemaIdxKey();
@@ -1386,7 +1386,7 @@ public class CFBamIndexTweakTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1394,7 +1394,7 @@ public class CFBamIndexTweakTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1445,10 +1445,10 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public ICFBamIndexTweakObj readCachedIndexTweakByUDefIdx( ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+	public ICFBamIndexTweakObj readCachedIndexTweakByUDefIdx( IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamIndexTweakObj obj = null;
@@ -1489,7 +1489,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexTweakObj> readCachedIndexTweakByIndexIdx( ICFLibKeyHash256 IndexId )
+	public List<ICFBamIndexTweakObj> readCachedIndexTweakByIndexIdx( IMCFKeyHash256 IndexId )
 	{
 		final String S_ProcName = "readCachedIndexTweakByIndexIdx";
 		ICFBamIndexTweakByIndexIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndexTweak().newByIndexIdxKey();
@@ -1507,7 +1507,7 @@ public class CFBamIndexTweakTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1515,7 +1515,7 @@ public class CFBamIndexTweakTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1566,7 +1566,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeIndexTweakByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeIndexTweakByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamIndexTweakObj obj = readCachedIndexTweakByIdIdx( Id );
 		if( obj != null ) {
@@ -1575,7 +1575,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeIndexTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeIndexTweakByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamIndexTweakObj obj = readCachedIndexTweakByUNameIdx( ScopeId,
@@ -1586,7 +1586,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeIndexTweakByValTentIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeIndexTweakByValTentIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeIndexTweakByValTentIdx";
 		ICFBamIndexTweakObj obj;
@@ -1603,7 +1603,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeIndexTweakByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeIndexTweakByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeIndexTweakByScopeIdx";
 		ICFBamIndexTweakObj obj;
@@ -1620,7 +1620,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeIndexTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeIndexTweakByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeIndexTweakByDefSchemaIdx";
 		ICFBamIndexTweakObj obj;
@@ -1637,10 +1637,10 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeIndexTweakByUDefIdx( ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+	public void deepDisposeIndexTweakByUDefIdx( IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamIndexTweakObj obj = readCachedIndexTweakByUDefIdx( TenantId,
@@ -1654,7 +1654,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeIndexTweakByIndexIdx( ICFLibKeyHash256 IndexId )
+	public void deepDisposeIndexTweakByIndexIdx( IMCFKeyHash256 IndexId )
 	{
 		final String S_ProcName = "deepDisposeIndexTweakByIndexIdx";
 		ICFBamIndexTweakObj obj;
@@ -1691,7 +1691,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deleteIndexTweakByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteIndexTweakByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamIndexTweakObj obj = readIndexTweak(Id);
 		if( obj != null ) {
@@ -1721,7 +1721,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deleteIndexTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteIndexTweakByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1749,7 +1749,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deleteIndexTweakByValTentIdx( ICFLibKeyHash256 TenantId )
+	public void deleteIndexTweakByValTentIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFBamTweakByValTentIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByValTentIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -1783,7 +1783,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deleteIndexTweakByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteIndexTweakByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamTweakByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -1817,7 +1817,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deleteIndexTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteIndexTweakByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamTweakByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -1851,10 +1851,10 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deleteIndexTweakByUDefIdx( ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+	public void deleteIndexTweakByUDefIdx( IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		if( indexByUDefIdx == null ) {
@@ -1894,7 +1894,7 @@ public class CFBamIndexTweakTableObj
 	}
 
 	@Override
-	public void deleteIndexTweakByIndexIdx( ICFLibKeyHash256 IndexId )
+	public void deleteIndexTweakByIndexIdx( IMCFKeyHash256 IndexId )
 	{
 		ICFBamIndexTweakByIndexIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndexTweak().newByIndexIdxKey();
 		key.setRequiredIndexId( IndexId );

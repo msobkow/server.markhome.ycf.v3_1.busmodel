@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -69,10 +69,10 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamRelationH extends ICFBamScopeH
 {
-	public ICFLibKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -89,12 +89,12 @@ public interface ICFBamRelationH extends ICFBamScopeH
 	public void setOptionalDbName( String value );
 	public String getOptionalSuffix();
 	public void setOptionalSuffix( String value );
-	public ICFLibKeyHash256 getRequiredFromIndexId();
-	public void setRequiredFromIndexId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredToTableId();
-	public void setRequiredToTableId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredToIndexId();
-	public void setRequiredToIndexId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredFromIndexId();
+	public void setRequiredFromIndexId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getRequiredToTableId();
+	public void setRequiredToTableId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getRequiredToIndexId();
+	public void setRequiredToIndexId( IMCFKeyHash256 value );
 	public boolean getRequiredIsRequired();
 	public void setRequiredIsRequired( boolean value );
 	public boolean getRequiredIsXsdContainer();
@@ -103,8 +103,8 @@ public interface ICFBamRelationH extends ICFBamScopeH
 	public void setRequiredIsLateResolver( boolean value );
 	public boolean getRequiredAllowAddendum();
 	public void setRequiredAllowAddendum( boolean value );
-	public ICFLibKeyHash256 getOptionalNarrowedId();
-	public void setOptionalNarrowedId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalNarrowedId();
+	public void setOptionalNarrowedId( IMCFKeyHash256 value );
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	@Override

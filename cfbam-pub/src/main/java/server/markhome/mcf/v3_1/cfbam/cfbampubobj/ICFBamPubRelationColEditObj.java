@@ -256,32 +256,32 @@ public interface ICFBamPubRelationColEditObj
 	void setRequiredLookupToCol( ICFBamPubIndexColObj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute RelationId.
+	 *	Get the required MCFDbKeyHash256 attribute RelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute RelationId.
+	 *	@return	The required MCFDbKeyHash256 attribute RelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredRelationId();
+	MCFDbKeyHash256 getRequiredRelationId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required CFLibDbKeyHash256 attribute Id.
+	 *	Set the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@param value The required CFLibDbKeyHash256 attribute Id value to be applied.
+	 *	@param value The required MCFDbKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(CFLibDbKeyHash256 value);
+	void setRequiredId(MCFDbKeyHash256 value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -354,32 +354,32 @@ public interface ICFBamPubRelationColEditObj
 	void setOptionalDescription(String value);
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute FromColId.
+	 *	Get the required MCFDbKeyHash256 attribute FromColId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute FromColId.
+	 *	@return	The required MCFDbKeyHash256 attribute FromColId.
 	 */
-	CFLibDbKeyHash256 getRequiredFromColId();
+	MCFDbKeyHash256 getRequiredFromColId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ToColId.
+	 *	Get the required MCFDbKeyHash256 attribute ToColId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ToColId.
+	 *	@return	The required MCFDbKeyHash256 attribute ToColId.
 	 */
-	CFLibDbKeyHash256 getRequiredToColId();
+	MCFDbKeyHash256 getRequiredToColId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrevId.
+	 *	Get the optional MCFDbKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrevId.
+	 *	@return	The optional MCFDbKeyHash256 attribute PrevId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrevId();
+	MCFDbKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NextId.
+	 *	Get the optional MCFDbKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NextId.
+	 *	@return	The optional MCFDbKeyHash256 attribute NextId.
 	 */
-	CFLibDbKeyHash256 getOptionalNextId();
+	MCFDbKeyHash256 getOptionalNextId();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

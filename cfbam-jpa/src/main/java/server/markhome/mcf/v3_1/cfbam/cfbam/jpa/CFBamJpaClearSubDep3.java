@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -85,15 +85,15 @@ public class CFBamJpaClearSubDep3 extends CFBamJpaClearDep
 	protected CFBamJpaClearSubDep2 requiredContainerClearSubDep2;
 
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="contclrdep2id", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="contclrdep2id", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredClearSubDep2Id;
+	protected IMCFKeyHash256 requiredClearSubDep2Id;
 	@Column( name="safe_name", nullable=false, length=192 )
 	protected String requiredName;
 
 	public CFBamJpaClearSubDep3() {
 		super();
-		requiredClearSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPubClearSubDep3.CLEARSUBDEP2ID_INIT_VALUE.toString() );
+		requiredClearSubDep2Id = MCFDbKeyHash256.fromHex( ICFBamPubClearSubDep3.CLEARSUBDEP2ID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubClearSubDep3.NAME_INIT_VALUE;
 	}
 
@@ -110,7 +110,7 @@ public class CFBamJpaClearSubDep3 extends CFBamJpaClearDep
 	@Override
 	public void setRequiredContainerClearSubDep2(ICFBamClearSubDep2 argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
 		}
 		else if (argObj instanceof CFBamJpaClearSubDep2) {
 			requiredContainerClearSubDep2 = (CFBamJpaClearSubDep2)argObj;
@@ -121,7 +121,7 @@ public class CFBamJpaClearSubDep3 extends CFBamJpaClearDep
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerClearSubDep2", "argObj", argObj, "CFBamJpaClearSubDep2");
+			throw new MCFUnsupportedClassException(getClass(), "setContainerClearSubDep2", "argObj", argObj, "CFBamJpaClearSubDep2");
 		}
 	}
 
@@ -136,27 +136,27 @@ public class CFBamJpaClearSubDep3 extends CFBamJpaClearDep
 	}
 
 	@Override
-	public void setRequiredContainerClearSubDep2(ICFLibKeyHash256 argClearSubDep2Id) {
+	public void setRequiredContainerClearSubDep2(IMCFKeyHash256 argClearSubDep2Id) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep2", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerClearSubDep2", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamClearSubDep2Table targetTable = targetBackingSchema.getTableClearSubDep2();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep2", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep2()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerClearSubDep2", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep2()");
 		}
 		ICFBamClearSubDep2 targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClearSubDep2Id);
 		setRequiredContainerClearSubDep2(targetRec);
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredClearSubDep2Id() {
+	public IMCFKeyHash256 getRequiredClearSubDep2Id() {
 		return(requiredClearSubDep2Id);
 	}
 
-	public void setRequiredClearSubDep2Id( ICFLibKeyHash256 value ) {
+	public void setRequiredClearSubDep2Id( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredClearSubDep2Id",
 				1,
 				"value" );
@@ -171,13 +171,13 @@ public class CFBamJpaClearSubDep3 extends CFBamJpaClearDep
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -477,7 +477,7 @@ public class CFBamJpaClearSubDep3 extends CFBamJpaClearDep
 			setClearSubDep3( (ICFBamClearSubDep3)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -499,7 +499,7 @@ public class CFBamJpaClearSubDep3 extends CFBamJpaClearDep
 			setClearSubDep3( (ICFBamClearSubDep3H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

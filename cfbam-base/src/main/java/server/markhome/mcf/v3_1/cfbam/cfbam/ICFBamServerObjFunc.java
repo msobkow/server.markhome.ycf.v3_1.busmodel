@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -65,13 +65,13 @@ public interface ICFBamServerObjFunc
 	extends ICFBamServerMethod
 {
 	public static final String S_RETTABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 RETTABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_RETTABLEID_INIT_VALUE );
+	public static final MCFDbKeyHash256 RETTABLEID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_RETTABLEID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa805;
 	public final static String S_CLASS_CODE = "a805";
 
 	public ICFBamTable getOptionalLookupRetTable();
 
-	public void setOptionalLookupRetTable(ICFLibKeyHash256 argRetTableId);
+	public void setOptionalLookupRetTable(IMCFKeyHash256 argRetTableId);
 
 	public void setOptionalLookupRetTable(ICFBamTable argObj);
 
@@ -79,8 +79,8 @@ public interface ICFBamServerObjFunc
 
 	public void setOptionalLookupRetTable(ICFBamPubTable argObj);
 
-	public ICFLibKeyHash256 getOptionalRetTableId();
-	public void setOptionalRetTableId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalRetTableId();
+	public void setOptionalRetTableId( IMCFKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

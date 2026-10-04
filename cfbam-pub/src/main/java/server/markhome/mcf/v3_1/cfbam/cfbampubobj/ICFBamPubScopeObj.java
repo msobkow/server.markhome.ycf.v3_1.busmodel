@@ -62,7 +62,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 
 public interface ICFBamPubScopeObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamPubScope.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -136,7 +136,7 @@ public interface ICFBamPubScopeObj
 	/**
 	 *	End this edition of this Scope instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -205,18 +205,18 @@ public interface ICFBamPubScopeObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	ICFLibKeyHash256 primary key for this instance.
+	 *	@return	IMCFKeyHash256 primary key for this instance.
 	 */
-	ICFLibKeyHash256 getPKey();
+	IMCFKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param ICFLibKeyHash256 primary key value for this instance.
+	 *	@param IMCFKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( ICFLibKeyHash256 value );
+	void setPKey( IMCFKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -250,18 +250,18 @@ public interface ICFBamPubScopeObj
 	ICFSecPubTenantObj getRequiredOwnerTenant( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Get the required MCFDbKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
+	 *	@return	The required MCFDbKeyHash256 attribute TenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredTenantId();
+	MCFDbKeyHash256 getRequiredTenantId();
 
 	/**
 	 *	Internal use only.

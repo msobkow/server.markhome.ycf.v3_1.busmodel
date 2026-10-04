@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,21 +66,21 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaTableBySchemaCodeVisIdxKey
 	implements ICFBamTableBySchemaCodeVisIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredSchemaDefId;
+	protected IMCFKeyHash256 requiredSchemaDefId;
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 	public CFBamJpaTableBySchemaCodeVisIdxKey() {
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubTable.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = MCFDbKeyHash256.fromHex( ICFBamPubTable.SCHEMADEFID_INIT_VALUE.toString() );
 		requiredCodeVis = ICFBamPubTable.CODEVIS_INIT_VALUE;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSchemaDefId() {
+	public IMCFKeyHash256 getRequiredSchemaDefId() {
 		return(requiredSchemaDefId);
 	}
 
-	public void setRequiredSchemaDefId( ICFLibKeyHash256 value ) {
+	public void setRequiredSchemaDefId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredSchemaDefId",
 				1,
 				"value" );
@@ -95,7 +95,7 @@ public class CFBamJpaTableBySchemaCodeVisIdxKey
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredCodeVis",
 				1,
 				"value" );
@@ -326,7 +326,7 @@ public class CFBamJpaTableBySchemaCodeVisIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

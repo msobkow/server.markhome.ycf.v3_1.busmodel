@@ -91,7 +91,7 @@ implements ICFBamJavaFXTZTimeTypePaneList
 	protected ICFBamJavaFXSchema javafxSchema = null;
 	protected Collection<ICFBamTZTimeTypeObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamTZTimeTypeObj> observableListOfTZTimeType = null;
-	protected TableColumn<ICFBamTZTimeTypeObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamTZTimeTypeObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamTZTimeTypeObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamTZTimeTypeObj, String> tableColumnShortName = null;
 	protected TableColumn<ICFBamTZTimeTypeObj, String> tableColumnLabel = null;
@@ -150,24 +150,24 @@ implements ICFBamJavaFXTZTimeTypePaneList
 		javafxContainer = argContainer;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamTZTimeTypeObj>();
-		tableColumnId = new TableColumn<ICFBamTZTimeTypeObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTZTimeTypeObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTZTimeTypeObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamTZTimeTypeObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTZTimeTypeObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamTZTimeTypeObj, IMCFKeyHash256> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTZTimeTypeObj,ICFLibKeyHash256>,TableCell<ICFBamTZTimeTypeObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamTZTimeTypeObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamTZTimeTypeObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTZTimeTypeObj,IMCFKeyHash256>,TableCell<ICFBamTZTimeTypeObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamTZTimeTypeObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamTZTimeTypeObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTZTimeTypeObj>();
 			}

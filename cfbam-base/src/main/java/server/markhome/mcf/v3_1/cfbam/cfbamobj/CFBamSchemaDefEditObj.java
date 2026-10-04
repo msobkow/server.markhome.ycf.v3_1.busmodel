@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -96,7 +96,7 @@ public class CFBamSchemaDefEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjScope() {
+	public IMCFAnyObj getObjScope() {
 		ICFIntMinorVersionObj scope = getRequiredContainerMinorVersion();
 		return( scope );
 	}
@@ -109,8 +109,8 @@ public class CFBamSchemaDefEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -140,11 +140,11 @@ public class CFBamSchemaDefEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -157,7 +157,7 @@ public class CFBamSchemaDefEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+					throw new MCFNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
 				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTableTableObj().readTableByUNameIdx( getRequiredId(),
@@ -170,7 +170,7 @@ public class CFBamSchemaDefEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+					throw new MCFNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
 				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
@@ -183,7 +183,7 @@ public class CFBamSchemaDefEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+					throw new MCFNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
 				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
@@ -210,7 +210,7 @@ public class CFBamSchemaDefEditObj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -262,7 +262,7 @@ public class CFBamSchemaDefEditObj
 	@Override
 	public CFBamScopeEditObj deleteInstance() {
 		if( getIsNew() ) {
-			throw new CFLibCannotDeleteNewInstanceException( getClass(), "delete" );
+			throw new MCFCannotDeleteNewInstanceException( getClass(), "delete" );
 		}
 		getSchema().getSchemaDefTableObj().deleteSchemaDef( getOrigAsSchemaDef() );
 		return( null );
@@ -307,24 +307,24 @@ public class CFBamSchemaDefEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(ICFLibKeyHash256 value) {
+	public void setRequiredId(IMCFKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredCTenantId() {
+	public IMCFKeyHash256 getRequiredCTenantId() {
 		return( getSchemaDefRec().getRequiredCTenantId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredMinorVersionId() {
+	public IMCFKeyHash256 getRequiredMinorVersionId() {
 		return( getSchemaDefRec().getRequiredMinorVersionId() );
 	}
 

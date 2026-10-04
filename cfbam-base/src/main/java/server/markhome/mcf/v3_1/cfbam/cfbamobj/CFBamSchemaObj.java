@@ -75,13 +75,13 @@ public class CFBamSchemaObj
 	protected String secTenantName = "system";
 	protected String secUserName = "system";
 	protected ICFSecClusterObj secCluster = null;
-	protected CFLibDbKeyHash256 secClusterId = null;
+	protected MCFDbKeyHash256 secClusterId = null;
 	protected ICFSecTenantObj secTenant = null;
-	protected CFLibDbKeyHash256 secTenantId = null;
+	protected MCFDbKeyHash256 secTenantId = null;
 	protected ICFSecSecUserObj secUser = null;
-	protected CFLibDbKeyHash256 secSessionUserId = null;
+	protected MCFDbKeyHash256 secSessionUserId = null;
 	protected ICFSecSecSessionObj secSession = null;
-	protected CFLibDbKeyHash256 secSessionSessionId = null;
+	protected MCFDbKeyHash256 secSessionSessionId = null;
 	protected String schemaDbName = SCHEMA_DBNAME;
 	protected String lowerDbSchemaName = SCHEMA_DBNAME.toLowerCase();
 
@@ -460,7 +460,7 @@ public class CFBamSchemaObj
 
 	public void setSecClusterName( String value ) {
 		if( ( value == null ) || ( value.length() <= 0 ) ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setClusterName",
 				1,
 				"value" );
@@ -507,13 +507,13 @@ public class CFBamSchemaObj
 		}
 	}
 
-	public CFLibDbKeyHash256 getSecClusterId() {
+	public MCFDbKeyHash256 getSecClusterId() {
 		return( secClusterId );
 	}
 
 	public void setSecTenantName( String value ) {
 		if( ( value == null ) || ( value.length() <= 0 ) ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setTenantName",
 				1,
 				"value" );
@@ -560,13 +560,13 @@ public class CFBamSchemaObj
 		}
 	}
 
-	public CFLibDbKeyHash256 getSecTenantId() {
+	public MCFDbKeyHash256 getSecTenantId() {
 		return( secTenantId );
 	}
 
 	public void setSecUserName( String value ) {
 		if( ( value == null ) || ( value.length() <= 0 ) ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setUserName",
 				1,
 				"value" );
@@ -633,15 +633,15 @@ public class CFBamSchemaObj
 		}
 	}
 
-	public void setSecSessionId( CFLibDbKeyHash256 value ) {
+	public void setSecSessionId( MCFDbKeyHash256 value ) {
 		secSessionSessionId = value;
 	}
 
-	public CFLibDbKeyHash256 getSecSessionSessionId() {
+	public MCFDbKeyHash256 getSecSessionSessionId() {
 		return( secSessionSessionId );
 	}
 
-	public CFLibDbKeyHash256 getSecSessionUserId() {
+	public MCFDbKeyHash256 getSecSessionUserId() {
 		return( secSessionUserId );
 	}
 
@@ -661,7 +661,7 @@ public class CFBamSchemaObj
 	@Override
 	public void setCFSecBackingStore(ICFSecSchema cfsecBackingStore) {
 		if (cfsecBackingStore == null) {
-			throw new CFLibNullArgumentException(getClass(), "setCFSecBackingStore", 1, "cfsecBackingStore");
+			throw new MCFNullArgumentException(getClass(), "setCFSecBackingStore", 1, "cfsecBackingStore");
 		}
 		this.cfsecBackingStore = cfsecBackingStore;
 	}
@@ -674,7 +674,7 @@ public class CFBamSchemaObj
 	@Override
 	public void setCFIntBackingStore(ICFIntSchema cfintBackingStore) {
 		if (cfintBackingStore == null) {
-			throw new CFLibNullArgumentException(getClass(), "setCFIntBackingStore", 1, "cfintBackingStore");
+			throw new MCFNullArgumentException(getClass(), "setCFIntBackingStore", 1, "cfintBackingStore");
 		}
 		this.cfintBackingStore = cfintBackingStore;
 	}
@@ -687,7 +687,7 @@ public class CFBamSchemaObj
 	@Override
 	public void setCFBamBackingStore(ICFBamSchema cfbamBackingStore) {
 		if (cfbamBackingStore == null) {
-			throw new CFLibNullArgumentException(getClass(), "setCFBamBackingStore", 1, "cfbamBackingStore");
+			throw new MCFNullArgumentException(getClass(), "setCFBamBackingStore", 1, "cfbamBackingStore");
 		}
 		this.cfbamBackingStore = cfbamBackingStore;
 	}
@@ -1247,7 +1247,7 @@ public class CFBamSchemaObj
 			return;
 		}
 		setAuthorization( null );
-		CFLibDbKeyHash256 secSessionId = authorization.getSecSessionId();
+		MCFDbKeyHash256 secSessionId = authorization.getSecSessionId();
 		if( secSessionId != null ) {
 			ICFSecSecSessionObj secSession = getSecSessionTableObj().readSecSessionByIdIdx( secSessionId );
 			if( secSession != null ) {

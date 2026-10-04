@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,10 +94,10 @@ public class CFBamJpaIndexService {
 		if (data == null) {
 			return( null );
 		}
-		ICFLibKeyHash256 originalRequiredId = data.getRequiredId();
+		IMCFKeyHash256 originalRequiredId = data.getRequiredId();
 		boolean generatedRequiredId = false;
 		if (data.getRequiredOwnerTenant() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Owner",
 				"Owner",
@@ -108,13 +108,13 @@ public class CFBamJpaIndexService {
 				null);
 		}
 		if(data.getRequiredTenantId() == null || data.getRequiredTenantId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTenantId");
 		}
 		if (data.getRequiredContainerTable() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -125,19 +125,19 @@ public class CFBamJpaIndexService {
 				null);
 		}
 		if(data.getRequiredTableId() == null || data.getRequiredTableId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTableId");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		if(data.getRequiredCodeVis() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredCodeVis");
@@ -150,7 +150,7 @@ public class CFBamJpaIndexService {
 				data.setRequiredRevision(1);
 			}
 			if (data.getRequiredId() == null || data.getRequiredId().isNull()) {
-				data.setRequiredId(new CFLibDbKeyHash256(0));
+				data.setRequiredId(new MCFDbKeyHash256(0));
 				generatedRequiredId = true;
 			}
 			LocalDateTime now = LocalDateTime.now();
@@ -162,7 +162,7 @@ public class CFBamJpaIndexService {
 				if(generatedRequiredId) {
 					data.setRequiredId(originalRequiredId);
 				}
-			throw new CFLibDbException(getClass(),
+			throw new MCFDbException(getClass(),
 				S_ProcName,
 				ex);
 		}
@@ -182,13 +182,13 @@ public class CFBamJpaIndexService {
 			return( null );
 		}
 		if (data.getPKey() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.getPKey()");
 		}
 		if (data.getRequiredOwnerTenant() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Owner",
 				"Owner",
@@ -199,13 +199,13 @@ public class CFBamJpaIndexService {
 				null);
 		}
 		if(data.getRequiredTenantId() == null || data.getRequiredTenantId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTenantId");
 		}
 		if (data.getRequiredContainerTable() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -216,28 +216,28 @@ public class CFBamJpaIndexService {
 				null);
 		}
 		if(data.getRequiredTableId() == null || data.getRequiredTableId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTableId");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		if(data.getRequiredCodeVis() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredCodeVis");
 		}
 		// Ensure the entity exists and that the revision matches
 		CFBamJpaIndex existing = cfbam31IndexRepository.findById(($implCommaIJavaOptAtomType$)(data.getPKey()))
-			.orElseThrow(() -> new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
+			.orElseThrow(() -> new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
 		if (existing.getRequiredRevision() != data.getRequiredRevision()) {
-			throw new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
+			throw new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
 		}
 		// Apply superior data relationships of CFBamScope to existing object
 		existing.setRequiredOwnerTenant(data.getRequiredTenantId());
@@ -273,7 +273,7 @@ public class CFBamJpaIndexService {
 	 *		@return The retrieved entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaIndex find(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaIndex find(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31IndexRepository.get(requiredId));
 	}
 
@@ -297,7 +297,7 @@ public class CFBamJpaIndexService {
 	 *		@return List&lt;CFBamJpaIndex&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaIndex> findByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public List<CFBamJpaIndex> findByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		return( cfbam31IndexRepository.findByTenantIdx(requiredTenantId));
 	}
 
@@ -324,7 +324,7 @@ public class CFBamJpaIndexService {
 	 *		@return The found entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaIndex findByUNameIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	public CFBamJpaIndex findByUNameIdx(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("name") String requiredName) {
 		return( cfbam31IndexRepository.findByUNameIdx(requiredTableId,
 			requiredName));
@@ -350,7 +350,7 @@ public class CFBamJpaIndexService {
 	 *		@return List&lt;CFBamJpaIndex&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaIndex> findByIdxTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId) {
+	public List<CFBamJpaIndex> findByIdxTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId) {
 		return( cfbam31IndexRepository.findByIdxTableIdx(requiredTableId));
 	}
 
@@ -399,7 +399,7 @@ public class CFBamJpaIndexService {
 	 *		@return List&lt;CFBamJpaIndex&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaIndex> findByIdxTblCdVisX(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	public List<CFBamJpaIndex> findByIdxTblCdVisX(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("codeVis") ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis) {
 		return( cfbam31IndexRepository.findByIdxTblCdVisX(requiredTableId,
 			requiredCodeVis));
@@ -425,7 +425,7 @@ public class CFBamJpaIndexService {
 	 *		@return List&lt;CFBamJpaIndex&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaIndex> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaIndex> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31IndexRepository.findByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -451,7 +451,7 @@ public class CFBamJpaIndexService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaIndex lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaIndex lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31IndexRepository.lockByIdIdx(requiredId));
 	}
 
@@ -463,7 +463,7 @@ public class CFBamJpaIndexService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaIndex> lockByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public List<CFBamJpaIndex> lockByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		return( cfbam31IndexRepository.lockByTenantIdx(requiredTenantId));
 	}
 
@@ -490,7 +490,7 @@ public class CFBamJpaIndexService {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaIndex lockByUNameIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	public CFBamJpaIndex lockByUNameIdx(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("name") String requiredName) {
 		return( cfbam31IndexRepository.lockByUNameIdx(requiredTableId,
 			requiredName));
@@ -516,7 +516,7 @@ public class CFBamJpaIndexService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaIndex> lockByIdxTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId) {
+	public List<CFBamJpaIndex> lockByIdxTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId) {
 		return( cfbam31IndexRepository.lockByIdxTableIdx(requiredTableId));
 	}
 
@@ -565,7 +565,7 @@ public class CFBamJpaIndexService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaIndex> lockByIdxTblCdVisX(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	public List<CFBamJpaIndex> lockByIdxTblCdVisX(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("codeVis") ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis) {
 		return( cfbam31IndexRepository.lockByIdxTblCdVisX(requiredTableId,
 			requiredCodeVis));
@@ -591,7 +591,7 @@ public class CFBamJpaIndexService {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaIndex> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaIndex> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31IndexRepository.lockByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -615,7 +615,7 @@ public class CFBamJpaIndexService {
 	 *		@param requiredId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		cfbam31IndexRepository.deleteByIdIdx(requiredId);
 	}
 
@@ -625,7 +625,7 @@ public class CFBamJpaIndexService {
 	 *		@param requiredTenantId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public void deleteByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		cfbam31IndexRepository.deleteByTenantIdx(requiredTenantId);
 	}
 
@@ -648,7 +648,7 @@ public class CFBamJpaIndexService {
 	 *		@param requiredName
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByUNameIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	public void deleteByUNameIdx(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("name") String requiredName) {
 		cfbam31IndexRepository.deleteByUNameIdx(requiredTableId,
 			requiredName);
@@ -670,7 +670,7 @@ public class CFBamJpaIndexService {
 	 *		@param requiredTableId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByIdxTableIdx(@Param("tableId") ICFLibKeyHash256 requiredTableId) {
+	public void deleteByIdxTableIdx(@Param("tableId") IMCFKeyHash256 requiredTableId) {
 		cfbam31IndexRepository.deleteByIdxTableIdx(requiredTableId);
 	}
 
@@ -711,7 +711,7 @@ public class CFBamJpaIndexService {
 	 *		@param requiredCodeVis
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByIdxTblCdVisX(@Param("tableId") ICFLibKeyHash256 requiredTableId,
+	public void deleteByIdxTblCdVisX(@Param("tableId") IMCFKeyHash256 requiredTableId,
 		@Param("codeVis") ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis) {
 		cfbam31IndexRepository.deleteByIdxTblCdVisX(requiredTableId,
 			requiredCodeVis);
@@ -733,7 +733,7 @@ public class CFBamJpaIndexService {
 	 *		@param optionalDefSchemaId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		cfbam31IndexRepository.deleteByDefSchemaIdx(optionalDefSchemaId);
 	}
 

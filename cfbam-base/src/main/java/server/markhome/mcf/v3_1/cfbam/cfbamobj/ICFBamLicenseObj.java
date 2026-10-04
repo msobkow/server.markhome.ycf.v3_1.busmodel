@@ -110,7 +110,7 @@ public interface ICFBamLicenseObj
 	/**
 	 *	End this edition of this License instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -222,25 +222,25 @@ public interface ICFBamLicenseObj
 	ICFIntTopDomainObj getRequiredContainerTopDomain( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required IMCFKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required IMCFKeyHash256 attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	IMCFKeyHash256 getRequiredTenantId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TopDomainId.
+	 *	Get the required IMCFKeyHash256 attribute TopDomainId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TopDomainId.
+	 *	@return	The required IMCFKeyHash256 attribute TopDomainId.
 	 */
-	ICFLibKeyHash256 getRequiredTopDomainId();
+	IMCFKeyHash256 getRequiredTopDomainId();
 
 	/**
 	 *	Get the required String attribute Name.

@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -86,15 +86,15 @@ public class CFBamJpaSchemaRole extends CFBamJpaRoleDef
 	protected CFBamJpaSchemaDef requiredContainerSchemaDef;
 
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="SchemaDefId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="SchemaDefId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredSchemaDefId;
+	protected IMCFKeyHash256 requiredSchemaDefId;
 	@Column( name="RoleScopeId", nullable=false )
 	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
 
 	public CFBamJpaSchemaRole() {
 		super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaRole.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = MCFDbKeyHash256.fromHex( ICFBamPubSchemaRole.SCHEMADEFID_INIT_VALUE.toString() );
 		requiredRoleScope = ICFBamPubSchemaRole.ROLESCOPE_INIT_VALUE;
 	}
 
@@ -111,7 +111,7 @@ public class CFBamJpaSchemaRole extends CFBamJpaRoleDef
 	@Override
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
 		}
 		else if (argObj instanceof CFBamJpaSchemaDef) {
 			requiredContainerSchemaDef = (CFBamJpaSchemaDef)argObj;
@@ -122,7 +122,7 @@ public class CFBamJpaSchemaRole extends CFBamJpaRoleDef
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerSchemaDef", "argObj", argObj, "CFBamJpaSchemaDef");
+			throw new MCFUnsupportedClassException(getClass(), "setContainerSchemaDef", "argObj", argObj, "CFBamJpaSchemaDef");
 		}
 	}
 
@@ -137,27 +137,27 @@ public class CFBamJpaSchemaRole extends CFBamJpaRoleDef
 	}
 
 	@Override
-	public void setRequiredContainerSchemaDef(ICFLibKeyHash256 argSchemaDefId) {
+	public void setRequiredContainerSchemaDef(IMCFKeyHash256 argSchemaDefId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerSchemaDef", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamSchemaDefTable targetTable = targetBackingSchema.getTableSchemaDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerSchemaDef", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSchemaDefId);
 		setRequiredContainerSchemaDef(targetRec);
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSchemaDefId() {
+	public IMCFKeyHash256 getRequiredSchemaDefId() {
 		return(requiredSchemaDefId);
 	}
 
-	public void setRequiredSchemaDefId( ICFLibKeyHash256 value ) {
+	public void setRequiredSchemaDefId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredSchemaDefId",
 				1,
 				"value" );
@@ -172,7 +172,7 @@ public class CFBamJpaSchemaRole extends CFBamJpaRoleDef
 
 	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredRoleScope",
 				1,
 				"value" );
@@ -505,7 +505,7 @@ public class CFBamJpaSchemaRole extends CFBamJpaRoleDef
 			setSchemaRole( (ICFBamSchemaRole)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -527,7 +527,7 @@ public class CFBamJpaSchemaRole extends CFBamJpaRoleDef
 			setSchemaRole( (ICFBamSchemaRoleH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

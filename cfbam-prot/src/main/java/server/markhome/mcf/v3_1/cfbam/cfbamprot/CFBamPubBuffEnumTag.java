@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -72,51 +72,51 @@ import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 public class CFBamPubBuffEnumTag
 	implements ICFBamPubEnumTag, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredId;
+	protected IMCFKeyHash256 requiredId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected MCFDbKeyHash256 createdByUserId = MCFDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
+	protected MCFDbKeyHash256 createdBySessionId = MCFDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
+	protected MCFDbKeyHash256 updatedByUserId = MCFDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
+	protected MCFDbKeyHash256 updatedBySessionId = MCFDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected ICFLibKeyHash256 optionalDefSchemaId;
-	protected ICFLibKeyHash256 requiredEnumId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 requiredEnumId;
 	protected Short optionalEnumCode;
 	protected String requiredName;
-	protected ICFLibKeyHash256 optionalPrevId;
-	protected ICFLibKeyHash256 optionalNextId;
+	protected IMCFKeyHash256 optionalPrevId;
+	protected IMCFKeyHash256 optionalNextId;
 
 	public CFBamPubBuffEnumTag() {
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubEnumTag.ID_INIT_VALUE.toString() );
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredEnumId = CFLibDbKeyHash256.fromHex( ICFBamPubEnumTag.ENUMID_INIT_VALUE.toString() );
+		requiredId = MCFDbKeyHash256.fromHex( ICFBamPubEnumTag.ID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
+		requiredEnumId = MCFDbKeyHash256.fromHex( ICFBamPubEnumTag.ENUMID_INIT_VALUE.toString() );
 		optionalEnumCode = null;
 		requiredName = ICFBamPubEnumTag.NAME_INIT_VALUE;
-		optionalPrevId = CFLibDbKeyHash256.nullGet();
-		optionalNextId = CFLibDbKeyHash256.nullGet();
+		optionalPrevId = MCFDbKeyHash256.nullGet();
+		optionalNextId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getPKey() {
+	public IMCFKeyHash256 getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey(ICFLibKeyHash256 requiredId) {
+	public void setPKey(IMCFKeyHash256 requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return(requiredId);
 	}
 
-	public void setRequiredId( ICFLibKeyHash256 value ) {
+	public void setRequiredId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredId",
 				1,
 				"value" );
@@ -125,12 +125,12 @@ public class CFBamPubBuffEnumTag
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getCreatedByUserId() {
+	public MCFDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
 
 	@Override
-	public void setJustPubCreatedByUserId( CFLibDbKeyHash256 value ) {
+	public void setJustPubCreatedByUserId( MCFDbKeyHash256 value ) {
 		createdByUserId = value;
 	}
 
@@ -145,12 +145,12 @@ public class CFBamPubBuffEnumTag
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getUpdatedByUserId() {
+	public MCFDbKeyHash256 getUpdatedByUserId() {
 		return( updatedByUserId );
 	}
 
 	@Override
-	public void setJustPubUpdatedByUserId( CFLibDbKeyHash256 value ) {
+	public void setJustPubUpdatedByUserId( MCFDbKeyHash256 value ) {
 		updatedByUserId = value;
 	}
 
@@ -180,38 +180,38 @@ public class CFBamPubBuffEnumTag
 	}
 
 	@Override
-	public ICFBamPubEnumDef getRequiredContainerEnumDef(ICFLibKeyHash256 argEnumId) {
+	public ICFBamPubEnumDef getRequiredContainerEnumDef(IMCFKeyHash256 argEnumId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerEnumDef", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredContainerEnumDef", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubEnumDefTable targetTable = targetBackingCFBam.getTableEnumDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerEnumDef", 0, "ICFBamPubSchema.getBackingCFBam().getTableEnumDef()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredContainerEnumDef", 0, "ICFBamPubSchema.getBackingCFBam().getTableEnumDef()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredEnumId()));
 	}
 
 	@Override
-	public void setRequiredContainerEnumDef(ICFLibKeyHash256 argEnumId) {
+	public void setRequiredContainerEnumDef(IMCFKeyHash256 argEnumId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerEnumDef-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerEnumDef-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubEnumDefTable targetTable = targetBackingCFBam.getTableEnumDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerEnumDef", 0, "ICFBamSchema.getBackingCFBam().getTableEnumDef()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerEnumDef", 0, "ICFBamSchema.getBackingCFBam().getTableEnumDef()");
 		}
 		ICFBamPubEnumDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argEnumId);
 		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerEnumDef-args", 0, "found");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerEnumDef-args", 0, "found");
 		}
 		else if (found instanceof ICFBamPubEnumDef) || (found instanceof ICFBamPubEnumDef)) {
 			super.setRequiredContainerEnumDef(argEnumId);
 		requiredEnumId = argEnumId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerEnumDef-args", "found", found, "ICFBamPubEnumDefICFBamPubEnumDef");
+			throw new MCFUnsupportedClassException(getClass(), "setRequiredContainerEnumDef-args", "found", found, "ICFBamPubEnumDefICFBamPubEnumDef");
 		}
 	}
 
@@ -219,7 +219,7 @@ public class CFBamPubBuffEnumTag
 	public void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj) {
 
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerEnumDef", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerEnumDef", 1, "argObj");
 		}
 		else {
 			setRequiredEnumId(argObj.getRequiredId());
@@ -227,27 +227,27 @@ public class CFBamPubBuffEnumTag
 	}
 
 	@Override
-	public ICFBamPubSchemaDef getOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId) {
+	public ICFBamPubSchemaDef getOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam().getTableSchemaDef()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId()));
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId) {
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupDefSchema-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamPubSchemaDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
 		if (found == null || (found != null && ((found instanceof ICFBamPubSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
@@ -255,7 +255,7 @@ public class CFBamPubBuffEnumTag
 		optionalDefSchemaId = argDefSchemaId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamPubSchemaDefICFBamPubSchemaDef");
+			throw new MCFUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamPubSchemaDefICFBamPubSchemaDef");
 		}
 	}
 
@@ -271,27 +271,27 @@ public class CFBamPubBuffEnumTag
 	}
 
 	@Override
-	public ICFBamPubEnumTag getOptionalLookupPrev(ICFLibKeyHash256 argPrevId) {
+	public ICFBamPubEnumTag getOptionalLookupPrev(IMCFKeyHash256 argPrevId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam().getTableEnumTag()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam().getTableEnumTag()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId()));
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFLibKeyHash256 argPrevId) {
+	public void setOptionalLookupPrev(IMCFKeyHash256 argPrevId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupPrev-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev", 0, "ICFBamSchema.getBackingCFBam().getTableEnumTag()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupPrev", 0, "ICFBamSchema.getBackingCFBam().getTableEnumTag()");
 		}
 		ICFBamPubEnumTag found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPrevId);
 		if (found == null || (found != null && ((found instanceof ICFBamPubEnumTag) || (found instanceof ICFBamPubEnumTag)))) {
@@ -299,7 +299,7 @@ public class CFBamPubBuffEnumTag
 		optionalPrevId = argPrevId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamPubEnumTagICFBamPubEnumTag");
+			throw new MCFUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamPubEnumTagICFBamPubEnumTag");
 		}
 	}
 
@@ -315,27 +315,27 @@ public class CFBamPubBuffEnumTag
 	}
 
 	@Override
-	public ICFBamPubEnumTag getOptionalLookupNext(ICFLibKeyHash256 argNextId) {
+	public ICFBamPubEnumTag getOptionalLookupNext(IMCFKeyHash256 argNextId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam().getTableEnumTag()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam().getTableEnumTag()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId()));
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFLibKeyHash256 argNextId) {
+	public void setOptionalLookupNext(IMCFKeyHash256 argNextId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupNext-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext", 0, "ICFBamSchema.getBackingCFBam().getTableEnumTag()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupNext", 0, "ICFBamSchema.getBackingCFBam().getTableEnumTag()");
 		}
 		ICFBamPubEnumTag found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argNextId);
 		if (found == null || (found != null && ((found instanceof ICFBamPubEnumTag) || (found instanceof ICFBamPubEnumTag)))) {
@@ -343,7 +343,7 @@ public class CFBamPubBuffEnumTag
 		optionalNextId = argNextId;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamPubEnumTagICFBamPubEnumTag");
+			throw new MCFUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamPubEnumTagICFBamPubEnumTag");
 		}
 	}
 
@@ -359,22 +359,22 @@ public class CFBamPubBuffEnumTag
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredEnumId() {
+	public IMCFKeyHash256 getRequiredEnumId() {
 		return(requiredEnumId);
 	}
 
-	public void setRequiredEnumId( ICFLibKeyHash256 value ) {
+	public void setRequiredEnumId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredEnumId",
 				1,
 				"value" );
@@ -390,7 +390,7 @@ public class CFBamPubBuffEnumTag
 	@Override
 	public void setOptionalEnumCode( Short value ) {
 		if( value < ICFBamPubEnumTag.ENUMCODE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalEnumCode",
 				1,
 				"value",
@@ -398,7 +398,7 @@ public class CFBamPubBuffEnumTag
 				ICFBamPubEnumTag.ENUMCODE_MIN_VALUE );
 		}
 		if( value > ICFBamPubEnumTag.ENUMCODE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalEnumCode",
 				1,
 				"value",
@@ -415,13 +415,13 @@ public class CFBamPubBuffEnumTag
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -432,20 +432,20 @@ public class CFBamPubBuffEnumTag
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalPrevId() {
+	public IMCFKeyHash256 getOptionalPrevId() {
 		return(optionalPrevId);
 	}
 
-	public void setOptionalPrevId( ICFLibKeyHash256 value ) {
+	public void setOptionalPrevId( IMCFKeyHash256 value ) {
 		optionalPrevId = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNextId() {
+	public IMCFKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( ICFLibKeyHash256 value ) {
+	public void setOptionalNextId( IMCFKeyHash256 value ) {
 		optionalNextId = value;
 	}
 
@@ -1936,7 +1936,7 @@ public class CFBamPubBuffEnumTag
 			}			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

@@ -150,11 +150,11 @@ public class CFBamRamIndexTable
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		if( dictByUNameIdx.containsKey( keyUNameIdx ) ) {
-			throw new CFLibUniqueIndexViolationException( getClass(),
+			throw new MCFUniqueIndexViolationException( getClass(),
 				S_ProcName,
 				"IndexUNameIdx",
 				"IndexUNameIdx",
@@ -170,7 +170,7 @@ public class CFBamRamIndexTable
 				if( null == schema.getTableScope().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Superclass",
 						"Superclass",
@@ -190,7 +190,7 @@ public class CFBamRamIndexTable
 				if( null == schema.getTableTable().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredTableId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Container",
 						"Container",
@@ -260,7 +260,7 @@ public class CFBamRamIndexTable
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -312,7 +312,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByTenantIdx";
 		ICFBamScope buffList[] = schema.getTableScope().readDerivedByTenantIdx( Authorization,
@@ -335,7 +335,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamIndex.readDerivedByUNameIdx";
@@ -355,7 +355,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex[] readDerivedByIdxTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId )
+		IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "CFBamRamIndex.readDerivedByIdxTableIdx";
 		CFBamBuffIndexByIdxTableIdxKey key = (CFBamBuffIndexByIdxTableIdxKey)schema.getCFBamBuffFactory().getFactoryIndex().newByIdxTableIdxKey();
@@ -411,7 +411,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex[] readDerivedByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "CFBamRamIndex.readDerivedByIdxTblCdVisX";
@@ -441,7 +441,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamIndex.readDerivedByDefSchemaIdx";
 		CFBamBuffIndexByDefSchemaIdxKey key = (CFBamBuffIndexByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryIndex().newByDefSchemaIdxKey();
@@ -469,7 +469,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByIdIdx() ";
 		ICFBamIndex buff;
@@ -524,7 +524,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByIdIdx() ";
 		ICFBamIndex buff = readDerivedByIdIdx( Authorization,
@@ -539,7 +539,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByTenantIdx() ";
 		ICFBamIndex buff;
@@ -557,7 +557,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamIndex.readRecByUNameIdx() ";
@@ -574,7 +574,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex[] readRecByIdxTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId )
+		IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "CFBamRamIndex.readRecByIdxTableIdx() ";
 		ICFBamIndex buff;
@@ -610,7 +610,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex[] readRecByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId,
+		IMCFKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "CFBamRamIndex.readRecByIdxTblCdVisX() ";
@@ -630,7 +630,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public ICFBamIndex[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamIndex.readRecByDefSchemaIdx() ";
 		ICFBamIndex buff;
@@ -653,7 +653,7 @@ public class CFBamRamIndexTable
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffIndex existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updateIndex",
 				"Existing record not found",
 				"Existing record not found",
@@ -699,7 +699,7 @@ public class CFBamRamIndexTable
 
 		if( ! existingKeyUNameIdx.equals( newKeyUNameIdx ) ) {
 			if( dictByUNameIdx.containsKey( newKeyUNameIdx ) ) {
-				throw new CFLibUniqueIndexViolationException( getClass(),
+				throw new MCFUniqueIndexViolationException( getClass(),
 					"updateIndex",
 					"IndexUNameIdx",
 					"IndexUNameIdx",
@@ -716,7 +716,7 @@ public class CFBamRamIndexTable
 				if( null == schema.getTableScope().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateIndex",
 						"Superclass",
 						"Superclass",
@@ -736,7 +736,7 @@ public class CFBamRamIndexTable
 				if( null == schema.getTableTable().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredTableId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateIndex",
 						"Container",
 						"Container",
@@ -828,7 +828,7 @@ public class CFBamRamIndexTable
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deleteIndex",
 				pkey );
 		}
@@ -872,7 +872,7 @@ public class CFBamRamIndexTable
 		if( schema.getTableRelation().readDerivedByFromKeyIdx( Authorization,
 					existing.getRequiredId() ).length > 0 )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteIndex",
 				"Lookup",
 				"Lookup",
@@ -886,7 +886,7 @@ public class CFBamRamIndexTable
 		if( schema.getTableRelation().readDerivedByToKeyIdx( Authorization,
 					existing.getRequiredId() ).length > 0 )
 		{
-			throw new CFLibDependentsDetectedException( getClass(),
+			throw new MCFDependentsDetectedException( getClass(),
 				"deleteIndex",
 				"Lookup",
 				"Lookup",
@@ -921,7 +921,7 @@ public class CFBamRamIndexTable
 	}
 	@Override
 	public void deleteIndexByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		CFBamBuffIndexByUNameIdxKey key = (CFBamBuffIndexByUNameIdxKey)schema.getCFBamBuffFactory().getFactoryIndex().newByUNameIdxKey();
@@ -960,7 +960,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public void deleteIndexByIdxTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		CFBamBuffIndexByIdxTableIdxKey key = (CFBamBuffIndexByIdxTableIdxKey)schema.getCFBamBuffFactory().getFactoryIndex().newByIdxTableIdxKey();
 		key.setRequiredTableId( argTableId );
@@ -1032,7 +1032,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public void deleteIndexByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis )
 	{
 		CFBamBuffIndexByIdxTblCdVisXKey key = (CFBamBuffIndexByIdxTblCdVisXKey)schema.getCFBamBuffFactory().getFactoryIndex().newByIdxTblCdVisXKey();
@@ -1071,7 +1071,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public void deleteIndexByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		CFBamBuffIndexByDefSchemaIdxKey key = (CFBamBuffIndexByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryIndex().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( argDefSchemaId );
@@ -1136,7 +1136,7 @@ public class CFBamRamIndexTable
 
 	@Override
 	public void deleteIndexByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		CFBamBuffScopeByTenantIdxKey key = (CFBamBuffScopeByTenantIdxKey)schema.getCFBamBuffFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( argTenantId );

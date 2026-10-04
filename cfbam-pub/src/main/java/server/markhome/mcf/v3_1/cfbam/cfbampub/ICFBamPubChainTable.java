@@ -111,7 +111,7 @@ public interface ICFBamPubChainTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteChainByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the Chain instances identified by the key ChainTableIdx.
 	 *
@@ -120,7 +120,7 @@ public interface ICFBamPubChainTable
 	 *	@param	TableId	The Chain key attribute of the instance generating the id.
 	 */
 	public void pubdeleteChainByChainTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId );
+		MCFDbKeyHash256 argTableId );
 
 	/**
 	 *	Delete the Chain instances identified by the key ChainTableIdx.
@@ -139,7 +139,7 @@ public interface ICFBamPubChainTable
 	 *	@param	DefSchemaId	The Chain key attribute of the instance generating the id.
 	 */
 	public void pubdeleteChainByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Chain instances identified by the key DefSchemaIdx.
@@ -160,7 +160,7 @@ public interface ICFBamPubChainTable
 	 *	@param	Name	The Chain key attribute of the instance generating the id.
 	 */
 	public void pubdeleteChainByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId,
+		MCFDbKeyHash256 argTableId,
 		String argName );
 
 	/**
@@ -180,7 +180,7 @@ public interface ICFBamPubChainTable
 	 *	@param	PrevRelationId	The Chain key attribute of the instance generating the id.
 	 */
 	public void pubdeleteChainByPrevRelIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevRelationId );
+		MCFDbKeyHash256 argPrevRelationId );
 
 	/**
 	 *	Delete the Chain instances identified by the key PrevRelIdx.
@@ -199,7 +199,7 @@ public interface ICFBamPubChainTable
 	 *	@param	NextRelationId	The Chain key attribute of the instance generating the id.
 	 */
 	public void pubdeleteChainByNextRelIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argNextRelationId );
+		MCFDbKeyHash256 argNextRelationId );
 
 	/**
 	 *	Delete the Chain instances identified by the key NextRelIdx.
@@ -223,7 +223,7 @@ public interface ICFBamPubChainTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubChain pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Chain record instance by primary key.
@@ -236,7 +236,7 @@ public interface ICFBamPubChainTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubChain publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all Chain instances.
@@ -258,7 +258,7 @@ public interface ICFBamPubChainTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubChain pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Chain record instances identified by the duplicate key ChainTableIdx.
@@ -270,7 +270,7 @@ public interface ICFBamPubChainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubChain[] pubreadDerivedByChainTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the derived Chain record instances identified by the duplicate key DefSchemaIdx.
@@ -282,7 +282,7 @@ public interface ICFBamPubChainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubChain[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived Chain record instance identified by the unique key UNameIdx.
@@ -297,7 +297,7 @@ public interface ICFBamPubChainTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubChain pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -310,7 +310,7 @@ public interface ICFBamPubChainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubChain[] pubreadDerivedByPrevRelIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevRelationId );
+		MCFDbKeyHash256 PrevRelationId );
 
 	/**
 	 *	Read an array of the derived Chain record instances identified by the duplicate key NextRelIdx.
@@ -322,7 +322,7 @@ public interface ICFBamPubChainTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubChain[] pubreadDerivedByNextRelIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextRelationId );
+		MCFDbKeyHash256 NextRelationId );
 
 	/**
 	 *	Read the specific Chain record instance identified by the primary key.
@@ -334,10 +334,10 @@ public interface ICFBamPubChainTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChain pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Chain record instance identified by the primary key.
@@ -349,10 +349,10 @@ public interface ICFBamPubChainTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChain publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Chain record instances.
@@ -373,10 +373,10 @@ public interface ICFBamPubChainTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChain pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Chain record instances identified by the duplicate key ChainTableIdx.
@@ -387,10 +387,10 @@ public interface ICFBamPubChainTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChain[] pubreadRecByChainTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the specific Chain record instances identified by the duplicate key DefSchemaIdx.
@@ -401,10 +401,10 @@ public interface ICFBamPubChainTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChain[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific Chain record instance identified by the unique key UNameIdx.
@@ -418,10 +418,10 @@ public interface ICFBamPubChainTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChain pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -433,10 +433,10 @@ public interface ICFBamPubChainTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChain[] pubreadRecByPrevRelIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrevRelationId );
+		MCFDbKeyHash256 PrevRelationId );
 
 	/**
 	 *	Read an array of the specific Chain record instances identified by the duplicate key NextRelIdx.
@@ -447,8 +447,8 @@ public interface ICFBamPubChainTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChain[] pubreadRecByNextRelIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 NextRelationId );
+		MCFDbKeyHash256 NextRelationId );
 }

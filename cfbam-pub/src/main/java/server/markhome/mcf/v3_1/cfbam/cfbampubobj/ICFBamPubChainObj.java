@@ -62,7 +62,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 
 public interface ICFBamPubChainObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamPubChain.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -136,7 +136,7 @@ public interface ICFBamPubChainObj
 	/**
 	 *	End this edition of this Chain instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -205,18 +205,18 @@ public interface ICFBamPubChainObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	ICFLibKeyHash256 primary key for this instance.
+	 *	@return	IMCFKeyHash256 primary key for this instance.
 	 */
-	ICFLibKeyHash256 getPKey();
+	IMCFKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param ICFLibKeyHash256 primary key value for this instance.
+	 *	@param IMCFKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( ICFLibKeyHash256 value );
+	void setPKey( IMCFKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -292,18 +292,18 @@ public interface ICFBamPubChainObj
 	ICFBamPubRelationObj getRequiredLookupNextRel( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -341,11 +341,11 @@ public interface ICFBamPubChainObj
 	String getOptionalDescription();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TableId.
+	 *	Get the required MCFDbKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TableId.
+	 *	@return	The required MCFDbKeyHash256 attribute TableId.
 	 */
-	CFLibDbKeyHash256 getRequiredTableId();
+	MCFDbKeyHash256 getRequiredTableId();
 
 	/**
 	 *	Get the optional String attribute Suffix.
@@ -355,18 +355,18 @@ public interface ICFBamPubChainObj
 	String getOptionalSuffix();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute PrevRelationId.
+	 *	Get the required MCFDbKeyHash256 attribute PrevRelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute PrevRelationId.
+	 *	@return	The required MCFDbKeyHash256 attribute PrevRelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredPrevRelationId();
+	MCFDbKeyHash256 getRequiredPrevRelationId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute NextRelationId.
+	 *	Get the required MCFDbKeyHash256 attribute NextRelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute NextRelationId.
+	 *	@return	The required MCFDbKeyHash256 attribute NextRelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredNextRelationId();
+	MCFDbKeyHash256 getRequiredNextRelationId();
 
 	/**
 	 *	Internal use only.

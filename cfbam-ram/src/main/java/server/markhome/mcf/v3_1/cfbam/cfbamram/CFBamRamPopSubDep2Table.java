@@ -122,11 +122,11 @@ public class CFBamRamPopSubDep2Table
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		if( dictByUNameIdx.containsKey( keyUNameIdx ) ) {
-			throw new CFLibUniqueIndexViolationException( getClass(),
+			throw new MCFUniqueIndexViolationException( getClass(),
 				S_ProcName,
 				"PopSubDep2UNameIdx",
 				"PopSubDep2UNameIdx",
@@ -142,7 +142,7 @@ public class CFBamRamPopSubDep2Table
 				if( null == schema.getTablePopDep().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Superclass",
 						"Superclass",
@@ -162,7 +162,7 @@ public class CFBamRamPopSubDep2Table
 				if( null == schema.getTablePopSubDep1().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredPopSubDep1Id() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Container",
 						"Container",
@@ -202,7 +202,7 @@ public class CFBamRamPopSubDep2Table
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -254,7 +254,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByTenantIdx";
 		ICFBamScope buffList[] = schema.getTableScope().readDerivedByTenantIdx( Authorization,
@@ -277,7 +277,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2[] readDerivedByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId )
+		IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readDerivedByRelationIdx";
 		ICFBamPopDep buffList[] = schema.getTablePopDep().readDerivedByRelationIdx( Authorization,
@@ -300,7 +300,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readDerivedByDefSchemaIdx";
 		ICFBamPopDep buffList[] = schema.getTablePopDep().readDerivedByDefSchemaIdx( Authorization,
@@ -323,7 +323,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2[] readDerivedByPopSubDep1Idx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PopSubDep1Id )
+		IMCFKeyHash256 PopSubDep1Id )
 	{
 		final String S_ProcName = "CFBamRamPopSubDep2.readDerivedByPopSubDep1Idx";
 		CFBamBuffPopSubDep2ByPopSubDep1IdxKey key = (CFBamBuffPopSubDep2ByPopSubDep1IdxKey)schema.getCFBamBuffFactory().getFactoryPopSubDep2().newByPopSubDep1IdxKey();
@@ -351,7 +351,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2 readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PopSubDep1Id,
+		IMCFKeyHash256 PopSubDep1Id,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamPopSubDep2.readDerivedByUNameIdx";
@@ -371,7 +371,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2 readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readDerivedByIdIdx() ";
 		ICFBamPopSubDep2 buff;
@@ -426,7 +426,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2 readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByIdIdx() ";
 		ICFBamPopSubDep2 buff = readDerivedByIdIdx( Authorization,
@@ -441,7 +441,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamScope.readRecByTenantIdx() ";
 		ICFBamPopSubDep2 buff;
@@ -459,7 +459,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2[] readRecByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId )
+		IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readRecByRelationIdx() ";
 		ICFBamPopSubDep2 buff;
@@ -477,7 +477,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamPopDep.readRecByDefSchemaIdx() ";
 		ICFBamPopSubDep2 buff;
@@ -495,7 +495,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2[] readRecByPopSubDep1Idx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PopSubDep1Id )
+		IMCFKeyHash256 PopSubDep1Id )
 	{
 		final String S_ProcName = "CFBamRamPopSubDep2.readRecByPopSubDep1Idx() ";
 		ICFBamPopSubDep2 buff;
@@ -513,7 +513,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public ICFBamPopSubDep2 readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PopSubDep1Id,
+		IMCFKeyHash256 PopSubDep1Id,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamPopSubDep2.readRecByUNameIdx() ";
@@ -535,7 +535,7 @@ public class CFBamRamPopSubDep2Table
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffPopSubDep2 existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updatePopSubDep2",
 				"Existing record not found",
 				"Existing record not found",
@@ -561,7 +561,7 @@ public class CFBamRamPopSubDep2Table
 
 		if( ! existingKeyUNameIdx.equals( newKeyUNameIdx ) ) {
 			if( dictByUNameIdx.containsKey( newKeyUNameIdx ) ) {
-				throw new CFLibUniqueIndexViolationException( getClass(),
+				throw new MCFUniqueIndexViolationException( getClass(),
 					"updatePopSubDep2",
 					"PopSubDep2UNameIdx",
 					"PopSubDep2UNameIdx",
@@ -578,7 +578,7 @@ public class CFBamRamPopSubDep2Table
 				if( null == schema.getTablePopDep().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updatePopSubDep2",
 						"Superclass",
 						"Superclass",
@@ -598,7 +598,7 @@ public class CFBamRamPopSubDep2Table
 				if( null == schema.getTablePopSubDep1().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredPopSubDep1Id() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updatePopSubDep2",
 						"Container",
 						"Container",
@@ -651,7 +651,7 @@ public class CFBamRamPopSubDep2Table
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deletePopSubDep2",
 				pkey );
 		}
@@ -686,7 +686,7 @@ public class CFBamRamPopSubDep2Table
 	}
 	@Override
 	public void deletePopSubDep2ByPopSubDep1Idx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPopSubDep1Id )
+		IMCFKeyHash256 argPopSubDep1Id )
 	{
 		CFBamBuffPopSubDep2ByPopSubDep1IdxKey key = (CFBamBuffPopSubDep2ByPopSubDep1IdxKey)schema.getCFBamBuffFactory().getFactoryPopSubDep2().newByPopSubDep1IdxKey();
 		key.setRequiredPopSubDep1Id( argPopSubDep1Id );
@@ -722,7 +722,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public void deletePopSubDep2ByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPopSubDep1Id,
+		IMCFKeyHash256 argPopSubDep1Id,
 		String argName )
 	{
 		CFBamBuffPopSubDep2ByUNameIdxKey key = (CFBamBuffPopSubDep2ByUNameIdxKey)schema.getCFBamBuffFactory().getFactoryPopSubDep2().newByUNameIdxKey();
@@ -761,7 +761,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public void deletePopSubDep2ByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId )
+		IMCFKeyHash256 argRelationId )
 	{
 		CFBamBuffPopDepByRelationIdxKey key = (CFBamBuffPopDepByRelationIdxKey)schema.getCFBamBuffFactory().getFactoryPopDep().newByRelationIdxKey();
 		key.setRequiredRelationId( argRelationId );
@@ -797,7 +797,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public void deletePopSubDep2ByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		CFBamBuffPopDepByDefSchemaIdxKey key = (CFBamBuffPopDepByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( argDefSchemaId );
@@ -862,7 +862,7 @@ public class CFBamRamPopSubDep2Table
 
 	@Override
 	public void deletePopSubDep2ByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		CFBamBuffScopeByTenantIdxKey key = (CFBamBuffScopeByTenantIdxKey)schema.getCFBamBuffFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( argTenantId );

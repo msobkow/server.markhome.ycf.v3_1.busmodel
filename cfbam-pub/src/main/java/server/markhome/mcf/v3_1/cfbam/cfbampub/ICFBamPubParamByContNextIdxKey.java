@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -63,10 +63,10 @@ import server.markhome.mcf.v3_1.cfint.cfintpub.*;
  */
 public interface ICFBamPubParamByContNextIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredServerMethodId();
-	public void setRequiredServerMethodId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredServerMethodId();
+	public void setRequiredServerMethodId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( MCFDbKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

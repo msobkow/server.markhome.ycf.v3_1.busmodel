@@ -121,7 +121,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	The DateCol-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtDateColObj readDateCol( CFLibDbKeyHash256 pkey );
+	ICFBamProtDateColObj readDateCol( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Read a DateCol-derived instance by it's primary key.
@@ -131,19 +131,19 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	The DateCol-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtDateColObj readDateCol( CFLibDbKeyHash256 pkey,
+	ICFBamProtDateColObj readDateCol( MCFDbKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamProtDateColObj readCachedDateCol( CFLibDbKeyHash256 pkey );
+	ICFBamProtDateColObj readCachedDateCol( MCFDbKeyHash256 pkey );
 
 	public void reallyDeepDisposeDateCol( ICFBamProtDateColObj obj );
 
-	void deepDisposeDateCol( CFLibDbKeyHash256 pkey );
+	void deepDisposeDateCol( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamProtDateColObj lockDateCol( CFLibDbKeyHash256 pkey );
+	ICFBamProtDateColObj lockDateCol( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the DateCol-derived instances in the database.
@@ -171,7 +171,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	ICFBamProtValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtDateColObj readDateColByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtDateColObj readDateColByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the ICFBamProtValueObj instance for the primary key attributes.
@@ -181,7 +181,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	ICFBamProtValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtDateColObj readDateColByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamProtDateColObj readDateColByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -194,7 +194,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	ICFBamProtValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtDateColObj readDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtDateColObj readDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -207,7 +207,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	ICFBamProtValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtDateColObj readDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtDateColObj readDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -219,7 +219,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamProtDateColObj> readDateColByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of ICFBamProtDateColObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -229,7 +229,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByScopeIdx( ICFLibKeyHash256 ScopeId,
+	List<ICFBamProtDateColObj> readDateColByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -240,7 +240,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamProtDateColObj> readDateColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of ICFBamProtDateColObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -250,7 +250,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamProtDateColObj> readDateColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -261,7 +261,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamProtDateColObj> readDateColByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of ICFBamProtDateColObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -271,7 +271,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamProtDateColObj> readDateColByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -282,7 +282,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamProtDateColObj> readDateColByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of ICFBamProtDateColObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -292,7 +292,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamProtDateColObj> readDateColByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -305,8 +305,8 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamProtDateColObj> readDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of ICFBamProtDateColObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -318,8 +318,8 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamProtDateColObj> readDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -332,8 +332,8 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamProtDateColObj> readDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of ICFBamProtDateColObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -345,8 +345,8 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of ICFBamProtDateColObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamProtDateColObj> readDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -357,7 +357,7 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of List<ICFBamProtDateColObj> cached instances sorted by their primary keys for the duplicate TableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByTableIdx( ICFLibKeyHash256 TableId );
+	List<ICFBamProtDateColObj> readDateColByTableIdx( IMCFKeyHash256 TableId );
 
 	/**
 	 *	Get the map of List<ICFBamProtDateColObj> instances sorted by their primary keys for the duplicate TableIdx key.
@@ -367,50 +367,50 @@ public interface ICFBamProtDateColTableObj
 	 *	@return	List of List<ICFBamProtDateColObj> cached instances sorted by their primary keys for the duplicate TableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtDateColObj> readDateColByTableIdx( ICFLibKeyHash256 TableId,
+	List<ICFBamProtDateColObj> readDateColByTableIdx( IMCFKeyHash256 TableId,
 		boolean forceRead );
 
-	ICFBamProtValueObj readCachedDateColByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtValueObj readCachedDateColByIdIdx( IMCFKeyHash256 Id );
 
-	ICFBamProtValueObj readCachedDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtValueObj readCachedDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	List<List<ICFBamProtValueObj>> readCachedDateColByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<List<ICFBamProtValueObj>> readCachedDateColByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	List<List<ICFBamProtValueObj>> readCachedDateColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<List<ICFBamProtValueObj>> readCachedDateColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<List<ICFBamProtValueObj>> readCachedDateColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<List<ICFBamProtValueObj>> readCachedDateColByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<List<ICFBamProtValueObj>> readCachedDateColByNextIdx( CFLibDbKeyHash256 NextId );
+	List<List<ICFBamProtValueObj>> readCachedDateColByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<List<ICFBamProtValueObj>> readCachedDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<List<ICFBamProtValueObj>> readCachedDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<List<ICFBamProtValueObj>> readCachedDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<List<ICFBamProtValueObj>> readCachedDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	List<List<ICFBamProtDateColObj>> readCachedDateColByTableIdx( ICFLibKeyHash256 TableId );
+	List<List<ICFBamProtDateColObj>> readCachedDateColByTableIdx( IMCFKeyHash256 TableId );
 
-	void deepDisposeDateColByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeDateColByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deepDisposeDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeDateColByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deepDisposeDateColByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	void deepDisposeDateColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeDateColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeDateColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeDateColByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeDateColByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeDateColByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeDateColByTableIdx( ICFLibKeyHash256 TableId );
+	void deepDisposeDateColByTableIdx( IMCFKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -427,7 +427,7 @@ public interface ICFBamProtDateColTableObj
 	 *
 	 *	@param	Id	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByIdIdx( ICFLibKeyHash256 Id );
+	void deleteDateColByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -436,7 +436,7 @@ public interface ICFBamProtDateColTableObj
 	 *
 	 *	@param	Name	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deleteDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -444,28 +444,28 @@ public interface ICFBamProtDateColTableObj
 	 *
 	 *	@param	ScopeId	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deleteDateColByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteDateColByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteDateColByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteDateColByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -474,8 +474,8 @@ public interface ICFBamProtDateColTableObj
 	 *
 	 *	@param	PrevId	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -484,15 +484,15 @@ public interface ICFBamProtDateColTableObj
 	 *
 	 *	@param	NextId	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TableId	The DateCol key attribute of the instance generating the id.
 	 */
-	void deleteDateColByTableIdx( ICFLibKeyHash256 TableId );
+	void deleteDateColByTableIdx( IMCFKeyHash256 TableId );
 
 	/**
 	 *	Move the ICFBamProtDateColObj instance up in the chain.  The instance is always refreshed.

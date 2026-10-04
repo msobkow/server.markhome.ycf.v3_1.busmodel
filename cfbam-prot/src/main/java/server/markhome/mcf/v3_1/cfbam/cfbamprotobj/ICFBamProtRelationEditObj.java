@@ -215,18 +215,18 @@ public interface ICFBamProtRelationEditObj
 	void setOptionalLookupNarrowed( ICFBamProtRelationObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TableId.
+	 *	Get the required IMCFKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TableId.
+	 *	@return	The required IMCFKeyHash256 attribute TableId.
 	 */
-	ICFLibKeyHash256 getRequiredTableId();
+	IMCFKeyHash256 getRequiredTableId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -341,25 +341,25 @@ public interface ICFBamProtRelationEditObj
 	void setOptionalSuffix(String value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute FromIndexId.
+	 *	Get the required IMCFKeyHash256 attribute FromIndexId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute FromIndexId.
+	 *	@return	The required IMCFKeyHash256 attribute FromIndexId.
 	 */
-	ICFLibKeyHash256 getRequiredFromIndexId();
+	IMCFKeyHash256 getRequiredFromIndexId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ToTableId.
+	 *	Get the required IMCFKeyHash256 attribute ToTableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ToTableId.
+	 *	@return	The required IMCFKeyHash256 attribute ToTableId.
 	 */
-	ICFLibKeyHash256 getRequiredToTableId();
+	IMCFKeyHash256 getRequiredToTableId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ToIndexId.
+	 *	Get the required IMCFKeyHash256 attribute ToIndexId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ToIndexId.
+	 *	@return	The required IMCFKeyHash256 attribute ToIndexId.
 	 */
-	ICFLibKeyHash256 getRequiredToIndexId();
+	IMCFKeyHash256 getRequiredToIndexId();
 
 	/**
 	 *	Get the required boolean attribute IsRequired.
@@ -418,11 +418,11 @@ public interface ICFBamProtRelationEditObj
 	void setRequiredAllowAddendum(boolean value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NarrowedId.
+	 *	Get the optional MCFDbKeyHash256 attribute NarrowedId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NarrowedId.
+	 *	@return	The optional MCFDbKeyHash256 attribute NarrowedId.
 	 */
-	CFLibDbKeyHash256 getOptionalNarrowedId();
+	MCFDbKeyHash256 getOptionalNarrowedId();
 
 	/**
 	 *	Get the required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.

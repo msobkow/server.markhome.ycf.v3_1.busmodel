@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -85,7 +85,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	 *		@return The retrieved entity, usually from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaEnumTag r where r.requiredId = :id")
-	CFBamJpaEnumTag get(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaEnumTag get(@Param("id") IMCFKeyHash256 requiredId);
 
 	// CFBamJpaEnumTag specified index readers
 
@@ -97,7 +97,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	 *		@return List&lt;CFBamJpaEnumTag&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaEnumTag r where r.requiredContainerEnumDef.requiredId = :enumId")
-	List<CFBamJpaEnumTag> findByEnumIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId);
+	List<CFBamJpaEnumTag> findByEnumIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId);
 
 	/**
 	 *	CFBamEnumTagByEnumIdxKey entity list reader convenience method for object-based access.
@@ -118,7 +118,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	 *		@return List&lt;CFBamJpaEnumTag&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaEnumTag r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaEnumTag> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaEnumTag> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamEnumTagByDefSchemaIdxKey entity list reader convenience method for object-based access.
@@ -140,7 +140,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	 *		@return The found entity, typically from the JPA cache, or null if no such entity exists.
 	 */
 	@Query("select r from CFBamJpaEnumTag r where r.requiredContainerEnumDef.requiredId = :enumId and r.requiredName = :name")
-	CFBamJpaEnumTag findByEnumNameIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId,
+	CFBamJpaEnumTag findByEnumNameIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId,
 		@Param("name") String requiredName);
 
 	/**
@@ -162,7 +162,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	 *		@return List&lt;CFBamJpaEnumTag&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaEnumTag r where r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaEnumTag> findByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaEnumTag> findByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamEnumTagByPrevIdxKey entity list reader convenience method for object-based access.
@@ -183,7 +183,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	 *		@return List&lt;CFBamJpaEnumTag&gt; of the found entities, typically from the JPA cache, or an empty list if no such entities exist.
 	 */
 	@Query("select r from CFBamJpaEnumTag r where r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaEnumTag> findByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaEnumTag> findByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamEnumTagByNextIdxKey entity list reader convenience method for object-based access.
@@ -208,7 +208,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaEnumTag r where r.requiredId = :id")
-	CFBamJpaEnumTag lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	CFBamJpaEnumTag lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based lock database instance for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity locks, which may or may not imply an actual database lock during the transaction.
@@ -220,7 +220,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaEnumTag r where r.requiredContainerEnumDef.requiredId = :enumId")
-	List<CFBamJpaEnumTag> lockByEnumIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId);
+	List<CFBamJpaEnumTag> lockByEnumIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId);
 
 	/**
 	 *	CFBamEnumTagByEnumIdxKey based lock method for object-based access.
@@ -243,7 +243,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaEnumTag r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	List<CFBamJpaEnumTag> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	List<CFBamJpaEnumTag> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamEnumTagByDefSchemaIdxKey based lock method for object-based access.
@@ -267,7 +267,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaEnumTag r where r.requiredContainerEnumDef.requiredId = :enumId and r.requiredName = :name")
-	CFBamJpaEnumTag lockByEnumNameIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId,
+	CFBamJpaEnumTag lockByEnumNameIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId,
 		@Param("name") String requiredName);
 
 	/**
@@ -291,7 +291,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaEnumTag r where r.optionalLookupPrev.requiredId = :prevId")
-	List<CFBamJpaEnumTag> lockByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	List<CFBamJpaEnumTag> lockByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamEnumTagByPrevIdxKey based lock method for object-based access.
@@ -314,7 +314,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Lock(LockModeType.WRITE)
 	@Query("select r from CFBamJpaEnumTag r where r.optionalLookupNext.requiredId = :nextId")
-	List<CFBamJpaEnumTag> lockByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	List<CFBamJpaEnumTag> lockByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamEnumTagByNextIdxKey based lock method for object-based access.
@@ -337,7 +337,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaEnumTag r where r.requiredId = :id")
-	void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId);
+	void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId);
 
 	/**
 	 *	Argument-based delete entity for compatibility with the current MSS code factory code base, uses @Transactional to acquire a JPA entity lock, which may or may not imply an actual database lock during the transaction.
@@ -347,7 +347,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaEnumTag r where r.requiredContainerEnumDef.requiredId = :enumId")
-	void deleteByEnumIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId);
+	void deleteByEnumIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId);
 
 	/**
 	 *	CFBamEnumTagByEnumIdxKey based lock method for object-based access.
@@ -366,7 +366,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaEnumTag r where r.optionalLookupDefSchema.requiredId = :defSchemaId")
-	void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId);
+	void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId);
 
 	/**
 	 *	CFBamEnumTagByDefSchemaIdxKey based lock method for object-based access.
@@ -386,7 +386,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaEnumTag r where r.requiredContainerEnumDef.requiredId = :enumId and r.requiredName = :name")
-	void deleteByEnumNameIdx(@Param("enumId") ICFLibKeyHash256 requiredEnumId,
+	void deleteByEnumNameIdx(@Param("enumId") IMCFKeyHash256 requiredEnumId,
 		@Param("name") String requiredName);
 
 	/**
@@ -406,7 +406,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaEnumTag r where r.optionalLookupPrev.requiredId = :prevId")
-	void deleteByPrevIdx(@Param("prevId") ICFLibKeyHash256 optionalPrevId);
+	void deleteByPrevIdx(@Param("prevId") IMCFKeyHash256 optionalPrevId);
 
 	/**
 	 *	CFBamEnumTagByPrevIdxKey based lock method for object-based access.
@@ -425,7 +425,7 @@ public interface CFBamJpaEnumTagRepository extends JpaRepository<CFBamJpaEnumTag
 	@Transactional
 	@Modifying
 	@Query("delete from CFBamJpaEnumTag r where r.optionalLookupNext.requiredId = :nextId")
-	void deleteByNextIdx(@Param("nextId") ICFLibKeyHash256 optionalNextId);
+	void deleteByNextIdx(@Param("nextId") IMCFKeyHash256 optionalNextId);
 
 	/**
 	 *	CFBamEnumTagByNextIdxKey based lock method for object-based access.

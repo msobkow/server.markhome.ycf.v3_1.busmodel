@@ -138,7 +138,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	DefSchemaId	The DelDep key attribute of the instance generating the id.
 	 */
 	public void protdeleteDelDepByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the DelDep instances identified by the key DefSchemaIdx.
@@ -166,7 +166,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	RelationId	The DelDep key attribute of the instance generating the id.
 	 */
 	public void protdeleteDelDepByDelDepIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId );
+		IMCFKeyHash256 argRelationId );
 
 	/**
 	 *	Delete the DelDep instances identified by the key DelDepIdx.
@@ -194,7 +194,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteDelDepByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the DelDep instances identified by the key TenantIdx.
 	 *
@@ -203,7 +203,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	TenantId	The DelDep key attribute of the instance generating the id.
 	 */
 	public void protdeleteDelDepByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the DelDep instances identified by the key TenantIdx.
@@ -246,7 +246,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtDelDep protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived DelDep record instance by protected primary key.
@@ -259,7 +259,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtDelDep protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all DelDep instances.
@@ -281,7 +281,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtDelDep protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived DelDep record instances identified by the duplicate key TenantIdx.
@@ -293,7 +293,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDelDep[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived DelDep record instances identified by the duplicate key DefSchemaIdx.
@@ -305,7 +305,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDelDep[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived DelDep record instances identified by the duplicate key DelDepIdx.
@@ -317,7 +317,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtDelDep[] protreadDerivedByDelDepIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read the specific DelDep record instance identified by the primary key.
@@ -329,10 +329,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelDep protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific DelDep record instance identified by the primary key.
@@ -344,10 +344,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelDep protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific DelDep record instances.
@@ -368,10 +368,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelDep protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific DelDep record instances identified by the duplicate key TenantIdx.
@@ -382,10 +382,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelDep[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific DelDep record instances identified by the duplicate key DefSchemaIdx.
@@ -396,10 +396,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelDep[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific DelDep record instances identified by the duplicate key DelDepIdx.
@@ -410,8 +410,8 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelDep[] protreadRecByDelDepIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 }

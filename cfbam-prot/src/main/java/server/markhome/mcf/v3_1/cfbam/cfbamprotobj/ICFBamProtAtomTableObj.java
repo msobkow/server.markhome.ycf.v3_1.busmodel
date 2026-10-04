@@ -121,7 +121,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	The Atom-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtAtomObj readAtom( CFLibDbKeyHash256 pkey );
+	ICFBamProtAtomObj readAtom( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Read a Atom-derived instance by it's primary key.
@@ -131,19 +131,19 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	The Atom-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtAtomObj readAtom( CFLibDbKeyHash256 pkey,
+	ICFBamProtAtomObj readAtom( MCFDbKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamProtAtomObj readCachedAtom( CFLibDbKeyHash256 pkey );
+	ICFBamProtAtomObj readCachedAtom( MCFDbKeyHash256 pkey );
 
 	public void reallyDeepDisposeAtom( ICFBamProtAtomObj obj );
 
-	void deepDisposeAtom( CFLibDbKeyHash256 pkey );
+	void deepDisposeAtom( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamProtAtomObj lockAtom( CFLibDbKeyHash256 pkey );
+	ICFBamProtAtomObj lockAtom( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Atom-derived instances in the database.
@@ -171,7 +171,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	ICFBamProtValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtAtomObj readAtomByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtAtomObj readAtomByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the ICFBamProtValueObj instance for the primary key attributes.
@@ -181,7 +181,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	ICFBamProtValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtAtomObj readAtomByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamProtAtomObj readAtomByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -194,7 +194,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	ICFBamProtValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtAtomObj readAtomByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtAtomObj readAtomByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -207,7 +207,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	ICFBamProtValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtAtomObj readAtomByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtAtomObj readAtomByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -219,7 +219,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamProtAtomObj> readAtomByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of ICFBamProtAtomObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -229,7 +229,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByScopeIdx( ICFLibKeyHash256 ScopeId,
+	List<ICFBamProtAtomObj> readAtomByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -240,7 +240,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamProtAtomObj> readAtomByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of ICFBamProtAtomObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -250,7 +250,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamProtAtomObj> readAtomByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -261,7 +261,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamProtAtomObj> readAtomByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of ICFBamProtAtomObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -271,7 +271,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamProtAtomObj> readAtomByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -282,7 +282,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamProtAtomObj> readAtomByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of ICFBamProtAtomObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -292,7 +292,7 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamProtAtomObj> readAtomByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -305,8 +305,8 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamProtAtomObj> readAtomByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of ICFBamProtAtomObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -318,8 +318,8 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamProtAtomObj> readAtomByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -332,8 +332,8 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamProtAtomObj> readAtomByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of ICFBamProtAtomObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -345,47 +345,47 @@ public interface ICFBamProtAtomTableObj
 	 *	@return	List of ICFBamProtAtomObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtAtomObj> readAtomByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamProtAtomObj> readAtomByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamProtValueObj readCachedAtomByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtValueObj readCachedAtomByIdIdx( IMCFKeyHash256 Id );
 
-	ICFBamProtValueObj readCachedAtomByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtValueObj readCachedAtomByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	List<List<ICFBamProtValueObj>> readCachedAtomByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<List<ICFBamProtValueObj>> readCachedAtomByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	List<List<ICFBamProtValueObj>> readCachedAtomByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<List<ICFBamProtValueObj>> readCachedAtomByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<List<ICFBamProtValueObj>> readCachedAtomByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<List<ICFBamProtValueObj>> readCachedAtomByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<List<ICFBamProtValueObj>> readCachedAtomByNextIdx( CFLibDbKeyHash256 NextId );
+	List<List<ICFBamProtValueObj>> readCachedAtomByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<List<ICFBamProtValueObj>> readCachedAtomByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<List<ICFBamProtValueObj>> readCachedAtomByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<List<ICFBamProtValueObj>> readCachedAtomByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<List<ICFBamProtValueObj>> readCachedAtomByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeAtomByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeAtomByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeAtomByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deepDisposeAtomByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeAtomByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deepDisposeAtomByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	void deepDisposeAtomByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeAtomByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeAtomByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeAtomByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeAtomByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeAtomByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeAtomByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeAtomByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeAtomByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeAtomByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -402,7 +402,7 @@ public interface ICFBamProtAtomTableObj
 	 *
 	 *	@param	Id	The Atom key attribute of the instance generating the id.
 	 */
-	void deleteAtomByIdIdx( ICFLibKeyHash256 Id );
+	void deleteAtomByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -411,7 +411,7 @@ public interface ICFBamProtAtomTableObj
 	 *
 	 *	@param	Name	The Atom key attribute of the instance generating the id.
 	 */
-	void deleteAtomByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deleteAtomByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -419,28 +419,28 @@ public interface ICFBamProtAtomTableObj
 	 *
 	 *	@param	ScopeId	The Atom key attribute of the instance generating the id.
 	 */
-	void deleteAtomByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deleteAtomByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The Atom key attribute of the instance generating the id.
 	 */
-	void deleteAtomByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteAtomByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The Atom key attribute of the instance generating the id.
 	 */
-	void deleteAtomByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteAtomByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The Atom key attribute of the instance generating the id.
 	 */
-	void deleteAtomByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteAtomByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -449,8 +449,8 @@ public interface ICFBamProtAtomTableObj
 	 *
 	 *	@param	PrevId	The Atom key attribute of the instance generating the id.
 	 */
-	void deleteAtomByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteAtomByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -459,8 +459,8 @@ public interface ICFBamProtAtomTableObj
 	 *
 	 *	@param	NextId	The Atom key attribute of the instance generating the id.
 	 */
-	void deleteAtomByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteAtomByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the ICFBamProtAtomObj instance up in the chain.  The instance is always refreshed.

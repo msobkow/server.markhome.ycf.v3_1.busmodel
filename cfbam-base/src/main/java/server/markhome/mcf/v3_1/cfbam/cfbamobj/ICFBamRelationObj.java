@@ -205,25 +205,25 @@ public interface ICFBamRelationObj
 	ICFBamRelationObj getOptionalLookupNarrowed( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TableId.
+	 *	Get the required IMCFKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TableId.
+	 *	@return	The required IMCFKeyHash256 attribute TableId.
 	 */
-	ICFLibKeyHash256 getRequiredTableId();
+	IMCFKeyHash256 getRequiredTableId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -282,25 +282,25 @@ public interface ICFBamRelationObj
 	String getOptionalSuffix();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute FromIndexId.
+	 *	Get the required IMCFKeyHash256 attribute FromIndexId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute FromIndexId.
+	 *	@return	The required IMCFKeyHash256 attribute FromIndexId.
 	 */
-	ICFLibKeyHash256 getRequiredFromIndexId();
+	IMCFKeyHash256 getRequiredFromIndexId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ToTableId.
+	 *	Get the required IMCFKeyHash256 attribute ToTableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ToTableId.
+	 *	@return	The required IMCFKeyHash256 attribute ToTableId.
 	 */
-	ICFLibKeyHash256 getRequiredToTableId();
+	IMCFKeyHash256 getRequiredToTableId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ToIndexId.
+	 *	Get the required IMCFKeyHash256 attribute ToIndexId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ToIndexId.
+	 *	@return	The required IMCFKeyHash256 attribute ToIndexId.
 	 */
-	ICFLibKeyHash256 getRequiredToIndexId();
+	IMCFKeyHash256 getRequiredToIndexId();
 
 	/**
 	 *	Get the required boolean attribute IsRequired.
@@ -331,11 +331,11 @@ public interface ICFBamRelationObj
 	boolean getRequiredAllowAddendum();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute NarrowedId.
+	 *	Get the optional IMCFKeyHash256 attribute NarrowedId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute NarrowedId.
+	 *	@return	The optional IMCFKeyHash256 attribute NarrowedId.
 	 */
-	ICFLibKeyHash256 getOptionalNarrowedId();
+	IMCFKeyHash256 getOptionalNarrowedId();
 
 	/**
 	 *	Get the required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.

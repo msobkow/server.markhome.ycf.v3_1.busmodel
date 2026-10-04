@@ -158,7 +158,7 @@ public class CFBamDateColTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamDateColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamDateColTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -630,7 +630,7 @@ public class CFBamDateColTableObj
 			locked = (ICFBamDateColObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockDateCol", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockDateCol", pkey );
 		}
 		return( locked );
 	}
@@ -665,7 +665,7 @@ public class CFBamDateColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -673,7 +673,7 @@ public class CFBamDateColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -725,7 +725,7 @@ public class CFBamDateColTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -733,7 +733,7 @@ public class CFBamDateColTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -770,21 +770,21 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public ICFBamDateColObj readDateColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDateColObj readDateColByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readDateColByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamDateColObj readDateColByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamDateColObj readDateColByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamDateColObj obj = readDateCol( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamDateColObj readDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDateColObj readDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readDateColByUNameIdx( ScopeId,
@@ -793,7 +793,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public ICFBamDateColObj readDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDateColObj readDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -822,14 +822,14 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamDateColObj> readDateColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readDateColByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamDateColObj> readDateColByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDateColByScopeIdx";
@@ -867,7 +867,7 @@ public class CFBamDateColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -875,7 +875,7 @@ public class CFBamDateColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -915,14 +915,14 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDateColObj> readDateColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readDateColByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamDateColObj> readDateColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDateColByDefSchemaIdx";
@@ -960,7 +960,7 @@ public class CFBamDateColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -968,7 +968,7 @@ public class CFBamDateColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1008,14 +1008,14 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDateColObj> readDateColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readDateColByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamDateColObj> readDateColByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDateColByPrevIdx";
@@ -1053,7 +1053,7 @@ public class CFBamDateColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1061,7 +1061,7 @@ public class CFBamDateColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1101,14 +1101,14 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDateColObj> readDateColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readDateColByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamDateColObj> readDateColByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDateColByNextIdx";
@@ -1146,7 +1146,7 @@ public class CFBamDateColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1154,7 +1154,7 @@ public class CFBamDateColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1194,8 +1194,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamDateColObj> readDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readDateColByContPrevIdx( ScopeId,
 			PrevId,
@@ -1203,8 +1203,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamDateColObj> readDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDateColByContPrevIdx";
@@ -1244,7 +1244,7 @@ public class CFBamDateColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1252,7 +1252,7 @@ public class CFBamDateColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1292,8 +1292,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamDateColObj> readDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readDateColByContNextIdx( ScopeId,
 			NextId,
@@ -1301,8 +1301,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamDateColObj> readDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDateColByContNextIdx";
@@ -1342,7 +1342,7 @@ public class CFBamDateColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1350,7 +1350,7 @@ public class CFBamDateColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1390,14 +1390,14 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamDateColObj> readDateColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		return( readDateColByTableIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readDateColByTableIdx( ICFLibKeyHash256 TableId,
+	public List<ICFBamDateColObj> readDateColByTableIdx( IMCFKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDateColByTableIdx";
@@ -1435,7 +1435,7 @@ public class CFBamDateColTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1443,7 +1443,7 @@ public class CFBamDateColTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1483,7 +1483,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public ICFBamDateColObj readCachedDateColByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDateColObj readCachedDateColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDateColObj obj = null;
 		obj = readCachedDateCol( Id );
@@ -1491,7 +1491,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public ICFBamDateColObj readCachedDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDateColObj readCachedDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamDateColObj obj = null;
@@ -1529,7 +1529,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readCachedDateColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamDateColObj> readCachedDateColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedDateColByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1547,7 +1547,7 @@ public class CFBamDateColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1555,7 +1555,7 @@ public class CFBamDateColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1606,7 +1606,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readCachedDateColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDateColObj> readCachedDateColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedDateColByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1624,7 +1624,7 @@ public class CFBamDateColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1632,7 +1632,7 @@ public class CFBamDateColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1683,7 +1683,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readCachedDateColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDateColObj> readCachedDateColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDateColByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1701,7 +1701,7 @@ public class CFBamDateColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1709,7 +1709,7 @@ public class CFBamDateColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1760,7 +1760,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readCachedDateColByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDateColObj> readCachedDateColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDateColByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1778,7 +1778,7 @@ public class CFBamDateColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1786,7 +1786,7 @@ public class CFBamDateColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1837,8 +1837,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readCachedDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamDateColObj> readCachedDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDateColByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1857,7 +1857,7 @@ public class CFBamDateColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1865,7 +1865,7 @@ public class CFBamDateColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1916,8 +1916,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readCachedDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamDateColObj> readCachedDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDateColByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1936,7 +1936,7 @@ public class CFBamDateColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1944,7 +1944,7 @@ public class CFBamDateColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1995,7 +1995,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public List<ICFBamDateColObj> readCachedDateColByTableIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamDateColObj> readCachedDateColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedDateColByTableIdx";
 		ICFBamDateColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDateCol().newByTableIdxKey();
@@ -2013,7 +2013,7 @@ public class CFBamDateColTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2021,7 +2021,7 @@ public class CFBamDateColTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2072,7 +2072,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeDateColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDateColObj obj = readCachedDateColByIdIdx( Id );
 		if( obj != null ) {
@@ -2081,7 +2081,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamDateColObj obj = readCachedDateColByUNameIdx( ScopeId,
@@ -2092,7 +2092,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeDateColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeDateColByScopeIdx";
 		ICFBamDateColObj obj;
@@ -2109,7 +2109,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeDateColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeDateColByDefSchemaIdx";
 		ICFBamDateColObj obj;
@@ -2126,7 +2126,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeDateColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDateColByPrevIdx";
 		ICFBamDateColObj obj;
@@ -2143,7 +2143,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeDateColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDateColByNextIdx";
 		ICFBamDateColObj obj;
@@ -2160,8 +2160,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDateColByContPrevIdx";
 		ICFBamDateColObj obj;
@@ -2179,8 +2179,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDateColByContNextIdx";
 		ICFBamDateColObj obj;
@@ -2198,7 +2198,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deepDisposeDateColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deepDisposeDateColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeDateColByTableIdx";
 		ICFBamDateColObj obj;
@@ -2243,7 +2243,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteDateColByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDateColObj obj = readDateCol(Id);
 		if( obj != null ) {
@@ -2273,7 +2273,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteDateColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2301,7 +2301,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteDateColByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2335,7 +2335,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteDateColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2369,7 +2369,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteDateColByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2403,7 +2403,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteDateColByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2437,8 +2437,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteDateColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2476,8 +2476,8 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteDateColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2515,7 +2515,7 @@ public class CFBamDateColTableObj
 	}
 
 	@Override
-	public void deleteDateColByTableIdx( ICFLibKeyHash256 TableId )
+	public void deleteDateColByTableIdx( IMCFKeyHash256 TableId )
 	{
 		ICFBamDateColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDateCol().newByTableIdxKey();
 		key.setRequiredTableId( TableId );
@@ -2557,7 +2557,7 @@ public class CFBamDateColTableObj
 	public ICFBamDateColObj moveUpDateCol( ICFBamDateColObj Obj ) {
 		ICFBamDateColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpDateCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpDateCol" );
 		}
 		ICFBamDateCol rec = schema.getCFBamBackingStore().getTableDateCol().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2585,7 +2585,7 @@ public class CFBamDateColTableObj
 	public ICFBamDateColObj moveDownDateCol( ICFBamDateColObj Obj ) {
 		ICFBamDateColObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownDateCol" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownDateCol" );
 		}
 		ICFBamDateCol rec = schema.getCFBamBackingStore().getTableDateCol().moveRecDown( null,
 			Obj.getRequiredId(),

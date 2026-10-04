@@ -174,7 +174,7 @@ public class CFBamAppSetup
             Properties props = new Properties();
             File userFile = new File(System.getProperty("user.home"), ".cfbamappsrv.properties");
             if (userFile.exists()) {
-				throw new CFLibUsageException(CFBamAppSetup.class,
+				throw new MCFUsageException(CFBamAppSetup.class,
 					"getUserProperties",
 					String.format("%1$s already exists - application initialization previously completed", userFile.getPath ( ) ), String.format ( "%1$s already exists - application initialization previously completed", userFile.getPath()));
                 

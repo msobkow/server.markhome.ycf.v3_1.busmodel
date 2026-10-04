@@ -117,7 +117,7 @@ public interface ICFBamEnumTagTable
 	 *	@param	EnumId	The EnumTag key attribute of the instance generating the id.
 	 */
 	void deleteEnumTagByEnumIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argEnumId );
+		IMCFKeyHash256 argEnumId );
 
 	/**
 	 *	Delete the EnumTag instances identified by the key EnumIdx.
@@ -136,7 +136,7 @@ public interface ICFBamEnumTagTable
 	 *	@param	DefSchemaId	The EnumTag key attribute of the instance generating the id.
 	 */
 	void deleteEnumTagByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the EnumTag instances identified by the key DefSchemaIdx.
@@ -157,7 +157,7 @@ public interface ICFBamEnumTagTable
 	 *	@param	Name	The EnumTag key attribute of the instance generating the id.
 	 */
 	void deleteEnumTagByEnumNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argEnumId,
+		IMCFKeyHash256 argEnumId,
 		String argName );
 
 	/**
@@ -177,7 +177,7 @@ public interface ICFBamEnumTagTable
 	 *	@param	PrevId	The EnumTag key attribute of the instance generating the id.
 	 */
 	void deleteEnumTagByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the EnumTag instances identified by the key PrevIdx.
@@ -196,7 +196,7 @@ public interface ICFBamEnumTagTable
 	 *	@param	NextId	The EnumTag key attribute of the instance generating the id.
 	 */
 	void deleteEnumTagByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the EnumTag instances identified by the key NextIdx.
@@ -255,7 +255,7 @@ public interface ICFBamEnumTagTable
 	 *		no such existing key value.
 	 */
 	ICFBamEnumTag readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived EnumTag record instances identified by the duplicate key EnumIdx.
@@ -267,7 +267,7 @@ public interface ICFBamEnumTagTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamEnumTag[] readDerivedByEnumIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 EnumId );
+		IMCFKeyHash256 EnumId );
 
 	/**
 	 *	Read an array of the derived EnumTag record instances identified by the duplicate key DefSchemaIdx.
@@ -279,7 +279,7 @@ public interface ICFBamEnumTagTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamEnumTag[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived EnumTag record instance identified by the unique key EnumNameIdx.
@@ -294,7 +294,7 @@ public interface ICFBamEnumTagTable
 	 *		no such existing key value.
 	 */
 	ICFBamEnumTag readDerivedByEnumNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 EnumId,
+		IMCFKeyHash256 EnumId,
 		String Name );
 
 	/**
@@ -307,7 +307,7 @@ public interface ICFBamEnumTagTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamEnumTag[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived EnumTag record instances identified by the duplicate key NextIdx.
@@ -319,7 +319,7 @@ public interface ICFBamEnumTagTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamEnumTag[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read the specific EnumTag record instance identified by the primary key.
@@ -331,7 +331,7 @@ public interface ICFBamEnumTagTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamEnumTag readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -346,7 +346,7 @@ public interface ICFBamEnumTagTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamEnumTag lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -370,10 +370,10 @@ public interface ICFBamEnumTagTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamEnumTag readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific EnumTag record instances identified by the duplicate key EnumIdx.
@@ -384,10 +384,10 @@ public interface ICFBamEnumTagTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamEnumTag[] readRecByEnumIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 EnumId );
+		IMCFKeyHash256 EnumId );
 
 	/**
 	 *	Read an array of the specific EnumTag record instances identified by the duplicate key DefSchemaIdx.
@@ -398,10 +398,10 @@ public interface ICFBamEnumTagTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamEnumTag[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific EnumTag record instance identified by the unique key EnumNameIdx.
@@ -415,10 +415,10 @@ public interface ICFBamEnumTagTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamEnumTag readRecByEnumNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 EnumId,
+		IMCFKeyHash256 EnumId,
 		String Name );
 
 	/**
@@ -430,10 +430,10 @@ public interface ICFBamEnumTagTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamEnumTag[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific EnumTag record instances identified by the duplicate key NextIdx.
@@ -444,10 +444,10 @@ public interface ICFBamEnumTagTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamEnumTag[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -455,7 +455,7 @@ public interface ICFBamEnumTagTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamEnumTag moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -464,6 +464,6 @@ public interface ICFBamEnumTagTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamEnumTag moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

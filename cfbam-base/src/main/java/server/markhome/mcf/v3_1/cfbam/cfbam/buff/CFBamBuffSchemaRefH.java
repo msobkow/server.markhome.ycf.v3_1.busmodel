@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,23 +74,23 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
     implements ICFBamSchemaRefH
 {
-	protected ICFLibKeyHash256 requiredSchemaId;
+	protected IMCFKeyHash256 requiredSchemaId;
 	protected String requiredName;
 	protected String requiredRefModelName;
 	protected String requiredIncludeRoot;
-	protected ICFLibKeyHash256 optionalRefSchemaId;
-	protected ICFLibKeyHash256 optionalPrevId;
-	protected ICFLibKeyHash256 optionalNextId;
+	protected IMCFKeyHash256 optionalRefSchemaId;
+	protected IMCFKeyHash256 optionalPrevId;
+	protected IMCFKeyHash256 optionalNextId;
 
     public CFBamBuffSchemaRefH() {
             super();
-		requiredSchemaId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaRef.SCHEMAID_INIT_VALUE.toString() );
+		requiredSchemaId = MCFDbKeyHash256.fromHex( ICFBamPubSchemaRef.SCHEMAID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubSchemaRef.NAME_INIT_VALUE;
 		requiredRefModelName = ICFBamPubSchemaRef.REFMODELNAME_INIT_VALUE;
 		requiredIncludeRoot = ICFBamPubSchemaRef.INCLUDEROOT_INIT_VALUE;
-		optionalRefSchemaId = CFLibDbKeyHash256.nullGet();
-		optionalPrevId = CFLibDbKeyHash256.nullGet();
-		optionalNextId = CFLibDbKeyHash256.nullGet();
+		optionalRefSchemaId = MCFDbKeyHash256.nullGet();
+		optionalPrevId = MCFDbKeyHash256.nullGet();
+		optionalNextId = MCFDbKeyHash256.nullGet();
     }
 
     @Override
@@ -99,13 +99,13 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSchemaId() {
+	public IMCFKeyHash256 getRequiredSchemaId() {
 		return(requiredSchemaId);
 	}
 
-	public void setRequiredSchemaId( ICFLibKeyHash256 value ) {
+	public void setRequiredSchemaId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredSchemaId",
 				1,
 				"value" );
@@ -120,13 +120,13 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -143,13 +143,13 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 
 	public void setRequiredRefModelName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredRefModelName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 1024 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredRefModelName",
 				1,
 				"value.length()",
@@ -166,13 +166,13 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 
 	public void setRequiredIncludeRoot( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredIncludeRoot",
 				1,
 				"value" );
 		}
 		else if( value.length() > 1024 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredIncludeRoot",
 				1,
 				"value.length()",
@@ -183,29 +183,29 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalRefSchemaId() {
+	public IMCFKeyHash256 getOptionalRefSchemaId() {
 		return(optionalRefSchemaId);
 	}
 
-	public void setOptionalRefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalRefSchemaId( IMCFKeyHash256 value ) {
 		optionalRefSchemaId = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalPrevId() {
+	public IMCFKeyHash256 getOptionalPrevId() {
 		return(optionalPrevId);
 	}
 
-	public void setOptionalPrevId( ICFLibKeyHash256 value ) {
+	public void setOptionalPrevId( IMCFKeyHash256 value ) {
 		optionalPrevId = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNextId() {
+	public IMCFKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( ICFLibKeyHash256 value ) {
+	public void setOptionalNextId( IMCFKeyHash256 value ) {
 		optionalNextId = value;
 	}
 
@@ -937,7 +937,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 			setSchemaRef( (CFBamBuffSchemaRef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -963,7 +963,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 			setSchemaRef( (ICFBamSchemaRefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

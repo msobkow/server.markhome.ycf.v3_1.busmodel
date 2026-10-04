@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,19 +66,19 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaSchemaRefBySchemaIdxKey
 	implements ICFBamSchemaRefBySchemaIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredSchemaId;
+	protected IMCFKeyHash256 requiredSchemaId;
 	public CFBamJpaSchemaRefBySchemaIdxKey() {
-		requiredSchemaId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaRef.SCHEMAID_INIT_VALUE.toString() );
+		requiredSchemaId = MCFDbKeyHash256.fromHex( ICFBamPubSchemaRef.SCHEMAID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSchemaId() {
+	public IMCFKeyHash256 getRequiredSchemaId() {
 		return(requiredSchemaId);
 	}
 
-	public void setRequiredSchemaId( ICFLibKeyHash256 value ) {
+	public void setRequiredSchemaId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredSchemaId",
 				1,
 				"value" );
@@ -221,7 +221,7 @@ public class CFBamJpaSchemaRefBySchemaIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

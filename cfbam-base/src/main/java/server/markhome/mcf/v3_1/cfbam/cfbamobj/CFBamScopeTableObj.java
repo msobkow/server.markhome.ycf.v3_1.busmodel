@@ -130,7 +130,7 @@ public class CFBamScopeTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamScopeTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamScopeTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -456,7 +456,7 @@ public class CFBamScopeTableObj
 			locked = (ICFBamScopeObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockScope", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockScope", pkey );
 		}
 		return( locked );
 	}
@@ -491,7 +491,7 @@ public class CFBamScopeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -499,7 +499,7 @@ public class CFBamScopeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -551,7 +551,7 @@ public class CFBamScopeTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -559,7 +559,7 @@ public class CFBamScopeTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -596,28 +596,28 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public ICFBamScopeObj readScopeByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamScopeObj readScopeByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readScopeByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamScopeObj readScopeByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamScopeObj readScopeByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamScopeObj obj = readScope( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFBamScopeObj> readScopeByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamScopeObj> readScopeByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readScopeByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamScopeObj> readScopeByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFBamScopeObj> readScopeByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readScopeByTenantIdx";
@@ -655,7 +655,7 @@ public class CFBamScopeTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -663,7 +663,7 @@ public class CFBamScopeTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -703,7 +703,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public ICFBamScopeObj readCachedScopeByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamScopeObj readCachedScopeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamScopeObj obj = null;
 		obj = readCachedScope( Id );
@@ -711,7 +711,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public List<ICFBamScopeObj> readCachedScopeByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamScopeObj> readCachedScopeByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedScopeByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
@@ -729,7 +729,7 @@ public class CFBamScopeTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -737,7 +737,7 @@ public class CFBamScopeTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -788,7 +788,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public void deepDisposeScopeByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeScopeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamScopeObj obj = readCachedScopeByIdIdx( Id );
 		if( obj != null ) {
@@ -797,7 +797,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public void deepDisposeScopeByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeScopeByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeScopeByTenantIdx";
 		ICFBamScopeObj obj;
@@ -834,7 +834,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public void deleteScopeByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteScopeByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamScopeObj obj = readScope(Id);
 		if( obj != null ) {
@@ -864,7 +864,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public void deleteScopeByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteScopeByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );

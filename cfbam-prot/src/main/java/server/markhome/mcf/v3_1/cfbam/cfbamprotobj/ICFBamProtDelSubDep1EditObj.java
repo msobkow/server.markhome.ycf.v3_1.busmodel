@@ -103,11 +103,11 @@ public interface ICFBamProtDelSubDep1EditObj
 	List<ICFBamProtDelSubDep2Obj> getOptionalComponentsDelDep();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute DelTopDepId.
+	 *	Get the required IMCFKeyHash256 attribute DelTopDepId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute DelTopDepId.
+	 *	@return	The required IMCFKeyHash256 attribute DelTopDepId.
 	 */
-	ICFLibKeyHash256 getRequiredDelTopDepId();
+	IMCFKeyHash256 getRequiredDelTopDepId();
 
 	/**
 	 *	Get the required String attribute Name.

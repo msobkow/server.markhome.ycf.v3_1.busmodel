@@ -111,7 +111,7 @@ public interface ICFBamSecSessionObj
 	/**
 	 *	End this edition of this SecSession instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -223,18 +223,18 @@ public interface ICFBamSecSessionObj
 	ICFSecSecUserObj getRequiredParentSecProxy( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSessionId.
+	 *	Get the required IMCFKeyHash256 attribute SecSessionId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSessionId.
+	 *	@return	The required IMCFKeyHash256 attribute SecSessionId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSessionId();
+	IMCFKeyHash256 getRequiredSecSessionId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecUserId.
+	 *	Get the required IMCFKeyHash256 attribute SecUserId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecUserId.
+	 *	@return	The required IMCFKeyHash256 attribute SecUserId.
 	 */
-	ICFLibKeyHash256 getRequiredSecUserId();
+	IMCFKeyHash256 getRequiredSecUserId();
 
 	/**
 	 *	Get the required LocalDateTime attribute Start.
@@ -251,11 +251,11 @@ public interface ICFBamSecSessionObj
 	LocalDateTime getOptionalFinish();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute SecProxyId.
+	 *	Get the optional IMCFKeyHash256 attribute SecProxyId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute SecProxyId.
+	 *	@return	The optional IMCFKeyHash256 attribute SecProxyId.
 	 */
-	ICFLibKeyHash256 getOptionalSecProxyId();
+	IMCFKeyHash256 getOptionalSecProxyId();
 
 	/**
 	 *	Internal use only.

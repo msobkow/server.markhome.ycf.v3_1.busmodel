@@ -103,17 +103,17 @@ public interface ICFBamPubTimestampTypeObj
 	ICFBamPubSchemaDefObj getRequiredContainerSchemaDef( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SchemaDefId.
+	 *	Get the required MCFDbKeyHash256 attribute SchemaDefId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SchemaDefId.
+	 *	@return	The required MCFDbKeyHash256 attribute SchemaDefId.
 	 */
-	CFLibDbKeyHash256 getRequiredSchemaDefId();
+	MCFDbKeyHash256 getRequiredSchemaDefId();
 
 }

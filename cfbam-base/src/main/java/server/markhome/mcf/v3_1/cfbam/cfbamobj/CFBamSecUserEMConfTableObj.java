@@ -487,7 +487,7 @@ public class CFBamSecUserEMConfTableObj
 			locked = (ICFSecSecUserEMConfObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockSecUserEMConf", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockSecUserEMConf", pkey );
 		}
 		return( locked );
 	}
@@ -522,7 +522,7 @@ public class CFBamSecUserEMConfTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -530,7 +530,7 @@ public class CFBamSecUserEMConfTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -582,7 +582,7 @@ public class CFBamSecUserEMConfTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -590,7 +590,7 @@ public class CFBamSecUserEMConfTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -633,7 +633,7 @@ public class CFBamSecUserEMConfTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecUserEMConfObj> pageAllSecUserEMConf(ICFLibKeyHash256 priorSecUserId )
+	public List<ICFSecSecUserEMConfObj> pageAllSecUserEMConf(IMCFKeyHash256 priorSecUserId )
 	{
 		final String S_ProcName = "pageAllSecUserEMConf";
 		Map<$implCommaIJavaOptAtomType$, ICFSecSecUserEMConfObj> map = new HashMap<$implCommaIJavaOptAtomType$,ICFSecSecUserEMConfObj>();
@@ -655,28 +655,28 @@ public class CFBamSecUserEMConfTableObj
 	}
 
 	@Override
-	public ICFSecSecUserEMConfObj readSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId )
+	public ICFSecSecUserEMConfObj readSecUserEMConfByIdIdx( IMCFKeyHash256 SecUserId )
 	{
 		return( readSecUserEMConfByIdIdx( SecUserId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserEMConfObj readSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId, boolean forceRead )
+	public ICFSecSecUserEMConfObj readSecUserEMConfByIdIdx( IMCFKeyHash256 SecUserId, boolean forceRead )
 	{
 		ICFSecSecUserEMConfObj obj = readSecUserEMConf( SecUserId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFSecSecUserEMConfObj readSecUserEMConfByUUuid6Idx( ICFLibUuid6 EMConfirmationUuid6 )
+	public ICFSecSecUserEMConfObj readSecUserEMConfByUUuid6Idx( IMCFUuid6 EMConfirmationUuid6 )
 	{
 		return( readSecUserEMConfByUUuid6Idx( EMConfirmationUuid6,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserEMConfObj readSecUserEMConfByUUuid6Idx( ICFLibUuid6 EMConfirmationUuid6, boolean forceRead )
+	public ICFSecSecUserEMConfObj readSecUserEMConfByUUuid6Idx( IMCFUuid6 EMConfirmationUuid6, boolean forceRead )
 	{
 		if( indexByUUuid6Idx == null ) {
 			indexByUUuid6Idx = new HashMap< ICFSecSecUserEMConfByUUuid6IdxKey,
@@ -747,7 +747,7 @@ public class CFBamSecUserEMConfTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -755,7 +755,7 @@ public class CFBamSecUserEMConfTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -840,7 +840,7 @@ public class CFBamSecUserEMConfTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -848,7 +848,7 @@ public class CFBamSecUserEMConfTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -933,7 +933,7 @@ public class CFBamSecUserEMConfTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -941,7 +941,7 @@ public class CFBamSecUserEMConfTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -981,7 +981,7 @@ public class CFBamSecUserEMConfTableObj
 	}
 
 	@Override
-	public ICFSecSecUserEMConfObj readCachedSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId )
+	public ICFSecSecUserEMConfObj readCachedSecUserEMConfByIdIdx( IMCFKeyHash256 SecUserId )
 	{
 		ICFSecSecUserEMConfObj obj = null;
 		obj = readCachedSecUserEMConf( SecUserId );
@@ -989,7 +989,7 @@ public class CFBamSecUserEMConfTableObj
 	}
 
 	@Override
-	public ICFSecSecUserEMConfObj readCachedSecUserEMConfByUUuid6Idx( ICFLibUuid6 EMConfirmationUuid6 )
+	public ICFSecSecUserEMConfObj readCachedSecUserEMConfByUUuid6Idx( IMCFUuid6 EMConfirmationUuid6 )
 	{
 		ICFSecSecUserEMConfObj obj = null;
 		ICFSecSecUserEMConfByUUuid6IdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserEMConf().newByUUuid6IdxKey();
@@ -1043,7 +1043,7 @@ public class CFBamSecUserEMConfTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1051,7 +1051,7 @@ public class CFBamSecUserEMConfTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1120,7 +1120,7 @@ public class CFBamSecUserEMConfTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1128,7 +1128,7 @@ public class CFBamSecUserEMConfTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1197,7 +1197,7 @@ public class CFBamSecUserEMConfTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1205,7 +1205,7 @@ public class CFBamSecUserEMConfTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1256,7 +1256,7 @@ public class CFBamSecUserEMConfTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId )
+	public void deepDisposeSecUserEMConfByIdIdx( IMCFKeyHash256 SecUserId )
 	{
 		ICFSecSecUserEMConfObj obj = readCachedSecUserEMConfByIdIdx( SecUserId );
 		if( obj != null ) {
@@ -1265,7 +1265,7 @@ public class CFBamSecUserEMConfTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserEMConfByUUuid6Idx( ICFLibUuid6 EMConfirmationUuid6 )
+	public void deepDisposeSecUserEMConfByUUuid6Idx( IMCFUuid6 EMConfirmationUuid6 )
 	{
 		ICFSecSecUserEMConfObj obj = readCachedSecUserEMConfByUUuid6Idx( EMConfirmationUuid6 );
 		if( obj != null ) {
@@ -1335,7 +1335,7 @@ public class CFBamSecUserEMConfTableObj
 	 */
 	@Override
 	public List<ICFSecSecUserEMConfObj> pageSecUserEMConfByConfEMAddrIdx( String ConfirmEMailAddr,
-		ICFLibKeyHash256 priorSecUserId )
+		IMCFKeyHash256 priorSecUserId )
 	{
 		final String S_ProcName = "pageSecUserEMConfByConfEMAddrIdx";
 		ICFSecSecUserEMConfByConfEMAddrIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserEMConf().newByConfEMAddrIdxKey();
@@ -1368,7 +1368,7 @@ public class CFBamSecUserEMConfTableObj
 	 */
 	@Override
 	public List<ICFSecSecUserEMConfObj> pageSecUserEMConfBySentStampIdx( LocalDateTime EMailSentStamp,
-		ICFLibKeyHash256 priorSecUserId )
+		IMCFKeyHash256 priorSecUserId )
 	{
 		final String S_ProcName = "pageSecUserEMConfBySentStampIdx";
 		ICFSecSecUserEMConfBySentStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserEMConf().newBySentStampIdxKey();
@@ -1401,7 +1401,7 @@ public class CFBamSecUserEMConfTableObj
 	 */
 	@Override
 	public List<ICFSecSecUserEMConfObj> pageSecUserEMConfByNewAcctIdx( boolean NewAccount,
-		ICFLibKeyHash256 priorSecUserId )
+		IMCFKeyHash256 priorSecUserId )
 	{
 		final String S_ProcName = "pageSecUserEMConfByNewAcctIdx";
 		ICFSecSecUserEMConfByNewAcctIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserEMConf().newByNewAcctIdxKey();
@@ -1442,7 +1442,7 @@ public class CFBamSecUserEMConfTableObj
 	}
 
 	@Override
-	public void deleteSecUserEMConfByIdIdx( ICFLibKeyHash256 SecUserId )
+	public void deleteSecUserEMConfByIdIdx( IMCFKeyHash256 SecUserId )
 	{
 		ICFSecSecUserEMConfObj obj = readSecUserEMConf(SecUserId);
 		if( obj != null ) {
@@ -1472,7 +1472,7 @@ public class CFBamSecUserEMConfTableObj
 	}
 
 	@Override
-	public void deleteSecUserEMConfByUUuid6Idx( ICFLibUuid6 EMConfirmationUuid6 )
+	public void deleteSecUserEMConfByUUuid6Idx( IMCFUuid6 EMConfirmationUuid6 )
 	{
 		if( indexByUUuid6Idx == null ) {
 			indexByUUuid6Idx = new HashMap< ICFSecSecUserEMConfByUUuid6IdxKey,

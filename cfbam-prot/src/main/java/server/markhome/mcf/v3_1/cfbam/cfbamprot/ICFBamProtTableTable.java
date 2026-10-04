@@ -138,7 +138,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableBySchemaDefIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId );
+		IMCFKeyHash256 argSchemaDefId );
 
 	/**
 	 *	Delete the Table instances identified by the key SchemaDefIdx.
@@ -196,7 +196,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableBySchemaCodeVisIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId,
+		IMCFKeyHash256 argSchemaDefId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
@@ -225,7 +225,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	DefSchemaId	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Table instances identified by the key DefSchemaIdx.
@@ -255,7 +255,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	Name	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId,
+		IMCFKeyHash256 argSchemaDefId,
 		String argName );
 
 	/**
@@ -286,7 +286,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	TableClassCode	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableBySchemaCdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId,
+		IMCFKeyHash256 argSchemaDefId,
 		String argTableClassCode );
 
 	/**
@@ -315,7 +315,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	PrimaryIndexId	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableByPrimaryIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrimaryIndexId );
+		MCFDbKeyHash256 argPrimaryIndexId );
 
 	/**
 	 *	Delete the Table instances identified by the key PrimaryIndexIdx.
@@ -343,7 +343,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	LookupIndexId	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableByLookupIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argLookupIndexId );
+		MCFDbKeyHash256 argLookupIndexId );
 
 	/**
 	 *	Delete the Table instances identified by the key LookupIndexIdx.
@@ -371,7 +371,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	AltIndexId	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableByAltIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argAltIndexId );
+		MCFDbKeyHash256 argAltIndexId );
 
 	/**
 	 *	Delete the Table instances identified by the key AltIndexIdx.
@@ -399,7 +399,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	QualifyingTableId	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableByQualTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argQualifyingTableId );
+		MCFDbKeyHash256 argQualifyingTableId );
 
 	/**
 	 *	Delete the Table instances identified by the key QualTableIdx.
@@ -427,7 +427,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteTableByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the Table instances identified by the key TenantIdx.
 	 *
@@ -436,7 +436,7 @@ extends ICFBamProtScopeTable,
 	 *	@param	TenantId	The Table key attribute of the instance generating the id.
 	 */
 	public void protdeleteTableByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the Table instances identified by the key TenantIdx.
@@ -479,7 +479,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTable protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Table record instance by protected primary key.
@@ -492,7 +492,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTable protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all Table instances.
@@ -514,7 +514,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTable protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key TenantIdx.
@@ -526,7 +526,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTable[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key SchemaDefIdx.
@@ -538,7 +538,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTable[] protreadDerivedBySchemaDefIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key CodeVisIdx.
@@ -564,7 +564,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTable[] protreadDerivedBySchemaCodeVisIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -577,7 +577,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTable[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived Table record instance identified by the unique key UNameIdx.
@@ -592,7 +592,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTable protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		String Name );
 
 	/**
@@ -608,7 +608,7 @@ extends ICFBamProtScopeTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtTable protreadDerivedBySchemaCdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		String TableClassCode );
 
 	/**
@@ -621,7 +621,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTable[] protreadDerivedByPrimaryIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrimaryIndexId );
+		MCFDbKeyHash256 PrimaryIndexId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key LookupIndexIdx.
@@ -633,7 +633,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTable[] protreadDerivedByLookupIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 LookupIndexId );
+		MCFDbKeyHash256 LookupIndexId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key AltIndexIdx.
@@ -645,7 +645,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTable[] protreadDerivedByAltIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 AltIndexId );
+		MCFDbKeyHash256 AltIndexId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key QualTableIdx.
@@ -657,7 +657,7 @@ extends ICFBamProtScopeTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtTable[] protreadDerivedByQualTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 QualifyingTableId );
+		MCFDbKeyHash256 QualifyingTableId );
 
 	/**
 	 *	Read the specific Table record instance identified by the primary key.
@@ -669,10 +669,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Table record instance identified by the primary key.
@@ -684,10 +684,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Table record instances.
@@ -708,10 +708,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key TenantIdx.
@@ -722,10 +722,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key SchemaDefIdx.
@@ -736,10 +736,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecBySchemaDefIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key CodeVisIdx.
@@ -750,7 +750,7 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecByCodeVisIdx( ICFSecPubAuthorization Authorization,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
@@ -766,10 +766,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecBySchemaCodeVisIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -781,10 +781,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific Table record instance identified by the unique key UNameIdx.
@@ -798,10 +798,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		String Name );
 
 	/**
@@ -816,10 +816,10 @@ extends ICFBamProtScopeTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable protreadRecBySchemaCdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		String TableClassCode );
 
 	/**
@@ -831,10 +831,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecByPrimaryIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrimaryIndexId );
+		MCFDbKeyHash256 PrimaryIndexId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key LookupIndexIdx.
@@ -845,10 +845,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecByLookupIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 LookupIndexId );
+		MCFDbKeyHash256 LookupIndexId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key AltIndexIdx.
@@ -859,10 +859,10 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecByAltIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 AltIndexId );
+		MCFDbKeyHash256 AltIndexId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key QualTableIdx.
@@ -873,8 +873,8 @@ extends ICFBamProtScopeTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTable[] protreadRecByQualTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 QualifyingTableId );
+		MCFDbKeyHash256 QualifyingTableId );
 }

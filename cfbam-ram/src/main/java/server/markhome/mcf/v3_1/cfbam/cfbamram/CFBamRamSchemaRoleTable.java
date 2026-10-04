@@ -133,7 +133,7 @@ public class CFBamRamSchemaRoleTable
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		// Validate foreign keys
@@ -145,7 +145,7 @@ public class CFBamRamSchemaRoleTable
 				if( null == schema.getTableRoleDef().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Superclass",
 						"Superclass",
@@ -165,7 +165,7 @@ public class CFBamRamSchemaRoleTable
 				if( null == schema.getTableSchemaDef().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredSchemaDefId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Container",
 						"Container",
@@ -223,7 +223,7 @@ public class CFBamRamSchemaRoleTable
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -275,7 +275,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByUNameIdx";
@@ -295,7 +295,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId )
+		IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByScopeIdx";
 		ICFBamRoleDef buffList[] = schema.getTableRoleDef().readDerivedByScopeIdx( Authorization,
@@ -318,7 +318,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByDefSchemaIdx";
 		ICFBamRoleDef buffList[] = schema.getTableRoleDef().readDerivedByDefSchemaIdx( Authorization,
@@ -341,8 +341,8 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole readDerivedByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByUDefIdx";
@@ -363,7 +363,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole[] readDerivedBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId )
+		IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRole.readDerivedBySchemaIdx";
 		CFBamBuffSchemaRoleBySchemaIdxKey key = (CFBamBuffSchemaRoleBySchemaIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRole().newBySchemaIdxKey();
@@ -419,7 +419,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole[] readDerivedBySchRoleScpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		final String S_ProcName = "CFBamRamSchemaRole.readDerivedBySchRoleScpIdx";
@@ -449,7 +449,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readDerivedByIdIdx() ";
 		ICFBamSchemaRole buff;
@@ -504,7 +504,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByIdIdx() ";
 		ICFBamSchemaRole buff = readDerivedByIdIdx( Authorization,
@@ -519,7 +519,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByUNameIdx() ";
@@ -536,7 +536,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId )
+		IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByScopeIdx() ";
 		ICFBamSchemaRole buff;
@@ -554,7 +554,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByDefSchemaIdx() ";
 		ICFBamSchemaRole buff;
@@ -572,8 +572,8 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole readRecByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamRoleDef.readRecByUDefIdx() ";
@@ -591,7 +591,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId )
+		IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "CFBamRamSchemaRole.readRecBySchemaIdx() ";
 		ICFBamSchemaRole buff;
@@ -627,7 +627,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public ICFBamSchemaRole[] readRecBySchRoleScpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		final String S_ProcName = "CFBamRamSchemaRole.readRecBySchRoleScpIdx() ";
@@ -652,7 +652,7 @@ public class CFBamRamSchemaRoleTable
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffSchemaRole existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updateSchemaRole",
 				"Existing record not found",
 				"Existing record not found",
@@ -691,7 +691,7 @@ public class CFBamRamSchemaRoleTable
 				if( null == schema.getTableRoleDef().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateSchemaRole",
 						"Superclass",
 						"Superclass",
@@ -711,7 +711,7 @@ public class CFBamRamSchemaRoleTable
 				if( null == schema.getTableSchemaDef().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredSchemaDefId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateSchemaRole",
 						"Container",
 						"Container",
@@ -787,7 +787,7 @@ public class CFBamRamSchemaRoleTable
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deleteSchemaRole",
 				pkey );
 		}
@@ -822,7 +822,7 @@ public class CFBamRamSchemaRoleTable
 	}
 	@Override
 	public void deleteSchemaRoleBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId )
+		IMCFKeyHash256 argSchemaDefId )
 	{
 		CFBamBuffSchemaRoleBySchemaIdxKey key = (CFBamBuffSchemaRoleBySchemaIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRole().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( argSchemaDefId );
@@ -894,7 +894,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public void deleteSchemaRoleBySchRoleScpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId,
+		IMCFKeyHash256 argSchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum argRoleScope )
 	{
 		CFBamBuffSchemaRoleBySchRoleScpIdxKey key = (CFBamBuffSchemaRoleBySchRoleScpIdxKey)schema.getCFBamBuffFactory().getFactorySchemaRole().newBySchRoleScpIdxKey();
@@ -960,7 +960,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public void deleteSchemaRoleByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		CFBamBuffRoleDefByUNameIdxKey key = (CFBamBuffRoleDefByUNameIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByUNameIdxKey();
@@ -999,7 +999,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public void deleteSchemaRoleByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		CFBamBuffRoleDefByScopeIdxKey key = (CFBamBuffRoleDefByScopeIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByScopeIdxKey();
 		key.setRequiredScopeId( argScopeId );
@@ -1035,7 +1035,7 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public void deleteSchemaRoleByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		CFBamBuffRoleDefByDefSchemaIdxKey key = (CFBamBuffRoleDefByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( argDefSchemaId );
@@ -1073,8 +1073,8 @@ public class CFBamRamSchemaRoleTable
 
 	@Override
 	public void deleteSchemaRoleByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		CFBamBuffRoleDefByUDefIdxKey key = (CFBamBuffRoleDefByUDefIdxKey)schema.getCFBamBuffFactory().getFactoryRoleDef().newByUDefIdxKey();

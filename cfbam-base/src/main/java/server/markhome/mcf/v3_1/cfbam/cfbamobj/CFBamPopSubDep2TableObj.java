@@ -146,7 +146,7 @@ public class CFBamPopSubDep2TableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamPopSubDep2TableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamPopSubDep2TableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -522,7 +522,7 @@ public class CFBamPopSubDep2TableObj
 			locked = (ICFBamPopSubDep2Obj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockPopSubDep2", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockPopSubDep2", pkey );
 		}
 		return( locked );
 	}
@@ -557,7 +557,7 @@ public class CFBamPopSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -565,7 +565,7 @@ public class CFBamPopSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -617,7 +617,7 @@ public class CFBamPopSubDep2TableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -625,7 +625,7 @@ public class CFBamPopSubDep2TableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -662,28 +662,28 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamPopSubDep2Obj readPopSubDep2ByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamPopSubDep2Obj readPopSubDep2ByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readPopSubDep2ByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamPopSubDep2Obj readPopSubDep2ByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamPopSubDep2Obj readPopSubDep2ByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamPopSubDep2Obj obj = readPopSubDep2( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readPopSubDep2ByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readPopSubDep2ByTenantIdx";
@@ -721,7 +721,7 @@ public class CFBamPopSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -729,7 +729,7 @@ public class CFBamPopSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -769,14 +769,14 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByRelationIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByRelationIdx( IMCFKeyHash256 RelationId )
 	{
 		return( readPopSubDep2ByRelationIdx( RelationId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByRelationIdx( ICFLibKeyHash256 RelationId,
+	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByRelationIdx( IMCFKeyHash256 RelationId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readPopSubDep2ByRelationIdx";
@@ -814,7 +814,7 @@ public class CFBamPopSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -822,7 +822,7 @@ public class CFBamPopSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -862,14 +862,14 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readPopSubDep2ByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readPopSubDep2ByDefSchemaIdx";
@@ -907,7 +907,7 @@ public class CFBamPopSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -915,7 +915,7 @@ public class CFBamPopSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -955,14 +955,14 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByPopSubDep1Idx( ICFLibKeyHash256 PopSubDep1Id )
+	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByPopSubDep1Idx( IMCFKeyHash256 PopSubDep1Id )
 	{
 		return( readPopSubDep2ByPopSubDep1Idx( PopSubDep1Id,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByPopSubDep1Idx( ICFLibKeyHash256 PopSubDep1Id,
+	public List<ICFBamPopSubDep2Obj> readPopSubDep2ByPopSubDep1Idx( IMCFKeyHash256 PopSubDep1Id,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readPopSubDep2ByPopSubDep1Idx";
@@ -1000,7 +1000,7 @@ public class CFBamPopSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1008,7 +1008,7 @@ public class CFBamPopSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1048,7 +1048,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamPopSubDep2Obj readPopSubDep2ByUNameIdx( ICFLibKeyHash256 PopSubDep1Id,
+	public ICFBamPopSubDep2Obj readPopSubDep2ByUNameIdx( IMCFKeyHash256 PopSubDep1Id,
 		String Name )
 	{
 		return( readPopSubDep2ByUNameIdx( PopSubDep1Id,
@@ -1057,7 +1057,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamPopSubDep2Obj readPopSubDep2ByUNameIdx( ICFLibKeyHash256 PopSubDep1Id,
+	public ICFBamPopSubDep2Obj readPopSubDep2ByUNameIdx( IMCFKeyHash256 PopSubDep1Id,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1086,7 +1086,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamPopSubDep2Obj readCachedPopSubDep2ByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamPopSubDep2Obj readCachedPopSubDep2ByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamPopSubDep2Obj obj = null;
 		obj = readCachedPopSubDep2( Id );
@@ -1094,7 +1094,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readCachedPopSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamPopSubDep2Obj> readCachedPopSubDep2ByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedPopSubDep2ByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
@@ -1112,7 +1112,7 @@ public class CFBamPopSubDep2TableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1120,7 +1120,7 @@ public class CFBamPopSubDep2TableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1171,7 +1171,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readCachedPopSubDep2ByRelationIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamPopSubDep2Obj> readCachedPopSubDep2ByRelationIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedPopSubDep2ByRelationIdx";
 		ICFBamPopDepByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByRelationIdxKey();
@@ -1189,7 +1189,7 @@ public class CFBamPopSubDep2TableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1197,7 +1197,7 @@ public class CFBamPopSubDep2TableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1248,7 +1248,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readCachedPopSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamPopSubDep2Obj> readCachedPopSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedPopSubDep2ByDefSchemaIdx";
 		ICFBamPopDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByDefSchemaIdxKey();
@@ -1266,7 +1266,7 @@ public class CFBamPopSubDep2TableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1274,7 +1274,7 @@ public class CFBamPopSubDep2TableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1325,7 +1325,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamPopSubDep2Obj> readCachedPopSubDep2ByPopSubDep1Idx( ICFLibKeyHash256 PopSubDep1Id )
+	public List<ICFBamPopSubDep2Obj> readCachedPopSubDep2ByPopSubDep1Idx( IMCFKeyHash256 PopSubDep1Id )
 	{
 		final String S_ProcName = "readCachedPopSubDep2ByPopSubDep1Idx";
 		ICFBamPopSubDep2ByPopSubDep1IdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep2().newByPopSubDep1IdxKey();
@@ -1343,7 +1343,7 @@ public class CFBamPopSubDep2TableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1351,7 +1351,7 @@ public class CFBamPopSubDep2TableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1402,7 +1402,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamPopSubDep2Obj readCachedPopSubDep2ByUNameIdx( ICFLibKeyHash256 PopSubDep1Id,
+	public ICFBamPopSubDep2Obj readCachedPopSubDep2ByUNameIdx( IMCFKeyHash256 PopSubDep1Id,
 		String Name )
 	{
 		ICFBamPopSubDep2Obj obj = null;
@@ -1440,7 +1440,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposePopSubDep2ByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposePopSubDep2ByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamPopSubDep2Obj obj = readCachedPopSubDep2ByIdIdx( Id );
 		if( obj != null ) {
@@ -1449,7 +1449,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposePopSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposePopSubDep2ByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposePopSubDep2ByTenantIdx";
 		ICFBamPopSubDep2Obj obj;
@@ -1466,7 +1466,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposePopSubDep2ByRelationIdx( ICFLibKeyHash256 RelationId )
+	public void deepDisposePopSubDep2ByRelationIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "deepDisposePopSubDep2ByRelationIdx";
 		ICFBamPopSubDep2Obj obj;
@@ -1483,7 +1483,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposePopSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposePopSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposePopSubDep2ByDefSchemaIdx";
 		ICFBamPopSubDep2Obj obj;
@@ -1500,7 +1500,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposePopSubDep2ByPopSubDep1Idx( ICFLibKeyHash256 PopSubDep1Id )
+	public void deepDisposePopSubDep2ByPopSubDep1Idx( IMCFKeyHash256 PopSubDep1Id )
 	{
 		final String S_ProcName = "deepDisposePopSubDep2ByPopSubDep1Idx";
 		ICFBamPopSubDep2Obj obj;
@@ -1517,7 +1517,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposePopSubDep2ByUNameIdx( ICFLibKeyHash256 PopSubDep1Id,
+	public void deepDisposePopSubDep2ByUNameIdx( IMCFKeyHash256 PopSubDep1Id,
 		String Name )
 	{
 		ICFBamPopSubDep2Obj obj = readCachedPopSubDep2ByUNameIdx( PopSubDep1Id,
@@ -1548,7 +1548,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deletePopSubDep2ByIdIdx( ICFLibKeyHash256 Id )
+	public void deletePopSubDep2ByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamPopSubDep2Obj obj = readPopSubDep2(Id);
 		if( obj != null ) {
@@ -1578,7 +1578,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deletePopSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deletePopSubDep2ByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -1612,7 +1612,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deletePopSubDep2ByRelationIdx( ICFLibKeyHash256 RelationId )
+	public void deletePopSubDep2ByRelationIdx( IMCFKeyHash256 RelationId )
 	{
 		ICFBamPopDepByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByRelationIdxKey();
 		key.setRequiredRelationId( RelationId );
@@ -1646,7 +1646,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deletePopSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deletePopSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamPopDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -1680,7 +1680,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deletePopSubDep2ByPopSubDep1Idx( ICFLibKeyHash256 PopSubDep1Id )
+	public void deletePopSubDep2ByPopSubDep1Idx( IMCFKeyHash256 PopSubDep1Id )
 	{
 		ICFBamPopSubDep2ByPopSubDep1IdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep2().newByPopSubDep1IdxKey();
 		key.setRequiredPopSubDep1Id( PopSubDep1Id );
@@ -1714,7 +1714,7 @@ public class CFBamPopSubDep2TableObj
 	}
 
 	@Override
-	public void deletePopSubDep2ByUNameIdx( ICFLibKeyHash256 PopSubDep1Id,
+	public void deletePopSubDep2ByUNameIdx( IMCFKeyHash256 PopSubDep1Id,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {

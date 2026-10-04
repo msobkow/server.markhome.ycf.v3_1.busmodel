@@ -55,7 +55,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -156,7 +156,7 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjScope() {
+	public IMCFAnyObj getObjScope() {
 		ICFBamScopeObj scope = getRequiredContainerScope();
 		return( scope );
 	}
@@ -169,8 +169,8 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
-		ICFLibAnyObj container = this;
+	public IMCFAnyObj getObjQualifier( Class qualifyingClass ) {
+		IMCFAnyObj container = this;
 		if( qualifyingClass != null ) {
 			while( container != null ) {
 				if( container instanceof ICFBamClusterObj ) {
@@ -200,21 +200,21 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( Class qualifyingClass, String objName ) {
-		ICFLibAnyObj topContainer = getObjQualifier( qualifyingClass );
+	public IMCFAnyObj getNamedObject( Class qualifyingClass, String objName ) {
+		IMCFAnyObj topContainer = getObjQualifier( qualifyingClass );
 		if( topContainer == null ) {
 			return( null );
 		}
-		ICFLibAnyObj namedObject = topContainer.getNamedObject( objName );
+		IMCFAnyObj namedObject = topContainer.getNamedObject( objName );
 		return( namedObject );
 	}
 
 	@Override
-	public ICFLibAnyObj getNamedObject( String objName ) {
+	public IMCFAnyObj getNamedObject( String objName ) {
 		String nextName;
 		String remainingName;
-		ICFLibAnyObj subObj = null;
-		ICFLibAnyObj retObj;
+		IMCFAnyObj subObj = null;
+		IMCFAnyObj retObj;
 		int nextDot = objName.indexOf( '.' );
 		if( nextDot >= 0 ) {
 			nextName = objName.substring( 0, nextDot );
@@ -239,7 +239,7 @@ public class CFBamValueEditObj
 	@Override
 	public String getObjQualifiedName() {
 		String qualName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -263,7 +263,7 @@ public class CFBamValueEditObj
 	@Override
 	public String getObjFullName() {
 		String fullName = getObjName();
-		ICFLibAnyObj container = getObjScope();
+		IMCFAnyObj container = getObjScope();
 		String containerName;
 		while( container != null ) {
 			if( container instanceof ICFSecClusterObj ) {
@@ -297,7 +297,7 @@ public class CFBamValueEditObj
 	public ICFBamValueObj read() {
 		ICFBamValueObj retval = getOrigAsValue().read();
 		if( retval != orig ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),	"read" );
+			throw new MCFStaleCacheDetectedException( getClass(),	"read" );
 		}
 		copyOrigToRec();
 		return( retval );
@@ -307,7 +307,7 @@ public class CFBamValueEditObj
 	public ICFBamValueObj read( boolean forceRead ) {
 		ICFBamValueObj retval = getOrigAsValue().read( forceRead );
 		if( retval != orig ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),	"read" );
+			throw new MCFStaleCacheDetectedException( getClass(),	"read" );
 		}
 		copyOrigToRec();
 		return( retval );
@@ -315,12 +315,12 @@ public class CFBamValueEditObj
 
 	@Override
 	public ICFBamValueObj moveUp() {
-		throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUp" );
+		throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUp" );
 	}
 
 	@Override
 	public ICFBamValueObj moveDown() {
-		throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDown" );
+		throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDown" );
 	}
 
 	@Override
@@ -342,7 +342,7 @@ public class CFBamValueEditObj
 	@Override
 	public CFBamValueEditObj deleteInstance() {
 		if( getIsNew() ) {
-			throw new CFLibCannotDeleteNewInstanceException( getClass(), "delete" );
+			throw new MCFCannotDeleteNewInstanceException( getClass(), "delete" );
 		}
 		getSchema().getValueTableObj().deleteValue( getOrigAsValue() );
 		return( null );
@@ -365,7 +365,7 @@ public class CFBamValueEditObj
 
 	@Override
 	public ICFBamValueEditObj beginEdit() {
-		throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
+		throw new MCFEditAlreadyOpenException( getClass(), "beginEdit" );
 	}
 
 	@Override
@@ -440,12 +440,12 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredId() {
+	public IMCFKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(ICFLibKeyHash256 value) {
+	public void setRequiredId(IMCFKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -458,12 +458,12 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredScopeId() {
+	public IMCFKeyHash256 getRequiredScopeId() {
 		return( getValueRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return( getValueRec().getOptionalDefSchemaId() );
 	}
 
@@ -576,12 +576,12 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalPrevId() {
+	public IMCFKeyHash256 getOptionalPrevId() {
 		return( getValueRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNextId() {
+	public IMCFKeyHash256 getOptionalNextId() {
 		return( getValueRec().getOptionalNextId() );
 	}
 

@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,21 +74,21 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffValueByContNextIdxKey
 	implements ICFBamValueByContNextIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredScopeId;
-	protected ICFLibKeyHash256 optionalNextId;
+	protected IMCFKeyHash256 requiredScopeId;
+	protected IMCFKeyHash256 optionalNextId;
 	public CFBamBuffValueByContNextIdxKey() {
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.SCOPEID_INIT_VALUE.toString() );
-		optionalNextId = CFLibDbKeyHash256.nullGet();
+		requiredScopeId = MCFDbKeyHash256.fromHex( ICFBamPubValue.SCOPEID_INIT_VALUE.toString() );
+		optionalNextId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredScopeId() {
+	public IMCFKeyHash256 getRequiredScopeId() {
 		return(requiredScopeId);
 	}
 
-	public void setRequiredScopeId( ICFLibKeyHash256 value ) {
+	public void setRequiredScopeId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredScopeId",
 				1,
 				"value" );
@@ -97,11 +97,11 @@ public class CFBamBuffValueByContNextIdxKey
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalNextId() {
+	public IMCFKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( ICFLibKeyHash256 value ) {
+	public void setOptionalNextId( IMCFKeyHash256 value ) {
 		optionalNextId = value;
 	}
 
@@ -268,7 +268,7 @@ public class CFBamBuffValueByContNextIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

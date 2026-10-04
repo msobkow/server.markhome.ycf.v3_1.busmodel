@@ -89,32 +89,32 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 
 	public CFBamJpaDelTopDepTable(ICFBamSchema schema) {
 		if( schema == null ) {
-			throw new CFLibNullArgumentException(getClass(), "constructor", 1, "schema" );
+			throw new MCFNullArgumentException(getClass(), "constructor", 1, "schema" );
 		}
 		if (schema instanceof CFBamJpaSchema) {
 			this.schema = (CFBamJpaSchema)schema;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
+			throw new MCFUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
 		}
 	}
 
 	protected boolean canCreateDelTopDep(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "createdeltopdep");
@@ -124,20 +124,20 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 
 	protected boolean canReadDelTopDep(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "readdeltopdep");
@@ -147,20 +147,20 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 
 	protected boolean canUpdateDelTopDep(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "updatedeltopdep");
@@ -170,20 +170,20 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 
 	protected boolean canDeleteDelTopDep(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "deletedeltopdep");
@@ -206,11 +206,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "createDelTopDep";
 		boolean permissionGranted = canCreateDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "createdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "createdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "createDelTopDep", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "createDelTopDep", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaDelTopDep) {
 			CFBamJpaDelTopDep jparec = (CFBamJpaDelTopDep)rec;
@@ -222,7 +222,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "createDelTopDep", "rec", rec, "CFBamJpaDelTopDep");
+			throw new MCFUnsupportedClassException(getClass(), "createDelTopDep", "rec", rec, "CFBamJpaDelTopDep");
 		}
 	}
 
@@ -241,11 +241,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "updateDelTopDep";
 		boolean permissionGranted = canUpdateDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "updateDelTopDep", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "updateDelTopDep", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaDelTopDep) {
 			CFBamJpaDelTopDep jparec = (CFBamJpaDelTopDep)rec;
@@ -255,7 +255,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "updateDelTopDep", "rec", rec, "CFBamJpaDelTopDep");
+			throw new MCFUnsupportedClassException(getClass(), "updateDelTopDep", "rec", rec, "CFBamJpaDelTopDep");
 		}
 	}
 
@@ -273,7 +273,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDep";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
@@ -284,10 +284,10 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			schema.getJpaHooksSchema().getDelTopDepService().deleteByIdIdx(jparec.getPKey());
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "deleteDelTopDep", "rec", rec, "CFBamJpaDelTopDep");
+			throw new MCFUnsupportedClassException(getClass(), "deleteDelTopDep", "rec", rec, "CFBamJpaDelTopDep");
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "deleteDelTopDep");
+		throw new MCFNotImplementedYetException(getClass(), "deleteDelTopDep");
 	}
 
 	/**
@@ -299,12 +299,12 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public void deleteDelTopDepByDelTopDepTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "deleteDelTopDepByDelTopDepTblIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByDelTopDepTblIdx(argTableId);
@@ -325,7 +325,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDepByDelTopDepTblIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByDelTopDepTblIdx(argKey.getRequiredTableId());
@@ -342,13 +342,13 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public void deleteDelTopDepByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "deleteDelTopDepByUNameIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByUNameIdx(argTableId,
@@ -370,7 +370,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDepByUNameIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByUNameIdx(argKey.getRequiredTableId(),
@@ -386,12 +386,12 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public void deleteDelTopDepByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "deleteDelTopDepByPrevIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByPrevIdx(argPrevId);
@@ -412,7 +412,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDepByPrevIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByPrevIdx(argKey.getOptionalPrevId());
@@ -427,12 +427,12 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public void deleteDelTopDepByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "deleteDelTopDepByNextIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByNextIdx(argNextId);
@@ -453,7 +453,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDepByNextIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByNextIdx(argKey.getOptionalNextId());
@@ -468,12 +468,12 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public void deleteDelTopDepByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "deleteDelTopDepByDefSchemaIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByDefSchemaIdx(argDefSchemaId);
@@ -494,7 +494,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDepByDefSchemaIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByDefSchemaIdx(argKey.getOptionalDefSchemaId());
@@ -509,12 +509,12 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public void deleteDelTopDepByDelDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId )
+		IMCFKeyHash256 argRelationId )
 	{
 		final String S_ProcName = "deleteDelTopDepByDelDepIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByDelDepIdx(argRelationId);
@@ -535,7 +535,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDepByDelDepIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByDelDepIdx(argKey.getRequiredRelationId());
@@ -555,7 +555,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDepByIdIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByIdIdx(argKey);
@@ -570,12 +570,12 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public void deleteDelTopDepByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "deleteDelTopDepByTenantIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByTenantIdx(argTenantId);
@@ -596,7 +596,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "deleteDelTopDepByTenantIdx";
 		boolean permissionGranted = canDeleteDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deletedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getDelTopDepService().deleteByTenantIdx(argKey.getRequiredTenantId());
@@ -620,7 +620,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "readDerived";
 		boolean permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamDelTopDep retval = schema.getJpaHooksSchema().getDelTopDepService().find(PKey);
@@ -644,7 +644,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "lockDerived";
 		boolean permissionGranted = canUpdateDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamDelTopDep retval = schema.getJpaHooksSchema().getDelTopDepService().lockByIdIdx(PKey);
@@ -663,7 +663,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "readAllDerived";
 		boolean permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		List<CFBamJpaDelTopDep> retlist = schema.getJpaHooksSchema().getDelTopDepService().findAll();
@@ -687,7 +687,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readDerivedByIdIdx";
 		boolean permissionGranted = false;
@@ -695,14 +695,14 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamDelTopDep retval = schema.getJpaHooksSchema().getDelTopDepService().find(argId);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readdeltopdep")) {
 				retval = null;
 			}
@@ -721,7 +721,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "readDerivedByTenantIdx";
 		boolean permissionGranted = false;
@@ -729,7 +729,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDelTopDep> retlist = schema.getJpaHooksSchema().getDelTopDepService().findByTenantIdx(argTenantId);
 		ICFBamDelTopDep[] retset = new ICFBamDelTopDep[retlist.size()];
@@ -751,7 +751,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readDerivedByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -759,7 +759,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDelTopDep> retlist = schema.getJpaHooksSchema().getDelTopDepService().findByDefSchemaIdx(argDefSchemaId);
 		ICFBamDelTopDep[] retset = new ICFBamDelTopDep[retlist.size()];
@@ -781,7 +781,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep[] readDerivedByDelDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId )
+		IMCFKeyHash256 argRelationId )
 	{
 		final String S_ProcName = "readDerivedByDelDepIdx";
 		boolean permissionGranted = false;
@@ -789,7 +789,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDelTopDep> retlist = schema.getJpaHooksSchema().getDelTopDepService().findByDelDepIdx(argRelationId);
 		ICFBamDelTopDep[] retset = new ICFBamDelTopDep[retlist.size()];
@@ -811,7 +811,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep[] readDerivedByDelTopDepTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "readDerivedByDelTopDepTblIdx";
 		boolean permissionGranted = false;
@@ -819,7 +819,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDelTopDep> retlist = schema.getJpaHooksSchema().getDelTopDepService().findByDelTopDepTblIdx(argTableId);
 		ICFBamDelTopDep[] retset = new ICFBamDelTopDep[retlist.size()];
@@ -844,7 +844,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUNameIdx";
@@ -853,15 +853,15 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamDelTopDep retval = schema.getJpaHooksSchema().getDelTopDepService().findByUNameIdx(argTableId,
 		argName);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readdeltopdep")) {
 				retval = null;
 			}
@@ -880,7 +880,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readDerivedByPrevIdx";
 		boolean permissionGranted = false;
@@ -888,7 +888,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDelTopDep> retlist = schema.getJpaHooksSchema().getDelTopDepService().findByPrevIdx(argPrevId);
 		ICFBamDelTopDep[] retset = new ICFBamDelTopDep[retlist.size()];
@@ -910,7 +910,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readDerivedByNextIdx";
 		boolean permissionGranted = false;
@@ -918,7 +918,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaDelTopDep> retlist = schema.getJpaHooksSchema().getDelTopDepService().findByNextIdx(argNextId);
 		ICFBamDelTopDep[] retset = new ICFBamDelTopDep[retlist.size()];
@@ -939,7 +939,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep readRec( ICFSecAuthorization Authorization,
@@ -948,10 +948,10 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "readRec";
 		boolean permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readRec");
+		throw new MCFNotImplementedYetException(getClass(), "readRec");
 	}
 
 	/**
@@ -964,7 +964,7 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep lockRec( ICFSecAuthorization Authorization,
@@ -973,10 +973,10 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "lockRec";
 		boolean permissionGranted = canUpdateDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "lockRec");
+		throw new MCFNotImplementedYetException(getClass(), "lockRec");
 	}
 
 	/**
@@ -991,10 +991,10 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 		final String S_ProcName = "readAllRec";
 		boolean permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readAllRec");
+		throw new MCFNotImplementedYetException(getClass(), "readAllRec");
 	}
 
 
@@ -1008,11 +1008,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readRecByIdIdx";
 		boolean permissionGranted = false;
@@ -1020,9 +1020,9 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdIdx");
 	}
 
 	/**
@@ -1034,11 +1034,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "readRecByTenantIdx";
 		boolean permissionGranted = false;
@@ -1046,9 +1046,9 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByTenantIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByTenantIdx");
 	}
 
 	/**
@@ -1060,11 +1060,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readRecByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -1072,9 +1072,9 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
 	}
 
 	/**
@@ -1086,11 +1086,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep[] readRecByDelDepIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId )
+		IMCFKeyHash256 argRelationId )
 	{
 		final String S_ProcName = "readRecByDelDepIdx";
 		boolean permissionGranted = false;
@@ -1098,9 +1098,9 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDelDepIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDelDepIdx");
 	}
 
 	/**
@@ -1112,11 +1112,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep[] readRecByDelTopDepTblIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "readRecByDelTopDepTblIdx";
 		boolean permissionGranted = false;
@@ -1124,9 +1124,9 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDelTopDepTblIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDelTopDepTblIdx");
 	}
 
 	/**
@@ -1141,11 +1141,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUNameIdx";
@@ -1154,9 +1154,9 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUNameIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUNameIdx");
 	}
 
 	/**
@@ -1168,11 +1168,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId )
+		IMCFKeyHash256 argPrevId )
 	{
 		final String S_ProcName = "readRecByPrevIdx";
 		boolean permissionGranted = false;
@@ -1180,9 +1180,9 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByPrevIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByPrevIdx");
 	}
 
 	/**
@@ -1194,11 +1194,11 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamDelTopDep[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId )
+		IMCFKeyHash256 argNextId )
 	{
 		final String S_ProcName = "readRecByNextIdx";
 		boolean permissionGranted = false;
@@ -1206,9 +1206,9 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 			permissionGranted = canReadDelTopDep(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readdeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByNextIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByNextIdx");
 	}
 
 	/**
@@ -1218,16 +1218,16 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId,
+		IMCFKeyHash256 argId,
 		int revision )
 	{
 		final String S_ProcName = "moveRecUp";
 		boolean permissionGranted = canUpdateDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "moveRecUp");
+		throw new MCFNotImplementedYetException(getClass(), "moveRecUp");
 	}
 
 	/**
@@ -1237,15 +1237,15 @@ public class CFBamJpaDelTopDepTable implements ICFBamDelTopDepTable
 	 */
 	@Override
 	public ICFBamDelTopDep moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId,
+		IMCFKeyHash256 argId,
 		int revision )
 	{
 		final String S_ProcName = "moveRecDown";
 		boolean permissionGranted = canUpdateDelTopDep(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updatedeltopdep", ICFBamSchema.SCHEMA_NAME, ICFBamDelTopDepTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "moveRecDown");
+		throw new MCFNotImplementedYetException(getClass(), "moveRecDown");
 	}
 }

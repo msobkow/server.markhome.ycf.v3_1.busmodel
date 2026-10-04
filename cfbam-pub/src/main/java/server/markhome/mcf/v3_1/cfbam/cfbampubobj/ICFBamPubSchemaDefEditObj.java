@@ -151,18 +151,18 @@ public interface ICFBamPubSchemaDefEditObj
 	void setRequiredOwnerCTenant( ICFSecPubTenantObj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute CTenantId.
+	 *	Get the required MCFDbKeyHash256 attribute CTenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute CTenantId.
+	 *	@return	The required MCFDbKeyHash256 attribute CTenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredCTenantId();
+	MCFDbKeyHash256 getRequiredCTenantId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute MinorVersionId.
+	 *	Get the required MCFDbKeyHash256 attribute MinorVersionId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute MinorVersionId.
+	 *	@return	The required MCFDbKeyHash256 attribute MinorVersionId.
 	 */
-	CFLibDbKeyHash256 getRequiredMinorVersionId();
+	MCFDbKeyHash256 getRequiredMinorVersionId();
 
 	/**
 	 *	Get the required String attribute Name.

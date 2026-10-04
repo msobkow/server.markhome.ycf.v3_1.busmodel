@@ -107,18 +107,18 @@ public interface ICFBamPopSubDep3Obj
 	ICFBamPopSubDep2Obj getRequiredContainerPopSubDep2( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute PopSubDep2Id.
+	 *	Get the required IMCFKeyHash256 attribute PopSubDep2Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute PopSubDep2Id.
+	 *	@return	The required IMCFKeyHash256 attribute PopSubDep2Id.
 	 */
-	ICFLibKeyHash256 getRequiredPopSubDep2Id();
+	IMCFKeyHash256 getRequiredPopSubDep2Id();
 
 	/**
 	 *	Get the required String attribute Name.

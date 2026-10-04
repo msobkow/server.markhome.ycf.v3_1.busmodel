@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,93 +78,93 @@ public class CFBamJpaIdGenService {
     private LocalContainerEntityManagerFactoryBean cfbamEntityManagerFactory;
 
 	/**
-	 *	Generate a ChainIdGen CFLibDbKeyHash256 id.
+	 *	Generate a ChainIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateChainIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateChainIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
-	 *	Generate a EnumTagIdGen CFLibDbKeyHash256 id.
+	 *	Generate a EnumTagIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateEnumTagIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateEnumTagIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
-	 *	Generate a IndexColIdGen CFLibDbKeyHash256 id.
+	 *	Generate a IndexColIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateIndexColIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateIndexColIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
-	 *	Generate a ParamIdGen CFLibDbKeyHash256 id.
+	 *	Generate a ParamIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateParamIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateParamIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
-	 *	Generate a RelationColIdGen CFLibDbKeyHash256 id.
+	 *	Generate a RelationColIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateRelationColIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateRelationColIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
-	 *	Generate a TweakIdGen CFLibDbKeyHash256 id.
+	 *	Generate a TweakIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateTweakIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateTweakIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
-	 *	Generate a ScopeIdGen CFLibDbKeyHash256 id.
+	 *	Generate a ScopeIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateScopeIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateScopeIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
-	 *	Generate a ValueIdGen CFLibDbKeyHash256 id.
+	 *	Generate a ValueIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateValueIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateValueIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
-	 *	Generate a RoleIdGen CFLibDbKeyHash256 id.
+	 *	Generate a RoleIdGen MCFDbKeyHash256 id.
 	 *
-	 *		@return A cryptographically-random generated CFLibDBKeyHash128 value
+	 *		@return A cryptographically-random generated MCFDBKeyHash128 value
 	 */
 	@Transactional(propagation = Propagation.MANDATORY, noRollbackFor = NoResultException.class, transactionManager = "cfbamTransactionManager")
-	public CFLibDbKeyHash256 generateRoleIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 generateRoleIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 }

@@ -138,7 +138,7 @@ public interface ICFBamTenantObj
 	/**
 	 *	End this edition of this Tenant instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -292,18 +292,18 @@ public interface ICFBamTenantObj
 	List<ICFBamSchemaDefObj> getOptionalComponentsSchema( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required IMCFKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required IMCFKeyHash256 attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	IMCFKeyHash256 getRequiredClusterId();
 
 	/**
 	 *	Get the required String attribute TenantName.

@@ -114,7 +114,7 @@ public class CFBamRamIndexTweakTable
 		// Validate unique indexes
 
 		if( dictByPKey.containsKey( pkey ) ) {
-			throw new CFLibPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
+			throw new MCFPrimaryKeyNotNewException( getClass(), S_ProcName, pkey );
 		}
 
 		// Validate foreign keys
@@ -126,7 +126,7 @@ public class CFBamRamIndexTweakTable
 				if( null == schema.getTableTweak().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Superclass",
 						"Superclass",
@@ -146,7 +146,7 @@ public class CFBamRamIndexTweakTable
 				if( null == schema.getTableIndex().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredIndexId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						S_ProcName,
 						"Container",
 						"Container",
@@ -184,7 +184,7 @@ public class CFBamRamIndexTweakTable
 				return( retbuff );
 			}
 			else {
-				throw new CFLibUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
+				throw new MCFUnsupportedClassException(getClass(), S_ProcName, "-create-buff-cloning-", (Integer)classCode, "Classcode not recognized: " + Integer.toString(classCode));
 			}
 		}
 	}
@@ -236,7 +236,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamTweak.readDerivedByUNameIdx";
@@ -256,7 +256,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak[] readDerivedByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamTweak.readDerivedByValTentIdx";
 		ICFBamTweak buffList[] = schema.getTableTweak().readDerivedByValTentIdx( Authorization,
@@ -279,7 +279,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId )
+		IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "CFBamRamTweak.readDerivedByScopeIdx";
 		ICFBamTweak buffList[] = schema.getTableTweak().readDerivedByScopeIdx( Authorization,
@@ -302,7 +302,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamTweak.readDerivedByDefSchemaIdx";
 		ICFBamTweak buffList[] = schema.getTableTweak().readDerivedByDefSchemaIdx( Authorization,
@@ -325,10 +325,10 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak readDerivedByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamTweak.readDerivedByUDefIdx";
@@ -351,7 +351,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak[] readDerivedByIndexIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 IndexId )
+		IMCFKeyHash256 IndexId )
 	{
 		final String S_ProcName = "CFBamRamIndexTweak.readDerivedByIndexIdx";
 		CFBamBuffIndexTweakByIndexIdxKey key = (CFBamBuffIndexTweakByIndexIdxKey)schema.getCFBamBuffFactory().getFactoryIndexTweak().newByIndexIdxKey();
@@ -379,7 +379,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamTweak.readDerivedByIdIdx() ";
 		ICFBamIndexTweak buff;
@@ -434,7 +434,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id )
+		IMCFKeyHash256 Id )
 	{
 		final String S_ProcName = "CFBamRamTweak.readRecByIdIdx() ";
 		ICFBamIndexTweak buff = readDerivedByIdIdx( Authorization,
@@ -449,7 +449,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamTweak.readRecByUNameIdx() ";
@@ -466,7 +466,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak[] readRecByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId )
+		IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "CFBamRamTweak.readRecByValTentIdx() ";
 		ICFBamIndexTweak buff;
@@ -484,7 +484,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId )
+		IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "CFBamRamTweak.readRecByScopeIdx() ";
 		ICFBamIndexTweak buff;
@@ -502,7 +502,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId )
+		IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "CFBamRamTweak.readRecByDefSchemaIdx() ";
 		ICFBamIndexTweak buff;
@@ -520,10 +520,10 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak readRecByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TenantId,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaTenantId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 TenantId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaTenantId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name )
 	{
 		final String S_ProcName = "CFBamRamTweak.readRecByUDefIdx() ";
@@ -543,7 +543,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public ICFBamIndexTweak[] readRecByIndexIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 IndexId )
+		IMCFKeyHash256 IndexId )
 	{
 		final String S_ProcName = "CFBamRamIndexTweak.readRecByIndexIdx() ";
 		ICFBamIndexTweak buff;
@@ -566,7 +566,7 @@ public class CFBamRamIndexTweakTable
 		$implCommaIJavaOptAtomType$ pkey = ($implCommaIJavaOptAtomType$)Buff.getPKey();
 		CFBamBuffIndexTweak existing = dictByPKey.get( pkey );
 		if( existing == null ) {
-			throw new CFLibStaleCacheDetectedException( getClass(),
+			throw new MCFStaleCacheDetectedException( getClass(),
 				"updateIndexTweak",
 				"Existing record not found",
 				"Existing record not found",
@@ -591,7 +591,7 @@ public class CFBamRamIndexTweakTable
 				if( null == schema.getTableTweak().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateIndexTweak",
 						"Superclass",
 						"Superclass",
@@ -611,7 +611,7 @@ public class CFBamRamIndexTweakTable
 				if( null == schema.getTableIndex().readDerivedByIdIdx( Authorization,
 						Buff.getRequiredIndexId() ) )
 				{
-					throw new CFLibUnresolvedRelationException( getClass(),
+					throw new MCFUnresolvedRelationException( getClass(),
 						"updateIndexTweak",
 						"Container",
 						"Container",
@@ -661,7 +661,7 @@ public class CFBamRamIndexTweakTable
 		}
 		if( existing.getRequiredRevision() != Buff.getRequiredRevision() )
 		{
-			throw new CFLibCollisionDetectedException( getClass(),
+			throw new MCFCollisionDetectedException( getClass(),
 				"deleteIndexTweak",
 				pkey );
 		}
@@ -683,7 +683,7 @@ public class CFBamRamIndexTweakTable
 	}
 	@Override
 	public void deleteIndexTweakByIndexIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argIndexId )
+		IMCFKeyHash256 argIndexId )
 	{
 		CFBamBuffIndexTweakByIndexIdxKey key = (CFBamBuffIndexTweakByIndexIdxKey)schema.getCFBamBuffFactory().getFactoryIndexTweak().newByIndexIdxKey();
 		key.setRequiredIndexId( argIndexId );
@@ -746,7 +746,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public void deleteIndexTweakByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		CFBamBuffTweakByUNameIdxKey key = (CFBamBuffTweakByUNameIdxKey)schema.getCFBamBuffFactory().getFactoryTweak().newByUNameIdxKey();
@@ -785,7 +785,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public void deleteIndexTweakByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		CFBamBuffTweakByValTentIdxKey key = (CFBamBuffTweakByValTentIdxKey)schema.getCFBamBuffFactory().getFactoryTweak().newByValTentIdxKey();
 		key.setRequiredTenantId( argTenantId );
@@ -821,7 +821,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public void deleteIndexTweakByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		CFBamBuffTweakByScopeIdxKey key = (CFBamBuffTweakByScopeIdxKey)schema.getCFBamBuffFactory().getFactoryTweak().newByScopeIdxKey();
 		key.setRequiredScopeId( argScopeId );
@@ -857,7 +857,7 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public void deleteIndexTweakByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		CFBamBuffTweakByDefSchemaIdxKey key = (CFBamBuffTweakByDefSchemaIdxKey)schema.getCFBamBuffFactory().getFactoryTweak().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( argDefSchemaId );
@@ -895,10 +895,10 @@ public class CFBamRamIndexTweakTable
 
 	@Override
 	public void deleteIndexTweakByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaTenantId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argTenantId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaTenantId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		CFBamBuffTweakByUDefIdxKey key = (CFBamBuffTweakByUDefIdxKey)schema.getCFBamBuffFactory().getFactoryTweak().newByUDefIdxKey();

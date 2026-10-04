@@ -98,11 +98,11 @@ public interface ICFBamDelSubDep3EditObj
 	void setRequiredContainerDelSubDep2( ICFBamDelSubDep2Obj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute DelSubDep2Id.
+	 *	Get the required IMCFKeyHash256 attribute DelSubDep2Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute DelSubDep2Id.
+	 *	@return	The required IMCFKeyHash256 attribute DelSubDep2Id.
 	 */
-	ICFLibKeyHash256 getRequiredDelSubDep2Id();
+	IMCFKeyHash256 getRequiredDelSubDep2Id();
 
 	/**
 	 *	Get the required String attribute Name.

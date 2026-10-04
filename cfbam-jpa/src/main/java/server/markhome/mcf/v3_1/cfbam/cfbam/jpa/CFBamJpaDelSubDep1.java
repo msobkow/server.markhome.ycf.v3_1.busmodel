@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -87,15 +87,15 @@ public class CFBamJpaDelSubDep1 extends CFBamJpaDelDep
 	protected Set<CFBamJpaDelSubDep2> optionalComponentsDelDep;
 
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="contdeldepid", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="contdeldepid", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredDelTopDepId;
+	protected IMCFKeyHash256 requiredDelTopDepId;
 	@Column( name="safe_name", nullable=false, length=192 )
 	protected String requiredName;
 
 	public CFBamJpaDelSubDep1() {
 		super();
-		requiredDelTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubDelSubDep1.DELTOPDEPID_INIT_VALUE.toString() );
+		requiredDelTopDepId = MCFDbKeyHash256.fromHex( ICFBamPubDelSubDep1.DELTOPDEPID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubDelSubDep1.NAME_INIT_VALUE;
 	}
 
@@ -112,7 +112,7 @@ public class CFBamJpaDelSubDep1 extends CFBamJpaDelDep
 	@Override
 	public void setRequiredContainerDelTopDep(ICFBamDelTopDep argObj) {
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
 		}
 		else if (argObj instanceof CFBamJpaDelTopDep) {
 			requiredContainerDelTopDep = (CFBamJpaDelTopDep)argObj;
@@ -123,7 +123,7 @@ public class CFBamJpaDelSubDep1 extends CFBamJpaDelDep
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerDelTopDep", "argObj", argObj, "CFBamJpaDelTopDep");
+			throw new MCFUnsupportedClassException(getClass(), "setContainerDelTopDep", "argObj", argObj, "CFBamJpaDelTopDep");
 		}
 	}
 
@@ -138,14 +138,14 @@ public class CFBamJpaDelSubDep1 extends CFBamJpaDelDep
 	}
 
 	@Override
-	public void setRequiredContainerDelTopDep(ICFLibKeyHash256 argDelTopDepId) {
+	public void setRequiredContainerDelTopDep(IMCFKeyHash256 argDelTopDepId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelTopDep", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerDelTopDep", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamDelTopDepTable targetTable = targetBackingSchema.getTableDelTopDep();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelTopDep", 0, "ICFBamSchema.getBackingCFBam().getTableDelTopDep()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerDelTopDep", 0, "ICFBamSchema.getBackingCFBam().getTableDelTopDep()");
 		}
 		ICFBamDelTopDep targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDelTopDepId);
 		setRequiredContainerDelTopDep(targetRec);
@@ -158,13 +158,13 @@ public class CFBamJpaDelSubDep1 extends CFBamJpaDelDep
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredDelTopDepId() {
+	public IMCFKeyHash256 getRequiredDelTopDepId() {
 		return(requiredDelTopDepId);
 	}
 
-	public void setRequiredDelTopDepId( ICFLibKeyHash256 value ) {
+	public void setRequiredDelTopDepId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredDelTopDepId",
 				1,
 				"value" );
@@ -179,13 +179,13 @@ public class CFBamJpaDelSubDep1 extends CFBamJpaDelDep
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -485,7 +485,7 @@ public class CFBamJpaDelSubDep1 extends CFBamJpaDelDep
 			setDelSubDep1( (ICFBamDelSubDep1)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -507,7 +507,7 @@ public class CFBamJpaDelSubDep1 extends CFBamJpaDelDep
 			setDelSubDep1( (ICFBamDelSubDep1H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -94,7 +94,7 @@ public class CFBamBuffUuid6Def
 
 	public void setOptionalInitValue( String value ) {
 		if( value != null && value.length() > 62 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value.length()",
@@ -602,7 +602,7 @@ public class CFBamBuffUuid6Def
 			setUuid6Def( (CFBamBuffUuid6Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -622,7 +622,7 @@ public class CFBamBuffUuid6Def
 			setUuid6Def( (ICFBamUuid6DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -642,7 +642,7 @@ public class CFBamBuffUuid6Def
 			setUuid6Def( (CFBamProtBuffUuid6Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -662,7 +662,7 @@ public class CFBamBuffUuid6Def
 			setUuid6Def( (ICFBamProtUuid6DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -682,7 +682,7 @@ public class CFBamBuffUuid6Def
 			setUuid6Def( (CFBamPubBuffUuid6Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -702,7 +702,7 @@ public class CFBamBuffUuid6Def
 			setUuid6Def( (ICFBamPubUuid6DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -105,7 +105,7 @@ public class CFBamJpaUuidGenH extends CFBamJpaUuidTypeH
 	@Override
 	public void setRequiredSlice( short value ) {
 		if( value < ICFBamPubUuidGen.SLICE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setRequiredSlice",
 				1,
 				"value",
@@ -113,7 +113,7 @@ public class CFBamJpaUuidGenH extends CFBamJpaUuidTypeH
 				ICFBamPubUuidGen.SLICE_MIN_VALUE );
 		}
 		if( value > ICFBamPubUuidGen.SLICE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredSlice",
 				1,
 				"value",
@@ -131,7 +131,7 @@ public class CFBamJpaUuidGenH extends CFBamJpaUuidTypeH
 	@Override
 	public void setRequiredBlockSize( int value ) {
 		if( value < ICFBamPubUuidGen.BLOCKSIZE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setRequiredBlockSize",
 				1,
 				"value",
@@ -139,7 +139,7 @@ public class CFBamJpaUuidGenH extends CFBamJpaUuidTypeH
 				ICFBamPubUuidGen.BLOCKSIZE_MIN_VALUE );
 		}
 		if( value > ICFBamPubUuidGen.BLOCKSIZE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredBlockSize",
 				1,
 				"value",
@@ -258,7 +258,7 @@ public class CFBamJpaUuidGenH extends CFBamJpaUuidTypeH
 			setUuidGen( (ICFBamUuidGen)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -279,7 +279,7 @@ public class CFBamJpaUuidGenH extends CFBamJpaUuidTypeH
 			setUuidGen( (ICFBamUuidGenH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

@@ -66,7 +66,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 public interface ICFBamChainObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamChain.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -140,7 +140,7 @@ public interface ICFBamChainObj
 	/**
 	 *	End this edition of this Chain instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -296,18 +296,18 @@ public interface ICFBamChainObj
 	ICFBamRelationObj getRequiredLookupNextRel( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -345,11 +345,11 @@ public interface ICFBamChainObj
 	String getOptionalDescription();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TableId.
+	 *	Get the required IMCFKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TableId.
+	 *	@return	The required IMCFKeyHash256 attribute TableId.
 	 */
-	ICFLibKeyHash256 getRequiredTableId();
+	IMCFKeyHash256 getRequiredTableId();
 
 	/**
 	 *	Get the optional String attribute Suffix.
@@ -359,18 +359,18 @@ public interface ICFBamChainObj
 	String getOptionalSuffix();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute PrevRelationId.
+	 *	Get the required IMCFKeyHash256 attribute PrevRelationId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute PrevRelationId.
+	 *	@return	The required IMCFKeyHash256 attribute PrevRelationId.
 	 */
-	ICFLibKeyHash256 getRequiredPrevRelationId();
+	IMCFKeyHash256 getRequiredPrevRelationId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute NextRelationId.
+	 *	Get the required IMCFKeyHash256 attribute NextRelationId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute NextRelationId.
+	 *	@return	The required IMCFKeyHash256 attribute NextRelationId.
 	 */
-	ICFLibKeyHash256 getRequiredNextRelationId();
+	IMCFKeyHash256 getRequiredNextRelationId();
 
 	/**
 	 *	Internal use only.

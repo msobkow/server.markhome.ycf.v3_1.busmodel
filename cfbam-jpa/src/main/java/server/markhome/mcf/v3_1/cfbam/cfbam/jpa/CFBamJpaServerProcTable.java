@@ -89,32 +89,32 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 
 	public CFBamJpaServerProcTable(ICFBamSchema schema) {
 		if( schema == null ) {
-			throw new CFLibNullArgumentException(getClass(), "constructor", 1, "schema" );
+			throw new MCFNullArgumentException(getClass(), "constructor", 1, "schema" );
 		}
 		if (schema instanceof CFBamJpaSchema) {
 			this.schema = (CFBamJpaSchema)schema;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
+			throw new MCFUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
 		}
 	}
 
 	protected boolean canCreateServerProc(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "createserverproc");
@@ -124,20 +124,20 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 
 	protected boolean canReadServerProc(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "readserverproc");
@@ -147,20 +147,20 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 
 	protected boolean canUpdateServerProc(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "updateserverproc");
@@ -170,20 +170,20 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 
 	protected boolean canDeleteServerProc(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "deleteserverproc");
@@ -206,11 +206,11 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "createServerProc";
 		boolean permissionGranted = canCreateServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "createserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "createserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "createServerProc", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "createServerProc", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaServerProc) {
 			CFBamJpaServerProc jparec = (CFBamJpaServerProc)rec;
@@ -222,7 +222,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "createServerProc", "rec", rec, "CFBamJpaServerProc");
+			throw new MCFUnsupportedClassException(getClass(), "createServerProc", "rec", rec, "CFBamJpaServerProc");
 		}
 	}
 
@@ -241,11 +241,11 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "updateServerProc";
 		boolean permissionGranted = canUpdateServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "updateServerProc", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "updateServerProc", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaServerProc) {
 			CFBamJpaServerProc jparec = (CFBamJpaServerProc)rec;
@@ -255,7 +255,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "updateServerProc", "rec", rec, "CFBamJpaServerProc");
+			throw new MCFUnsupportedClassException(getClass(), "updateServerProc", "rec", rec, "CFBamJpaServerProc");
 		}
 	}
 
@@ -273,7 +273,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProc";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
@@ -284,10 +284,10 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			schema.getJpaHooksSchema().getServerProcService().deleteByIdIdx(jparec.getPKey());
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "deleteServerProc", "rec", rec, "CFBamJpaServerProc");
+			throw new MCFUnsupportedClassException(getClass(), "deleteServerProc", "rec", rec, "CFBamJpaServerProc");
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "deleteServerProc");
+		throw new MCFNotImplementedYetException(getClass(), "deleteServerProc");
 	}
 
 	/**
@@ -301,13 +301,13 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public void deleteServerProcByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "deleteServerProcByUNameIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByUNameIdx(argTableId,
@@ -329,7 +329,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProcByUNameIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByUNameIdx(argKey.getRequiredTableId(),
@@ -345,12 +345,12 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public void deleteServerProcByMethTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "deleteServerProcByMethTableIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByMethTableIdx(argTableId);
@@ -371,7 +371,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProcByMethTableIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByMethTableIdx(argKey.getRequiredTableId());
@@ -391,7 +391,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProcByMethCodeVisIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByMethCodeVisIdx(argCodeVis);
@@ -412,7 +412,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProcByMethCodeVisIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByMethCodeVisIdx(argKey.getRequiredCodeVis());
@@ -429,13 +429,13 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public void deleteServerProcByMethTableVisIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis )
 	{
 		final String S_ProcName = "deleteServerProcByMethTableVisIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByMethTableVisIdx(argTableId,
@@ -457,7 +457,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProcByMethTableVisIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByMethTableVisIdx(argKey.getRequiredTableId(),
@@ -473,12 +473,12 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public void deleteServerProcByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "deleteServerProcByDefSchemaIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByDefSchemaIdx(argDefSchemaId);
@@ -499,7 +499,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProcByDefSchemaIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByDefSchemaIdx(argKey.getOptionalDefSchemaId());
@@ -519,7 +519,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProcByIdIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByIdIdx(argKey);
@@ -534,12 +534,12 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public void deleteServerProcByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "deleteServerProcByTenantIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByTenantIdx(argTenantId);
@@ -560,7 +560,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "deleteServerProcByTenantIdx";
 		boolean permissionGranted = canDeleteServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getServerProcService().deleteByTenantIdx(argKey.getRequiredTenantId());
@@ -584,7 +584,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "readDerived";
 		boolean permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamServerProc retval = schema.getJpaHooksSchema().getServerProcService().find(PKey);
@@ -608,7 +608,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "lockDerived";
 		boolean permissionGranted = canUpdateServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamServerProc retval = schema.getJpaHooksSchema().getServerProcService().lockByIdIdx(PKey);
@@ -627,7 +627,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "readAllDerived";
 		boolean permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		List<CFBamJpaServerProc> retlist = schema.getJpaHooksSchema().getServerProcService().findAll();
@@ -651,7 +651,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public ICFBamServerProc readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readDerivedByIdIdx";
 		boolean permissionGranted = false;
@@ -659,14 +659,14 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamServerProc retval = schema.getJpaHooksSchema().getServerProcService().find(argId);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readserverproc")) {
 				retval = null;
 			}
@@ -685,7 +685,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public ICFBamServerProc[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "readDerivedByTenantIdx";
 		boolean permissionGranted = false;
@@ -693,7 +693,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaServerProc> retlist = schema.getJpaHooksSchema().getServerProcService().findByTenantIdx(argTenantId);
 		ICFBamServerProc[] retset = new ICFBamServerProc[retlist.size()];
@@ -718,7 +718,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public ICFBamServerProc readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUNameIdx";
@@ -727,15 +727,15 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamServerProc retval = schema.getJpaHooksSchema().getServerProcService().findByUNameIdx(argTableId,
 		argName);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readserverproc")) {
 				retval = null;
 			}
@@ -754,7 +754,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public ICFBamServerProc[] readDerivedByMethTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "readDerivedByMethTableIdx";
 		boolean permissionGranted = false;
@@ -762,7 +762,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaServerProc> retlist = schema.getJpaHooksSchema().getServerProcService().findByMethTableIdx(argTableId);
 		ICFBamServerProc[] retset = new ICFBamServerProc[retlist.size()];
@@ -792,7 +792,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaServerProc> retlist = schema.getJpaHooksSchema().getServerProcService().findByMethCodeVisIdx(argCodeVis);
 		ICFBamServerProc[] retset = new ICFBamServerProc[retlist.size()];
@@ -816,7 +816,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public ICFBamServerProc[] readDerivedByMethTableVisIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis )
 	{
 		final String S_ProcName = "readDerivedByMethTableVisIdx";
@@ -825,7 +825,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaServerProc> retlist = schema.getJpaHooksSchema().getServerProcService().findByMethTableVisIdx(argTableId,
 		argCodeVis);
@@ -848,7 +848,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 */
 	@Override
 	public ICFBamServerProc[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readDerivedByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -856,7 +856,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaServerProc> retlist = schema.getJpaHooksSchema().getServerProcService().findByDefSchemaIdx(argDefSchemaId);
 		ICFBamServerProc[] retset = new ICFBamServerProc[retlist.size()];
@@ -877,7 +877,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc readRec( ICFSecAuthorization Authorization,
@@ -886,10 +886,10 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "readRec";
 		boolean permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readRec");
+		throw new MCFNotImplementedYetException(getClass(), "readRec");
 	}
 
 	/**
@@ -902,7 +902,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc lockRec( ICFSecAuthorization Authorization,
@@ -911,10 +911,10 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "lockRec";
 		boolean permissionGranted = canUpdateServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "lockRec");
+		throw new MCFNotImplementedYetException(getClass(), "lockRec");
 	}
 
 	/**
@@ -929,10 +929,10 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 		final String S_ProcName = "readAllRec";
 		boolean permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readAllRec");
+		throw new MCFNotImplementedYetException(getClass(), "readAllRec");
 	}
 
 
@@ -946,11 +946,11 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readRecByIdIdx";
 		boolean permissionGranted = false;
@@ -958,9 +958,9 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdIdx");
 	}
 
 	/**
@@ -972,11 +972,11 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "readRecByTenantIdx";
 		boolean permissionGranted = false;
@@ -984,9 +984,9 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByTenantIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByTenantIdx");
 	}
 
 	/**
@@ -1001,11 +1001,11 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUNameIdx";
@@ -1014,9 +1014,9 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUNameIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUNameIdx");
 	}
 
 	/**
@@ -1028,11 +1028,11 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc[] readRecByMethTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "readRecByMethTableIdx";
 		boolean permissionGranted = false;
@@ -1040,9 +1040,9 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByMethTableIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByMethTableIdx");
 	}
 
 	/**
@@ -1054,7 +1054,7 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc[] readRecByMethCodeVisIdx( ICFSecAuthorization Authorization,
@@ -1066,9 +1066,9 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByMethCodeVisIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByMethCodeVisIdx");
 	}
 
 	/**
@@ -1082,11 +1082,11 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc[] readRecByMethTableVisIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis )
 	{
 		final String S_ProcName = "readRecByMethTableVisIdx";
@@ -1095,9 +1095,9 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByMethTableVisIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByMethTableVisIdx");
 	}
 
 	/**
@@ -1109,11 +1109,11 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamServerProc[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readRecByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -1121,8 +1121,8 @@ public class CFBamJpaServerProcTable implements ICFBamServerProcTable
 			permissionGranted = canReadServerProc(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readserverproc", ICFBamSchema.SCHEMA_NAME, ICFBamServerProcTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
 	}
 }

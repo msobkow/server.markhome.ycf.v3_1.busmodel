@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -105,7 +105,7 @@ public class CFBamJpaInt32Def extends CFBamJpaAtom
 	@Override
 	public void setOptionalInitValue( Integer value ) {
 		if( value < ICFBamPubInt32Def.INITVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value",
@@ -113,7 +113,7 @@ public class CFBamJpaInt32Def extends CFBamJpaAtom
 				ICFBamPubInt32Def.INITVALUE_MIN_VALUE );
 		}
 		if( value > ICFBamPubInt32Def.INITVALUE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value",
@@ -131,7 +131,7 @@ public class CFBamJpaInt32Def extends CFBamJpaAtom
 	@Override
 	public void setOptionalMinValue( Integer value ) {
 		if( value < ICFBamPubInt32Def.MINVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalMinValue",
 				1,
 				"value",
@@ -139,7 +139,7 @@ public class CFBamJpaInt32Def extends CFBamJpaAtom
 				ICFBamPubInt32Def.MINVALUE_MIN_VALUE );
 		}
 		if( value > ICFBamPubInt32Def.MINVALUE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalMinValue",
 				1,
 				"value",
@@ -157,7 +157,7 @@ public class CFBamJpaInt32Def extends CFBamJpaAtom
 	@Override
 	public void setOptionalMaxValue( Integer value ) {
 		if( value < ICFBamPubInt32Def.MAXVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalMaxValue",
 				1,
 				"value",
@@ -165,7 +165,7 @@ public class CFBamJpaInt32Def extends CFBamJpaAtom
 				ICFBamPubInt32Def.MAXVALUE_MIN_VALUE );
 		}
 		if( value > ICFBamPubInt32Def.MAXVALUE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalMaxValue",
 				1,
 				"value",
@@ -449,7 +449,7 @@ public class CFBamJpaInt32Def extends CFBamJpaAtom
 			setInt32Def( (ICFBamInt32Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -471,7 +471,7 @@ public class CFBamJpaInt32Def extends CFBamJpaAtom
 			setInt32Def( (ICFBamInt32DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

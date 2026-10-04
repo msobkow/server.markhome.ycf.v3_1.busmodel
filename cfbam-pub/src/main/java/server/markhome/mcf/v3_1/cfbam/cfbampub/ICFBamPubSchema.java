@@ -54,7 +54,7 @@ import java.time.*;
 import java.util.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import java.util.concurrent.atomic.*;
@@ -314,7 +314,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupLoaderBehaviourEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -375,7 +375,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupOrdinalLoaderBehaviourEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -424,7 +424,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupRelationTypeEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -490,7 +490,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupOrdinalRelationTypeEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -529,7 +529,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupCodeVisibilityEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -590,7 +590,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupOrdinalCodeVisibilityEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -637,7 +637,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupSecScopeEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -702,7 +702,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupOrdinalSecScopeEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -741,7 +741,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupRoleScopeEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -802,7 +802,7 @@ extends ICFSecPubSchema,
 		else {
 			retval = lookupOrdinalRoleScopeEnum.get( value );
 			if( retval == null ) {
-				throw new CFLibInvalidArgumentException( fieldOrClassName,
+				throw new MCFInvalidArgumentException( fieldOrClassName,
 					fieldOrClassName,
 					S_ProcName,
 					2,
@@ -1177,7 +1177,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The next ISOCcyIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOCcyIdGen();
 
@@ -1186,7 +1186,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The next ISOCtryIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOCtryIdGen();
 
@@ -1195,7 +1195,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The next ISOLangIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOLangIdGen();
 
@@ -1204,7 +1204,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The next ISOTZoneIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOTZoneIdGen();
 
@@ -1213,7 +1213,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The next TableInfoIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextTableInfoIdGen();
 
@@ -1222,7 +1222,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The next MimeTypeIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextMimeTypeIdGen();
 
@@ -1231,7 +1231,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The next URLProtocolIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextURLProtocolIdGen();
 
@@ -1240,225 +1240,225 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The next ClusterIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextClusterIdGen();
+	public MCFDbKeyHash256 nextClusterIdGen();
 
 	/**
 	 *	Get the next SecSessionIdGen identifier.
 	 *
 	 *	@return	The next SecSessionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecSessionIdGen();
+	public MCFDbKeyHash256 nextSecSessionIdGen();
 
 	/**
 	 *	Get the next SecUserIdGen identifier.
 	 *
 	 *	@return	The next SecUserIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecUserIdGen();
+	public MCFDbKeyHash256 nextSecUserIdGen();
 
 	/**
 	 *	Get the next TenantIdGen identifier.
 	 *
 	 *	@return	The next TenantIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTenantIdGen();
+	public MCFDbKeyHash256 nextTenantIdGen();
 
 	/**
 	 *	Get the next SecSysGrpIdGen identifier.
 	 *
 	 *	@return	The next SecSysGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecSysGrpIdGen();
+	public MCFDbKeyHash256 nextSecSysGrpIdGen();
 
 	/**
 	 *	Get the next SecClusGrpIdGen identifier.
 	 *
 	 *	@return	The next SecClusGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecClusGrpIdGen();
+	public MCFDbKeyHash256 nextSecClusGrpIdGen();
 
 	/**
 	 *	Get the next SecClusRoleIdGen identifier.
 	 *
 	 *	@return	The next SecClusRoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecClusRoleIdGen();
+	public MCFDbKeyHash256 nextSecClusRoleIdGen();
 
 	/**
 	 *	Get the next SecTentGrpIdGen identifier.
 	 *
 	 *	@return	The next SecTentGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecTentGrpIdGen();
+	public MCFDbKeyHash256 nextSecTentGrpIdGen();
 
 	/**
 	 *	Get the next SecTentRoleIdGen identifier.
 	 *
 	 *	@return	The next SecTentRoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecTentRoleIdGen();
+	public MCFDbKeyHash256 nextSecTentRoleIdGen();
 
 	/**
 	 *	Get the next MajorVersionIdGen identifier.
 	 *
 	 *	@return	The next MajorVersionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextMajorVersionIdGen();
+	public MCFDbKeyHash256 nextMajorVersionIdGen();
 
 	/**
 	 *	Get the next MinorVersionIdGen identifier.
 	 *
 	 *	@return	The next MinorVersionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextMinorVersionIdGen();
+	public MCFDbKeyHash256 nextMinorVersionIdGen();
 
 	/**
 	 *	Get the next SubProjectIdGen identifier.
 	 *
 	 *	@return	The next SubProjectIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSubProjectIdGen();
+	public MCFDbKeyHash256 nextSubProjectIdGen();
 
 	/**
 	 *	Get the next TldIdGen identifier.
 	 *
 	 *	@return	The next TldIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTldIdGen();
+	public MCFDbKeyHash256 nextTldIdGen();
 
 	/**
 	 *	Get the next TopDomainIdGen identifier.
 	 *
 	 *	@return	The next TopDomainIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTopDomainIdGen();
+	public MCFDbKeyHash256 nextTopDomainIdGen();
 
 	/**
 	 *	Get the next TopProjectIdGen identifier.
 	 *
 	 *	@return	The next TopProjectIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTopProjectIdGen();
+	public MCFDbKeyHash256 nextTopProjectIdGen();
 
 	/**
 	 *	Get the next LicenseIdGen identifier.
 	 *
 	 *	@return	The next LicenseIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextLicenseIdGen();
+	public MCFDbKeyHash256 nextLicenseIdGen();
 
 	/**
 	 *	Get the next ChainIdGen identifier.
 	 *
 	 *	@return	The next ChainIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextChainIdGen();
+	public MCFDbKeyHash256 nextChainIdGen();
 
 	/**
 	 *	Get the next EnumTagIdGen identifier.
 	 *
 	 *	@return	The next EnumTagIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextEnumTagIdGen();
+	public MCFDbKeyHash256 nextEnumTagIdGen();
 
 	/**
 	 *	Get the next IndexColIdGen identifier.
 	 *
 	 *	@return	The next IndexColIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextIndexColIdGen();
+	public MCFDbKeyHash256 nextIndexColIdGen();
 
 	/**
 	 *	Get the next ParamIdGen identifier.
 	 *
 	 *	@return	The next ParamIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextParamIdGen();
+	public MCFDbKeyHash256 nextParamIdGen();
 
 	/**
 	 *	Get the next RelationColIdGen identifier.
 	 *
 	 *	@return	The next RelationColIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextRelationColIdGen();
+	public MCFDbKeyHash256 nextRelationColIdGen();
 
 	/**
 	 *	Get the next TweakIdGen identifier.
 	 *
 	 *	@return	The next TweakIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTweakIdGen();
+	public MCFDbKeyHash256 nextTweakIdGen();
 
 	/**
 	 *	Get the next ScopeIdGen identifier.
 	 *
 	 *	@return	The next ScopeIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextScopeIdGen();
+	public MCFDbKeyHash256 nextScopeIdGen();
 
 	/**
 	 *	Get the next ValueIdGen identifier.
 	 *
 	 *	@return	The next ValueIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextValueIdGen();
+	public MCFDbKeyHash256 nextValueIdGen();
 
 	/**
 	 *	Get the next RoleIdGen identifier.
 	 *
 	 *	@return	The next RoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextRoleIdGen();
+	public MCFDbKeyHash256 nextRoleIdGen();
 
 	/**
 	 *	Get the factory for CFSecPub data objects.
@@ -1495,7 +1495,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Atom Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubAtomTable getTableAtom();
 
@@ -1504,7 +1504,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The BlobCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubBlobColTable getTableBlobCol();
 
@@ -1513,7 +1513,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The BlobDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubBlobDefTable getTableBlobDef();
 
@@ -1522,7 +1522,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The BlobType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubBlobTypeTable getTableBlobType();
 
@@ -1531,7 +1531,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The BoolCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubBoolColTable getTableBoolCol();
 
@@ -1540,7 +1540,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The BoolDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubBoolDefTable getTableBoolDef();
 
@@ -1549,7 +1549,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The BoolType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubBoolTypeTable getTableBoolType();
 
@@ -1558,7 +1558,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Chain Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubChainTable getTableChain();
 
@@ -1567,7 +1567,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ClearDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubClearDepTable getTableClearDep();
 
@@ -1576,7 +1576,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ClearSubDep1 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubClearSubDep1Table getTableClearSubDep1();
 
@@ -1585,7 +1585,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ClearSubDep2 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubClearSubDep2Table getTableClearSubDep2();
 
@@ -1594,7 +1594,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ClearSubDep3 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubClearSubDep3Table getTableClearSubDep3();
 
@@ -1603,7 +1603,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ClearTopDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubClearTopDepTable getTableClearTopDep();
 
@@ -1612,7 +1612,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DateCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDateColTable getTableDateCol();
 
@@ -1621,7 +1621,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DateDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDateDefTable getTableDateDef();
 
@@ -1630,7 +1630,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DateType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDateTypeTable getTableDateType();
 
@@ -1639,7 +1639,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash128Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash128ColTable getTableDbKeyHash128Col();
 
@@ -1648,7 +1648,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash128Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash128DefTable getTableDbKeyHash128Def();
 
@@ -1657,7 +1657,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash128Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash128GenTable getTableDbKeyHash128Gen();
 
@@ -1666,7 +1666,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash128Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash128TypeTable getTableDbKeyHash128Type();
 
@@ -1675,7 +1675,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash160Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160ColTable getTableDbKeyHash160Col();
 
@@ -1684,7 +1684,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash160Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160DefTable getTableDbKeyHash160Def();
 
@@ -1693,7 +1693,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash160Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160GenTable getTableDbKeyHash160Gen();
 
@@ -1702,7 +1702,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash160Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash160TypeTable getTableDbKeyHash160Type();
 
@@ -1711,7 +1711,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash224Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224ColTable getTableDbKeyHash224Col();
 
@@ -1720,7 +1720,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash224Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224DefTable getTableDbKeyHash224Def();
 
@@ -1729,7 +1729,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash224Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224GenTable getTableDbKeyHash224Gen();
 
@@ -1738,7 +1738,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash224Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash224TypeTable getTableDbKeyHash224Type();
 
@@ -1747,7 +1747,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash256Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash256ColTable getTableDbKeyHash256Col();
 
@@ -1756,7 +1756,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash256Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash256DefTable getTableDbKeyHash256Def();
 
@@ -1765,7 +1765,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash256Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash256GenTable getTableDbKeyHash256Gen();
 
@@ -1774,7 +1774,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash256Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash256TypeTable getTableDbKeyHash256Type();
 
@@ -1783,7 +1783,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash384Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash384ColTable getTableDbKeyHash384Col();
 
@@ -1792,7 +1792,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash384Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash384DefTable getTableDbKeyHash384Def();
 
@@ -1801,7 +1801,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash384Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash384GenTable getTableDbKeyHash384Gen();
 
@@ -1810,7 +1810,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash384Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash384TypeTable getTableDbKeyHash384Type();
 
@@ -1819,7 +1819,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash512Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash512ColTable getTableDbKeyHash512Col();
 
@@ -1828,7 +1828,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash512Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash512DefTable getTableDbKeyHash512Def();
 
@@ -1837,7 +1837,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash512Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash512GenTable getTableDbKeyHash512Gen();
 
@@ -1846,7 +1846,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DbKeyHash512Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDbKeyHash512TypeTable getTableDbKeyHash512Type();
 
@@ -1855,7 +1855,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DelDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelDepTable getTableDelDep();
 
@@ -1864,7 +1864,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DelSubDep1 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep1Table getTableDelSubDep1();
 
@@ -1873,7 +1873,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DelSubDep2 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep2Table getTableDelSubDep2();
 
@@ -1882,7 +1882,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DelSubDep3 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3Table getTableDelSubDep3();
 
@@ -1891,7 +1891,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DelTopDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelTopDepTable getTableDelTopDep();
 
@@ -1900,7 +1900,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DoubleCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDoubleColTable getTableDoubleCol();
 
@@ -1909,7 +1909,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DoubleDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDoubleDefTable getTableDoubleDef();
 
@@ -1918,7 +1918,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The DoubleType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDoubleTypeTable getTableDoubleType();
 
@@ -1927,7 +1927,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The EnumDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubEnumDefTable getTableEnumDef();
 
@@ -1936,7 +1936,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The EnumTag Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubEnumTagTable getTableEnumTag();
 
@@ -1945,7 +1945,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The EnumType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubEnumTypeTable getTableEnumType();
 
@@ -1954,7 +1954,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The FloatCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubFloatColTable getTableFloatCol();
 
@@ -1963,7 +1963,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The FloatDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubFloatDefTable getTableFloatDef();
 
@@ -1972,7 +1972,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The FloatType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubFloatTypeTable getTableFloatType();
 
@@ -1981,7 +1981,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Id16Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubId16GenTable getTableId16Gen();
 
@@ -1990,7 +1990,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Id32Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubId32GenTable getTableId32Gen();
 
@@ -1999,7 +1999,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Id64Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubId64GenTable getTableId64Gen();
 
@@ -2008,7 +2008,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Index Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubIndexTable getTableIndex();
 
@@ -2017,7 +2017,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The IndexCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubIndexColTable getTableIndexCol();
 
@@ -2026,7 +2026,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The IndexTweak Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubIndexTweakTable getTableIndexTweak();
 
@@ -2035,7 +2035,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int16Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt16ColTable getTableInt16Col();
 
@@ -2044,7 +2044,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int16Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt16DefTable getTableInt16Def();
 
@@ -2053,7 +2053,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int16Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt16TypeTable getTableInt16Type();
 
@@ -2062,7 +2062,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int32Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt32ColTable getTableInt32Col();
 
@@ -2071,7 +2071,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int32Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt32DefTable getTableInt32Def();
 
@@ -2080,7 +2080,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int32Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt32TypeTable getTableInt32Type();
 
@@ -2089,7 +2089,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int64Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt64ColTable getTableInt64Col();
 
@@ -2098,7 +2098,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int64Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt64DefTable getTableInt64Def();
 
@@ -2107,7 +2107,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Int64Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubInt64TypeTable getTableInt64Type();
 
@@ -2116,7 +2116,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NmTokenCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNmTokenColTable getTableNmTokenCol();
 
@@ -2125,7 +2125,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NmTokenDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNmTokenDefTable getTableNmTokenDef();
 
@@ -2134,7 +2134,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NmTokenType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNmTokenTypeTable getTableNmTokenType();
 
@@ -2143,7 +2143,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NmTokensCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNmTokensColTable getTableNmTokensCol();
 
@@ -2152,7 +2152,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NmTokensDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNmTokensDefTable getTableNmTokensDef();
 
@@ -2161,7 +2161,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NmTokensType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNmTokensTypeTable getTableNmTokensType();
 
@@ -2170,7 +2170,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NumberCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNumberColTable getTableNumberCol();
 
@@ -2179,7 +2179,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NumberDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNumberDefTable getTableNumberDef();
 
@@ -2188,7 +2188,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The NumberType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubNumberTypeTable getTableNumberType();
 
@@ -2197,7 +2197,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Param Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubParamTable getTableParam();
 
@@ -2206,7 +2206,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The PopDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubPopDepTable getTablePopDep();
 
@@ -2215,7 +2215,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The PopSubDep1 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubPopSubDep1Table getTablePopSubDep1();
 
@@ -2224,7 +2224,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The PopSubDep2 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubPopSubDep2Table getTablePopSubDep2();
 
@@ -2233,7 +2233,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The PopSubDep3 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubPopSubDep3Table getTablePopSubDep3();
 
@@ -2242,7 +2242,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The PopTopDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubPopTopDepTable getTablePopTopDep();
 
@@ -2251,7 +2251,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Relation Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelationTable getTableRelation();
 
@@ -2260,7 +2260,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The RelationCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRelationColTable getTableRelationCol();
 
@@ -2269,7 +2269,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The RoleDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubRoleDefTable getTableRoleDef();
 
@@ -2278,7 +2278,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The SchemaDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaDefTable getTableSchemaDef();
 
@@ -2287,7 +2287,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The SchemaRef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaRefTable getTableSchemaRef();
 
@@ -2296,7 +2296,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The SchemaRole Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaRoleTable getTableSchemaRole();
 
@@ -2305,7 +2305,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The SchemaTweak Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubSchemaTweakTable getTableSchemaTweak();
 
@@ -2314,7 +2314,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Scope Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubScopeTable getTableScope();
 
@@ -2323,7 +2323,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ServerListFunc Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerListFuncTable getTableServerListFunc();
 
@@ -2332,7 +2332,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ServerMethod Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerMethodTable getTableServerMethod();
 
@@ -2341,7 +2341,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ServerObjFunc Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerObjFuncTable getTableServerObjFunc();
 
@@ -2350,7 +2350,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The ServerProc Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubServerProcTable getTableServerProc();
 
@@ -2359,7 +2359,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The StringCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubStringColTable getTableStringCol();
 
@@ -2368,7 +2368,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The StringDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubStringDefTable getTableStringDef();
 
@@ -2377,7 +2377,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The StringType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubStringTypeTable getTableStringType();
 
@@ -2386,7 +2386,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZDateCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateColTable getTableTZDateCol();
 
@@ -2395,7 +2395,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZDateDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateDefTable getTableTZDateDef();
 
@@ -2404,7 +2404,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZDateType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZDateTypeTable getTableTZDateType();
 
@@ -2413,7 +2413,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZTimeCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZTimeColTable getTableTZTimeCol();
 
@@ -2422,7 +2422,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZTimeDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZTimeDefTable getTableTZTimeDef();
 
@@ -2431,7 +2431,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZTimeType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZTimeTypeTable getTableTZTimeType();
 
@@ -2440,7 +2440,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZTimestampCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZTimestampColTable getTableTZTimestampCol();
 
@@ -2449,7 +2449,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZTimestampDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZTimestampDefTable getTableTZTimestampDef();
 
@@ -2458,7 +2458,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TZTimestampType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTZTimestampTypeTable getTableTZTimestampType();
 
@@ -2467,7 +2467,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Table Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTableTable getTableTable();
 
@@ -2476,7 +2476,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TableCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTableColTable getTableTableCol();
 
@@ -2485,7 +2485,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TableTweak Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTableTweakTable getTableTableTweak();
 
@@ -2494,7 +2494,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TextCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextColTable getTableTextCol();
 
@@ -2503,7 +2503,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TextDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextDefTable getTableTextDef();
 
@@ -2512,7 +2512,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TextType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTextTypeTable getTableTextType();
 
@@ -2521,7 +2521,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TimeCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTimeColTable getTableTimeCol();
 
@@ -2530,7 +2530,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TimeDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTimeDefTable getTableTimeDef();
 
@@ -2539,7 +2539,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TimeType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTimeTypeTable getTableTimeType();
 
@@ -2548,7 +2548,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TimestampCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTimestampColTable getTableTimestampCol();
 
@@ -2557,7 +2557,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TimestampDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTimestampDefTable getTableTimestampDef();
 
@@ -2566,7 +2566,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TimestampType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTimestampTypeTable getTableTimestampType();
 
@@ -2575,7 +2575,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TokenCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTokenColTable getTableTokenCol();
 
@@ -2584,7 +2584,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TokenDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTokenDefTable getTableTokenDef();
 
@@ -2593,7 +2593,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The TokenType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTokenTypeTable getTableTokenType();
 
@@ -2602,7 +2602,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Tweak Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTweakTable getTableTweak();
 
@@ -2611,7 +2611,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt16Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt16ColTable getTableUInt16Col();
 
@@ -2620,7 +2620,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt16Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt16DefTable getTableUInt16Def();
 
@@ -2629,7 +2629,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt16Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt16TypeTable getTableUInt16Type();
 
@@ -2638,7 +2638,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt32Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt32ColTable getTableUInt32Col();
 
@@ -2647,7 +2647,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt32Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt32DefTable getTableUInt32Def();
 
@@ -2656,7 +2656,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt32Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt32TypeTable getTableUInt32Type();
 
@@ -2665,7 +2665,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt64Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt64ColTable getTableUInt64Col();
 
@@ -2674,7 +2674,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt64Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt64DefTable getTableUInt64Def();
 
@@ -2683,7 +2683,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UInt64Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUInt64TypeTable getTableUInt64Type();
 
@@ -2692,7 +2692,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Uuid6Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUuid6ColTable getTableUuid6Col();
 
@@ -2701,7 +2701,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Uuid6Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUuid6DefTable getTableUuid6Def();
 
@@ -2710,7 +2710,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Uuid6Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUuid6GenTable getTableUuid6Gen();
 
@@ -2719,7 +2719,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Uuid6Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUuid6TypeTable getTableUuid6Type();
 
@@ -2728,7 +2728,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UuidCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUuidColTable getTableUuidCol();
 
@@ -2737,7 +2737,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UuidDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUuidDefTable getTableUuidDef();
 
@@ -2746,7 +2746,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UuidGen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUuidGenTable getTableUuidGen();
 
@@ -2755,7 +2755,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The UuidType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubUuidTypeTable getTableUuidType();
 
@@ -2764,7 +2764,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Value Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubValueTable getTableValue();
 
@@ -2773,7 +2773,7 @@ extends ICFSecPubSchema,
 	 *
 	 *	@return	The Table Permissions interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	//public static ICFSecPubTablePerms getTablePerms();
 
@@ -2791,10 +2791,10 @@ extends ICFSecPubSchema,
 	 *
 	 *	@param	value	The Table Permissions interface to be used by the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	//public static void setTablePerms( ICFSecPubTablePerms value );
 
 	public void bootstrapSchema(CFSecPubTableData tableData[]);
-	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecPubTableData tableData[]);
+	public void bootstrapAllTablesSecurity(MCFDbKeyHash256 clusterId, MCFDbKeyHash256 tenantId, CFSecPubTableData tableData[]);
 }

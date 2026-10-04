@@ -119,7 +119,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	The Int16Def-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubInt16DefObj readInt16Def( ICFLibKeyHash256 pkey );
+	ICFBamPubInt16DefObj readInt16Def( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a Int16Def-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	The Int16Def-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubInt16DefObj readInt16Def( ICFLibKeyHash256 pkey,
+	ICFBamPubInt16DefObj readInt16Def( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubInt16DefObj readCachedInt16Def( ICFLibKeyHash256 pkey );
+	ICFBamPubInt16DefObj readCachedInt16Def( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeInt16Def( ICFBamPubInt16DefObj obj );
 
-	void deepDisposeInt16Def( ICFLibKeyHash256 pkey );
+	void deepDisposeInt16Def( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubInt16DefObj lockInt16Def( ICFLibKeyHash256 pkey );
+	ICFBamPubInt16DefObj lockInt16Def( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Int16Def-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	CFBamPubValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubInt16DefObj readInt16DefByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubInt16DefObj readInt16DefByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubValueObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubInt16DefObj readInt16DefByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubInt16DefObj readInt16DefByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	CFBamPubValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubInt16DefObj readInt16DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubInt16DefObj readInt16DefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubInt16DefObj readInt16DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubInt16DefObj readInt16DefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -217,7 +217,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubInt16DefObj> readInt16DefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamPubInt16DefObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -227,7 +227,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamPubInt16DefObj> readInt16DefByScopeIdx( MCFDbKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -238,7 +238,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubInt16DefObj> readInt16DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubInt16DefObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubInt16DefObj> readInt16DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -259,7 +259,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubInt16DefObj> readInt16DefByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubInt16DefObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -269,7 +269,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubInt16DefObj> readInt16DefByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -280,7 +280,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubInt16DefObj> readInt16DefByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubInt16DefObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -290,7 +290,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamPubInt16DefObj> readInt16DefByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -303,8 +303,8 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubInt16DefObj> readInt16DefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubInt16DefObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -316,8 +316,8 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubInt16DefObj> readInt16DefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -330,8 +330,8 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubInt16DefObj> readInt16DefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubInt16DefObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -343,47 +343,47 @@ public interface ICFBamPubInt16DefTableObj
 	 *	@return	List of CFBamPubInt16DefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubInt16DefObj> readInt16DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamPubInt16DefObj> readInt16DefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamPubInt16DefObj readCachedInt16DefByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubInt16DefObj readCachedInt16DefByIdIdx( MCFDbKeyHash256 Id );
 
-	ICFBamPubInt16DefObj readCachedInt16DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubInt16DefObj readCachedInt16DefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamPubInt16DefObj> readCachedInt16DefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubInt16DefObj> readCachedInt16DefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	List<ICFBamPubInt16DefObj> readCachedInt16DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubInt16DefObj> readCachedInt16DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubInt16DefObj> readCachedInt16DefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubInt16DefObj> readCachedInt16DefByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubInt16DefObj> readCachedInt16DefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubInt16DefObj> readCachedInt16DefByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubInt16DefObj> readCachedInt16DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubInt16DefObj> readCachedInt16DefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubInt16DefObj> readCachedInt16DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubInt16DefObj> readCachedInt16DefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeInt16DefByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeInt16DefByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeInt16DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeInt16DefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeInt16DefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeInt16DefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	void deepDisposeInt16DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeInt16DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeInt16DefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeInt16DefByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeInt16DefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeInt16DefByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeInt16DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeInt16DefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeInt16DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeInt16DefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -400,7 +400,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *
 	 *	@param	Id	The Int16Def key attribute of the instance generating the id.
 	 */
-	void deleteInt16DefByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteInt16DefByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -409,7 +409,7 @@ public interface ICFBamPubInt16DefTableObj
 	 *
 	 *	@param	Name	The Int16Def key attribute of the instance generating the id.
 	 */
-	void deleteInt16DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteInt16DefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -417,28 +417,28 @@ public interface ICFBamPubInt16DefTableObj
 	 *
 	 *	@param	ScopeId	The Int16Def key attribute of the instance generating the id.
 	 */
-	void deleteInt16DefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteInt16DefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The Int16Def key attribute of the instance generating the id.
 	 */
-	void deleteInt16DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteInt16DefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The Int16Def key attribute of the instance generating the id.
 	 */
-	void deleteInt16DefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteInt16DefByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The Int16Def key attribute of the instance generating the id.
 	 */
-	void deleteInt16DefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteInt16DefByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -447,8 +447,8 @@ public interface ICFBamPubInt16DefTableObj
 	 *
 	 *	@param	PrevId	The Int16Def key attribute of the instance generating the id.
 	 */
-	void deleteInt16DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteInt16DefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -457,8 +457,8 @@ public interface ICFBamPubInt16DefTableObj
 	 *
 	 *	@param	NextId	The Int16Def key attribute of the instance generating the id.
 	 */
-	void deleteInt16DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteInt16DefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the CFBamPubInt16DefObj instance up in the chain.  The instance is always refreshed.

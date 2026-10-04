@@ -95,11 +95,11 @@ public interface ICFBamPubPopSubDep3EditObj
 	void setRequiredContainerPopSubDep2( ICFBamPubPopSubDep2Obj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute PopSubDep2Id.
+	 *	Get the required MCFDbKeyHash256 attribute PopSubDep2Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute PopSubDep2Id.
+	 *	@return	The required MCFDbKeyHash256 attribute PopSubDep2Id.
 	 */
-	CFLibDbKeyHash256 getRequiredPopSubDep2Id();
+	MCFDbKeyHash256 getRequiredPopSubDep2Id();
 
 	/**
 	 *	Get the required String attribute Name.

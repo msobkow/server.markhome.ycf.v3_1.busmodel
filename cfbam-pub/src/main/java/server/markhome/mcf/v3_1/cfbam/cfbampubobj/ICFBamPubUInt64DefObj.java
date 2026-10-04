@@ -89,11 +89,11 @@ public interface ICFBamPubUInt64DefObj
 	ICFBamPubUInt64Def getUInt64DefRec();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
 	 *	Get the optional BigDecimal attribute InitValue.

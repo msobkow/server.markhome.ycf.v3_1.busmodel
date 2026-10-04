@@ -146,7 +146,7 @@ public class CFBamDelSubDep2TableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamDelSubDep2TableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamDelSubDep2TableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -522,7 +522,7 @@ public class CFBamDelSubDep2TableObj
 			locked = (ICFBamDelSubDep2Obj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockDelSubDep2", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockDelSubDep2", pkey );
 		}
 		return( locked );
 	}
@@ -557,7 +557,7 @@ public class CFBamDelSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -565,7 +565,7 @@ public class CFBamDelSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -617,7 +617,7 @@ public class CFBamDelSubDep2TableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -625,7 +625,7 @@ public class CFBamDelSubDep2TableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -662,28 +662,28 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamDelSubDep2Obj readDelSubDep2ByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDelSubDep2Obj readDelSubDep2ByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readDelSubDep2ByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamDelSubDep2Obj readDelSubDep2ByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamDelSubDep2Obj readDelSubDep2ByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamDelSubDep2Obj obj = readDelSubDep2( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readDelSubDep2ByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelSubDep2ByTenantIdx";
@@ -721,7 +721,7 @@ public class CFBamDelSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -729,7 +729,7 @@ public class CFBamDelSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -769,14 +769,14 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readDelSubDep2ByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelSubDep2ByDefSchemaIdx";
@@ -814,7 +814,7 @@ public class CFBamDelSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -822,7 +822,7 @@ public class CFBamDelSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -862,14 +862,14 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByDelDepIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByDelDepIdx( IMCFKeyHash256 RelationId )
 	{
 		return( readDelSubDep2ByDelDepIdx( RelationId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByDelDepIdx( ICFLibKeyHash256 RelationId,
+	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByDelDepIdx( IMCFKeyHash256 RelationId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelSubDep2ByDelDepIdx";
@@ -907,7 +907,7 @@ public class CFBamDelSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -915,7 +915,7 @@ public class CFBamDelSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -955,14 +955,14 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByContDelDep1Idx( ICFLibKeyHash256 DelSubDep1Id )
+	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByContDelDep1Idx( IMCFKeyHash256 DelSubDep1Id )
 	{
 		return( readDelSubDep2ByContDelDep1Idx( DelSubDep1Id,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByContDelDep1Idx( ICFLibKeyHash256 DelSubDep1Id,
+	public List<ICFBamDelSubDep2Obj> readDelSubDep2ByContDelDep1Idx( IMCFKeyHash256 DelSubDep1Id,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelSubDep2ByContDelDep1Idx";
@@ -1000,7 +1000,7 @@ public class CFBamDelSubDep2TableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1008,7 +1008,7 @@ public class CFBamDelSubDep2TableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1048,7 +1048,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamDelSubDep2Obj readDelSubDep2ByUNameIdx( ICFLibKeyHash256 DelSubDep1Id,
+	public ICFBamDelSubDep2Obj readDelSubDep2ByUNameIdx( IMCFKeyHash256 DelSubDep1Id,
 		String Name )
 	{
 		return( readDelSubDep2ByUNameIdx( DelSubDep1Id,
@@ -1057,7 +1057,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamDelSubDep2Obj readDelSubDep2ByUNameIdx( ICFLibKeyHash256 DelSubDep1Id,
+	public ICFBamDelSubDep2Obj readDelSubDep2ByUNameIdx( IMCFKeyHash256 DelSubDep1Id,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1086,7 +1086,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamDelSubDep2Obj readCachedDelSubDep2ByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDelSubDep2Obj readCachedDelSubDep2ByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDelSubDep2Obj obj = null;
 		obj = readCachedDelSubDep2( Id );
@@ -1094,7 +1094,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readCachedDelSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamDelSubDep2Obj> readCachedDelSubDep2ByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedDelSubDep2ByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
@@ -1112,7 +1112,7 @@ public class CFBamDelSubDep2TableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1120,7 +1120,7 @@ public class CFBamDelSubDep2TableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1171,7 +1171,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readCachedDelSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDelSubDep2Obj> readCachedDelSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedDelSubDep2ByDefSchemaIdx";
 		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
@@ -1189,7 +1189,7 @@ public class CFBamDelSubDep2TableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1197,7 +1197,7 @@ public class CFBamDelSubDep2TableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1248,7 +1248,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readCachedDelSubDep2ByDelDepIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamDelSubDep2Obj> readCachedDelSubDep2ByDelDepIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedDelSubDep2ByDelDepIdx";
 		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
@@ -1266,7 +1266,7 @@ public class CFBamDelSubDep2TableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1274,7 +1274,7 @@ public class CFBamDelSubDep2TableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1325,7 +1325,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public List<ICFBamDelSubDep2Obj> readCachedDelSubDep2ByContDelDep1Idx( ICFLibKeyHash256 DelSubDep1Id )
+	public List<ICFBamDelSubDep2Obj> readCachedDelSubDep2ByContDelDep1Idx( IMCFKeyHash256 DelSubDep1Id )
 	{
 		final String S_ProcName = "readCachedDelSubDep2ByContDelDep1Idx";
 		ICFBamDelSubDep2ByContDelDep1IdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelSubDep2().newByContDelDep1IdxKey();
@@ -1343,7 +1343,7 @@ public class CFBamDelSubDep2TableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1351,7 +1351,7 @@ public class CFBamDelSubDep2TableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1402,7 +1402,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public ICFBamDelSubDep2Obj readCachedDelSubDep2ByUNameIdx( ICFLibKeyHash256 DelSubDep1Id,
+	public ICFBamDelSubDep2Obj readCachedDelSubDep2ByUNameIdx( IMCFKeyHash256 DelSubDep1Id,
 		String Name )
 	{
 		ICFBamDelSubDep2Obj obj = null;
@@ -1440,7 +1440,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposeDelSubDep2ByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeDelSubDep2ByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDelSubDep2Obj obj = readCachedDelSubDep2ByIdIdx( Id );
 		if( obj != null ) {
@@ -1449,7 +1449,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposeDelSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeDelSubDep2ByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeDelSubDep2ByTenantIdx";
 		ICFBamDelSubDep2Obj obj;
@@ -1466,7 +1466,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposeDelSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeDelSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeDelSubDep2ByDefSchemaIdx";
 		ICFBamDelSubDep2Obj obj;
@@ -1483,7 +1483,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposeDelSubDep2ByDelDepIdx( ICFLibKeyHash256 RelationId )
+	public void deepDisposeDelSubDep2ByDelDepIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "deepDisposeDelSubDep2ByDelDepIdx";
 		ICFBamDelSubDep2Obj obj;
@@ -1500,7 +1500,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposeDelSubDep2ByContDelDep1Idx( ICFLibKeyHash256 DelSubDep1Id )
+	public void deepDisposeDelSubDep2ByContDelDep1Idx( IMCFKeyHash256 DelSubDep1Id )
 	{
 		final String S_ProcName = "deepDisposeDelSubDep2ByContDelDep1Idx";
 		ICFBamDelSubDep2Obj obj;
@@ -1517,7 +1517,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deepDisposeDelSubDep2ByUNameIdx( ICFLibKeyHash256 DelSubDep1Id,
+	public void deepDisposeDelSubDep2ByUNameIdx( IMCFKeyHash256 DelSubDep1Id,
 		String Name )
 	{
 		ICFBamDelSubDep2Obj obj = readCachedDelSubDep2ByUNameIdx( DelSubDep1Id,
@@ -1548,7 +1548,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deleteDelSubDep2ByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteDelSubDep2ByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDelSubDep2Obj obj = readDelSubDep2(Id);
 		if( obj != null ) {
@@ -1578,7 +1578,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deleteDelSubDep2ByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteDelSubDep2ByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -1612,7 +1612,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deleteDelSubDep2ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteDelSubDep2ByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -1646,7 +1646,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deleteDelSubDep2ByDelDepIdx( ICFLibKeyHash256 RelationId )
+	public void deleteDelSubDep2ByDelDepIdx( IMCFKeyHash256 RelationId )
 	{
 		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
 		key.setRequiredRelationId( RelationId );
@@ -1680,7 +1680,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deleteDelSubDep2ByContDelDep1Idx( ICFLibKeyHash256 DelSubDep1Id )
+	public void deleteDelSubDep2ByContDelDep1Idx( IMCFKeyHash256 DelSubDep1Id )
 	{
 		ICFBamDelSubDep2ByContDelDep1IdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelSubDep2().newByContDelDep1IdxKey();
 		key.setRequiredDelSubDep1Id( DelSubDep1Id );
@@ -1714,7 +1714,7 @@ public class CFBamDelSubDep2TableObj
 	}
 
 	@Override
-	public void deleteDelSubDep2ByUNameIdx( ICFLibKeyHash256 DelSubDep1Id,
+	public void deleteDelSubDep2ByUNameIdx( IMCFKeyHash256 DelSubDep1Id,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {

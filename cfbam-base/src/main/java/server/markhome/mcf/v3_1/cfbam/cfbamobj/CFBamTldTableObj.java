@@ -388,7 +388,7 @@ public class CFBamTldTableObj
 			locked = (ICFIntTldObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockTld", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockTld", pkey );
 		}
 		return( locked );
 	}
@@ -423,7 +423,7 @@ public class CFBamTldTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -431,7 +431,7 @@ public class CFBamTldTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -483,7 +483,7 @@ public class CFBamTldTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -491,7 +491,7 @@ public class CFBamTldTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -528,28 +528,28 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public ICFIntTldObj readTldByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntTldObj readTldByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readTldByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntTldObj readTldByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFIntTldObj readTldByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFIntTldObj obj = readTld( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntTldObj> readTldByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntTldObj> readTldByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readTldByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntTldObj> readTldByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFIntTldObj> readTldByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTldByTenantIdx";
@@ -587,7 +587,7 @@ public class CFBamTldTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -595,7 +595,7 @@ public class CFBamTldTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -668,7 +668,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public ICFIntTldObj readCachedTldByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntTldObj readCachedTldByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTldObj obj = null;
 		obj = readCachedTld( Id );
@@ -676,7 +676,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public List<ICFIntTldObj> readCachedTldByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntTldObj> readCachedTldByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedTldByTenantIdx";
 		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
@@ -694,7 +694,7 @@ public class CFBamTldTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -702,7 +702,7 @@ public class CFBamTldTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -789,7 +789,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public void deepDisposeTldByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeTldByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTldObj obj = readCachedTldByIdIdx( Id );
 		if( obj != null ) {
@@ -798,7 +798,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public void deepDisposeTldByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeTldByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeTldByTenantIdx";
 		ICFIntTldObj obj;
@@ -842,7 +842,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public void deleteTldByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteTldByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntTldObj obj = readTld(Id);
 		if( obj != null ) {
@@ -872,7 +872,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public void deleteTldByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteTldByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );

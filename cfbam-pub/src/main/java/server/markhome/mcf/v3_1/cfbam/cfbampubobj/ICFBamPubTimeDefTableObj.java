@@ -119,7 +119,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	The TimeDef-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubTimeDefObj readTimeDef( ICFLibKeyHash256 pkey );
+	ICFBamPubTimeDefObj readTimeDef( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a TimeDef-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	The TimeDef-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubTimeDefObj readTimeDef( ICFLibKeyHash256 pkey,
+	ICFBamPubTimeDefObj readTimeDef( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubTimeDefObj readCachedTimeDef( ICFLibKeyHash256 pkey );
+	ICFBamPubTimeDefObj readCachedTimeDef( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeTimeDef( ICFBamPubTimeDefObj obj );
 
-	void deepDisposeTimeDef( ICFLibKeyHash256 pkey );
+	void deepDisposeTimeDef( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubTimeDefObj lockTimeDef( ICFLibKeyHash256 pkey );
+	ICFBamPubTimeDefObj lockTimeDef( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the TimeDef-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	CFBamPubValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTimeDefObj readTimeDefByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubTimeDefObj readTimeDefByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubValueObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTimeDefObj readTimeDefByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubTimeDefObj readTimeDefByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -192,7 +192,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	CFBamPubValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTimeDefObj readTimeDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTimeDefObj readTimeDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	CFBamPubValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTimeDefObj readTimeDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTimeDefObj readTimeDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -217,7 +217,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubTimeDefObj> readTimeDefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamPubTimeDefObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -227,7 +227,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamPubTimeDefObj> readTimeDefByScopeIdx( MCFDbKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -238,7 +238,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubTimeDefObj> readTimeDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubTimeDefObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubTimeDefObj> readTimeDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -259,7 +259,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTimeDefObj> readTimeDefByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubTimeDefObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -269,7 +269,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubTimeDefObj> readTimeDefByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -280,7 +280,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTimeDefObj> readTimeDefByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubTimeDefObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -290,7 +290,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamPubTimeDefObj> readTimeDefByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -303,8 +303,8 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTimeDefObj> readTimeDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamPubTimeDefObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -316,8 +316,8 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamPubTimeDefObj> readTimeDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -330,8 +330,8 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTimeDefObj> readTimeDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamPubTimeDefObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -343,47 +343,47 @@ public interface ICFBamPubTimeDefTableObj
 	 *	@return	List of CFBamPubTimeDefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTimeDefObj> readTimeDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamPubTimeDefObj> readTimeDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamPubTimeDefObj readCachedTimeDefByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubTimeDefObj readCachedTimeDefByIdIdx( MCFDbKeyHash256 Id );
 
-	ICFBamPubTimeDefObj readCachedTimeDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTimeDefObj readCachedTimeDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamPubTimeDefObj> readCachedTimeDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubTimeDefObj> readCachedTimeDefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	List<ICFBamPubTimeDefObj> readCachedTimeDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubTimeDefObj> readCachedTimeDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubTimeDefObj> readCachedTimeDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTimeDefObj> readCachedTimeDefByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubTimeDefObj> readCachedTimeDefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTimeDefObj> readCachedTimeDefByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<ICFBamPubTimeDefObj> readCachedTimeDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamPubTimeDefObj> readCachedTimeDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<ICFBamPubTimeDefObj> readCachedTimeDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamPubTimeDefObj> readCachedTimeDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeTimeDefByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeTimeDefByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeTimeDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeTimeDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeTimeDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeTimeDefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	void deepDisposeTimeDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeTimeDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeTimeDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeTimeDefByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeTimeDefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeTimeDefByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeTimeDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeTimeDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeTimeDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeTimeDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -400,7 +400,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *
 	 *	@param	Id	The TimeDef key attribute of the instance generating the id.
 	 */
-	void deleteTimeDefByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteTimeDefByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -409,7 +409,7 @@ public interface ICFBamPubTimeDefTableObj
 	 *
 	 *	@param	Name	The TimeDef key attribute of the instance generating the id.
 	 */
-	void deleteTimeDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteTimeDefByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -417,28 +417,28 @@ public interface ICFBamPubTimeDefTableObj
 	 *
 	 *	@param	ScopeId	The TimeDef key attribute of the instance generating the id.
 	 */
-	void deleteTimeDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteTimeDefByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The TimeDef key attribute of the instance generating the id.
 	 */
-	void deleteTimeDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteTimeDefByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The TimeDef key attribute of the instance generating the id.
 	 */
-	void deleteTimeDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteTimeDefByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The TimeDef key attribute of the instance generating the id.
 	 */
-	void deleteTimeDefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteTimeDefByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -447,8 +447,8 @@ public interface ICFBamPubTimeDefTableObj
 	 *
 	 *	@param	PrevId	The TimeDef key attribute of the instance generating the id.
 	 */
-	void deleteTimeDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteTimeDefByContPrevIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -457,8 +457,8 @@ public interface ICFBamPubTimeDefTableObj
 	 *
 	 *	@param	NextId	The TimeDef key attribute of the instance generating the id.
 	 */
-	void deleteTimeDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteTimeDefByContNextIdx( MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Move the CFBamPubTimeDefObj instance up in the chain.  The instance is always refreshed.

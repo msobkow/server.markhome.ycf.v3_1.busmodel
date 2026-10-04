@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamDelTopDepByPrevIdxKey
 {
-	public ICFLibKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( IMCFKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

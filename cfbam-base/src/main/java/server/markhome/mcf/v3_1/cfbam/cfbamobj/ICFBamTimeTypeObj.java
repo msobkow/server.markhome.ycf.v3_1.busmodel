@@ -107,17 +107,17 @@ public interface ICFBamTimeTypeObj
 	ICFBamSchemaDefObj getRequiredContainerSchemaDef( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SchemaDefId.
+	 *	Get the required IMCFKeyHash256 attribute SchemaDefId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SchemaDefId.
+	 *	@return	The required IMCFKeyHash256 attribute SchemaDefId.
 	 */
-	ICFLibKeyHash256 getRequiredSchemaDefId();
+	IMCFKeyHash256 getRequiredSchemaDefId();
 
 }

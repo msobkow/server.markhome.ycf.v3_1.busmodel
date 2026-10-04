@@ -154,7 +154,7 @@ public class CFBamDelTopDepTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamDelTopDepTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamDelTopDepTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -626,7 +626,7 @@ public class CFBamDelTopDepTableObj
 			locked = (ICFBamDelTopDepObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockDelTopDep", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockDelTopDep", pkey );
 		}
 		return( locked );
 	}
@@ -661,7 +661,7 @@ public class CFBamDelTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -669,7 +669,7 @@ public class CFBamDelTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -721,7 +721,7 @@ public class CFBamDelTopDepTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -729,7 +729,7 @@ public class CFBamDelTopDepTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -766,28 +766,28 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public ICFBamDelTopDepObj readDelTopDepByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDelTopDepObj readDelTopDepByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readDelTopDepByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamDelTopDepObj readDelTopDepByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamDelTopDepObj readDelTopDepByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamDelTopDepObj obj = readDelTopDep( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamDelTopDepObj> readDelTopDepByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readDelTopDepByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFBamDelTopDepObj> readDelTopDepByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByTenantIdx";
@@ -825,7 +825,7 @@ public class CFBamDelTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -833,7 +833,7 @@ public class CFBamDelTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -873,14 +873,14 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDelTopDepObj> readDelTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readDelTopDepByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamDelTopDepObj> readDelTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByDefSchemaIdx";
@@ -918,7 +918,7 @@ public class CFBamDelTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -926,7 +926,7 @@ public class CFBamDelTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -966,14 +966,14 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamDelTopDepObj> readDelTopDepByDelDepIdx( IMCFKeyHash256 RelationId )
 	{
 		return( readDelTopDepByDelDepIdx( RelationId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId,
+	public List<ICFBamDelTopDepObj> readDelTopDepByDelDepIdx( IMCFKeyHash256 RelationId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByDelDepIdx";
@@ -1011,7 +1011,7 @@ public class CFBamDelTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1019,7 +1019,7 @@ public class CFBamDelTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1059,14 +1059,14 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamDelTopDepObj> readDelTopDepByDelTopDepTblIdx( IMCFKeyHash256 TableId )
 	{
 		return( readDelTopDepByDelTopDepTblIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId,
+	public List<ICFBamDelTopDepObj> readDelTopDepByDelTopDepTblIdx( IMCFKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByDelTopDepTblIdx";
@@ -1104,7 +1104,7 @@ public class CFBamDelTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1112,7 +1112,7 @@ public class CFBamDelTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1152,7 +1152,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public ICFBamDelTopDepObj readDelTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public ICFBamDelTopDepObj readDelTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name )
 	{
 		return( readDelTopDepByUNameIdx( TableId,
@@ -1161,7 +1161,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public ICFBamDelTopDepObj readDelTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public ICFBamDelTopDepObj readDelTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1190,14 +1190,14 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDelTopDepObj> readDelTopDepByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readDelTopDepByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamDelTopDepObj> readDelTopDepByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByPrevIdx";
@@ -1235,7 +1235,7 @@ public class CFBamDelTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1243,7 +1243,7 @@ public class CFBamDelTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1283,14 +1283,14 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDelTopDepObj> readDelTopDepByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readDelTopDepByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readDelTopDepByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamDelTopDepObj> readDelTopDepByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByNextIdx";
@@ -1328,7 +1328,7 @@ public class CFBamDelTopDepTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1336,7 +1336,7 @@ public class CFBamDelTopDepTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1376,7 +1376,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public ICFBamDelTopDepObj readCachedDelTopDepByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDelTopDepObj readCachedDelTopDepByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDelTopDepObj obj = null;
 		obj = readCachedDelTopDep( Id );
@@ -1384,7 +1384,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readCachedDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFBamDelTopDepObj> readCachedDelTopDepByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
@@ -1402,7 +1402,7 @@ public class CFBamDelTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1410,7 +1410,7 @@ public class CFBamDelTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1461,7 +1461,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByDefSchemaIdx";
 		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
@@ -1479,7 +1479,7 @@ public class CFBamDelTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1487,7 +1487,7 @@ public class CFBamDelTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1538,7 +1538,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId )
+	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDelDepIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByDelDepIdx";
 		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
@@ -1556,7 +1556,7 @@ public class CFBamDelTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1564,7 +1564,7 @@ public class CFBamDelTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1615,7 +1615,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId )
+	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDelTopDepTblIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByDelTopDepTblIdx";
 		ICFBamDelTopDepByDelTopDepTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
@@ -1633,7 +1633,7 @@ public class CFBamDelTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1641,7 +1641,7 @@ public class CFBamDelTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1692,7 +1692,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public ICFBamDelTopDepObj readCachedDelTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public ICFBamDelTopDepObj readCachedDelTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name )
 	{
 		ICFBamDelTopDepObj obj = null;
@@ -1730,7 +1730,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readCachedDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDelTopDepObj> readCachedDelTopDepByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByPrevIdx";
 		ICFBamDelTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
@@ -1748,7 +1748,7 @@ public class CFBamDelTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1756,7 +1756,7 @@ public class CFBamDelTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1807,7 +1807,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public List<ICFBamDelTopDepObj> readCachedDelTopDepByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDelTopDepObj> readCachedDelTopDepByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByNextIdx";
 		ICFBamDelTopDepByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
@@ -1825,7 +1825,7 @@ public class CFBamDelTopDepTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1833,7 +1833,7 @@ public class CFBamDelTopDepTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1884,7 +1884,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeDelTopDepByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeDelTopDepByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDelTopDepObj obj = readCachedDelTopDepByIdIdx( Id );
 		if( obj != null ) {
@@ -1893,7 +1893,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeDelTopDepByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeDelTopDepByTenantIdx";
 		ICFBamDelTopDepObj obj;
@@ -1910,7 +1910,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeDelTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeDelTopDepByDefSchemaIdx";
 		ICFBamDelTopDepObj obj;
@@ -1927,7 +1927,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId )
+	public void deepDisposeDelTopDepByDelDepIdx( IMCFKeyHash256 RelationId )
 	{
 		final String S_ProcName = "deepDisposeDelTopDepByDelDepIdx";
 		ICFBamDelTopDepObj obj;
@@ -1944,7 +1944,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId )
+	public void deepDisposeDelTopDepByDelTopDepTblIdx( IMCFKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeDelTopDepByDelTopDepTblIdx";
 		ICFBamDelTopDepObj obj;
@@ -1961,7 +1961,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeDelTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public void deepDisposeDelTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name )
 	{
 		ICFBamDelTopDepObj obj = readCachedDelTopDepByUNameIdx( TableId,
@@ -1972,7 +1972,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeDelTopDepByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDelTopDepByPrevIdx";
 		ICFBamDelTopDepObj obj;
@@ -1989,7 +1989,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deepDisposeDelTopDepByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeDelTopDepByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDelTopDepByNextIdx";
 		ICFBamDelTopDepObj obj;
@@ -2034,7 +2034,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deleteDelTopDepByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteDelTopDepByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDelTopDepObj obj = readDelTopDep(Id);
 		if( obj != null ) {
@@ -2064,7 +2064,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deleteDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteDelTopDepByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -2098,7 +2098,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deleteDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteDelTopDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2132,7 +2132,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deleteDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId )
+	public void deleteDelTopDepByDelDepIdx( IMCFKeyHash256 RelationId )
 	{
 		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
 		key.setRequiredRelationId( RelationId );
@@ -2166,7 +2166,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deleteDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId )
+	public void deleteDelTopDepByDelTopDepTblIdx( IMCFKeyHash256 TableId )
 	{
 		ICFBamDelTopDepByDelTopDepTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
 		key.setRequiredTableId( TableId );
@@ -2200,7 +2200,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deleteDelTopDepByUNameIdx( ICFLibKeyHash256 TableId,
+	public void deleteDelTopDepByUNameIdx( IMCFKeyHash256 TableId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2228,7 +2228,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deleteDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteDelTopDepByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamDelTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2262,7 +2262,7 @@ public class CFBamDelTopDepTableObj
 	}
 
 	@Override
-	public void deleteDelTopDepByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteDelTopDepByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamDelTopDepByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2304,7 +2304,7 @@ public class CFBamDelTopDepTableObj
 	public ICFBamDelTopDepObj moveUpDelTopDep( ICFBamDelTopDepObj Obj ) {
 		ICFBamDelTopDepObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpDelTopDep" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpDelTopDep" );
 		}
 		ICFBamDelTopDep rec = schema.getCFBamBackingStore().getTableDelTopDep().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2332,7 +2332,7 @@ public class CFBamDelTopDepTableObj
 	public ICFBamDelTopDepObj moveDownDelTopDep( ICFBamDelTopDepObj Obj ) {
 		ICFBamDelTopDepObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownDelTopDep" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownDelTopDep" );
 		}
 		ICFBamDelTopDep rec = schema.getCFBamBackingStore().getTableDelTopDep().moveRecDown( null,
 			Obj.getRequiredId(),

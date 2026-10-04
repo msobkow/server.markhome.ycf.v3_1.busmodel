@@ -138,7 +138,7 @@ extends ICFBamProtClearDepTable,
 	 *	@param	ClearSubDep2Id	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
 	public void protdeleteClearSubDep3ByClearSubDep2Idx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argClearSubDep2Id );
+		IMCFKeyHash256 argClearSubDep2Id );
 
 	/**
 	 *	Delete the ClearSubDep3 instances identified by the key ClearSubDep2Idx.
@@ -168,7 +168,7 @@ extends ICFBamProtClearDepTable,
 	 *	@param	Name	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
 	public void protdeleteClearSubDep3ByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argClearSubDep2Id,
+		IMCFKeyHash256 argClearSubDep2Id,
 		String argName );
 
 	/**
@@ -197,7 +197,7 @@ extends ICFBamProtClearDepTable,
 	 *	@param	RelationId	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
 	public void protdeleteClearSubDep3ByClearDepIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId );
+		IMCFKeyHash256 argRelationId );
 
 	/**
 	 *	Delete the ClearSubDep3 instances identified by the key ClearDepIdx.
@@ -225,7 +225,7 @@ extends ICFBamProtClearDepTable,
 	 *	@param	DefSchemaId	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
 	public void protdeleteClearSubDep3ByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the ClearSubDep3 instances identified by the key DefSchemaIdx.
@@ -253,7 +253,7 @@ extends ICFBamProtClearDepTable,
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void protdeleteClearSubDep3ByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		MCFDbKeyHash256 argKey );
 	/**
 	 *	Delete the ClearSubDep3 instances identified by the key TenantIdx.
 	 *
@@ -262,7 +262,7 @@ extends ICFBamProtClearDepTable,
 	 *	@param	TenantId	The ClearSubDep3 key attribute of the instance generating the id.
 	 */
 	public void protdeleteClearSubDep3ByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId );
+		IMCFKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the ClearSubDep3 instances identified by the key TenantIdx.
@@ -305,7 +305,7 @@ extends ICFBamProtClearDepTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtClearSubDep3 protreadDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived ClearSubDep3 record instance by protected primary key.
@@ -318,7 +318,7 @@ extends ICFBamProtClearDepTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtClearSubDep3 protlockDerived( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all ClearSubDep3 instances.
@@ -340,7 +340,7 @@ extends ICFBamProtClearDepTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtClearSubDep3 protreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived ClearSubDep3 record instances identified by the duplicate key TenantIdx.
@@ -352,7 +352,7 @@ extends ICFBamProtClearDepTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtClearSubDep3[] protreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived ClearSubDep3 record instances identified by the duplicate key ClearDepIdx.
@@ -364,7 +364,7 @@ extends ICFBamProtClearDepTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtClearSubDep3[] protreadDerivedByClearDepIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the derived ClearSubDep3 record instances identified by the duplicate key DefSchemaIdx.
@@ -376,7 +376,7 @@ extends ICFBamProtClearDepTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtClearSubDep3[] protreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived ClearSubDep3 record instances identified by the duplicate key ClearSubDep2Idx.
@@ -388,7 +388,7 @@ extends ICFBamProtClearDepTable,
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamProtClearSubDep3[] protreadDerivedByClearSubDep2Idx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ClearSubDep2Id );
+		IMCFKeyHash256 ClearSubDep2Id );
 
 	/**
 	 *	Read the derived ClearSubDep3 record instance identified by the unique key UNameIdx.
@@ -403,7 +403,7 @@ extends ICFBamProtClearDepTable,
 	 *		no such existing key value.
 	 */
 	public ICFBamProtClearSubDep3 protreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ClearSubDep2Id,
+		IMCFKeyHash256 ClearSubDep2Id,
 		String Name );
 
 	/**
@@ -416,10 +416,10 @@ extends ICFBamProtClearDepTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3 protreadRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific ClearSubDep3 record instance identified by the primary key.
@@ -431,10 +431,10 @@ extends ICFBamProtClearDepTable,
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3 protlockRec( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		MCFDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific ClearSubDep3 record instances.
@@ -455,10 +455,10 @@ extends ICFBamProtClearDepTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3 protreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific ClearSubDep3 record instances identified by the duplicate key TenantIdx.
@@ -469,10 +469,10 @@ extends ICFBamProtClearDepTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3[] protreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 TenantId );
+		IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific ClearSubDep3 record instances identified by the duplicate key ClearDepIdx.
@@ -483,10 +483,10 @@ extends ICFBamProtClearDepTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3[] protreadRecByClearDepIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the specific ClearSubDep3 record instances identified by the duplicate key DefSchemaIdx.
@@ -497,10 +497,10 @@ extends ICFBamProtClearDepTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3[] protreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific ClearSubDep3 record instances identified by the duplicate key ClearSubDep2Idx.
@@ -511,10 +511,10 @@ extends ICFBamProtClearDepTable,
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3[] protreadRecByClearSubDep2Idx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ClearSubDep2Id );
+		IMCFKeyHash256 ClearSubDep2Id );
 
 	/**
 	 *	Read the specific ClearSubDep3 record instance identified by the unique key UNameIdx.
@@ -528,9 +528,9 @@ extends ICFBamProtClearDepTable,
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3 protreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 ClearSubDep2Id,
+		IMCFKeyHash256 ClearSubDep2Id,
 		String Name );
 }

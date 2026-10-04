@@ -442,7 +442,7 @@ public class CFBamMajorVersionTableObj
 			locked = (ICFIntMajorVersionObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockMajorVersion", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockMajorVersion", pkey );
 		}
 		return( locked );
 	}
@@ -477,7 +477,7 @@ public class CFBamMajorVersionTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -485,7 +485,7 @@ public class CFBamMajorVersionTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -537,7 +537,7 @@ public class CFBamMajorVersionTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -545,7 +545,7 @@ public class CFBamMajorVersionTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -582,28 +582,28 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMajorVersionObj readMajorVersionByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntMajorVersionObj readMajorVersionByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readMajorVersionByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntMajorVersionObj readMajorVersionByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFIntMajorVersionObj readMajorVersionByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFIntMajorVersionObj obj = readMajorVersion( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readMajorVersionByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFIntMajorVersionObj> readMajorVersionByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readMajorVersionByTenantIdx";
@@ -641,7 +641,7 @@ public class CFBamMajorVersionTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -649,7 +649,7 @@ public class CFBamMajorVersionTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -689,14 +689,14 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId )
+	public List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( IMCFKeyHash256 SubProjectId )
 	{
 		return( readMajorVersionBySubProjectIdx( SubProjectId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId,
+	public List<ICFIntMajorVersionObj> readMajorVersionBySubProjectIdx( IMCFKeyHash256 SubProjectId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readMajorVersionBySubProjectIdx";
@@ -734,7 +734,7 @@ public class CFBamMajorVersionTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -742,7 +742,7 @@ public class CFBamMajorVersionTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -782,7 +782,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMajorVersionObj readMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
+	public ICFIntMajorVersionObj readMajorVersionByNameIdx( IMCFKeyHash256 SubProjectId,
 		String Name )
 	{
 		return( readMajorVersionByNameIdx( SubProjectId,
@@ -791,7 +791,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMajorVersionObj readMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
+	public ICFIntMajorVersionObj readMajorVersionByNameIdx( IMCFKeyHash256 SubProjectId,
 		String Name, boolean forceRead )
 	{
 		if( indexByNameIdx == null ) {
@@ -820,7 +820,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMajorVersionObj readCachedMajorVersionByIdIdx( ICFLibKeyHash256 Id )
+	public ICFIntMajorVersionObj readCachedMajorVersionByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntMajorVersionObj obj = null;
 		obj = readCachedMajorVersion( Id );
@@ -828,7 +828,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public List<ICFIntMajorVersionObj> readCachedMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFIntMajorVersionObj> readCachedMajorVersionByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedMajorVersionByTenantIdx";
 		ICFIntMajorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
@@ -846,7 +846,7 @@ public class CFBamMajorVersionTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -854,7 +854,7 @@ public class CFBamMajorVersionTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -905,7 +905,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public List<ICFIntMajorVersionObj> readCachedMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId )
+	public List<ICFIntMajorVersionObj> readCachedMajorVersionBySubProjectIdx( IMCFKeyHash256 SubProjectId )
 	{
 		final String S_ProcName = "readCachedMajorVersionBySubProjectIdx";
 		ICFIntMajorVersionBySubProjectIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
@@ -923,7 +923,7 @@ public class CFBamMajorVersionTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -931,7 +931,7 @@ public class CFBamMajorVersionTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -982,7 +982,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public ICFIntMajorVersionObj readCachedMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
+	public ICFIntMajorVersionObj readCachedMajorVersionByNameIdx( IMCFKeyHash256 SubProjectId,
 		String Name )
 	{
 		ICFIntMajorVersionObj obj = null;
@@ -1020,7 +1020,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public void deepDisposeMajorVersionByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeMajorVersionByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntMajorVersionObj obj = readCachedMajorVersionByIdIdx( Id );
 		if( obj != null ) {
@@ -1029,7 +1029,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public void deepDisposeMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeMajorVersionByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeMajorVersionByTenantIdx";
 		ICFIntMajorVersionObj obj;
@@ -1046,7 +1046,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public void deepDisposeMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId )
+	public void deepDisposeMajorVersionBySubProjectIdx( IMCFKeyHash256 SubProjectId )
 	{
 		final String S_ProcName = "deepDisposeMajorVersionBySubProjectIdx";
 		ICFIntMajorVersionObj obj;
@@ -1063,7 +1063,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public void deepDisposeMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
+	public void deepDisposeMajorVersionByNameIdx( IMCFKeyHash256 SubProjectId,
 		String Name )
 	{
 		ICFIntMajorVersionObj obj = readCachedMajorVersionByNameIdx( SubProjectId,
@@ -1092,7 +1092,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public void deleteMajorVersionByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteMajorVersionByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFIntMajorVersionObj obj = readMajorVersion(Id);
 		if( obj != null ) {
@@ -1122,7 +1122,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public void deleteMajorVersionByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteMajorVersionByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFIntMajorVersionByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -1156,7 +1156,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public void deleteMajorVersionBySubProjectIdx( ICFLibKeyHash256 SubProjectId )
+	public void deleteMajorVersionBySubProjectIdx( IMCFKeyHash256 SubProjectId )
 	{
 		ICFIntMajorVersionBySubProjectIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryMajorVersion().newBySubProjectIdxKey();
 		key.setRequiredSubProjectId( SubProjectId );
@@ -1190,7 +1190,7 @@ public class CFBamMajorVersionTableObj
 	}
 
 	@Override
-	public void deleteMajorVersionByNameIdx( ICFLibKeyHash256 SubProjectId,
+	public void deleteMajorVersionByNameIdx( IMCFKeyHash256 SubProjectId,
 		String Name )
 	{
 		if( indexByNameIdx == null ) {

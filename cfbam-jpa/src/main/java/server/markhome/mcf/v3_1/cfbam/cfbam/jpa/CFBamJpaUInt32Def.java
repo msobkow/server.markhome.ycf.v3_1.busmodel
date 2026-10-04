@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -105,7 +105,7 @@ public class CFBamJpaUInt32Def extends CFBamJpaAtom
 	@Override
 	public void setOptionalInitValue( Long value ) {
 		if( value < ICFBamPubUInt32Def.INITVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value",
@@ -123,7 +123,7 @@ public class CFBamJpaUInt32Def extends CFBamJpaAtom
 	@Override
 	public void setOptionalMinValue( Long value ) {
 		if( value < ICFBamPubUInt32Def.MINVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalMinValue",
 				1,
 				"value",
@@ -141,7 +141,7 @@ public class CFBamJpaUInt32Def extends CFBamJpaAtom
 	@Override
 	public void setOptionalMaxValue( Long value ) {
 		if( value < ICFBamPubUInt32Def.MAXVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalMaxValue",
 				1,
 				"value",
@@ -425,7 +425,7 @@ public class CFBamJpaUInt32Def extends CFBamJpaAtom
 			setUInt32Def( (ICFBamUInt32Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -447,7 +447,7 @@ public class CFBamJpaUInt32Def extends CFBamJpaAtom
 			setUInt32Def( (ICFBamUInt32DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

@@ -95,10 +95,10 @@ public interface ICFBamPubServerObjFuncEditObj
 	void setOptionalLookupRetTable( ICFBamPubTableObj value );
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute RetTableId.
+	 *	Get the optional MCFDbKeyHash256 attribute RetTableId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute RetTableId.
+	 *	@return	The optional MCFDbKeyHash256 attribute RetTableId.
 	 */
-	CFLibDbKeyHash256 getOptionalRetTableId();
+	MCFDbKeyHash256 getOptionalRetTableId();
 
 }

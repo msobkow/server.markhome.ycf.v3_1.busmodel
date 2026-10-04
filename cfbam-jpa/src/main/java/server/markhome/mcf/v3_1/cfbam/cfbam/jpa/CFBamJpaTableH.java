@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -92,13 +92,13 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
     implements ICFBamTableH
 {
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="SchemaDefId", nullable=false, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="SchemaDefId", nullable=false, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 requiredSchemaDefId;
+	protected IMCFKeyHash256 requiredSchemaDefId;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="defschid", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="defschid", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
 	@Column( name="safe_name", nullable=false, length=192 )
 	protected String requiredName;
 	@Column( name="DbName", nullable=true, length=32 )
@@ -114,23 +114,23 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 	@Column( name="PageData", nullable=false )
 	protected boolean requiredPageData;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="PrimIdxId", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="PrimIdxId", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalPrimaryIndexId;
+	protected IMCFKeyHash256 optionalPrimaryIndexId;
 	@Column( name="TblClsCd", nullable=false, length=4 )
 	protected String requiredTableClassCode;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="LookIdxId", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="LookIdxId", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalLookupIndexId;
+	protected IMCFKeyHash256 optionalLookupIndexId;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="AltIdxId", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="AltIdxId", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalAltIndexId;
+	protected IMCFKeyHash256 optionalAltIndexId;
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="QualTblId", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="QualTblId", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalQualifyingTableId;
+	protected IMCFKeyHash256 optionalQualifyingTableId;
 	@Column( name="IsInstantiable", nullable=false )
 	protected boolean requiredIsInstantiable;
 	@Column( name="HasHistory", nullable=false )
@@ -150,8 +150,8 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
     public CFBamJpaTableH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubTable.SCHEMADEFID_INIT_VALUE.toString() );
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
+		requiredSchemaDefId = MCFDbKeyHash256.fromHex( ICFBamPubTable.SCHEMADEFID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
 		requiredName = ICFBamPubTable.NAME_INIT_VALUE;
 		optionalDbName = null;
 		optionalShortName = null;
@@ -159,11 +159,11 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 		optionalShortDescription = null;
 		optionalDescription = null;
 		requiredPageData = ICFBamPubTable.PAGEDATA_INIT_VALUE;
-		optionalPrimaryIndexId = CFLibDbKeyHash256.nullGet();
+		optionalPrimaryIndexId = MCFDbKeyHash256.nullGet();
 		requiredTableClassCode = ICFBamPubTable.TABLECLASSCODE_INIT_VALUE;
-		optionalLookupIndexId = CFLibDbKeyHash256.nullGet();
-		optionalAltIndexId = CFLibDbKeyHash256.nullGet();
-		optionalQualifyingTableId = CFLibDbKeyHash256.nullGet();
+		optionalLookupIndexId = MCFDbKeyHash256.nullGet();
+		optionalAltIndexId = MCFDbKeyHash256.nullGet();
+		optionalQualifyingTableId = MCFDbKeyHash256.nullGet();
 		requiredIsInstantiable = ICFBamPubTable.ISINSTANTIABLE_INIT_VALUE;
 		requiredHasHistory = ICFBamPubTable.HASHISTORY_INIT_VALUE;
 		requiredHasAuditColumns = ICFBamPubTable.HASAUDITCOLUMNS_INIT_VALUE;
@@ -180,13 +180,13 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSchemaDefId() {
+	public IMCFKeyHash256 getRequiredSchemaDefId() {
 		return(requiredSchemaDefId);
 	}
 
-	public void setRequiredSchemaDefId( ICFLibKeyHash256 value ) {
+	public void setRequiredSchemaDefId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredSchemaDefId",
 				1,
 				"value" );
@@ -195,11 +195,11 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
@@ -210,13 +210,13 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -233,7 +233,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 32 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDbName",
 				1,
 				"value.length()",
@@ -250,7 +250,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortName",
 				1,
 				"value.length()",
@@ -267,7 +267,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalLabel",
 				1,
 				"value.length()",
@@ -284,7 +284,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 50 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalShortDescription",
 				1,
 				"value.length()",
@@ -301,7 +301,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 100 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalDescription",
 				1,
 				"value.length()",
@@ -321,11 +321,11 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalPrimaryIndexId() {
+	public IMCFKeyHash256 getOptionalPrimaryIndexId() {
 		return(optionalPrimaryIndexId);
 	}
 
-	public void setOptionalPrimaryIndexId( ICFLibKeyHash256 value ) {
+	public void setOptionalPrimaryIndexId( IMCFKeyHash256 value ) {
 		optionalPrimaryIndexId = value;
 	}
 
@@ -336,13 +336,13 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setRequiredTableClassCode( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredTableClassCode",
 				1,
 				"value" );
 		}
 		else if( value.length() > 4 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredTableClassCode",
 				1,
 				"value.length()",
@@ -353,29 +353,29 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalLookupIndexId() {
+	public IMCFKeyHash256 getOptionalLookupIndexId() {
 		return(optionalLookupIndexId);
 	}
 
-	public void setOptionalLookupIndexId( ICFLibKeyHash256 value ) {
+	public void setOptionalLookupIndexId( IMCFKeyHash256 value ) {
 		optionalLookupIndexId = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalAltIndexId() {
+	public IMCFKeyHash256 getOptionalAltIndexId() {
 		return(optionalAltIndexId);
 	}
 
-	public void setOptionalAltIndexId( ICFLibKeyHash256 value ) {
+	public void setOptionalAltIndexId( IMCFKeyHash256 value ) {
 		optionalAltIndexId = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalQualifyingTableId() {
+	public IMCFKeyHash256 getOptionalQualifyingTableId() {
 		return(optionalQualifyingTableId);
 	}
 
-	public void setOptionalQualifyingTableId( ICFLibKeyHash256 value ) {
+	public void setOptionalQualifyingTableId( IMCFKeyHash256 value ) {
 		optionalQualifyingTableId = value;
 	}
 
@@ -431,7 +431,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setRequiredLoaderBehaviour( ICFBamPubSchema.LoaderBehaviourEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredLoaderBehaviour",
 				1,
 				"value" );
@@ -446,7 +446,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setRequiredSecScope( ICFBamPubSchema.SecScopeEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredSecScope",
 				1,
 				"value" );
@@ -461,7 +461,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredCodeVis",
 				1,
 				"value" );
@@ -2207,7 +2207,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 			setTable( (ICFBamTable)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -2248,7 +2248,7 @@ public class CFBamJpaTableH extends CFBamJpaScopeH
 			setTable( (ICFBamTableH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

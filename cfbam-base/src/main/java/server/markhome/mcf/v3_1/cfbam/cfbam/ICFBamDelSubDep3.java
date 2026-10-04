@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -65,14 +65,14 @@ public interface ICFBamDelSubDep3
 	extends ICFBamDelDep
 {
 	public static final String S_DELSUBDEP2ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DELSUBDEP2ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DELSUBDEP2ID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DELSUBDEP2ID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DELSUBDEP2ID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa81e;
 	public final static String S_CLASS_CODE = "a81e";
 
 	public ICFBamDelSubDep2 getRequiredContainerDelSubDep2();
 
-	public void setRequiredContainerDelSubDep2(ICFLibKeyHash256 argDelSubDep2Id);
+	public void setRequiredContainerDelSubDep2(IMCFKeyHash256 argDelSubDep2Id);
 
 	public void setRequiredContainerDelSubDep2(ICFBamDelSubDep2 argObj);
 
@@ -80,8 +80,8 @@ public interface ICFBamDelSubDep3
 
 	public void setRequiredContainerDelSubDep2(ICFBamPubDelSubDep2 argObj);
 
-	public ICFLibKeyHash256 getRequiredDelSubDep2Id();
-	public void setRequiredDelSubDep2Id( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredDelSubDep2Id();
+	public void setRequiredDelSubDep2Id( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

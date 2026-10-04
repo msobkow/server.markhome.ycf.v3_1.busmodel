@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -63,10 +63,10 @@ import server.markhome.mcf.v3_1.cfint.cfintpub.*;
  */
 public interface ICFBamPubTableH extends ICFBamPubScopeH
 {
-	public CFLibDbKeyHash256 getRequiredSchemaDefId();
-	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredSchemaDefId();
+	public void setRequiredSchemaDefId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( MCFDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDbName();
@@ -81,16 +81,16 @@ public interface ICFBamPubTableH extends ICFBamPubScopeH
 	public void setOptionalDescription( String value );
 	public boolean getRequiredPageData();
 	public void setRequiredPageData( boolean value );
-	public CFLibDbKeyHash256 getOptionalPrimaryIndexId();
-	public void setOptionalPrimaryIndexId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalPrimaryIndexId();
+	public void setOptionalPrimaryIndexId( MCFDbKeyHash256 value );
 	public String getRequiredTableClassCode();
 	public void setRequiredTableClassCode( String value );
-	public CFLibDbKeyHash256 getOptionalLookupIndexId();
-	public void setOptionalLookupIndexId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalAltIndexId();
-	public void setOptionalAltIndexId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalQualifyingTableId();
-	public void setOptionalQualifyingTableId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalLookupIndexId();
+	public void setOptionalLookupIndexId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalAltIndexId();
+	public void setOptionalAltIndexId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalQualifyingTableId();
+	public void setOptionalQualifyingTableId( MCFDbKeyHash256 value );
 	public boolean getRequiredIsInstantiable();
 	public void setRequiredIsInstantiable( boolean value );
 	public boolean getRequiredHasHistory();

@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -97,7 +97,7 @@ public class CFBamPubBuffInt32Def
 	@Override
 	public void setOptionalInitValue( Integer value ) {
 		if( value < ICFBamPubInt32Def.INITVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value",
@@ -105,7 +105,7 @@ public class CFBamPubBuffInt32Def
 				ICFBamPubInt32Def.INITVALUE_MIN_VALUE );
 		}
 		if( value > ICFBamPubInt32Def.INITVALUE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value",
@@ -123,7 +123,7 @@ public class CFBamPubBuffInt32Def
 	@Override
 	public void setOptionalMinValue( Integer value ) {
 		if( value < ICFBamPubInt32Def.MINVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalMinValue",
 				1,
 				"value",
@@ -131,7 +131,7 @@ public class CFBamPubBuffInt32Def
 				ICFBamPubInt32Def.MINVALUE_MIN_VALUE );
 		}
 		if( value > ICFBamPubInt32Def.MINVALUE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalMinValue",
 				1,
 				"value",
@@ -149,7 +149,7 @@ public class CFBamPubBuffInt32Def
 	@Override
 	public void setOptionalMaxValue( Integer value ) {
 		if( value < ICFBamPubInt32Def.MAXVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalMaxValue",
 				1,
 				"value",
@@ -157,7 +157,7 @@ public class CFBamPubBuffInt32Def
 				ICFBamPubInt32Def.MAXVALUE_MIN_VALUE );
 		}
 		if( value > ICFBamPubInt32Def.MAXVALUE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalMaxValue",
 				1,
 				"value",
@@ -790,7 +790,7 @@ public class CFBamPubBuffInt32Def
 			setJustPubInt32Def( (CFBamPubBuffInt32Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -812,7 +812,7 @@ public class CFBamPubBuffInt32Def
 			setInt32Def( (ICFBamPubInt32DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -834,7 +834,7 @@ public class CFBamPubBuffInt32Def
 			setJustPubInt32Def( (CFBamPubPubBuffInt32Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -856,7 +856,7 @@ public class CFBamPubBuffInt32Def
 			setInt32Def( (ICFBamPubInt32DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

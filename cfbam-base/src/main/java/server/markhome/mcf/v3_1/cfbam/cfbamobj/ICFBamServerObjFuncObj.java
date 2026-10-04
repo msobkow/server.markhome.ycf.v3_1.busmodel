@@ -107,17 +107,17 @@ public interface ICFBamServerObjFuncObj
 	ICFBamTableObj getOptionalLookupRetTable( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute RetTableId.
+	 *	Get the optional IMCFKeyHash256 attribute RetTableId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute RetTableId.
+	 *	@return	The optional IMCFKeyHash256 attribute RetTableId.
 	 */
-	ICFLibKeyHash256 getOptionalRetTableId();
+	IMCFKeyHash256 getOptionalRetTableId();
 
 }

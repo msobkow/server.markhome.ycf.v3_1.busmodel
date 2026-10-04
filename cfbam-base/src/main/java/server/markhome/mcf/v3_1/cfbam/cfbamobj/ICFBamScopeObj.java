@@ -66,7 +66,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 public interface ICFBamScopeObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamScope.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -140,7 +140,7 @@ public interface ICFBamScopeObj
 	/**
 	 *	End this edition of this Scope instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -254,18 +254,18 @@ public interface ICFBamScopeObj
 	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required IMCFKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required IMCFKeyHash256 attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	IMCFKeyHash256 getRequiredTenantId();
 
 	/**
 	 *	Internal use only.

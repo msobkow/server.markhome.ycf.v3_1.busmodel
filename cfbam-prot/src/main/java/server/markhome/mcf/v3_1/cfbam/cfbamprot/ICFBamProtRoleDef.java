@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -69,15 +69,15 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 public interface ICFBamProtRoleDef
 {
 	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final MCFDbKeyHash256 INIT_CREATED_BY = MCFDbKeyHash256.fromHex(S_INIT_CREATED_BY);
 	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final MCFDbKeyHash256 INIT_UPDATED_BY = MCFDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_SCOPEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 SCOPEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCOPEID_INIT_VALUE );
+	public static final MCFDbKeyHash256 SCOPEID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_SCOPEID_INIT_VALUE );
 	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
+	public static final MCFDbKeyHash256 ID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_ID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DEFSCHEMAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final String ENABLES_INIT_VALUE = new String( "" );
 	public static final String INCLUDES_INIT_VALUE = new String( "" );
@@ -86,32 +86,32 @@ public interface ICFBamProtRoleDef
 
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getCreatedByUserId();
+	public MCFDbKeyHash256 getCreatedByUserId();
 
-	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+	public void setCreatedByUserId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getCreatedAt();
 
 	public void setCreatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getUpdatedByUserId();
+	public MCFDbKeyHash256 getUpdatedByUserId();
 
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+	public void setUpdatedByUserId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getUpdatedAt();
 
 	public void setUpdatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getPKey();
-	public void setPKey(CFLibDbKeyHash256 requiredId);
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 value );
+	public MCFDbKeyHash256 getPKey();
+	public void setPKey(MCFDbKeyHash256 requiredId);
+	public IMCFKeyHash256 getRequiredId();
+	public void setRequiredId( IMCFKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamProtScope getRequiredContainerScopeDef();
 
-	public void setRequiredContainerScopeDef(ICFLibKeyHash256 argScopeId);
+	public void setRequiredContainerScopeDef(IMCFKeyHash256 argScopeId);
 
 
 	public void setRequiredContainerScopeDef(ICFBamProtScope argObj);
@@ -120,17 +120,17 @@ public interface ICFBamProtRoleDef
 
 	public ICFBamProtSchemaDef getOptionalLookupDefSchema();
 
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId);
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId);
 
 
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
 
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 
-	public ICFLibKeyHash256 getRequiredScopeId();
-	public void setRequiredScopeId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredScopeId();
+	public void setRequiredScopeId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getRequiredEnables();

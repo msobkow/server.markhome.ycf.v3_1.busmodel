@@ -102,11 +102,11 @@ public interface ICFBamPubDelSubDep2EditObj
 	List<ICFBamPubDelSubDep3Obj> getOptionalComponentsDelDep();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute DelSubDep1Id.
+	 *	Get the required MCFDbKeyHash256 attribute DelSubDep1Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute DelSubDep1Id.
+	 *	@return	The required MCFDbKeyHash256 attribute DelSubDep1Id.
 	 */
-	CFLibDbKeyHash256 getRequiredDelSubDep1Id();
+	MCFDbKeyHash256 getRequiredDelSubDep1Id();
 
 	/**
 	 *	Get the required String attribute Name.

@@ -108,7 +108,7 @@ public interface ICFBamTableColTable
 	 *	@param	TableId	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId );
+		IMCFKeyHash256 argTableId );
 
 	/**
 	 *	Delete the TableCol instances identified by the key TableIdx.
@@ -127,7 +127,7 @@ public interface ICFBamTableColTable
 	 *	@param	DataId	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByDataIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDataId );
+		IMCFKeyHash256 argDataId );
 
 	/**
 	 *	Delete the TableCol instances identified by the key DataIdx.
@@ -157,7 +157,7 @@ public interface ICFBamTableColTable
 	 *	@param	Name	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -177,7 +177,7 @@ public interface ICFBamTableColTable
 	 *	@param	ScopeId	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the TableCol instances identified by the key ScopeIdx.
@@ -196,7 +196,7 @@ public interface ICFBamTableColTable
 	 *	@param	DefSchemaId	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the TableCol instances identified by the key DefSchemaIdx.
@@ -215,7 +215,7 @@ public interface ICFBamTableColTable
 	 *	@param	PrevId	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TableCol instances identified by the key PrevIdx.
@@ -234,7 +234,7 @@ public interface ICFBamTableColTable
 	 *	@param	NextId	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TableCol instances identified by the key NextIdx.
@@ -255,8 +255,8 @@ public interface ICFBamTableColTable
 	 *	@param	PrevId	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the TableCol instances identified by the key ContPrevIdx.
@@ -277,8 +277,8 @@ public interface ICFBamTableColTable
 	 *	@param	NextId	The TableCol key attribute of the instance generating the id.
 	 */
 	void deleteTableColByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the TableCol instances identified by the key ContNextIdx.
@@ -337,7 +337,7 @@ public interface ICFBamTableColTable
 	 *		no such existing key value.
 	 */
 	ICFBamTableCol readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived TableCol record instance identified by the unique key UNameIdx.
@@ -352,7 +352,7 @@ public interface ICFBamTableColTable
 	 *		no such existing key value.
 	 */
 	ICFBamTableCol readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -365,7 +365,7 @@ public interface ICFBamTableColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableCol[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived TableCol record instances identified by the duplicate key DefSchemaIdx.
@@ -377,7 +377,7 @@ public interface ICFBamTableColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableCol[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived TableCol record instances identified by the duplicate key PrevIdx.
@@ -389,7 +389,7 @@ public interface ICFBamTableColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableCol[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TableCol record instances identified by the duplicate key NextIdx.
@@ -401,7 +401,7 @@ public interface ICFBamTableColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableCol[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TableCol record instances identified by the duplicate key ContPrevIdx.
@@ -415,8 +415,8 @@ public interface ICFBamTableColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableCol[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived TableCol record instances identified by the duplicate key ContNextIdx.
@@ -430,8 +430,8 @@ public interface ICFBamTableColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableCol[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived TableCol record instances identified by the duplicate key TableIdx.
@@ -443,7 +443,7 @@ public interface ICFBamTableColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableCol[] readDerivedByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the derived TableCol record instances identified by the duplicate key DataIdx.
@@ -455,7 +455,7 @@ public interface ICFBamTableColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamTableCol[] readDerivedByDataIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DataId );
+		IMCFKeyHash256 DataId );
 
 	/**
 	 *	Read the specific TableCol record instance identified by the primary key.
@@ -467,7 +467,7 @@ public interface ICFBamTableColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -482,7 +482,7 @@ public interface ICFBamTableColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -506,10 +506,10 @@ public interface ICFBamTableColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific TableCol record instance identified by the unique key UNameIdx.
@@ -523,10 +523,10 @@ public interface ICFBamTableColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -538,10 +538,10 @@ public interface ICFBamTableColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific TableCol record instances identified by the duplicate key DefSchemaIdx.
@@ -552,10 +552,10 @@ public interface ICFBamTableColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific TableCol record instances identified by the duplicate key PrevIdx.
@@ -566,10 +566,10 @@ public interface ICFBamTableColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TableCol record instances identified by the duplicate key NextIdx.
@@ -580,10 +580,10 @@ public interface ICFBamTableColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TableCol record instances identified by the duplicate key ContPrevIdx.
@@ -596,11 +596,11 @@ public interface ICFBamTableColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific TableCol record instances identified by the duplicate key ContNextIdx.
@@ -613,11 +613,11 @@ public interface ICFBamTableColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific TableCol record instances identified by the duplicate key TableIdx.
@@ -628,10 +628,10 @@ public interface ICFBamTableColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol[] readRecByTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TableId );
+		IMCFKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the specific TableCol record instances identified by the duplicate key DataIdx.
@@ -642,10 +642,10 @@ public interface ICFBamTableColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamTableCol[] readRecByDataIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DataId );
+		IMCFKeyHash256 DataId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -653,7 +653,7 @@ public interface ICFBamTableColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamTableCol moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -662,6 +662,6 @@ public interface ICFBamTableColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamTableCol moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

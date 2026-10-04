@@ -138,7 +138,7 @@ public interface ICFBamSecTentGrpObj
 	/**
 	 *	End this edition of this SecTentGrp instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -264,18 +264,18 @@ public interface ICFBamSecTentGrpObj
 	List<ICFSecSecTentGrpMembObj> getOptionalChildrenMembByGrp( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecTentGrpId.
+	 *	Get the required IMCFKeyHash256 attribute SecTentGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecTentGrpId.
+	 *	@return	The required IMCFKeyHash256 attribute SecTentGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecTentGrpId();
+	IMCFKeyHash256 getRequiredSecTentGrpId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required IMCFKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required IMCFKeyHash256 attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	IMCFKeyHash256 getRequiredTenantId();
 
 	/**
 	 *	Get the required String attribute Name.

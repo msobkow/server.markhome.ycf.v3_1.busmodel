@@ -65,7 +65,7 @@ import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 
 public interface ICFBamProtParamObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamProtParam.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -153,7 +153,7 @@ public interface ICFBamProtParamObj
 	/**
 	 *	End this edition of this Param instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -222,18 +222,18 @@ public interface ICFBamProtParamObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	CFLibDbKeyHash256 primary key for this instance.
+	 *	@return	MCFDbKeyHash256 primary key for this instance.
 	 */
-	CFLibDbKeyHash256 getPKey();
+	MCFDbKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param CFLibDbKeyHash256 primary key value for this instance.
+	 *	@param MCFDbKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( CFLibDbKeyHash256 value );
+	void setPKey( MCFDbKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -323,25 +323,25 @@ public interface ICFBamProtParamObj
 	ICFBamProtValueObj getRequiredLookupType( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ServerMethodId.
+	 *	Get the required IMCFKeyHash256 attribute ServerMethodId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ServerMethodId.
+	 *	@return	The required IMCFKeyHash256 attribute ServerMethodId.
 	 */
-	ICFLibKeyHash256 getRequiredServerMethodId();
+	IMCFKeyHash256 getRequiredServerMethodId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -372,25 +372,25 @@ public interface ICFBamProtParamObj
 	boolean getRequiredIsNullable();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute TypeId.
+	 *	Get the optional MCFDbKeyHash256 attribute TypeId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute TypeId.
+	 *	@return	The optional MCFDbKeyHash256 attribute TypeId.
 	 */
-	CFLibDbKeyHash256 getOptionalTypeId();
+	MCFDbKeyHash256 getOptionalTypeId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrevId.
+	 *	Get the optional MCFDbKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrevId.
+	 *	@return	The optional MCFDbKeyHash256 attribute PrevId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrevId();
+	MCFDbKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NextId.
+	 *	Get the optional MCFDbKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NextId.
+	 *	@return	The optional MCFDbKeyHash256 attribute NextId.
 	 */
-	CFLibDbKeyHash256 getOptionalNextId();
+	MCFDbKeyHash256 getOptionalNextId();
 
 	/**
 	 *	Internal use only.

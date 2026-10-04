@@ -95,10 +95,10 @@ public interface ICFBamPubTZTimestampTypeEditObj
 	void setRequiredContainerSchemaDef( ICFBamPubSchemaDefObj value );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SchemaDefId.
+	 *	Get the required MCFDbKeyHash256 attribute SchemaDefId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SchemaDefId.
+	 *	@return	The required MCFDbKeyHash256 attribute SchemaDefId.
 	 */
-	CFLibDbKeyHash256 getRequiredSchemaDefId();
+	MCFDbKeyHash256 getRequiredSchemaDefId();
 
 }

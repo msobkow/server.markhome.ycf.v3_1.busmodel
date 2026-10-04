@@ -111,7 +111,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@param	DelSubDep2Id	The DelSubDep3 key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDelSubDep3ByDelSubDep2Idx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDelSubDep2Id );
+		MCFDbKeyHash256 argDelSubDep2Id );
 
 	/**
 	 *	Delete the DelSubDep3 instances identified by the key DelSubDep2Idx.
@@ -132,7 +132,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@param	Name	The DelSubDep3 key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDelSubDep3ByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDelSubDep2Id,
+		MCFDbKeyHash256 argDelSubDep2Id,
 		String argName );
 
 	/**
@@ -152,7 +152,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@param	DefSchemaId	The DelSubDep3 key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDelSubDep3ByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the DelSubDep3 instances identified by the key DefSchemaIdx.
@@ -171,7 +171,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@param	RelationId	The DelSubDep3 key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDelSubDep3ByDelDepIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argRelationId );
+		MCFDbKeyHash256 argRelationId );
 
 	/**
 	 *	Delete the DelSubDep3 instances identified by the key DelDepIdx.
@@ -190,7 +190,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteDelSubDep3ByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the DelSubDep3 instances identified by the key TenantIdx.
 	 *
@@ -199,7 +199,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@param	TenantId	The DelSubDep3 key attribute of the instance generating the id.
 	 */
 	public void pubdeleteDelSubDep3ByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		MCFDbKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the DelSubDep3 instances identified by the key TenantIdx.
@@ -223,7 +223,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDelSubDep3 pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived DelSubDep3 record instance by primary key.
@@ -236,7 +236,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDelSubDep3 publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all DelSubDep3 instances.
@@ -258,7 +258,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDelSubDep3 pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived DelSubDep3 record instances identified by the duplicate key TenantIdx.
@@ -270,7 +270,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDelSubDep3[] pubreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived DelSubDep3 record instances identified by the duplicate key DefSchemaIdx.
@@ -282,7 +282,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDelSubDep3[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived DelSubDep3 record instances identified by the duplicate key DelDepIdx.
@@ -294,7 +294,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDelSubDep3[] pubreadDerivedByDelDepIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 RelationId );
+		MCFDbKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the derived DelSubDep3 record instances identified by the duplicate key DelSubDep2Idx.
@@ -306,7 +306,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubDelSubDep3[] pubreadDerivedByDelSubDep2Idx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DelSubDep2Id );
+		MCFDbKeyHash256 DelSubDep2Id );
 
 	/**
 	 *	Read the derived DelSubDep3 record instance identified by the unique key UNameIdx.
@@ -321,7 +321,7 @@ public interface ICFBamPubDelSubDep3Table
 	 *		no such existing key value.
 	 */
 	public ICFBamPubDelSubDep3 pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DelSubDep2Id,
+		MCFDbKeyHash256 DelSubDep2Id,
 		String Name );
 
 	/**
@@ -334,10 +334,10 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3 pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific DelSubDep3 record instance identified by the primary key.
@@ -349,10 +349,10 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3 publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific DelSubDep3 record instances.
@@ -373,10 +373,10 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3 pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific DelSubDep3 record instances identified by the duplicate key TenantIdx.
@@ -387,10 +387,10 @@ public interface ICFBamPubDelSubDep3Table
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3[] pubreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific DelSubDep3 record instances identified by the duplicate key DefSchemaIdx.
@@ -401,10 +401,10 @@ public interface ICFBamPubDelSubDep3Table
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific DelSubDep3 record instances identified by the duplicate key DelDepIdx.
@@ -415,10 +415,10 @@ public interface ICFBamPubDelSubDep3Table
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3[] pubreadRecByDelDepIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 RelationId );
+		MCFDbKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the specific DelSubDep3 record instances identified by the duplicate key DelSubDep2Idx.
@@ -429,10 +429,10 @@ public interface ICFBamPubDelSubDep3Table
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3[] pubreadRecByDelSubDep2Idx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DelSubDep2Id );
+		MCFDbKeyHash256 DelSubDep2Id );
 
 	/**
 	 *	Read the specific DelSubDep3 record instance identified by the unique key UNameIdx.
@@ -446,9 +446,9 @@ public interface ICFBamPubDelSubDep3Table
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubDelSubDep3 pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DelSubDep2Id,
+		MCFDbKeyHash256 DelSubDep2Id,
 		String Name );
 }

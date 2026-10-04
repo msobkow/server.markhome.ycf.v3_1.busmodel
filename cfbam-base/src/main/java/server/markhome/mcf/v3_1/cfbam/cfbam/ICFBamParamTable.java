@@ -119,7 +119,7 @@ public interface ICFBamParamTable
 	 *	@param	Name	The Param key attribute of the instance generating the id.
 	 */
 	void deleteParamByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argServerMethodId,
+		IMCFKeyHash256 argServerMethodId,
 		String argName );
 
 	/**
@@ -139,7 +139,7 @@ public interface ICFBamParamTable
 	 *	@param	ServerMethodId	The Param key attribute of the instance generating the id.
 	 */
 	void deleteParamByServerMethodIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argServerMethodId );
+		IMCFKeyHash256 argServerMethodId );
 
 	/**
 	 *	Delete the Param instances identified by the key ServerMethodIdx.
@@ -158,7 +158,7 @@ public interface ICFBamParamTable
 	 *	@param	DefSchemaId	The Param key attribute of the instance generating the id.
 	 */
 	void deleteParamByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Param instances identified by the key DefSchemaIdx.
@@ -177,7 +177,7 @@ public interface ICFBamParamTable
 	 *	@param	TypeId	The Param key attribute of the instance generating the id.
 	 */
 	void deleteParamByServerTypeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTypeId );
+		IMCFKeyHash256 argTypeId );
 
 	/**
 	 *	Delete the Param instances identified by the key ServerTypeIdx.
@@ -196,7 +196,7 @@ public interface ICFBamParamTable
 	 *	@param	PrevId	The Param key attribute of the instance generating the id.
 	 */
 	void deleteParamByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the Param instances identified by the key PrevIdx.
@@ -215,7 +215,7 @@ public interface ICFBamParamTable
 	 *	@param	NextId	The Param key attribute of the instance generating the id.
 	 */
 	void deleteParamByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the Param instances identified by the key NextIdx.
@@ -236,8 +236,8 @@ public interface ICFBamParamTable
 	 *	@param	PrevId	The Param key attribute of the instance generating the id.
 	 */
 	void deleteParamByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argServerMethodId,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argServerMethodId,
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the Param instances identified by the key ContPrevIdx.
@@ -258,8 +258,8 @@ public interface ICFBamParamTable
 	 *	@param	NextId	The Param key attribute of the instance generating the id.
 	 */
 	void deleteParamByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argServerMethodId,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argServerMethodId,
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the Param instances identified by the key ContNextIdx.
@@ -318,7 +318,7 @@ public interface ICFBamParamTable
 	 *		no such existing key value.
 	 */
 	ICFBamParam readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived Param record instance identified by the unique key UNameIdx.
@@ -333,7 +333,7 @@ public interface ICFBamParamTable
 	 *		no such existing key value.
 	 */
 	ICFBamParam readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
+		IMCFKeyHash256 ServerMethodId,
 		String Name );
 
 	/**
@@ -346,7 +346,7 @@ public interface ICFBamParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamParam[] readDerivedByServerMethodIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId );
+		IMCFKeyHash256 ServerMethodId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key DefSchemaIdx.
@@ -358,7 +358,7 @@ public interface ICFBamParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamParam[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key ServerTypeIdx.
@@ -370,7 +370,7 @@ public interface ICFBamParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamParam[] readDerivedByServerTypeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TypeId );
+		IMCFKeyHash256 TypeId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key PrevIdx.
@@ -382,7 +382,7 @@ public interface ICFBamParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamParam[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key NextIdx.
@@ -394,7 +394,7 @@ public interface ICFBamParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamParam[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key ContPrevIdx.
@@ -408,8 +408,8 @@ public interface ICFBamParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamParam[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived Param record instances identified by the duplicate key ContNextIdx.
@@ -423,8 +423,8 @@ public interface ICFBamParamTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamParam[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read the specific Param record instance identified by the primary key.
@@ -436,7 +436,7 @@ public interface ICFBamParamTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -451,7 +451,7 @@ public interface ICFBamParamTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -475,10 +475,10 @@ public interface ICFBamParamTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific Param record instance identified by the unique key UNameIdx.
@@ -492,10 +492,10 @@ public interface ICFBamParamTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
+		IMCFKeyHash256 ServerMethodId,
 		String Name );
 
 	/**
@@ -507,10 +507,10 @@ public interface ICFBamParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam[] readRecByServerMethodIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId );
+		IMCFKeyHash256 ServerMethodId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key DefSchemaIdx.
@@ -521,10 +521,10 @@ public interface ICFBamParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key ServerTypeIdx.
@@ -535,10 +535,10 @@ public interface ICFBamParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam[] readRecByServerTypeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 TypeId );
+		IMCFKeyHash256 TypeId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key PrevIdx.
@@ -549,10 +549,10 @@ public interface ICFBamParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key NextIdx.
@@ -563,10 +563,10 @@ public interface ICFBamParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key ContPrevIdx.
@@ -579,11 +579,11 @@ public interface ICFBamParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific Param record instances identified by the duplicate key ContNextIdx.
@@ -596,11 +596,11 @@ public interface ICFBamParamTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamParam[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -608,7 +608,7 @@ public interface ICFBamParamTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamParam moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -617,6 +617,6 @@ public interface ICFBamParamTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamParam moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

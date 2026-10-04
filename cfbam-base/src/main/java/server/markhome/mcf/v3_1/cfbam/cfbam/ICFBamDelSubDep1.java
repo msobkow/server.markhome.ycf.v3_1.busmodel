@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -65,14 +65,14 @@ public interface ICFBamDelSubDep1
 	extends ICFBamDelDep
 {
 	public static final String S_DELTOPDEPID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DELTOPDEPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DELTOPDEPID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DELTOPDEPID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DELTOPDEPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa81c;
 	public final static String S_CLASS_CODE = "a81c";
 
 	public ICFBamDelTopDep getRequiredContainerDelTopDep();
 
-	public void setRequiredContainerDelTopDep(ICFLibKeyHash256 argDelTopDepId);
+	public void setRequiredContainerDelTopDep(IMCFKeyHash256 argDelTopDepId);
 
 	public void setRequiredContainerDelTopDep(ICFBamDelTopDep argObj);
 
@@ -82,8 +82,8 @@ public interface ICFBamDelSubDep1
 
 	public List<ICFBamDelSubDep2> getOptionalComponentsDelDep();
 
-	public ICFLibKeyHash256 getRequiredDelTopDepId();
-	public void setRequiredDelTopDepId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredDelTopDepId();
+	public void setRequiredDelTopDepId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -65,14 +65,14 @@ public interface ICFBamPopSubDep3
 	extends ICFBamPopDep
 {
 	public static final String S_POPSUBDEP2ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 POPSUBDEP2ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_POPSUBDEP2ID_INIT_VALUE );
+	public static final MCFDbKeyHash256 POPSUBDEP2ID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_POPSUBDEP2ID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa837;
 	public final static String S_CLASS_CODE = "a837";
 
 	public ICFBamPopSubDep2 getRequiredContainerPopSubDep2();
 
-	public void setRequiredContainerPopSubDep2(ICFLibKeyHash256 argPopSubDep2Id);
+	public void setRequiredContainerPopSubDep2(IMCFKeyHash256 argPopSubDep2Id);
 
 	public void setRequiredContainerPopSubDep2(ICFBamPopSubDep2 argObj);
 
@@ -80,8 +80,8 @@ public interface ICFBamPopSubDep3
 
 	public void setRequiredContainerPopSubDep2(ICFBamPubPopSubDep2 argObj);
 
-	public ICFLibKeyHash256 getRequiredPopSubDep2Id();
-	public void setRequiredPopSubDep2Id( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredPopSubDep2Id();
+	public void setRequiredPopSubDep2Id( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

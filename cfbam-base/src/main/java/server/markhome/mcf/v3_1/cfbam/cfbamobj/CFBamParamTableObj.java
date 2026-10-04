@@ -158,7 +158,7 @@ public class CFBamParamTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamParamTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamParamTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -722,7 +722,7 @@ public class CFBamParamTableObj
 			locked = (ICFBamParamObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockParam", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockParam", pkey );
 		}
 		return( locked );
 	}
@@ -757,7 +757,7 @@ public class CFBamParamTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -765,7 +765,7 @@ public class CFBamParamTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -817,7 +817,7 @@ public class CFBamParamTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -825,7 +825,7 @@ public class CFBamParamTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -862,21 +862,21 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public ICFBamParamObj readParamByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamParamObj readParamByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readParamByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamParamObj readParamByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamParamObj readParamByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamParamObj obj = readParam( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamParamObj readParamByUNameIdx( ICFLibKeyHash256 ServerMethodId,
+	public ICFBamParamObj readParamByUNameIdx( IMCFKeyHash256 ServerMethodId,
 		String Name )
 	{
 		return( readParamByUNameIdx( ServerMethodId,
@@ -885,7 +885,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public ICFBamParamObj readParamByUNameIdx( ICFLibKeyHash256 ServerMethodId,
+	public ICFBamParamObj readParamByUNameIdx( IMCFKeyHash256 ServerMethodId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -914,14 +914,14 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByServerMethodIdx( ICFLibKeyHash256 ServerMethodId )
+	public List<ICFBamParamObj> readParamByServerMethodIdx( IMCFKeyHash256 ServerMethodId )
 	{
 		return( readParamByServerMethodIdx( ServerMethodId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByServerMethodIdx( ICFLibKeyHash256 ServerMethodId,
+	public List<ICFBamParamObj> readParamByServerMethodIdx( IMCFKeyHash256 ServerMethodId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByServerMethodIdx";
@@ -959,7 +959,7 @@ public class CFBamParamTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -967,7 +967,7 @@ public class CFBamParamTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1007,14 +1007,14 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamParamObj> readParamByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readParamByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamParamObj> readParamByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByDefSchemaIdx";
@@ -1052,7 +1052,7 @@ public class CFBamParamTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1060,7 +1060,7 @@ public class CFBamParamTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1100,14 +1100,14 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByServerTypeIdx( ICFLibKeyHash256 TypeId )
+	public List<ICFBamParamObj> readParamByServerTypeIdx( IMCFKeyHash256 TypeId )
 	{
 		return( readParamByServerTypeIdx( TypeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByServerTypeIdx( ICFLibKeyHash256 TypeId,
+	public List<ICFBamParamObj> readParamByServerTypeIdx( IMCFKeyHash256 TypeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByServerTypeIdx";
@@ -1145,7 +1145,7 @@ public class CFBamParamTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1153,7 +1153,7 @@ public class CFBamParamTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1193,14 +1193,14 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamParamObj> readParamByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readParamByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamParamObj> readParamByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByPrevIdx";
@@ -1238,7 +1238,7 @@ public class CFBamParamTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1246,7 +1246,7 @@ public class CFBamParamTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1286,14 +1286,14 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamParamObj> readParamByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readParamByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamParamObj> readParamByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByNextIdx";
@@ -1331,7 +1331,7 @@ public class CFBamParamTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1339,7 +1339,7 @@ public class CFBamParamTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1379,8 +1379,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByContPrevIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamParamObj> readParamByContPrevIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readParamByContPrevIdx( ServerMethodId,
 			PrevId,
@@ -1388,8 +1388,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByContPrevIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamParamObj> readParamByContPrevIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByContPrevIdx";
@@ -1429,7 +1429,7 @@ public class CFBamParamTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1437,7 +1437,7 @@ public class CFBamParamTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1477,8 +1477,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByContNextIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamParamObj> readParamByContNextIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readParamByContNextIdx( ServerMethodId,
 			NextId,
@@ -1486,8 +1486,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readParamByContNextIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamParamObj> readParamByContNextIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByContNextIdx";
@@ -1527,7 +1527,7 @@ public class CFBamParamTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1535,7 +1535,7 @@ public class CFBamParamTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1575,7 +1575,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public ICFBamParamObj readCachedParamByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamParamObj readCachedParamByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamParamObj obj = null;
 		obj = readCachedParam( Id );
@@ -1583,7 +1583,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public ICFBamParamObj readCachedParamByUNameIdx( ICFLibKeyHash256 ServerMethodId,
+	public ICFBamParamObj readCachedParamByUNameIdx( IMCFKeyHash256 ServerMethodId,
 		String Name )
 	{
 		ICFBamParamObj obj = null;
@@ -1621,7 +1621,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readCachedParamByServerMethodIdx( ICFLibKeyHash256 ServerMethodId )
+	public List<ICFBamParamObj> readCachedParamByServerMethodIdx( IMCFKeyHash256 ServerMethodId )
 	{
 		final String S_ProcName = "readCachedParamByServerMethodIdx";
 		ICFBamParamByServerMethodIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
@@ -1639,7 +1639,7 @@ public class CFBamParamTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1647,7 +1647,7 @@ public class CFBamParamTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1698,7 +1698,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readCachedParamByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamParamObj> readCachedParamByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedParamByDefSchemaIdx";
 		ICFBamParamByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
@@ -1716,7 +1716,7 @@ public class CFBamParamTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1724,7 +1724,7 @@ public class CFBamParamTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1775,7 +1775,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readCachedParamByServerTypeIdx( ICFLibKeyHash256 TypeId )
+	public List<ICFBamParamObj> readCachedParamByServerTypeIdx( IMCFKeyHash256 TypeId )
 	{
 		final String S_ProcName = "readCachedParamByServerTypeIdx";
 		ICFBamParamByServerTypeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
@@ -1793,7 +1793,7 @@ public class CFBamParamTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1801,7 +1801,7 @@ public class CFBamParamTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1852,7 +1852,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readCachedParamByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamParamObj> readCachedParamByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedParamByPrevIdx";
 		ICFBamParamByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
@@ -1870,7 +1870,7 @@ public class CFBamParamTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1878,7 +1878,7 @@ public class CFBamParamTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1929,7 +1929,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readCachedParamByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamParamObj> readCachedParamByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedParamByNextIdx";
 		ICFBamParamByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
@@ -1947,7 +1947,7 @@ public class CFBamParamTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1955,7 +1955,7 @@ public class CFBamParamTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2006,8 +2006,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readCachedParamByContPrevIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamParamObj> readCachedParamByContPrevIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedParamByContPrevIdx";
 		ICFBamParamByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
@@ -2026,7 +2026,7 @@ public class CFBamParamTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2034,7 +2034,7 @@ public class CFBamParamTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2085,8 +2085,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public List<ICFBamParamObj> readCachedParamByContNextIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamParamObj> readCachedParamByContNextIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedParamByContNextIdx";
 		ICFBamParamByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
@@ -2105,7 +2105,7 @@ public class CFBamParamTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2113,7 +2113,7 @@ public class CFBamParamTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2164,7 +2164,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeParamByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamParamObj obj = readCachedParamByIdIdx( Id );
 		if( obj != null ) {
@@ -2173,7 +2173,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByUNameIdx( ICFLibKeyHash256 ServerMethodId,
+	public void deepDisposeParamByUNameIdx( IMCFKeyHash256 ServerMethodId,
 		String Name )
 	{
 		ICFBamParamObj obj = readCachedParamByUNameIdx( ServerMethodId,
@@ -2184,7 +2184,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByServerMethodIdx( ICFLibKeyHash256 ServerMethodId )
+	public void deepDisposeParamByServerMethodIdx( IMCFKeyHash256 ServerMethodId )
 	{
 		final String S_ProcName = "deepDisposeParamByServerMethodIdx";
 		ICFBamParamObj obj;
@@ -2201,7 +2201,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeParamByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeParamByDefSchemaIdx";
 		ICFBamParamObj obj;
@@ -2218,7 +2218,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByServerTypeIdx( ICFLibKeyHash256 TypeId )
+	public void deepDisposeParamByServerTypeIdx( IMCFKeyHash256 TypeId )
 	{
 		final String S_ProcName = "deepDisposeParamByServerTypeIdx";
 		ICFBamParamObj obj;
@@ -2235,7 +2235,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeParamByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeParamByPrevIdx";
 		ICFBamParamObj obj;
@@ -2252,7 +2252,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeParamByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeParamByNextIdx";
 		ICFBamParamObj obj;
@@ -2269,8 +2269,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByContPrevIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeParamByContPrevIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeParamByContPrevIdx";
 		ICFBamParamObj obj;
@@ -2288,8 +2288,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deepDisposeParamByContNextIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeParamByContNextIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeParamByContNextIdx";
 		ICFBamParamObj obj;
@@ -2333,7 +2333,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteParamByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamParamObj obj = readParam(Id);
 		if( obj != null ) {
@@ -2363,7 +2363,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByUNameIdx( ICFLibKeyHash256 ServerMethodId,
+	public void deleteParamByUNameIdx( IMCFKeyHash256 ServerMethodId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2391,7 +2391,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByServerMethodIdx( ICFLibKeyHash256 ServerMethodId )
+	public void deleteParamByServerMethodIdx( IMCFKeyHash256 ServerMethodId )
 	{
 		ICFBamParamByServerMethodIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
@@ -2425,7 +2425,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteParamByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamParamByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2459,7 +2459,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByServerTypeIdx( ICFLibKeyHash256 TypeId )
+	public void deleteParamByServerTypeIdx( IMCFKeyHash256 TypeId )
 	{
 		ICFBamParamByServerTypeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
 		key.setOptionalTypeId( TypeId );
@@ -2493,7 +2493,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteParamByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamParamByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2527,7 +2527,7 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteParamByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamParamByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2561,8 +2561,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByContPrevIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteParamByContPrevIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamParamByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
@@ -2600,8 +2600,8 @@ public class CFBamParamTableObj
 	}
 
 	@Override
-	public void deleteParamByContNextIdx( ICFLibKeyHash256 ServerMethodId,
-		ICFLibKeyHash256 NextId )
+	public void deleteParamByContNextIdx( IMCFKeyHash256 ServerMethodId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamParamByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
@@ -2647,7 +2647,7 @@ public class CFBamParamTableObj
 	public ICFBamParamObj moveUpParam( ICFBamParamObj Obj ) {
 		ICFBamParamObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpParam" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpParam" );
 		}
 		ICFBamParam rec = schema.getCFBamBackingStore().getTableParam().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2675,7 +2675,7 @@ public class CFBamParamTableObj
 	public ICFBamParamObj moveDownParam( ICFBamParamObj Obj ) {
 		ICFBamParamObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownParam" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownParam" );
 		}
 		ICFBamParam rec = schema.getCFBamBackingStore().getTableParam().moveRecDown( null,
 			Obj.getRequiredId(),

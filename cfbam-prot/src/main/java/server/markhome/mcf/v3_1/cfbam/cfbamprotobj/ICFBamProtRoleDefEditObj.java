@@ -173,32 +173,32 @@ public interface ICFBamProtRoleDefEditObj
 	void setOptionalLookupDefSchema( ICFBamProtSchemaDefObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ScopeId.
+	 *	Get the required IMCFKeyHash256 attribute ScopeId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ScopeId.
+	 *	@return	The required IMCFKeyHash256 attribute ScopeId.
 	 */
-	ICFLibKeyHash256 getRequiredScopeId();
+	IMCFKeyHash256 getRequiredScopeId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required IMCFKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId(IMCFKeyHash256 value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.

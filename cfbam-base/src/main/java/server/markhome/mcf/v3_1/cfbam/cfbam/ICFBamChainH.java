@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -71,33 +71,33 @@ public interface ICFBamChainH
 {
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getCreatedByUserId();
-	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getCreatedByUserId();
+	public void setCreatedByUserId( MCFDbKeyHash256 value );
 	public LocalDateTime getCreatedAt();
 	public void setCreatedAt( LocalDateTime value );
-	public CFLibDbKeyHash256 getUpdatedByUserId();
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getUpdatedByUserId();
+	public void setUpdatedByUserId( MCFDbKeyHash256 value );
 	public LocalDateTime getUpdatedAt();
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFBamChainHPKey getPKey();
 	public void setPKey( ICFBamChainHPKey pkey );
-	public CFLibDbKeyHash256 getAuditClusterId();
-	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
+	public MCFDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(MCFDbKeyHash256 auditClusterId);
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp(LocalDateTime auditStamp);
 	public short getAuditActionId();
 	public void setAuditActionId(short auditActionId);
 	public int getRequiredRevision();
 	public void setRequiredRevision(int revision);
-	public CFLibDbKeyHash256 getAuditSessionId();
-	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
+	public MCFDbKeyHash256 getAuditSessionId();
+	public void setAuditSessionId(MCFDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 requiredId );
+	public IMCFKeyHash256 getRequiredId();
+	public void setRequiredId( IMCFKeyHash256 requiredId );
 
-	public ICFLibKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -108,14 +108,14 @@ public interface ICFBamChainH
 	public void setOptionalShortDescription( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	public ICFLibKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( IMCFKeyHash256 value );
 	public String getOptionalSuffix();
 	public void setOptionalSuffix( String value );
-	public ICFLibKeyHash256 getRequiredPrevRelationId();
-	public void setRequiredPrevRelationId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredNextRelationId();
-	public void setRequiredNextRelationId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredPrevRelationId();
+	public void setRequiredPrevRelationId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getRequiredNextRelationId();
+	public void setRequiredNextRelationId( IMCFKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -138,7 +138,7 @@ public interface ICFBamSecSysGrpMembObj
 	/**
 	 *	End this edition of this SecSysGrpMemb instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -250,11 +250,11 @@ public interface ICFBamSecSysGrpMembObj
 	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	Get the required IMCFKeyHash256 attribute SecSysGrpId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecSysGrpId.
+	 *	@return	The required IMCFKeyHash256 attribute SecSysGrpId.
 	 */
-	ICFLibKeyHash256 getRequiredSecSysGrpId();
+	IMCFKeyHash256 getRequiredSecSysGrpId();
 
 	/**
 	 *	Get the required String attribute LoginId.

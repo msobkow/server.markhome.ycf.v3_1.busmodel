@@ -53,7 +53,7 @@ import jakarta.persistence.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,10 +94,10 @@ public class CFBamJpaPopSubDep3Service {
 		if (data == null) {
 			return( null );
 		}
-		ICFLibKeyHash256 originalRequiredId = data.getRequiredId();
+		IMCFKeyHash256 originalRequiredId = data.getRequiredId();
 		boolean generatedRequiredId = false;
 		if (data.getRequiredOwnerTenant() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Owner",
 				"Owner",
@@ -108,13 +108,13 @@ public class CFBamJpaPopSubDep3Service {
 				null);
 		}
 		if(data.getRequiredTenantId() == null || data.getRequiredTenantId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTenantId");
 		}
 		if (data.getRequiredLookupRelation() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Lookup",
 				"Lookup",
@@ -125,13 +125,13 @@ public class CFBamJpaPopSubDep3Service {
 				null);
 		}
 		if(data.getRequiredRelationId() == null || data.getRequiredRelationId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredRelationId");
 		}
 		if (data.getRequiredContainerPopSubDep2() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -142,13 +142,13 @@ public class CFBamJpaPopSubDep3Service {
 				null);
 		}
 		if(data.getRequiredPopSubDep2Id() == null || data.getRequiredPopSubDep2Id().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredPopSubDep2Id");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
@@ -161,7 +161,7 @@ public class CFBamJpaPopSubDep3Service {
 				data.setRequiredRevision(1);
 			}
 			if (data.getRequiredId() == null || data.getRequiredId().isNull()) {
-				data.setRequiredId(new CFLibDbKeyHash256(0));
+				data.setRequiredId(new MCFDbKeyHash256(0));
 				generatedRequiredId = true;
 			}
 			LocalDateTime now = LocalDateTime.now();
@@ -173,7 +173,7 @@ public class CFBamJpaPopSubDep3Service {
 				if(generatedRequiredId) {
 					data.setRequiredId(originalRequiredId);
 				}
-			throw new CFLibDbException(getClass(),
+			throw new MCFDbException(getClass(),
 				S_ProcName,
 				ex);
 		}
@@ -193,13 +193,13 @@ public class CFBamJpaPopSubDep3Service {
 			return( null );
 		}
 		if (data.getPKey() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.getPKey()");
 		}
 		if (data.getRequiredOwnerTenant() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Owner",
 				"Owner",
@@ -210,13 +210,13 @@ public class CFBamJpaPopSubDep3Service {
 				null);
 		}
 		if(data.getRequiredTenantId() == null || data.getRequiredTenantId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredTenantId");
 		}
 		if (data.getRequiredLookupRelation() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Lookup",
 				"Lookup",
@@ -227,13 +227,13 @@ public class CFBamJpaPopSubDep3Service {
 				null);
 		}
 		if(data.getRequiredRelationId() == null || data.getRequiredRelationId().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredRelationId");
 		}
 		if (data.getRequiredContainerPopSubDep2() == null) {
-			throw new CFLibUnresolvedRelationException(getClass(),
+			throw new MCFUnresolvedRelationException(getClass(),
 				S_ProcName,
 				"Container",
 				"Container",
@@ -244,22 +244,22 @@ public class CFBamJpaPopSubDep3Service {
 				null);
 		}
 		if(data.getRequiredPopSubDep2Id() == null || data.getRequiredPopSubDep2Id().isNull()) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredPopSubDep2Id");
 		}
 		if(data.getRequiredName() == null) {
-			throw new CFLibNullArgumentException(getClass(),
+			throw new MCFNullArgumentException(getClass(),
 				S_ProcName,
 				0,
 				"data.requiredName");
 		}
 		// Ensure the entity exists and that the revision matches
 		CFBamJpaPopSubDep3 existing = cfbam31PopSubDep3Repository.findById(($implCommaIJavaOptAtomType$)(data.getPKey()))
-			.orElseThrow(() -> new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
+			.orElseThrow(() -> new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey()));
 		if (existing.getRequiredRevision() != data.getRequiredRevision()) {
-			throw new CFLibCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
+			throw new MCFCollisionDetectedException(getClass(), S_ProcName, data.getPKey());
 		}
 		// Apply superior data relationships of CFBamScope to existing object
 		existing.setRequiredOwnerTenant(data.getRequiredTenantId());
@@ -290,7 +290,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return The retrieved entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaPopSubDep3 find(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaPopSubDep3 find(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31PopSubDep3Repository.get(requiredId));
 	}
 
@@ -314,7 +314,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return List&lt;CFBamJpaPopSubDep3&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaPopSubDep3> findByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public List<CFBamJpaPopSubDep3> findByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		return( cfbam31PopSubDep3Repository.findByTenantIdx(requiredTenantId));
 	}
 
@@ -340,7 +340,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return List&lt;CFBamJpaPopSubDep3&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaPopSubDep3> findByRelationIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId) {
+	public List<CFBamJpaPopSubDep3> findByRelationIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId) {
 		return( cfbam31PopSubDep3Repository.findByRelationIdx(requiredRelationId));
 	}
 
@@ -364,7 +364,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return List&lt;CFBamJpaPopSubDep3&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaPopSubDep3> findByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaPopSubDep3> findByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31PopSubDep3Repository.findByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -390,7 +390,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return List&lt;CFBamJpaPopSubDep3&gt; of the found entities, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaPopSubDep3> findByPopSubDep2Idx(@Param("popSubDep2Id") ICFLibKeyHash256 requiredPopSubDep2Id) {
+	public List<CFBamJpaPopSubDep3> findByPopSubDep2Idx(@Param("popSubDep2Id") IMCFKeyHash256 requiredPopSubDep2Id) {
 		return( cfbam31PopSubDep3Repository.findByPopSubDep2Idx(requiredPopSubDep2Id));
 	}
 
@@ -415,7 +415,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return The found entity, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaPopSubDep3 findByUNameIdx(@Param("popSubDep2Id") ICFLibKeyHash256 requiredPopSubDep2Id,
+	public CFBamJpaPopSubDep3 findByUNameIdx(@Param("popSubDep2Id") IMCFKeyHash256 requiredPopSubDep2Id,
 		@Param("name") String requiredName) {
 		return( cfbam31PopSubDep3Repository.findByUNameIdx(requiredPopSubDep2Id,
 			requiredName));
@@ -443,7 +443,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaPopSubDep3 lockByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public CFBamJpaPopSubDep3 lockByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		return( cfbam31PopSubDep3Repository.lockByIdIdx(requiredId));
 	}
 
@@ -455,7 +455,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaPopSubDep3> lockByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public List<CFBamJpaPopSubDep3> lockByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		return( cfbam31PopSubDep3Repository.lockByTenantIdx(requiredTenantId));
 	}
 
@@ -481,7 +481,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaPopSubDep3> lockByRelationIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId) {
+	public List<CFBamJpaPopSubDep3> lockByRelationIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId) {
 		return( cfbam31PopSubDep3Repository.lockByRelationIdx(requiredRelationId));
 	}
 
@@ -505,7 +505,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaPopSubDep3> lockByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public List<CFBamJpaPopSubDep3> lockByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		return( cfbam31PopSubDep3Repository.lockByDefSchemaIdx(optionalDefSchemaId));
 	}
 
@@ -531,7 +531,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return A list of locked entities, refreshed from the data store, or an empty list if no such entities exist.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public List<CFBamJpaPopSubDep3> lockByPopSubDep2Idx(@Param("popSubDep2Id") ICFLibKeyHash256 requiredPopSubDep2Id) {
+	public List<CFBamJpaPopSubDep3> lockByPopSubDep2Idx(@Param("popSubDep2Id") IMCFKeyHash256 requiredPopSubDep2Id) {
 		return( cfbam31PopSubDep3Repository.lockByPopSubDep2Idx(requiredPopSubDep2Id));
 	}
 
@@ -556,7 +556,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@return The locked entity, refreshed from the data store, or null if no such entity exists.
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public CFBamJpaPopSubDep3 lockByUNameIdx(@Param("popSubDep2Id") ICFLibKeyHash256 requiredPopSubDep2Id,
+	public CFBamJpaPopSubDep3 lockByUNameIdx(@Param("popSubDep2Id") IMCFKeyHash256 requiredPopSubDep2Id,
 		@Param("name") String requiredName) {
 		return( cfbam31PopSubDep3Repository.lockByUNameIdx(requiredPopSubDep2Id,
 			requiredName));
@@ -582,7 +582,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@param requiredId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByIdIdx(@Param("id") ICFLibKeyHash256 requiredId) {
+	public void deleteByIdIdx(@Param("id") IMCFKeyHash256 requiredId) {
 		cfbam31PopSubDep3Repository.deleteByIdIdx(requiredId);
 	}
 
@@ -592,7 +592,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@param requiredTenantId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByTenantIdx(@Param("tenantId") ICFLibKeyHash256 requiredTenantId) {
+	public void deleteByTenantIdx(@Param("tenantId") IMCFKeyHash256 requiredTenantId) {
 		cfbam31PopSubDep3Repository.deleteByTenantIdx(requiredTenantId);
 	}
 
@@ -614,7 +614,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@param requiredRelationId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByRelationIdx(@Param("relationId") ICFLibKeyHash256 requiredRelationId) {
+	public void deleteByRelationIdx(@Param("relationId") IMCFKeyHash256 requiredRelationId) {
 		cfbam31PopSubDep3Repository.deleteByRelationIdx(requiredRelationId);
 	}
 
@@ -634,7 +634,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@param optionalDefSchemaId
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByDefSchemaIdx(@Param("defSchemaId") ICFLibKeyHash256 optionalDefSchemaId) {
+	public void deleteByDefSchemaIdx(@Param("defSchemaId") IMCFKeyHash256 optionalDefSchemaId) {
 		cfbam31PopSubDep3Repository.deleteByDefSchemaIdx(optionalDefSchemaId);
 	}
 
@@ -656,7 +656,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@param requiredPopSubDep2Id
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByPopSubDep2Idx(@Param("popSubDep2Id") ICFLibKeyHash256 requiredPopSubDep2Id) {
+	public void deleteByPopSubDep2Idx(@Param("popSubDep2Id") IMCFKeyHash256 requiredPopSubDep2Id) {
 		cfbam31PopSubDep3Repository.deleteByPopSubDep2Idx(requiredPopSubDep2Id);
 	}
 
@@ -677,7 +677,7 @@ public class CFBamJpaPopSubDep3Service {
 	 *		@param requiredName
 	 */
 	@Transactional(propagation = Propagation.REQUIRED, noRollbackFor = NoResultException.class, transactionManager = "cfbam31TransactionManager")
-	public void deleteByUNameIdx(@Param("popSubDep2Id") ICFLibKeyHash256 requiredPopSubDep2Id,
+	public void deleteByUNameIdx(@Param("popSubDep2Id") IMCFKeyHash256 requiredPopSubDep2Id,
 		@Param("name") String requiredName) {
 		cfbam31PopSubDep3Repository.deleteByUNameIdx(requiredPopSubDep2Id,
 			requiredName);

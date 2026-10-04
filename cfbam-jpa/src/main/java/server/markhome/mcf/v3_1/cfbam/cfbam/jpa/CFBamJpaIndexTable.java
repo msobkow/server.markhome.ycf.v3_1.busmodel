@@ -89,32 +89,32 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 
 	public CFBamJpaIndexTable(ICFBamSchema schema) {
 		if( schema == null ) {
-			throw new CFLibNullArgumentException(getClass(), "constructor", 1, "schema" );
+			throw new MCFNullArgumentException(getClass(), "constructor", 1, "schema" );
 		}
 		if (schema instanceof CFBamJpaSchema) {
 			this.schema = (CFBamJpaSchema)schema;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
+			throw new MCFUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
 		}
 	}
 
 	protected boolean canCreateIndex(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "createindex");
@@ -124,20 +124,20 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 
 	protected boolean canReadIndex(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "readindex");
@@ -147,20 +147,20 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 
 	protected boolean canUpdateIndex(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "updateindex");
@@ -170,20 +170,20 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 
 	protected boolean canDeleteIndex(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "deleteindex");
@@ -206,11 +206,11 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "createIndex";
 		boolean permissionGranted = canCreateIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "createindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "createindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "createIndex", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "createIndex", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaIndex) {
 			CFBamJpaIndex jparec = (CFBamJpaIndex)rec;
@@ -222,7 +222,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "createIndex", "rec", rec, "CFBamJpaIndex");
+			throw new MCFUnsupportedClassException(getClass(), "createIndex", "rec", rec, "CFBamJpaIndex");
 		}
 	}
 
@@ -241,11 +241,11 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "updateIndex";
 		boolean permissionGranted = canUpdateIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "updateIndex", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "updateIndex", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaIndex) {
 			CFBamJpaIndex jparec = (CFBamJpaIndex)rec;
@@ -255,7 +255,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "updateIndex", "rec", rec, "CFBamJpaIndex");
+			throw new MCFUnsupportedClassException(getClass(), "updateIndex", "rec", rec, "CFBamJpaIndex");
 		}
 	}
 
@@ -273,7 +273,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndex";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
@@ -284,10 +284,10 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			schema.getJpaHooksSchema().getIndexService().deleteByIdIdx(jparec.getPKey());
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "deleteIndex", "rec", rec, "CFBamJpaIndex");
+			throw new MCFUnsupportedClassException(getClass(), "deleteIndex", "rec", rec, "CFBamJpaIndex");
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "deleteIndex");
+		throw new MCFNotImplementedYetException(getClass(), "deleteIndex");
 	}
 
 	/**
@@ -301,13 +301,13 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public void deleteIndexByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "deleteIndexByUNameIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByUNameIdx(argTableId,
@@ -329,7 +329,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndexByUNameIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByUNameIdx(argKey.getRequiredTableId(),
@@ -345,12 +345,12 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public void deleteIndexByIdxTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "deleteIndexByIdxTableIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByIdxTableIdx(argTableId);
@@ -371,7 +371,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndexByIdxTableIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByIdxTableIdx(argKey.getRequiredTableId());
@@ -391,7 +391,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndexByIdxCodeVisIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByIdxCodeVisIdx(argCodeVis);
@@ -412,7 +412,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndexByIdxCodeVisIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByIdxCodeVisIdx(argKey.getRequiredCodeVis());
@@ -429,13 +429,13 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public void deleteIndexByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis )
 	{
 		final String S_ProcName = "deleteIndexByIdxTblCdVisX";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByIdxTblCdVisX(argTableId,
@@ -457,7 +457,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndexByIdxTblCdVisX";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByIdxTblCdVisX(argKey.getRequiredTableId(),
@@ -473,12 +473,12 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public void deleteIndexByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "deleteIndexByDefSchemaIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByDefSchemaIdx(argDefSchemaId);
@@ -499,7 +499,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndexByDefSchemaIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByDefSchemaIdx(argKey.getOptionalDefSchemaId());
@@ -519,7 +519,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndexByIdIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByIdIdx(argKey);
@@ -534,12 +534,12 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public void deleteIndexByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "deleteIndexByTenantIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByTenantIdx(argTenantId);
@@ -560,7 +560,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "deleteIndexByTenantIdx";
 		boolean permissionGranted = canDeleteIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getIndexService().deleteByTenantIdx(argKey.getRequiredTenantId());
@@ -584,7 +584,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "readDerived";
 		boolean permissionGranted = canReadIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamIndex retval = schema.getJpaHooksSchema().getIndexService().find(PKey);
@@ -608,7 +608,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "lockDerived";
 		boolean permissionGranted = canUpdateIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamIndex retval = schema.getJpaHooksSchema().getIndexService().lockByIdIdx(PKey);
@@ -627,7 +627,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "readAllDerived";
 		boolean permissionGranted = canReadIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		List<CFBamJpaIndex> retlist = schema.getJpaHooksSchema().getIndexService().findAll();
@@ -651,7 +651,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public ICFBamIndex readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readDerivedByIdIdx";
 		boolean permissionGranted = false;
@@ -659,14 +659,14 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamIndex retval = schema.getJpaHooksSchema().getIndexService().find(argId);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readindex")) {
 				retval = null;
 			}
@@ -685,7 +685,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public ICFBamIndex[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "readDerivedByTenantIdx";
 		boolean permissionGranted = false;
@@ -693,7 +693,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaIndex> retlist = schema.getJpaHooksSchema().getIndexService().findByTenantIdx(argTenantId);
 		ICFBamIndex[] retset = new ICFBamIndex[retlist.size()];
@@ -718,7 +718,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public ICFBamIndex readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUNameIdx";
@@ -727,15 +727,15 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamIndex retval = schema.getJpaHooksSchema().getIndexService().findByUNameIdx(argTableId,
 		argName);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredOwnerTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readindex")) {
 				retval = null;
 			}
@@ -754,7 +754,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public ICFBamIndex[] readDerivedByIdxTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "readDerivedByIdxTableIdx";
 		boolean permissionGranted = false;
@@ -762,7 +762,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaIndex> retlist = schema.getJpaHooksSchema().getIndexService().findByIdxTableIdx(argTableId);
 		ICFBamIndex[] retset = new ICFBamIndex[retlist.size()];
@@ -792,7 +792,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaIndex> retlist = schema.getJpaHooksSchema().getIndexService().findByIdxCodeVisIdx(argCodeVis);
 		ICFBamIndex[] retset = new ICFBamIndex[retlist.size()];
@@ -816,7 +816,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public ICFBamIndex[] readDerivedByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis )
 	{
 		final String S_ProcName = "readDerivedByIdxTblCdVisX";
@@ -825,7 +825,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaIndex> retlist = schema.getJpaHooksSchema().getIndexService().findByIdxTblCdVisX(argTableId,
 		argCodeVis);
@@ -848,7 +848,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 */
 	@Override
 	public ICFBamIndex[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readDerivedByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -856,7 +856,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaIndex> retlist = schema.getJpaHooksSchema().getIndexService().findByDefSchemaIdx(argDefSchemaId);
 		ICFBamIndex[] retset = new ICFBamIndex[retlist.size()];
@@ -877,7 +877,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex readRec( ICFSecAuthorization Authorization,
@@ -886,10 +886,10 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "readRec";
 		boolean permissionGranted = canReadIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readRec");
+		throw new MCFNotImplementedYetException(getClass(), "readRec");
 	}
 
 	/**
@@ -902,7 +902,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex lockRec( ICFSecAuthorization Authorization,
@@ -911,10 +911,10 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "lockRec";
 		boolean permissionGranted = canUpdateIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "lockRec");
+		throw new MCFNotImplementedYetException(getClass(), "lockRec");
 	}
 
 	/**
@@ -929,10 +929,10 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 		final String S_ProcName = "readAllRec";
 		boolean permissionGranted = canReadIndex(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readAllRec");
+		throw new MCFNotImplementedYetException(getClass(), "readAllRec");
 	}
 
 
@@ -946,11 +946,11 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readRecByIdIdx";
 		boolean permissionGranted = false;
@@ -958,9 +958,9 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdIdx");
 	}
 
 	/**
@@ -972,11 +972,11 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "readRecByTenantIdx";
 		boolean permissionGranted = false;
@@ -984,9 +984,9 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByTenantIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByTenantIdx");
 	}
 
 	/**
@@ -1001,11 +1001,11 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUNameIdx";
@@ -1014,9 +1014,9 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUNameIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUNameIdx");
 	}
 
 	/**
@@ -1028,11 +1028,11 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex[] readRecByIdxTableIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId )
+		IMCFKeyHash256 argTableId )
 	{
 		final String S_ProcName = "readRecByIdxTableIdx";
 		boolean permissionGranted = false;
@@ -1040,9 +1040,9 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdxTableIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdxTableIdx");
 	}
 
 	/**
@@ -1054,7 +1054,7 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex[] readRecByIdxCodeVisIdx( ICFSecAuthorization Authorization,
@@ -1066,9 +1066,9 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdxCodeVisIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdxCodeVisIdx");
 	}
 
 	/**
@@ -1082,11 +1082,11 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex[] readRecByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTableId,
+		IMCFKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis )
 	{
 		final String S_ProcName = "readRecByIdxTblCdVisX";
@@ -1095,9 +1095,9 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdxTblCdVisX");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdxTblCdVisX");
 	}
 
 	/**
@@ -1109,11 +1109,11 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamIndex[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readRecByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -1121,8 +1121,8 @@ public class CFBamJpaIndexTable implements ICFBamIndexTable
 			permissionGranted = canReadIndex(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readindex", ICFBamSchema.SCHEMA_NAME, ICFBamIndexTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
 	}
 }

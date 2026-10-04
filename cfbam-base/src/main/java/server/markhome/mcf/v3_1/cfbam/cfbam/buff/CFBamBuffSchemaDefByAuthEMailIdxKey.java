@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,21 +74,21 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaDefByAuthEMailIdxKey
 	implements ICFBamSchemaDefByAuthEMailIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredCTenantId;
+	protected IMCFKeyHash256 requiredCTenantId;
 	protected String requiredAuthorEMail;
 	public CFBamBuffSchemaDefByAuthEMailIdxKey() {
-		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.CTENANTID_INIT_VALUE.toString() );
+		requiredCTenantId = MCFDbKeyHash256.fromHex( ICFBamPubSchemaDef.CTENANTID_INIT_VALUE.toString() );
 		requiredAuthorEMail = ICFBamPubSchemaDef.AUTHOREMAIL_INIT_VALUE;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredCTenantId() {
+	public IMCFKeyHash256 getRequiredCTenantId() {
 		return(requiredCTenantId);
 	}
 
-	public void setRequiredCTenantId( ICFLibKeyHash256 value ) {
+	public void setRequiredCTenantId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredCTenantId",
 				1,
 				"value" );
@@ -103,13 +103,13 @@ public class CFBamBuffSchemaDefByAuthEMailIdxKey
 
 	public void setRequiredAuthorEMail( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredAuthorEMail",
 				1,
 				"value" );
 		}
 		else if( value.length() > 512 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredAuthorEMail",
 				1,
 				"value.length()",
@@ -278,7 +278,7 @@ public class CFBamBuffSchemaDefByAuthEMailIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

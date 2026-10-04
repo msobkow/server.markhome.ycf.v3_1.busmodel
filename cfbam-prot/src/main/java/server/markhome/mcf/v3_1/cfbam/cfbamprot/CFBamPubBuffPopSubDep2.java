@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -73,12 +73,12 @@ public class CFBamPubBuffPopSubDep2
 	extends CFBamPubBuffPopDep
 	implements ICFBamPopSubDep2
 {
-	protected ICFLibKeyHash256 requiredPopSubDep1Id;
+	protected IMCFKeyHash256 requiredPopSubDep1Id;
 	protected String requiredName;
 
 	public CFBamPubBuffPopSubDep2() {
 		super();
-		requiredPopSubDep1Id = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep2.POPSUBDEP1ID_INIT_VALUE.toString() );
+		requiredPopSubDep1Id = MCFDbKeyHash256.fromHex( ICFBamPubPopSubDep2.POPSUBDEP1ID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubPopSubDep2.NAME_INIT_VALUE;
 	}
 
@@ -88,38 +88,38 @@ public class CFBamPubBuffPopSubDep2
 	}
 
 	@Override
-	public ICFBamPubPopSubDep1 getRequiredContainerPopSubDep1(ICFLibKeyHash256 argPopSubDep1Id) {
+	public ICFBamPubPopSubDep1 getRequiredContainerPopSubDep1(IMCFKeyHash256 argPopSubDep1Id) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerPopSubDep1", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredContainerPopSubDep1", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubPopSubDep1Table targetTable = targetBackingCFBam.getTablePopSubDep1();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerPopSubDep1", 0, "ICFBamPubSchema.getBackingCFBam().getTablePopSubDep1()");
+			throw new MCFNullArgumentException(getClass(), "getRequiredContainerPopSubDep1", 0, "ICFBamPubSchema.getBackingCFBam().getTablePopSubDep1()");
 		}
 		return(targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredPopSubDep1Id()));
 	}
 
 	@Override
-	public void setRequiredContainerPopSubDep1(ICFLibKeyHash256 argPopSubDep1Id) {
+	public void setRequiredContainerPopSubDep1(IMCFKeyHash256 argPopSubDep1Id) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep1-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerPopSubDep1-args", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubPopSubDep1Table targetTable = targetBackingCFBam.getTablePopSubDep1();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep1", 0, "ICFBamSchema.getBackingCFBam().getTablePopSubDep1()");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerPopSubDep1", 0, "ICFBamSchema.getBackingCFBam().getTablePopSubDep1()");
 		}
 		ICFBamPubPopSubDep1 found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPopSubDep1Id);
 		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep1-args", 0, "found");
+			throw new MCFNullArgumentException(getClass(), "setRequiredContainerPopSubDep1-args", 0, "found");
 		}
 		else if (found instanceof ICFBamPubPopSubDep1) || (found instanceof ICFBamPubPopSubDep1)) {
 			super.setRequiredContainerPopSubDep1(argPopSubDep1Id);
 		requiredPopSubDep1Id = argPopSubDep1Id;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerPopSubDep1-args", "found", found, "ICFBamPubPopSubDep1ICFBamPubPopSubDep1");
+			throw new MCFUnsupportedClassException(getClass(), "setRequiredContainerPopSubDep1-args", "found", found, "ICFBamPubPopSubDep1ICFBamPubPopSubDep1");
 		}
 	}
 
@@ -127,7 +127,7 @@ public class CFBamPubBuffPopSubDep2
 	public void setRequiredContainerPopSubDep1(ICFBamPubPopSubDep1 argObj) {
 
 		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerPopSubDep1", 1, "argObj");
+			throw new MCFNullArgumentException(getClass(), "setContainerPopSubDep1", 1, "argObj");
 		}
 		else {
 			setRequiredPopSubDep1Id(argObj.getRequiredId());
@@ -135,14 +135,14 @@ public class CFBamPubBuffPopSubDep2
 	}
 
 	@Override
-	public List<ICFBamPubPopSubDep3> getOptionalComponentsPopDep(ICFLibKeyHash256 argId) {
+	public List<ICFBamPubPopSubDep3> getOptionalComponentsPopDep(IMCFKeyHash256 argId) {
 		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsPopDep", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalComponentsPopDep", 0, "ICFBamPubSchema.getBackingCFBam()");
 		}
 		ICFBamPubPopSubDep3Table targetTable = targetBackingCFBam.getTablePopSubDep3();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsPopDep", 0, "ICFBamPubSchema.getBackingCFBam().getTablePopSubDep3()");
+			throw new MCFNullArgumentException(getClass(), "getOptionalComponentsPopDep", 0, "ICFBamPubSchema.getBackingCFBam().getTablePopSubDep3()");
 		}
 		ICFBamPubPopSubDep3[] targetArr = targetTable.readDerivedByPopSubDep2Idx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
@@ -159,13 +159,13 @@ public class CFBamPubBuffPopSubDep2
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredPopSubDep1Id() {
+	public IMCFKeyHash256 getRequiredPopSubDep1Id() {
 		return(requiredPopSubDep1Id);
 	}
 
-	public void setRequiredPopSubDep1Id( ICFLibKeyHash256 value ) {
+	public void setRequiredPopSubDep1Id( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredPopSubDep1Id",
 				1,
 				"value" );
@@ -180,13 +180,13 @@ public class CFBamPubBuffPopSubDep2
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -844,7 +844,7 @@ public class CFBamPubBuffPopSubDep2
 			setJustPubPopSubDep2( (CFBamPubBuffPopSubDep2)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -866,7 +866,7 @@ public class CFBamPubBuffPopSubDep2
 			setPopSubDep2( (ICFBamPubPopSubDep2H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -888,7 +888,7 @@ public class CFBamPubBuffPopSubDep2
 			setJustPubPopSubDep2( (CFBamPubPubBuffPopSubDep2)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -910,7 +910,7 @@ public class CFBamPubBuffPopSubDep2
 			setPopSubDep2( (ICFBamPubPopSubDep2H)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

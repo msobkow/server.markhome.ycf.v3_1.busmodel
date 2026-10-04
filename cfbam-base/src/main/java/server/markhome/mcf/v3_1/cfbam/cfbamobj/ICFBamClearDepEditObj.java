@@ -119,17 +119,17 @@ public interface ICFBamClearDepEditObj
 	void setOptionalLookupDefSchema( ICFBamSchemaDefObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute RelationId.
+	 *	Get the required IMCFKeyHash256 attribute RelationId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute RelationId.
+	 *	@return	The required IMCFKeyHash256 attribute RelationId.
 	 */
-	ICFLibKeyHash256 getRequiredRelationId();
+	IMCFKeyHash256 getRequiredRelationId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 }

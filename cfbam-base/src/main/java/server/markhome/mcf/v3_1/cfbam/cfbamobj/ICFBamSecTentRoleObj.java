@@ -138,7 +138,7 @@ public interface ICFBamSecTentRoleObj
 	/**
 	 *	End this edition of this SecTentRole instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -264,18 +264,18 @@ public interface ICFBamSecTentRoleObj
 	List<ICFSecSecTentRoleMembObj> getOptionalChildrenMembByRole( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecTentRoleId.
+	 *	Get the required IMCFKeyHash256 attribute SecTentRoleId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecTentRoleId.
+	 *	@return	The required IMCFKeyHash256 attribute SecTentRoleId.
 	 */
-	ICFLibKeyHash256 getRequiredSecTentRoleId();
+	IMCFKeyHash256 getRequiredSecTentRoleId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required IMCFKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required IMCFKeyHash256 attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	IMCFKeyHash256 getRequiredTenantId();
 
 	/**
 	 *	Get the required String attribute Name.

@@ -119,7 +119,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	The ServerListFunc-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubServerListFuncObj readServerListFunc( ICFLibKeyHash256 pkey );
+	ICFBamPubServerListFuncObj readServerListFunc( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a ServerListFunc-derived instance by it's primary key.
@@ -129,19 +129,19 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	The ServerListFunc-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubServerListFuncObj readServerListFunc( ICFLibKeyHash256 pkey,
+	ICFBamPubServerListFuncObj readServerListFunc( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubServerListFuncObj readCachedServerListFunc( ICFLibKeyHash256 pkey );
+	ICFBamPubServerListFuncObj readCachedServerListFunc( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeServerListFunc( ICFBamPubServerListFuncObj obj );
 
-	void deepDisposeServerListFunc( ICFLibKeyHash256 pkey );
+	void deepDisposeServerListFunc( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubServerListFuncObj lockServerListFunc( ICFLibKeyHash256 pkey );
+	ICFBamPubServerListFuncObj lockServerListFunc( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the ServerListFunc-derived instances in the database.
@@ -169,7 +169,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	CFBamPubScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubServerListFuncObj readServerListFuncByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubServerListFuncObj readServerListFuncByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubScopeObj instance for the primary key attributes.
@@ -179,7 +179,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	CFBamPubScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubServerListFuncObj readServerListFuncByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubServerListFuncObj readServerListFuncByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -190,7 +190,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamPubServerListFuncObj> readServerListFuncByTenantIdx( MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamPubServerListFuncObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -200,7 +200,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFBamPubServerListFuncObj> readServerListFuncByTenantIdx( MCFDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -213,7 +213,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	CFBamPubServerMethodObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubServerListFuncObj readServerListFuncByUNameIdx( CFLibDbKeyHash256 TableId,
+	ICFBamPubServerListFuncObj readServerListFuncByUNameIdx( MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -226,7 +226,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	CFBamPubServerMethodObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubServerListFuncObj readServerListFuncByUNameIdx( CFLibDbKeyHash256 TableId,
+	ICFBamPubServerListFuncObj readServerListFuncByUNameIdx( MCFDbKeyHash256 TableId,
 		String Name,
 		boolean forceRead );
 
@@ -238,7 +238,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate MethTableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByMethTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamPubServerListFuncObj> readServerListFuncByMethTableIdx( MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Get the map of CFBamPubServerListFuncObj instances sorted by their primary keys for the duplicate MethTableIdx key.
@@ -248,7 +248,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate MethTableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByMethTableIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubServerListFuncObj> readServerListFuncByMethTableIdx( MCFDbKeyHash256 TableId,
 		boolean forceRead );
 
 	/**
@@ -282,7 +282,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate MethTableVisIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubServerListFuncObj> readServerListFuncByMethTableVisIdx( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -295,7 +295,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate MethTableVisIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubServerListFuncObj> readServerListFuncByMethTableVisIdx( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead );
 
@@ -307,7 +307,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubServerListFuncObj> readServerListFuncByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubServerListFuncObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -317,7 +317,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubServerListFuncObj> readServerListFuncByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -328,7 +328,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate RetTblIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByRetTblIdx( CFLibDbKeyHash256 RetTableId );
+	List<ICFBamPubServerListFuncObj> readServerListFuncByRetTblIdx( MCFDbKeyHash256 RetTableId );
 
 	/**
 	 *	Get the map of CFBamPubServerListFuncObj instances sorted by their primary keys for the duplicate RetTblIdx key.
@@ -338,44 +338,44 @@ public interface ICFBamPubServerListFuncTableObj
 	 *	@return	List of CFBamPubServerListFuncObj cached instances sorted by their primary keys for the duplicate RetTblIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubServerListFuncObj> readServerListFuncByRetTblIdx( CFLibDbKeyHash256 RetTableId,
+	List<ICFBamPubServerListFuncObj> readServerListFuncByRetTblIdx( MCFDbKeyHash256 RetTableId,
 		boolean forceRead );
 
-	ICFBamPubServerListFuncObj readCachedServerListFuncByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubServerListFuncObj readCachedServerListFuncByIdIdx( MCFDbKeyHash256 Id );
 
-	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByTenantIdx( MCFDbKeyHash256 TenantId );
 
-	ICFBamPubServerListFuncObj readCachedServerListFuncByUNameIdx( CFLibDbKeyHash256 TableId,
+	ICFBamPubServerListFuncObj readCachedServerListFuncByUNameIdx( MCFDbKeyHash256 TableId,
 		String Name );
 
-	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByMethTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByMethTableIdx( MCFDbKeyHash256 TableId );
 
 	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByMethTableVisIdx( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByRetTblIdx( CFLibDbKeyHash256 RetTableId );
+	List<ICFBamPubServerListFuncObj> readCachedServerListFuncByRetTblIdx( MCFDbKeyHash256 RetTableId );
 
-	void deepDisposeServerListFuncByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeServerListFuncByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeServerListFuncByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeServerListFuncByTenantIdx( MCFDbKeyHash256 TenantId );
 
-	void deepDisposeServerListFuncByUNameIdx( CFLibDbKeyHash256 TableId,
+	void deepDisposeServerListFuncByUNameIdx( MCFDbKeyHash256 TableId,
 		String Name );
 
-	void deepDisposeServerListFuncByMethTableIdx( CFLibDbKeyHash256 TableId );
+	void deepDisposeServerListFuncByMethTableIdx( MCFDbKeyHash256 TableId );
 
 	void deepDisposeServerListFuncByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	void deepDisposeServerListFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	void deepDisposeServerListFuncByMethTableVisIdx( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	void deepDisposeServerListFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeServerListFuncByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeServerListFuncByRetTblIdx( CFLibDbKeyHash256 RetTableId );
+	void deepDisposeServerListFuncByRetTblIdx( MCFDbKeyHash256 RetTableId );
 
 	/**
 	 *	Internal use only.
@@ -392,14 +392,14 @@ public interface ICFBamPubServerListFuncTableObj
 	 *
 	 *	@param	Id	The ServerListFunc key attribute of the instance generating the id.
 	 */
-	void deleteServerListFuncByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteServerListFuncByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The ServerListFunc key attribute of the instance generating the id.
 	 */
-	void deleteServerListFuncByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteServerListFuncByTenantIdx( MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
@@ -408,7 +408,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *
 	 *	@param	Name	The ServerListFunc key attribute of the instance generating the id.
 	 */
-	void deleteServerListFuncByUNameIdx( CFLibDbKeyHash256 TableId,
+	void deleteServerListFuncByUNameIdx( MCFDbKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -416,7 +416,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *
 	 *	@param	TableId	The ServerListFunc key attribute of the instance generating the id.
 	 */
-	void deleteServerListFuncByMethTableIdx( CFLibDbKeyHash256 TableId );
+	void deleteServerListFuncByMethTableIdx( MCFDbKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -432,7 +432,7 @@ public interface ICFBamPubServerListFuncTableObj
 	 *
 	 *	@param	CodeVis	The ServerListFunc key attribute of the instance generating the id.
 	 */
-	void deleteServerListFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	void deleteServerListFuncByMethTableVisIdx( MCFDbKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -440,12 +440,12 @@ public interface ICFBamPubServerListFuncTableObj
 	 *
 	 *	@param	DefSchemaId	The ServerListFunc key attribute of the instance generating the id.
 	 */
-	void deleteServerListFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteServerListFuncByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	RetTableId	The ServerListFunc key attribute of the instance generating the id.
 	 */
-	void deleteServerListFuncByRetTblIdx( CFLibDbKeyHash256 RetTableId );
+	void deleteServerListFuncByRetTblIdx( MCFDbKeyHash256 RetTableId );
 }

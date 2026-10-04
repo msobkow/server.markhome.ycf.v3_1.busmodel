@@ -141,7 +141,7 @@ public class CFBamJpaDelSubDep2FactoryService
 					mapped.set(rec);
 					return( mapped ); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDelSubDep2",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDelSubDep2");
 			}
@@ -169,7 +169,7 @@ public class CFBamJpaDelSubDep2FactoryService
 					mapped.set(hrec);
 					return( mapped ); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDelSubDep2",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDelSubDep2");
 			}

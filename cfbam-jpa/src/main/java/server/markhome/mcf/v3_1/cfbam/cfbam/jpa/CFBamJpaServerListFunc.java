@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -84,13 +84,13 @@ public class CFBamJpaServerListFunc extends CFBamJpaServerMethod
 	protected CFBamJpaTable optionalLookupRetTable;
 
 	@AttributeOverrides({
-		@AttributeOverride(name="bytes", column = @Column( name="rettblid", nullable=true, length=CFLibDbKeyHash256.HASH_LENGTH ) )
+		@AttributeOverride(name="bytes", column = @Column( name="rettblid", nullable=true, length=MCFDbKeyHash256.HASH_LENGTH ) )
 	})
-	protected ICFLibKeyHash256 optionalRetTableId;
+	protected IMCFKeyHash256 optionalRetTableId;
 
 	public CFBamJpaServerListFunc() {
 		super();
-		optionalRetTableId = CFLibDbKeyHash256.nullGet();
+		optionalRetTableId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
@@ -118,7 +118,7 @@ public class CFBamJpaServerListFunc extends CFBamJpaServerMethod
 			}
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setLookupRetTable", "argObj", argObj, "CFBamJpaTable");
+			throw new MCFUnsupportedClassException(getClass(), "setLookupRetTable", "argObj", argObj, "CFBamJpaTable");
 		}
 	}
 
@@ -133,25 +133,25 @@ public class CFBamJpaServerListFunc extends CFBamJpaServerMethod
 	}
 
 	@Override
-	public void setOptionalLookupRetTable(ICFLibKeyHash256 argRetTableId) {
+	public void setOptionalLookupRetTable(IMCFKeyHash256 argRetTableId) {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamTableTable targetTable = targetBackingSchema.getTableTable();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+			throw new MCFNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argRetTableId);
 		setOptionalLookupRetTable(targetRec);
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalRetTableId() {
+	public IMCFKeyHash256 getOptionalRetTableId() {
 		return(optionalRetTableId);
 	}
 
-	public void setOptionalRetTableId( ICFLibKeyHash256 value ) {
+	public void setOptionalRetTableId( IMCFKeyHash256 value ) {
 		optionalRetTableId = value;
 	}
 
@@ -326,7 +326,7 @@ public class CFBamJpaServerListFunc extends CFBamJpaServerMethod
 			setServerListFunc( (ICFBamServerListFunc)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -347,7 +347,7 @@ public class CFBamJpaServerListFunc extends CFBamJpaServerMethod
 			setServerListFunc( (ICFBamServerListFuncH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

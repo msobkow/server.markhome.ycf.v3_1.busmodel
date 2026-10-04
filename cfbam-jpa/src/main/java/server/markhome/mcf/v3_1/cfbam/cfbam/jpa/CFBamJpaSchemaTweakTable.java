@@ -89,32 +89,32 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 
 	public CFBamJpaSchemaTweakTable(ICFBamSchema schema) {
 		if( schema == null ) {
-			throw new CFLibNullArgumentException(getClass(), "constructor", 1, "schema" );
+			throw new MCFNullArgumentException(getClass(), "constructor", 1, "schema" );
 		}
 		if (schema instanceof CFBamJpaSchema) {
 			this.schema = (CFBamJpaSchema)schema;
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
+			throw new MCFUnsupportedClassException(getClass(), "constructor", "schema", schema, "CFBamJpaSchema");
 		}
 	}
 
 	protected boolean canCreateSchemaTweak(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "createschematweak");
@@ -124,20 +124,20 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 
 	protected boolean canReadSchemaTweak(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), Authorization.getSecClusterId(), Authorization.getSecTenantId(), "readschematweak");
@@ -147,20 +147,20 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 
 	protected boolean canUpdateSchemaTweak(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "updateschematweak");
@@ -170,20 +170,20 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 
 	protected boolean canDeleteSchemaTweak(String S_ProcName, ICFSecAuthorization Authorization) {
 		if (Authorization == null) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization");
 		}
 		boolean permissionGranted = false;
-		CFLibDbKeyHash256 authUserId = Authorization.getSecUserId();
+		MCFDbKeyHash256 authUserId = Authorization.getSecUserId();
 		if ((!permissionGranted) && (authUserId == null || authUserId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "Authorization.getSecUserId()");
 		}
 		// Check for "system" user
-		CFLibDbKeyHash256 systemId = ICFSecSchema.getSystemId();
+		MCFDbKeyHash256 systemId = ICFSecSchema.getSystemId();
 		if ((!permissionGranted) && (systemId != null && !systemId.isNull() && systemId.equals(authUserId))) {
 			permissionGranted = true;
 		}
 		else if ((!permissionGranted) && (systemId == null || systemId.isNull())) {
-			throw new CFLibNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
+			throw new MCFNullArgumentException(getClass(), S_ProcName, 0, "ICFSecSchema.getSystemId()");
 		}
 		if(!permissionGranted) {
 			permissionGranted = ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), ICFSecSchema.getSysClusterId(), ICFSecSchema.getSysTenantId(), "deleteschematweak");
@@ -206,11 +206,11 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "createSchemaTweak";
 		boolean permissionGranted = canCreateSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "createschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "createschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "createSchemaTweak", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "createSchemaTweak", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaSchemaTweak) {
 			CFBamJpaSchemaTweak jparec = (CFBamJpaSchemaTweak)rec;
@@ -222,7 +222,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "createSchemaTweak", "rec", rec, "CFBamJpaSchemaTweak");
+			throw new MCFUnsupportedClassException(getClass(), "createSchemaTweak", "rec", rec, "CFBamJpaSchemaTweak");
 		}
 	}
 
@@ -241,11 +241,11 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "updateSchemaTweak";
 		boolean permissionGranted = canUpdateSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
-			throw new CFLibNullArgumentException(getClass(), "updateSchemaTweak", 1, "rec");
+			throw new MCFNullArgumentException(getClass(), "updateSchemaTweak", 1, "rec");
 		}
 		else if (rec instanceof CFBamJpaSchemaTweak) {
 			CFBamJpaSchemaTweak jparec = (CFBamJpaSchemaTweak)rec;
@@ -255,7 +255,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		return(retval);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "updateSchemaTweak", "rec", rec, "CFBamJpaSchemaTweak");
+			throw new MCFUnsupportedClassException(getClass(), "updateSchemaTweak", "rec", rec, "CFBamJpaSchemaTweak");
 		}
 	}
 
@@ -273,7 +273,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "deleteSchemaTweak";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		if (rec == null) {
@@ -284,10 +284,10 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			schema.getJpaHooksSchema().getSchemaTweakService().deleteByIdIdx(jparec.getPKey());
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "deleteSchemaTweak", "rec", rec, "CFBamJpaSchemaTweak");
+			throw new MCFUnsupportedClassException(getClass(), "deleteSchemaTweak", "rec", rec, "CFBamJpaSchemaTweak");
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "deleteSchemaTweak");
+		throw new MCFNotImplementedYetException(getClass(), "deleteSchemaTweak");
 	}
 
 	/**
@@ -299,12 +299,12 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public void deleteSchemaTweakBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId )
+		IMCFKeyHash256 argSchemaDefId )
 	{
 		final String S_ProcName = "deleteSchemaTweakBySchemaIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteBySchemaIdx(argSchemaDefId);
@@ -325,7 +325,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "deleteSchemaTweakBySchemaIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteBySchemaIdx(argKey.getRequiredSchemaDefId());
@@ -345,7 +345,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "deleteSchemaTweakByIdIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByIdIdx(argKey);
@@ -362,13 +362,13 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public void deleteSchemaTweakByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "deleteSchemaTweakByUNameIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByUNameIdx(argScopeId,
@@ -390,7 +390,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "deleteSchemaTweakByUNameIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByUNameIdx(argKey.getRequiredScopeId(),
@@ -406,12 +406,12 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public void deleteSchemaTweakByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "deleteSchemaTweakByValTentIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByValTentIdx(argTenantId);
@@ -432,7 +432,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "deleteSchemaTweakByValTentIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByValTentIdx(argKey.getRequiredTenantId());
@@ -447,12 +447,12 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public void deleteSchemaTweakByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "deleteSchemaTweakByScopeIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByScopeIdx(argScopeId);
@@ -473,7 +473,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "deleteSchemaTweakByScopeIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByScopeIdx(argKey.getRequiredScopeId());
@@ -488,12 +488,12 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public void deleteSchemaTweakByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "deleteSchemaTweakByDefSchemaIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByDefSchemaIdx(argDefSchemaId);
@@ -514,7 +514,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "deleteSchemaTweakByDefSchemaIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByDefSchemaIdx(argKey.getOptionalDefSchemaId());
@@ -537,16 +537,16 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public void deleteSchemaTweakByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaTenantId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argTenantId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaTenantId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		final String S_ProcName = "deleteSchemaTweakByUDefIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByUDefIdx(argTenantId,
@@ -571,7 +571,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "deleteSchemaTweakByUDefIdx";
 		boolean permissionGranted = canDeleteSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "deleteschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		schema.getJpaHooksSchema().getSchemaTweakService().deleteByUDefIdx(argKey.getRequiredTenantId(),
@@ -599,7 +599,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "readDerived";
 		boolean permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamSchemaTweak retval = schema.getJpaHooksSchema().getSchemaTweakService().find(PKey);
@@ -623,7 +623,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "lockDerived";
 		boolean permissionGranted = canUpdateSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		ICFBamSchemaTweak retval = schema.getJpaHooksSchema().getSchemaTweakService().lockByIdIdx(PKey);
@@ -642,7 +642,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "readAllDerived";
 		boolean permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
 		List<CFBamJpaSchemaTweak> retlist = schema.getJpaHooksSchema().getSchemaTweakService().findAll();
@@ -666,7 +666,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public ICFBamSchemaTweak readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readDerivedByIdIdx";
 		boolean permissionGranted = false;
@@ -674,14 +674,14 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamSchemaTweak retval = schema.getJpaHooksSchema().getSchemaTweakService().find(argId);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerSchemaDef().getRequiredOwnerCTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readschematweak")) {
 				retval = null;
 			}
@@ -703,7 +703,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public ICFBamSchemaTweak readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUNameIdx";
@@ -712,15 +712,15 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamSchemaTweak retval = schema.getJpaHooksSchema().getSchemaTweakService().findByUNameIdx(argScopeId,
 		argName);
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerSchemaDef().getRequiredOwnerCTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readschematweak")) {
 				retval = null;
 			}
@@ -739,7 +739,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public ICFBamSchemaTweak[] readDerivedByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "readDerivedByValTentIdx";
 		boolean permissionGranted = false;
@@ -747,7 +747,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaSchemaTweak> retlist = schema.getJpaHooksSchema().getSchemaTweakService().findByValTentIdx(argTenantId);
 		ICFBamSchemaTweak[] retset = new ICFBamSchemaTweak[retlist.size()];
@@ -769,7 +769,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public ICFBamSchemaTweak[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "readDerivedByScopeIdx";
 		boolean permissionGranted = false;
@@ -777,7 +777,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaSchemaTweak> retlist = schema.getJpaHooksSchema().getSchemaTweakService().findByScopeIdx(argScopeId);
 		ICFBamSchemaTweak[] retset = new ICFBamSchemaTweak[retlist.size()];
@@ -799,7 +799,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public ICFBamSchemaTweak[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readDerivedByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -807,7 +807,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaSchemaTweak> retlist = schema.getJpaHooksSchema().getSchemaTweakService().findByDefSchemaIdx(argDefSchemaId);
 		ICFBamSchemaTweak[] retset = new ICFBamSchemaTweak[retlist.size()];
@@ -838,10 +838,10 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public ICFBamSchemaTweak readDerivedByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaTenantId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argTenantId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaTenantId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		final String S_ProcName = "readDerivedByUDefIdx";
@@ -850,7 +850,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		ICFBamSchemaTweak retval = schema.getJpaHooksSchema().getSchemaTweakService().findByUDefIdx(argTenantId,
 		argScopeId,
@@ -860,8 +860,8 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		if(retval != null && !ICFSecSchema.getSystemId().equals(Authorization.getSecUserId())) {
 				ICFSecTenant tenant = retval.getRequiredContainerSchemaDef().getRequiredOwnerCTenant();
 				ICFSecCluster cluster = tenant.getRequiredContainerCluster();
-			CFLibDbKeyHash256 effClusterId = cluster.getRequiredId();
-			CFLibDbKeyHash256 effTenantId = tenant.getRequiredId();
+			MCFDbKeyHash256 effClusterId = cluster.getRequiredId();
+			MCFDbKeyHash256 effTenantId = tenant.getRequiredId();
 			if (!ICFSecSchema.getSecurityService().isMemberOfTenantGroup(Authorization.getSecUserId(), effClusterId, effTenantId, "readschematweak")) {
 				retval = null;
 			}
@@ -880,7 +880,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 */
 	@Override
 	public ICFBamSchemaTweak[] readDerivedBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId )
+		IMCFKeyHash256 argSchemaDefId )
 	{
 		final String S_ProcName = "readDerivedBySchemaIdx";
 		boolean permissionGranted = false;
@@ -888,7 +888,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 		List<CFBamJpaSchemaTweak> retlist = schema.getJpaHooksSchema().getSchemaTweakService().findBySchemaIdx(argSchemaDefId);
 		ICFBamSchemaTweak[] retset = new ICFBamSchemaTweak[retlist.size()];
@@ -909,7 +909,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak readRec( ICFSecAuthorization Authorization,
@@ -918,10 +918,10 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "readRec";
 		boolean permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readRec");
+		throw new MCFNotImplementedYetException(getClass(), "readRec");
 	}
 
 	/**
@@ -934,7 +934,7 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak lockRec( ICFSecAuthorization Authorization,
@@ -943,10 +943,10 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "lockRec";
 		boolean permissionGranted = canUpdateSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "updateschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "updateschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "lockRec");
+		throw new MCFNotImplementedYetException(getClass(), "lockRec");
 	}
 
 	/**
@@ -961,10 +961,10 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 		final String S_ProcName = "readAllRec";
 		boolean permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
 
-		throw new CFLibNotImplementedYetException(getClass(), "readAllRec");
+		throw new MCFNotImplementedYetException(getClass(), "readAllRec");
 	}
 
 
@@ -978,11 +978,11 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argId )
+		IMCFKeyHash256 argId )
 	{
 		final String S_ProcName = "readRecByIdIdx";
 		boolean permissionGranted = false;
@@ -990,9 +990,9 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByIdIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByIdIdx");
 	}
 
 	/**
@@ -1007,11 +1007,11 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUNameIdx";
@@ -1020,9 +1020,9 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUNameIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUNameIdx");
 	}
 
 	/**
@@ -1034,11 +1034,11 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak[] readRecByValTentIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId )
+		IMCFKeyHash256 argTenantId )
 	{
 		final String S_ProcName = "readRecByValTentIdx";
 		boolean permissionGranted = false;
@@ -1046,9 +1046,9 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByValTentIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByValTentIdx");
 	}
 
 	/**
@@ -1060,11 +1060,11 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId )
+		IMCFKeyHash256 argScopeId )
 	{
 		final String S_ProcName = "readRecByScopeIdx";
 		boolean permissionGranted = false;
@@ -1072,9 +1072,9 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByScopeIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByScopeIdx");
 	}
 
 	/**
@@ -1086,11 +1086,11 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId )
+		IMCFKeyHash256 argDefSchemaId )
 	{
 		final String S_ProcName = "readRecByDefSchemaIdx";
 		boolean permissionGranted = false;
@@ -1098,9 +1098,9 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByDefSchemaIdx");
 	}
 
 	/**
@@ -1121,14 +1121,14 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak readRecByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argTenantId,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaTenantId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argTenantId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaTenantId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName )
 	{
 		final String S_ProcName = "readRecByUDefIdx";
@@ -1137,9 +1137,9 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecByUDefIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecByUDefIdx");
 	}
 
 	/**
@@ -1151,11 +1151,11 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	@Override
 	public ICFBamSchemaTweak[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId )
+		IMCFKeyHash256 argSchemaDefId )
 	{
 		final String S_ProcName = "readRecBySchemaIdx";
 		boolean permissionGranted = false;
@@ -1163,8 +1163,8 @@ public class CFBamJpaSchemaTweakTable implements ICFBamSchemaTweakTable
 			permissionGranted = canReadSchemaTweak(S_ProcName, Authorization);
 		}
 		if (!permissionGranted) {
-			throw new CFLibPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
+			throw new MCFPermissionDeniedException(getClass(), S_ProcName, "readschematweak", ICFBamSchema.SCHEMA_NAME, ICFBamSchemaTweakTable.TABLE_NAME, Authorization.getAuthUuid6().toString());//"Permission '%4$s' denied attempting to access %1$s.%2$s for user id %3$s"
 		}
-		throw new CFLibNotImplementedYetException(getClass(), "readRecBySchemaIdx");
+		throw new MCFNotImplementedYetException(getClass(), "readRecBySchemaIdx");
 	}
 }

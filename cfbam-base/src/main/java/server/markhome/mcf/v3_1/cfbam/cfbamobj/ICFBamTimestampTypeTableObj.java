@@ -173,7 +173,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	CFBamValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamTimestampTypeObj readTimestampTypeByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamTimestampTypeObj readTimestampTypeByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamValueObj instance for the primary key attributes.
@@ -183,7 +183,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	CFBamValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamTimestampTypeObj readTimestampTypeByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamTimestampTypeObj readTimestampTypeByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -196,7 +196,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	CFBamValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamTimestampTypeObj readTimestampTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamTimestampTypeObj readTimestampTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -209,7 +209,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	CFBamValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamTimestampTypeObj readTimestampTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamTimestampTypeObj readTimestampTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -221,7 +221,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamTimestampTypeObj> readTimestampTypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamTimestampTypeObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -231,7 +231,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByScopeIdx( ICFLibKeyHash256 ScopeId,
+	List<ICFBamTimestampTypeObj> readTimestampTypeByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -242,7 +242,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamTimestampTypeObj> readTimestampTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamTimestampTypeObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -252,7 +252,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	List<ICFBamTimestampTypeObj> readTimestampTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -263,7 +263,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamTimestampTypeObj> readTimestampTypeByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamTimestampTypeObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -273,7 +273,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByPrevIdx( ICFLibKeyHash256 PrevId,
+	List<ICFBamTimestampTypeObj> readTimestampTypeByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -284,7 +284,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamTimestampTypeObj> readTimestampTypeByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamTimestampTypeObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -294,7 +294,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByNextIdx( ICFLibKeyHash256 NextId,
+	List<ICFBamTimestampTypeObj> readTimestampTypeByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -307,8 +307,8 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	List<ICFBamTimestampTypeObj> readTimestampTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamTimestampTypeObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -320,8 +320,8 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	List<ICFBamTimestampTypeObj> readTimestampTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -334,8 +334,8 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	List<ICFBamTimestampTypeObj> readTimestampTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamTimestampTypeObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -347,8 +347,8 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	List<ICFBamTimestampTypeObj> readTimestampTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -359,7 +359,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	List<ICFBamTimestampTypeObj> readTimestampTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Get the map of CFBamTimestampTypeObj instances sorted by their primary keys for the duplicate SchemaIdx key.
@@ -369,50 +369,50 @@ public interface ICFBamTimestampTypeTableObj
 	 *	@return	List of CFBamTimestampTypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTimestampTypeObj> readTimestampTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
+	List<ICFBamTimestampTypeObj> readTimestampTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId,
 		boolean forceRead );
 
-	ICFBamTimestampTypeObj readCachedTimestampTypeByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamTimestampTypeObj readCachedTimestampTypeByIdIdx( IMCFKeyHash256 Id );
 
-	ICFBamTimestampTypeObj readCachedTimestampTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamTimestampTypeObj readCachedTimestampTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByPrevIdx( IMCFKeyHash256 PrevId );
 
-	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByNextIdx( IMCFKeyHash256 NextId );
 
-	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
-	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	List<ICFBamTimestampTypeObj> readCachedTimestampTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
-	List<ICFBamTimestampTypeObj> readCachedTimestampTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	List<ICFBamTimestampTypeObj> readCachedTimestampTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
-	void deepDisposeTimestampTypeByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeTimestampTypeByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeTimestampTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deepDisposeTimestampTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeTimestampTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deepDisposeTimestampTypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	void deepDisposeTimestampTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deepDisposeTimestampTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	void deepDisposeTimestampTypeByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deepDisposeTimestampTypeByPrevIdx( IMCFKeyHash256 PrevId );
 
-	void deepDisposeTimestampTypeByNextIdx( ICFLibKeyHash256 NextId );
+	void deepDisposeTimestampTypeByNextIdx( IMCFKeyHash256 NextId );
 
-	void deepDisposeTimestampTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	void deepDisposeTimestampTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
-	void deepDisposeTimestampTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	void deepDisposeTimestampTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
-	void deepDisposeTimestampTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	void deepDisposeTimestampTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Internal use only.
@@ -429,7 +429,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *
 	 *	@param	Id	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeByIdIdx( ICFLibKeyHash256 Id );
+	void deleteTimestampTypeByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -438,7 +438,7 @@ public interface ICFBamTimestampTypeTableObj
 	 *
 	 *	@param	Name	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deleteTimestampTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -446,28 +446,28 @@ public interface ICFBamTimestampTypeTableObj
 	 *
 	 *	@param	ScopeId	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deleteTimestampTypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deleteTimestampTypeByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deleteTimestampTypeByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeByNextIdx( ICFLibKeyHash256 NextId );
+	void deleteTimestampTypeByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -476,8 +476,8 @@ public interface ICFBamTimestampTypeTableObj
 	 *
 	 *	@param	PrevId	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	void deleteTimestampTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -486,15 +486,15 @@ public interface ICFBamTimestampTypeTableObj
 	 *
 	 *	@param	NextId	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	void deleteTimestampTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaDefId	The TimestampType key attribute of the instance generating the id.
 	 */
-	void deleteTimestampTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	void deleteTimestampTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the CFBamTimestampTypeObj instance up in the chain.  The instance is always refreshed.

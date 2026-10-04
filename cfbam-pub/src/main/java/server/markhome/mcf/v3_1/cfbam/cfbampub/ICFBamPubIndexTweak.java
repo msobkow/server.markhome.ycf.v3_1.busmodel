@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -65,17 +65,17 @@ public interface ICFBamPubIndexTweak
 	extends ICFBamPubTweak
 {
 	public static final String S_INDEXID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INDEXID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_INDEXID_INIT_VALUE );
+	public static final MCFDbKeyHash256 INDEXID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_INDEXID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa80b;
 	public final static String S_CLASS_CODE = "a80b";
 
 	public ICFBamPubIndex getRequiredContainerIndexDef();
 
 	public void setRequiredContainerIndexDef(ICFBamPubIndex argObj);
-	public void setRequiredContainerIndexDef(ICFLibKeyHash256 argIndexId);
+	public void setRequiredContainerIndexDef(IMCFKeyHash256 argIndexId);
 
-	public CFLibDbKeyHash256 getRequiredIndexId();
-	public void setRequiredIndexId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredIndexId();
+	public void setRequiredIndexId( MCFDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

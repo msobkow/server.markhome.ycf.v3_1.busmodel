@@ -173,7 +173,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	CFBamValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamTZTimeColObj readTZTimeColByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamTZTimeColObj readTZTimeColByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamValueObj instance for the primary key attributes.
@@ -183,7 +183,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	CFBamValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamTZTimeColObj readTZTimeColByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamTZTimeColObj readTZTimeColByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -196,7 +196,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	CFBamValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamTZTimeColObj readTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamTZTimeColObj readTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -209,7 +209,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	CFBamValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamTZTimeColObj readTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamTZTimeColObj readTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -221,7 +221,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamTZTimeColObj> readTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamTZTimeColObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -231,7 +231,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId,
+	List<ICFBamTZTimeColObj> readTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -242,7 +242,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamTZTimeColObj> readTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamTZTimeColObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -252,7 +252,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	List<ICFBamTZTimeColObj> readTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -263,7 +263,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamTZTimeColObj> readTZTimeColByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamTZTimeColObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -273,7 +273,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId,
+	List<ICFBamTZTimeColObj> readTZTimeColByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -284,7 +284,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamTZTimeColObj> readTZTimeColByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamTZTimeColObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -294,7 +294,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByNextIdx( ICFLibKeyHash256 NextId,
+	List<ICFBamTZTimeColObj> readTZTimeColByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -307,8 +307,8 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	List<ICFBamTZTimeColObj> readTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamTZTimeColObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -320,8 +320,8 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	List<ICFBamTZTimeColObj> readTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -334,8 +334,8 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	List<ICFBamTZTimeColObj> readTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamTZTimeColObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -347,8 +347,8 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	List<ICFBamTZTimeColObj> readTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -359,7 +359,7 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate TableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByTableIdx( ICFLibKeyHash256 TableId );
+	List<ICFBamTZTimeColObj> readTZTimeColByTableIdx( IMCFKeyHash256 TableId );
 
 	/**
 	 *	Get the map of CFBamTZTimeColObj instances sorted by their primary keys for the duplicate TableIdx key.
@@ -369,50 +369,50 @@ public interface ICFBamTZTimeColTableObj
 	 *	@return	List of CFBamTZTimeColObj cached instances sorted by their primary keys for the duplicate TableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamTZTimeColObj> readTZTimeColByTableIdx( ICFLibKeyHash256 TableId,
+	List<ICFBamTZTimeColObj> readTZTimeColByTableIdx( IMCFKeyHash256 TableId,
 		boolean forceRead );
 
-	ICFBamTZTimeColObj readCachedTZTimeColByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamTZTimeColObj readCachedTZTimeColByIdIdx( IMCFKeyHash256 Id );
 
-	ICFBamTZTimeColObj readCachedTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamTZTimeColObj readCachedTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamTZTimeColObj> readCachedTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamTZTimeColObj> readCachedTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	List<ICFBamTZTimeColObj> readCachedTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamTZTimeColObj> readCachedTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	List<ICFBamTZTimeColObj> readCachedTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId );
+	List<ICFBamTZTimeColObj> readCachedTZTimeColByPrevIdx( IMCFKeyHash256 PrevId );
 
-	List<ICFBamTZTimeColObj> readCachedTZTimeColByNextIdx( ICFLibKeyHash256 NextId );
+	List<ICFBamTZTimeColObj> readCachedTZTimeColByNextIdx( IMCFKeyHash256 NextId );
 
-	List<ICFBamTZTimeColObj> readCachedTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	List<ICFBamTZTimeColObj> readCachedTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
-	List<ICFBamTZTimeColObj> readCachedTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	List<ICFBamTZTimeColObj> readCachedTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
-	List<ICFBamTZTimeColObj> readCachedTZTimeColByTableIdx( ICFLibKeyHash256 TableId );
+	List<ICFBamTZTimeColObj> readCachedTZTimeColByTableIdx( IMCFKeyHash256 TableId );
 
-	void deepDisposeTZTimeColByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeTZTimeColByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deepDisposeTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deepDisposeTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	void deepDisposeTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deepDisposeTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	void deepDisposeTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deepDisposeTZTimeColByPrevIdx( IMCFKeyHash256 PrevId );
 
-	void deepDisposeTZTimeColByNextIdx( ICFLibKeyHash256 NextId );
+	void deepDisposeTZTimeColByNextIdx( IMCFKeyHash256 NextId );
 
-	void deepDisposeTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	void deepDisposeTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
-	void deepDisposeTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	void deepDisposeTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
-	void deepDisposeTZTimeColByTableIdx( ICFLibKeyHash256 TableId );
+	void deepDisposeTZTimeColByTableIdx( IMCFKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -429,7 +429,7 @@ public interface ICFBamTZTimeColTableObj
 	 *
 	 *	@param	Id	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByIdIdx( ICFLibKeyHash256 Id );
+	void deleteTZTimeColByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -438,7 +438,7 @@ public interface ICFBamTZTimeColTableObj
 	 *
 	 *	@param	Name	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deleteTZTimeColByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -446,28 +446,28 @@ public interface ICFBamTZTimeColTableObj
 	 *
 	 *	@param	ScopeId	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deleteTZTimeColByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deleteTZTimeColByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByPrevIdx( ICFLibKeyHash256 PrevId );
+	void deleteTZTimeColByPrevIdx( IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByNextIdx( ICFLibKeyHash256 NextId );
+	void deleteTZTimeColByNextIdx( IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -476,8 +476,8 @@ public interface ICFBamTZTimeColTableObj
 	 *
 	 *	@param	PrevId	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId );
+	void deleteTZTimeColByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -486,15 +486,15 @@ public interface ICFBamTZTimeColTableObj
 	 *
 	 *	@param	NextId	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId );
+	void deleteTZTimeColByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TableId	The TZTimeCol key attribute of the instance generating the id.
 	 */
-	void deleteTZTimeColByTableIdx( ICFLibKeyHash256 TableId );
+	void deleteTZTimeColByTableIdx( IMCFKeyHash256 TableId );
 
 	/**
 	 *	Move the CFBamTZTimeColObj instance up in the chain.  The instance is always refreshed.

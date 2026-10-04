@@ -138,7 +138,7 @@ public interface ICFBamISOCtryCcyObj
 	/**
 	 *	End this edition of this ISOCtryCcy instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 

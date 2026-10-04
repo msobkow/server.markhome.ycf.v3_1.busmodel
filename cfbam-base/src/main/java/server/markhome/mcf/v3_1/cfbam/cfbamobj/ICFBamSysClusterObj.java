@@ -111,7 +111,7 @@ public interface ICFBamSysClusterObj
 	/**
 	 *	End this edition of this SysCluster instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -216,11 +216,11 @@ public interface ICFBamSysClusterObj
 	int getRequiredSingletonId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
+	 *	Get the required IMCFKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
+	 *	@return	The required IMCFKeyHash256 attribute ClusterId.
 	 */
-	ICFLibKeyHash256 getRequiredClusterId();
+	IMCFKeyHash256 getRequiredClusterId();
 
 	/**
 	 *	Internal use only.

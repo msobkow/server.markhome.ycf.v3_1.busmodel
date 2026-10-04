@@ -442,7 +442,7 @@ public class CFBamSecTentRoleTableObj
 			locked = (ICFSecSecTentRoleObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockSecTentRole", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockSecTentRole", pkey );
 		}
 		return( locked );
 	}
@@ -477,7 +477,7 @@ public class CFBamSecTentRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -485,7 +485,7 @@ public class CFBamSecTentRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -537,7 +537,7 @@ public class CFBamSecTentRoleTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -545,7 +545,7 @@ public class CFBamSecTentRoleTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -582,28 +582,28 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId )
+	public ICFSecSecTentRoleObj readSecTentRoleByIdIdx( IMCFKeyHash256 SecTentRoleId )
 	{
 		return( readSecTentRoleByIdIdx( SecTentRoleId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId, boolean forceRead )
+	public ICFSecSecTentRoleObj readSecTentRoleByIdIdx( IMCFKeyHash256 SecTentRoleId, boolean forceRead )
 	{
 		ICFSecSecTentRoleObj obj = readSecTentRole( SecTentRoleId, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleObj> readSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFSecSecTentRoleObj> readSecTentRoleByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		return( readSecTentRoleByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleObj> readSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId,
+	public List<ICFSecSecTentRoleObj> readSecTentRoleByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecTentRoleByTenantIdx";
@@ -641,7 +641,7 @@ public class CFBamSecTentRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -649,7 +649,7 @@ public class CFBamSecTentRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -734,7 +734,7 @@ public class CFBamSecTentRoleTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -742,7 +742,7 @@ public class CFBamSecTentRoleTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -782,7 +782,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
+	public ICFSecSecTentRoleObj readSecTentRoleByUNameIdx( IMCFKeyHash256 TenantId,
 		String Name )
 	{
 		return( readSecTentRoleByUNameIdx( TenantId,
@@ -791,7 +791,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
+	public ICFSecSecTentRoleObj readSecTentRoleByUNameIdx( IMCFKeyHash256 TenantId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -820,7 +820,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readCachedSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId )
+	public ICFSecSecTentRoleObj readCachedSecTentRoleByIdIdx( IMCFKeyHash256 SecTentRoleId )
 	{
 		ICFSecSecTentRoleObj obj = null;
 		obj = readCachedSecTentRole( SecTentRoleId );
@@ -828,7 +828,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public List<ICFSecSecTentRoleObj> readCachedSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId )
+	public List<ICFSecSecTentRoleObj> readCachedSecTentRoleByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedSecTentRoleByTenantIdx";
 		ICFSecSecTentRoleByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByTenantIdxKey();
@@ -846,7 +846,7 @@ public class CFBamSecTentRoleTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -854,7 +854,7 @@ public class CFBamSecTentRoleTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -923,7 +923,7 @@ public class CFBamSecTentRoleTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -931,7 +931,7 @@ public class CFBamSecTentRoleTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -982,7 +982,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecTentRoleObj readCachedSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
+	public ICFSecSecTentRoleObj readCachedSecTentRoleByUNameIdx( IMCFKeyHash256 TenantId,
 		String Name )
 	{
 		ICFSecSecTentRoleObj obj = null;
@@ -1020,7 +1020,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId )
+	public void deepDisposeSecTentRoleByIdIdx( IMCFKeyHash256 SecTentRoleId )
 	{
 		ICFSecSecTentRoleObj obj = readCachedSecTentRoleByIdIdx( SecTentRoleId );
 		if( obj != null ) {
@@ -1029,7 +1029,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deepDisposeSecTentRoleByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeSecTentRoleByTenantIdx";
 		ICFSecSecTentRoleObj obj;
@@ -1063,7 +1063,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
+	public void deepDisposeSecTentRoleByUNameIdx( IMCFKeyHash256 TenantId,
 		String Name )
 	{
 		ICFSecSecTentRoleObj obj = readCachedSecTentRoleByUNameIdx( TenantId,
@@ -1092,7 +1092,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public void deleteSecTentRoleByIdIdx( ICFLibKeyHash256 SecTentRoleId )
+	public void deleteSecTentRoleByIdIdx( IMCFKeyHash256 SecTentRoleId )
 	{
 		ICFSecSecTentRoleObj obj = readSecTentRole(SecTentRoleId);
 		if( obj != null ) {
@@ -1122,7 +1122,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public void deleteSecTentRoleByTenantIdx( ICFLibKeyHash256 TenantId )
+	public void deleteSecTentRoleByTenantIdx( IMCFKeyHash256 TenantId )
 	{
 		ICFSecSecTentRoleByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentRole().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
@@ -1190,7 +1190,7 @@ public class CFBamSecTentRoleTableObj
 	}
 
 	@Override
-	public void deleteSecTentRoleByUNameIdx( ICFLibKeyHash256 TenantId,
+	public void deleteSecTentRoleByUNameIdx( IMCFKeyHash256 TenantId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {

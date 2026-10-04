@@ -91,7 +91,7 @@ implements ICFBamJavaFXEnumTypePaneList
 	protected ICFBamJavaFXSchema javafxSchema = null;
 	protected Collection<ICFBamEnumTypeObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamEnumTypeObj> observableListOfEnumType = null;
-	protected TableColumn<ICFBamEnumTypeObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamEnumTypeObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamEnumTypeObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamEnumTypeObj, String> tableColumnShortName = null;
 	protected TableColumn<ICFBamEnumTypeObj, String> tableColumnLabel = null;
@@ -152,24 +152,24 @@ implements ICFBamJavaFXEnumTypePaneList
 		javafxContainer = argContainer;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamEnumTypeObj>();
-		tableColumnId = new TableColumn<ICFBamEnumTypeObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamEnumTypeObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamEnumTypeObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamEnumTypeObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamEnumTypeObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamEnumTypeObj, IMCFKeyHash256> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamEnumTypeObj,ICFLibKeyHash256>,TableCell<ICFBamEnumTypeObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamEnumTypeObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamEnumTypeObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamEnumTypeObj,IMCFKeyHash256>,TableCell<ICFBamEnumTypeObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamEnumTypeObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamEnumTypeObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamEnumTypeObj>();
 			}

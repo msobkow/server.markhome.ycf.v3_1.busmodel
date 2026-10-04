@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,17 +74,17 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableByQualTableIdxKey
 	implements ICFBamTableByQualTableIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 optionalQualifyingTableId;
+	protected IMCFKeyHash256 optionalQualifyingTableId;
 	public CFBamBuffTableByQualTableIdxKey() {
-		optionalQualifyingTableId = CFLibDbKeyHash256.nullGet();
+		optionalQualifyingTableId = MCFDbKeyHash256.nullGet();
 	}
 
 	@Override
-	public ICFLibKeyHash256 getOptionalQualifyingTableId() {
+	public IMCFKeyHash256 getOptionalQualifyingTableId() {
 		return(optionalQualifyingTableId);
 	}
 
-	public void setOptionalQualifyingTableId( ICFLibKeyHash256 value ) {
+	public void setOptionalQualifyingTableId( IMCFKeyHash256 value ) {
 		optionalQualifyingTableId = value;
 	}
 
@@ -192,7 +192,7 @@ public class CFBamBuffTableByQualTableIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

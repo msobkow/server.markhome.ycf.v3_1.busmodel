@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -65,7 +65,7 @@ public interface ICFBamPubClearSubDep1
 	extends ICFBamPubClearDep
 {
 	public static final String S_CLEARTOPDEPID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 CLEARTOPDEPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLEARTOPDEPID_INIT_VALUE );
+	public static final MCFDbKeyHash256 CLEARTOPDEPID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_CLEARTOPDEPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa815;
 	public final static String S_CLASS_CODE = "a815";
@@ -73,12 +73,12 @@ public interface ICFBamPubClearSubDep1
 	public ICFBamPubClearTopDep getRequiredContainerClearTopDep();
 
 	public void setRequiredContainerClearTopDep(ICFBamPubClearTopDep argObj);
-	public void setRequiredContainerClearTopDep(ICFLibKeyHash256 argClearTopDepId);
+	public void setRequiredContainerClearTopDep(IMCFKeyHash256 argClearTopDepId);
 
 	public List<ICFBamPubClearSubDep2> getOptionalComponentsClearDep();
 
-	public CFLibDbKeyHash256 getRequiredClearTopDepId();
-	public void setRequiredClearTopDepId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredClearTopDepId();
+	public void setRequiredClearTopDepId( MCFDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

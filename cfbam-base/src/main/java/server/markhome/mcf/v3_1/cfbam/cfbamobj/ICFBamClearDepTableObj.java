@@ -173,7 +173,7 @@ public interface ICFBamClearDepTableObj
 	 *	@return	CFBamScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamClearDepObj readClearDepByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamClearDepObj readClearDepByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamScopeObj instance for the primary key attributes.
@@ -183,7 +183,7 @@ public interface ICFBamClearDepTableObj
 	 *	@return	CFBamScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamClearDepObj readClearDepByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamClearDepObj readClearDepByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -194,7 +194,7 @@ public interface ICFBamClearDepTableObj
 	 *	@return	List of CFBamClearDepObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamClearDepObj> readClearDepByTenantIdx( ICFLibKeyHash256 TenantId );
+	List<ICFBamClearDepObj> readClearDepByTenantIdx( IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamClearDepObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -204,7 +204,7 @@ public interface ICFBamClearDepTableObj
 	 *	@return	List of CFBamClearDepObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamClearDepObj> readClearDepByTenantIdx( ICFLibKeyHash256 TenantId,
+	List<ICFBamClearDepObj> readClearDepByTenantIdx( IMCFKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -215,7 +215,7 @@ public interface ICFBamClearDepTableObj
 	 *	@return	List of CFBamClearDepObj cached instances sorted by their primary keys for the duplicate ClearDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamClearDepObj> readClearDepByClearDepIdx( ICFLibKeyHash256 RelationId );
+	List<ICFBamClearDepObj> readClearDepByClearDepIdx( IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Get the map of CFBamClearDepObj instances sorted by their primary keys for the duplicate ClearDepIdx key.
@@ -225,7 +225,7 @@ public interface ICFBamClearDepTableObj
 	 *	@return	List of CFBamClearDepObj cached instances sorted by their primary keys for the duplicate ClearDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamClearDepObj> readClearDepByClearDepIdx( ICFLibKeyHash256 RelationId,
+	List<ICFBamClearDepObj> readClearDepByClearDepIdx( IMCFKeyHash256 RelationId,
 		boolean forceRead );
 
 	/**
@@ -236,7 +236,7 @@ public interface ICFBamClearDepTableObj
 	 *	@return	List of CFBamClearDepObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamClearDepObj> readClearDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamClearDepObj> readClearDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamClearDepObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -246,24 +246,24 @@ public interface ICFBamClearDepTableObj
 	 *	@return	List of CFBamClearDepObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamClearDepObj> readClearDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	List<ICFBamClearDepObj> readClearDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead );
 
-	ICFBamClearDepObj readCachedClearDepByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamClearDepObj readCachedClearDepByIdIdx( IMCFKeyHash256 Id );
 
-	List<ICFBamClearDepObj> readCachedClearDepByTenantIdx( ICFLibKeyHash256 TenantId );
+	List<ICFBamClearDepObj> readCachedClearDepByTenantIdx( IMCFKeyHash256 TenantId );
 
-	List<ICFBamClearDepObj> readCachedClearDepByClearDepIdx( ICFLibKeyHash256 RelationId );
+	List<ICFBamClearDepObj> readCachedClearDepByClearDepIdx( IMCFKeyHash256 RelationId );
 
-	List<ICFBamClearDepObj> readCachedClearDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	List<ICFBamClearDepObj> readCachedClearDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
-	void deepDisposeClearDepByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeClearDepByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeClearDepByTenantIdx( ICFLibKeyHash256 TenantId );
+	void deepDisposeClearDepByTenantIdx( IMCFKeyHash256 TenantId );
 
-	void deepDisposeClearDepByClearDepIdx( ICFLibKeyHash256 RelationId );
+	void deepDisposeClearDepByClearDepIdx( IMCFKeyHash256 RelationId );
 
-	void deepDisposeClearDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deepDisposeClearDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
@@ -280,26 +280,26 @@ public interface ICFBamClearDepTableObj
 	 *
 	 *	@param	Id	The ClearDep key attribute of the instance generating the id.
 	 */
-	void deleteClearDepByIdIdx( ICFLibKeyHash256 Id );
+	void deleteClearDepByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The ClearDep key attribute of the instance generating the id.
 	 */
-	void deleteClearDepByTenantIdx( ICFLibKeyHash256 TenantId );
+	void deleteClearDepByTenantIdx( IMCFKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	RelationId	The ClearDep key attribute of the instance generating the id.
 	 */
-	void deleteClearDepByClearDepIdx( ICFLibKeyHash256 RelationId );
+	void deleteClearDepByClearDepIdx( IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The ClearDep key attribute of the instance generating the id.
 	 */
-	void deleteClearDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
+	void deleteClearDepByDefSchemaIdx( IMCFKeyHash256 DefSchemaId );
 }

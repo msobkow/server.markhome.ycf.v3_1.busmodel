@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,19 +66,19 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaRelationByToKeyIdxKey
 	implements ICFBamRelationByToKeyIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredToIndexId;
+	protected IMCFKeyHash256 requiredToIndexId;
 	public CFBamJpaRelationByToKeyIdxKey() {
-		requiredToIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubRelation.TOINDEXID_INIT_VALUE.toString() );
+		requiredToIndexId = MCFDbKeyHash256.fromHex( ICFBamPubRelation.TOINDEXID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredToIndexId() {
+	public IMCFKeyHash256 getRequiredToIndexId() {
 		return(requiredToIndexId);
 	}
 
-	public void setRequiredToIndexId( ICFLibKeyHash256 value ) {
+	public void setRequiredToIndexId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredToIndexId",
 				1,
 				"value" );
@@ -221,7 +221,7 @@ public class CFBamJpaRelationByToKeyIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

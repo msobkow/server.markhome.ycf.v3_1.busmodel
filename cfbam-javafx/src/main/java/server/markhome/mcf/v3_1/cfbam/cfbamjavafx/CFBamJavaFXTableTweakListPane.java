@@ -96,9 +96,9 @@ implements ICFBamJavaFXTableTweakPaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamTableTweakObj> dataTable = null;
-	protected TableColumn<ICFBamTableTweakObj, ICFLibKeyHash256> tableColumnTenantId = null;
-	protected TableColumn<ICFBamTableTweakObj, ICFLibKeyHash256> tableColumnId = null;
-	protected TableColumn<ICFBamTableTweakObj, ICFLibKeyHash256> tableColumnDefSchemaTenantId = null;
+	protected TableColumn<ICFBamTableTweakObj, IMCFKeyHash256> tableColumnTenantId = null;
+	protected TableColumn<ICFBamTableTweakObj, IMCFKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamTableTweakObj, IMCFKeyHash256> tableColumnDefSchemaTenantId = null;
 	protected TableColumn<ICFBamTableTweakObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamTableTweakObj, Boolean> tableColumnReplacesInherited = null;
 	protected TableColumn<ICFBamTableTweakObj, String> tableColumnTweakGelText = null;
@@ -191,70 +191,70 @@ implements ICFBamJavaFXTableTweakPaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamTableTweakObj>();
-		tableColumnTenantId = new TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256>( "Tenant Id" );
-		tableColumnTenantId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableTweakObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTableTweakObj, ICFLibKeyHash256> p ) {
+		tableColumnTenantId = new TableColumn<ICFBamTableTweakObj,IMCFKeyHash256>( "Tenant Id" );
+		tableColumnTenantId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableTweakObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamTableTweakObj, IMCFKeyHash256> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredTenantId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredTenantId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnTenantId.setCellFactory( new Callback<TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256>,TableCell<ICFBamTableTweakObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamTableTweakObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256> arg)
+		tableColumnTenantId.setCellFactory( new Callback<TableColumn<ICFBamTableTweakObj,IMCFKeyHash256>,TableCell<ICFBamTableTweakObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamTableTweakObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamTableTweakObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTableTweakObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnTenantId );
-		tableColumnId = new TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableTweakObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTableTweakObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamTableTweakObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableTweakObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamTableTweakObj, IMCFKeyHash256> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256>,TableCell<ICFBamTableTweakObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamTableTweakObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTableTweakObj,IMCFKeyHash256>,TableCell<ICFBamTableTweakObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamTableTweakObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamTableTweakObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTableTweakObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnId );
-		tableColumnDefSchemaTenantId = new TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256>( "Defining Schema Tenant Id" );
-		tableColumnDefSchemaTenantId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableTweakObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTableTweakObj, ICFLibKeyHash256> p ) {
+		tableColumnDefSchemaTenantId = new TableColumn<ICFBamTableTweakObj,IMCFKeyHash256>( "Defining Schema Tenant Id" );
+		tableColumnDefSchemaTenantId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableTweakObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamTableTweakObj, IMCFKeyHash256> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getOptionalDefSchemaTenantId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getOptionalDefSchemaTenantId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnDefSchemaTenantId.setCellFactory( new Callback<TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256>,TableCell<ICFBamTableTweakObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamTableTweakObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamTableTweakObj,ICFLibKeyHash256> arg)
+		tableColumnDefSchemaTenantId.setCellFactory( new Callback<TableColumn<ICFBamTableTweakObj,IMCFKeyHash256>,TableCell<ICFBamTableTweakObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamTableTweakObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamTableTweakObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTableTweakObj>();
 			}

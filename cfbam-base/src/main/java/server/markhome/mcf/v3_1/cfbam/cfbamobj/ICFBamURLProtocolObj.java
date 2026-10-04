@@ -137,7 +137,7 @@ public interface ICFBamURLProtocolObj
 	/**
 	 *	End this edition of this URLProtocol instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 

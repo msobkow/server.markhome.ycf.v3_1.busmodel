@@ -96,7 +96,7 @@ implements ICFBamJavaFXClearSubDep2PaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamClearSubDep2Obj> dataTable = null;
-	protected TableColumn<ICFBamClearSubDep2Obj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamClearSubDep2Obj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamClearSubDep2Obj, String> tableColumnName = null;
 	protected TableColumn<ICFBamClearSubDep2Obj, ICFBamRelationObj> tableColumnLookupRelation = null;
 	protected TableColumn<ICFBamClearSubDep2Obj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
@@ -188,24 +188,24 @@ implements ICFBamJavaFXClearSubDep2PaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamClearSubDep2Obj>();
-		tableColumnId = new TableColumn<ICFBamClearSubDep2Obj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamClearSubDep2Obj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamClearSubDep2Obj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamClearSubDep2Obj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamClearSubDep2Obj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamClearSubDep2Obj, IMCFKeyHash256> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamClearSubDep2Obj,ICFLibKeyHash256>,TableCell<ICFBamClearSubDep2Obj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamClearSubDep2Obj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamClearSubDep2Obj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamClearSubDep2Obj,IMCFKeyHash256>,TableCell<ICFBamClearSubDep2Obj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamClearSubDep2Obj,IMCFKeyHash256> call(
+				TableColumn<ICFBamClearSubDep2Obj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamClearSubDep2Obj>();
 			}

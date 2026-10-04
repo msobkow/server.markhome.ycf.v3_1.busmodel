@@ -119,7 +119,7 @@ public interface ICFBamRelationColTable
 	 *	@param	Name	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId,
+		IMCFKeyHash256 argRelationId,
 		String argName );
 
 	/**
@@ -139,7 +139,7 @@ public interface ICFBamRelationColTable
 	 *	@param	RelationId	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId );
+		IMCFKeyHash256 argRelationId );
 
 	/**
 	 *	Delete the RelationCol instances identified by the key RelationIdx.
@@ -158,7 +158,7 @@ public interface ICFBamRelationColTable
 	 *	@param	DefSchemaId	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the RelationCol instances identified by the key DefSchemaIdx.
@@ -177,7 +177,7 @@ public interface ICFBamRelationColTable
 	 *	@param	FromColId	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByFromColIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argFromColId );
+		IMCFKeyHash256 argFromColId );
 
 	/**
 	 *	Delete the RelationCol instances identified by the key FromColIdx.
@@ -196,7 +196,7 @@ public interface ICFBamRelationColTable
 	 *	@param	ToColId	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByToColIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argToColId );
+		IMCFKeyHash256 argToColId );
 
 	/**
 	 *	Delete the RelationCol instances identified by the key ToColIdx.
@@ -215,7 +215,7 @@ public interface ICFBamRelationColTable
 	 *	@param	PrevId	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the RelationCol instances identified by the key PrevIdx.
@@ -234,7 +234,7 @@ public interface ICFBamRelationColTable
 	 *	@param	NextId	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the RelationCol instances identified by the key NextIdx.
@@ -255,8 +255,8 @@ public interface ICFBamRelationColTable
 	 *	@param	PrevId	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByRelPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId,
-		ICFLibKeyHash256 argPrevId );
+		IMCFKeyHash256 argRelationId,
+		IMCFKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the RelationCol instances identified by the key RelPrevIdx.
@@ -277,8 +277,8 @@ public interface ICFBamRelationColTable
 	 *	@param	NextId	The RelationCol key attribute of the instance generating the id.
 	 */
 	void deleteRelationColByRelNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argRelationId,
-		ICFLibKeyHash256 argNextId );
+		IMCFKeyHash256 argRelationId,
+		IMCFKeyHash256 argNextId );
 
 	/**
 	 *	Delete the RelationCol instances identified by the key RelNextIdx.
@@ -337,7 +337,7 @@ public interface ICFBamRelationColTable
 	 *		no such existing key value.
 	 */
 	ICFBamRelationCol readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived RelationCol record instance identified by the unique key UNameIdx.
@@ -352,7 +352,7 @@ public interface ICFBamRelationColTable
 	 *		no such existing key value.
 	 */
 	ICFBamRelationCol readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId,
+		IMCFKeyHash256 RelationId,
 		String Name );
 
 	/**
@@ -365,7 +365,7 @@ public interface ICFBamRelationColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelationCol[] readDerivedByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the derived RelationCol record instances identified by the duplicate key DefSchemaIdx.
@@ -377,7 +377,7 @@ public interface ICFBamRelationColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelationCol[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived RelationCol record instances identified by the duplicate key FromColIdx.
@@ -389,7 +389,7 @@ public interface ICFBamRelationColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelationCol[] readDerivedByFromColIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 FromColId );
+		IMCFKeyHash256 FromColId );
 
 	/**
 	 *	Read an array of the derived RelationCol record instances identified by the duplicate key ToColIdx.
@@ -401,7 +401,7 @@ public interface ICFBamRelationColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelationCol[] readDerivedByToColIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ToColId );
+		IMCFKeyHash256 ToColId );
 
 	/**
 	 *	Read an array of the derived RelationCol record instances identified by the duplicate key PrevIdx.
@@ -413,7 +413,7 @@ public interface ICFBamRelationColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelationCol[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived RelationCol record instances identified by the duplicate key NextIdx.
@@ -425,7 +425,7 @@ public interface ICFBamRelationColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelationCol[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived RelationCol record instances identified by the duplicate key RelPrevIdx.
@@ -439,8 +439,8 @@ public interface ICFBamRelationColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelationCol[] readDerivedByRelPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived RelationCol record instances identified by the duplicate key RelNextIdx.
@@ -454,8 +454,8 @@ public interface ICFBamRelationColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelationCol[] readDerivedByRelNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read the specific RelationCol record instance identified by the primary key.
@@ -467,7 +467,7 @@ public interface ICFBamRelationColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -482,7 +482,7 @@ public interface ICFBamRelationColTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -506,10 +506,10 @@ public interface ICFBamRelationColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific RelationCol record instance identified by the unique key UNameIdx.
@@ -523,10 +523,10 @@ public interface ICFBamRelationColTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId,
+		IMCFKeyHash256 RelationId,
 		String Name );
 
 	/**
@@ -538,10 +538,10 @@ public interface ICFBamRelationColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol[] readRecByRelationIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId );
+		IMCFKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the specific RelationCol record instances identified by the duplicate key DefSchemaIdx.
@@ -552,10 +552,10 @@ public interface ICFBamRelationColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific RelationCol record instances identified by the duplicate key FromColIdx.
@@ -566,10 +566,10 @@ public interface ICFBamRelationColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol[] readRecByFromColIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 FromColId );
+		IMCFKeyHash256 FromColId );
 
 	/**
 	 *	Read an array of the specific RelationCol record instances identified by the duplicate key ToColIdx.
@@ -580,10 +580,10 @@ public interface ICFBamRelationColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol[] readRecByToColIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ToColId );
+		IMCFKeyHash256 ToColId );
 
 	/**
 	 *	Read an array of the specific RelationCol record instances identified by the duplicate key PrevIdx.
@@ -594,10 +594,10 @@ public interface ICFBamRelationColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific RelationCol record instances identified by the duplicate key NextIdx.
@@ -608,10 +608,10 @@ public interface ICFBamRelationColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific RelationCol record instances identified by the duplicate key RelPrevIdx.
@@ -624,11 +624,11 @@ public interface ICFBamRelationColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol[] readRecByRelPrevIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 PrevId );
+		IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific RelationCol record instances identified by the duplicate key RelNextIdx.
@@ -641,11 +641,11 @@ public interface ICFBamRelationColTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelationCol[] readRecByRelNextIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 RelationId,
-		ICFLibKeyHash256 NextId );
+		IMCFKeyHash256 RelationId,
+		IMCFKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -653,7 +653,7 @@ public interface ICFBamRelationColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamRelationCol moveRecUp( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 
 	/**
@@ -662,6 +662,6 @@ public interface ICFBamRelationColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamRelationCol moveRecDown( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id,
+		IMCFKeyHash256 Id,
 		int revision );
 }

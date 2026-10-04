@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -70,39 +70,39 @@ public interface ICFBamProtTweakH
 {
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getCreatedByUserId();
-	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getCreatedByUserId();
+	public void setCreatedByUserId( MCFDbKeyHash256 value );
 	public LocalDateTime getCreatedAt();
 	public void setCreatedAt( LocalDateTime value );
-	public CFLibDbKeyHash256 getUpdatedByUserId();
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getUpdatedByUserId();
+	public void setUpdatedByUserId( MCFDbKeyHash256 value );
 	public LocalDateTime getUpdatedAt();
 	public void setUpdatedAt( LocalDateTime value );
 
 	public ICFBamProtTweakHPKey getProtPKey();
 	public void setProtPKey( ICFBamProtTweakHPKey pkey );
-	public CFLibDbKeyHash256 getAuditClusterId();
-	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
+	public MCFDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(MCFDbKeyHash256 auditClusterId);
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp(LocalDateTime auditStamp);
 	public short getAuditActionId();
 	public void setAuditActionId(short auditActionId);
 	public int getRequiredRevision();
 	public void setRequiredRevision(int revision);
-	public CFLibDbKeyHash256 getAuditSessionId();
-	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
+	public MCFDbKeyHash256 getAuditSessionId();
+	public void setAuditSessionId(MCFDbKeyHash256 auditSessionId);
 
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 requiredId );
+	public IMCFKeyHash256 getRequiredId();
+	public void setRequiredId( IMCFKeyHash256 requiredId );
 
-	public ICFLibKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredScopeId();
-	public void setRequiredScopeId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaTenantId();
-	public void setOptionalDefSchemaTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getRequiredScopeId();
+	public void setRequiredScopeId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaTenantId();
+	public void setOptionalDefSchemaTenantId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean getRequiredReplacesInherited();

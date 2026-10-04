@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -66,37 +66,37 @@ public interface ICFBamEnumTag
 	public static final short ENUMCODE_MIN_VALUE = (short)0;
 	public static final short ENUMCODE_MAX_VALUE = (short)32767;
 	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final MCFDbKeyHash256 INIT_CREATED_BY = MCFDbKeyHash256.fromHex(S_INIT_CREATED_BY);
 	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final MCFDbKeyHash256 INIT_UPDATED_BY = MCFDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
+	public static final MCFDbKeyHash256 ID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_ID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DEFSCHEMAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String S_ENUMID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ENUMID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ENUMID_INIT_VALUE );
+	public static final MCFDbKeyHash256 ENUMID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_ENUMID_INIT_VALUE );
 	public static final short ENUMCODE_INIT_VALUE = (short)0;
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final String S_PREVID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 PREVID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
+	public static final MCFDbKeyHash256 PREVID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
 	public static final String S_NEXTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 NEXTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
+	public static final MCFDbKeyHash256 NEXTID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa822;
 	public final static String S_CLASS_CODE = "a822";
 
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getCreatedByUserId();
+	public MCFDbKeyHash256 getCreatedByUserId();
 
-	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+	public void setCreatedByUserId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getCreatedAt();
 
 	public void setCreatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getUpdatedByUserId();
+	public MCFDbKeyHash256 getUpdatedByUserId();
 
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+	public void setUpdatedByUserId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getUpdatedAt();
 
@@ -104,14 +104,14 @@ public interface ICFBamEnumTag
 
 	public $implCommaIJavaOptAtomType$ getPKey();
 	public void setPKey($implCommaIJavaOptAtomType$ requiredId);
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredId();
+	public void setRequiredId( IMCFKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamEnumDef getRequiredContainerEnumDef();
 
-	public void setRequiredContainerEnumDef(ICFLibKeyHash256 argEnumId);
+	public void setRequiredContainerEnumDef(IMCFKeyHash256 argEnumId);
 
 	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj);
 
@@ -121,7 +121,7 @@ public interface ICFBamEnumTag
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId);
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId);
 
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
 
@@ -131,7 +131,7 @@ public interface ICFBamEnumTag
 
 	public ICFBamEnumTag getOptionalLookupPrev();
 
-	public void setOptionalLookupPrev(ICFLibKeyHash256 argPrevId);
+	public void setOptionalLookupPrev(IMCFKeyHash256 argPrevId);
 
 	public void setOptionalLookupPrev(ICFBamEnumTag argObj);
 
@@ -141,7 +141,7 @@ public interface ICFBamEnumTag
 
 	public ICFBamEnumTag getOptionalLookupNext();
 
-	public void setOptionalLookupNext(ICFLibKeyHash256 argNextId);
+	public void setOptionalLookupNext(IMCFKeyHash256 argNextId);
 
 	public void setOptionalLookupNext(ICFBamEnumTag argObj);
 
@@ -149,18 +149,18 @@ public interface ICFBamEnumTag
 
 	public void setOptionalLookupNext(ICFBamPubEnumTag argObj);
 
-	public ICFLibKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredEnumId();
-	public void setRequiredEnumId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getRequiredEnumId();
+	public void setRequiredEnumId( IMCFKeyHash256 value );
 	public Short getOptionalEnumCode();
 	public void setOptionalEnumCode( Short value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
-	public ICFLibKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( IMCFKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

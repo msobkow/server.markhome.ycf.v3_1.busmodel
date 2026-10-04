@@ -156,7 +156,7 @@ public class CFBamJpaClearDepFactoryService
 					mapped.set((ICFBamClearTopDep)rec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamClearDep",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamClearDep");
 			}
@@ -200,7 +200,7 @@ public class CFBamJpaClearDepFactoryService
 					mapped.set((ICFBamClearTopDepH)hrec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamClearDep",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamClearDep");
 			}

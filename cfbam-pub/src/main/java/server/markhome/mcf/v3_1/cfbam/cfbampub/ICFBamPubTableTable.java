@@ -111,7 +111,7 @@ public interface ICFBamPubTableTable
 	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableBySchemaDefIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argSchemaDefId );
+		MCFDbKeyHash256 argSchemaDefId );
 
 	/**
 	 *	Delete the Table instances identified by the key SchemaDefIdx.
@@ -151,7 +151,7 @@ public interface ICFBamPubTableTable
 	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableBySchemaCodeVisIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argSchemaDefId,
+		MCFDbKeyHash256 argSchemaDefId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
@@ -171,7 +171,7 @@ public interface ICFBamPubTableTable
 	 *	@param	DefSchemaId	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		MCFDbKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Table instances identified by the key DefSchemaIdx.
@@ -192,7 +192,7 @@ public interface ICFBamPubTableTable
 	 *	@param	Name	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argSchemaDefId,
+		MCFDbKeyHash256 argSchemaDefId,
 		String argName );
 
 	/**
@@ -214,7 +214,7 @@ public interface ICFBamPubTableTable
 	 *	@param	TableClassCode	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableBySchemaCdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argSchemaDefId,
+		MCFDbKeyHash256 argSchemaDefId,
 		String argTableClassCode );
 
 	/**
@@ -234,7 +234,7 @@ public interface ICFBamPubTableTable
 	 *	@param	PrimaryIndexId	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableByPrimaryIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argPrimaryIndexId );
+		MCFDbKeyHash256 argPrimaryIndexId );
 
 	/**
 	 *	Delete the Table instances identified by the key PrimaryIndexIdx.
@@ -253,7 +253,7 @@ public interface ICFBamPubTableTable
 	 *	@param	LookupIndexId	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableByLookupIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argLookupIndexId );
+		MCFDbKeyHash256 argLookupIndexId );
 
 	/**
 	 *	Delete the Table instances identified by the key LookupIndexIdx.
@@ -272,7 +272,7 @@ public interface ICFBamPubTableTable
 	 *	@param	AltIndexId	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableByAltIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argAltIndexId );
+		MCFDbKeyHash256 argAltIndexId );
 
 	/**
 	 *	Delete the Table instances identified by the key AltIndexIdx.
@@ -291,7 +291,7 @@ public interface ICFBamPubTableTable
 	 *	@param	QualifyingTableId	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableByQualTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argQualifyingTableId );
+		MCFDbKeyHash256 argQualifyingTableId );
 
 	/**
 	 *	Delete the Table instances identified by the key QualTableIdx.
@@ -310,7 +310,7 @@ public interface ICFBamPubTableTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	public void pubdeleteTableByIdIdx( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 argKey );
+		IMCFKeyHash256 argKey );
 	/**
 	 *	Delete the Table instances identified by the key TenantIdx.
 	 *
@@ -319,7 +319,7 @@ public interface ICFBamPubTableTable
 	 *	@param	TenantId	The Table key attribute of the instance generating the id.
 	 */
 	public void pubdeleteTableByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		MCFDbKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the Table instances identified by the key TenantIdx.
@@ -343,7 +343,7 @@ public interface ICFBamPubTableTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTable pubreadDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Table record instance by primary key.
@@ -356,7 +356,7 @@ public interface ICFBamPubTableTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTable publockDerived( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all Table instances.
@@ -378,7 +378,7 @@ public interface ICFBamPubTableTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTable pubreadDerivedByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key TenantIdx.
@@ -390,7 +390,7 @@ public interface ICFBamPubTableTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTable[] pubreadDerivedByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key SchemaDefIdx.
@@ -402,7 +402,7 @@ public interface ICFBamPubTableTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTable[] pubreadDerivedBySchemaDefIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId );
+		MCFDbKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key CodeVisIdx.
@@ -428,7 +428,7 @@ public interface ICFBamPubTableTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTable[] pubreadDerivedBySchemaCodeVisIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId,
+		MCFDbKeyHash256 SchemaDefId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -441,7 +441,7 @@ public interface ICFBamPubTableTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTable[] pubreadDerivedByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived Table record instance identified by the unique key UNameIdx.
@@ -456,7 +456,7 @@ public interface ICFBamPubTableTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTable pubreadDerivedByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId,
+		MCFDbKeyHash256 SchemaDefId,
 		String Name );
 
 	/**
@@ -472,7 +472,7 @@ public interface ICFBamPubTableTable
 	 *		no such existing key value.
 	 */
 	public ICFBamPubTable pubreadDerivedBySchemaCdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId,
+		MCFDbKeyHash256 SchemaDefId,
 		String TableClassCode );
 
 	/**
@@ -485,7 +485,7 @@ public interface ICFBamPubTableTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTable[] pubreadDerivedByPrimaryIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrimaryIndexId );
+		MCFDbKeyHash256 PrimaryIndexId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key LookupIndexIdx.
@@ -497,7 +497,7 @@ public interface ICFBamPubTableTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTable[] pubreadDerivedByLookupIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 LookupIndexId );
+		MCFDbKeyHash256 LookupIndexId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key AltIndexIdx.
@@ -509,7 +509,7 @@ public interface ICFBamPubTableTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTable[] pubreadDerivedByAltIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 AltIndexId );
+		MCFDbKeyHash256 AltIndexId );
 
 	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key QualTableIdx.
@@ -521,7 +521,7 @@ public interface ICFBamPubTableTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	public ICFBamPubTable[] pubreadDerivedByQualTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 QualifyingTableId );
+		MCFDbKeyHash256 QualifyingTableId );
 
 	/**
 	 *	Read the specific Table record instance identified by the primary key.
@@ -533,10 +533,10 @@ public interface ICFBamPubTableTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable pubreadRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Table record instance identified by the primary key.
@@ -548,10 +548,10 @@ public interface ICFBamPubTableTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable publockRec( ICFSecPubAuthorization Authorization,
-		ICFLibKeyHash256 PKey );
+		IMCFKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Table record instances.
@@ -572,10 +572,10 @@ public interface ICFBamPubTableTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable pubreadRecByIdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		MCFDbKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key TenantIdx.
@@ -586,10 +586,10 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecByTenantIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key SchemaDefIdx.
@@ -600,10 +600,10 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecBySchemaDefIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId );
+		MCFDbKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key CodeVisIdx.
@@ -614,7 +614,7 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecByCodeVisIdx( ICFSecPubAuthorization Authorization,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
@@ -630,10 +630,10 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecBySchemaCodeVisIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId,
+		MCFDbKeyHash256 SchemaDefId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -645,10 +645,10 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecByDefSchemaIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific Table record instance identified by the unique key UNameIdx.
@@ -662,10 +662,10 @@ public interface ICFBamPubTableTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable pubreadRecByUNameIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId,
+		MCFDbKeyHash256 SchemaDefId,
 		String Name );
 
 	/**
@@ -680,10 +680,10 @@ public interface ICFBamPubTableTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable pubreadRecBySchemaCdIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId,
+		MCFDbKeyHash256 SchemaDefId,
 		String TableClassCode );
 
 	/**
@@ -695,10 +695,10 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecByPrimaryIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 PrimaryIndexId );
+		MCFDbKeyHash256 PrimaryIndexId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key LookupIndexIdx.
@@ -709,10 +709,10 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecByLookupIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 LookupIndexId );
+		MCFDbKeyHash256 LookupIndexId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key AltIndexIdx.
@@ -723,10 +723,10 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecByAltIndexIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 AltIndexId );
+		MCFDbKeyHash256 AltIndexId );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key QualTableIdx.
@@ -737,8 +737,8 @@ public interface ICFBamPubTableTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamPubTable[] pubreadRecByQualTableIdx( ICFSecPubAuthorization Authorization,
-		CFLibDbKeyHash256 QualifyingTableId );
+		MCFDbKeyHash256 QualifyingTableId );
 }

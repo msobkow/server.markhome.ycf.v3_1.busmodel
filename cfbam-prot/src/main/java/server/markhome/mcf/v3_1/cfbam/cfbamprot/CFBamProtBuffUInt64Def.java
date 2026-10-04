@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -96,14 +96,14 @@ public class CFBamProtBuffUInt64Def
 
 	public void setOptionalInitValue( BigDecimal value ) {
 		if( value != null && value.compareTo( ICFBamPubUInt64Def.INITVALUE_MIN_VALUE ) < 0 ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value",
 				value.toString(),
 				ICFBamPubUInt64Def.INITVALUE_MIN_VALUE.toString() );
 		}
-		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".InitValue", 19, 0, value );
+		value = MCFBigDecimalUtil.coerce( getClass().getName() + ".InitValue", 19, 0, value );
 		optionalInitValue = value;
 	}
 
@@ -114,14 +114,14 @@ public class CFBamProtBuffUInt64Def
 
 	public void setOptionalMinValue( BigDecimal value ) {
 		if( value != null && value.compareTo( ICFBamPubUInt64Def.MINVALUE_MIN_VALUE ) < 0 ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalMinValue",
 				1,
 				"value",
 				value.toString(),
 				ICFBamPubUInt64Def.MINVALUE_MIN_VALUE.toString() );
 		}
-		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MinValue", 19, 0, value );
+		value = MCFBigDecimalUtil.coerce( getClass().getName() + ".MinValue", 19, 0, value );
 		optionalMinValue = value;
 	}
 
@@ -132,14 +132,14 @@ public class CFBamProtBuffUInt64Def
 
 	public void setOptionalMaxValue( BigDecimal value ) {
 		if( value != null && value.compareTo( ICFBamPubUInt64Def.MAXVALUE_MIN_VALUE ) < 0 ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setOptionalMaxValue",
 				1,
 				"value",
 				value.toString(),
 				ICFBamPubUInt64Def.MAXVALUE_MIN_VALUE.toString() );
 		}
-		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MaxValue", 19, 0, value );
+		value = MCFBigDecimalUtil.coerce( getClass().getName() + ".MaxValue", 19, 0, value );
 		optionalMaxValue = value;
 	}
 
@@ -742,7 +742,7 @@ public class CFBamProtBuffUInt64Def
 			setJustProtUInt64Def( (CFBamProtBuffUInt64Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -764,7 +764,7 @@ public class CFBamProtBuffUInt64Def
 			setUInt64Def( (ICFBamPubUInt64DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,
@@ -786,7 +786,7 @@ public class CFBamProtBuffUInt64Def
 			setJustProtUInt64Def( (CFBamPubProtBuffUInt64Def)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -808,7 +808,7 @@ public class CFBamProtBuffUInt64Def
 			setUInt64Def( (ICFBamPubUInt64DefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

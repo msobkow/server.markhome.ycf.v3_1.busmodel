@@ -98,11 +98,11 @@ public interface ICFBamClearSubDep3EditObj
 	void setRequiredContainerClearSubDep2( ICFBamClearSubDep2Obj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ClearSubDep2Id.
+	 *	Get the required IMCFKeyHash256 attribute ClearSubDep2Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ClearSubDep2Id.
+	 *	@return	The required IMCFKeyHash256 attribute ClearSubDep2Id.
 	 */
-	ICFLibKeyHash256 getRequiredClearSubDep2Id();
+	IMCFKeyHash256 getRequiredClearSubDep2Id();
 
 	/**
 	 *	Get the required String attribute Name.

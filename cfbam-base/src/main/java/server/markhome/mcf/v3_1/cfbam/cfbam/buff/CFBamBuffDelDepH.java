@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,13 +74,13 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffDelDepH extends CFBamBuffScopeH
     implements ICFBamDelDepH
 {
-	protected ICFLibKeyHash256 optionalDefSchemaId;
-	protected ICFLibKeyHash256 requiredRelationId;
+	protected IMCFKeyHash256 optionalDefSchemaId;
+	protected IMCFKeyHash256 requiredRelationId;
 
     public CFBamBuffDelDepH() {
             super();
-		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubDelDep.RELATIONID_INIT_VALUE.toString() );
+		optionalDefSchemaId = MCFDbKeyHash256.nullGet();
+		requiredRelationId = MCFDbKeyHash256.fromHex( ICFBamPubDelDep.RELATIONID_INIT_VALUE.toString() );
     }
 
     @Override
@@ -89,22 +89,22 @@ public class CFBamBuffDelDepH extends CFBamBuffScopeH
     }
 
 	@Override
-	public ICFLibKeyHash256 getOptionalDefSchemaId() {
+	public IMCFKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value ) {
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredRelationId() {
+	public IMCFKeyHash256 getRequiredRelationId() {
 		return(requiredRelationId);
 	}
 
-	public void setRequiredRelationId( ICFLibKeyHash256 value ) {
+	public void setRequiredRelationId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredRelationId",
 				1,
 				"value" );
@@ -383,7 +383,7 @@ public class CFBamBuffDelDepH extends CFBamBuffScopeH
 			setDelDep( (CFBamBuffDelDep)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -404,7 +404,7 @@ public class CFBamBuffDelDepH extends CFBamBuffScopeH
 			setDelDep( (ICFBamDelDepH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

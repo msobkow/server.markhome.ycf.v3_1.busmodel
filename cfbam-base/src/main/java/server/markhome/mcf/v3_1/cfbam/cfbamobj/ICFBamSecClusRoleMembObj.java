@@ -138,7 +138,7 @@ public interface ICFBamSecClusRoleMembObj
 	/**
 	 *	End this edition of this SecClusRoleMemb instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -250,11 +250,11 @@ public interface ICFBamSecClusRoleMembObj
 	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SecClusRoleId.
+	 *	Get the required IMCFKeyHash256 attribute SecClusRoleId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SecClusRoleId.
+	 *	@return	The required IMCFKeyHash256 attribute SecClusRoleId.
 	 */
-	ICFLibKeyHash256 getRequiredSecClusRoleId();
+	IMCFKeyHash256 getRequiredSecClusRoleId();
 
 	/**
 	 *	Get the required String attribute LoginId.

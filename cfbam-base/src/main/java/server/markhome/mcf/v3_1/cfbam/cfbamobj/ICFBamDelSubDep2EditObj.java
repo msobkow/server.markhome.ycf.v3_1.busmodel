@@ -105,11 +105,11 @@ public interface ICFBamDelSubDep2EditObj
 	List<ICFBamDelSubDep3Obj> getOptionalComponentsDelDep();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute DelSubDep1Id.
+	 *	Get the required IMCFKeyHash256 attribute DelSubDep1Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute DelSubDep1Id.
+	 *	@return	The required IMCFKeyHash256 attribute DelSubDep1Id.
 	 */
-	ICFLibKeyHash256 getRequiredDelSubDep1Id();
+	IMCFKeyHash256 getRequiredDelSubDep1Id();
 
 	/**
 	 *	Get the required String attribute Name.

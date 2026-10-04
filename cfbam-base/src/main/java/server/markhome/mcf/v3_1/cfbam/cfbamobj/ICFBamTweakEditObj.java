@@ -175,60 +175,60 @@ public interface ICFBamTweakEditObj
 	void setOptionalLookupDefSchema( ICFBamSchemaDefObj value );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute TenantId.
+	 *	Get the required IMCFKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
+	 *	@return	The required IMCFKeyHash256 attribute TenantId.
 	 */
-	ICFLibKeyHash256 getRequiredTenantId();
+	IMCFKeyHash256 getRequiredTenantId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute TenantId.
+	 *	Set the required IMCFKeyHash256 attribute TenantId.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute TenantId value to be applied.
+	 *	@param value The required IMCFKeyHash256 attribute TenantId value to be applied.
 	 */
-	void setRequiredTenantId(ICFLibKeyHash256 value);
+	void setRequiredTenantId(IMCFKeyHash256 value);
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ScopeId.
+	 *	Get the required IMCFKeyHash256 attribute ScopeId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ScopeId.
+	 *	@return	The required IMCFKeyHash256 attribute ScopeId.
 	 */
-	ICFLibKeyHash256 getRequiredScopeId();
+	IMCFKeyHash256 getRequiredScopeId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required ICFLibKeyHash256 attribute Id.
+	 *	Set the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@param value The required ICFLibKeyHash256 attribute Id value to be applied.
+	 *	@param value The required IMCFKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(ICFLibKeyHash256 value);
+	void setRequiredId(IMCFKeyHash256 value);
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaTenantId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaTenantId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaTenantId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaTenantId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaTenantId();
+	IMCFKeyHash256 getOptionalDefSchemaTenantId();
 
 	/**
-	 *	Set the optional ICFLibKeyHash256 attribute DefSchemaTenantId.
+	 *	Set the optional IMCFKeyHash256 attribute DefSchemaTenantId.
 	 *
-	 *	@param value The optional ICFLibKeyHash256 attribute DefSchemaTenantId value to be applied.
+	 *	@param value The optional IMCFKeyHash256 attribute DefSchemaTenantId value to be applied.
 	 */
-	void setOptionalDefSchemaTenantId(ICFLibKeyHash256 value);
+	void setOptionalDefSchemaTenantId(IMCFKeyHash256 value);
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.

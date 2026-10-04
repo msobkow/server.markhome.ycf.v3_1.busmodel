@@ -56,7 +56,7 @@ import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
 import org.apache.commons.text.StringEscapeUtils;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -278,7 +278,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamScope.CLASS_CODE)[" + ICFBamScope.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamScope.CLASS_CODE)[" + ICFBamScope.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaDef.CLASS_CODE);
@@ -292,7 +292,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaDef.CLASS_CODE)[" + ICFBamSchemaDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaDef.CLASS_CODE)[" + ICFBamSchemaDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaRef.CLASS_CODE);
@@ -306,7 +306,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaRef.CLASS_CODE)[" + ICFBamSchemaRef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaRef.CLASS_CODE)[" + ICFBamSchemaRef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerMethod.CLASS_CODE);
@@ -320,7 +320,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerMethod.CLASS_CODE)[" + ICFBamServerMethod.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerMethod.CLASS_CODE)[" + ICFBamServerMethod.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerObjFunc.CLASS_CODE);
@@ -334,7 +334,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerObjFunc.CLASS_CODE)[" + ICFBamServerObjFunc.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerObjFunc.CLASS_CODE)[" + ICFBamServerObjFunc.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerProc.CLASS_CODE);
@@ -348,7 +348,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerProc.CLASS_CODE)[" + ICFBamServerProc.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerProc.CLASS_CODE)[" + ICFBamServerProc.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTable.CLASS_CODE);
@@ -362,7 +362,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTable.CLASS_CODE)[" + ICFBamTable.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTable.CLASS_CODE)[" + ICFBamTable.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTweak.CLASS_CODE);
@@ -376,7 +376,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTweak.CLASS_CODE)[" + ICFBamTweak.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTweak.CLASS_CODE)[" + ICFBamTweak.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTableTweak.CLASS_CODE);
@@ -390,7 +390,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTableTweak.CLASS_CODE)[" + ICFBamTableTweak.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTableTweak.CLASS_CODE)[" + ICFBamTableTweak.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaTweak.CLASS_CODE);
@@ -404,7 +404,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaTweak.CLASS_CODE)[" + ICFBamSchemaTweak.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaTweak.CLASS_CODE)[" + ICFBamSchemaTweak.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndexTweak.CLASS_CODE);
@@ -418,7 +418,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndexTweak.CLASS_CODE)[" + ICFBamIndexTweak.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndexTweak.CLASS_CODE)[" + ICFBamIndexTweak.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamValue.CLASS_CODE);
@@ -432,7 +432,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamValue.CLASS_CODE)[" + ICFBamValue.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamValue.CLASS_CODE)[" + ICFBamValue.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamAtom.CLASS_CODE);
@@ -446,7 +446,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamAtom.CLASS_CODE)[" + ICFBamAtom.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamAtom.CLASS_CODE)[" + ICFBamAtom.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobDef.CLASS_CODE);
@@ -460,7 +460,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobDef.CLASS_CODE)[" + ICFBamBlobDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobDef.CLASS_CODE)[" + ICFBamBlobDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobType.CLASS_CODE);
@@ -474,7 +474,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobType.CLASS_CODE)[" + ICFBamBlobType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobType.CLASS_CODE)[" + ICFBamBlobType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolDef.CLASS_CODE);
@@ -488,7 +488,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolDef.CLASS_CODE)[" + ICFBamBoolDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolDef.CLASS_CODE)[" + ICFBamBoolDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolType.CLASS_CODE);
@@ -502,7 +502,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolType.CLASS_CODE)[" + ICFBamBoolType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolType.CLASS_CODE)[" + ICFBamBoolType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamChain.CLASS_CODE);
@@ -516,7 +516,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamChain.CLASS_CODE)[" + ICFBamChain.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamChain.CLASS_CODE)[" + ICFBamChain.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearDep.CLASS_CODE);
@@ -530,7 +530,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearDep.CLASS_CODE)[" + ICFBamClearDep.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearDep.CLASS_CODE)[" + ICFBamClearDep.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep1.CLASS_CODE);
@@ -544,7 +544,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep1.CLASS_CODE)[" + ICFBamClearSubDep1.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep1.CLASS_CODE)[" + ICFBamClearSubDep1.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep2.CLASS_CODE);
@@ -558,7 +558,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep2.CLASS_CODE)[" + ICFBamClearSubDep2.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep2.CLASS_CODE)[" + ICFBamClearSubDep2.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep3.CLASS_CODE);
@@ -572,7 +572,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep3.CLASS_CODE)[" + ICFBamClearSubDep3.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearSubDep3.CLASS_CODE)[" + ICFBamClearSubDep3.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearTopDep.CLASS_CODE);
@@ -586,7 +586,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearTopDep.CLASS_CODE)[" + ICFBamClearTopDep.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamClearTopDep.CLASS_CODE)[" + ICFBamClearTopDep.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateDef.CLASS_CODE);
@@ -600,7 +600,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateDef.CLASS_CODE)[" + ICFBamDateDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateDef.CLASS_CODE)[" + ICFBamDateDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateType.CLASS_CODE);
@@ -614,7 +614,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateType.CLASS_CODE)[" + ICFBamDateType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateType.CLASS_CODE)[" + ICFBamDateType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelDep.CLASS_CODE);
@@ -628,7 +628,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelDep.CLASS_CODE)[" + ICFBamDelDep.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelDep.CLASS_CODE)[" + ICFBamDelDep.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep1.CLASS_CODE);
@@ -642,7 +642,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep1.CLASS_CODE)[" + ICFBamDelSubDep1.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep1.CLASS_CODE)[" + ICFBamDelSubDep1.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep2.CLASS_CODE);
@@ -656,7 +656,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep2.CLASS_CODE)[" + ICFBamDelSubDep2.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep2.CLASS_CODE)[" + ICFBamDelSubDep2.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep3.CLASS_CODE);
@@ -670,7 +670,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep3.CLASS_CODE)[" + ICFBamDelSubDep3.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelSubDep3.CLASS_CODE)[" + ICFBamDelSubDep3.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelTopDep.CLASS_CODE);
@@ -684,7 +684,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelTopDep.CLASS_CODE)[" + ICFBamDelTopDep.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDelTopDep.CLASS_CODE)[" + ICFBamDelTopDep.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleDef.CLASS_CODE);
@@ -698,7 +698,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleDef.CLASS_CODE)[" + ICFBamDoubleDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleDef.CLASS_CODE)[" + ICFBamDoubleDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleType.CLASS_CODE);
@@ -712,7 +712,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleType.CLASS_CODE)[" + ICFBamDoubleType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleType.CLASS_CODE)[" + ICFBamDoubleType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumTag.CLASS_CODE);
@@ -726,7 +726,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumTag.CLASS_CODE)[" + ICFBamEnumTag.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumTag.CLASS_CODE)[" + ICFBamEnumTag.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatDef.CLASS_CODE);
@@ -740,7 +740,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatDef.CLASS_CODE)[" + ICFBamFloatDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatDef.CLASS_CODE)[" + ICFBamFloatDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatType.CLASS_CODE);
@@ -754,7 +754,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatType.CLASS_CODE)[" + ICFBamFloatType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatType.CLASS_CODE)[" + ICFBamFloatType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndex.CLASS_CODE);
@@ -768,7 +768,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndex.CLASS_CODE)[" + ICFBamIndex.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndex.CLASS_CODE)[" + ICFBamIndex.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndexCol.CLASS_CODE);
@@ -782,7 +782,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndexCol.CLASS_CODE)[" + ICFBamIndexCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamIndexCol.CLASS_CODE)[" + ICFBamIndexCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Def.CLASS_CODE);
@@ -796,7 +796,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Def.CLASS_CODE)[" + ICFBamInt16Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Def.CLASS_CODE)[" + ICFBamInt16Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Type.CLASS_CODE);
@@ -810,7 +810,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Type.CLASS_CODE)[" + ICFBamInt16Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Type.CLASS_CODE)[" + ICFBamInt16Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Def.CLASS_CODE);
@@ -824,7 +824,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Def.CLASS_CODE)[" + ICFBamInt32Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Def.CLASS_CODE)[" + ICFBamInt32Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Type.CLASS_CODE);
@@ -838,7 +838,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Type.CLASS_CODE)[" + ICFBamInt32Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Type.CLASS_CODE)[" + ICFBamInt32Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Def.CLASS_CODE);
@@ -852,7 +852,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Def.CLASS_CODE)[" + ICFBamInt64Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Def.CLASS_CODE)[" + ICFBamInt64Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Type.CLASS_CODE);
@@ -866,7 +866,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Type.CLASS_CODE)[" + ICFBamInt64Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Type.CLASS_CODE)[" + ICFBamInt64Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenDef.CLASS_CODE);
@@ -880,7 +880,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenDef.CLASS_CODE)[" + ICFBamNmTokenDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenDef.CLASS_CODE)[" + ICFBamNmTokenDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenType.CLASS_CODE);
@@ -894,7 +894,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenType.CLASS_CODE)[" + ICFBamNmTokenType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenType.CLASS_CODE)[" + ICFBamNmTokenType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensDef.CLASS_CODE);
@@ -908,7 +908,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensDef.CLASS_CODE)[" + ICFBamNmTokensDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensDef.CLASS_CODE)[" + ICFBamNmTokensDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensType.CLASS_CODE);
@@ -922,7 +922,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensType.CLASS_CODE)[" + ICFBamNmTokensType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensType.CLASS_CODE)[" + ICFBamNmTokensType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberDef.CLASS_CODE);
@@ -936,7 +936,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberDef.CLASS_CODE)[" + ICFBamNumberDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberDef.CLASS_CODE)[" + ICFBamNumberDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberType.CLASS_CODE);
@@ -950,7 +950,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberType.CLASS_CODE)[" + ICFBamNumberType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberType.CLASS_CODE)[" + ICFBamNumberType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamParam.CLASS_CODE);
@@ -964,7 +964,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamParam.CLASS_CODE)[" + ICFBamParam.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamParam.CLASS_CODE)[" + ICFBamParam.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopDep.CLASS_CODE);
@@ -978,7 +978,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopDep.CLASS_CODE)[" + ICFBamPopDep.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopDep.CLASS_CODE)[" + ICFBamPopDep.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep1.CLASS_CODE);
@@ -992,7 +992,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep1.CLASS_CODE)[" + ICFBamPopSubDep1.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep1.CLASS_CODE)[" + ICFBamPopSubDep1.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep2.CLASS_CODE);
@@ -1006,7 +1006,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep2.CLASS_CODE)[" + ICFBamPopSubDep2.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep2.CLASS_CODE)[" + ICFBamPopSubDep2.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep3.CLASS_CODE);
@@ -1020,7 +1020,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep3.CLASS_CODE)[" + ICFBamPopSubDep3.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopSubDep3.CLASS_CODE)[" + ICFBamPopSubDep3.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopTopDep.CLASS_CODE);
@@ -1034,7 +1034,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopTopDep.CLASS_CODE)[" + ICFBamPopTopDep.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamPopTopDep.CLASS_CODE)[" + ICFBamPopTopDep.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamRelation.CLASS_CODE);
@@ -1048,7 +1048,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamRelation.CLASS_CODE)[" + ICFBamRelation.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamRelation.CLASS_CODE)[" + ICFBamRelation.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamRelationCol.CLASS_CODE);
@@ -1062,7 +1062,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamRelationCol.CLASS_CODE)[" + ICFBamRelationCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamRelationCol.CLASS_CODE)[" + ICFBamRelationCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerListFunc.CLASS_CODE);
@@ -1076,7 +1076,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerListFunc.CLASS_CODE)[" + ICFBamServerListFunc.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamServerListFunc.CLASS_CODE)[" + ICFBamServerListFunc.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Def.CLASS_CODE);
@@ -1090,7 +1090,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Def.CLASS_CODE)[" + ICFBamDbKeyHash128Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Def.CLASS_CODE)[" + ICFBamDbKeyHash128Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Col.CLASS_CODE);
@@ -1104,7 +1104,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Col.CLASS_CODE)[" + ICFBamDbKeyHash128Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Col.CLASS_CODE)[" + ICFBamDbKeyHash128Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Type.CLASS_CODE);
@@ -1118,7 +1118,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Type.CLASS_CODE)[" + ICFBamDbKeyHash128Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Type.CLASS_CODE)[" + ICFBamDbKeyHash128Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Gen.CLASS_CODE);
@@ -1132,7 +1132,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Gen.CLASS_CODE)[" + ICFBamDbKeyHash128Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash128Gen.CLASS_CODE)[" + ICFBamDbKeyHash128Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Def.CLASS_CODE);
@@ -1146,7 +1146,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Def.CLASS_CODE)[" + ICFBamDbKeyHash160Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Def.CLASS_CODE)[" + ICFBamDbKeyHash160Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Col.CLASS_CODE);
@@ -1160,7 +1160,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Col.CLASS_CODE)[" + ICFBamDbKeyHash160Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Col.CLASS_CODE)[" + ICFBamDbKeyHash160Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Type.CLASS_CODE);
@@ -1174,7 +1174,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Type.CLASS_CODE)[" + ICFBamDbKeyHash160Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Type.CLASS_CODE)[" + ICFBamDbKeyHash160Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Gen.CLASS_CODE);
@@ -1188,7 +1188,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Gen.CLASS_CODE)[" + ICFBamDbKeyHash160Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash160Gen.CLASS_CODE)[" + ICFBamDbKeyHash160Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Def.CLASS_CODE);
@@ -1202,7 +1202,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Def.CLASS_CODE)[" + ICFBamDbKeyHash224Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Def.CLASS_CODE)[" + ICFBamDbKeyHash224Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Col.CLASS_CODE);
@@ -1216,7 +1216,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Col.CLASS_CODE)[" + ICFBamDbKeyHash224Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Col.CLASS_CODE)[" + ICFBamDbKeyHash224Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Type.CLASS_CODE);
@@ -1230,7 +1230,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Type.CLASS_CODE)[" + ICFBamDbKeyHash224Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Type.CLASS_CODE)[" + ICFBamDbKeyHash224Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Gen.CLASS_CODE);
@@ -1244,7 +1244,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Gen.CLASS_CODE)[" + ICFBamDbKeyHash224Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash224Gen.CLASS_CODE)[" + ICFBamDbKeyHash224Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Def.CLASS_CODE);
@@ -1258,7 +1258,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Def.CLASS_CODE)[" + ICFBamDbKeyHash256Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Def.CLASS_CODE)[" + ICFBamDbKeyHash256Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Col.CLASS_CODE);
@@ -1272,7 +1272,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Col.CLASS_CODE)[" + ICFBamDbKeyHash256Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Col.CLASS_CODE)[" + ICFBamDbKeyHash256Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Type.CLASS_CODE);
@@ -1286,7 +1286,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Type.CLASS_CODE)[" + ICFBamDbKeyHash256Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Type.CLASS_CODE)[" + ICFBamDbKeyHash256Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Gen.CLASS_CODE);
@@ -1300,7 +1300,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Gen.CLASS_CODE)[" + ICFBamDbKeyHash256Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash256Gen.CLASS_CODE)[" + ICFBamDbKeyHash256Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Def.CLASS_CODE);
@@ -1314,7 +1314,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Def.CLASS_CODE)[" + ICFBamDbKeyHash384Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Def.CLASS_CODE)[" + ICFBamDbKeyHash384Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Col.CLASS_CODE);
@@ -1328,7 +1328,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Col.CLASS_CODE)[" + ICFBamDbKeyHash384Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Col.CLASS_CODE)[" + ICFBamDbKeyHash384Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Type.CLASS_CODE);
@@ -1342,7 +1342,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Type.CLASS_CODE)[" + ICFBamDbKeyHash384Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Type.CLASS_CODE)[" + ICFBamDbKeyHash384Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Gen.CLASS_CODE);
@@ -1356,7 +1356,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Gen.CLASS_CODE)[" + ICFBamDbKeyHash384Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash384Gen.CLASS_CODE)[" + ICFBamDbKeyHash384Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Def.CLASS_CODE);
@@ -1370,7 +1370,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Def.CLASS_CODE)[" + ICFBamDbKeyHash512Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Def.CLASS_CODE)[" + ICFBamDbKeyHash512Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Col.CLASS_CODE);
@@ -1384,7 +1384,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Col.CLASS_CODE)[" + ICFBamDbKeyHash512Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Col.CLASS_CODE)[" + ICFBamDbKeyHash512Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Type.CLASS_CODE);
@@ -1398,7 +1398,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Type.CLASS_CODE)[" + ICFBamDbKeyHash512Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Type.CLASS_CODE)[" + ICFBamDbKeyHash512Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Gen.CLASS_CODE);
@@ -1412,7 +1412,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Gen.CLASS_CODE)[" + ICFBamDbKeyHash512Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDbKeyHash512Gen.CLASS_CODE)[" + ICFBamDbKeyHash512Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringDef.CLASS_CODE);
@@ -1426,7 +1426,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringDef.CLASS_CODE)[" + ICFBamStringDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringDef.CLASS_CODE)[" + ICFBamStringDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringType.CLASS_CODE);
@@ -1440,7 +1440,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringType.CLASS_CODE)[" + ICFBamStringType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringType.CLASS_CODE)[" + ICFBamStringType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateDef.CLASS_CODE);
@@ -1454,7 +1454,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateDef.CLASS_CODE)[" + ICFBamTZDateDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateDef.CLASS_CODE)[" + ICFBamTZDateDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateType.CLASS_CODE);
@@ -1468,7 +1468,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateType.CLASS_CODE)[" + ICFBamTZDateType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateType.CLASS_CODE)[" + ICFBamTZDateType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeDef.CLASS_CODE);
@@ -1482,7 +1482,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeDef.CLASS_CODE)[" + ICFBamTZTimeDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeDef.CLASS_CODE)[" + ICFBamTZTimeDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeType.CLASS_CODE);
@@ -1496,7 +1496,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeType.CLASS_CODE)[" + ICFBamTZTimeType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeType.CLASS_CODE)[" + ICFBamTZTimeType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampDef.CLASS_CODE);
@@ -1510,7 +1510,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampDef.CLASS_CODE)[" + ICFBamTZTimestampDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampDef.CLASS_CODE)[" + ICFBamTZTimestampDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampType.CLASS_CODE);
@@ -1524,7 +1524,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampType.CLASS_CODE)[" + ICFBamTZTimestampType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampType.CLASS_CODE)[" + ICFBamTZTimestampType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTableCol.CLASS_CODE);
@@ -1538,7 +1538,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTableCol.CLASS_CODE)[" + ICFBamTableCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTableCol.CLASS_CODE)[" + ICFBamTableCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextDef.CLASS_CODE);
@@ -1552,7 +1552,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextDef.CLASS_CODE)[" + ICFBamTextDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextDef.CLASS_CODE)[" + ICFBamTextDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextType.CLASS_CODE);
@@ -1566,7 +1566,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextType.CLASS_CODE)[" + ICFBamTextType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextType.CLASS_CODE)[" + ICFBamTextType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeDef.CLASS_CODE);
@@ -1580,7 +1580,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeDef.CLASS_CODE)[" + ICFBamTimeDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeDef.CLASS_CODE)[" + ICFBamTimeDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeType.CLASS_CODE);
@@ -1594,7 +1594,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeType.CLASS_CODE)[" + ICFBamTimeType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeType.CLASS_CODE)[" + ICFBamTimeType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampDef.CLASS_CODE);
@@ -1608,7 +1608,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampDef.CLASS_CODE)[" + ICFBamTimestampDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampDef.CLASS_CODE)[" + ICFBamTimestampDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampType.CLASS_CODE);
@@ -1622,7 +1622,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampType.CLASS_CODE)[" + ICFBamTimestampType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampType.CLASS_CODE)[" + ICFBamTimestampType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenDef.CLASS_CODE);
@@ -1636,7 +1636,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenDef.CLASS_CODE)[" + ICFBamTokenDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenDef.CLASS_CODE)[" + ICFBamTokenDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenType.CLASS_CODE);
@@ -1650,7 +1650,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenType.CLASS_CODE)[" + ICFBamTokenType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenType.CLASS_CODE)[" + ICFBamTokenType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Def.CLASS_CODE);
@@ -1664,7 +1664,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Def.CLASS_CODE)[" + ICFBamUInt16Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Def.CLASS_CODE)[" + ICFBamUInt16Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Type.CLASS_CODE);
@@ -1678,7 +1678,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Type.CLASS_CODE)[" + ICFBamUInt16Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Type.CLASS_CODE)[" + ICFBamUInt16Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Def.CLASS_CODE);
@@ -1692,7 +1692,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Def.CLASS_CODE)[" + ICFBamUInt32Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Def.CLASS_CODE)[" + ICFBamUInt32Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Type.CLASS_CODE);
@@ -1706,7 +1706,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Type.CLASS_CODE)[" + ICFBamUInt32Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Type.CLASS_CODE)[" + ICFBamUInt32Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Def.CLASS_CODE);
@@ -1720,7 +1720,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Def.CLASS_CODE)[" + ICFBamUInt64Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Def.CLASS_CODE)[" + ICFBamUInt64Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Type.CLASS_CODE);
@@ -1734,7 +1734,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Type.CLASS_CODE)[" + ICFBamUInt64Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Type.CLASS_CODE)[" + ICFBamUInt64Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidDef.CLASS_CODE);
@@ -1748,7 +1748,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidDef.CLASS_CODE)[" + ICFBamUuidDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidDef.CLASS_CODE)[" + ICFBamUuidDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Def.CLASS_CODE);
@@ -1762,7 +1762,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Def.CLASS_CODE)[" + ICFBamUuid6Def.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Def.CLASS_CODE)[" + ICFBamUuid6Def.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidType.CLASS_CODE);
@@ -1776,7 +1776,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidType.CLASS_CODE)[" + ICFBamUuidType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidType.CLASS_CODE)[" + ICFBamUuidType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Type.CLASS_CODE);
@@ -1790,7 +1790,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Type.CLASS_CODE)[" + ICFBamUuid6Type.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Type.CLASS_CODE)[" + ICFBamUuid6Type.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobCol.CLASS_CODE);
@@ -1804,7 +1804,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobCol.CLASS_CODE)[" + ICFBamBlobCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBlobCol.CLASS_CODE)[" + ICFBamBlobCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolCol.CLASS_CODE);
@@ -1818,7 +1818,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolCol.CLASS_CODE)[" + ICFBamBoolCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamBoolCol.CLASS_CODE)[" + ICFBamBoolCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateCol.CLASS_CODE);
@@ -1832,7 +1832,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateCol.CLASS_CODE)[" + ICFBamDateCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDateCol.CLASS_CODE)[" + ICFBamDateCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleCol.CLASS_CODE);
@@ -1846,7 +1846,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleCol.CLASS_CODE)[" + ICFBamDoubleCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamDoubleCol.CLASS_CODE)[" + ICFBamDoubleCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumDef.CLASS_CODE);
@@ -1860,7 +1860,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumDef.CLASS_CODE)[" + ICFBamEnumDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumDef.CLASS_CODE)[" + ICFBamEnumDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumType.CLASS_CODE);
@@ -1874,7 +1874,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumType.CLASS_CODE)[" + ICFBamEnumType.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamEnumType.CLASS_CODE)[" + ICFBamEnumType.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatCol.CLASS_CODE);
@@ -1888,7 +1888,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatCol.CLASS_CODE)[" + ICFBamFloatCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamFloatCol.CLASS_CODE)[" + ICFBamFloatCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamId16Gen.CLASS_CODE);
@@ -1902,7 +1902,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamId16Gen.CLASS_CODE)[" + ICFBamId16Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamId16Gen.CLASS_CODE)[" + ICFBamId16Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamId32Gen.CLASS_CODE);
@@ -1916,7 +1916,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamId32Gen.CLASS_CODE)[" + ICFBamId32Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamId32Gen.CLASS_CODE)[" + ICFBamId32Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamId64Gen.CLASS_CODE);
@@ -1930,7 +1930,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamId64Gen.CLASS_CODE)[" + ICFBamId64Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamId64Gen.CLASS_CODE)[" + ICFBamId64Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Col.CLASS_CODE);
@@ -1944,7 +1944,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Col.CLASS_CODE)[" + ICFBamInt16Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt16Col.CLASS_CODE)[" + ICFBamInt16Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Col.CLASS_CODE);
@@ -1958,7 +1958,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Col.CLASS_CODE)[" + ICFBamInt32Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt32Col.CLASS_CODE)[" + ICFBamInt32Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Col.CLASS_CODE);
@@ -1972,7 +1972,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Col.CLASS_CODE)[" + ICFBamInt64Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamInt64Col.CLASS_CODE)[" + ICFBamInt64Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenCol.CLASS_CODE);
@@ -1986,7 +1986,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenCol.CLASS_CODE)[" + ICFBamNmTokenCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokenCol.CLASS_CODE)[" + ICFBamNmTokenCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensCol.CLASS_CODE);
@@ -2000,7 +2000,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensCol.CLASS_CODE)[" + ICFBamNmTokensCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNmTokensCol.CLASS_CODE)[" + ICFBamNmTokensCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberCol.CLASS_CODE);
@@ -2014,7 +2014,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberCol.CLASS_CODE)[" + ICFBamNumberCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamNumberCol.CLASS_CODE)[" + ICFBamNumberCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringCol.CLASS_CODE);
@@ -2028,7 +2028,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringCol.CLASS_CODE)[" + ICFBamStringCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamStringCol.CLASS_CODE)[" + ICFBamStringCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateCol.CLASS_CODE);
@@ -2042,7 +2042,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateCol.CLASS_CODE)[" + ICFBamTZDateCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZDateCol.CLASS_CODE)[" + ICFBamTZDateCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeCol.CLASS_CODE);
@@ -2056,7 +2056,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeCol.CLASS_CODE)[" + ICFBamTZTimeCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimeCol.CLASS_CODE)[" + ICFBamTZTimeCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampCol.CLASS_CODE);
@@ -2070,7 +2070,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampCol.CLASS_CODE)[" + ICFBamTZTimestampCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTZTimestampCol.CLASS_CODE)[" + ICFBamTZTimestampCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextCol.CLASS_CODE);
@@ -2084,7 +2084,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextCol.CLASS_CODE)[" + ICFBamTextCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTextCol.CLASS_CODE)[" + ICFBamTextCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeCol.CLASS_CODE);
@@ -2098,7 +2098,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeCol.CLASS_CODE)[" + ICFBamTimeCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimeCol.CLASS_CODE)[" + ICFBamTimeCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampCol.CLASS_CODE);
@@ -2112,7 +2112,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampCol.CLASS_CODE)[" + ICFBamTimestampCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTimestampCol.CLASS_CODE)[" + ICFBamTimestampCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenCol.CLASS_CODE);
@@ -2126,7 +2126,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenCol.CLASS_CODE)[" + ICFBamTokenCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamTokenCol.CLASS_CODE)[" + ICFBamTokenCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Col.CLASS_CODE);
@@ -2140,7 +2140,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Col.CLASS_CODE)[" + ICFBamUInt16Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt16Col.CLASS_CODE)[" + ICFBamUInt16Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Col.CLASS_CODE);
@@ -2154,7 +2154,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Col.CLASS_CODE)[" + ICFBamUInt32Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt32Col.CLASS_CODE)[" + ICFBamUInt32Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Col.CLASS_CODE);
@@ -2168,7 +2168,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Col.CLASS_CODE)[" + ICFBamUInt64Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUInt64Col.CLASS_CODE)[" + ICFBamUInt64Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidCol.CLASS_CODE);
@@ -2182,7 +2182,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidCol.CLASS_CODE)[" + ICFBamUuidCol.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidCol.CLASS_CODE)[" + ICFBamUuidCol.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Col.CLASS_CODE);
@@ -2196,7 +2196,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Col.CLASS_CODE)[" + ICFBamUuid6Col.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Col.CLASS_CODE)[" + ICFBamUuid6Col.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidGen.CLASS_CODE);
@@ -2210,7 +2210,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidGen.CLASS_CODE)[" + ICFBamUuidGen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuidGen.CLASS_CODE)[" + ICFBamUuidGen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Gen.CLASS_CODE);
@@ -2224,7 +2224,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Gen.CLASS_CODE)[" + ICFBamUuid6Gen.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamUuid6Gen.CLASS_CODE)[" + ICFBamUuid6Gen.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamRoleDef.CLASS_CODE);
@@ -2238,7 +2238,7 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamRoleDef.CLASS_CODE)[" + ICFBamRoleDef.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamRoleDef.CLASS_CODE)[" + ICFBamRoleDef.CLASS_CODE + "]");
 		}
 	
 		entry = ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaRole.CLASS_CODE);
@@ -2252,14 +2252,14 @@ public class CFBamBuffSchema
 			});
 		}
 		else {
-			throw new CFLibNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaRole.CLASS_CODE)[" + ICFBamSchemaRole.CLASS_CODE + "]");
+			throw new MCFNullArgumentException(CFBamBuffSchema.class, "wireRecConstructors", 0, "ICFBamSchema.getClassMapByBackingClassCode(ICFBamSchemaRole.CLASS_CODE)[" + ICFBamSchemaRole.CLASS_CODE + "]");
 		}
 	
 	}
 
 	@Override
 	public void wireTableTableInstances() {
-		throw new CFLibMustOverrideException(getClass(), "wireTableTableInstances");
+		throw new MCFMustOverrideException(getClass(), "wireTableTableInstances");
 	}
 
 	@Override		
@@ -2504,7 +2504,7 @@ public class CFBamBuffSchema
 	}
 
 	public ICFBamSchema newSchema() {
-		throw new CFLibMustOverrideException( getClass(), "newSchema" );
+		throw new MCFMustOverrideException( getClass(), "newSchema" );
 	}
 
 	/**
@@ -2512,10 +2512,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ISOCcyIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOCcyIdGen() {
-		throw new CFLibMustOverrideException(getClass(), "nextISOCcyIdGen");
+		throw new MCFMustOverrideException(getClass(), "nextISOCcyIdGen");
 	}
 
 	/**
@@ -2523,10 +2523,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ISOCtryIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOCtryIdGen() {
-		throw new CFLibMustOverrideException(getClass(), "nextISOCtryIdGen");
+		throw new MCFMustOverrideException(getClass(), "nextISOCtryIdGen");
 	}
 
 	/**
@@ -2534,10 +2534,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ISOLangIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOLangIdGen() {
-		throw new CFLibMustOverrideException(getClass(), "nextISOLangIdGen");
+		throw new MCFMustOverrideException(getClass(), "nextISOLangIdGen");
 	}
 
 	/**
@@ -2545,10 +2545,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ISOTZoneIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOTZoneIdGen() {
-		throw new CFLibMustOverrideException(getClass(), "nextISOTZoneIdGen");
+		throw new MCFMustOverrideException(getClass(), "nextISOTZoneIdGen");
 	}
 
 	/**
@@ -2556,10 +2556,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next TableInfoIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextTableInfoIdGen() {
-		throw new CFLibMustOverrideException(getClass(), "nextTableInfoIdGen");
+		throw new MCFMustOverrideException(getClass(), "nextTableInfoIdGen");
 	}
 
 	/**
@@ -2567,10 +2567,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next MimeTypeIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextMimeTypeIdGen() {
-		throw new CFLibMustOverrideException(getClass(), "nextMimeTypeIdGen");
+		throw new MCFMustOverrideException(getClass(), "nextMimeTypeIdGen");
 	}
 
 	/**
@@ -2578,10 +2578,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next URLProtocolIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextURLProtocolIdGen() {
-		throw new CFLibMustOverrideException(getClass(), "nextURLProtocolIdGen");
+		throw new MCFMustOverrideException(getClass(), "nextURLProtocolIdGen");
 	}
 
 	/**
@@ -2589,10 +2589,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ClusterIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextClusterIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextClusterIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2600,10 +2600,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next SecSessionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecSessionIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextSecSessionIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2611,10 +2611,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next SecUserIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecUserIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextSecUserIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2622,10 +2622,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next TenantIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTenantIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextTenantIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2633,10 +2633,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next SecSysGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecSysGrpIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextSecSysGrpIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2644,10 +2644,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next SecClusGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecClusGrpIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextSecClusGrpIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2655,10 +2655,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next SecClusRoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecClusRoleIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextSecClusRoleIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2666,10 +2666,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next SecTentGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecTentGrpIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextSecTentGrpIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2677,10 +2677,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next SecTentRoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecTentRoleIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextSecTentRoleIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2688,10 +2688,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next MajorVersionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextMajorVersionIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextMajorVersionIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2699,10 +2699,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next MinorVersionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextMinorVersionIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextMinorVersionIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2710,10 +2710,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next SubProjectIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSubProjectIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextSubProjectIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2721,10 +2721,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next TldIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTldIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextTldIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2732,10 +2732,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next TopDomainIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTopDomainIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextTopDomainIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2743,10 +2743,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next TopProjectIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTopProjectIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextTopProjectIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2754,10 +2754,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next LicenseIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextLicenseIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextLicenseIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2765,10 +2765,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ChainIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextChainIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextChainIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2776,10 +2776,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next EnumTagIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextEnumTagIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextEnumTagIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2787,10 +2787,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next IndexColIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextIndexColIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextIndexColIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2798,10 +2798,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ParamIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextParamIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextParamIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2809,10 +2809,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next RelationColIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextRelationColIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextRelationColIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2820,10 +2820,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next TweakIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTweakIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextTweakIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2831,10 +2831,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ScopeIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextScopeIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextScopeIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2842,10 +2842,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next ValueIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextValueIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextValueIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	/**
@@ -2853,10 +2853,10 @@ public class CFBamBuffSchema
 	 *
 	 *	@return	The next RoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextRoleIdGen() {
-		return( new CFLibDbKeyHash256(0) );
+	public MCFDbKeyHash256 nextRoleIdGen() {
+		return( new MCFDbKeyHash256(0) );
 	}
 
 	public ICFBamAtomTable getTableAtom() {
@@ -4340,7 +4340,7 @@ public class CFBamBuffSchema
 		ICFSecSchema.getBackingCFSec().bootstrapSchema(tableData);
 	}
 	
-	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecPubTableData tableData[]) {
+	public void bootstrapAllTablesSecurity(MCFDbKeyHash256 clusterId, MCFDbKeyHash256 tenantId, CFSecPubTableData tableData[]) {
 		ICFSecSchema.getBackingCFSec().bootstrapAllTablesSecurity(clusterId, tenantId, tableData);
 	}
 }

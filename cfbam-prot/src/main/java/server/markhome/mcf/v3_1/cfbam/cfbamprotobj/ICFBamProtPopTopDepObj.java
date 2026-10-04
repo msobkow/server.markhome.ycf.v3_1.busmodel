@@ -120,18 +120,18 @@ public interface ICFBamProtPopTopDepObj
 	List<ICFBamProtPopSubDep1Obj> getOptionalComponentsPopDep( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ContRelationId.
+	 *	Get the required IMCFKeyHash256 attribute ContRelationId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ContRelationId.
+	 *	@return	The required IMCFKeyHash256 attribute ContRelationId.
 	 */
-	ICFLibKeyHash256 getRequiredContRelationId();
+	IMCFKeyHash256 getRequiredContRelationId();
 
 	/**
 	 *	Get the required String attribute Name.

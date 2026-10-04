@@ -55,7 +55,7 @@ import java.util.*;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import java.util.concurrent.atomic.*;
@@ -655,7 +655,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The next ISOCcyIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOCcyIdGen();
 
@@ -664,7 +664,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The next ISOCtryIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOCtryIdGen();
 
@@ -673,7 +673,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The next ISOLangIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOLangIdGen();
 
@@ -682,7 +682,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The next ISOTZoneIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public short nextISOTZoneIdGen();
 
@@ -691,7 +691,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The next TableInfoIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextTableInfoIdGen();
 
@@ -700,7 +700,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The next MimeTypeIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextMimeTypeIdGen();
 
@@ -709,7 +709,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The next URLProtocolIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public int nextURLProtocolIdGen();
 
@@ -718,225 +718,225 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The next ClusterIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextClusterIdGen();
+	public MCFDbKeyHash256 nextClusterIdGen();
 
 	/**
 	 *	Get the next SecSessionIdGen identifier.
 	 *
 	 *	@return	The next SecSessionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecSessionIdGen();
+	public MCFDbKeyHash256 nextSecSessionIdGen();
 
 	/**
 	 *	Get the next SecUserIdGen identifier.
 	 *
 	 *	@return	The next SecUserIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecUserIdGen();
+	public MCFDbKeyHash256 nextSecUserIdGen();
 
 	/**
 	 *	Get the next TenantIdGen identifier.
 	 *
 	 *	@return	The next TenantIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTenantIdGen();
+	public MCFDbKeyHash256 nextTenantIdGen();
 
 	/**
 	 *	Get the next SecSysGrpIdGen identifier.
 	 *
 	 *	@return	The next SecSysGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecSysGrpIdGen();
+	public MCFDbKeyHash256 nextSecSysGrpIdGen();
 
 	/**
 	 *	Get the next SecClusGrpIdGen identifier.
 	 *
 	 *	@return	The next SecClusGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecClusGrpIdGen();
+	public MCFDbKeyHash256 nextSecClusGrpIdGen();
 
 	/**
 	 *	Get the next SecClusRoleIdGen identifier.
 	 *
 	 *	@return	The next SecClusRoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecClusRoleIdGen();
+	public MCFDbKeyHash256 nextSecClusRoleIdGen();
 
 	/**
 	 *	Get the next SecTentGrpIdGen identifier.
 	 *
 	 *	@return	The next SecTentGrpIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecTentGrpIdGen();
+	public MCFDbKeyHash256 nextSecTentGrpIdGen();
 
 	/**
 	 *	Get the next SecTentRoleIdGen identifier.
 	 *
 	 *	@return	The next SecTentRoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSecTentRoleIdGen();
+	public MCFDbKeyHash256 nextSecTentRoleIdGen();
 
 	/**
 	 *	Get the next MajorVersionIdGen identifier.
 	 *
 	 *	@return	The next MajorVersionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextMajorVersionIdGen();
+	public MCFDbKeyHash256 nextMajorVersionIdGen();
 
 	/**
 	 *	Get the next MinorVersionIdGen identifier.
 	 *
 	 *	@return	The next MinorVersionIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextMinorVersionIdGen();
+	public MCFDbKeyHash256 nextMinorVersionIdGen();
 
 	/**
 	 *	Get the next SubProjectIdGen identifier.
 	 *
 	 *	@return	The next SubProjectIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextSubProjectIdGen();
+	public MCFDbKeyHash256 nextSubProjectIdGen();
 
 	/**
 	 *	Get the next TldIdGen identifier.
 	 *
 	 *	@return	The next TldIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTldIdGen();
+	public MCFDbKeyHash256 nextTldIdGen();
 
 	/**
 	 *	Get the next TopDomainIdGen identifier.
 	 *
 	 *	@return	The next TopDomainIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTopDomainIdGen();
+	public MCFDbKeyHash256 nextTopDomainIdGen();
 
 	/**
 	 *	Get the next TopProjectIdGen identifier.
 	 *
 	 *	@return	The next TopProjectIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTopProjectIdGen();
+	public MCFDbKeyHash256 nextTopProjectIdGen();
 
 	/**
 	 *	Get the next LicenseIdGen identifier.
 	 *
 	 *	@return	The next LicenseIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextLicenseIdGen();
+	public MCFDbKeyHash256 nextLicenseIdGen();
 
 	/**
 	 *	Get the next ChainIdGen identifier.
 	 *
 	 *	@return	The next ChainIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextChainIdGen();
+	public MCFDbKeyHash256 nextChainIdGen();
 
 	/**
 	 *	Get the next EnumTagIdGen identifier.
 	 *
 	 *	@return	The next EnumTagIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextEnumTagIdGen();
+	public MCFDbKeyHash256 nextEnumTagIdGen();
 
 	/**
 	 *	Get the next IndexColIdGen identifier.
 	 *
 	 *	@return	The next IndexColIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextIndexColIdGen();
+	public MCFDbKeyHash256 nextIndexColIdGen();
 
 	/**
 	 *	Get the next ParamIdGen identifier.
 	 *
 	 *	@return	The next ParamIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextParamIdGen();
+	public MCFDbKeyHash256 nextParamIdGen();
 
 	/**
 	 *	Get the next RelationColIdGen identifier.
 	 *
 	 *	@return	The next RelationColIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextRelationColIdGen();
+	public MCFDbKeyHash256 nextRelationColIdGen();
 
 	/**
 	 *	Get the next TweakIdGen identifier.
 	 *
 	 *	@return	The next TweakIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextTweakIdGen();
+	public MCFDbKeyHash256 nextTweakIdGen();
 
 	/**
 	 *	Get the next ScopeIdGen identifier.
 	 *
 	 *	@return	The next ScopeIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextScopeIdGen();
+	public MCFDbKeyHash256 nextScopeIdGen();
 
 	/**
 	 *	Get the next ValueIdGen identifier.
 	 *
 	 *	@return	The next ValueIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextValueIdGen();
+	public MCFDbKeyHash256 nextValueIdGen();
 
 	/**
 	 *	Get the next RoleIdGen identifier.
 	 *
 	 *	@return	The next RoleIdGen identifier.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
-	public CFLibDbKeyHash256 nextRoleIdGen();
+	public MCFDbKeyHash256 nextRoleIdGen();
 
 	/**
 	 *	Get the factory for CFSecProt data objects.
@@ -973,7 +973,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Atom Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtAtomTable getTableAtom();
 
@@ -982,7 +982,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The BlobCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtBlobColTable getTableBlobCol();
 
@@ -991,7 +991,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The BlobDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtBlobDefTable getTableBlobDef();
 
@@ -1000,7 +1000,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The BlobType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtBlobTypeTable getTableBlobType();
 
@@ -1009,7 +1009,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The BoolCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtBoolColTable getTableBoolCol();
 
@@ -1018,7 +1018,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The BoolDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtBoolDefTable getTableBoolDef();
 
@@ -1027,7 +1027,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The BoolType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtBoolTypeTable getTableBoolType();
 
@@ -1036,7 +1036,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Chain Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtChainTable getTableChain();
 
@@ -1045,7 +1045,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ClearDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearDepTable getTableClearDep();
 
@@ -1054,7 +1054,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ClearSubDep1 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep1Table getTableClearSubDep1();
 
@@ -1063,7 +1063,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ClearSubDep2 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep2Table getTableClearSubDep2();
 
@@ -1072,7 +1072,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ClearSubDep3 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearSubDep3Table getTableClearSubDep3();
 
@@ -1081,7 +1081,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ClearTopDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtClearTopDepTable getTableClearTopDep();
 
@@ -1090,7 +1090,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DateCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDateColTable getTableDateCol();
 
@@ -1099,7 +1099,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DateDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDateDefTable getTableDateDef();
 
@@ -1108,7 +1108,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DateType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDateTypeTable getTableDateType();
 
@@ -1117,7 +1117,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash128Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128ColTable getTableDbKeyHash128Col();
 
@@ -1126,7 +1126,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash128Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128DefTable getTableDbKeyHash128Def();
 
@@ -1135,7 +1135,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash128Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128GenTable getTableDbKeyHash128Gen();
 
@@ -1144,7 +1144,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash128Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash128TypeTable getTableDbKeyHash128Type();
 
@@ -1153,7 +1153,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash160Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash160ColTable getTableDbKeyHash160Col();
 
@@ -1162,7 +1162,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash160Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash160DefTable getTableDbKeyHash160Def();
 
@@ -1171,7 +1171,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash160Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash160GenTable getTableDbKeyHash160Gen();
 
@@ -1180,7 +1180,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash160Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash160TypeTable getTableDbKeyHash160Type();
 
@@ -1189,7 +1189,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash224Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash224ColTable getTableDbKeyHash224Col();
 
@@ -1198,7 +1198,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash224Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash224DefTable getTableDbKeyHash224Def();
 
@@ -1207,7 +1207,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash224Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash224GenTable getTableDbKeyHash224Gen();
 
@@ -1216,7 +1216,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash224Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash224TypeTable getTableDbKeyHash224Type();
 
@@ -1225,7 +1225,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash256Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash256ColTable getTableDbKeyHash256Col();
 
@@ -1234,7 +1234,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash256Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash256DefTable getTableDbKeyHash256Def();
 
@@ -1243,7 +1243,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash256Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash256GenTable getTableDbKeyHash256Gen();
 
@@ -1252,7 +1252,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash256Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash256TypeTable getTableDbKeyHash256Type();
 
@@ -1261,7 +1261,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash384Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash384ColTable getTableDbKeyHash384Col();
 
@@ -1270,7 +1270,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash384Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash384DefTable getTableDbKeyHash384Def();
 
@@ -1279,7 +1279,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash384Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash384GenTable getTableDbKeyHash384Gen();
 
@@ -1288,7 +1288,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash384Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash384TypeTable getTableDbKeyHash384Type();
 
@@ -1297,7 +1297,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash512Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash512ColTable getTableDbKeyHash512Col();
 
@@ -1306,7 +1306,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash512Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash512DefTable getTableDbKeyHash512Def();
 
@@ -1315,7 +1315,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash512Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash512GenTable getTableDbKeyHash512Gen();
 
@@ -1324,7 +1324,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DbKeyHash512Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDbKeyHash512TypeTable getTableDbKeyHash512Type();
 
@@ -1333,7 +1333,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DelDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelDepTable getTableDelDep();
 
@@ -1342,7 +1342,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DelSubDep1 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelSubDep1Table getTableDelSubDep1();
 
@@ -1351,7 +1351,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DelSubDep2 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelSubDep2Table getTableDelSubDep2();
 
@@ -1360,7 +1360,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DelSubDep3 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelSubDep3Table getTableDelSubDep3();
 
@@ -1369,7 +1369,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DelTopDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDelTopDepTable getTableDelTopDep();
 
@@ -1378,7 +1378,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DoubleCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDoubleColTable getTableDoubleCol();
 
@@ -1387,7 +1387,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DoubleDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDoubleDefTable getTableDoubleDef();
 
@@ -1396,7 +1396,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The DoubleType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtDoubleTypeTable getTableDoubleType();
 
@@ -1405,7 +1405,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The EnumDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumDefTable getTableEnumDef();
 
@@ -1414,7 +1414,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The EnumTag Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumTagTable getTableEnumTag();
 
@@ -1423,7 +1423,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The EnumType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtEnumTypeTable getTableEnumType();
 
@@ -1432,7 +1432,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The FloatCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtFloatColTable getTableFloatCol();
 
@@ -1441,7 +1441,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The FloatDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtFloatDefTable getTableFloatDef();
 
@@ -1450,7 +1450,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The FloatType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtFloatTypeTable getTableFloatType();
 
@@ -1459,7 +1459,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Id16Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtId16GenTable getTableId16Gen();
 
@@ -1468,7 +1468,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Id32Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtId32GenTable getTableId32Gen();
 
@@ -1477,7 +1477,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Id64Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtId64GenTable getTableId64Gen();
 
@@ -1486,7 +1486,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Index Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexTable getTableIndex();
 
@@ -1495,7 +1495,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The IndexCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexColTable getTableIndexCol();
 
@@ -1504,7 +1504,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The IndexTweak Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtIndexTweakTable getTableIndexTweak();
 
@@ -1513,7 +1513,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int16Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16ColTable getTableInt16Col();
 
@@ -1522,7 +1522,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int16Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16DefTable getTableInt16Def();
 
@@ -1531,7 +1531,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int16Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt16TypeTable getTableInt16Type();
 
@@ -1540,7 +1540,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int32Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt32ColTable getTableInt32Col();
 
@@ -1549,7 +1549,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int32Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt32DefTable getTableInt32Def();
 
@@ -1558,7 +1558,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int32Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt32TypeTable getTableInt32Type();
 
@@ -1567,7 +1567,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int64Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt64ColTable getTableInt64Col();
 
@@ -1576,7 +1576,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int64Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt64DefTable getTableInt64Def();
 
@@ -1585,7 +1585,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Int64Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtInt64TypeTable getTableInt64Type();
 
@@ -1594,7 +1594,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NmTokenCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNmTokenColTable getTableNmTokenCol();
 
@@ -1603,7 +1603,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NmTokenDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNmTokenDefTable getTableNmTokenDef();
 
@@ -1612,7 +1612,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NmTokenType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNmTokenTypeTable getTableNmTokenType();
 
@@ -1621,7 +1621,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NmTokensCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNmTokensColTable getTableNmTokensCol();
 
@@ -1630,7 +1630,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NmTokensDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNmTokensDefTable getTableNmTokensDef();
 
@@ -1639,7 +1639,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NmTokensType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNmTokensTypeTable getTableNmTokensType();
 
@@ -1648,7 +1648,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NumberCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNumberColTable getTableNumberCol();
 
@@ -1657,7 +1657,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NumberDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNumberDefTable getTableNumberDef();
 
@@ -1666,7 +1666,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The NumberType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtNumberTypeTable getTableNumberType();
 
@@ -1675,7 +1675,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Param Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtParamTable getTableParam();
 
@@ -1684,7 +1684,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The PopDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtPopDepTable getTablePopDep();
 
@@ -1693,7 +1693,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The PopSubDep1 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtPopSubDep1Table getTablePopSubDep1();
 
@@ -1702,7 +1702,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The PopSubDep2 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtPopSubDep2Table getTablePopSubDep2();
 
@@ -1711,7 +1711,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The PopSubDep3 Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtPopSubDep3Table getTablePopSubDep3();
 
@@ -1720,7 +1720,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The PopTopDep Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtPopTopDepTable getTablePopTopDep();
 
@@ -1729,7 +1729,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Relation Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelationTable getTableRelation();
 
@@ -1738,7 +1738,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The RelationCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRelationColTable getTableRelationCol();
 
@@ -1747,7 +1747,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The RoleDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtRoleDefTable getTableRoleDef();
 
@@ -1756,7 +1756,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The SchemaDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaDefTable getTableSchemaDef();
 
@@ -1765,7 +1765,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The SchemaRef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaRefTable getTableSchemaRef();
 
@@ -1774,7 +1774,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The SchemaRole Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaRoleTable getTableSchemaRole();
 
@@ -1783,7 +1783,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The SchemaTweak Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtSchemaTweakTable getTableSchemaTweak();
 
@@ -1792,7 +1792,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Scope Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtScopeTable getTableScope();
 
@@ -1801,7 +1801,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ServerListFunc Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtServerListFuncTable getTableServerListFunc();
 
@@ -1810,7 +1810,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ServerMethod Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtServerMethodTable getTableServerMethod();
 
@@ -1819,7 +1819,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ServerObjFunc Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtServerObjFuncTable getTableServerObjFunc();
 
@@ -1828,7 +1828,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The ServerProc Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtServerProcTable getTableServerProc();
 
@@ -1837,7 +1837,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The StringCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtStringColTable getTableStringCol();
 
@@ -1846,7 +1846,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The StringDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtStringDefTable getTableStringDef();
 
@@ -1855,7 +1855,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The StringType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtStringTypeTable getTableStringType();
 
@@ -1864,7 +1864,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZDateCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZDateColTable getTableTZDateCol();
 
@@ -1873,7 +1873,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZDateDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZDateDefTable getTableTZDateDef();
 
@@ -1882,7 +1882,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZDateType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZDateTypeTable getTableTZDateType();
 
@@ -1891,7 +1891,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZTimeCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZTimeColTable getTableTZTimeCol();
 
@@ -1900,7 +1900,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZTimeDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZTimeDefTable getTableTZTimeDef();
 
@@ -1909,7 +1909,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZTimeType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZTimeTypeTable getTableTZTimeType();
 
@@ -1918,7 +1918,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZTimestampCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZTimestampColTable getTableTZTimestampCol();
 
@@ -1927,7 +1927,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZTimestampDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZTimestampDefTable getTableTZTimestampDef();
 
@@ -1936,7 +1936,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TZTimestampType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTZTimestampTypeTable getTableTZTimestampType();
 
@@ -1945,7 +1945,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Table Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTableTable getTableTable();
 
@@ -1954,7 +1954,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TableCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTableColTable getTableTableCol();
 
@@ -1963,7 +1963,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TableTweak Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTableTweakTable getTableTableTweak();
 
@@ -1972,7 +1972,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TextCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTextColTable getTableTextCol();
 
@@ -1981,7 +1981,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TextDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTextDefTable getTableTextDef();
 
@@ -1990,7 +1990,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TextType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTextTypeTable getTableTextType();
 
@@ -1999,7 +1999,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TimeCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTimeColTable getTableTimeCol();
 
@@ -2008,7 +2008,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TimeDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTimeDefTable getTableTimeDef();
 
@@ -2017,7 +2017,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TimeType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTimeTypeTable getTableTimeType();
 
@@ -2026,7 +2026,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TimestampCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTimestampColTable getTableTimestampCol();
 
@@ -2035,7 +2035,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TimestampDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTimestampDefTable getTableTimestampDef();
 
@@ -2044,7 +2044,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TimestampType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTimestampTypeTable getTableTimestampType();
 
@@ -2053,7 +2053,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TokenCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenColTable getTableTokenCol();
 
@@ -2062,7 +2062,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TokenDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenDefTable getTableTokenDef();
 
@@ -2071,7 +2071,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The TokenType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTokenTypeTable getTableTokenType();
 
@@ -2080,7 +2080,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Tweak Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtTweakTable getTableTweak();
 
@@ -2089,7 +2089,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt16Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt16ColTable getTableUInt16Col();
 
@@ -2098,7 +2098,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt16Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt16DefTable getTableUInt16Def();
 
@@ -2107,7 +2107,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt16Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt16TypeTable getTableUInt16Type();
 
@@ -2116,7 +2116,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt32Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt32ColTable getTableUInt32Col();
 
@@ -2125,7 +2125,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt32Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt32DefTable getTableUInt32Def();
 
@@ -2134,7 +2134,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt32Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt32TypeTable getTableUInt32Type();
 
@@ -2143,7 +2143,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt64Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64ColTable getTableUInt64Col();
 
@@ -2152,7 +2152,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt64Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64DefTable getTableUInt64Def();
 
@@ -2161,7 +2161,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UInt64Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUInt64TypeTable getTableUInt64Type();
 
@@ -2170,7 +2170,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Uuid6Col Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUuid6ColTable getTableUuid6Col();
 
@@ -2179,7 +2179,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Uuid6Def Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUuid6DefTable getTableUuid6Def();
 
@@ -2188,7 +2188,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Uuid6Gen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUuid6GenTable getTableUuid6Gen();
 
@@ -2197,7 +2197,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Uuid6Type Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUuid6TypeTable getTableUuid6Type();
 
@@ -2206,7 +2206,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UuidCol Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUuidColTable getTableUuidCol();
 
@@ -2215,7 +2215,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UuidDef Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUuidDefTable getTableUuidDef();
 
@@ -2224,7 +2224,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UuidGen Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUuidGenTable getTableUuidGen();
 
@@ -2233,7 +2233,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The UuidType Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtUuidTypeTable getTableUuidType();
 
@@ -2242,7 +2242,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Value Table interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamProtValueTable getTableValue();
 
@@ -2251,7 +2251,7 @@ extends ICFSecProtSchema,
 	 *
 	 *	@return	The Table Permissions interface for the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	//public static ICFSecProtTablePerms getTablePerms();
 
@@ -2269,10 +2269,10 @@ extends ICFSecProtSchema,
 	 *
 	 *	@param	value	The Table Permissions interface to be used by the schema.
 	 *
-	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws MCFNotSupportedException thrown by client-side implementations.
 	 */
 	//public static void setTablePerms( ICFSecProtTablePerms value );
 
 	public void bootstrapSchema(CFSecPubTableData tableData[]);
-	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecPubTableData tableData[]);
+	public void bootstrapAllTablesSecurity(MCFDbKeyHash256 clusterId, MCFDbKeyHash256 tenantId, CFSecPubTableData tableData[]);
 }

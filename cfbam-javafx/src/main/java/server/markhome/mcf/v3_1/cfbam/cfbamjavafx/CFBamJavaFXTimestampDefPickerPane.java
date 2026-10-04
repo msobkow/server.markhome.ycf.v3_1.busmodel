@@ -92,7 +92,7 @@ implements ICFBamJavaFXTimestampDefPaneList
 	protected Collection<ICFBamTimestampDefObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamTimestampDefObj> observableListOfTimestampDef = null;
 	protected TableColumn<ICFBamTimestampDefObj,String> tableColumnObjKind = null;
-	protected TableColumn<ICFBamTimestampDefObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamTimestampDefObj, IMCFKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamTimestampDefObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamTimestampDefObj, String> tableColumnShortName = null;
 	protected TableColumn<ICFBamTimestampDefObj, String> tableColumnLabel = null;
@@ -174,24 +174,24 @@ implements ICFBamJavaFXTimestampDefPaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnObjKind );
-		tableColumnId = new TableColumn<ICFBamTimestampDefObj,ICFLibKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTimestampDefObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
-			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTimestampDefObj, ICFLibKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamTimestampDefObj,IMCFKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTimestampDefObj,IMCFKeyHash256>,ObservableValue<IMCFKeyHash256> >() {
+			public ObservableValue<IMCFKeyHash256> call( CellDataFeatures<ICFBamTimestampDefObj, IMCFKeyHash256> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFLibKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
+					IMCFKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<IMCFKeyHash256> observable = new ReadOnlyObjectWrapper<IMCFKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTimestampDefObj,ICFLibKeyHash256>,TableCell<ICFBamTimestampDefObj,ICFLibKeyHash256>>() {
-			@Override public TableCell<ICFBamTimestampDefObj,ICFLibKeyHash256> call(
-				TableColumn<ICFBamTimestampDefObj,ICFLibKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTimestampDefObj,IMCFKeyHash256>,TableCell<ICFBamTimestampDefObj,IMCFKeyHash256>>() {
+			@Override public TableCell<ICFBamTimestampDefObj,IMCFKeyHash256> call(
+				TableColumn<ICFBamTimestampDefObj,IMCFKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTimestampDefObj>();
 			}

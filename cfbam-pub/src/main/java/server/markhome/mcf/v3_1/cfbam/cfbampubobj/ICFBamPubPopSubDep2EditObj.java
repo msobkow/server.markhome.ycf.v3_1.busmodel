@@ -102,11 +102,11 @@ public interface ICFBamPubPopSubDep2EditObj
 	List<ICFBamPubPopSubDep3Obj> getOptionalComponentsPopDep();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute PopSubDep1Id.
+	 *	Get the required MCFDbKeyHash256 attribute PopSubDep1Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute PopSubDep1Id.
+	 *	@return	The required MCFDbKeyHash256 attribute PopSubDep1Id.
 	 */
-	CFLibDbKeyHash256 getRequiredPopSubDep1Id();
+	MCFDbKeyHash256 getRequiredPopSubDep1Id();
 
 	/**
 	 *	Get the required String attribute Name.

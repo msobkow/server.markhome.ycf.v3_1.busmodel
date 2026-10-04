@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,12 +74,12 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaRoleH extends CFBamBuffRoleDefH
     implements ICFBamSchemaRoleH
 {
-	protected ICFLibKeyHash256 requiredSchemaDefId;
+	protected IMCFKeyHash256 requiredSchemaDefId;
 	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
 
     public CFBamBuffSchemaRoleH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaRole.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = MCFDbKeyHash256.fromHex( ICFBamPubSchemaRole.SCHEMADEFID_INIT_VALUE.toString() );
 		requiredRoleScope = ICFBamPubSchemaRole.ROLESCOPE_INIT_VALUE;
     }
 
@@ -89,13 +89,13 @@ public class CFBamBuffSchemaRoleH extends CFBamBuffRoleDefH
     }
 
 	@Override
-	public ICFLibKeyHash256 getRequiredSchemaDefId() {
+	public IMCFKeyHash256 getRequiredSchemaDefId() {
 		return(requiredSchemaDefId);
 	}
 
-	public void setRequiredSchemaDefId( ICFLibKeyHash256 value ) {
+	public void setRequiredSchemaDefId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredSchemaDefId",
 				1,
 				"value" );
@@ -110,7 +110,7 @@ public class CFBamBuffSchemaRoleH extends CFBamBuffRoleDefH
 
 	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredRoleScope",
 				1,
 				"value" );
@@ -447,7 +447,7 @@ public class CFBamBuffSchemaRoleH extends CFBamBuffRoleDefH
 			setSchemaRole( (CFBamBuffSchemaRole)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -468,7 +468,7 @@ public class CFBamBuffSchemaRoleH extends CFBamBuffRoleDefH
 			setSchemaRole( (ICFBamSchemaRoleH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

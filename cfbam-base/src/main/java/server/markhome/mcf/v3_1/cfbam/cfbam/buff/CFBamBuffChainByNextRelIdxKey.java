@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,19 +74,19 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffChainByNextRelIdxKey
 	implements ICFBamChainByNextRelIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredNextRelationId;
+	protected IMCFKeyHash256 requiredNextRelationId;
 	public CFBamBuffChainByNextRelIdxKey() {
-		requiredNextRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.NEXTRELATIONID_INIT_VALUE.toString() );
+		requiredNextRelationId = MCFDbKeyHash256.fromHex( ICFBamPubChain.NEXTRELATIONID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredNextRelationId() {
+	public IMCFKeyHash256 getRequiredNextRelationId() {
 		return(requiredNextRelationId);
 	}
 
-	public void setRequiredNextRelationId( ICFLibKeyHash256 value ) {
+	public void setRequiredNextRelationId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredNextRelationId",
 				1,
 				"value" );
@@ -192,7 +192,7 @@ public class CFBamBuffChainByNextRelIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

@@ -116,17 +116,17 @@ public interface ICFBamPubPopDepEditObj
 	void setOptionalLookupDefSchema( ICFBamPubSchemaDefObj value );
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional MCFDbKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional MCFDbKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	MCFDbKeyHash256 getOptionalDefSchemaId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute RelationId.
+	 *	Get the required MCFDbKeyHash256 attribute RelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute RelationId.
+	 *	@return	The required MCFDbKeyHash256 attribute RelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredRelationId();
+	MCFDbKeyHash256 getRequiredRelationId();
 
 }

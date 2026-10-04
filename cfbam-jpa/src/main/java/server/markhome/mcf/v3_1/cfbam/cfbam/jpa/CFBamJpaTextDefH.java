@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -108,7 +108,7 @@ public class CFBamJpaTextDefH extends CFBamJpaAtomH
 	@Override
 	public void setRequiredMaxLen( int value ) {
 		if( value < ICFBamPubTextDef.MAXLEN_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				"setRequiredMaxLen",
 				1,
 				"value",
@@ -116,7 +116,7 @@ public class CFBamJpaTextDefH extends CFBamJpaAtomH
 				ICFBamPubTextDef.MAXLEN_MIN_VALUE );
 		}
 		if( value > ICFBamPubTextDef.MAXLEN_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredMaxLen",
 				1,
 				"value",
@@ -133,7 +133,7 @@ public class CFBamJpaTextDefH extends CFBamJpaAtomH
 
 	public void setOptionalInitValue( String value ) {
 		if( value != null && value.length() > 65535 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value.length()",
@@ -150,7 +150,7 @@ public class CFBamJpaTextDefH extends CFBamJpaAtomH
 
 	public void setOptionalXmlElementName( String value ) {
 		if( value != null && value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setOptionalXmlElementName",
 				1,
 				"value.length()",
@@ -380,7 +380,7 @@ public class CFBamJpaTextDefH extends CFBamJpaAtomH
 			setTextDef( (ICFBamTextDef)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"src",
 				src,
@@ -402,7 +402,7 @@ public class CFBamJpaTextDefH extends CFBamJpaAtomH
 			setTextDef( (ICFBamTextDefH)src );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 					"set",
 					"src",
 					src,

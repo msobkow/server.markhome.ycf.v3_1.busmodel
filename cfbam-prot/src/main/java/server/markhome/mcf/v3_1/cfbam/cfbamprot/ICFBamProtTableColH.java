@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -68,12 +68,12 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamProtTableColH extends ICFBamProtValueH
 {
-	public ICFLibKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( IMCFKeyHash256 value );
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );
-	public ICFLibKeyHash256 getOptionalDataId();
-	public void setOptionalDataId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDataId();
+	public void setOptionalDataId( IMCFKeyHash256 value );
 	public String getOptionalXmlElementName();
 	public void setOptionalXmlElementName( String value );
 	@Override

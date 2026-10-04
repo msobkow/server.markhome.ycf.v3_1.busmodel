@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -70,9 +70,9 @@ public interface ICFBamNumberDef
 	public static final short PRECIS_MAX_VALUE = (short)30;
 	public static final short DIGITS_INIT_VALUE = (short)16;
 	public static final short PRECIS_INIT_VALUE = (short)0;
-	public static final BigDecimal INITVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.NumberDef.InitValue", "CFBam.NumberDef.InitValue", 31, 5, "0.00000" );
-	public static final BigDecimal MINVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.NumberDef.MinValue", "CFBam.NumberDef.MinValue", 31, 5, "0.00000" );
-	public static final BigDecimal MAXVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.NumberDef.MaxValue", "CFBam.NumberDef.MaxValue", 31, 5, "0.00000" );
+	public static final BigDecimal INITVALUE_INIT_VALUE = MCFBigDecimalUtil.parse( "CFBam.NumberDef.InitValue", "CFBam.NumberDef.InitValue", 31, 5, "0.00000" );
+	public static final BigDecimal MINVALUE_INIT_VALUE = MCFBigDecimalUtil.parse( "CFBam.NumberDef.MinValue", "CFBam.NumberDef.MinValue", 31, 5, "0.00000" );
+	public static final BigDecimal MAXVALUE_INIT_VALUE = MCFBigDecimalUtil.parse( "CFBam.NumberDef.MaxValue", "CFBam.NumberDef.MaxValue", 31, 5, "0.00000" );
 	public final static int CLASS_CODE = 0xa831;
 	public final static String S_CLASS_CODE = "a831";
 

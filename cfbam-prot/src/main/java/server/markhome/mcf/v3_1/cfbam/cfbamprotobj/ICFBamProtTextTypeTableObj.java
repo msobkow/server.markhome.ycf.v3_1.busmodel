@@ -121,7 +121,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	The TextType-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtTextTypeObj readTextType( CFLibDbKeyHash256 pkey );
+	ICFBamProtTextTypeObj readTextType( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Read a TextType-derived instance by it's primary key.
@@ -131,19 +131,19 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	The TextType-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamProtTextTypeObj readTextType( CFLibDbKeyHash256 pkey,
+	ICFBamProtTextTypeObj readTextType( MCFDbKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamProtTextTypeObj readCachedTextType( CFLibDbKeyHash256 pkey );
+	ICFBamProtTextTypeObj readCachedTextType( MCFDbKeyHash256 pkey );
 
 	public void reallyDeepDisposeTextType( ICFBamProtTextTypeObj obj );
 
-	void deepDisposeTextType( CFLibDbKeyHash256 pkey );
+	void deepDisposeTextType( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamProtTextTypeObj lockTextType( CFLibDbKeyHash256 pkey );
+	ICFBamProtTextTypeObj lockTextType( MCFDbKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the TextType-derived instances in the database.
@@ -171,7 +171,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	ICFBamProtValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtTextTypeObj readTextTypeByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtTextTypeObj readTextTypeByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Get the ICFBamProtValueObj instance for the primary key attributes.
@@ -181,7 +181,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	ICFBamProtValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtTextTypeObj readTextTypeByIdIdx( ICFLibKeyHash256 Id,
+	ICFBamProtTextTypeObj readTextTypeByIdIdx( IMCFKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -194,7 +194,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	ICFBamProtValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtTextTypeObj readTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtTextTypeObj readTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -207,7 +207,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	ICFBamProtValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamProtTextTypeObj readTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtTextTypeObj readTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -219,7 +219,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<ICFBamProtTextTypeObj> readTextTypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of ICFBamProtTextTypeObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -229,7 +229,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId,
+	List<ICFBamProtTextTypeObj> readTextTypeByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -240,7 +240,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamProtTextTypeObj> readTextTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of ICFBamProtTextTypeObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -250,7 +250,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamProtTextTypeObj> readTextTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -261,7 +261,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamProtTextTypeObj> readTextTypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of ICFBamProtTextTypeObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -271,7 +271,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamProtTextTypeObj> readTextTypeByPrevIdx( MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -282,7 +282,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamProtTextTypeObj> readTextTypeByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of ICFBamProtTextTypeObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -292,7 +292,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamProtTextTypeObj> readTextTypeByNextIdx( MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -305,8 +305,8 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamProtTextTypeObj> readTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of ICFBamProtTextTypeObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -318,8 +318,8 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamProtTextTypeObj> readTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -332,8 +332,8 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamProtTextTypeObj> readTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Get the map of ICFBamProtTextTypeObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -345,8 +345,8 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of ICFBamProtTextTypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamProtTextTypeObj> readTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -357,7 +357,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of List<ICFBamProtTextTypeObj> cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	List<ICFBamProtTextTypeObj> readTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Get the map of List<ICFBamProtTextTypeObj> instances sorted by their primary keys for the duplicate SchemaIdx key.
@@ -367,50 +367,50 @@ public interface ICFBamProtTextTypeTableObj
 	 *	@return	List of List<ICFBamProtTextTypeObj> cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamProtTextTypeObj> readTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
+	List<ICFBamProtTextTypeObj> readTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId,
 		boolean forceRead );
 
-	ICFBamProtValueObj readCachedTextTypeByIdIdx( ICFLibKeyHash256 Id );
+	ICFBamProtValueObj readCachedTextTypeByIdIdx( IMCFKeyHash256 Id );
 
-	ICFBamProtValueObj readCachedTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	ICFBamProtValueObj readCachedTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	List<List<ICFBamProtValueObj>> readCachedTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	List<List<ICFBamProtValueObj>> readCachedTextTypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	List<List<ICFBamProtValueObj>> readCachedTextTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<List<ICFBamProtValueObj>> readCachedTextTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	List<List<ICFBamProtValueObj>> readCachedTextTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<List<ICFBamProtValueObj>> readCachedTextTypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	List<List<ICFBamProtValueObj>> readCachedTextTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<List<ICFBamProtValueObj>> readCachedTextTypeByNextIdx( MCFDbKeyHash256 NextId );
 
-	List<List<ICFBamProtValueObj>> readCachedTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<List<ICFBamProtValueObj>> readCachedTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	List<List<ICFBamProtValueObj>> readCachedTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<List<ICFBamProtValueObj>> readCachedTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	List<List<ICFBamProtTextTypeObj>> readCachedTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	List<List<ICFBamProtTextTypeObj>> readCachedTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
-	void deepDisposeTextTypeByIdIdx( ICFLibKeyHash256 Id );
+	void deepDisposeTextTypeByIdIdx( IMCFKeyHash256 Id );
 
-	void deepDisposeTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deepDisposeTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deepDisposeTextTypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
-	void deepDisposeTextTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeTextTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeTextTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeTextTypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
-	void deepDisposeTextTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeTextTypeByNextIdx( MCFDbKeyHash256 NextId );
 
-	void deepDisposeTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
-	void deepDisposeTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
-	void deepDisposeTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	void deepDisposeTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Internal use only.
@@ -427,7 +427,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *
 	 *	@param	Id	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeByIdIdx( ICFLibKeyHash256 Id );
+	void deleteTextTypeByIdIdx( IMCFKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -436,7 +436,7 @@ public interface ICFBamProtTextTypeTableObj
 	 *
 	 *	@param	Name	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
+	void deleteTextTypeByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -444,28 +444,28 @@ public interface ICFBamProtTextTypeTableObj
 	 *
 	 *	@param	ScopeId	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
+	void deleteTextTypeByScopeIdx( IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteTextTypeByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteTextTypeByPrevIdx( MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteTextTypeByNextIdx( MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -474,8 +474,8 @@ public interface ICFBamProtTextTypeTableObj
 	 *
 	 *	@param	PrevId	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteTextTypeByContPrevIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -484,15 +484,15 @@ public interface ICFBamProtTextTypeTableObj
 	 *
 	 *	@param	NextId	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteTextTypeByContNextIdx( IMCFKeyHash256 ScopeId,
+		MCFDbKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaDefId	The TextType key attribute of the instance generating the id.
 	 */
-	void deleteTextTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
+	void deleteTextTypeBySchemaIdx( IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the ICFBamProtTextTypeObj instance up in the chain.  The instance is always refreshed.

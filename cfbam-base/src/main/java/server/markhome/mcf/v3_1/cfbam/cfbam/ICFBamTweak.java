@@ -54,7 +54,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
@@ -64,19 +64,19 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 public interface ICFBamTweak
 {
 	public static final String S_INIT_CREATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
+	public static final MCFDbKeyHash256 INIT_CREATED_BY = MCFDbKeyHash256.fromHex(S_INIT_CREATED_BY);
 	public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
+	public static final MCFDbKeyHash256 INIT_UPDATED_BY = MCFDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_TENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 TENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TENANTID_INIT_VALUE );
+	public static final MCFDbKeyHash256 TENANTID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_TENANTID_INIT_VALUE );
 	public static final String S_SCOPEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 SCOPEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCOPEID_INIT_VALUE );
+	public static final MCFDbKeyHash256 SCOPEID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_SCOPEID_INIT_VALUE );
 	public static final String S_ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
+	public static final MCFDbKeyHash256 ID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_ID_INIT_VALUE );
 	public static final String S_DEFSCHEMATENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DEFSCHEMATENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMATENANTID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DEFSCHEMATENANTID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DEFSCHEMATENANTID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DEFSCHEMAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static boolean REPLACESINHERITED_INIT_VALUE = false;
 	public static final String TWEAKGELTEXT_INIT_VALUE = new String( "" );
@@ -85,17 +85,17 @@ public interface ICFBamTweak
 
 	public int getClassCode();
 
-	public CFLibDbKeyHash256 getCreatedByUserId();
+	public MCFDbKeyHash256 getCreatedByUserId();
 
-	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+	public void setCreatedByUserId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getCreatedAt();
 
 	public void setCreatedAt( LocalDateTime value );
 
-	public CFLibDbKeyHash256 getUpdatedByUserId();
+	public MCFDbKeyHash256 getUpdatedByUserId();
 
-	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+	public void setUpdatedByUserId( MCFDbKeyHash256 value );
 
 	public LocalDateTime getUpdatedAt();
 
@@ -103,14 +103,14 @@ public interface ICFBamTweak
 
 	public $implCommaIJavaOptAtomType$ getPKey();
 	public void setPKey($implCommaIJavaOptAtomType$ requiredId);
-	public ICFLibKeyHash256 getRequiredId();
-	public void setRequiredId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredId();
+	public void setRequiredId( IMCFKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamScope getRequiredContainerScopeDef();
 
-	public void setRequiredContainerScopeDef(ICFLibKeyHash256 argScopeId);
+	public void setRequiredContainerScopeDef(IMCFKeyHash256 argScopeId);
 
 	public void setRequiredContainerScopeDef(ICFBamScope argObj);
 
@@ -120,7 +120,7 @@ public interface ICFBamTweak
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId);
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId);
 
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
 
@@ -128,14 +128,14 @@ public interface ICFBamTweak
 
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 
-	public ICFLibKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getRequiredScopeId();
-	public void setRequiredScopeId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaTenantId();
-	public void setOptionalDefSchemaTenantId( ICFLibKeyHash256 value );
-	public ICFLibKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
+	public IMCFKeyHash256 getRequiredTenantId();
+	public void setRequiredTenantId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getRequiredScopeId();
+	public void setRequiredScopeId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaTenantId();
+	public void setOptionalDefSchemaTenantId( IMCFKeyHash256 value );
+	public IMCFKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( IMCFKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean getRequiredReplacesInherited();

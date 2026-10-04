@@ -59,7 +59,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -74,21 +74,21 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffPopSubDep1ByUNameIdxKey
 	implements ICFBamPopSubDep1ByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredPopTopDepId;
+	protected IMCFKeyHash256 requiredPopTopDepId;
 	protected String requiredName;
 	public CFBamBuffPopSubDep1ByUNameIdxKey() {
-		requiredPopTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep1.POPTOPDEPID_INIT_VALUE.toString() );
+		requiredPopTopDepId = MCFDbKeyHash256.fromHex( ICFBamPubPopSubDep1.POPTOPDEPID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubPopSubDep1.NAME_INIT_VALUE;
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredPopTopDepId() {
+	public IMCFKeyHash256 getRequiredPopTopDepId() {
 		return(requiredPopTopDepId);
 	}
 
-	public void setRequiredPopTopDepId( ICFLibKeyHash256 value ) {
+	public void setRequiredPopTopDepId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredPopTopDepId",
 				1,
 				"value" );
@@ -103,13 +103,13 @@ public class CFBamBuffPopSubDep1ByUNameIdxKey
 
 	public void setRequiredName( String value ) {
 		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredName",
 				1,
 				"value" );
 		}
 		else if( value.length() > 192 ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 				"setRequiredName",
 				1,
 				"value.length()",
@@ -278,7 +278,7 @@ public class CFBamBuffPopSubDep1ByUNameIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException( getClass(),
+			throw new MCFUnsupportedClassException( getClass(),
 				"compareTo",
 				"obj",
 				obj,

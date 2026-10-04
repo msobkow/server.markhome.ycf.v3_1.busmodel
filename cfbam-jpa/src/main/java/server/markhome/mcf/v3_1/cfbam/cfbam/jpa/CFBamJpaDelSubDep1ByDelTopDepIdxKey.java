@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,19 +66,19 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaDelSubDep1ByDelTopDepIdxKey
 	implements ICFBamDelSubDep1ByDelTopDepIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredDelTopDepId;
+	protected IMCFKeyHash256 requiredDelTopDepId;
 	public CFBamJpaDelSubDep1ByDelTopDepIdxKey() {
-		requiredDelTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubDelSubDep1.DELTOPDEPID_INIT_VALUE.toString() );
+		requiredDelTopDepId = MCFDbKeyHash256.fromHex( ICFBamPubDelSubDep1.DELTOPDEPID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredDelTopDepId() {
+	public IMCFKeyHash256 getRequiredDelTopDepId() {
 		return(requiredDelTopDepId);
 	}
 
-	public void setRequiredDelTopDepId( ICFLibKeyHash256 value ) {
+	public void setRequiredDelTopDepId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredDelTopDepId",
 				1,
 				"value" );
@@ -221,7 +221,7 @@ public class CFBamJpaDelSubDep1ByDelTopDepIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

@@ -266,18 +266,18 @@ public interface ICFBamTableEditObj
 	List<ICFBamTweakObj> getOptionalComponentsTweaks();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute SchemaDefId.
+	 *	Get the required IMCFKeyHash256 attribute SchemaDefId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute SchemaDefId.
+	 *	@return	The required IMCFKeyHash256 attribute SchemaDefId.
 	 */
-	ICFLibKeyHash256 getRequiredSchemaDefId();
+	IMCFKeyHash256 getRequiredSchemaDefId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -378,11 +378,11 @@ public interface ICFBamTableEditObj
 	void setRequiredPageData(boolean value);
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute PrimaryIndexId.
+	 *	Get the optional IMCFKeyHash256 attribute PrimaryIndexId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute PrimaryIndexId.
+	 *	@return	The optional IMCFKeyHash256 attribute PrimaryIndexId.
 	 */
-	ICFLibKeyHash256 getOptionalPrimaryIndexId();
+	IMCFKeyHash256 getOptionalPrimaryIndexId();
 
 	/**
 	 *	Get the required String attribute TableClassCode.
@@ -399,25 +399,25 @@ public interface ICFBamTableEditObj
 	void setRequiredTableClassCode(String value);
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute LookupIndexId.
+	 *	Get the optional IMCFKeyHash256 attribute LookupIndexId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute LookupIndexId.
+	 *	@return	The optional IMCFKeyHash256 attribute LookupIndexId.
 	 */
-	ICFLibKeyHash256 getOptionalLookupIndexId();
+	IMCFKeyHash256 getOptionalLookupIndexId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute AltIndexId.
+	 *	Get the optional IMCFKeyHash256 attribute AltIndexId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute AltIndexId.
+	 *	@return	The optional IMCFKeyHash256 attribute AltIndexId.
 	 */
-	ICFLibKeyHash256 getOptionalAltIndexId();
+	IMCFKeyHash256 getOptionalAltIndexId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute QualifyingTableId.
+	 *	Get the optional IMCFKeyHash256 attribute QualifyingTableId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute QualifyingTableId.
+	 *	@return	The optional IMCFKeyHash256 attribute QualifyingTableId.
 	 */
-	ICFLibKeyHash256 getOptionalQualifyingTableId();
+	IMCFKeyHash256 getOptionalQualifyingTableId();
 
 	/**
 	 *	Get the required boolean attribute IsInstantiable.

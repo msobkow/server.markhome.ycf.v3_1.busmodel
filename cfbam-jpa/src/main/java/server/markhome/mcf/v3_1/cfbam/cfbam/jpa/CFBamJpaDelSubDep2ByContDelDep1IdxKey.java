@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,19 +66,19 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaDelSubDep2ByContDelDep1IdxKey
 	implements ICFBamDelSubDep2ByContDelDep1IdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredDelSubDep1Id;
+	protected IMCFKeyHash256 requiredDelSubDep1Id;
 	public CFBamJpaDelSubDep2ByContDelDep1IdxKey() {
-		requiredDelSubDep1Id = CFLibDbKeyHash256.fromHex( ICFBamPubDelSubDep2.DELSUBDEP1ID_INIT_VALUE.toString() );
+		requiredDelSubDep1Id = MCFDbKeyHash256.fromHex( ICFBamPubDelSubDep2.DELSUBDEP1ID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredDelSubDep1Id() {
+	public IMCFKeyHash256 getRequiredDelSubDep1Id() {
 		return(requiredDelSubDep1Id);
 	}
 
-	public void setRequiredDelSubDep1Id( ICFLibKeyHash256 value ) {
+	public void setRequiredDelSubDep1Id( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredDelSubDep1Id",
 				1,
 				"value" );
@@ -221,7 +221,7 @@ public class CFBamJpaDelSubDep2ByContDelDep1IdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

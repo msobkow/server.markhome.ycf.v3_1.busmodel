@@ -128,7 +128,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	The Tweak-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubTweakObj readTweak( ICFLibKeyHash256 pkey );
+	ICFBamPubTweakObj readTweak( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Read a Tweak-derived instance by it's primary key.
@@ -138,19 +138,19 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	The Tweak-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamPubTweakObj readTweak( ICFLibKeyHash256 pkey,
+	ICFBamPubTweakObj readTweak( IMCFKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamPubTweakObj readCachedTweak( ICFLibKeyHash256 pkey );
+	ICFBamPubTweakObj readCachedTweak( IMCFKeyHash256 pkey );
 
 	public void reallyDeepDisposeTweak( ICFBamPubTweakObj obj );
 
-	void deepDisposeTweak( ICFLibKeyHash256 pkey );
+	void deepDisposeTweak( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamPubTweakObj lockTweak( ICFLibKeyHash256 pkey );
+	ICFBamPubTweakObj lockTweak( IMCFKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Tweak-derived instances in the database.
@@ -178,7 +178,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	CFBamPubTweakObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTweakObj readTweakByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubTweakObj readTweakByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamPubTweakObj instance for the primary key attributes.
@@ -188,7 +188,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	CFBamPubTweakObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTweakObj readTweakByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamPubTweakObj readTweakByIdIdx( MCFDbKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -201,7 +201,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	CFBamPubTweakObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTweakObj readTweakByUNameIdx(CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTweakObj readTweakByUNameIdx(MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -214,7 +214,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	CFBamPubTweakObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTweakObj readTweakByUNameIdx(CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTweakObj readTweakByUNameIdx(MCFDbKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -226,7 +226,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	List of CFBamPubTweakObj cached instances sorted by their primary keys for the duplicate ValTentIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTweakObj> readTweakByValTentIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamPubTweakObj> readTweakByValTentIdx( MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamPubTweakObj instances sorted by their primary keys for the duplicate ValTentIdx key.
@@ -236,7 +236,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	List of CFBamPubTweakObj cached instances sorted by their primary keys for the duplicate ValTentIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTweakObj> readTweakByValTentIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFBamPubTweakObj> readTweakByValTentIdx( MCFDbKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -247,7 +247,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	List of CFBamPubTweakObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTweakObj> readTweakByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubTweakObj> readTweakByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamPubTweakObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -257,7 +257,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	List of CFBamPubTweakObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTweakObj> readTweakByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamPubTweakObj> readTweakByScopeIdx( MCFDbKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -268,7 +268,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	List of CFBamPubTweakObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTweakObj> readTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubTweakObj> readTweakByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamPubTweakObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -278,7 +278,7 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	List of CFBamPubTweakObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamPubTweakObj> readTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamPubTweakObj> readTweakByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -297,10 +297,10 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	CFBamPubTweakObj cached instance for the unique UDefIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTweakObj readTweakByUDefIdx(CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	ICFBamPubTweakObj readTweakByUDefIdx(MCFDbKeyHash256 TenantId,
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 DefSchemaTenantId,
+		MCFDbKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -319,45 +319,45 @@ public interface ICFBamPubTweakTableObj
 	 *	@return	CFBamPubTweakObj refreshed instance for the unique UDefIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamPubTweakObj readTweakByUDefIdx(CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	ICFBamPubTweakObj readTweakByUDefIdx(MCFDbKeyHash256 TenantId,
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 DefSchemaTenantId,
+		MCFDbKeyHash256 DefSchemaId,
 		String Name,
 		boolean forceRead );
 
-	ICFBamPubTweakObj readCachedTweakByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamPubTweakObj readCachedTweakByIdIdx( MCFDbKeyHash256 Id );
 
-	ICFBamPubTweakObj readCachedTweakByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamPubTweakObj readCachedTweakByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamPubTweakObj> readCachedTweakByValTentIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamPubTweakObj> readCachedTweakByValTentIdx( MCFDbKeyHash256 TenantId );
 
-	List<ICFBamPubTweakObj> readCachedTweakByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamPubTweakObj> readCachedTweakByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	List<ICFBamPubTweakObj> readCachedTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamPubTweakObj> readCachedTweakByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	ICFBamPubTweakObj readCachedTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	ICFBamPubTweakObj readCachedTweakByUDefIdx( MCFDbKeyHash256 TenantId,
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 DefSchemaTenantId,
+		MCFDbKeyHash256 DefSchemaId,
 		String Name );
 
-	void deepDisposeTweakByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeTweakByIdIdx( MCFDbKeyHash256 Id );
 
-	void deepDisposeTweakByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeTweakByUNameIdx( MCFDbKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeTweakByValTentIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeTweakByValTentIdx( MCFDbKeyHash256 TenantId );
 
-	void deepDisposeTweakByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeTweakByScopeIdx( MCFDbKeyHash256 ScopeId );
 
-	void deepDisposeTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeTweakByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
-	void deepDisposeTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	void deepDisposeTweakByUDefIdx( MCFDbKeyHash256 TenantId,
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 DefSchemaTenantId,
+		MCFDbKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -375,7 +375,7 @@ public interface ICFBamPubTweakTableObj
 	 *
 	 *	@param	Id	The Tweak key attribute of the instance generating the id.
 	 */
-	void deleteTweakByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteTweakByIdIdx( MCFDbKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -384,7 +384,7 @@ public interface ICFBamPubTweakTableObj
 	 *
 	 *	@param	Name	The Tweak key attribute of the instance generating the id.
 	 */
-	void deleteTweakByUNameIdx(CFLibDbKeyHash256 ScopeId,
+	void deleteTweakByUNameIdx(MCFDbKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -392,21 +392,21 @@ public interface ICFBamPubTweakTableObj
 	 *
 	 *	@param	TenantId	The Tweak key attribute of the instance generating the id.
 	 */
-	void deleteTweakByValTentIdx( CFLibDbKeyHash256 TenantId );
+	void deleteTweakByValTentIdx( MCFDbKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	ScopeId	The Tweak key attribute of the instance generating the id.
 	 */
-	void deleteTweakByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteTweakByScopeIdx( MCFDbKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The Tweak key attribute of the instance generating the id.
 	 */
-	void deleteTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteTweakByDefSchemaIdx( MCFDbKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
@@ -421,9 +421,9 @@ public interface ICFBamPubTweakTableObj
 	 *
 	 *	@param	Name	The Tweak key attribute of the instance generating the id.
 	 */
-	void deleteTweakByUDefIdx(CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	void deleteTweakByUDefIdx(MCFDbKeyHash256 TenantId,
+		MCFDbKeyHash256 ScopeId,
+		MCFDbKeyHash256 DefSchemaTenantId,
+		MCFDbKeyHash256 DefSchemaId,
 		String Name );
 }

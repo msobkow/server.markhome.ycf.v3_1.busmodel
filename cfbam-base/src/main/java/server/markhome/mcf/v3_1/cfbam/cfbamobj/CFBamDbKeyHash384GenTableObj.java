@@ -158,7 +158,7 @@ public class CFBamDbKeyHash384GenTableObj
 	 */
 	static void setRuntimeClassCode(int argNewClassCode ) {
 		if (argNewClassCode <= 0) {
-			throw new CFLibArgumentUnderflowException(CFBamDbKeyHash384GenTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+			throw new MCFArgumentUnderflowException(CFBamDbKeyHash384GenTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
 		}
 		runtimeClassCode = argNewClassCode;
 	}
@@ -615,7 +615,7 @@ public class CFBamDbKeyHash384GenTableObj
 			locked = (ICFBamDbKeyHash384GenObj)locked.realise();
 		}
 		else {
-			throw new CFLibCollisionDetectedException( getClass(), "lockDbKeyHash384Gen", pkey );
+			throw new MCFCollisionDetectedException( getClass(), "lockDbKeyHash384Gen", pkey );
 		}
 		return( locked );
 	}
@@ -650,7 +650,7 @@ public class CFBamDbKeyHash384GenTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -658,7 +658,7 @@ public class CFBamDbKeyHash384GenTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -710,7 +710,7 @@ public class CFBamDbKeyHash384GenTableObj
 				arr[idx++] = valIter.next();
 			}
 			if( idx < len ) {
-				throw new CFLibArgumentUnderflowException( getClass(),
+				throw new MCFArgumentUnderflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -718,7 +718,7 @@ public class CFBamDbKeyHash384GenTableObj
 					len );
 			}
 			else if( valIter.hasNext() ) {
-				throw new CFLibArgumentOverflowException( getClass(),
+				throw new MCFArgumentOverflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -755,21 +755,21 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public ICFBamDbKeyHash384GenObj readDbKeyHash384GenByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDbKeyHash384GenObj readDbKeyHash384GenByIdIdx( IMCFKeyHash256 Id )
 	{
 		return( readDbKeyHash384GenByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamDbKeyHash384GenObj readDbKeyHash384GenByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	public ICFBamDbKeyHash384GenObj readDbKeyHash384GenByIdIdx( IMCFKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamDbKeyHash384GenObj obj = readDbKeyHash384Gen( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamDbKeyHash384GenObj readDbKeyHash384GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDbKeyHash384GenObj readDbKeyHash384GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readDbKeyHash384GenByUNameIdx( ScopeId,
@@ -778,7 +778,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public ICFBamDbKeyHash384GenObj readDbKeyHash384GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDbKeyHash384GenObj readDbKeyHash384GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -807,14 +807,14 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		return( readDbKeyHash384GenByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByScopeIdx( ICFLibKeyHash256 ScopeId,
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByScopeIdx( IMCFKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash384GenByScopeIdx";
@@ -852,7 +852,7 @@ public class CFBamDbKeyHash384GenTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -860,7 +860,7 @@ public class CFBamDbKeyHash384GenTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -900,14 +900,14 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		return( readDbKeyHash384GenByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash384GenByDefSchemaIdx";
@@ -945,7 +945,7 @@ public class CFBamDbKeyHash384GenTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -953,7 +953,7 @@ public class CFBamDbKeyHash384GenTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -993,14 +993,14 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		return( readDbKeyHash384GenByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByPrevIdx( ICFLibKeyHash256 PrevId,
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByPrevIdx( IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash384GenByPrevIdx";
@@ -1038,7 +1038,7 @@ public class CFBamDbKeyHash384GenTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1046,7 +1046,7 @@ public class CFBamDbKeyHash384GenTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1086,14 +1086,14 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByNextIdx( IMCFKeyHash256 NextId )
 	{
 		return( readDbKeyHash384GenByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByNextIdx( ICFLibKeyHash256 NextId,
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByNextIdx( IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash384GenByNextIdx";
@@ -1131,7 +1131,7 @@ public class CFBamDbKeyHash384GenTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1139,7 +1139,7 @@ public class CFBamDbKeyHash384GenTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1179,8 +1179,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		return( readDbKeyHash384GenByContPrevIdx( ScopeId,
 			PrevId,
@@ -1188,8 +1188,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId,
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash384GenByContPrevIdx";
@@ -1229,7 +1229,7 @@ public class CFBamDbKeyHash384GenTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1237,7 +1237,7 @@ public class CFBamDbKeyHash384GenTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1277,8 +1277,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		return( readDbKeyHash384GenByContNextIdx( ScopeId,
 			NextId,
@@ -1286,8 +1286,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId,
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash384GenByContNextIdx";
@@ -1327,7 +1327,7 @@ public class CFBamDbKeyHash384GenTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1335,7 +1335,7 @@ public class CFBamDbKeyHash384GenTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1375,14 +1375,14 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		return( readDbKeyHash384GenBySchemaIdx( SchemaDefId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
+	public List<ICFBamDbKeyHash384GenObj> readDbKeyHash384GenBySchemaIdx( IMCFKeyHash256 SchemaDefId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDbKeyHash384GenBySchemaIdx";
@@ -1420,7 +1420,7 @@ public class CFBamDbKeyHash384GenTableObj
 			arr[idx++] = valIter.next();
 		}
 		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
+			throw new MCFArgumentUnderflowException( getClass(),
 				S_ProcName,
 				0,
 				"idx",
@@ -1428,7 +1428,7 @@ public class CFBamDbKeyHash384GenTableObj
 				len );
 		}
 		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
+			throw new MCFArgumentOverflowException( getClass(),
 					S_ProcName,
 					0,
 					"idx",
@@ -1468,7 +1468,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public ICFBamDbKeyHash384GenObj readCachedDbKeyHash384GenByIdIdx( ICFLibKeyHash256 Id )
+	public ICFBamDbKeyHash384GenObj readCachedDbKeyHash384GenByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDbKeyHash384GenObj obj = null;
 		obj = readCachedDbKeyHash384Gen( Id );
@@ -1476,7 +1476,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public ICFBamDbKeyHash384GenObj readCachedDbKeyHash384GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public ICFBamDbKeyHash384GenObj readCachedDbKeyHash384GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamDbKeyHash384GenObj obj = null;
@@ -1514,7 +1514,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash384GenByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
@@ -1532,7 +1532,7 @@ public class CFBamDbKeyHash384GenTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1540,7 +1540,7 @@ public class CFBamDbKeyHash384GenTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1591,7 +1591,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash384GenByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
@@ -1609,7 +1609,7 @@ public class CFBamDbKeyHash384GenTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1617,7 +1617,7 @@ public class CFBamDbKeyHash384GenTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1668,7 +1668,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByPrevIdx( ICFLibKeyHash256 PrevId )
+	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash384GenByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
@@ -1686,7 +1686,7 @@ public class CFBamDbKeyHash384GenTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1694,7 +1694,7 @@ public class CFBamDbKeyHash384GenTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1745,7 +1745,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByNextIdx( ICFLibKeyHash256 NextId )
+	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash384GenByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
@@ -1763,7 +1763,7 @@ public class CFBamDbKeyHash384GenTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1771,7 +1771,7 @@ public class CFBamDbKeyHash384GenTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1822,8 +1822,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash384GenByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1842,7 +1842,7 @@ public class CFBamDbKeyHash384GenTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1850,7 +1850,7 @@ public class CFBamDbKeyHash384GenTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1901,8 +1901,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash384GenByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1921,7 +1921,7 @@ public class CFBamDbKeyHash384GenTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -1929,7 +1929,7 @@ public class CFBamDbKeyHash384GenTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -1980,7 +1980,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public List<ICFBamDbKeyHash384GenObj> readCachedDbKeyHash384GenBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "readCachedDbKeyHash384GenBySchemaIdx";
 		ICFBamDbKeyHash384TypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash384Type().newBySchemaIdxKey();
@@ -1998,7 +1998,7 @@ public class CFBamDbKeyHash384GenTableObj
 					arr[idx++] = valIter.next();
 				}
 				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
+					throw new MCFArgumentUnderflowException( getClass(),
 						S_ProcName,
 						0,
 						"idx",
@@ -2006,7 +2006,7 @@ public class CFBamDbKeyHash384GenTableObj
 						len );
 				}
 				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
+					throw new MCFArgumentOverflowException( getClass(),
 							S_ProcName,
 							0,
 							"idx",
@@ -2057,7 +2057,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenByIdIdx( ICFLibKeyHash256 Id )
+	public void deepDisposeDbKeyHash384GenByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDbKeyHash384GenObj obj = readCachedDbKeyHash384GenByIdIdx( Id );
 		if( obj != null ) {
@@ -2066,7 +2066,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deepDisposeDbKeyHash384GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamDbKeyHash384GenObj obj = readCachedDbKeyHash384GenByUNameIdx( ScopeId,
@@ -2077,7 +2077,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deepDisposeDbKeyHash384GenByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash384GenByScopeIdx";
 		ICFBamDbKeyHash384GenObj obj;
@@ -2094,7 +2094,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deepDisposeDbKeyHash384GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash384GenByDefSchemaIdx";
 		ICFBamDbKeyHash384GenObj obj;
@@ -2111,7 +2111,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deepDisposeDbKeyHash384GenByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash384GenByPrevIdx";
 		ICFBamDbKeyHash384GenObj obj;
@@ -2128,7 +2128,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenByNextIdx( ICFLibKeyHash256 NextId )
+	public void deepDisposeDbKeyHash384GenByNextIdx( IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash384GenByNextIdx";
 		ICFBamDbKeyHash384GenObj obj;
@@ -2145,8 +2145,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deepDisposeDbKeyHash384GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash384GenByContPrevIdx";
 		ICFBamDbKeyHash384GenObj obj;
@@ -2164,8 +2164,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deepDisposeDbKeyHash384GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash384GenByContNextIdx";
 		ICFBamDbKeyHash384GenObj obj;
@@ -2183,7 +2183,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deepDisposeDbKeyHash384GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public void deepDisposeDbKeyHash384GenBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "deepDisposeDbKeyHash384GenBySchemaIdx";
 		ICFBamDbKeyHash384GenObj obj;
@@ -2228,7 +2228,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenByIdIdx( ICFLibKeyHash256 Id )
+	public void deleteDbKeyHash384GenByIdIdx( IMCFKeyHash256 Id )
 	{
 		ICFBamDbKeyHash384GenObj obj = readDbKeyHash384Gen(Id);
 		if( obj != null ) {
@@ -2258,7 +2258,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenByUNameIdx( ICFLibKeyHash256 ScopeId,
+	public void deleteDbKeyHash384GenByUNameIdx( IMCFKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2286,7 +2286,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenByScopeIdx( ICFLibKeyHash256 ScopeId )
+	public void deleteDbKeyHash384GenByScopeIdx( IMCFKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2320,7 +2320,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	public void deleteDbKeyHash384GenByDefSchemaIdx( IMCFKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
@@ -2354,7 +2354,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenByPrevIdx( ICFLibKeyHash256 PrevId )
+	public void deleteDbKeyHash384GenByPrevIdx( IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
@@ -2388,7 +2388,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenByNextIdx( ICFLibKeyHash256 NextId )
+	public void deleteDbKeyHash384GenByNextIdx( IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
@@ -2422,8 +2422,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenByContPrevIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 PrevId )
+	public void deleteDbKeyHash384GenByContPrevIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2461,8 +2461,8 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenByContNextIdx( ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 NextId )
+	public void deleteDbKeyHash384GenByContNextIdx( IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
@@ -2500,7 +2500,7 @@ public class CFBamDbKeyHash384GenTableObj
 	}
 
 	@Override
-	public void deleteDbKeyHash384GenBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
+	public void deleteDbKeyHash384GenBySchemaIdx( IMCFKeyHash256 SchemaDefId )
 	{
 		ICFBamDbKeyHash384TypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash384Type().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
@@ -2542,7 +2542,7 @@ public class CFBamDbKeyHash384GenTableObj
 	public ICFBamDbKeyHash384GenObj moveUpDbKeyHash384Gen( ICFBamDbKeyHash384GenObj Obj ) {
 		ICFBamDbKeyHash384GenObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpDbKeyHash384Gen" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveUpDbKeyHash384Gen" );
 		}
 		ICFBamDbKeyHash384Gen rec = schema.getCFBamBackingStore().getTableDbKeyHash384Gen().moveRecUp( null,
 			Obj.getRequiredId(),
@@ -2570,7 +2570,7 @@ public class CFBamDbKeyHash384GenTableObj
 	public ICFBamDbKeyHash384GenObj moveDownDbKeyHash384Gen( ICFBamDbKeyHash384GenObj Obj ) {
 		ICFBamDbKeyHash384GenObj obj = null;
 		if( null != Obj.getEdit() ) {
-			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownDbKeyHash384Gen" );
+			throw new MCFCannotMoveEditedObjectException( getClass(),	"moveDownDbKeyHash384Gen" );
 		}
 		ICFBamDbKeyHash384Gen rec = schema.getCFBamBackingStore().getTableDbKeyHash384Gen().moveRecDown( null,
 			Obj.getRequiredId(),

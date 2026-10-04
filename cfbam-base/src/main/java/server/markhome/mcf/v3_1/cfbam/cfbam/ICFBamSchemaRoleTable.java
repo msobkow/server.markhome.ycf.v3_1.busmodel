@@ -108,7 +108,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@param	SchemaDefId	The SchemaRole key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRoleBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId );
+		IMCFKeyHash256 argSchemaDefId );
 
 	/**
 	 *	Delete the SchemaRole instances identified by the key SchemaIdx.
@@ -148,7 +148,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@param	RoleScope	The SchemaRole key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRoleBySchRoleScpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argSchemaDefId,
+		IMCFKeyHash256 argSchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum argRoleScope );
 
 	/**
@@ -179,7 +179,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@param	Name	The SchemaRole key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRoleByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
+		IMCFKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -199,7 +199,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@param	ScopeId	The SchemaRole key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRoleByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId );
+		IMCFKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the SchemaRole instances identified by the key ScopeIdx.
@@ -218,7 +218,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@param	DefSchemaId	The SchemaRole key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRoleByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argDefSchemaId );
+		IMCFKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the SchemaRole instances identified by the key DefSchemaIdx.
@@ -241,8 +241,8 @@ public interface ICFBamSchemaRoleTable
 	 *	@param	Name	The SchemaRole key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRoleByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 argScopeId,
-		ICFLibKeyHash256 argDefSchemaId,
+		IMCFKeyHash256 argScopeId,
+		IMCFKeyHash256 argDefSchemaId,
 		String argName );
 
 	/**
@@ -302,7 +302,7 @@ public interface ICFBamSchemaRoleTable
 	 *		no such existing key value.
 	 */
 	ICFBamSchemaRole readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the derived SchemaRole record instance identified by the unique key UNameIdx.
@@ -317,7 +317,7 @@ public interface ICFBamSchemaRoleTable
 	 *		no such existing key value.
 	 */
 	ICFBamSchemaRole readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -330,7 +330,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRole[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived SchemaRole record instances identified by the duplicate key DefSchemaIdx.
@@ -342,7 +342,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRole[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived SchemaRole record instance identified by the unique key UDefIdx.
@@ -359,8 +359,8 @@ public interface ICFBamSchemaRoleTable
 	 *		no such existing key value.
 	 */
 	ICFBamSchemaRole readDerivedByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -373,7 +373,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRole[] readDerivedBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read an array of the derived SchemaRole record instances identified by the duplicate key RoleScopeIdx.
@@ -399,7 +399,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRole[] readDerivedBySchRoleScpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope );
 
 	/**
@@ -412,7 +412,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole readRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -427,7 +427,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@return The record instance for the specified primary key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole lockRec( ICFSecAuthorization Authorization,
 		$implCommaIJavaOptAtomType$ PKey );
@@ -451,10 +451,10 @@ public interface ICFBamSchemaRoleTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole readRecByIdIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 Id );
+		IMCFKeyHash256 Id );
 
 	/**
 	 *	Read the specific SchemaRole record instance identified by the unique key UNameIdx.
@@ -468,10 +468,10 @@ public interface ICFBamSchemaRoleTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole readRecByUNameIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
+		IMCFKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -483,10 +483,10 @@ public interface ICFBamSchemaRoleTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId );
+		IMCFKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific SchemaRole record instances identified by the duplicate key DefSchemaIdx.
@@ -497,10 +497,10 @@ public interface ICFBamSchemaRoleTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 DefSchemaId );
+		IMCFKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific SchemaRole record instance identified by the unique key UDefIdx.
@@ -516,11 +516,11 @@ public interface ICFBamSchemaRoleTable
 	 *	@return The record instance for the specified key, or null if there is
 	 *		no such existing key value.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole readRecByUDefIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 ScopeId,
-		ICFLibKeyHash256 DefSchemaId,
+		IMCFKeyHash256 ScopeId,
+		IMCFKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -532,10 +532,10 @@ public interface ICFBamSchemaRoleTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId );
+		IMCFKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read an array of the specific SchemaRole record instances identified by the duplicate key RoleScopeIdx.
@@ -546,7 +546,7 @@ public interface ICFBamSchemaRoleTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole[] readRecByRoleScopeIdx( ICFSecAuthorization Authorization,
 		ICFBamPubSchema.RoleScopeEnum RoleScope );
@@ -562,9 +562,9 @@ public interface ICFBamSchemaRoleTable
 	 *
 	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
 	 *
-	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 *	@throws	MCFNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole[] readRecBySchRoleScpIdx( ICFSecAuthorization Authorization,
-		ICFLibKeyHash256 SchemaDefId,
+		IMCFKeyHash256 SchemaDefId,
 		ICFBamPubSchema.RoleScopeEnum RoleScope );
 }

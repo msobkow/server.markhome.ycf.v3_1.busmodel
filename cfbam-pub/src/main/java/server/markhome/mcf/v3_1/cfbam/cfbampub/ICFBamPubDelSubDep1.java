@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -65,7 +65,7 @@ public interface ICFBamPubDelSubDep1
 	extends ICFBamPubDelDep
 {
 	public static final String S_DELTOPDEPID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DELTOPDEPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DELTOPDEPID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DELTOPDEPID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DELTOPDEPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa81c;
 	public final static String S_CLASS_CODE = "a81c";
@@ -73,12 +73,12 @@ public interface ICFBamPubDelSubDep1
 	public ICFBamPubDelTopDep getRequiredContainerDelTopDep();
 
 	public void setRequiredContainerDelTopDep(ICFBamPubDelTopDep argObj);
-	public void setRequiredContainerDelTopDep(ICFLibKeyHash256 argDelTopDepId);
+	public void setRequiredContainerDelTopDep(IMCFKeyHash256 argDelTopDepId);
 
 	public List<ICFBamPubDelSubDep2> getOptionalComponentsDelDep();
 
-	public CFLibDbKeyHash256 getRequiredDelTopDepId();
-	public void setRequiredDelTopDepId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredDelTopDepId();
+	public void setRequiredDelTopDepId( MCFDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

@@ -66,7 +66,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 public interface ICFBamRelationColObj
-	extends ICFLibAnyObj
+	extends IMCFAnyObj
 {
 	/**
 	 *	Initially, the class code for an object is ICFBamRelationCol.CLASS_CODE, but the Obj layer relies on class code translation to map those
@@ -154,7 +154,7 @@ public interface ICFBamRelationColObj
 	/**
 	 *	End this edition of this RelationCol instance.
 	 *
-	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
+	 *	@throws	MCFNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
@@ -338,25 +338,25 @@ public interface ICFBamRelationColObj
 	ICFBamIndexColObj getRequiredLookupToCol( boolean forceRead );
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute RelationId.
+	 *	Get the required IMCFKeyHash256 attribute RelationId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute RelationId.
+	 *	@return	The required IMCFKeyHash256 attribute RelationId.
 	 */
-	ICFLibKeyHash256 getRequiredRelationId();
+	IMCFKeyHash256 getRequiredRelationId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute Id.
+	 *	Get the required IMCFKeyHash256 attribute Id.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute Id.
+	 *	@return	The required IMCFKeyHash256 attribute Id.
 	 */
-	ICFLibKeyHash256 getRequiredId();
+	IMCFKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	Get the optional IMCFKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional IMCFKeyHash256 attribute DefSchemaId.
 	 */
-	ICFLibKeyHash256 getOptionalDefSchemaId();
+	IMCFKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -394,32 +394,32 @@ public interface ICFBamRelationColObj
 	String getOptionalDescription();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute FromColId.
+	 *	Get the required IMCFKeyHash256 attribute FromColId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute FromColId.
+	 *	@return	The required IMCFKeyHash256 attribute FromColId.
 	 */
-	ICFLibKeyHash256 getRequiredFromColId();
+	IMCFKeyHash256 getRequiredFromColId();
 
 	/**
-	 *	Get the required ICFLibKeyHash256 attribute ToColId.
+	 *	Get the required IMCFKeyHash256 attribute ToColId.
 	 *
-	 *	@return	The required ICFLibKeyHash256 attribute ToColId.
+	 *	@return	The required IMCFKeyHash256 attribute ToColId.
 	 */
-	ICFLibKeyHash256 getRequiredToColId();
+	IMCFKeyHash256 getRequiredToColId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute PrevId.
+	 *	Get the optional IMCFKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute PrevId.
+	 *	@return	The optional IMCFKeyHash256 attribute PrevId.
 	 */
-	ICFLibKeyHash256 getOptionalPrevId();
+	IMCFKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional ICFLibKeyHash256 attribute NextId.
+	 *	Get the optional IMCFKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional ICFLibKeyHash256 attribute NextId.
+	 *	@return	The optional IMCFKeyHash256 attribute NextId.
 	 */
-	ICFLibKeyHash256 getOptionalNextId();
+	IMCFKeyHash256 getOptionalNextId();
 
 	/**
 	 *	Internal use only.

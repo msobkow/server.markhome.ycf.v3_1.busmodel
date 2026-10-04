@@ -56,7 +56,7 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
@@ -66,19 +66,19 @@ import server.markhome.mcf.v3_1.cfint.cfint.jpa.*;
 public class CFBamJpaIndexColByColIdxKey
 	implements ICFBamIndexColByColIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFLibKeyHash256 requiredColumnId;
+	protected IMCFKeyHash256 requiredColumnId;
 	public CFBamJpaIndexColByColIdxKey() {
-		requiredColumnId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.COLUMNID_INIT_VALUE.toString() );
+		requiredColumnId = MCFDbKeyHash256.fromHex( ICFBamPubIndexCol.COLUMNID_INIT_VALUE.toString() );
 	}
 
 	@Override
-	public ICFLibKeyHash256 getRequiredColumnId() {
+	public IMCFKeyHash256 getRequiredColumnId() {
 		return(requiredColumnId);
 	}
 
-	public void setRequiredColumnId( ICFLibKeyHash256 value ) {
+	public void setRequiredColumnId( IMCFKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
+			throw new MCFNullArgumentException( getClass(),
 				"setRequiredColumnId",
 				1,
 				"value" );
@@ -221,7 +221,7 @@ public class CFBamJpaIndexColByColIdxKey
 			return( 0 );
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(),
+			throw new MCFUnsupportedClassException(getClass(),
 				"compareTo",
 				"obj",
 				obj,

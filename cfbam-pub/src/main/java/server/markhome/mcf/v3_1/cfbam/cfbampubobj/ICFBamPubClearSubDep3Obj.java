@@ -103,18 +103,18 @@ public interface ICFBamPubClearSubDep3Obj
 	ICFBamPubClearSubDep2Obj getRequiredContainerClearSubDep2( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required MCFDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required MCFDbKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	MCFDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ClearSubDep2Id.
+	 *	Get the required MCFDbKeyHash256 attribute ClearSubDep2Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ClearSubDep2Id.
+	 *	@return	The required MCFDbKeyHash256 attribute ClearSubDep2Id.
 	 */
-	CFLibDbKeyHash256 getRequiredClearSubDep2Id();
+	MCFDbKeyHash256 getRequiredClearSubDep2Id();
 
 	/**
 	 *	Get the required String attribute Name.

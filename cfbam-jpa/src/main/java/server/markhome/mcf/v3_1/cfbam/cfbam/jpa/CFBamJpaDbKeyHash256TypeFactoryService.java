@@ -122,7 +122,7 @@ public class CFBamJpaDbKeyHash256TypeFactoryService
 					mapped.set((ICFBamDbKeyHash256Gen)rec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureRec",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDbKeyHash256Type",
 						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDbKeyHash256Type");
 			}
@@ -154,7 +154,7 @@ public class CFBamJpaDbKeyHash256TypeFactoryService
 					mapped.set((ICFBamDbKeyHash256GenH)hrec);
 					return(mapped); }
 				default:
-					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+					throw new MCFUnsupportedClassException(getClass(), "ensureHRec",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDbKeyHash256Type",
 						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDbKeyHash256Type");
 			}

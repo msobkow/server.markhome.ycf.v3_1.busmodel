@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -64,12 +64,12 @@ import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 public interface ICFBamPubUInt64Def
 	extends ICFBamPubAtom
 {
-	public static final BigDecimal INITVALUE_MIN_VALUE = CFLibBigDecimalUtil.parse( "CFBam.UInt64Def.InitValue", "CFBam.UInt64Def.InitValue", 19, 0, "0" );
-	public static final BigDecimal MINVALUE_MIN_VALUE = CFLibBigDecimalUtil.parse( "CFBam.UInt64Def.MinValue", "CFBam.UInt64Def.MinValue", 19, 0, "0" );
-	public static final BigDecimal MAXVALUE_MIN_VALUE = CFLibBigDecimalUtil.parse( "CFBam.UInt64Def.MaxValue", "CFBam.UInt64Def.MaxValue", 19, 0, "0" );
-	public static final BigDecimal INITVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.UInt64Def.InitValue", "CFBam.UInt64Def.InitValue", 19, 0, "0" );
-	public static final BigDecimal MINVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.UInt64Def.MinValue", "CFBam.UInt64Def.MinValue", 19, 0, "0" );
-	public static final BigDecimal MAXVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.UInt64Def.MaxValue", "CFBam.UInt64Def.MaxValue", 19, 0, "0" );
+	public static final BigDecimal INITVALUE_MIN_VALUE = MCFBigDecimalUtil.parse( "CFBam.UInt64Def.InitValue", "CFBam.UInt64Def.InitValue", 19, 0, "0" );
+	public static final BigDecimal MINVALUE_MIN_VALUE = MCFBigDecimalUtil.parse( "CFBam.UInt64Def.MinValue", "CFBam.UInt64Def.MinValue", 19, 0, "0" );
+	public static final BigDecimal MAXVALUE_MIN_VALUE = MCFBigDecimalUtil.parse( "CFBam.UInt64Def.MaxValue", "CFBam.UInt64Def.MaxValue", 19, 0, "0" );
+	public static final BigDecimal INITVALUE_INIT_VALUE = MCFBigDecimalUtil.parse( "CFBam.UInt64Def.InitValue", "CFBam.UInt64Def.InitValue", 19, 0, "0" );
+	public static final BigDecimal MINVALUE_INIT_VALUE = MCFBigDecimalUtil.parse( "CFBam.UInt64Def.MinValue", "CFBam.UInt64Def.MinValue", 19, 0, "0" );
+	public static final BigDecimal MAXVALUE_INIT_VALUE = MCFBigDecimalUtil.parse( "CFBam.UInt64Def.MaxValue", "CFBam.UInt64Def.MaxValue", 19, 0, "0" );
 	public final static int CLASS_CODE = 0xa869;
 	public final static String S_CLASS_CODE = "a869";
 

@@ -53,7 +53,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.keyhash.*;
-import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
+import server.markhome.mcf.v3_1.cflib.xml.MCFXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
 import server.markhome.mcf.v3_1.cfint.cfintpub.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
@@ -65,26 +65,26 @@ public interface ICFBamPubClearDep
 	extends ICFBamPubScope
 {
 	public static final String S_RELATIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 RELATIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_RELATIONID_INIT_VALUE );
+	public static final MCFDbKeyHash256 RELATIONID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_RELATIONID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
-	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
+	public static final MCFDbKeyHash256 DEFSCHEMAID_INIT_VALUE = MCFDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa814;
 	public final static String S_CLASS_CODE = "a814";
 
 	public ICFBamPubRelation getRequiredLookupRelation();
 
 	public void setRequiredLookupRelation(ICFBamPubRelation argObj);
-	public void setRequiredLookupRelation(ICFLibKeyHash256 argRelationId);
+	public void setRequiredLookupRelation(IMCFKeyHash256 argRelationId);
 
 	public ICFBamPubSchemaDef getOptionalLookupDefSchema();
 
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId);
+	public void setOptionalLookupDefSchema(IMCFKeyHash256 argDefSchemaId);
 
-	public CFLibDbKeyHash256 getRequiredRelationId();
-	public void setRequiredRelationId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
+	public MCFDbKeyHash256 getRequiredRelationId();
+	public void setRequiredRelationId( MCFDbKeyHash256 value );
+	public MCFDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( MCFDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
